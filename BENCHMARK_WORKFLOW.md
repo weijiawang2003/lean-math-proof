@@ -33,6 +33,8 @@ Examples:
 - `python model_rollout.py --theorem-set nat_single --max-steps 5 --out-dir runs`
 - `python search_generate_traces.py --theorem-set toy_search --beam-width 16 --max-depth 4 --out-dir runs`
 
+If a theorem cannot be initialized because LeanDojo trace artifacts are missing (e.g. missing `*.ast.json`), `search_generate_traces.py` now skips that theorem with a warning and continues.
+
 Each run should create:
 - `runs/<run_id>/config.json`
 - `runs/<run_id>/traces.jsonl`

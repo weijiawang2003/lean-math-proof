@@ -19,67 +19,80 @@ class Node:
     finished: bool
 
 
-def search_and_log_for_theorem(cfg, out_path: str, run_id: str, beam_width: int = 16, max_depth: int = 4):
+def _is_missing_trace_artifact_error(exc: Exception) -> bool:
+    msg = str(exc)
+    return exc.__class__.__name__ == "DojoInitError" or ".ast.json" in msg
+
+
+def search_and_log_for_theorem(cfg, out_path: str, run_id: str, beam_width: int = 16, max_depth: int = 4) -> bool:
     repo = make_repo()
     theorem = make_theorem(repo, cfg)
     episode_id = cfg.full_name
 
-    with Dojo(theorem) as (dojo, init_state):
-        print(f"\n=== Theorem: {cfg.full_name} ===")
-        print(init_state.pp)
-        print(f"#goals: {init_state.num_goals}\n")
+    try:
+        with Dojo(theorem) as (dojo, init_state):
+            print(f"\n=== Theorem: {cfg.full_name} ===")
+            print(init_state.pp)
+            print(f"#goals: {init_state.num_goals}\n")
 
-        beam: list[Node] = [Node(state=init_state, history=[], finished=False)]
+            beam: list[Node] = [Node(state=init_state, history=[], finished=False)]
 
-        for depth in range(1, max_depth + 1):
-            print(f"\n==== Depth {depth} ====")
-            new_beam: list[Node] = []
+            for depth in range(1, max_depth + 1):
+                print(f"\n==== Depth {depth} ====")
+                new_beam: list[Node] = []
 
-            for node in beam:
-                if node.finished or node.state is None:
-                    new_beam.append(node)
-                    continue
-
-                for tac in ACTIONS:
-                    outcome = run_transition(
-                        dojo,
-                        theorem,
-                        node.state,
-                        tac,
-                        step=depth,
-                        run_id=run_id,
-                        episode_id=episode_id,
-                        method="beam_search",
-                    )
-                    if outcome.is_error:
+                for node in beam:
+                    if node.finished or node.state is None:
+                        new_beam.append(node)
                         continue
 
-                    goals_before = outcome.record.num_goals_before
-                    goals_after = outcome.record.num_goals_after
-                    if goals_before is not None and goals_after is not None and goals_after <= goals_before:
-                        append_jsonl(out_path, outcome.record)
+                    for tac in ACTIONS:
+                        outcome = run_transition(
+                            dojo,
+                            theorem,
+                            node.state,
+                            tac,
+                            step=depth,
+                            run_id=run_id,
+                            episode_id=episode_id,
+                            method="beam_search",
+                        )
+                        if outcome.is_error:
+                            continue
 
-                    new_history = node.history + [tac]
+                        goals_before = outcome.record.num_goals_before
+                        goals_after = outcome.record.num_goals_after
+                        if goals_before is not None and goals_after is not None and goals_after <= goals_before:
+                            append_jsonl(out_path, outcome.record)
 
-                    if outcome.is_finished:
-                        print(f"FOUND PROOF at depth {depth} with history {new_history}")
-                        new_beam.append(Node(state=None, history=new_history, finished=True))
-                    else:
-                        print(f"  OK: `{tac}` : {goals_before} -> {goals_after} goals")
-                        new_beam.append(Node(state=outcome.next_state, history=new_history, finished=False))
+                        new_history = node.history + [tac]
 
-            if not new_beam:
-                print("No valid successors, stop.")
-                break
+                        if outcome.is_finished:
+                            print(f"FOUND PROOF at depth {depth} with history {new_history}")
+                            new_beam.append(Node(state=None, history=new_history, finished=True))
+                        else:
+                            print(f"  OK: `{tac}` : {goals_before} -> {goals_after} goals")
+                            new_beam.append(Node(state=outcome.next_state, history=new_history, finished=False))
 
-            def score(node: Node):
-                if node.finished:
-                    return -1000
-                return node.state.num_goals
+                if not new_beam:
+                    print("No valid successors, stop.")
+                    break
 
-            new_beam.sort(key=score)
-            beam = new_beam[:beam_width]
-            print(f"Beam size: {len(beam)}, finished: {sum(n.finished for n in beam)}")
+                def score(node: Node):
+                    if node.finished:
+                        return -1000
+                    return node.state.num_goals
+
+                new_beam.sort(key=score)
+                beam = new_beam[:beam_width]
+                print(f"Beam size: {len(beam)}, finished: {sum(n.finished for n in beam)}")
+    except Exception as exc:
+        if _is_missing_trace_artifact_error(exc):
+            print(f"[WARN] Skip theorem {cfg.full_name}: {exc}")
+            return False
+        raise
+
+    return True
 
 
 def main():
@@ -107,12 +120,25 @@ def main():
     trace_path = args.out or artifacts["traces_path"]
     open(trace_path, "w", encoding="utf-8").close()
 
-    for theorem in get_theorems(args.theorem_set):
-        search_and_log_for_theorem(theorem, trace_path, run_id, args.beam_width, args.max_depth)
+    all_theorems = get_theorems(args.theorem_set)
+    n_ok = 0
+    n_skipped = 0
+    for theorem in all_theorems:
+        ok = search_and_log_for_theorem(theorem, trace_path, run_id, args.beam_width, args.max_depth)
+        if ok:
+            n_ok += 1
+        else:
+            n_skipped += 1
 
     metrics = evaluate(trace_path)
+    metrics["run_summary"] = {
+        "requested_theorems": len(all_theorems),
+        "processed_theorems": n_ok,
+        "skipped_theorems": n_skipped,
+    }
     write_metrics(artifacts["metrics_path"], metrics)
     print(f"\nRun artifacts: {artifacts['run_dir']}")
+    print(f"Processed theorems: {n_ok}, skipped: {n_skipped}")
 
 
 if __name__ == "__main__":
