@@ -1,0 +1,43 @@
+{
+  "trace_file": "traces_from_search.jsonl",
+  "transition_metrics": {
+    "rows": 59,
+    "proof_finished_rows": 16,
+    "error_rows": 0,
+    "distinct_theorem_targets": 1
+  },
+  "episode_metrics": {
+    "episodes": 1,
+    "finished_episodes": 1,
+    "error_episodes": 0,
+    "success_rate": 1.0,
+    "avg_steps_per_episode": 59.0
+  },
+  "run_metrics": {
+    "runs": 1,
+    "episodes_per_run": {
+      "search-17aea1cd": 1
+    }
+  },
+  "rows_by_method": {
+    "beam_search": 59
+  },
+  "per_theorem_transition_summary": {
+    "Nat.mul_add_mod'|Mathlib/Data/Nat/Defs.lean": {
+      "steps": 59,
+      "finished_rows": 16
+    }
+  },
+  "per_theorem_episode_summary": {
+    "Nat.mul_add_mod'|Mathlib/Data/Nat/Defs.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    }
+  },
+  "run_summary": {
+    "requested_theorems": 1,
+    "processed_theorems": 1,
+    "skipped_theorems": 0
+  }
+}
