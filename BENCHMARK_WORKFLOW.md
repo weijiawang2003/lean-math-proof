@@ -14,6 +14,8 @@ For a full default classifier workflow (search -> SFT dataset -> classifier trai
 
 - `python run_pipeline.py --pipeline classifier`
 
+(默认使用 `nat_single`，更稳妥；需要更大集合时再显式传 `--theorem-set toy_search`)
+
 For a dry-run preview of commands:
 
 - `python run_pipeline.py --pipeline classifier --dry-run`

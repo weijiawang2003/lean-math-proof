@@ -146,7 +146,7 @@ def main() -> None:
     parser.add_argument("--out-dir", default="runs")
     parser.add_argument("--domain", default="mathlib4_nat_easy")
 
-    parser.add_argument("--theorem-set", default="toy_search")
+    parser.add_argument("--theorem-set", default="nat_single")
     parser.add_argument("--beam-width", type=int, default=16)
     parser.add_argument("--max-depth", type=int, default=4)
     parser.add_argument("--search-out", default="traces_from_search.jsonl")
