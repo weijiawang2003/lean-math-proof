@@ -58,7 +58,11 @@ def run_transition(
         num_goals_after=goals_after,
         step=step,
         domain=domain,
-        error_message=result.message if is_error else None,
+        error_message=(
+            getattr(result, "message", None)
+            or getattr(result, "error", None)
+            or (str(result) if is_error else None)
+        ),
         run_id=run_id,
         episode_id=episode_id,
         method=method,
