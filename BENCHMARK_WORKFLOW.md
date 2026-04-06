@@ -14,7 +14,7 @@ For a full default classifier workflow (search -> SFT dataset -> classifier trai
 
 - `python run_pipeline.py --pipeline classifier`
 
-(默认使用 `nat_single`，更稳妥；需要更大集合时再显式传 `--theorem-set toy_search`)
+（默认使用 `nat_single`；如需扩展集合可传 `--theorem-set nat_more` 或 `--theorem-set mixed_easy_v2`）
 
 For a dry-run preview of commands:
 
@@ -26,6 +26,7 @@ For a dry-run preview of commands:
 Pick one theorem set from `tasks.py` and keep fixed budgets:
 - rollout: `max_steps`
 - search: `beam_width`, `max_depth`
+- action space: `action_space`（例如 `core_v1` / `search_v2`）
 
 Record these in `config.json` (automatic when using scripts with `--out-dir`).
 
@@ -33,7 +34,8 @@ Record these in `config.json` (automatic when using scripts with `--out-dir`).
 
 Examples:
 - `python model_rollout.py --theorem-set nat_single --max-steps 5 --out-dir runs`
-- `python search_generate_traces.py --theorem-set toy_search --beam-width 16 --max-depth 4 --out-dir runs`
+- `python search_generate_traces.py --theorem-set toy_search --beam-width 16 --max-depth 4 --action-space core_v1 --out-dir runs`
+- `python search_generate_traces.py --theorem-set mixed_easy_v2 --beam-width 24 --max-depth 6 --action-space search_v2 --out-dir runs`
 
 If a theorem cannot be initialized because LeanDojo trace artifacts are missing (e.g. missing `*.ast.json`), `search_generate_traces.py` now skips that theorem with a warning and continues.
 
@@ -65,4 +67,4 @@ These are intentionally small, explicit additions and avoid framework overhead.
 
 If you want the run to fail whenever any theorem is skipped during search (instead of warning-and-continue), use:
 
-- `python run_pipeline.py --pipeline classifier --theorem-set toy_search --fail-on-skip`
+- `python run_pipeline.py --pipeline classifier --theorem-set toy_search --action-space core_v1 --fail-on-skip`

@@ -15,6 +15,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from actions import list_action_spaces
+
 
 class PipelinePrecheckError(RuntimeError):
     pass
@@ -63,6 +65,8 @@ def classifier_pipeline(args: argparse.Namespace) -> None:
             str(args.beam_width),
             "--max-depth",
             str(args.max_depth),
+            "--action-space",
+            args.action_space,
             "--out",
             args.search_out,
             "--out-dir",
@@ -150,6 +154,7 @@ def main() -> None:
     parser.add_argument("--theorem-set", default="nat_single")
     parser.add_argument("--beam-width", type=int, default=16)
     parser.add_argument("--max-depth", type=int, default=4)
+    parser.add_argument("--action-space", default="search_v2", choices=list_action_spaces())
     parser.add_argument("--fail-on-skip", action="store_true", help="Fail classifier pipeline if any theorem is skipped in search.")
     parser.add_argument("--search-out", default="traces_from_search.jsonl")
     parser.add_argument("--sft-out", default="sft_dataset.jsonl")

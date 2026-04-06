@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 from lean_dojo import Dojo
 
-from actions import ACTIONS
+from actions import get_action_space, list_action_spaces
 from env import make_repo, make_theorem, run_transition
 from experiment_io import init_run_artifacts, write_metrics
 from tasks import get_theorems
@@ -17,7 +17,8 @@ class Node:
     finished: bool
 
 
-def beam_search(theorem_cfg, beam_width: int = 16, max_depth: int = 4):
+def beam_search(theorem_cfg, beam_width: int = 16, max_depth: int = 4, actions: list[str] | None = None):
+    actions = actions or get_action_space("core_v1")
     repo = make_repo()
     theorem = make_theorem(repo, theorem_cfg)
 
@@ -41,7 +42,7 @@ def beam_search(theorem_cfg, beam_width: int = 16, max_depth: int = 4):
                     new_beam.append(node)
                     continue
 
-                for tac in ACTIONS:
+                for tac in actions:
                     total_actions += 1
                     outcome = run_transition(dojo, theorem, node.state, tac, step=depth, method="beam_search")
                     if outcome.is_error:
@@ -100,6 +101,7 @@ def main():
     parser.add_argument("--beam-width", type=int, default=16)
     parser.add_argument("--max-depth", type=int, default=4)
     parser.add_argument("--out-dir", default="runs")
+    parser.add_argument("--action-space", default="search_v2", choices=list_action_spaces())
     args = parser.parse_args()
 
     theorem_cfg = get_theorems(args.theorem_set)[args.theorem_index]
@@ -114,10 +116,16 @@ def main():
             "theorem_index": args.theorem_index,
             "beam_width": args.beam_width,
             "max_depth": args.max_depth,
+            "action_space": args.action_space,
         },
     )
 
-    metrics = beam_search(theorem_cfg, beam_width=args.beam_width, max_depth=args.max_depth)
+    metrics = beam_search(
+        theorem_cfg,
+        beam_width=args.beam_width,
+        max_depth=args.max_depth,
+        actions=get_action_space(args.action_space),
+    )
     metrics.update({
         "run_id": run_id,
         "theorem": {"file_path": theorem_cfg.file_path, "full_name": theorem_cfg.full_name},

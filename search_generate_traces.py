@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 from lean_dojo import Dojo
 
-from actions import ACTIONS
+from actions import get_action_space, list_action_spaces
 from env import make_repo, make_theorem, run_transition
 from evaluate_traces import evaluate
 from experiment_io import init_run_artifacts, write_metrics
@@ -24,7 +24,15 @@ def _is_missing_trace_artifact_error(exc: Exception) -> bool:
     return exc.__class__.__name__ == "DojoInitError" or ".ast.json" in msg
 
 
-def search_and_log_for_theorem(cfg, out_path: str, run_id: str, beam_width: int = 16, max_depth: int = 4) -> bool:
+def search_and_log_for_theorem(
+    cfg,
+    out_path: str,
+    run_id: str,
+    beam_width: int = 16,
+    max_depth: int = 4,
+    actions: list[str] | None = None,
+) -> bool:
+    actions = actions or get_action_space("core_v1")
     repo = make_repo()
     theorem = make_theorem(repo, cfg)
     episode_id = cfg.full_name
@@ -46,7 +54,7 @@ def search_and_log_for_theorem(cfg, out_path: str, run_id: str, beam_width: int 
                         new_beam.append(node)
                         continue
 
-                    for tac in ACTIONS:
+                    for tac in actions:
                         outcome = run_transition(
                             dojo,
                             theorem,
@@ -107,6 +115,7 @@ def main():
     parser.add_argument("--beam-width", type=int, default=16)
     parser.add_argument("--max-depth", type=int, default=4)
     parser.add_argument("--fail-on-skip", action="store_true", help="Exit non-zero if any theorem is skipped.")
+    parser.add_argument("--action-space", default="search_v2", choices=list_action_spaces())
     args = parser.parse_args()
 
     run_id = f"search-{uuid.uuid4().hex[:8]}"
@@ -119,6 +128,7 @@ def main():
             "theorem_set": args.theorem_set,
             "beam_width": args.beam_width,
             "max_depth": args.max_depth,
+            "action_space": args.action_space,
         },
     )
 
@@ -128,8 +138,16 @@ def main():
     all_theorems = get_theorems(args.theorem_set)
     n_ok = 0
     n_skipped = 0
+    actions = get_action_space(args.action_space)
     for theorem in all_theorems:
-        ok = search_and_log_for_theorem(theorem, trace_path, run_id, args.beam_width, args.max_depth)
+        ok = search_and_log_for_theorem(
+            theorem,
+            trace_path,
+            run_id,
+            args.beam_width,
+            args.max_depth,
+            actions,
+        )
         if ok:
             n_ok += 1
         else:
