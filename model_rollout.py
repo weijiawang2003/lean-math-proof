@@ -1,38 +1,99 @@
-from lean_dojo import *
+import argparse
+import uuid
+
+from lean_dojo import Dojo
+
+from env import make_repo, make_theorem, run_transition
+from experiment_io import init_run_artifacts, write_metrics
 from policy import choose_tactic
+from tasks import get_theorems
+from trace_io import append_jsonl
 
-REPO_URL = "https://github.com/leanprover-community/mathlib4"
-COMMIT   = "29dcec074de168ac2bf835a77ef68bbe069194c5"
-FILE_PATH = "Mathlib/Data/Nat/Defs.lean"
-FULL_NAME = "Nat.mul_add_mod'"
-
-MAX_STEPS = 5
 
 def main():
-    repo = LeanGitRepo(url=REPO_URL, commit=COMMIT)
-    theorem = Theorem(repo, FILE_PATH, FULL_NAME)
+    parser = argparse.ArgumentParser(description="Run policy rollout on a theorem.")
+    parser.add_argument("--theorem-set", default="nat_single")
+    parser.add_argument("--theorem-index", type=int, default=0)
+    parser.add_argument("--max-steps", type=int, default=5)
+    parser.add_argument("--domain", default="mathlib4")
+    parser.add_argument("--out-dir", default="runs")
+    args = parser.parse_args()
+
+    theorem_cfg = get_theorems(args.theorem_set)[args.theorem_index]
+    run_id = f"rollout-{uuid.uuid4().hex[:8]}"
+    episode_id = f"{theorem_cfg.full_name}-0"
+    artifacts = init_run_artifacts(
+        base_dir=args.out_dir,
+        method="policy_rollout",
+        run_id=run_id,
+        config={
+            "method": "policy_rollout",
+            "theorem_set": args.theorem_set,
+            "theorem_index": args.theorem_index,
+            "max_steps": args.max_steps,
+            "domain": args.domain,
+        },
+    )
+
+    repo = make_repo()
+    theorem = make_theorem(repo, theorem_cfg)
+
+    num_steps = 0
+    finished = False
+    has_error = False
 
     with Dojo(theorem) as (dojo, state):
         print("=== initial ===")
         print(state.pp)
 
-        for step in range(1, MAX_STEPS + 1):
-            tac = choose_tactic(state.pp, FULL_NAME)
+        for step in range(1, args.max_steps + 1):
+            tac = choose_tactic(state.pp, theorem.full_name)
             print(f"\nstep {step}, model chose tactic: {tac}")
-            result = dojo.run_tac(state, tac)
 
-            if isinstance(result, ProofFinished):
+            outcome = run_transition(
+                dojo,
+                theorem,
+                state,
+                tac,
+                step=step,
+                domain=args.domain,
+                run_id=run_id,
+                episode_id=episode_id,
+                method="policy_rollout",
+            )
+            append_jsonl(artifacts["traces_path"], outcome.record)
+            num_steps = step
+
+            if outcome.is_finished:
                 print("Proof finished ✅")
-                return
-            elif isinstance(result, LeanError):
-                print("Model tactic failed ❌:", result.message)
-                return
-            else:
-                print("New state:")
-                print(result.pp)
-                state = result
+                finished = True
+                break
+            if outcome.is_error:
+                print(f"Model tactic failed ❌: {outcome.record.error_message}")
+                has_error = True
+                break
 
-        print("Max steps reached, proof not finished.")
+            state = outcome.next_state
+            print("New state:")
+            print(state.pp)
+
+        if not finished and not has_error and num_steps >= args.max_steps:
+            print("Max steps reached, proof not finished.")
+
+    metrics = {
+        "run_id": run_id,
+        "method": "policy_rollout",
+        "episode_id": episode_id,
+        "theorem": {"file_path": theorem_cfg.file_path, "full_name": theorem_cfg.full_name},
+        "max_steps": args.max_steps,
+        "num_steps": num_steps,
+        "finished": finished,
+        "has_error": has_error,
+        "traces_path": artifacts["traces_path"],
+    }
+    write_metrics(artifacts["metrics_path"], metrics)
+    print(f"\nRun artifacts: {artifacts['run_dir']}")
+
 
 if __name__ == "__main__":
     main()
