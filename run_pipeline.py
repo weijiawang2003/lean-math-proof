@@ -51,7 +51,7 @@ def _run(cmd: list[str], dry_run: bool) -> None:
 def classifier_pipeline(args: argparse.Namespace) -> None:
     """Search -> SFT dataset -> classifier train -> model rollout."""
     if not args.dry_run:
-        _ensure_modules(["lean_dojo", "torch", "transformers"], pipeline_name="classifier")
+        _ensure_modules(["lean_dojo", "torch", "transformers", "accelerate"], pipeline_name="classifier")
 
     _run(
         [
@@ -67,6 +67,7 @@ def classifier_pipeline(args: argparse.Namespace) -> None:
             args.search_out,
             "--out-dir",
             args.out_dir,
+            *( ["--fail-on-skip"] if args.fail_on_skip else [] ),
         ],
         args.dry_run,
     )
@@ -149,6 +150,7 @@ def main() -> None:
     parser.add_argument("--theorem-set", default="nat_single")
     parser.add_argument("--beam-width", type=int, default=16)
     parser.add_argument("--max-depth", type=int, default=4)
+    parser.add_argument("--fail-on-skip", action="store_true", help="Fail classifier pipeline if any theorem is skipped in search.")
     parser.add_argument("--search-out", default="traces_from_search.jsonl")
     parser.add_argument("--sft-out", default="sft_dataset.jsonl")
     parser.add_argument("--include-metadata", action="store_true")

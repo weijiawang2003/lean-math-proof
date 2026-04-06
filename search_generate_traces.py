@@ -88,7 +88,11 @@ def search_and_log_for_theorem(cfg, out_path: str, run_id: str, beam_width: int 
                 print(f"Beam size: {len(beam)}, finished: {sum(n.finished for n in beam)}")
     except Exception as exc:
         if _is_missing_trace_artifact_error(exc):
-            print(f"[WARN] Skip theorem {cfg.full_name}: {exc}")
+            print(
+                f"[WARN] Skip theorem {cfg.full_name}: {exc}\n"
+                "       Hint: this usually means LeanDojo trace artifacts (*.ast.json) "
+                "for that file are missing in cache."
+            )
             return False
         raise
 
@@ -102,6 +106,7 @@ def main():
     parser.add_argument("--out-dir", default="runs")
     parser.add_argument("--beam-width", type=int, default=16)
     parser.add_argument("--max-depth", type=int, default=4)
+    parser.add_argument("--fail-on-skip", action="store_true", help="Exit non-zero if any theorem is skipped.")
     args = parser.parse_args()
 
     run_id = f"search-{uuid.uuid4().hex[:8]}"
@@ -139,6 +144,9 @@ def main():
     write_metrics(artifacts["metrics_path"], metrics)
     print(f"\nRun artifacts: {artifacts['run_dir']}")
     print(f"Processed theorems: {n_ok}, skipped: {n_skipped}")
+
+    if args.fail_on_skip and n_skipped > 0:
+        raise SystemExit(3)
 
 
 if __name__ == "__main__":

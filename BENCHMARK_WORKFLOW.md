@@ -8,7 +8,7 @@ This project intentionally stays lightweight. To compare methods reliably, use t
 
 Install pipeline dependencies first:
 
-- `pip install lean_dojo torch transformers`
+- `pip install lean_dojo torch transformers "accelerate>=1.1.0"`
 
 For a full default classifier workflow (search -> SFT dataset -> classifier training -> rollout):
 
@@ -59,3 +59,10 @@ Primary comparison metrics:
 - One aggregate comparison script over multiple `runs/*/metrics.json` files.
 
 These are intentionally small, explicit additions and avoid framework overhead.
+
+
+## Strict mode for theorem coverage
+
+If you want the run to fail whenever any theorem is skipped during search (instead of warning-and-continue), use:
+
+- `python run_pipeline.py --pipeline classifier --theorem-set toy_search --fail-on-skip`
