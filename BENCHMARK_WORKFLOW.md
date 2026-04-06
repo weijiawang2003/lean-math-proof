@@ -4,6 +4,12 @@ This project intentionally stays lightweight. To compare methods reliably, use t
 
 ## 0) One-command pipeline
 
+## Environment setup
+
+Install pipeline dependencies first:
+
+- `pip install lean_dojo torch transformers`
+
 For a full default classifier workflow (search -> SFT dataset -> classifier training -> rollout):
 
 - `python run_pipeline.py --pipeline classifier`

@@ -9,10 +9,36 @@ Examples:
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import shlex
 import subprocess
 import sys
 from pathlib import Path
+
+
+class PipelinePrecheckError(RuntimeError):
+    pass
+
+
+def _missing_modules(modules: list[str]) -> list[str]:
+    missing: list[str] = []
+    for module in modules:
+        if importlib.util.find_spec(module) is None:
+            missing.append(module)
+    return missing
+
+
+def _ensure_modules(modules: list[str], pipeline_name: str) -> None:
+    missing = _missing_modules(modules)
+    if not missing:
+        return
+
+    module_list = ", ".join(missing)
+    suggested = " ".join(sorted(set(missing)))
+    raise PipelinePrecheckError(
+        f"Missing required Python module(s) for pipeline '{pipeline_name}': {module_list}.\n"
+        f"Install them first (example): pip install {suggested}"
+    )
 
 
 def _run(cmd: list[str], dry_run: bool) -> None:
@@ -24,6 +50,9 @@ def _run(cmd: list[str], dry_run: bool) -> None:
 
 def classifier_pipeline(args: argparse.Namespace) -> None:
     """Search -> SFT dataset -> classifier train -> model rollout."""
+    if not args.dry_run:
+        _ensure_modules(["lean_dojo", "torch", "transformers"], pipeline_name="classifier")
+
     _run(
         [
             sys.executable,
@@ -75,6 +104,9 @@ def classifier_pipeline(args: argparse.Namespace) -> None:
 
 def charlm_pipeline(args: argparse.Namespace) -> None:
     """Scripted traces -> char-LM train -> optional generation."""
+    if not args.dry_run:
+        _ensure_modules(["lean_dojo", "torch"], pipeline_name="charlm")
+
     _run(
         [
             sys.executable,
@@ -130,10 +162,14 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    if args.pipeline == "classifier":
-        classifier_pipeline(args)
-    else:
-        charlm_pipeline(args)
+    try:
+        if args.pipeline == "classifier":
+            classifier_pipeline(args)
+        else:
+            charlm_pipeline(args)
+    except PipelinePrecheckError as exc:
+        print(str(exc), file=sys.stderr)
+        raise SystemExit(2) from exc
 
 
 if __name__ == "__main__":
