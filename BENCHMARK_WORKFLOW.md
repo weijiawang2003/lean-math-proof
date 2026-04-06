@@ -2,6 +2,17 @@
 
 This project intentionally stays lightweight. To compare methods reliably, use this minimal protocol.
 
+## 0) One-command pipeline
+
+For a full default classifier workflow (search -> SFT dataset -> classifier training -> rollout):
+
+- `python run_pipeline.py --pipeline classifier`
+
+For a dry-run preview of commands:
+
+- `python run_pipeline.py --pipeline classifier --dry-run`
+
+
 ## 1) Fix benchmark task set and budget
 
 Pick one theorem set from `tasks.py` and keep fixed budgets:
