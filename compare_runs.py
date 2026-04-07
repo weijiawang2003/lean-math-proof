@@ -22,7 +22,16 @@ def _pick(primary: dict, *keys, default=None):
 
 
 def _normalize_row(run_id: str, m: dict) -> dict:
-    method = m.get("method") or _pick(m, "run_summary", "method", default="unknown")
+    method = m.get("method") or _pick(m, "run_summary", "method", default=None)
+    if method is None:
+        if run_id.startswith("search-"):
+            method = "beam_search"
+        elif run_id.startswith("rollout-"):
+            method = "policy_rollout"
+        elif run_id.startswith("collect-"):
+            method = "scripted_collect"
+        else:
+            method = "unknown"
 
     episodes = _pick(m, "episode_metrics", "episodes", default=m.get("episodes_total"))
     success_rate = _pick(m, "episode_metrics", "success_rate", default=None)

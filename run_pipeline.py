@@ -22,6 +22,10 @@ class PipelinePrecheckError(RuntimeError):
     pass
 
 
+class PipelineCommandError(RuntimeError):
+    pass
+
+
 def _missing_modules(modules: list[str]) -> list[str]:
     missing: list[str] = []
     for module in modules:
@@ -47,7 +51,12 @@ def _run(cmd: list[str], dry_run: bool) -> None:
     print("$", shlex.join(cmd))
     if dry_run:
         return
-    subprocess.run(cmd, check=True)
+    try:
+        subprocess.run(cmd, check=True)
+    except subprocess.CalledProcessError as exc:
+        raise PipelineCommandError(
+            f"Command failed (exit={exc.returncode}): {shlex.join(cmd)}"
+        ) from exc
 
 
 def classifier_pipeline(args: argparse.Namespace) -> None:
@@ -204,6 +213,15 @@ def main() -> None:
     except PipelinePrecheckError as exc:
         print(str(exc), file=sys.stderr)
         raise SystemExit(2) from exc
+    except PipelineCommandError as exc:
+        print(str(exc), file=sys.stderr)
+        if "--fail-on-unavailable" in str(exc):
+            print(
+                "Hint: remove --fail-on-unavailable to continue with available theorems, "
+                "or prepare missing LeanDojo trace artifacts first.",
+                file=sys.stderr,
+            )
+        raise SystemExit(4) from exc
 
 
 if __name__ == "__main__":
