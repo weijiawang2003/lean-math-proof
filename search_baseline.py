@@ -1,139 +1,138 @@
-import json
+import argparse
+import uuid
 from dataclasses import dataclass
-from typing import List
 
-from lean_dojo import *
+from lean_dojo import Dojo
 
+from actions import get_action_space, list_action_spaces
+from env import make_repo, make_theorem, run_transition
+from experiment_io import init_run_artifacts, write_metrics
+from tasks import get_theorems
 
-# 固定仓库：你已经下载好的 mathlib4 + Benchmark 4 commit
-REPO_URL = "https://github.com/leanprover-community/mathlib4"
-COMMIT   = "29dcec074de168ac2bf835a77ef68bbe069194c5"
-
-# 目标定理：Nat.mul_add_mod'
-FILE_PATH = "Mathlib/Data/Nat/Defs.lean"
-FULL_NAME = "Nat.mul_add_mod'"
-
-# -------- Step 2: 定义动作空间（tactic 子集） --------
-
-ACTIONS: List[str] = [
-    # 通用基础动作（这里多数会失败，但用来制造“99% 失败”的效果）
-    "intro",
-    "refl",
-    "rfl",
-    "simp",
-    "assumption",
-    "cases a",
-    "induction a",
-
-    # 与本题相关的“高价值动作”
-    "rw [Nat.mul_add_mod]",
-    "rw [Nat.mul_comm]",
-    "rw [Nat.mul_comm, Nat.mul_add_mod]",
-    "rw [Nat.mul_add_mod, Nat.mul_comm]",
-    "simp [Nat.mul_add_mod, Nat.mul_comm]",
-]
-
-# -------- 搜索节点定义 --------
 
 @dataclass
 class Node:
-    state: TacticState | None   # ProofFinished 时可以是 None
-    history: List[str]
+    state: object | None
+    history: list[str]
     finished: bool
 
 
-def beam_search(
-    repo_url: str,
-    commit: str,
-    file_path: str,
-    full_name: str,
-    beam_width: int = 16,
-    max_depth: int = 4,
-):
-    repo = LeanGitRepo(url=repo_url, commit=commit)
-    theorem = Theorem(repo, file_path, full_name)
+def beam_search(theorem_cfg, beam_width: int = 16, max_depth: int = 4, actions: list[str] | None = None):
+    actions = actions or get_action_space("core_v1")
+    repo = make_repo()
+    theorem = make_theorem(repo, theorem_cfg)
 
     total_actions = 0
-    total_success = 0   # 非 LeanError 的 step 数
+    total_success = 0
+    found_any_proof = False
 
     with Dojo(theorem) as (dojo, init_state):
         print("=== Initial state ===")
         print(init_state.pp)
         print(f"#goals: {init_state.num_goals}\n")
 
-        # beam 初始化：只有一个节点
-        beam: List[Node] = [Node(state=init_state, history=[], finished=False)]
-        found_any_proof = False
+        beam: list[Node] = [Node(state=init_state, history=[], finished=False)]
 
         for depth in range(1, max_depth + 1):
             print(f"\n==== Depth {depth} ====")
-            new_beam: List[Node] = []
+            new_beam: list[Node] = []
 
             for node in beam:
                 if node.finished or node.state is None:
-                    # 已经证明完成的节点直接保留
                     new_beam.append(node)
                     continue
 
-                for tac in ACTIONS:
+                for tac in actions:
                     total_actions += 1
-                    result = dojo.run_tac(node.state, tac)
-
-                    # tactic 不合法 / 爆 LeanError：跳过
-                    if isinstance(result, LeanError):
+                    outcome = run_transition(dojo, theorem, node.state, tac, step=depth, method="beam_search")
+                    if outcome.is_error:
                         continue
 
                     total_success += 1
                     new_history = node.history + [tac]
 
-                    if isinstance(result, ProofFinished):
-                        # 找到一条完整证明路径
+                    if outcome.is_finished:
                         found_any_proof = True
                         print(f"FOUND PROOF at depth {depth} with history:")
                         for i, h in enumerate(new_history, start=1):
                             print(f"  {i}. {h}")
-                        # 我们仍然把这个节点丢进 beam，看后面还会不会出现别的路径
                         new_beam.append(Node(state=None, history=new_history, finished=True))
                     else:
-                        # 得到一个新的中间 proof state
-                        print(f"  OK: tactic `{tac}` produced new state with {result.num_goals} goal(s).")
-                        new_beam.append(Node(state=result, history=new_history, finished=False))
+                        print(
+                            f"  OK: tactic `{tac}` produced new state "
+                            f"with {outcome.next_state.num_goals} goal(s)."
+                        )
+                        new_beam.append(Node(state=outcome.next_state, history=new_history, finished=False))
 
             if not new_beam:
                 print("No valid successors at this depth. Search stops.")
                 break
 
-            # 简单打分：优先保留 finished，其次 goals 数少的
             def score(node: Node):
                 if node.finished:
                     return -1000
-                if node.state is None:
-                    return 0
                 return node.state.num_goals
 
             new_beam.sort(key=score)
-            # 截断到 beam_width
             beam = new_beam[:beam_width]
 
             n_finished = sum(1 for n in beam if n.finished)
             print(f"Beam size after depth {depth}: {len(beam)}, finished nodes in beam: {n_finished}")
 
-        print("\n==== Search Summary ====")
-        print(f"Total tactic attempts: {total_actions}")
-        print(f"Non-error transitions: {total_success}")
-        if total_actions > 0:
-            success_rate = total_success / total_actions
-            print(f"Approx. success rate: {success_rate:.3f}")
-            ##预期应该很低，‘99% 失败’是正常的
-        print(f"Found any full proof? {'YES' if found_any_proof else 'NO'}")
+    print("\n==== Search Summary ====")
+    print(f"Total tactic attempts: {total_actions}")
+    print(f"Non-error transitions: {total_success}")
+    if total_actions > 0:
+        print(f"Approx. success rate: {total_success / total_actions:.3f}")
+    print(f"Found any full proof? {'YES' if found_any_proof else 'NO'}")
+
+    return {
+        "total_tactic_attempts": total_actions,
+        "non_error_transitions": total_success,
+        "transition_success_rate": (total_success / total_actions) if total_actions else 0.0,
+        "found_any_proof": found_any_proof,
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Beam search baseline.")
+    parser.add_argument("--theorem-set", default="nat_single")
+    parser.add_argument("--theorem-index", type=int, default=0)
+    parser.add_argument("--beam-width", type=int, default=16)
+    parser.add_argument("--max-depth", type=int, default=4)
+    parser.add_argument("--out-dir", default="runs")
+    parser.add_argument("--action-space", default="search_v2", choices=list_action_spaces())
+    args = parser.parse_args()
+
+    theorem_cfg = get_theorems(args.theorem_set)[args.theorem_index]
+    run_id = f"baseline-{uuid.uuid4().hex[:8]}"
+    artifacts = init_run_artifacts(
+        base_dir=args.out_dir,
+        method="beam_baseline",
+        run_id=run_id,
+        config={
+            "method": "beam_baseline",
+            "theorem_set": args.theorem_set,
+            "theorem_index": args.theorem_index,
+            "beam_width": args.beam_width,
+            "max_depth": args.max_depth,
+            "action_space": args.action_space,
+        },
+    )
+
+    metrics = beam_search(
+        theorem_cfg,
+        beam_width=args.beam_width,
+        max_depth=args.max_depth,
+        actions=get_action_space(args.action_space),
+    )
+    metrics.update({
+        "run_id": run_id,
+        "theorem": {"file_path": theorem_cfg.file_path, "full_name": theorem_cfg.full_name},
+    })
+    write_metrics(artifacts["metrics_path"], metrics)
+    print(f"\nRun artifacts: {artifacts['run_dir']}")
 
 
 if __name__ == "__main__":
-    beam_search(
-        repo_url=REPO_URL,
-        commit=COMMIT,
-        file_path=FILE_PATH,
-        full_name=FULL_NAME,
-        beam_width=16,
-        max_depth=4,
-    )
+    main()
