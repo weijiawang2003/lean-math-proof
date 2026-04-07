@@ -75,7 +75,7 @@ def build_sft_dataset(
             )
             out = {
                 "prompt": prompt,
-                "label": label,
+                "label": action_to_idx[tactic],
             }
             if include_metadata:
                 out["meta"] = {
