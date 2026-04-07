@@ -1,23 +1,21 @@
+import argparse
 import json
 from dataclasses import dataclass
+from pathlib import Path
 from typing import List
 
 import torch
 from torch.utils.data import Dataset
 from transformers import (
-    AutoTokenizer,
     AutoModelForSequenceClassification,
+    AutoTokenizer,
     Trainer,
     TrainingArguments,
 )
 
-from actions import ACTIONS
+from actions import get_action_space, list_action_spaces, load_action_space, save_action_space
 
-
-SFT_PATH   = "sft_dataset.jsonl"
-MODEL_NAME = "distilbert-base-uncased"   # 先用小模型，把 pipeline 跑通
-OUTPUT_DIR = "clf_ckpt"
-DEVICE     = "cuda" if torch.cuda.is_available() else "cpu"
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 
 @dataclass
@@ -58,18 +56,27 @@ class SFTRawDataset(Dataset):
         return item
 
 
-def train():
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+def train(
+    sft_path: str,
+    model_name: str,
+    output_dir: str,
+    action_space_name: str,
+    action_space_file: str,
+) -> None:
+    actions = load_action_space(action_space_file) if action_space_file else get_action_space(action_space_name)
+
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForSequenceClassification.from_pretrained(
-        MODEL_NAME,
-        num_labels=len(ACTIONS),
+        model_name,
+        num_labels=len(actions),
     )
 
-    dataset = SFTRawDataset(SFT_PATH, tokenizer)
+    dataset = SFTRawDataset(sft_path, tokenizer)
     print(f"Loaded {len(dataset)} SFT examples")
+    print(f"Training label space size: {len(actions)}")
 
     args = TrainingArguments(
-        output_dir=OUTPUT_DIR,
+        output_dir=output_dir,
         num_train_epochs=10,
         per_device_train_batch_size=8,
         learning_rate=5e-5,
@@ -86,10 +93,32 @@ def train():
     )
 
     trainer.train()
-    trainer.save_model(OUTPUT_DIR)
-    tokenizer.save_pretrained(OUTPUT_DIR)
-    print("Model saved to", OUTPUT_DIR)
+    trainer.save_model(output_dir)
+    tokenizer.save_pretrained(output_dir)
+
+    action_space_out = str(Path(output_dir) / "action_space.json")
+    save_action_space(action_space_out, actions)
+    print("Model saved to", output_dir)
+    print("Action space saved to", action_space_out)
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Train action classifier from SFT dataset.")
+    parser.add_argument("--sft-path", default="sft_dataset.jsonl")
+    parser.add_argument("--model-name", default="distilbert-base-uncased")
+    parser.add_argument("--output-dir", default="clf_ckpt")
+    parser.add_argument("--action-space", default="core_v1", choices=list_action_spaces())
+    parser.add_argument("--action-space-file", default="", help="Optional JSON file with {'actions': [...]}.")
+    args = parser.parse_args()
+
+    train(
+        sft_path=args.sft_path,
+        model_name=args.model_name,
+        output_dir=args.output_dir,
+        action_space_name=args.action_space,
+        action_space_file=args.action_space_file,
+    )
 
 
 if __name__ == "__main__":
-    train()
+    main()
