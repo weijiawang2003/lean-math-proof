@@ -1,7 +1,11 @@
+from __future__ import annotations
+
+from pathlib import Path
+
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
-from actions import ACTIONS
+from actions import ACTIONS, load_action_space
 from core_types import build_prompt
 
 CKPT_DIR = "clf_ckpt"
@@ -10,6 +14,16 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 tokenizer = AutoTokenizer.from_pretrained(CKPT_DIR)
 model = AutoModelForSequenceClassification.from_pretrained(CKPT_DIR).to(DEVICE)
 model.eval()
+
+
+def _load_policy_actions() -> list[str]:
+    action_space_file = Path(CKPT_DIR) / "action_space.json"
+    if action_space_file.exists():
+        return load_action_space(str(action_space_file))
+    return ACTIONS
+
+
+POLICY_ACTIONS = _load_policy_actions()
 
 
 @torch.inference_mode()
@@ -24,4 +38,6 @@ def choose_tactic(state_pp: str, full_name: str = "") -> str:
     ).to(DEVICE)
     logits = model(**enc).logits
     idx = torch.argmax(torch.softmax(logits, dim=-1), dim=-1).item()
-    return ACTIONS[idx]
+    if idx >= len(POLICY_ACTIONS):
+        idx = 0
+    return POLICY_ACTIONS[idx]

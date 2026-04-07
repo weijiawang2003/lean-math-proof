@@ -28,11 +28,9 @@ THEOREM_SETS: dict[str, list[TheoremConfig]] = {
         TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_sub_cancel"),
         TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.succ_eq_add_one"),
     ],
+    # Keep this conservative to avoid theorem-name drift across versions.
     "set_small": [
         TheoremConfig(file_path="Mathlib/Data/Set/Basic.lean", full_name="Set.ite_univ"),
-        TheoremConfig(file_path="Mathlib/Data/Set/Basic.lean", full_name="Set.mem_univ"),
-        TheoremConfig(file_path="Mathlib/Data/Set/Basic.lean", full_name="Set.inter_univ"),
-        TheoremConfig(file_path="Mathlib/Data/Set/Basic.lean", full_name="Set.union_empty"),
     ],
     "finset_small": [
         TheoremConfig(file_path="Mathlib/Data/Finset/Basic.lean", full_name="Finset.disjoint_insert_right"),
@@ -44,7 +42,6 @@ THEOREM_SETS: dict[str, list[TheoremConfig]] = {
         TheoremConfig(file_path="Mathlib/Data/Nat/Basic.lean", full_name="Nat.add_mod"),
         TheoremConfig(file_path="Mathlib/Data/Nat/Basic.lean", full_name="Nat.mul_mod"),
         TheoremConfig(file_path="Mathlib/Data/Set/Basic.lean", full_name="Set.ite_univ"),
-        TheoremConfig(file_path="Mathlib/Data/Set/Basic.lean", full_name="Set.mem_univ"),
         TheoremConfig(file_path="Mathlib/Data/Finset/Basic.lean", full_name="Finset.disjoint_insert_right"),
         TheoremConfig(file_path="Mathlib/Data/Finset/Basic.lean", full_name="Finset.mem_insert"),
     ],

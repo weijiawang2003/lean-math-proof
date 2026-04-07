@@ -18,7 +18,7 @@ For a full default classifier workflow (search -> SFT dataset -> classifier trai
 
 For a dry-run preview of commands:
 
-- `python run_pipeline.py --pipeline classifier --dry-run`
+- `python run_pipeline.py --pipeline classifier --dry-run --theorem-set mixed_easy_v2 --action-space search_v2`
 
 
 ## 1) Fix benchmark task set and budget
@@ -29,6 +29,8 @@ Pick one theorem set from `tasks.py` and keep fixed budgets:
 - action space: `action_space`（例如 `core_v1` / `search_v2`）
 
 Record these in `config.json` (automatic when using scripts with `--out-dir`).
+
+Note: `run_pipeline.py` now propagates `--action-space` to both `build_sft_dataset.py` and `train_action_classifier.py` so label spaces stay aligned.
 
 ## 2) Run methods into separate run folders
 

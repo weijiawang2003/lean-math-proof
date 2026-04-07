@@ -6,7 +6,9 @@ Use `get_action_space(...)` to opt into larger tactic spaces for search.
 
 from __future__ import annotations
 
+import json
 from collections import OrderedDict
+from pathlib import Path
 
 # Stable, classifier-compatible action list used by policy.py label indices.
 CORE_ACTIONS_V1: list[str] = [
@@ -85,3 +87,16 @@ def get_action_space(name: str) -> list[str]:
         known = ", ".join(list_action_spaces())
         raise ValueError(f"Unknown action space '{name}'. Available: {known}")
     return ACTION_SPACES[name]
+
+
+def save_action_space(path: str, actions: list[str]) -> None:
+    payload = {"actions": actions}
+    Path(path).write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def load_action_space(path: str) -> list[str]:
+    payload = json.loads(Path(path).read_text(encoding="utf-8"))
+    actions = payload.get("actions")
+    if not isinstance(actions, list) or not all(isinstance(x, str) for x in actions):
+        raise ValueError(f"Invalid action space file: {path}")
+    return actions

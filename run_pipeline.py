@@ -83,19 +83,31 @@ def classifier_pipeline(args: argparse.Namespace) -> None:
         args.search_out,
         "--out",
         args.sft_out,
+        "--action-space",
+        args.action_space,
     ]
     if args.include_metadata:
         sft_cmd.append("--include-metadata")
     _run(sft_cmd, args.dry_run)
 
-    _run([sys.executable, "train_action_classifier.py"], args.dry_run)
+    _run(
+        [
+            sys.executable,
+            "train_action_classifier.py",
+            "--sft-path",
+            args.sft_out,
+            "--action-space",
+            args.action_space,
+        ],
+        args.dry_run,
+    )
 
     _run(
         [
             sys.executable,
             "model_rollout.py",
             "--theorem-set",
-            args.rollout_theorem_set,
+            (args.rollout_theorem_set or args.theorem_set),
             "--theorem-index",
             str(args.rollout_theorem_index),
             "--max-steps",
@@ -160,7 +172,7 @@ def main() -> None:
     parser.add_argument("--sft-out", default="sft_dataset.jsonl")
     parser.add_argument("--include-metadata", action="store_true")
 
-    parser.add_argument("--rollout-theorem-set", default="nat_single")
+    parser.add_argument("--rollout-theorem-set", default="", help="Default: follow --theorem-set when empty.")
     parser.add_argument("--rollout-theorem-index", type=int, default=0)
     parser.add_argument("--rollout-max-steps", type=int, default=5)
 

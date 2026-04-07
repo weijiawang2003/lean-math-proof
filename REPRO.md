@@ -12,7 +12,7 @@ pip install lean_dojo torch transformers "accelerate>=1.1.0"
 ## 1) Dry-run first (sanity check command chain)
 
 ```bash
-python run_pipeline.py --pipeline classifier --dry-run
+python run_pipeline.py --pipeline classifier --dry-run --theorem-set mixed_easy_v2 --action-space search_v2
 ```
 
 Expected command chain:
@@ -24,10 +24,10 @@ Expected command chain:
 ## 2) Run full classifier pipeline (stable default)
 
 ```bash
-python run_pipeline.py --pipeline classifier
+python run_pipeline.py --pipeline classifier --theorem-set nat_single --action-space core_v1
 ```
 
-Default theorem set is `nat_single`, which is intentionally safer than `toy_search`.
+Default theorem set is `nat_single` (safer). For expanded search labels, pass `--action-space search_v2`; this now propagates to SFT building and classifier training.
 
 ## 3) Verify outputs
 
