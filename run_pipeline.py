@@ -72,6 +72,7 @@ def classifier_pipeline(args: argparse.Namespace) -> None:
             "--out-dir",
             args.out_dir,
             *( ["--fail-on-skip"] if args.fail_on_skip else [] ),
+            *( ["--fail-on-unavailable"] if args.fail_on_unavailable else [] ),
         ],
         args.dry_run,
     )
@@ -85,6 +86,8 @@ def classifier_pipeline(args: argparse.Namespace) -> None:
         args.sft_out,
         "--action-space",
         args.action_space,
+        "--min-goal-drop",
+        str(args.min_goal_drop),
     ]
     if args.include_metadata:
         sft_cmd.append("--include-metadata")
@@ -117,6 +120,10 @@ def classifier_pipeline(args: argparse.Namespace) -> None:
         ],
         args.dry_run,
     )
+
+    if args.auto_eval:
+        _run([sys.executable, "evaluate_traces.py", "--in", args.search_out], args.dry_run)
+        _run([sys.executable, "compare_runs.py", "--runs-dir", args.out_dir], args.dry_run)
 
 
 def charlm_pipeline(args: argparse.Namespace) -> None:
@@ -168,9 +175,12 @@ def main() -> None:
     parser.add_argument("--max-depth", type=int, default=4)
     parser.add_argument("--action-space", default="search_v2", choices=list_action_spaces())
     parser.add_argument("--fail-on-skip", action="store_true", help="Fail classifier pipeline if any theorem is skipped in search.")
+    parser.add_argument("--fail-on-unavailable", action="store_true", help="Fail if theorem availability precheck filters any theorem.")
     parser.add_argument("--search-out", default="traces_from_search.jsonl")
     parser.add_argument("--sft-out", default="sft_dataset.jsonl")
     parser.add_argument("--include-metadata", action="store_true")
+    parser.add_argument("--min-goal-drop", type=int, default=1, help="SFT filter threshold: keep rows with (goals_before-goals_after)>=this.")
+    parser.add_argument("--auto-eval", action="store_true", help="Run evaluate_traces and compare_runs after classifier pipeline.")
 
     parser.add_argument("--rollout-theorem-set", default="", help="Default: follow --theorem-set when empty.")
     parser.add_argument("--rollout-theorem-index", type=int, default=0)

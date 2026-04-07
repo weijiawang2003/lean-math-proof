@@ -27,6 +27,7 @@ Pick one theorem set from `tasks.py` and keep fixed budgets:
 - rollout: `max_steps`
 - search: `beam_width`, `max_depth`
 - action space: `action_space`（例如 `core_v1` / `search_v2`）
+- SFT progress filter: `min_goal_drop`（默认 1；可设为 0 扩样本）
 
 Record these in `config.json` (automatic when using scripts with `--out-dir`).
 
@@ -70,3 +71,15 @@ These are intentionally small, explicit additions and avoid framework overhead.
 If you want the run to fail whenever any theorem is skipped during search (instead of warning-and-continue), use:
 
 - `python run_pipeline.py --pipeline classifier --theorem-set toy_search --action-space core_v1 --fail-on-skip`
+- `python run_pipeline.py --pipeline classifier --theorem-set mixed_easy_v2 --action-space search_v2 --fail-on-unavailable`
+
+
+## Auto evaluation
+
+Use `--auto-eval` to automatically run:
+- `evaluate_traces.py --in <search_trace>`
+- `compare_runs.py --runs-dir <out_dir>`
+
+Example:
+
+- `python run_pipeline.py --pipeline classifier --theorem-set mixed_easy_v2 --action-space search_v2 --auto-eval`

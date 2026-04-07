@@ -6,12 +6,21 @@ from core_types import build_prompt
 from trace_io import iter_jsonl
 
 
+def _is_progress_sample(proof_finished: bool, nb: int | None, na: int | None, min_goal_drop: int) -> bool:
+    if proof_finished:
+        return True
+    if nb is None or na is None:
+        return False
+    return (nb - na) >= min_goal_drop
+
+
 def build_sft_dataset(
     in_path: str,
     out_path: str,
     include_metadata: bool = False,
     action_space_name: str = "core_v1",
     action_space_file: str = "",
+    min_goal_drop: int = 1,
 ):
     n_in = 0
     n_kept = 0
@@ -34,7 +43,7 @@ def build_sft_dataset(
             nb = obj.get("num_goals_before")
             na = obj.get("num_goals_after")
 
-            if not proof_finished and (nb is None or na is None or not (na < nb)):
+            if not _is_progress_sample(proof_finished, nb, na, min_goal_drop=min_goal_drop):
                 n_drop_no_progress += 1
                 continue
 
@@ -56,6 +65,7 @@ def build_sft_dataset(
                     "method": obj.get("method"),
                     "step": obj.get("step"),
                     "action_space": action_space_name if not action_space_file else f"file:{action_space_file}",
+                    "min_goal_drop": min_goal_drop,
                 }
             fout.write(json.dumps(out, ensure_ascii=False) + "\n")
             n_out += 1
@@ -65,7 +75,8 @@ def build_sft_dataset(
         "drop summary: "
         f"unknown_action={n_drop_unknown_action}, "
         f"no_progress={n_drop_no_progress}, "
-        f"action_space_size={len(actions)}"
+        f"action_space_size={len(actions)}, "
+        f"min_goal_drop={min_goal_drop}"
     )
 
 
@@ -76,6 +87,12 @@ def main():
     parser.add_argument("--include-metadata", action="store_true")
     parser.add_argument("--action-space", default="core_v1", choices=list_action_spaces())
     parser.add_argument("--action-space-file", default="", help="Optional JSON file with {'actions': [...]}.")
+    parser.add_argument(
+        "--min-goal-drop",
+        type=int,
+        default=1,
+        help="Keep non-finished transitions only when (num_goals_before - num_goals_after) >= this value.",
+    )
     args = parser.parse_args()
     build_sft_dataset(
         args.in_path,
@@ -83,6 +100,7 @@ def main():
         args.include_metadata,
         action_space_name=args.action_space,
         action_space_file=args.action_space_file,
+        min_goal_drop=args.min_goal_drop,
     )
 
 

@@ -24,6 +24,34 @@ def _is_missing_trace_artifact_error(exc: Exception) -> bool:
     return exc.__class__.__name__ == "DojoInitError" or ".ast.json" in msg
 
 
+def _availability_reason(exc: Exception) -> str:
+    if _is_missing_trace_artifact_error(exc):
+        return "missing_trace_artifact"
+    if "Failed to locate the theorem" in str(exc):
+        return "theorem_not_found"
+    return "other_init_error"
+
+
+def _partition_available_theorems(theorems):
+    repo = make_repo()
+    available = []
+    unavailable = []
+    for cfg in theorems:
+        try:
+            theorem = make_theorem(repo, cfg)
+            with Dojo(theorem):
+                pass
+            available.append(cfg)
+        except Exception as exc:
+            unavailable.append({
+                "file_path": cfg.file_path,
+                "full_name": cfg.full_name,
+                "reason": _availability_reason(exc),
+                "error": str(exc),
+            })
+    return available, unavailable
+
+
 def search_and_log_for_theorem(
     cfg,
     out_path: str,
@@ -115,6 +143,7 @@ def main():
     parser.add_argument("--beam-width", type=int, default=16)
     parser.add_argument("--max-depth", type=int, default=4)
     parser.add_argument("--fail-on-skip", action="store_true", help="Exit non-zero if any theorem is skipped.")
+    parser.add_argument("--fail-on-unavailable", action="store_true", help="Exit non-zero if availability precheck filters any theorem.")
     parser.add_argument("--action-space", default="search_v2", choices=list_action_spaces())
     args = parser.parse_args()
 
@@ -135,11 +164,20 @@ def main():
     trace_path = args.out or artifacts["traces_path"]
     open(trace_path, "w", encoding="utf-8").close()
 
-    all_theorems = get_theorems(args.theorem_set)
+    requested_theorems = get_theorems(args.theorem_set)
+    available_theorems, unavailable = _partition_available_theorems(requested_theorems)
+    if unavailable:
+        print(f"[WARN] Availability precheck filtered {len(unavailable)} theorem(s).")
+        for item in unavailable:
+            print(f"  - {item['full_name']}: {item['reason']}")
+
+    if args.fail_on_unavailable and unavailable:
+        raise SystemExit(4)
+
     n_ok = 0
-    n_skipped = 0
+    n_skipped_runtime = 0
     actions = get_action_space(args.action_space)
-    for theorem in all_theorems:
+    for theorem in available_theorems:
         ok = search_and_log_for_theorem(
             theorem,
             trace_path,
@@ -151,19 +189,25 @@ def main():
         if ok:
             n_ok += 1
         else:
-            n_skipped += 1
+            n_skipped_runtime += 1
 
     metrics = evaluate(trace_path)
     metrics["run_summary"] = {
-        "requested_theorems": len(all_theorems),
+        "requested_theorems": len(requested_theorems),
+        "available_theorems": len(available_theorems),
         "processed_theorems": n_ok,
-        "skipped_theorems": n_skipped,
+        "skipped_theorems_runtime": n_skipped_runtime,
+        "unavailable_theorems": len(unavailable),
+        "unavailable_details": unavailable,
     }
     write_metrics(artifacts["metrics_path"], metrics)
     print(f"\nRun artifacts: {artifacts['run_dir']}")
-    print(f"Processed theorems: {n_ok}, skipped: {n_skipped}")
+    print(
+        "Processed theorems: "
+        f"{n_ok}, unavailable(precheck): {len(unavailable)}, runtime skipped: {n_skipped_runtime}"
+    )
 
-    if args.fail_on_skip and n_skipped > 0:
+    if args.fail_on_skip and (n_skipped_runtime > 0 or unavailable):
         raise SystemExit(3)
 
 
