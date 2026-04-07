@@ -192,6 +192,8 @@ def main():
             n_skipped_runtime += 1
 
     metrics = evaluate(trace_path)
+    metrics["method"] = "beam_search"
+    metrics["run_id"] = run_id
     metrics["run_summary"] = {
         "requested_theorems": len(requested_theorems),
         "available_theorems": len(available_theorems),

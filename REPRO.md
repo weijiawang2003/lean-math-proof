@@ -24,7 +24,7 @@ Expected command chain:
 ## 2) Run full classifier pipeline (stable default)
 
 ```bash
-python run_pipeline.py --pipeline classifier --theorem-set nat_single --action-space core_v1 --min-goal-drop 1 --auto-eval
+python run_pipeline.py --pipeline classifier --theorem-set nat_single --action-space core_v1 --min-goal-drop 1 --max-per-label 64 --auto-eval
 ```
 
 Default theorem set is `nat_single` (safer). For expanded search labels, pass `--action-space search_v2`; this now propagates to SFT building and classifier training.
@@ -60,4 +60,13 @@ If you want the run to fail when availability precheck filters any theorem:
 
 ```bash
 python run_pipeline.py --pipeline classifier --theorem-set mixed_easy_v2 --action-space search_v2 --fail-on-unavailable
+```
+
+
+## 6) Avoid label-collapse loops
+
+When using `--min-goal-drop 0`, keep dedup on and set a per-label cap:
+
+```bash
+python run_pipeline.py --pipeline classifier --theorem-set mixed_easy_v2 --action-space search_v2 --min-goal-drop 0 --max-per-label 64 --auto-eval
 ```

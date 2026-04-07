@@ -28,6 +28,7 @@ Pick one theorem set from `tasks.py` and keep fixed budgets:
 - search: `beam_width`, `max_depth`
 - action space: `action_space`（例如 `core_v1` / `search_v2`）
 - SFT progress filter: `min_goal_drop`（默认 1；可设为 0 扩样本）
+- SFT anti-collapse controls: `dedup_state_action` 与 `max_per_label`（默认 64）
 
 Record these in `config.json` (automatic when using scripts with `--out-dir`).
 
@@ -83,3 +84,10 @@ Use `--auto-eval` to automatically run:
 Example:
 
 - `python run_pipeline.py --pipeline classifier --theorem-set mixed_easy_v2 --action-space search_v2 --auto-eval`
+
+
+## Anti-collapse training data controls
+
+If rollout starts looping on one rewrite tactic, keep these defaults or tighten them:
+- `--dedup-state-action` (default true)
+- `--max-per-label 64`

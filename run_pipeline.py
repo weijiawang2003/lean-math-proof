@@ -88,6 +88,9 @@ def classifier_pipeline(args: argparse.Namespace) -> None:
         args.action_space,
         "--min-goal-drop",
         str(args.min_goal_drop),
+        "--max-per-label",
+        str(args.max_per_label),
+        *( [] if args.dedup_state_action else ["--no-dedup-state-action"] ),
     ]
     if args.include_metadata:
         sft_cmd.append("--include-metadata")
@@ -180,6 +183,8 @@ def main() -> None:
     parser.add_argument("--sft-out", default="sft_dataset.jsonl")
     parser.add_argument("--include-metadata", action="store_true")
     parser.add_argument("--min-goal-drop", type=int, default=1, help="SFT filter threshold: keep rows with (goals_before-goals_after)>=this.")
+    parser.add_argument("--max-per-label", type=int, default=64, help="SFT label cap (0 = unlimited).")
+    parser.add_argument("--dedup-state-action", action=argparse.BooleanOptionalAction, default=True, help="Whether SFT builder deduplicates (state,tactic).")
     parser.add_argument("--auto-eval", action="store_true", help="Run evaluate_traces and compare_runs after classifier pipeline.")
 
     parser.add_argument("--rollout-theorem-set", default="", help="Default: follow --theorem-set when empty.")

@@ -21,6 +21,35 @@ def _pick(primary: dict, *keys, default=None):
     return cur
 
 
+def _normalize_row(run_id: str, m: dict) -> dict:
+    method = m.get("method") or _pick(m, "run_summary", "method", default="unknown")
+
+    episodes = _pick(m, "episode_metrics", "episodes", default=m.get("episodes_total"))
+    success_rate = _pick(m, "episode_metrics", "success_rate", default=None)
+    finished = _pick(m, "episode_metrics", "finished_episodes", default=m.get("episodes_finished"))
+    error_episodes = _pick(m, "episode_metrics", "error_episodes", default=m.get("episodes_error"))
+    rows = _pick(m, "transition_metrics", "rows", default=None)
+
+    # Normalize lightweight rollout metrics into comparable columns.
+    if episodes is None and "finished" in m:
+        episodes = 1
+        finished = int(bool(m.get("finished")))
+        error_episodes = int(bool(m.get("has_error")))
+        success_rate = float(bool(m.get("finished")))
+        rows = m.get("num_steps")
+
+    return {
+        "run_id": run_id,
+        "method": method,
+        "episodes": episodes,
+        "success_rate": success_rate,
+        "finished": finished,
+        "error_episodes": error_episodes,
+        "rows": rows,
+        "trace_file": m.get("trace_file") or m.get("trace_path") or m.get("traces_path") or "",
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Compare metrics across run directories.")
     parser.add_argument("--runs-dir", default="runs")
@@ -34,21 +63,7 @@ def main() -> None:
         print(f"No metrics files found under: {runs_dir}")
         return
 
-    rows: list[dict] = []
-    for mf in metrics_files:
-        m = _load_metrics(mf)
-        row = {
-            "run_id": mf.parent.name,
-            "method": m.get("method") or _pick(m, "run_summary", "method", default="unknown"),
-            "episodes": _pick(m, "episode_metrics", "episodes", default=m.get("episodes_total")),
-            "success_rate": _pick(m, "episode_metrics", "success_rate", default=None),
-            "finished": _pick(m, "episode_metrics", "finished_episodes", default=m.get("episodes_finished")),
-            "error_episodes": _pick(m, "episode_metrics", "error_episodes", default=m.get("episodes_error")),
-            "rows": _pick(m, "transition_metrics", "rows", default=None),
-            "trace_file": m.get("trace_file") or m.get("trace_path") or "",
-        }
-        rows.append(row)
-
+    rows = [_normalize_row(mf.parent.name, _load_metrics(mf)) for mf in metrics_files]
     rows = rows[-args.limit :]
 
     print("run_id | method | episodes | success_rate | finished | error_episodes | rows | trace_file")
