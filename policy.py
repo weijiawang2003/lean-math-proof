@@ -1,18 +1,34 @@
-import torch
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from __future__ import annotations
 
-from actions import ACTIONS
+from pathlib import Path
+
+import torch
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
+from actions import ACTIONS, load_action_space
+from core_types import build_prompt
 
 CKPT_DIR = "clf_ckpt"
-DEVICE   = "cuda" if torch.cuda.is_available() else "cpu"
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 tokenizer = AutoTokenizer.from_pretrained(CKPT_DIR)
 model = AutoModelForSequenceClassification.from_pretrained(CKPT_DIR).to(DEVICE)
 model.eval()
 
+
+def _load_policy_actions() -> list[str]:
+    action_space_file = Path(CKPT_DIR) / "action_space.json"
+    if action_space_file.exists():
+        return load_action_space(str(action_space_file))
+    return ACTIONS
+
+
+POLICY_ACTIONS = _load_policy_actions()
+
+
 @torch.inference_mode()
 def choose_tactic(state_pp: str, full_name: str = "") -> str:
-    prompt = f"Theorem: {full_name}\n\nProof state:\n{state_pp}\n"
+    prompt = build_prompt(state_pp=state_pp, full_name=full_name)
     enc = tokenizer(
         prompt,
         max_length=512,
@@ -20,8 +36,8 @@ def choose_tactic(state_pp: str, full_name: str = "") -> str:
         padding="max_length",
         return_tensors="pt",
     ).to(DEVICE)
-    logits = model(**enc).logits  # [1, num_actions]
-    probs = torch.softmax(logits, dim=-1)
-    idx = torch.argmax(probs, dim=-1).item()
-    return ACTIONS[idx]
-
+    logits = model(**enc).logits
+    idx = torch.argmax(torch.softmax(logits, dim=-1), dim=-1).item()
+    if idx >= len(POLICY_ACTIONS):
+        idx = 0
+    return POLICY_ACTIONS[idx]
