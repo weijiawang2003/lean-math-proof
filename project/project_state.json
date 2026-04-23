@@ -1,6 +1,6 @@
 {
   "created": "2026-04-19T20:42:27+00:00",
-  "last_updated": "2026-04-23T08:22:51+00:00",
+  "last_updated": "2026-04-23T16:53:07+00:00",
   "version": 1,
   "theorems": {
     "Set.union_comm": {
@@ -13,7 +13,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:55:41+00:00",
+      "proof_timestamp": "2026-04-23T15:26:56+00:00",
       "error_message": null
     },
     "Set.inter_comm": {
@@ -26,7 +26,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:55:45+00:00",
+      "proof_timestamp": "2026-04-23T15:27:01+00:00",
       "error_message": null
     },
     "Set.mem_union": {
@@ -39,7 +39,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:55:49+00:00",
+      "proof_timestamp": "2026-04-23T15:27:05+00:00",
       "error_message": null
     },
     "Set.mem_inter_iff": {
@@ -52,7 +52,7 @@
       "proof_tactics": "tauto",
       "proof_steps": 2,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:55:54+00:00",
+      "proof_timestamp": "2026-04-23T15:27:10+00:00",
       "error_message": null
     },
     "Set.subset_univ": {
@@ -91,7 +91,7 @@
       "proof_tactics": "simp [Set.ext_iff]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:56:05+00:00",
+      "proof_timestamp": "2026-04-23T15:27:25+00:00",
       "error_message": null
     },
     "Set.empty_union": {
@@ -104,7 +104,7 @@
       "proof_tactics": "simp [Set.ext_iff]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:56:09+00:00",
+      "proof_timestamp": "2026-04-23T15:27:29+00:00",
       "error_message": null
     },
     "Set.inter_univ": {
@@ -114,10 +114,10 @@
       "searched": true,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "simp [Nat.add_zero]",
+      "proof_tactics": "simp [Set.ext_iff]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:56:13+00:00",
+      "proof_timestamp": "2026-04-23T15:27:34+00:00",
       "error_message": null
     },
     "Set.univ_inter": {
@@ -127,10 +127,10 @@
       "searched": true,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "simp [Set.subset_def]",
+      "proof_tactics": "simp [Set.mem_union]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:56:17+00:00",
+      "proof_timestamp": "2026-04-23T15:27:39+00:00",
       "error_message": null
     },
     "Set.ite_univ": {
@@ -143,7 +143,7 @@
       "proof_tactics": "simp [Set.ite]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-19T23:09:54+00:00",
+      "proof_timestamp": "2026-04-23T15:27:45+00:00",
       "error_message": null
     },
     "Nat.mul_add_mod'": {
@@ -169,7 +169,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:56:32+00:00",
+      "proof_timestamp": "2026-04-23T15:27:55+00:00",
       "error_message": null
     },
     "Set.inter_assoc": {
@@ -182,7 +182,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:56:36+00:00",
+      "proof_timestamp": "2026-04-23T15:28:00+00:00",
       "error_message": null
     },
     "Set.union_self": {
@@ -195,7 +195,7 @@
       "proof_tactics": "simp [Set.ext_iff]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:56:40+00:00",
+      "proof_timestamp": "2026-04-23T15:28:04+00:00",
       "error_message": null
     },
     "Set.inter_self": {
@@ -208,7 +208,7 @@
       "proof_tactics": "simp [Set.ext_iff]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:56:44+00:00",
+      "proof_timestamp": "2026-04-23T15:28:09+00:00",
       "error_message": null
     },
     "Set.union_univ": {
@@ -221,7 +221,7 @@
       "proof_tactics": "simp [Nat.mul_one]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:56:48+00:00",
+      "proof_timestamp": "2026-04-23T15:28:13+00:00",
       "error_message": null
     },
     "Set.inter_empty": {
@@ -234,7 +234,7 @@
       "proof_tactics": "simp [Set.ext_iff]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:56:52+00:00",
+      "proof_timestamp": "2026-04-23T15:28:18+00:00",
       "error_message": null
     },
     "Set.subset_union_left": {
@@ -244,10 +244,10 @@
       "searched": true,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "aesop",
-      "proof_steps": 2,
+      "proof_tactics": "tauto",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:56:56+00:00",
+      "proof_timestamp": "2026-04-23T15:28:22+00:00",
       "error_message": null
     },
     "Set.subset_union_right": {
@@ -257,10 +257,10 @@
       "searched": true,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "aesop",
-      "proof_steps": 2,
+      "proof_tactics": "tauto",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:57:01+00:00",
+      "proof_timestamp": "2026-04-23T15:28:27+00:00",
       "error_message": null
     },
     "Set.inter_subset_left": {
@@ -325,7 +325,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:57:27+00:00",
+      "proof_timestamp": "2026-04-23T15:28:57+00:00",
       "error_message": null
     },
     "Set.inter_union_distrib_left": {
@@ -338,7 +338,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:57:31+00:00",
+      "proof_timestamp": "2026-04-23T15:29:01+00:00",
       "error_message": null
     },
     "Set.diff_self": {
@@ -348,10 +348,10 @@
       "searched": true,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "simp [Nat.mul_zero]",
+      "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:57:37+00:00",
+      "proof_timestamp": "2026-04-23T15:29:08+00:00",
       "error_message": null
     },
     "Set.diff_empty": {
@@ -361,10 +361,10 @@
       "searched": true,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "simp [Nat.mul_zero]",
+      "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:57:42+00:00",
+      "proof_timestamp": "2026-04-23T15:29:14+00:00",
       "error_message": null
     },
     "Set.empty_diff": {
@@ -374,10 +374,10 @@
       "searched": true,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "simp [Nat.mul_zero]",
+      "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-19T20:42:27+00:00",
-      "proof_timestamp": "2026-04-21T05:57:47+00:00",
+      "proof_timestamp": "2026-04-23T15:29:20+00:00",
       "error_message": null
     },
     "Finset.disjoint_insert_right": {
@@ -416,7 +416,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T01:25:37+00:00",
-      "proof_timestamp": "2026-04-21T05:58:02+00:00",
+      "proof_timestamp": "2026-04-23T15:29:36+00:00",
       "error_message": null
     },
     "Finset.forall_mem_not_eq'": {
@@ -429,7 +429,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T01:27:49+00:00",
-      "proof_timestamp": "2026-04-21T05:58:06+00:00",
+      "proof_timestamp": "2026-04-23T15:29:41+00:00",
       "error_message": null
     },
     "Finset.not_subset": {
@@ -455,7 +455,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T01:31:49+00:00",
-      "proof_timestamp": "2026-04-21T05:58:18+00:00",
+      "proof_timestamp": "2026-04-23T15:29:54+00:00",
       "error_message": null
     },
     "Finset.not_mem_empty": {
@@ -466,9 +466,9 @@
       "search_traces": 126,
       "proved": true,
       "proof_tactics": "tauto",
-      "proof_steps": 2,
+      "proof_steps": 1,
       "search_timestamp": "2026-04-20T01:35:02+00:00",
-      "proof_timestamp": "2026-04-21T05:58:24+00:00",
+      "proof_timestamp": "2026-04-23T15:30:00+00:00",
       "error_message": null
     },
     "Finset.coe_empty": {
@@ -478,10 +478,10 @@
       "searched": true,
       "search_traces": 414,
       "proved": true,
-      "proof_tactics": "simp [Set.ext_iff]",
+      "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T01:38:05+00:00",
-      "proof_timestamp": "2026-04-21T05:58:29+00:00",
+      "proof_timestamp": "2026-04-23T15:30:06+00:00",
       "error_message": null
     },
     "Finset.coe_eq_empty": {
@@ -507,7 +507,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T01:46:37+00:00",
-      "proof_timestamp": "2026-04-21T05:58:40+00:00",
+      "proof_timestamp": "2026-04-23T15:30:20+00:00",
       "error_message": null
     },
     "Finset.coe_eq_singleton": {
@@ -582,10 +582,10 @@
       "searched": true,
       "search_traces": 57,
       "proved": true,
-      "proof_tactics": "simp [Set.subset_def]",
+      "proof_tactics": "simp [Set.union_self]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T02:53:50+00:00",
-      "proof_timestamp": "2026-04-21T05:59:19+00:00",
+      "proof_timestamp": "2026-04-23T15:31:27+00:00",
       "error_message": null
     },
     "Finset.subset_singleton_iff": {
@@ -608,10 +608,10 @@
       "searched": true,
       "search_traces": 57,
       "proved": true,
-      "proof_tactics": "simp [Set.union_univ]",
+      "proof_tactics": "simp [Set.univ_union]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T02:56:16+00:00",
-      "proof_timestamp": "2026-04-21T05:59:32+00:00",
+      "proof_timestamp": "2026-04-23T15:31:50+00:00",
       "error_message": null
     },
     "Finset.ssubset_singleton_iff": {
@@ -634,10 +634,10 @@
       "searched": true,
       "search_traces": 64,
       "proved": true,
-      "proof_tactics": "simp [Set.univ_union]",
+      "proof_tactics": "simp [Set.inter_empty]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T02:58:40+00:00",
-      "proof_timestamp": "2026-04-21T05:59:43+00:00",
+      "proof_timestamp": "2026-04-23T15:32:11+00:00",
       "error_message": null
     },
     "Finset.not_nontrivial_singleton": {
@@ -647,10 +647,10 @@
       "searched": true,
       "search_traces": 64,
       "proved": true,
-      "proof_tactics": "simp [Set.univ_union]",
+      "proof_tactics": "simp [Set.inter_empty]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T02:58:58+00:00",
-      "proof_timestamp": "2026-04-21T05:59:49+00:00",
+      "proof_timestamp": "2026-04-23T15:32:18+00:00",
       "error_message": null
     },
     "Finset.forall_mem_cons": {
@@ -660,10 +660,10 @@
       "searched": true,
       "search_traces": 57,
       "proved": true,
-      "proof_tactics": "simp [Set.union_univ]",
+      "proof_tactics": "simp [Set.union_self]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T02:59:19+00:00",
-      "proof_timestamp": "2026-04-21T05:59:54+00:00",
+      "proof_timestamp": "2026-04-23T15:32:24+00:00",
       "error_message": null
     },
     "Finset.nonempty_mk": {
@@ -754,7 +754,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 2,
       "search_timestamp": "2026-04-20T03:50:19+00:00",
-      "proof_timestamp": "2026-04-21T06:00:40+00:00",
+      "proof_timestamp": "2026-04-23T15:33:36+00:00",
       "error_message": null
     },
     "Finset.disjoint_coe": {
@@ -777,10 +777,10 @@
       "searched": true,
       "search_traces": 421,
       "proved": true,
-      "proof_tactics": "simp [Set.ext_iff]",
+      "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T03:56:32+00:00",
-      "proof_timestamp": "2026-04-20T05:53:40+00:00",
+      "proof_timestamp": "2026-04-23T15:33:50+00:00",
       "error_message": null
     },
     "Finset.disjUnion_singleton": {
@@ -789,11 +789,11 @@
       "available": null,
       "searched": true,
       "search_traces": 556,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "aesop",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-20T04:03:24+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:33:57+00:00",
       "error_message": null
     },
     "Finset.insert_val_of_not_mem": {
@@ -803,10 +803,10 @@
       "searched": true,
       "search_traces": 388,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp [*]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T06:58:29+00:00",
-      "proof_timestamp": "2026-04-21T06:01:06+00:00",
+      "proof_timestamp": "2026-04-23T15:34:04+00:00",
       "error_message": null
     },
     "Finset.cons_eq_insert": {
@@ -819,7 +819,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:01:15+00:00",
-      "proof_timestamp": "2026-04-21T06:01:12+00:00",
+      "proof_timestamp": "2026-04-23T15:34:11+00:00",
       "error_message": null
     },
     "Finset.coe_insert": {
@@ -832,7 +832,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:04:57+00:00",
-      "proof_timestamp": "2026-04-20T05:54:05+00:00",
+      "proof_timestamp": "2026-04-23T15:34:18+00:00",
       "error_message": null
     },
     "Finset.mem_insert_coe": {
@@ -842,10 +842,10 @@
       "searched": true,
       "search_traces": 63,
       "proved": true,
-      "proof_tactics": "simp [Set.union_univ]",
+      "proof_tactics": "simp [Set.diff_empty]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:05:18+00:00",
-      "proof_timestamp": "2026-04-21T06:01:25+00:00",
+      "proof_timestamp": "2026-04-23T15:34:25+00:00",
       "error_message": null
     },
     "Finset.Insert.comm": {
@@ -858,7 +858,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:13:27+00:00",
-      "proof_timestamp": "2026-04-21T06:01:32+00:00",
+      "proof_timestamp": "2026-04-23T15:34:32+00:00",
       "error_message": null
     },
     "Finset.coe_eq_pair": {
@@ -881,10 +881,10 @@
       "searched": true,
       "search_traces": 63,
       "proved": true,
-      "proof_tactics": "simp [Set.union_univ]",
+      "proof_tactics": "simp [Set.mem_diff]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:16:12+00:00",
-      "proof_timestamp": "2026-04-21T06:01:45+00:00",
+      "proof_timestamp": "2026-04-23T15:34:55+00:00",
       "error_message": null
     },
     "Finset.insert_subset_iff": {
@@ -923,7 +923,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:23:05+00:00",
-      "proof_timestamp": "2026-04-21T06:02:06+00:00",
+      "proof_timestamp": "2026-04-23T15:35:18+00:00",
       "error_message": null
     },
     "Finset.not_mem_union": {
@@ -933,10 +933,10 @@
       "searched": true,
       "search_traces": 65,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp [Set.union_univ]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:23:25+00:00",
-      "proof_timestamp": "2026-04-21T06:02:12+00:00",
+      "proof_timestamp": "2026-04-23T15:35:25+00:00",
       "error_message": null
     },
     "Finset.union_left_comm": {
@@ -949,7 +949,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:30:57+00:00",
-      "proof_timestamp": "2026-04-21T06:02:19+00:00",
+      "proof_timestamp": "2026-04-23T15:35:33+00:00",
       "error_message": null
     },
     "Finset.union_right_comm": {
@@ -962,7 +962,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:37:22+00:00",
-      "proof_timestamp": "2026-04-21T06:02:26+00:00",
+      "proof_timestamp": "2026-04-23T15:35:40+00:00",
       "error_message": null
     },
     "Finset.union_empty": {
@@ -975,7 +975,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:39:57+00:00",
-      "proof_timestamp": "2026-04-21T06:02:33+00:00",
+      "proof_timestamp": "2026-04-23T15:35:48+00:00",
       "error_message": null
     },
     "Finset.empty_union": {
@@ -988,7 +988,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:42:31+00:00",
-      "proof_timestamp": "2026-04-21T06:02:39+00:00",
+      "proof_timestamp": "2026-04-23T15:35:56+00:00",
       "error_message": null
     },
     "Finset.insert_union": {
@@ -1001,7 +1001,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:49:58+00:00",
-      "proof_timestamp": "2026-04-21T06:02:46+00:00",
+      "proof_timestamp": "2026-04-23T15:36:03+00:00",
       "error_message": null
     },
     "Finset.union_insert": {
@@ -1014,7 +1014,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:58:03+00:00",
-      "proof_timestamp": "2026-04-21T06:02:53+00:00",
+      "proof_timestamp": "2026-04-23T15:36:11+00:00",
       "error_message": null
     },
     "Finset.insert_union_distrib": {
@@ -1024,10 +1024,10 @@
       "searched": true,
       "search_traces": 66,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp [Set.union_univ]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T07:58:26+00:00",
-      "proof_timestamp": "2026-04-21T06:03:00+00:00",
+      "proof_timestamp": "2026-04-23T15:36:19+00:00",
       "error_message": null
     },
     "Finset.left_eq_union": {
@@ -1105,7 +1105,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T08:30:57+00:00",
-      "proof_timestamp": "2026-04-21T06:03:47+00:00",
+      "proof_timestamp": "2026-04-23T15:37:22+00:00",
       "error_message": null
     },
     "Finset.union_inter_cancel_right": {
@@ -1118,7 +1118,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T08:36:49+00:00",
-      "proof_timestamp": "2026-04-21T06:03:55+00:00",
+      "proof_timestamp": "2026-04-23T15:37:29+00:00",
       "error_message": null
     },
     "Finset.inter_comm": {
@@ -1131,7 +1131,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T08:43:02+00:00",
-      "proof_timestamp": "2026-04-21T06:04:03+00:00",
+      "proof_timestamp": "2026-04-23T15:37:37+00:00",
       "error_message": null
     },
     "Finset.inter_assoc": {
@@ -1144,7 +1144,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T08:49:22+00:00",
-      "proof_timestamp": "2026-04-21T06:04:10+00:00",
+      "proof_timestamp": "2026-04-23T15:37:45+00:00",
       "error_message": null
     },
     "Finset.inter_left_comm": {
@@ -1157,7 +1157,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T08:55:43+00:00",
-      "proof_timestamp": "2026-04-21T06:04:18+00:00",
+      "proof_timestamp": "2026-04-23T15:37:53+00:00",
       "error_message": null
     },
     "Finset.inter_right_comm": {
@@ -1170,7 +1170,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T09:02:22+00:00",
-      "proof_timestamp": "2026-04-21T06:04:25+00:00",
+      "proof_timestamp": "2026-04-23T15:38:01+00:00",
       "error_message": null
     },
     "Finset.inter_empty": {
@@ -1183,7 +1183,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T09:05:15+00:00",
-      "proof_timestamp": "2026-04-21T06:04:33+00:00",
+      "proof_timestamp": "2026-04-23T15:38:09+00:00",
       "error_message": null
     },
     "Finset.empty_inter": {
@@ -1196,7 +1196,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T09:08:06+00:00",
-      "proof_timestamp": "2026-04-21T06:04:41+00:00",
+      "proof_timestamp": "2026-04-23T15:38:18+00:00",
       "error_message": null
     },
     "Finset.inter_union_self": {
@@ -1209,7 +1209,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T09:13:58+00:00",
-      "proof_timestamp": "2026-04-21T06:04:48+00:00",
+      "proof_timestamp": "2026-04-23T15:38:25+00:00",
       "error_message": null
     },
     "Finset.inter_insert_of_mem": {
@@ -1235,7 +1235,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T09:33:05+00:00",
-      "proof_timestamp": "2026-04-21T06:05:03+00:00",
+      "proof_timestamp": "2026-04-23T15:38:48+00:00",
       "error_message": null
     },
     "Finset.singleton_inter_of_mem": {
@@ -1248,7 +1248,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T09:39:16+00:00",
-      "proof_timestamp": "2026-04-21T06:05:11+00:00",
+      "proof_timestamp": "2026-04-23T15:38:56+00:00",
       "error_message": null
     },
     "Finset.inter_singleton_of_mem": {
@@ -1313,7 +1313,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T10:31:56+00:00",
-      "proof_timestamp": "2026-04-21T06:05:53+00:00",
+      "proof_timestamp": "2026-04-23T15:39:52+00:00",
       "error_message": null
     },
     "Finset.erase_insert": {
@@ -1323,10 +1323,10 @@
       "searched": true,
       "search_traces": 556,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp [*]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T10:37:33+00:00",
-      "proof_timestamp": "2026-04-21T06:06:01+00:00",
+      "proof_timestamp": "2026-04-23T15:40:01+00:00",
       "error_message": null
     },
     "Finset.erase_cons_of_ne": {
@@ -1352,7 +1352,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T10:47:13+00:00",
-      "proof_timestamp": "2026-04-21T06:06:18+00:00",
+      "proof_timestamp": "2026-04-23T15:40:23+00:00",
       "error_message": null
     },
     "Finset.coe_erase": {
@@ -1365,7 +1365,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T10:54:02+00:00",
-      "proof_timestamp": "2026-04-21T06:06:26+00:00",
+      "proof_timestamp": "2026-04-23T15:40:31+00:00",
       "error_message": null
     },
     "Finset.erase_cons": {
@@ -1375,10 +1375,10 @@
       "searched": true,
       "search_traces": 556,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp_all",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T10:59:42+00:00",
-      "proof_timestamp": "2026-04-21T06:06:35+00:00",
+      "proof_timestamp": "2026-04-23T15:40:40+00:00",
       "error_message": null
     },
     "Finset.erase_idem": {
@@ -1388,10 +1388,10 @@
       "searched": true,
       "search_traces": 67,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp [Set.mem_diff]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T11:00:05+00:00",
-      "proof_timestamp": "2026-04-21T06:06:43+00:00",
+      "proof_timestamp": "2026-04-23T15:40:49+00:00",
       "error_message": null
     },
     "Finset.subset_insert_iff_of_not_mem": {
@@ -1440,10 +1440,10 @@
       "searched": true,
       "search_traces": 433,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp_all",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T19:52:37+00:00",
-      "proof_timestamp": "2026-04-21T06:07:20+00:00",
+      "proof_timestamp": "2026-04-23T15:41:33+00:00",
       "error_message": null
     },
     "Finset.not_mem_sdiff_of_not_mem_left": {
@@ -1453,10 +1453,10 @@
       "searched": true,
       "search_traces": 441,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp_all",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T19:57:57+00:00",
-      "proof_timestamp": "2026-04-21T06:07:29+00:00",
+      "proof_timestamp": "2026-04-23T15:41:41+00:00",
       "error_message": null
     },
     "Finset.union_sdiff_symm": {
@@ -1469,7 +1469,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T20:03:55+00:00",
-      "proof_timestamp": "2026-04-21T06:07:37+00:00",
+      "proof_timestamp": "2026-04-23T15:41:50+00:00",
       "error_message": null
     },
     "Finset.insert_sdiff_cancel": {
@@ -1547,7 +1547,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T22:46:21+00:00",
-      "proof_timestamp": "2026-04-21T06:08:34+00:00",
+      "proof_timestamp": "2026-04-23T15:43:10+00:00",
       "error_message": null
     },
     "Finset.erase_inter": {
@@ -1560,7 +1560,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T22:52:39+00:00",
-      "proof_timestamp": "2026-04-21T06:08:43+00:00",
+      "proof_timestamp": "2026-04-23T15:43:19+00:00",
       "error_message": null
     },
     "Finset.erase_sdiff_comm": {
@@ -1573,7 +1573,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T22:59:03+00:00",
-      "proof_timestamp": "2026-04-21T06:08:53+00:00",
+      "proof_timestamp": "2026-04-23T15:43:29+00:00",
       "error_message": null
     },
     "Finset.insert_union_comm": {
@@ -1586,7 +1586,7 @@
       "proof_tactics": "simp [Set.union_univ]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T22:59:26+00:00",
-      "proof_timestamp": "2026-04-21T06:09:02+00:00",
+      "proof_timestamp": "2026-04-23T15:43:38+00:00",
       "error_message": null
     },
     "Finset.erase_inter_comm": {
@@ -1599,7 +1599,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T23:06:05+00:00",
-      "proof_timestamp": "2026-04-21T06:09:11+00:00",
+      "proof_timestamp": "2026-04-23T15:43:48+00:00",
       "error_message": null
     },
     "Finset.erase_union_distrib": {
@@ -1612,7 +1612,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T23:14:06+00:00",
-      "proof_timestamp": "2026-04-21T06:09:20+00:00",
+      "proof_timestamp": "2026-04-23T15:43:57+00:00",
       "error_message": null
     },
     "Finset.insert_inter_distrib": {
@@ -1625,7 +1625,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 2,
       "search_timestamp": "2026-04-20T23:21:06+00:00",
-      "proof_timestamp": "2026-04-21T06:09:30+00:00",
+      "proof_timestamp": "2026-04-23T15:44:07+00:00",
       "error_message": null
     },
     "Finset.erase_sdiff_distrib": {
@@ -1638,7 +1638,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-20T23:27:36+00:00",
-      "proof_timestamp": "2026-04-21T06:09:39+00:00",
+      "proof_timestamp": "2026-04-23T15:44:17+00:00",
       "error_message": null
     },
     "Finset.erase_union_of_mem": {
@@ -1674,10 +1674,10 @@
       "searched": true,
       "search_traces": 543,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp [*]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T00:25:17+00:00",
-      "proof_timestamp": "2026-04-21T06:10:08+00:00",
+      "proof_timestamp": "2026-04-23T15:44:53+00:00",
       "error_message": null
     },
     "Finset.sdiff_union_erase_cancel": {
@@ -1703,7 +1703,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T00:58:30+00:00",
-      "proof_timestamp": "2026-04-21T06:10:27+00:00",
+      "proof_timestamp": "2026-04-23T15:45:19+00:00",
       "error_message": null
     },
     "Finset.sdiff_insert_insert_of_mem_of_not_mem": {
@@ -1820,7 +1820,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T02:30:02+00:00",
-      "proof_timestamp": "2026-04-21T06:11:58+00:00",
+      "proof_timestamp": "2026-04-23T15:47:28+00:00",
       "error_message": null
     },
     "Finset.filter_comm": {
@@ -1833,7 +1833,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T02:36:25+00:00",
-      "proof_timestamp": "2026-04-21T06:12:07+00:00",
+      "proof_timestamp": "2026-04-23T15:47:38+00:00",
       "error_message": null
     },
     "Finset.filter_congr_decidable": {
@@ -1846,7 +1846,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T02:39:32+00:00",
-      "proof_timestamp": "2026-04-21T06:12:16+00:00",
+      "proof_timestamp": "2026-04-23T15:47:48+00:00",
       "error_message": null
     },
     "Finset.filter_eq_self": {
@@ -1898,7 +1898,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T02:56:14+00:00",
-      "proof_timestamp": "2026-04-21T06:12:57+00:00",
+      "proof_timestamp": "2026-04-23T15:48:45+00:00",
       "error_message": null
     },
     "Finset.disjoint_filter": {
@@ -1924,7 +1924,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T03:08:30+00:00",
-      "proof_timestamp": "2026-04-21T06:13:18+00:00",
+      "proof_timestamp": "2026-04-23T15:49:17+00:00",
       "error_message": null
     },
     "Finset.filter_union_right": {
@@ -1937,7 +1937,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T03:16:51+00:00",
-      "proof_timestamp": "2026-04-21T06:13:29+00:00",
+      "proof_timestamp": "2026-04-23T15:49:27+00:00",
       "error_message": null
     },
     "Finset.filter_mem_eq_inter": {
@@ -1950,7 +1950,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T03:19:47+00:00",
-      "proof_timestamp": "2026-04-21T06:13:39+00:00",
+      "proof_timestamp": "2026-04-23T15:49:38+00:00",
       "error_message": null
     },
     "Finset.inter_filter": {
@@ -1963,7 +1963,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T03:25:55+00:00",
-      "proof_timestamp": "2026-04-21T06:13:50+00:00",
+      "proof_timestamp": "2026-04-23T15:49:48+00:00",
       "error_message": null
     },
     "Finset.filter_or": {
@@ -1976,7 +1976,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T03:34:33+00:00",
-      "proof_timestamp": "2026-04-21T06:14:00+00:00",
+      "proof_timestamp": "2026-04-23T15:49:58+00:00",
       "error_message": null
     },
     "Finset.filter_and": {
@@ -1989,7 +1989,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T03:40:37+00:00",
-      "proof_timestamp": "2026-04-21T06:14:10+00:00",
+      "proof_timestamp": "2026-04-23T15:50:08+00:00",
       "error_message": null
     },
     "Finset.filter_not": {
@@ -2002,7 +2002,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T03:46:14+00:00",
-      "proof_timestamp": "2026-04-21T06:14:21+00:00",
+      "proof_timestamp": "2026-04-23T15:50:19+00:00",
       "error_message": null
     },
     "Finset.filter_and_not": {
@@ -2015,7 +2015,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T03:53:19+00:00",
-      "proof_timestamp": "2026-04-21T06:14:31+00:00",
+      "proof_timestamp": "2026-04-23T15:50:29+00:00",
       "error_message": null
     },
     "Finset.sdiff_eq_filter": {
@@ -2028,7 +2028,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T03:56:29+00:00",
-      "proof_timestamp": "2026-04-21T06:14:42+00:00",
+      "proof_timestamp": "2026-04-23T15:50:40+00:00",
       "error_message": null
     },
     "Finset.sdiff_eq_self": {
@@ -2054,7 +2054,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T04:39:58+00:00",
-      "proof_timestamp": "2026-04-21T06:15:04+00:00",
+      "proof_timestamp": "2026-04-23T15:51:02+00:00",
       "error_message": null
     },
     "Finset.filter_ne'": {
@@ -2067,7 +2067,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T04:46:21+00:00",
-      "proof_timestamp": "2026-04-21T06:15:14+00:00",
+      "proof_timestamp": "2026-04-23T15:51:12+00:00",
       "error_message": null
     },
     "Finset.filter_inter_filter_neg_eq": {
@@ -2080,7 +2080,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T08:54:40+00:00",
-      "proof_timestamp": "2026-04-21T06:15:24+00:00",
+      "proof_timestamp": "2026-04-23T15:51:23+00:00",
       "error_message": null
     },
     "Finset.range_eq_empty_iff": {
@@ -2103,10 +2103,10 @@
       "searched": true,
       "search_traces": 76,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp [Set.univ_union]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T09:00:46+00:00",
-      "proof_timestamp": "2026-04-21T06:15:44+00:00",
+      "proof_timestamp": "2026-04-23T15:51:46+00:00",
       "error_message": null
     },
     "Finset.exists_mem_insert": {
@@ -2116,10 +2116,10 @@
       "searched": true,
       "search_traces": 75,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp [Set.union_univ]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T09:01:15+00:00",
-      "proof_timestamp": "2026-04-21T06:15:54+00:00",
+      "proof_timestamp": "2026-04-23T15:51:57+00:00",
       "error_message": null
     },
     "Finset.forall_mem_insert": {
@@ -2129,10 +2129,10 @@
       "searched": true,
       "search_traces": 75,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp [Set.univ_union]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T09:01:45+00:00",
-      "proof_timestamp": "2026-04-21T06:16:04+00:00",
+      "proof_timestamp": "2026-04-23T15:52:08+00:00",
       "error_message": null
     },
     "coe_notMemRangeEquiv_symm": {
@@ -2142,10 +2142,10 @@
       "searched": true,
       "search_traces": 485,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "congr 1",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T09:05:17+00:00",
-      "proof_timestamp": "2026-04-21T06:16:14+00:00",
+      "proof_timestamp": "2026-04-23T15:52:19+00:00",
       "error_message": null
     },
     "Multiset.Nodup.toFinset_inj": {
@@ -2171,7 +2171,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T09:45:49+00:00",
-      "proof_timestamp": "2026-04-21T06:16:36+00:00",
+      "proof_timestamp": "2026-04-23T15:52:42+00:00",
       "error_message": null
     },
     "Multiset.toFinset_add": {
@@ -2184,7 +2184,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T09:52:26+00:00",
-      "proof_timestamp": "2026-04-21T06:16:46+00:00",
+      "proof_timestamp": "2026-04-23T15:52:53+00:00",
       "error_message": null
     },
     "Multiset.toFinset_inter": {
@@ -2197,7 +2197,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T09:59:02+00:00",
-      "proof_timestamp": "2026-04-21T06:16:56+00:00",
+      "proof_timestamp": "2026-04-23T15:53:05+00:00",
       "error_message": null
     },
     "Multiset.toFinset_nonempty": {
@@ -2236,7 +2236,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T10:45:57+00:00",
-      "proof_timestamp": "2026-04-21T06:17:30+00:00",
+      "proof_timestamp": "2026-04-23T15:53:42+00:00",
       "error_message": null
     },
     "List.toFinset_eq": {
@@ -2262,7 +2262,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T11:28:55+00:00",
-      "proof_timestamp": "2026-04-21T06:17:52+00:00",
+      "proof_timestamp": "2026-04-23T15:54:05+00:00",
       "error_message": null
     },
     "List.toFinset_eq_iff_perm_dedup": {
@@ -2337,10 +2337,10 @@
       "searched": true,
       "search_traces": 49,
       "proved": true,
-      "proof_tactics": "simp [Nat.mul_zero]",
+      "proof_tactics": "simp [List.map]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T12:27:11+00:00",
-      "proof_timestamp": "2026-04-21T06:18:53+00:00",
+      "proof_timestamp": "2026-04-23T15:55:42+00:00",
       "error_message": null
     },
     "Nat.lt_iff_add_one_le": {
@@ -2353,7 +2353,7 @@
       "proof_tactics": "simp_arith",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T12:33:05+00:00",
-      "proof_timestamp": "2026-04-21T06:18:56+00:00",
+      "proof_timestamp": "2026-04-23T15:55:45+00:00",
       "error_message": null
     },
     "Nat.lt_one_add_iff": {
@@ -2362,11 +2362,11 @@
       "available": null,
       "searched": true,
       "search_traces": 442,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "simp_arith",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T12:39:57+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:55:47+00:00",
       "error_message": null
     },
     "Nat.one_add_le_iff": {
@@ -2375,11 +2375,11 @@
       "available": null,
       "searched": true,
       "search_traces": 460,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T12:46:48+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:55:50+00:00",
       "error_message": null
     },
     "Nat.le_one_iff_eq_zero_or_eq_one": {
@@ -2388,11 +2388,11 @@
       "available": null,
       "searched": true,
       "search_traces": 487,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T12:56:44+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:55:53+00:00",
       "error_message": null
     },
     "Nat.lt_one_iff": {
@@ -2401,11 +2401,11 @@
       "available": null,
       "searched": true,
       "search_traces": 375,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T13:02:58+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:55:56+00:00",
       "error_message": null
     },
     "Nat.min_eq_zero_iff": {
@@ -2414,11 +2414,11 @@
       "available": null,
       "searched": true,
       "search_traces": 535,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T13:13:34+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:55:58+00:00",
       "error_message": null
     },
     "Nat.max_eq_zero_iff": {
@@ -2427,11 +2427,11 @@
       "available": null,
       "searched": true,
       "search_traces": 535,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T13:24:10+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:56:01+00:00",
       "error_message": null
     },
     "Nat.pred_one_add": {
@@ -2440,11 +2440,11 @@
       "available": null,
       "searched": true,
       "search_traces": 474,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 2,
       "search_timestamp": "2026-04-21T13:31:18+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:56:05+00:00",
       "error_message": null
     },
     "Nat.pred_eq_self_iff": {
@@ -2453,11 +2453,11 @@
       "available": null,
       "searched": true,
       "search_traces": 430,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 2,
       "search_timestamp": "2026-04-21T13:40:10+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:56:09+00:00",
       "error_message": null
     },
     "Nat.pred_eq_of_eq_succ": {
@@ -2467,10 +2467,10 @@
       "searched": true,
       "search_traces": 474,
       "proved": true,
-      "proof_tactics": "simp_all",
+      "proof_tactics": "simp [*]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T13:47:00+00:00",
-      "proof_timestamp": "2026-04-21T06:19:23+00:00",
+      "proof_timestamp": "2026-04-23T15:56:12+00:00",
       "error_message": null
     },
     "Nat.pred_eq_succ_iff": {
@@ -2479,11 +2479,11 @@
       "available": null,
       "searched": true,
       "search_traces": 448,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T15:08:44+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:56:15+00:00",
       "error_message": null
     },
     "Nat.forall_lt_succ": {
@@ -2505,11 +2505,11 @@
       "available": null,
       "searched": true,
       "search_traces": 490,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T18:44:21+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:56:31+00:00",
       "error_message": null
     },
     "Nat.pred_sub": {
@@ -2531,11 +2531,11 @@
       "available": null,
       "searched": true,
       "search_traces": 669,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T19:13:53+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:56:46+00:00",
       "error_message": null
     },
     "Nat.le_add_pred_of_pos": {
@@ -2544,11 +2544,11 @@
       "available": null,
       "searched": true,
       "search_traces": 714,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T19:23:59+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:56:49+00:00",
       "error_message": null
     },
     "Nat.add_eq_left": {
@@ -2557,11 +2557,11 @@
       "available": null,
       "searched": true,
       "search_traces": 399,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T19:30:43+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:56:52+00:00",
       "error_message": null
     },
     "Nat.add_eq_right": {
@@ -2570,11 +2570,11 @@
       "available": null,
       "searched": true,
       "search_traces": 417,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "simp_arith",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T19:37:00+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:56:55+00:00",
       "error_message": null
     },
     "Nat.add_eq_max_iff": {
@@ -2583,11 +2583,11 @@
       "available": null,
       "searched": true,
       "search_traces": 587,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T19:47:12+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:56:59+00:00",
       "error_message": null
     },
     "Nat.add_eq_min_iff": {
@@ -2596,11 +2596,11 @@
       "available": null,
       "searched": true,
       "search_traces": 587,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T19:57:42+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:02+00:00",
       "error_message": null
     },
     "Nat.add_eq_zero": {
@@ -2609,11 +2609,11 @@
       "available": null,
       "searched": true,
       "search_traces": 587,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T20:08:04+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:05+00:00",
       "error_message": null
     },
     "Nat.add_pos_iff_pos_or_pos": {
@@ -2622,11 +2622,11 @@
       "available": null,
       "searched": true,
       "search_traces": 604,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T20:18:26+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:08+00:00",
       "error_message": null
     },
     "Nat.add_eq_one_iff": {
@@ -2635,11 +2635,11 @@
       "available": null,
       "searched": true,
       "search_traces": 587,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T20:29:00+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:11+00:00",
       "error_message": null
     },
     "Nat.add_eq_two_iff": {
@@ -2648,11 +2648,11 @@
       "available": null,
       "searched": true,
       "search_traces": 587,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T20:39:22+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:15+00:00",
       "error_message": null
     },
     "Nat.add_eq_three_iff": {
@@ -2661,11 +2661,11 @@
       "available": null,
       "searched": true,
       "search_traces": 587,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T20:49:45+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:18+00:00",
       "error_message": null
     },
     "Nat.le_add_one_iff": {
@@ -2674,11 +2674,11 @@
       "available": null,
       "searched": true,
       "search_traces": 600,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T20:59:18+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:22+00:00",
       "error_message": null
     },
     "Nat.sub_eq_of_eq_add'": {
@@ -2688,10 +2688,10 @@
       "searched": true,
       "search_traces": 603,
       "proved": true,
-      "proof_tactics": "simp_all",
+      "proof_tactics": "simp [*]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-21T21:05:14+00:00",
-      "proof_timestamp": "2026-04-21T06:20:23+00:00",
+      "proof_timestamp": "2026-04-23T15:57:25+00:00",
       "error_message": null
     },
     "Nat.lt_sub_iff_add_lt'": {
@@ -2700,11 +2700,11 @@
       "available": null,
       "searched": true,
       "search_traces": 568,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T21:14:27+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:29+00:00",
       "error_message": null
     },
     "Nat.sub_lt_iff_lt_add": {
@@ -2713,11 +2713,11 @@
       "available": null,
       "searched": true,
       "search_traces": 567,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T21:24:03+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:32+00:00",
       "error_message": null
     },
     "Nat.sub_lt_iff_lt_add'": {
@@ -2726,11 +2726,11 @@
       "available": null,
       "searched": true,
       "search_traces": 566,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T21:33:21+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:36+00:00",
       "error_message": null
     },
     "Nat.sub_sub_sub_cancel_right": {
@@ -2739,11 +2739,11 @@
       "available": null,
       "searched": true,
       "search_traces": 629,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T21:47:14+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:40+00:00",
       "error_message": null
     },
     "Nat.add_sub_sub_cancel": {
@@ -2752,11 +2752,11 @@
       "available": null,
       "searched": true,
       "search_traces": 672,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T21:57:09+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:43+00:00",
       "error_message": null
     },
     "Nat.sub_add_sub_cancel": {
@@ -2765,11 +2765,11 @@
       "available": null,
       "searched": true,
       "search_traces": 543,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T22:06:39+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:47+00:00",
       "error_message": null
     },
     "Nat.sub_lt_sub_iff_right": {
@@ -2778,11 +2778,11 @@
       "available": null,
       "searched": true,
       "search_traces": 621,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T22:17:26+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:50+00:00",
       "error_message": null
     },
     "Nat.zero_eq_mul": {
@@ -2804,11 +2804,11 @@
       "available": null,
       "searched": true,
       "search_traces": 614,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-21T22:56:05+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:57:58+00:00",
       "error_message": null
     },
     "Nat.mul_eq_left": {
@@ -2895,11 +2895,11 @@
       "available": null,
       "searched": true,
       "search_traces": 552,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-22T01:59:03+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T15:59:10+00:00",
       "error_message": null
     },
     "Nat.mul_lt_mul''": {
@@ -3064,11 +3064,11 @@
       "available": null,
       "searched": true,
       "search_traces": 588,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-22T08:57:57+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:01:29+00:00",
       "error_message": null
     },
     "Nat.eq_div_of_mul_eq_left": {
@@ -3233,11 +3233,11 @@
       "available": null,
       "searched": true,
       "search_traces": 766,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-22T20:12:58+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:03:20+00:00",
       "error_message": null
     },
     "Nat.one_lt_two_pow'": {
@@ -3247,10 +3247,10 @@
       "searched": true,
       "search_traces": 38,
       "proved": true,
-      "proof_tactics": "simp [Nat.zero_mul]",
+      "proof_tactics": "simp [*]",
       "proof_steps": 1,
       "search_timestamp": "2026-04-22T20:13:19+00:00",
-      "proof_timestamp": "2026-04-21T06:23:16+00:00",
+      "proof_timestamp": "2026-04-23T16:03:25+00:00",
       "error_message": null
     },
     "Nat.sq_sub_sq": {
@@ -3324,11 +3324,11 @@
       "available": null,
       "searched": true,
       "search_traces": 674,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-22T23:27:14+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:04:25+00:00",
       "error_message": null
     },
     "Nat.mod_two_ne_zero": {
@@ -3337,11 +3337,11 @@
       "available": null,
       "searched": true,
       "search_traces": 674,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": "2026-04-22T23:37:49+00:00",
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:04:29+00:00",
       "error_message": null
     },
     "Nat.mul_div_lt_iff_not_dvd": {
@@ -3848,7 +3848,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:27:17+00:00",
+      "proof_timestamp": "2026-04-23T16:11:13+00:00",
       "error_message": null
     },
     "Set.forall_in_swap": {
@@ -3861,7 +3861,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:27:21+00:00",
+      "proof_timestamp": "2026-04-23T16:11:17+00:00",
       "error_message": null
     },
     "Set.not_subset": {
@@ -3883,11 +3883,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "tauto",
+      "proof_steps": 2,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:11:29+00:00",
       "error_message": null
     },
     "Set.inter_nonempty_iff_exists_right": {
@@ -3924,9 +3924,9 @@
       "search_traces": 0,
       "proved": true,
       "proof_tactics": "aesop",
-      "proof_steps": 2,
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:27:41+00:00",
+      "proof_timestamp": "2026-04-23T16:11:48+00:00",
       "error_message": null
     },
     "Set.isEmpty_coe_sort": {
@@ -3936,10 +3936,10 @@
       "searched": false,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "simp [Set.ext_iff]",
+      "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-20T06:20:03+00:00",
+      "proof_timestamp": "2026-04-23T16:11:52+00:00",
       "error_message": null
     },
     "Set.ne_univ_iff_exists_not_mem": {
@@ -3988,10 +3988,10 @@
       "searched": false,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "simp [Nat.mul_zero]",
+      "proof_tactics": "simp [Set.mem_union]",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:28:02+00:00",
+      "proof_timestamp": "2026-04-23T16:12:18+00:00",
       "error_message": null
     },
     "Set.singleton_subset_singleton": {
@@ -4001,10 +4001,10 @@
       "searched": false,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "simp [Set.subset_def]",
+      "proof_tactics": "simp [Set.ext_iff]",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:28:06+00:00",
+      "proof_timestamp": "2026-04-23T16:12:23+00:00",
       "error_message": null
     },
     "Set.singleton_inter_nonempty": {
@@ -4131,10 +4131,10 @@
       "searched": false,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "simp [Set.diff_eq]",
+      "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:29:01+00:00",
+      "proof_timestamp": "2026-04-23T16:13:53+00:00",
       "error_message": null
     },
     "Set.compl_union_self": {
@@ -4143,11 +4143,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "tauto",
+      "proof_steps": 3,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:14:01+00:00",
       "error_message": null
     },
     "Set.inter_compl_nonempty_iff": {
@@ -4171,9 +4171,9 @@
       "search_traces": 0,
       "proved": true,
       "proof_tactics": "aesop",
-      "proof_steps": 2,
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:29:21+00:00",
+      "proof_timestamp": "2026-04-23T16:14:15+00:00",
       "error_message": null
     },
     "Set.subset_insert_diff_singleton": {
@@ -4199,7 +4199,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:29:32+00:00",
+      "proof_timestamp": "2026-04-23T16:14:27+00:00",
       "error_message": null
     },
     "Set.insert_inter_of_mem": {
@@ -4212,7 +4212,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:29:38+00:00",
+      "proof_timestamp": "2026-04-23T16:14:33+00:00",
       "error_message": null
     },
     "Set.diff_singleton_eq_self": {
@@ -4225,7 +4225,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:29:43+00:00",
+      "proof_timestamp": "2026-04-23T16:14:39+00:00",
       "error_message": null
     },
     "Set.diff_singleton_sSubset": {
@@ -4247,11 +4247,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "tauto",
+      "proof_steps": 2,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:14:53+00:00",
       "error_message": null
     },
     "Set.insert_diff_singleton_comm": {
@@ -4264,7 +4264,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:30:02+00:00",
+      "proof_timestamp": "2026-04-23T16:14:59+00:00",
       "error_message": null
     },
     "Set.pair_diff_right": {
@@ -4277,7 +4277,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:30:07+00:00",
+      "proof_timestamp": "2026-04-23T16:15:05+00:00",
       "error_message": null
     },
     "Set.pair_subset_iff": {
@@ -4303,7 +4303,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:30:19+00:00",
+      "proof_timestamp": "2026-04-23T16:15:21+00:00",
       "error_message": null
     },
     "Set.mem_dite_univ_right": {
@@ -4316,7 +4316,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:30:25+00:00",
+      "proof_timestamp": "2026-04-23T16:15:27+00:00",
       "error_message": null
     },
     "Set.mem_dite_univ_left": {
@@ -4329,7 +4329,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:30:30+00:00",
+      "proof_timestamp": "2026-04-23T16:15:34+00:00",
       "error_message": null
     },
     "Set.mem_ite_empty_right": {
@@ -4342,7 +4342,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:30:36+00:00",
+      "proof_timestamp": "2026-04-23T16:15:40+00:00",
       "error_message": null
     },
     "Set.mem_ite_empty_left": {
@@ -4355,7 +4355,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:30:42+00:00",
+      "proof_timestamp": "2026-04-23T16:15:47+00:00",
       "error_message": null
     },
     "Set.ite_inter_self": {
@@ -4364,11 +4364,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "aesop",
+      "proof_steps": 2,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:15:54+00:00",
       "error_message": null
     },
     "Set.ite_compl": {
@@ -4377,11 +4377,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "aesop",
+      "proof_steps": 2,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:16:02+00:00",
       "error_message": null
     },
     "Set.ite_inter_compl_self": {
@@ -4390,11 +4390,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "aesop",
+      "proof_steps": 2,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:16:10+00:00",
       "error_message": null
     },
     "Set.ite_left": {
@@ -4403,11 +4403,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "simp [Set.ite]",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:16:17+00:00",
       "error_message": null
     },
     "Set.ite_right": {
@@ -4416,11 +4416,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "simp [Set.ite]",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:16:23+00:00",
       "error_message": null
     },
     "Set.ite_empty": {
@@ -4429,11 +4429,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "simp [Set.ite]",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:16:30+00:00",
       "error_message": null
     },
     "Set.ite_empty_left": {
@@ -4442,11 +4442,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "simp [Set.ite]",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:16:37+00:00",
       "error_message": null
     },
     "Set.ite_empty_right": {
@@ -4455,11 +4455,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "simp [Set.ite]",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:16:44+00:00",
       "error_message": null
     },
     "Set.ite_inter": {
@@ -4468,11 +4468,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "aesop",
+      "proof_steps": 2,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:16:51+00:00",
       "error_message": null
     },
     "Set.ite_inter_of_inter_eq": {
@@ -4585,11 +4585,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "aesop",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:18:26+00:00",
       "error_message": null
     },
     "Finset.eq_of_veq": {
@@ -4615,7 +4615,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:33:06+00:00",
+      "proof_timestamp": "2026-04-23T16:18:39+00:00",
       "error_message": null
     },
     "Finset.val_eq_singleton_iff": {
@@ -4638,10 +4638,10 @@
       "searched": false,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "simp [Set.ext_iff]",
+      "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-20T06:25:46+00:00",
+      "proof_timestamp": "2026-04-23T16:18:59+00:00",
       "error_message": null
     },
     "Finset.Nontrivial.ne_singleton": {
@@ -4652,9 +4652,9 @@
       "search_traces": 0,
       "proved": true,
       "proof_tactics": "aesop",
-      "proof_steps": 2,
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:33:25+00:00",
+      "proof_timestamp": "2026-04-23T16:19:05+00:00",
       "error_message": null
     },
     "Finset.eq_singleton_or_nontrivial": {
@@ -4677,10 +4677,10 @@
       "searched": false,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "simp [Set.ext_iff]",
+      "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-20T06:26:05+00:00",
+      "proof_timestamp": "2026-04-23T16:19:24+00:00",
       "error_message": null
     },
     "Finset.insert_val'": {
@@ -4703,10 +4703,10 @@
       "searched": false,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp_all",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:33:50+00:00",
+      "proof_timestamp": "2026-04-23T16:19:39+00:00",
       "error_message": null
     },
     "Finset.ne_insert_of_not_mem": {
@@ -4758,7 +4758,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:34:20+00:00",
+      "proof_timestamp": "2026-04-23T16:20:16+00:00",
       "error_message": null
     },
     "Finset.mem_erase_of_ne_of_mem": {
@@ -4771,7 +4771,7 @@
       "proof_tactics": "simp_all",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:34:28+00:00",
+      "proof_timestamp": "2026-04-23T16:20:24+00:00",
       "error_message": null
     },
     "Finset.eq_of_mem_of_not_mem_erase": {
@@ -4781,10 +4781,10 @@
       "searched": false,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "aesop",
+      "proof_tactics": "simp_all",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:34:36+00:00",
+      "proof_timestamp": "2026-04-23T16:20:32+00:00",
       "error_message": null
     },
     "Finset.erase_insert_of_ne": {
@@ -4797,7 +4797,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:34:43+00:00",
+      "proof_timestamp": "2026-04-23T16:20:41+00:00",
       "error_message": null
     },
     "Finset.subset_insert_iff": {
@@ -4823,7 +4823,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:35:00+00:00",
+      "proof_timestamp": "2026-04-23T16:21:00+00:00",
       "error_message": null
     },
     "Finset.insert_sdiff_of_not_mem": {
@@ -4836,7 +4836,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:35:08+00:00",
+      "proof_timestamp": "2026-04-23T16:21:09+00:00",
       "error_message": null
     },
     "Finset.insert_sdiff_of_mem": {
@@ -4849,7 +4849,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:35:17+00:00",
+      "proof_timestamp": "2026-04-23T16:21:18+00:00",
       "error_message": null
     },
     "Finset.insert_sdiff_insert'": {
@@ -4888,7 +4888,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:35:42+00:00",
+      "proof_timestamp": "2026-04-23T16:22:00+00:00",
       "error_message": null
     },
     "Finset.disjoint_of_erase_left": {
@@ -4927,7 +4927,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:36:10+00:00",
+      "proof_timestamp": "2026-04-23T16:22:44+00:00",
       "error_message": null
     },
     "Finset.filter_False": {
@@ -4940,7 +4940,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:36:20+00:00",
+      "proof_timestamp": "2026-04-23T16:22:53+00:00",
       "error_message": null
     },
     "Finset.filter_inter_distrib": {
@@ -4953,7 +4953,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:36:29+00:00",
+      "proof_timestamp": "2026-04-23T16:23:04+00:00",
       "error_message": null
     },
     "Finset.filter_inter": {
@@ -4966,7 +4966,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:36:39+00:00",
+      "proof_timestamp": "2026-04-23T16:23:14+00:00",
       "error_message": null
     },
     "Finset.filter_insert": {
@@ -4979,7 +4979,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:36:49+00:00",
+      "proof_timestamp": "2026-04-23T16:23:24+00:00",
       "error_message": null
     },
     "Finset.filter_erase": {
@@ -4992,7 +4992,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:36:59+00:00",
+      "proof_timestamp": "2026-04-23T16:23:35+00:00",
       "error_message": null
     },
     "Finset.range_nontrivial": {
@@ -5018,7 +5018,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:37:20+00:00",
+      "proof_timestamp": "2026-04-23T16:23:57+00:00",
       "error_message": null
     },
     "Multiset.toFinset_ssubset": {
@@ -5044,7 +5044,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-20T06:30:14+00:00",
+      "proof_timestamp": "2026-04-23T16:24:20+00:00",
       "error_message": null
     },
     "Finset.val_toFinset": {
@@ -5057,7 +5057,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:37:54+00:00",
+      "proof_timestamp": "2026-04-23T16:24:32+00:00",
       "error_message": null
     },
     "List.toFinset_surj_on": {
@@ -5109,7 +5109,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:38:39+00:00",
+      "proof_timestamp": "2026-04-23T16:25:24+00:00",
       "error_message": null
     },
     "List.toFinset_inter": {
@@ -5122,7 +5122,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:38:50+00:00",
+      "proof_timestamp": "2026-04-23T16:25:36+00:00",
       "error_message": null
     },
     "List.toFinset_filter": {
@@ -5161,7 +5161,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:39:24+00:00",
+      "proof_timestamp": "2026-04-23T16:26:12+00:00",
       "error_message": null
     },
     "Finset.toList_cons": {
@@ -5196,11 +5196,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:26:31+00:00",
       "error_message": null
     },
     "Nat.pred_le_iff": {
@@ -5209,11 +5209,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 2,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:26:34+00:00",
       "error_message": null
     },
     "Nat.add_succ_lt_add": {
@@ -5222,11 +5222,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:26:38+00:00",
       "error_message": null
     },
     "Nat.div_le_iff_le_mul_add_pred": {
@@ -5668,7 +5668,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:42:44+00:00",
+      "proof_timestamp": "2026-04-23T16:32:39+00:00",
       "error_message": null
     },
     "Set.insert_diff_self_of_not_mem": {
@@ -5678,10 +5678,10 @@
       "searched": false,
       "search_traces": 0,
       "proved": true,
-      "proof_tactics": "simp_all",
+      "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:42:50+00:00",
+      "proof_timestamp": "2026-04-23T16:32:45+00:00",
       "error_message": null
     },
     "Set.pair_eq_pair_iff": {
@@ -5707,7 +5707,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:43:02+00:00",
+      "proof_timestamp": "2026-04-23T16:32:59+00:00",
       "error_message": null
     },
     "Set.Nonempty.subset_pair_iff_eq": {
@@ -5798,7 +5798,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:43:48+00:00",
+      "proof_timestamp": "2026-04-23T16:34:27+00:00",
       "error_message": null
     },
     "Set.inclusion_right": {
@@ -5807,11 +5807,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "tauto",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:34:35+00:00",
       "error_message": null
     },
     "Set.inclusion_inclusion": {
@@ -5820,11 +5820,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "aesop",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:34:42+00:00",
       "error_message": null
     },
     "Finset.ssubset_iff_exists_cons_subset": {
@@ -5902,7 +5902,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:44:50+00:00",
+      "proof_timestamp": "2026-04-23T16:35:38+00:00",
       "error_message": null
     },
     "Finset.erase_inj": {
@@ -5928,7 +5928,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:45:08+00:00",
+      "proof_timestamp": "2026-04-23T16:36:04+00:00",
       "error_message": null
     },
     "Finset.sdiff_insert_of_not_mem": {
@@ -5941,7 +5941,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:45:16+00:00",
+      "proof_timestamp": "2026-04-23T16:36:14+00:00",
       "error_message": null
     },
     "Finset.filter_ne": {
@@ -5954,7 +5954,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:45:26+00:00",
+      "proof_timestamp": "2026-04-23T16:36:24+00:00",
       "error_message": null
     },
     "Nat.one_lt_iff_ne_zero_and_ne_one": {
@@ -5963,11 +5963,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:36:27+00:00",
       "error_message": null
     },
     "Nat.exists_lt_succ": {
@@ -5989,11 +5989,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:36:34+00:00",
       "error_message": null
     },
     "Nat.le_and_le_add_one_iff": {
@@ -6002,11 +6002,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:36:38+00:00",
       "error_message": null
     },
     "Nat.mul_div_le_mul_div_assoc": {
@@ -6041,11 +6041,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:36:58+00:00",
       "error_message": null
     },
     "Nat.half_le_of_sub_le_half": {
@@ -6054,11 +6054,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:37:02+00:00",
       "error_message": null
     },
     "Nat.pow_eq_zero": {
@@ -6249,11 +6249,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "aesop",
+      "proof_steps": 2,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:39:16+00:00",
       "error_message": null
     },
     "Set.subset_ite": {
@@ -6318,7 +6318,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:47:55+00:00",
+      "proof_timestamp": "2026-04-23T16:40:04+00:00",
       "error_message": null
     },
     "Finset.erase_nonempty": {
@@ -6370,7 +6370,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:48:32+00:00",
+      "proof_timestamp": "2026-04-23T16:40:55+00:00",
       "error_message": null
     },
     "Finset.disjoint_filter_filter'": {
@@ -6487,7 +6487,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:49:29+00:00",
+      "proof_timestamp": "2026-04-23T16:42:43+00:00",
       "error_message": null
     },
     "Finset.Nontrivial.sdiff_singleton_nonempty": {
@@ -6526,7 +6526,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:49:59+00:00",
+      "proof_timestamp": "2026-04-23T16:43:15+00:00",
       "error_message": null
     },
     "Nat.lt_div_iff_mul_lt": {
@@ -6643,7 +6643,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:51:06+00:00",
+      "proof_timestamp": "2026-04-23T16:45:00+00:00",
       "error_message": null
     },
     "Nat.le_succ_iff": {
@@ -6652,11 +6652,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:45:03+00:00",
       "error_message": null
     },
     "Nat.add_sub_one_le_mul": {
@@ -6838,7 +6838,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:52:27+00:00",
+      "proof_timestamp": "2026-04-23T16:48:02+00:00",
       "error_message": null
     },
     "Nat.div_mul_div_comm": {
@@ -7033,7 +7033,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:54:03+00:00",
+      "proof_timestamp": "2026-04-23T16:50:53+00:00",
       "error_message": null
     },
     "Set.insert_diff_of_not_mem": {
@@ -7046,7 +7046,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:54:09+00:00",
+      "proof_timestamp": "2026-04-23T16:50:58+00:00",
       "error_message": null
     },
     "Finset.subset_union_elim": {
@@ -7072,7 +7072,7 @@
       "proof_tactics": "aesop",
       "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": "2026-04-21T06:54:33+00:00",
+      "proof_timestamp": "2026-04-23T16:51:29+00:00",
       "error_message": null
     },
     "Nat.le_or_le_of_add_eq_add_pred": {
@@ -7081,11 +7081,11 @@
       "available": null,
       "searched": false,
       "search_traces": 0,
-      "proved": false,
-      "proof_tactics": null,
-      "proof_steps": null,
+      "proved": true,
+      "proof_tactics": "omega",
+      "proof_steps": 1,
       "search_timestamp": null,
-      "proof_timestamp": null,
+      "proof_timestamp": "2026-04-23T16:51:32+00:00",
       "error_message": null
     },
     "Nat.div_mul_div_le": {
@@ -7269,6 +7269,15 @@
       "trained_on_traces": 68540,
       "data_hash": "",
       "timestamp": "2026-04-21T05:55:31+00:00"
+    },
+    {
+      "version": 6,
+      "type": "gen",
+      "ckpt_dir": "project/models/gen_v6",
+      "base_model": "t5-base",
+      "trained_on_traces": 195173,
+      "data_hash": "",
+      "timestamp": "2026-04-23T15:26:43+00:00"
     }
   ],
   "curriculum_stage": 0,

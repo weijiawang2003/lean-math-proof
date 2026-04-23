@@ -1,0 +1,16 @@
+{
+  "model_type": "seq2seq",
+  "base_model": "t5-base",
+  "data_path": "project/seq2seq_data_v6.jsonl",
+  "total_examples": 11802,
+  "train_examples": 10622,
+  "val_examples": 1180,
+  "unique_tactics_in_data": 119,
+  "tactic_hash": "ec49359cbc43",
+  "epochs": 15,
+  "batch_size": 8,
+  "lr": 5e-05,
+  "seed": 42,
+  "max_src_len": 512,
+  "max_tgt_len": 128
+}
