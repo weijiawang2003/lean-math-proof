@@ -6,9 +6,28 @@ from typing import Iterable
 
 from core_types import TransitionRecord
 
+# Required keys when writing a raw dict (rather than a TransitionRecord).
+REQUIRED_TRACE_KEYS = frozenset({
+    "file_path",
+    "full_name",
+    "state_pp",
+    "tactic",
+    "result_kind",
+    "proof_finished",
+})
+
 
 def append_jsonl(path: str, record: TransitionRecord | dict) -> None:
-    obj = record.to_dict() if isinstance(record, TransitionRecord) else record
+    if isinstance(record, TransitionRecord):
+        obj = record.to_dict()
+    else:
+        missing = REQUIRED_TRACE_KEYS - record.keys()
+        if missing:
+            raise ValueError(
+                f"Trace dict missing required key(s): {sorted(missing)}. "
+                f"Use TransitionRecord or include all of: {sorted(REQUIRED_TRACE_KEYS)}"
+            )
+        obj = record
     with open(path, "a", encoding="utf-8") as f:
         f.write(json.dumps(obj, ensure_ascii=False) + "\n")
 

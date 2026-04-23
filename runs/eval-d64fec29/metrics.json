@@ -1,0 +1,468 @@
+{
+  "run_id": "eval-d64fec29",
+  "method": "policy_rollout_topk",
+  "theorem_set": "curriculum_all",
+  "ckpt_dir": "project/gen_ckpt_v6_premise",
+  "max_steps": 8,
+  "top_k": 8,
+  "total_theorems": 31,
+  "available": 30,
+  "proved": 19,
+  "errored": 11,
+  "exhausted": 0,
+  "skipped": 1,
+  "success_rate": 0.6333333333333333,
+  "per_theorem": [
+    {
+      "full_name": "Set.union_comm",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_comm",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.mem_union",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.mem_inter_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 2,
+      "tactics_used": [
+        "aesop",
+        "tauto"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "tauto",
+      "fallbacks_used": 1
+    },
+    {
+      "full_name": "Set.subset_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 1,
+      "tactics_used": [],
+      "error_message": "All top-8 tactics errored at step 1",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.empty_subset",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 1,
+      "tactics_used": [],
+      "error_message": "All top-8 tactics errored at step 1",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.union_empty",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.empty_union",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 1
+    },
+    {
+      "full_name": "Set.univ_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.ite_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 3,
+      "tactics_used": [
+        "simp [Set.ext_iff]",
+        "aesop"
+      ],
+      "error_message": "All top-8 tactics errored at step 3",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 1
+    },
+    {
+      "full_name": "Nat.mul_add_mod'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 1,
+      "tactics_used": [],
+      "error_message": "All top-8 tactics errored at step 1",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.union_assoc",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_assoc",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.union_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.union_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "simp [Nat.sub_self]"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "simp [Nat.sub_self]",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_empty",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.subset_union_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 1,
+      "tactics_used": [],
+      "error_message": "All top-8 tactics errored at step 1",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.subset_union_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 1,
+      "tactics_used": [],
+      "error_message": "All top-8 tactics errored at step 1",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_subset_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 1,
+      "tactics_used": [],
+      "error_message": "All top-8 tactics errored at step 1",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_subset_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 1,
+      "tactics_used": [],
+      "error_message": "All top-8 tactics errored at step 1",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Finset.mem_insert",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 2,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-8 tactics errored at step 2",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Finset.mem_singleton",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 2,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-8 tactics errored at step 2",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.union_inter_distrib_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_union_distrib_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.diff_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.diff_empty",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.empty_diff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Finset.disjoint_insert_right",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 2,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-8 tactics errored at step 2",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 1
+    },
+    {
+      "full_name": "Finset.insert_comm",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "available": false,
+      "finished": false,
+      "has_error": false,
+      "num_steps": 0,
+      "tactics_used": [],
+      "error_message": null,
+      "skip_reason": "Failed to locate the theorem with `Finset.insert_comm` as its fully qualified name.",
+      "winning_tactic": null,
+      "fallbacks_used": 0
+    }
+  ]
+}

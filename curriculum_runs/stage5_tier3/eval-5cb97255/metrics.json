@@ -1,0 +1,120 @@
+{
+  "run_id": "eval-5cb97255",
+  "method": "policy_rollout_topk",
+  "theorem_set": "curriculum_tier3",
+  "ckpt_dir": "curriculum_runs/merged_ckpt",
+  "max_steps": 8,
+  "top_k": 5,
+  "total_theorems": 7,
+  "available": 6,
+  "proved": 5,
+  "errored": 1,
+  "exhausted": 0,
+  "skipped": 1,
+  "success_rate": 0.8333333333333334,
+  "per_theorem": [
+    {
+      "full_name": "Set.union_inter_distrib_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_union_distrib_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.diff_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "simp_all"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "simp_all",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.diff_empty",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "simp [Nat.mul_zero]"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "simp [Nat.mul_zero]",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.empty_diff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "simp_all"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "simp_all",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Finset.disjoint_insert_right",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 2,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-5 tactics errored at step 2",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 1
+    },
+    {
+      "full_name": "Finset.insert_comm",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "available": false,
+      "finished": false,
+      "has_error": false,
+      "num_steps": 0,
+      "tactics_used": [],
+      "error_message": null,
+      "skip_reason": "Failed to locate the theorem with `Finset.insert_comm` as its fully qualified name.",
+      "winning_tactic": null,
+      "fallbacks_used": 0
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "run_id": "eval-2629c330",
+  "method": "policy_rollout_topk",
+  "theorem_set": "curriculum_tier2",
+  "ckpt_dir": "curriculum_runs/merged_ckpt",
+  "max_steps": 8,
+  "top_k": 5,
+  "total_theorems": 12,
+  "available": 12,
+  "proved": 10,
+  "errored": 2,
+  "exhausted": 0,
+  "skipped": 0,
+  "success_rate": 0.8333333333333334,
+  "per_theorem": [
+    {
+      "full_name": "Set.union_assoc",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_assoc",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.union_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.union_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "simp [Nat.sub_self]"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "simp [Nat.sub_self]",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_empty",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "aesop",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.subset_union_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "tauto"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "tauto",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.subset_union_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "tauto"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "tauto",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_subset_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 2,
+      "tactics_used": [
+        "simp [Set.subset_def]",
+        "tauto"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "tauto",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Set.inter_subset_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "simp [Set.subset_def]"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "simp [Set.subset_def]",
+      "fallbacks_used": 0
+    },
+    {
+      "full_name": "Finset.mem_insert",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 2,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-5 tactics errored at step 2",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 1
+    },
+    {
+      "full_name": "Finset.mem_singleton",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 2,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-5 tactics errored at step 2",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 0
+    }
+  ]
+}

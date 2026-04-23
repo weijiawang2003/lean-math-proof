@@ -82,6 +82,7 @@ def search_and_log_for_theorem(
                         new_beam.append(node)
                         continue
 
+                    session_crashed = False
                     for tac in actions:
                         outcome = run_transition(
                             dojo,
@@ -93,6 +94,13 @@ def search_and_log_for_theorem(
                             episode_id=episode_id,
                             method="beam_search",
                         )
+
+                        # If the REPL crashed, the Dojo is dead — abort theorem
+                        if outcome.session_dead:
+                            print(f"  [CRASH] REPL died on `{tac}` — aborting theorem")
+                            session_crashed = True
+                            break
+
                         if outcome.is_error:
                             continue
 
@@ -109,6 +117,9 @@ def search_and_log_for_theorem(
                         else:
                             print(f"  OK: `{tac}` : {goals_before} -> {goals_after} goals")
                             new_beam.append(Node(state=outcome.next_state, history=new_history, finished=False))
+
+                    if session_crashed:
+                        break  # exit beam loop — Dojo is dead
 
                 if not new_beam:
                     print("No valid successors, stop.")
@@ -129,6 +140,12 @@ def search_and_log_for_theorem(
                 "       Hint: this usually means LeanDojo trace artifacts (*.ast.json) "
                 "for that file are missing in cache."
             )
+            return False
+        # Catch DojoCrashError / DojoTacticTimeoutError that escape inner handling
+        exc_name = type(exc).__name__
+        if ("DojoCrashError" in exc_name or "DojoTacticTimeout" in exc_name
+                or "Unexpected EOF" in str(exc) or "TimeoutError" in exc_name):
+            print(f"[WARN] REPL fatal ({exc_name}) during {cfg.full_name}: {exc}")
             return False
         raise
 

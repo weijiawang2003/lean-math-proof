@@ -1,0 +1,79 @@
+{
+  "trace_file": "traces_from_search.jsonl",
+  "transition_metrics": {
+    "rows": 152,
+    "proof_finished_rows": 20,
+    "error_rows": 0,
+    "distinct_theorem_targets": 3
+  },
+  "episode_metrics": {
+    "episodes": 3,
+    "finished_episodes": 1,
+    "error_episodes": 0,
+    "success_rate": 0.3333333333333333,
+    "avg_steps_per_episode": 50.666666666666664
+  },
+  "run_metrics": {
+    "runs": 1,
+    "episodes_per_run": {
+      "search-b89628bc": 3
+    }
+  },
+  "rows_by_method": {
+    "beam_search": 152
+  },
+  "per_theorem_transition_summary": {
+    "Nat.mul_add_mod'|Mathlib/Data/Nat/Defs.lean": {
+      "steps": 65,
+      "finished_rows": 20
+    },
+    "Finset.disjoint_insert_right|Mathlib/Data/Finset/Basic.lean": {
+      "steps": 71,
+      "finished_rows": 0
+    },
+    "Finset.mem_insert|Mathlib/Data/Finset/Basic.lean": {
+      "steps": 16,
+      "finished_rows": 0
+    }
+  },
+  "per_theorem_episode_summary": {
+    "Nat.mul_add_mod'|Mathlib/Data/Nat/Defs.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    },
+    "Finset.disjoint_insert_right|Mathlib/Data/Finset/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 0,
+      "success_rate": 0.0
+    },
+    "Finset.mem_insert|Mathlib/Data/Finset/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 0,
+      "success_rate": 0.0
+    }
+  },
+  "method": "beam_search",
+  "run_id": "search-b89628bc",
+  "run_summary": {
+    "requested_theorems": 6,
+    "available_theorems": 4,
+    "processed_theorems": 4,
+    "skipped_theorems_runtime": 0,
+    "unavailable_theorems": 2,
+    "unavailable_details": [
+      {
+        "file_path": "Mathlib/Data/Nat/Basic.lean",
+        "full_name": "Nat.add_mod",
+        "reason": "missing_trace_artifact",
+        "error": "Cannot find the *.ast.json file for Theorem(repo=LeanGitRepo(url='https://github.com/leanprover-community/mathlib4', commit='29dcec074de168ac2bf835a77ef68bbe069194c5'), file_path=PosixPath('Mathlib/Data/Nat/Basic.lean'), full_name='Nat.add_mod') in /Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4."
+      },
+      {
+        "file_path": "Mathlib/Data/Nat/Basic.lean",
+        "full_name": "Nat.mul_mod",
+        "reason": "missing_trace_artifact",
+        "error": "Cannot find the *.ast.json file for Theorem(repo=LeanGitRepo(url='https://github.com/leanprover-community/mathlib4', commit='29dcec074de168ac2bf835a77ef68bbe069194c5'), file_path=PosixPath('Mathlib/Data/Nat/Basic.lean'), full_name='Nat.mul_mod') in /Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4."
+      }
+    ]
+  }
+}

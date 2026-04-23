@@ -1,0 +1,174 @@
+{
+  "trace_file": "traces_from_search.jsonl",
+  "transition_metrics": {
+    "rows": 5257,
+    "proof_finished_rows": 1062,
+    "error_rows": 0,
+    "distinct_theorem_targets": 15
+  },
+  "episode_metrics": {
+    "episodes": 15,
+    "finished_episodes": 12,
+    "error_episodes": 0,
+    "success_rate": 0.8,
+    "avg_steps_per_episode": 350.46666666666664
+  },
+  "run_metrics": {
+    "runs": 1,
+    "episodes_per_run": {
+      "search-26308e35": 15
+    }
+  },
+  "rows_by_method": {
+    "beam_search": 5257
+  },
+  "per_theorem_transition_summary": {
+    "Nat.mul_add_mod'|Mathlib/Data/Nat/Defs.lean": {
+      "steps": 239,
+      "finished_rows": 64
+    },
+    "Set.ite_univ|Mathlib/Data/Set/Basic.lean": {
+      "steps": 337,
+      "finished_rows": 24
+    },
+    "Set.union_comm|Mathlib/Data/Set/Basic.lean": {
+      "steps": 315,
+      "finished_rows": 30
+    },
+    "Set.inter_comm|Mathlib/Data/Set/Basic.lean": {
+      "steps": 244,
+      "finished_rows": 34
+    },
+    "Set.mem_union|Mathlib/Data/Set/Basic.lean": {
+      "steps": 122,
+      "finished_rows": 42
+    },
+    "Set.mem_inter_iff|Mathlib/Data/Set/Basic.lean": {
+      "steps": 119,
+      "finished_rows": 25
+    },
+    "Set.subset_univ|Mathlib/Data/Set/Basic.lean": {
+      "steps": 445,
+      "finished_rows": 303
+    },
+    "Set.empty_subset|Mathlib/Data/Set/Basic.lean": {
+      "steps": 436,
+      "finished_rows": 294
+    },
+    "Set.union_empty|Mathlib/Data/Set/Basic.lean": {
+      "steps": 161,
+      "finished_rows": 84
+    },
+    "Set.empty_union|Mathlib/Data/Set/Basic.lean": {
+      "steps": 161,
+      "finished_rows": 84
+    },
+    "Set.inter_univ|Mathlib/Data/Set/Basic.lean": {
+      "steps": 46,
+      "finished_rows": 39
+    },
+    "Set.univ_inter|Mathlib/Data/Set/Basic.lean": {
+      "steps": 46,
+      "finished_rows": 39
+    },
+    "Finset.disjoint_insert_right|Mathlib/Data/Finset/Basic.lean": {
+      "steps": 1408,
+      "finished_rows": 0
+    },
+    "Finset.mem_insert|Mathlib/Data/Finset/Basic.lean": {
+      "steps": 604,
+      "finished_rows": 0
+    },
+    "Finset.mem_singleton|Mathlib/Data/Finset/Basic.lean": {
+      "steps": 574,
+      "finished_rows": 0
+    }
+  },
+  "per_theorem_episode_summary": {
+    "Nat.mul_add_mod'|Mathlib/Data/Nat/Defs.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    },
+    "Set.ite_univ|Mathlib/Data/Set/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    },
+    "Set.union_comm|Mathlib/Data/Set/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    },
+    "Set.inter_comm|Mathlib/Data/Set/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    },
+    "Set.mem_union|Mathlib/Data/Set/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    },
+    "Set.mem_inter_iff|Mathlib/Data/Set/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    },
+    "Set.subset_univ|Mathlib/Data/Set/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    },
+    "Set.empty_subset|Mathlib/Data/Set/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    },
+    "Set.union_empty|Mathlib/Data/Set/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    },
+    "Set.empty_union|Mathlib/Data/Set/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    },
+    "Set.inter_univ|Mathlib/Data/Set/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    },
+    "Set.univ_inter|Mathlib/Data/Set/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    },
+    "Finset.disjoint_insert_right|Mathlib/Data/Finset/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 0,
+      "success_rate": 0.0
+    },
+    "Finset.mem_insert|Mathlib/Data/Finset/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 0,
+      "success_rate": 0.0
+    },
+    "Finset.mem_singleton|Mathlib/Data/Finset/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 0,
+      "success_rate": 0.0
+    }
+  },
+  "method": "beam_search",
+  "run_id": "search-26308e35",
+  "run_summary": {
+    "requested_theorems": 15,
+    "available_theorems": 15,
+    "processed_theorems": 15,
+    "skipped_theorems_runtime": 0,
+    "unavailable_theorems": 0,
+    "unavailable_details": []
+  }
+}

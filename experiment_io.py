@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -13,7 +14,7 @@ def _utc_stamp() -> str:
 
 
 def make_run_dir(base_dir: str, method: str, run_id: str | None = None) -> Path:
-    rid = run_id or f"{method}-{_utc_stamp()}"
+    rid = run_id or f"{method}-{_utc_stamp()}-{uuid.uuid4().hex[:6]}"
     run_dir = Path(base_dir) / rid
     run_dir.mkdir(parents=True, exist_ok=True)
     return run_dir

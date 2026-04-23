@@ -1,0 +1,82 @@
+{
+  "run_id": "eval-d8f1eb1f",
+  "method": "policy_rollout_eval",
+  "theorem_set": "mixed_easy_v2",
+  "ckpt_dir": "clf_ckpt",
+  "max_steps": 8,
+  "total_theorems": 6,
+  "available": 4,
+  "proved": 1,
+  "errored": 3,
+  "exhausted": 0,
+  "skipped": 2,
+  "success_rate": 0.25,
+  "per_theorem": [
+    {
+      "full_name": "Nat.mul_add_mod'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]"
+    },
+    {
+      "full_name": "Nat.add_mod",
+      "file_path": "Mathlib/Data/Nat/Basic.lean",
+      "available": false,
+      "finished": false,
+      "has_error": false,
+      "num_steps": 0,
+      "error_message": null,
+      "skip_reason": "Cannot find the *.ast.json file for Theorem(repo=LeanGitRepo(url='https://github.com/leanprover-community/mathlib4', commit='29dcec074de168ac2bf835a77ef68bbe069194c5'), file_path=PosixPath('Mathlib/Data/Nat/Basic.lean'), full_name='Nat.add_mod') in /Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4.",
+      "winning_tactic": null
+    },
+    {
+      "full_name": "Nat.mul_mod",
+      "file_path": "Mathlib/Data/Nat/Basic.lean",
+      "available": false,
+      "finished": false,
+      "has_error": false,
+      "num_steps": 0,
+      "error_message": null,
+      "skip_reason": "Cannot find the *.ast.json file for Theorem(repo=LeanGitRepo(url='https://github.com/leanprover-community/mathlib4', commit='29dcec074de168ac2bf835a77ef68bbe069194c5'), file_path=PosixPath('Mathlib/Data/Nat/Basic.lean'), full_name='Nat.mul_mod') in /Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4.",
+      "winning_tactic": null
+    },
+    {
+      "full_name": "Set.ite_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 1,
+      "error_message": "simp made no progress",
+      "skip_reason": null,
+      "winning_tactic": null
+    },
+    {
+      "full_name": "Finset.disjoint_insert_right",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 1,
+      "error_message": "simp made no progress",
+      "skip_reason": null,
+      "winning_tactic": null
+    },
+    {
+      "full_name": "Finset.mem_insert",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 1,
+      "error_message": "simp made no progress",
+      "skip_reason": null,
+      "winning_tactic": null
+    }
+  ]
+}
