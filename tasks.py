@@ -131,6 +131,104 @@ THEOREM_SETS: dict[str, list[TheoremConfig]] = {
         TheoremConfig(file_path="Mathlib/Data/Finset/Basic.lean", full_name="Finset.insert_comm"),
     ],
 
+    # ---- nat_defs_subset: 15-theorem evolve target from Mathlib/Data/Nat/Defs.lean ----
+    # Built from project/discovered_theorems.json filtered to Nat/Defs and
+    # cross-referenced with project/project_state.json. Skewed easy/medium so
+    # gen_v5 has a non-zero baseline; 7 of 15 are unsolved-or-unsearched to
+    # leave headroom for an evolved wrapper to climb.
+    # Composition: 5 easy-proved, 5 easy-failed, 2 medium-proved,
+    #              1 medium-unsearched, 1 hard-proved, 1 hard-unsearched.
+    "nat_defs_subset": [
+        # easy, proved by some prior method (mostly `omega`)
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_eq_left"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_eq_max_iff"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_eq_min_iff"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_eq_one_iff"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_eq_right"),
+        # easy, searched-and-failed by prior runs (real challenge)
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_mod_eq_add_mod_left"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_mod_eq_add_mod_right"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.div_le_div_right"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.div_lt_iff_lt_mul'"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.div_lt_one_iff"),
+        # medium
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.half_le_of_sub_le_half"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.le_and_le_add_one_iff"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.AM_GM"),
+        # hard
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.le_or_le_of_add_eq_add_pred"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_mod_eq_ite"),
+    ],
+
+    # ---- nat_defs_medium: superset of nat_defs_subset for generalization ----
+    # v3.5 scale-out test set: nat_defs_subset (15) + 22 additional theorems
+    # drawn from Mathlib/Data/Nat/Defs.lean with varied name prefixes
+    # (add, mul, lt, le, eq, sub, mod, div, one, succ, pred, sqrt, pow, dvd, two).
+    # Total 37 theorems. All marked "easy" in discovered_theorems.json — the
+    # point is breadth of statement shape, not difficulty.
+    "nat_defs_medium": [
+        # === Inherits all 15 from nat_defs_subset ===
+        # easy, proved by some prior method (mostly `omega`)
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_eq_left"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_eq_max_iff"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_eq_min_iff"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_eq_one_iff"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_eq_right"),
+        # easy, searched-and-failed by prior runs
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_mod_eq_add_mod_left"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_mod_eq_add_mod_right"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.div_le_div_right"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.div_lt_iff_lt_mul'"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.div_lt_one_iff"),
+        # medium
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.half_le_of_sub_le_half"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.le_and_le_add_one_iff"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.AM_GM"),
+        # hard
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.le_or_le_of_add_eq_add_pred"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_mod_eq_ite"),
+        # === New (v3.5) breadth additions ===
+        # add / mul
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_eq_zero"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.add_pos_iff_pos_or_pos"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.mul_eq_left"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.mul_eq_right"),
+        # lt / le / one
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.lt_iff_add_one_le"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.lt_one_iff"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.le_one_iff_eq_zero_or_eq_one"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.le_add_one_iff"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.one_add_le_iff"),
+        # eq / sub
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.eq_one_of_mul_eq_one_left"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.eq_zero_of_double_le"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.sub_lt_iff_lt_add"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.sub_lt_iff_lt_add'"),
+        # mod / div
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.mod_two_ne_one"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.mod_two_ne_zero"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.div_pos"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.div_pos_iff"),
+        # succ / pred / sqrt / pow / dvd / two
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.succ_succ_ne_one"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.pred_eq_of_eq_succ"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.sqrt_lt"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.pow_lt_pow_iff_left"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.dvd_iff_div_mul_eq"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.two_mul_ne_two_mul_add_one"),
+    ],
+
+    # ---- Frontier set: theorems unsolved by every checkpoint to date ----
+    # Used by experiments/SEARCH_FRONTIER_BRIEF.md to ask whether wide
+    # beam search can find proofs without retraining.
+    "frontier_v1": [
+        TheoremConfig(file_path="Mathlib/Data/Finset/Basic.lean", full_name="Finset.mem_insert"),
+        TheoremConfig(file_path="Mathlib/Data/Finset/Basic.lean", full_name="Finset.mem_singleton"),
+        TheoremConfig(file_path="Mathlib/Data/Finset/Basic.lean", full_name="Finset.disjoint_insert_right"),
+        TheoremConfig(file_path="Mathlib/Data/Finset/Basic.lean", full_name="Finset.insert_comm"),
+        TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean",     full_name="Nat.mul_add_mod'"),
+    ],
+
     # ---- Legacy sets kept for compatibility ----
     "toy_search": [
         TheoremConfig(file_path="Mathlib/Data/Nat/Defs.lean", full_name="Nat.mul_add_mod'"),

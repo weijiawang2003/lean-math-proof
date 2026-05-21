@@ -1,0 +1,124 @@
+"""SearchCandidate — the genome of the evolutionary loop.
+
+A candidate is NOT a proof and NOT a trained model. It is a configuration that
+describes *how* to search for proofs: which policy/checkpoint to use, the
+search hyperparameters, and (for future strategy wrappers) the fallback tactic
+order, prompt template, and theorem-family-specific tactic templates.
+
+In AlphaEvolve terms this is the "program" being evolved. The evaluator turns a
+candidate into a behaviour by feeding it to the rollout machinery; Lean grades
+the behaviour.
+"""
+
+from __future__ import annotations
+
+import json
+from dataclasses import asdict, dataclass, field, fields
+from pathlib import Path
+from typing import Any, Optional
+
+# Shared prompt format mirrors core_types.build_prompt in the repo root.
+DEFAULT_PROMPT_TEMPLATE = "Theorem: {full_name}\n\nProof state:\n{state_pp}\n"
+
+
+@dataclass
+class SearchCandidate:
+    """One proof-search strategy.
+
+    Fields consumed by the *real* evaluator today (mapped to eval_rollout_all.py
+    CLI args): policy_type, ckpt_dir, top_k, max_steps.
+
+    `timeout_per_theorem` is used to derive the subprocess-level total timeout
+    in evaluator._derive_eval_timeout, but is not (yet) passed as a per-theorem
+    CLI knob — eval_rollout_all.py has no such argument.
+
+    Inert fields — fallback_tactics, prompt_template, tactic_templates,
+    theorem_filters, decode_mode, temperature, seed — are part of the genome
+    but NOT passed to the subprocess. They are mutated/tracked now; connecting
+    them to behaviour requires a strategy-wrapper layer (see README v3).
+    decode_mode/temperature/seed mirror the corresponding eval_rollout_all.py
+    CLI defaults so they are safe to wire later without changing semantics.
+    """
+
+    name: str
+    description: str
+    policy_type: str = "generative"
+    ckpt_dir: Optional[str] = None
+    top_k: int = 8
+    max_steps: int = 8
+    timeout_per_theorem: int = 20
+    fallback_tactics: list[str] = field(default_factory=list)
+    prompt_template: str = DEFAULT_PROMPT_TEMPLATE
+    tactic_templates: list[str] = field(default_factory=list)
+    theorem_filters: dict[str, Any] = field(default_factory=dict)
+    # Inert decode-strategy knobs (mirror eval_rollout_all.py defaults).
+    # Not passed to the subprocess yet; reserved for a future strategy-wrapper.
+    decode_mode: str = "beam"
+    temperature: float = 0.8
+    seed: Optional[int] = None
+    # Cap on how many *extra* tactics (fallbacks + rendered templates,
+    # deduped against generative top-k) the wrapper appends per state.
+    # None means no cap. Used by hybrid_evolved in v3.2+ to bound the
+    # per-step Lean roundtrip count.
+    max_extra_tactics_per_state: Optional[int] = None
+    # v3.3: when True the eval rollout tracks per-theorem seen-state
+    # hashes and prefers tactics that produce unseen states; tactics
+    # known to error on the current state are skipped to save Lean
+    # roundtrips. DEFAULT FALSE: in the v3.3 nat_defs_subset run, anti-
+    # loop preserved the 10/15 proved count in the underlying traces
+    # (17 loops detected, 145 known-error skips) but the per-step
+    # exploration cost on the Nat.div_* theorems exceeded the 1005s
+    # subprocess watchdog, producing 0/15 in the metrics layer. The
+    # mutator can flip this to True on a candidate for A/B comparison
+    # alongside a bumped timeout_per_theorem.
+    enable_loop_avoidance: bool = False
+    # v3.4 theorem-name-aware tactic layer. Keys are substrings matched
+    # against the theorem's full_name (case-sensitive, dict-insertion
+    # order); values are ordered tactic strings (may contain `{var}`
+    # placeholders, rendered via the same per-state Nat-var extraction
+    # as tactic_templates). All families whose key matches activate; the
+    # union of their tactics is added after the generative top-k and
+    # ahead of the generic fallbacks/templates, since they encode
+    # targeted knowledge for that theorem family.
+    theorem_family_tactics: dict[str, list[str]] = field(default_factory=dict)
+    # v3.4 per-family extras budget. When at least one family activates
+    # for a theorem, the effective max_extra_tactics_per_state for that
+    # step becomes max(family_budgets[f] for f in activated). When no
+    # family activates, max_extra_tactics_per_state is used as before.
+    family_budgets: dict[str, int] = field(default_factory=dict)
+    # v3.6 per-theorem tactic deny-list. Maps theorem full_name to a list
+    # of substrings; any candidate tactic whose string contains a denied
+    # substring is filtered out for that theorem only. Used to prevent
+    # specific (theorem, tactic) pairs known to crash the Dojo REPL
+    # without removing the tactic globally (it may still win on other
+    # theorems). Substring match keeps the deny-list compact when the
+    # same tactic is wrapped differently across families/fallbacks.
+    theorem_tactic_denylist: dict[str, list[str]] = field(default_factory=dict)
+    metadata: dict[str, Any] = field(default_factory=dict)
+
+    # -- serialization ----------------------------------------------------
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+    @classmethod
+    def from_dict(cls, d: dict[str, Any]) -> "SearchCandidate":
+        """Build a candidate from a dict, ignoring unknown keys for forward
+        compatibility (older population files may lack newer fields)."""
+        known = {f.name for f in fields(cls)}
+        return cls(**{k: v for k, v in d.items() if k in known})
+
+    def save_json(self, path: str | Path) -> None:
+        p = Path(path)
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(
+            json.dumps(self.to_dict(), indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+
+    @classmethod
+    def load_json(cls, path: str | Path) -> "SearchCandidate":
+        return cls.from_dict(json.loads(Path(path).read_text(encoding="utf-8")))
+
+    def copy(self) -> "SearchCandidate":
+        """Deep-ish copy via round-trip (lists/dicts are rebuilt)."""
+        return SearchCandidate.from_dict(json.loads(json.dumps(self.to_dict())))
