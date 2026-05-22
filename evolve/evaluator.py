@@ -313,6 +313,18 @@ def _real_metrics(
             retrieval_shape_filter=getattr(
                 candidate, "retrieval_shape_filter", True
             ),
+            term_builder_templates=getattr(
+                candidate, "term_builder_templates", None
+            ),
+            term_builder_budget=getattr(
+                candidate, "term_builder_budget", 0
+            ),
+            priority_templates=getattr(
+                candidate, "priority_templates", None
+            ),
+            priority_template_budget=getattr(
+                candidate, "priority_template_budget", 0
+            ),
         )
         cmd.extend(["--strategy-config", str(strategy_path)])
 

@@ -114,15 +114,20 @@ def _load_policy(
             (fb, tmpl, cap, fam, fam_budgets, deny,
              retrieval_enabled, retrieval_top_k, retrieval_forms,
              retrieval_filter_self, retrieval_filter_unavailable,
-             retrieval_skip_bloating_apply, retrieval_shape_filter) = (
+             retrieval_skip_bloating_apply, retrieval_shape_filter,
+             term_builder_templates, term_builder_budget,
+             priority_templates, priority_template_budget) = (
                 load_strategy_config(strategy_config)
             )
         else:
             (fb, tmpl, cap, fam, fam_budgets, deny,
              retrieval_enabled, retrieval_top_k, retrieval_forms,
              retrieval_filter_self, retrieval_filter_unavailable,
-             retrieval_skip_bloating_apply, retrieval_shape_filter) = (
-                [], [], None, {}, {}, {}, False, 0, [], True, True, True, True
+             retrieval_skip_bloating_apply, retrieval_shape_filter,
+             term_builder_templates, term_builder_budget,
+             priority_templates, priority_template_budget) = (
+                [], [], None, {}, {}, {}, False, 0, [], True, True, True, True,
+                {}, 0, {}, 0,
             )
         wrapper = StrategyWrapperPolicy(
             base_policy=base, fallback_tactics=fb, tactic_templates=tmpl,
@@ -136,6 +141,10 @@ def _load_policy(
             retrieval_filter_self=retrieval_filter_self,
             retrieval_filter_unavailable=retrieval_filter_unavailable,
             retrieval_shape_filter=retrieval_shape_filter,
+            term_builder_templates=term_builder_templates,
+            term_builder_budget=term_builder_budget,
+            priority_templates=priority_templates,
+            priority_template_budget=priority_template_budget,
         )
         # v4.3 bloat-filter flag is consumed by rollout_one_theorem, not
         # the wrapper itself. Stash it on the wrapper so the eval loop
@@ -250,6 +259,16 @@ def rollout_one_theorem(
         "retrieved_shape_counts": {},
         "retrieved_shape_success_counts": {},
         "shape_mismatch_filtered_count": 0,
+        # v5 term-mode (term_builder origin) tracking. attempt counts
+        # term_builder candidates actually run (Lean roundtripped) on
+        # this theorem; advanced counts those that produced a non-error
+        # transition (closing or advancing state); proved is 1 if the
+        # winning tactic is a term_builder entry. shape_keys lists the
+        # term_builder_templates shape keys that fired at any step.
+        "term_builder_attempt_count": 0,
+        "term_builder_advanced_count": 0,
+        "term_builder_proved_count": 0,
+        "term_builder_shape_keys": [],
     }
 
     # v4.3: per-theorem set of (lemma) names whose `apply LEMMA` already
@@ -431,6 +450,14 @@ def rollout_one_theorem(
                         if retr_shape is not None:
                             ds = result["retrieved_shape_counts"]
                             ds[retr_shape] = ds.get(retr_shape, 0) + 1
+                    # v5 term_builder: count attempts before run_transition
+                    # so REPL crashes still register.
+                    if origin == "term_builder":
+                        result["term_builder_attempt_count"] += 1
+                        # fam_src holds the shape key (e.g. "iff" / "any")
+                        # for term_builder entries — surface it once.
+                        if fam_src is not None and fam_src not in result["term_builder_shape_keys"]:
+                            result["term_builder_shape_keys"].append(fam_src)
 
                     outcome = run_transition(
                         dojo, theorem, state, tac,
@@ -494,6 +521,9 @@ def rollout_one_theorem(
                             if retr_shape is not None:
                                 ds = result["retrieved_shape_success_counts"]
                                 ds[retr_shape] = ds.get(retr_shape, 0) + 1
+                        if origin == "term_builder":
+                            result["term_builder_advanced_count"] += 1
+                            result["term_builder_proved_count"] = 1
                         if rank > 0:
                             result["fallbacks_used"] += 1
                         step_succeeded = True
@@ -581,6 +611,8 @@ def rollout_one_theorem(
                         if retr_shape is not None:
                             ds = result["retrieved_shape_success_counts"]
                             ds[retr_shape] = ds.get(retr_shape, 0) + 1
+                    if origin == "term_builder":
+                        result["term_builder_advanced_count"] += 1
                     state = outcome.next_state
                     result["num_steps"] = step
                     result["tactics_used"].append(tac)
@@ -941,6 +973,14 @@ def main():
                 f"success={retrieved_shape_success_counts}  "
                 f"mismatch_filtered={shape_mismatch_filtered_count}"
             )
+    tb_attempt = sum(int(r.get("term_builder_attempt_count") or 0) for r in results)
+    tb_adv = sum(int(r.get("term_builder_advanced_count") or 0) for r in results)
+    tb_proved = sum(int(r.get("term_builder_proved_count") or 0) for r in results)
+    if tb_attempt:
+        print(
+            f"  Term builder:       {tb_attempt} attempts, "
+            f"{tb_adv} advanced, {tb_proved} won"
+        )
     print(f"{'='*64}\n")
 
     metrics = {
@@ -995,6 +1035,24 @@ def main():
         "retrieved_shape_counts": retrieved_shape_counts,
         "retrieved_shape_success_counts": retrieved_shape_success_counts,
         "shape_mismatch_filtered_count": shape_mismatch_filtered_count,
+        # v5 term-mode (term_builder) aggregates
+        "term_builder_attempt_count": sum(
+            int(r.get("term_builder_attempt_count") or 0) for r in results
+        ),
+        "term_builder_advanced_count": sum(
+            int(r.get("term_builder_advanced_count") or 0) for r in results
+        ),
+        "term_builder_proved_count": sum(
+            int(r.get("term_builder_proved_count") or 0) for r in results
+        ),
+        "term_builder_wins": [
+            {
+                "theorem": r["full_name"],
+                "tactic": r.get("winning_tactic"),
+                "shape_key": r.get("winning_tactic_family_source"),
+            }
+            for r in proved if r.get("winning_tactic_origin") == "term_builder"
+        ],
         "per_theorem": results,
     }
     write_metrics(artifacts["metrics_path"], metrics)

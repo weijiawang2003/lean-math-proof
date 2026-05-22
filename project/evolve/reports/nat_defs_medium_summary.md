@@ -444,3 +444,75 @@ construction is the next leverage point.
 
 - `project/evolve/runs/evolve-20260522-072211-b7f1fc/` — v4.7 sweep
 - Generated report: `project/evolve/reports/nat_defs_medium_v4_7.md`
+
+## v5 — priority_templates breakthrough
+
+| stage | theorem set | proved | rate |
+|---|---|---|---|
+| v4.7 constructor seed (carried) | nat_defs_medium | 26 / 38 | 68% |
+| v5 first-pass (12 variants, Directions A/B/C) | nat_defs_medium | 26 / 38 | 68% |
+| **v5 followup (priority_templates added)** | **nat_defs_medium** | **29 / 38** | **76%** |
+| **best v5 generalization** | **nat_defs_large_v5 (64 thms)** | **41 / 64** | **64%** |
+
+Three new theorems closed via the new `priority_templates` slot
+(emitted before generative_topk):
+
+  1. **`Nat.div_lt_one_iff`** — `rw [Nat.div_lt_iff_lt_mul hb, Nat.one_mul]`
+  2. **`Nat.mul_eq_left`**    — `exact ⟨Nat.eq_of_mul_eq_mul_left ... , by simp [h]⟩`
+  3. **`Nat.mul_eq_right`**   — `exact ⟨Nat.eq_of_mul_eq_mul_right ... , by simp [h]⟩`
+
+Two further theorems (`Nat.div_pos`, `Nat.div_pos_iff`) close on the
+dedicated v5-20 variant. A "super-kitchen" candidate combining all
+five priority templates is expected to hit **31 / 38**.
+
+### Key v5 finding
+
+The structural ordering of the wrapper's ranked-list matters more
+than its contents. Before v5, every candidate template was emitted
+AFTER generative_topk; if the model produced a non-erroring weak
+simp at step 1, all downstream templates were shadowed silently.
+`priority_templates` is a one-slot fix that emits selected templates
+BEFORE the model — and unlocks the full Bucket I + II.
+
+Twelve variants in the first pass failed in the same way for the
+same reason. One structural mutation in the second pass unlocked
+3-5 theorems. This is the strongest empirical case in the project
+for outer-tier (slot-adding) mutations.
+
+### Direction E status
+
+`scripts/build_v5_training_data.py` is shipped in this branch. The
+held-out set includes the three new v5 wins so a future `gen_v5+1`
+fine-tune has a fair test of whether the model learned to natively
+generate the new priority templates.
+
+### Direction F status
+
+`project/evolve/reports/v5_alphaevolve_architecture.md` proposes
+the v6 architecture: layered skeleton-bag genome, two-tier mutator
+(structural + slot), cross-run archive, transfer protocol.
+
+### Artifacts
+
+  - `project/evolve/autonomous_runs/v5-auto-20260522-095802-1fcaa0/` — first pass (12 variants)
+  - `project/evolve/autonomous_runs/v5-followup-20260522-103058-537f36/` — second pass (11 variants, **best v5-18 at 29/38**)
+  - `project/evolve/autonomous_runs/large_v5_kitchen/` — Direction D eval on 64-theorem set
+  - `project/evolve/autonomous_runs/v5-wave4-*/` — wave 4 targeted variants (if completed)
+  - `project/evolve/reports/v5_research_plan.md` — pre-run roadmap
+  - `project/evolve/reports/nat_defs_medium_failure_classification_v5.md`
+  - `project/evolve/reports/v5_priority_templates_insight.md` — the structural finding
+  - `project/evolve/reports/v5_trace_to_training_plan.md`
+  - `project/evolve/reports/v5_alphaevolve_architecture.md`
+  - `project/evolve/reports/v5_autonomous_exploration.md` — overall report
+
+### v5-27 final result (wave 4 master)
+
+  - nat_defs_medium: **31 / 38** (76%, +5 over v4.7 baseline)
+  - nat_defs_large_v5: **43 / 64** (67%, +2 over v5-18-kitchen)
+
+The five priority_templates wins all stack: `Nat.div_lt_one_iff`,
+`Nat.div_pos`, `Nat.div_pos_iff`, `Nat.mul_eq_left`, `Nat.mul_eq_right`.
+
+  - Final genome: `project/evolve/autonomous_runs/v5-wave4-20260522-111556-3063e7/eval/v5-27-w4-master/genome.json`
+  - Final eval (medium): `project/evolve/autonomous_runs/v5-wave4-20260522-111556-3063e7/eval/v5-27-w4-master/eval-*/metrics.json`
+  - Final eval (large_v5): `project/evolve/autonomous_runs/large_v5_master/eval-*/eval-*/metrics.json`

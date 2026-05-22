@@ -129,6 +129,21 @@ class SearchCandidate:
     # retrieved iff lemma also emitted `apply LEMMA` against an iff
     # goal, guaranteed to fail to unify.
     retrieval_shape_filter: bool = True
+    # v5 term-mode proof skeleton block (Direction A). Keyed by goal-shape
+    # ("iff"/"dvd"/"eq"/"lt"/"le"/"and"/"or"/"unknown") or "any". Templates
+    # support {var}/{hyp_pos}/{hyp_le}/{hyp_ne_zero} placeholders identical
+    # to tactic_templates rendering. term_builder_budget caps how many
+    # term-mode entries are emitted per state (0 = unbounded within
+    # max_extra_tactics_per_state). See strategy_wrapper.ORIGIN_TERM_BUILDER.
+    term_builder_templates: dict[str, list[str]] = field(default_factory=dict)
+    term_builder_budget: int = 0
+    # v5 priority_templates — same shape-keyed schema as term_builder,
+    # but emitted BEFORE generative_topk so a known-good family template
+    # runs at step 1 before the model's `simp [...]` can derail the
+    # rewrite chain. Used surgically on theorems where the model has
+    # been observed to advance state into a worse form.
+    priority_templates: dict[str, list[str]] = field(default_factory=dict)
+    priority_template_budget: int = 0
     metadata: dict[str, Any] = field(default_factory=dict)
 
     # -- serialization ----------------------------------------------------

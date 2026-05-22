@@ -40,6 +40,11 @@ ORIGIN_FAMILY = "family_tactic"
 # v4.1: retrieved premise origin. Tagged on synthesized rw/simp/exact/apply
 # entries whose lemma name came from premise_retriever.retrieve_for_state.
 ORIGIN_RETRIEVED = "retrieved_premise"
+# v5: term-mode proof skeleton origin. Tagged on candidate tactics emitted
+# by the term_builder block (exact ⟨…, …⟩ / refine ⟨?_, ?_⟩ etc.). The
+# block runs per goal shape so each candidate carries its own shape-gate
+# in the genome rather than being broadcast against every state.
+ORIGIN_TERM_BUILDER = "term_builder"
 
 # Default tactic forms used to wrap a retrieved lemma name. `{p}` is the
 # substitution placeholder. Override per-call via retrieval_tactic_forms.
@@ -302,6 +307,10 @@ class StrategyWrapperPolicy:
         retrieval_filter_self: bool = True,
         retrieval_filter_unavailable: bool = True,
         retrieval_shape_filter: bool = True,
+        term_builder_templates: dict[str, list[str]] | None = None,
+        term_builder_budget: int = 0,
+        priority_templates: dict[str, list[str]] | None = None,
+        priority_template_budget: int = 0,
     ) -> None:
         self.base_policy = base_policy
         self.fallback_tactics: list[str] = [
@@ -355,6 +364,38 @@ class StrategyWrapperPolicy:
         # `forms_for_shape_pair`. When False the v4.3 behavior is
         # preserved (every retrieved lemma emits every configured form).
         self.retrieval_shape_filter: bool = bool(retrieval_shape_filter)
+        # v5 term-mode proof skeleton block. Keys are goal-shape labels
+        # ("iff", "dvd", "eq", "lt", "le", "and", "or", "unknown", or
+        # the special key "any" which always matches). Values are
+        # template strings rendered via _render_template, then emitted
+        # with ORIGIN_TERM_BUILDER between family/retrieval and generic
+        # fallbacks. Activates only when the current state's classified
+        # goal_shape matches a configured key (or the "any" key is set).
+        # term_builder_budget caps how many term-mode entries are
+        # appended to the per-state list; 0 means unbounded within the
+        # existing extras cap.
+        self.term_builder_templates: dict[str, list[str]] = {
+            str(k): [t for t in (v or []) if t and t.strip()]
+            for k, v in (term_builder_templates or {}).items()
+            if k
+        }
+        self.term_builder_budget: int = max(0, int(term_builder_budget or 0))
+        # v5: count of term_builder entries emitted in the most recent
+        # rank_tactics call (post-dedup). Reset per call.
+        self.last_term_builder_attempt_count: int = 0
+        self.last_term_builder_shape_key: str | None = None
+        # v5: priority_templates block — same shape-keyed schema as
+        # term_builder, but emitted BEFORE generative_topk. Used when
+        # the family's template is more reliable than the model's
+        # guess and we want to skip the model entirely on this state.
+        # Set via the same load/dump_strategy_config plumbing.
+        self.priority_templates: dict[str, list[str]] = {
+            str(k): [t for t in (v or []) if t and t.strip()]
+            for k, v in (priority_templates or {}).items()
+            if k
+        }
+        self.priority_template_budget: int = max(0, int(priority_template_budget or 0))
+        self.last_priority_template_attempt_count: int = 0
         self.last_ranked_tactics: list[str] = []
         self.last_origins: list[str] = []
         self.last_template_sources: list[str | None] = []
@@ -403,8 +444,43 @@ class StrategyWrapperPolicy:
             str | None, str | None, str | None,
         ]
 
-        base_entries: list[Entry] = []
+        # v5: priority_templates block — emitted before generative_topk
+        # so that a known-good family template runs at step 1, before
+        # the model's `simp [...]` advances state into a less useful
+        # form. Tagged with ORIGIN_TEMPLATE (template_source carries the
+        # raw key for traceability).
         seen: set[str] = set()
+        priority_entries: list[Entry] = []
+        pt_shape_key: str | None = None
+        if self.priority_templates:
+            try:
+                from premise_retriever import classify_goal_shape
+                pt_goal_shape = classify_goal_shape(state_pp)
+            except Exception:
+                pt_goal_shape = "unknown"
+            if pt_goal_shape in self.priority_templates:
+                pt_shape_key = pt_goal_shape
+            elif "any" in self.priority_templates:
+                pt_shape_key = "any"
+            if pt_shape_key is not None:
+                emitted = 0
+                for raw in self.priority_templates[pt_shape_key]:
+                    for rendered in _render_template(raw, nat_vars, hypotheses):
+                        if rendered and rendered not in seen:
+                            seen.add(rendered)
+                            priority_entries.append(
+                                (rendered, ORIGIN_TEMPLATE, raw,
+                                 f"priority:{pt_shape_key}",
+                                 None, None, None)
+                            )
+                            emitted += 1
+                            if self.priority_template_budget and emitted >= self.priority_template_budget:
+                                break
+                    if self.priority_template_budget and emitted >= self.priority_template_budget:
+                        break
+        self.last_priority_template_attempt_count = len(priority_entries)
+
+        base_entries: list[Entry] = []
         for t in base:
             if t and t not in seen:
                 seen.add(t)
@@ -503,8 +579,54 @@ class StrategyWrapperPolicy:
         self.last_retrieved_lemma_set = list(retrieved_lemma_set)
         self.last_retrieval_filtered_self_count = filtered_self
         self.last_retrieval_filtered_unavailable_count = filtered_unavailable
-        self.last_goal_shape = goal_shape
         self.last_shape_mismatch_filtered_count = shape_mismatch_filtered
+
+        # v5 term-mode proof skeleton block. If `term_builder_templates`
+        # is configured, classify the current goal shape (independently
+        # of the retrieval block, which may have set goal_shape only
+        # when retrieval activated) and look up the matching template
+        # list. The "any" key fires for every goal shape; an exact
+        # shape key fires only when the goal classifies to that shape.
+        # Entries are tagged ORIGIN_TERM_BUILDER and inserted between
+        # the retrieval entries and the generic fallback entries — they
+        # are more targeted than generic fallbacks but less targeted
+        # than per-theorem family tactics, so this is the right slot.
+        term_builder_entries: list[Entry] = []
+        tb_shape_key: str | None = None
+        if self.term_builder_templates:
+            if goal_shape == "unknown":
+                # Retrieval didn't classify; classify now.
+                try:
+                    from premise_retriever import classify_goal_shape
+                    goal_shape = classify_goal_shape(state_pp)
+                except Exception:
+                    goal_shape = "unknown"
+            # Resolve which key to pull templates from. Exact shape
+            # match wins over the "any" key.
+            if goal_shape in self.term_builder_templates:
+                tb_shape_key = goal_shape
+            elif "any" in self.term_builder_templates:
+                tb_shape_key = "any"
+            if tb_shape_key is not None:
+                raw_templates = self.term_builder_templates[tb_shape_key]
+                emitted = 0
+                limit = self.term_builder_budget or len(raw_templates) * max(1, len(nat_vars) + 1)
+                for raw in raw_templates:
+                    for rendered in _render_template(raw, nat_vars, hypotheses):
+                        if rendered and rendered not in seen:
+                            seen.add(rendered)
+                            term_builder_entries.append(
+                                (rendered, ORIGIN_TERM_BUILDER, raw, tb_shape_key,
+                                 None, None, None)
+                            )
+                            emitted += 1
+                            if self.term_builder_budget and emitted >= self.term_builder_budget:
+                                break
+                    if self.term_builder_budget and emitted >= self.term_builder_budget:
+                        break
+        self.last_goal_shape = goal_shape
+        self.last_term_builder_attempt_count = len(term_builder_entries)
+        self.last_term_builder_shape_key = tb_shape_key
 
         # Generic fallbacks + rendered templates, deduped against base,
         # family and retrieval entries, in deterministic genome order.
@@ -521,7 +643,10 @@ class StrategyWrapperPolicy:
                         (rendered, ORIGIN_TEMPLATE, raw_template, None, None, None, None)
                     )
 
-        extra_entries = family_entries + retrieved_entries + generic_entries
+        extra_entries = (
+            family_entries + retrieved_entries + term_builder_entries
+            + generic_entries
+        )
 
         # v3.6 per-theorem deny-list: filter entries whose tactic string
         # contains any denied substring for this theorem. Applied after
@@ -568,10 +693,19 @@ class StrategyWrapperPolicy:
                 cap = max(budgets)
         if retrieval_activation is not None and cap is not None:
             cap += len(self.retrieval_tactic_forms) * self.retrieval_top_k
+        # v5: reserve cap slots for term_builder entries so they aren't
+        # crowded out by family + retrieval entries. The exact count is
+        # the number we actually emitted (already capped by the
+        # term_builder_budget if set).
+        if term_builder_entries and cap is not None:
+            cap += len(term_builder_entries)
         if cap is not None:
             extra_entries = extra_entries[:cap]
 
-        all_entries = base_entries + extra_entries
+        # v5: priority_entries go first — even before base. They are
+        # not subject to the per-state extras cap because they are part
+        # of a small targeted set the genome explicitly prioritized.
+        all_entries = priority_entries + base_entries + extra_entries
         self.last_ranked_tactics = [e[0] for e in all_entries]
         self.last_origins = [e[1] for e in all_entries]
         self.last_template_sources = [e[2] for e in all_entries]
@@ -593,6 +727,7 @@ def load_strategy_config(
     list[str], list[str], int | None,
     dict[str, list[str]], dict[str, int], dict[str, list[str]],
     bool, int, list[str], bool, bool, bool, bool,
+    dict[str, list[str]], int,
 ]:
     """Read the strategy config from JSON.
 
@@ -600,11 +735,13 @@ def load_strategy_config(
             theorem_family_tactics, family_budgets, theorem_tactic_denylist,
             retrieval_enabled, retrieval_top_k, retrieval_tactic_forms,
             retrieval_filter_self, retrieval_filter_unavailable,
-            retrieval_skip_bloating_apply, retrieval_shape_filter).
+            retrieval_skip_bloating_apply, retrieval_shape_filter,
+            term_builder_templates, term_builder_budget).
 
     Missing keys produce safe defaults; unknown keys are ignored. All
     retrieval filter flags default to True so older configs benefit
-    from the newer filters automatically.
+    from the newer filters automatically. v5 term_builder fields
+    default to empty / 0 so older configs are no-ops.
     """
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
     fb = list(raw.get("fallback_tactics") or [])
@@ -627,11 +764,19 @@ def load_strategy_config(
         raw.get("retrieval_skip_bloating_apply", True)
     )
     retrieval_shape_filter = bool(raw.get("retrieval_shape_filter", True))
+    tb_raw = raw.get("term_builder_templates") or {}
+    term_builder_templates = {str(k): list(v or []) for k, v in tb_raw.items()}
+    term_builder_budget = int(raw.get("term_builder_budget", 0) or 0)
+    pt_raw = raw.get("priority_templates") or {}
+    priority_templates = {str(k): list(v or []) for k, v in pt_raw.items()}
+    priority_template_budget = int(raw.get("priority_template_budget", 0) or 0)
     return (
         fb, tmpl, cap, fam, fam_budgets, deny,
         retrieval_enabled, retrieval_top_k, retrieval_tactic_forms,
         retrieval_filter_self, retrieval_filter_unavailable,
         retrieval_skip_bloating_apply, retrieval_shape_filter,
+        term_builder_templates, term_builder_budget,
+        priority_templates, priority_template_budget,
     )
 
 
@@ -650,6 +795,10 @@ def dump_strategy_config(
     retrieval_filter_unavailable: bool = True,
     retrieval_skip_bloating_apply: bool = True,
     retrieval_shape_filter: bool = True,
+    term_builder_templates: dict[str, list[str]] | None = None,
+    term_builder_budget: int = 0,
+    priority_templates: dict[str, list[str]] | None = None,
+    priority_template_budget: int = 0,
 ) -> None:
     """Write the JSON config the subprocess will read. Parent dirs are
     created if needed."""
@@ -683,6 +832,16 @@ def dump_strategy_config(
                     retrieval_skip_bloating_apply
                 ),
                 "retrieval_shape_filter": bool(retrieval_shape_filter),
+                "term_builder_templates": {
+                    str(k): list(v or [])
+                    for k, v in (term_builder_templates or {}).items()
+                },
+                "term_builder_budget": int(term_builder_budget or 0),
+                "priority_templates": {
+                    str(k): list(v or [])
+                    for k, v in (priority_templates or {}).items()
+                },
+                "priority_template_budget": int(priority_template_budget or 0),
             },
             indent=2,
             ensure_ascii=False,
