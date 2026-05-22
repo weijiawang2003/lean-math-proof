@@ -403,3 +403,44 @@ proof builder for the three div theorems still erroring at step 3-5
 - `project/evolve/runs/evolve-20260522-064654-332077/` — v4.6 verified-no-rw-eq
 - Generated reports: `project/evolve/reports/nat_defs_medium_v4_6_overnight.md`,
   `project/evolve/reports/v4_6_template_failure_diagnostics.md`
+
+---
+
+## v4.7 — adopt constructor seed + evolution sweep (2026-05-22)
+
+Flipped `make_seed_candidate`'s `template_variant` default from
+`v45` to `constructor`. The no-arg seed now reproduces v4.6's 26/38
+result with no further CLI flags. Extended `evolve/mutator.py` with
+three new ops covering retrieval and family-budget knobs:
+`retrieval_top_k`, `reorder_retrieval_forms`, `family_budget_delta`.
+
+Ran the small evolution sweep (generations=2, population-size=4,
+survivors=2 → 9 evaluations total). Results:
+
+  | rank | candidate          | proved | score   | note                         |
+  |------|--------------------|--------|---------|------------------------------|
+  | 1    | g2-i0 (best)       | 26/38  | 2587.7  | family_budget[div]=12 → +1 prog |
+  | 2-6  | seed + 4 children  | 26/38  | 2586.7  | preserved                    |
+  | 7    | g1-i2              | 26/38  | 2585.2  | faster diagnostic (smaller budgets) |
+  | 8    | g2-i1              | 14/38  | 1384.4  | regression: fallback shuffle |
+  | 9    | g1-i0              | 12/38  | 1180.9  | regression: top_k=12 + shuffle |
+
+**No candidate beats 26/38.** `Nat.div_lt_iff_lt_mul'` is robust
+under every mutation. The three stuck div theorems (`Nat.div_pos`,
+`Nat.div_pos_iff`, `Nat.dvd_iff_div_mul_eq`) remain ERR/EXH for all
+candidates — confirming the v4.6 conclusion that tactic-search
+permutations alone won't close them.
+
+Two regressions both involve `reorder_fallback` — the random
+shuffle puts mod-specific simp tactics first, starving `omega`-shape
+theorems under the per-state budget cap. v4.8 should either lock the
+fallback head or restrict shuffling to compatible buckets.
+
+The constructor default + verifier stays as the v4.7 baseline.
+
+**v4.8 direction: term-mode `exact ⟨_, _⟩` builder for the remaining
+iff and dvd targets.** Tactic search has plateaued; proof-term
+construction is the next leverage point.
+
+- `project/evolve/runs/evolve-20260522-072211-b7f1fc/` — v4.7 sweep
+- Generated report: `project/evolve/reports/nat_defs_medium_v4_7.md`

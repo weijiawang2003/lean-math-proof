@@ -227,7 +227,7 @@ def _apply_template_variant(
 def make_seed_candidate(
     policy_type: str,
     ckpt_dir: str,
-    template_variant: str = "v45",
+    template_variant: str = "constructor",
 ) -> tuple[SearchCandidate, dict]:
     """Generation-0 candidate: the current baseline wrapper.
 
@@ -491,12 +491,13 @@ def main() -> None:
                              "Default: timeout_per_theorem × n_theorems × 1.05 + 60. "
                              "On timeout the candidate is recorded with "
                              "timeout_count = n_theorems and a heavy score penalty.")
-    parser.add_argument("--template-variant", default="v45",
+    parser.add_argument("--template-variant", default="constructor",
                         choices=sorted(TEMPLATE_VARIANTS),
-                        help="v4.6 sweep selector. v45 = baseline (no changes). "
-                             "verified = v4.5 templates with unavailable-constant "
-                             "filter. constructor / div-rewrite / mixed-small = "
-                             "prescribed subset variants.")
+                        help="v4.6 sweep selector. constructor (default in v4.7+) = "
+                             "iff-constructor div family, 26/38 on nat_defs_medium. "
+                             "v45 = pre-v4.6 baseline. verified = v45 templates with "
+                             "unavailable-constant filter. div-rewrite / mixed-small "
+                             "/ verified-no-rw-eq = ablation variants.")
     args = parser.parse_args()
 
     run_id = (
