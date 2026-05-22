@@ -49,6 +49,7 @@ plus one gen_v5 raw baseline plus one repro.**
 | gen_v5 raw (no wrapper) | 4 / 64 | 6% | `large_v5_raw_baseline/` |
 | v5-18-prio-kitchen | 41 / 64 | 64% | `large_v5_kitchen/` |
 | **v5-27-w4-master** | **43 / 64** | **67%** | `large_v5_master/` |
+| v5-27-w4-master with max_steps=16 | 43 / 64 | 67% | `large_v5_master_steps16/` (identical — confirms step budget isn't the bottleneck) |
 
 The 12 NEW theorems (not in nat_defs_medium) that v5-27 closes on
 nat_defs_large_v5:
