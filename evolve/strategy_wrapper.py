@@ -489,28 +489,41 @@ class StrategyWrapperPolicy:
         # raw key for traceability).
         seen: set[str] = set()
         priority_entries: list[Entry] = []
-        pt_shape_key: str | None = None
         if self.priority_templates:
             try:
                 from premise_retriever import classify_goal_shape
                 pt_goal_shape = classify_goal_shape(state_pp)
             except Exception:
                 pt_goal_shape = "unknown"
-            if pt_goal_shape in self.priority_templates:
-                pt_shape_key = pt_goal_shape
-            elif "any" in self.priority_templates:
-                pt_shape_key = "any"
-            if pt_shape_key is not None:
-                # v5 NS1: stable-sort each shape slot so all specific
-                # templates emit before any generic ones. Preserves
-                # declared order within each class, so authors still
-                # control specific-vs-specific ordering and the wrapper
-                # only fixes the specific-vs-generic ordering bug.
+            # v5 NS3.5: emit shape-specific templates first, then `any`
+            # as a TRUE fallback (not an exclusive alternative). The
+            # previous semantics — "shape if present else any" — meant
+            # that once a genome configured a slot for shape S, goals
+            # of shape S could never reach `any` even when the shape
+            # slot's tactics all failed; that forced authors to
+            # manually mirror `any` into every configured shape slot.
+            #
+            # New order (per goal):
+            #   1. shape-slot specifics (NS1-sorted)
+            #   2. shape-slot generics
+            #   3. any-slot specifics (NS1-sorted)
+            #   4. any-slot generics
+            # Then base / family / retrieval / fallback layers as before.
+            slots_to_emit: list[tuple[str, list[str]]] = []
+            if (pt_goal_shape != "any"
+                    and pt_goal_shape in self.priority_templates):
+                slots_to_emit.append((pt_goal_shape, self.priority_templates[pt_goal_shape]))
+            if "any" in self.priority_templates:
+                slots_to_emit.append(("any", self.priority_templates["any"]))
+            emitted = 0
+            for slot_key, raw_templates in slots_to_emit:
+                if self.priority_template_budget and emitted >= self.priority_template_budget:
+                    break
+                # NS1 stable-sort applied per slot.
                 ordered_templates = sorted(
-                    self.priority_templates[pt_shape_key],
+                    raw_templates,
                     key=lambda t: classify_template_specificity(t)[0],
                 )
-                emitted = 0
                 for raw in ordered_templates:
                     spec_label = classify_template_specificity(raw)[1]
                     for rendered in _render_template(raw, nat_vars, hypotheses):
@@ -518,7 +531,7 @@ class StrategyWrapperPolicy:
                             seen.add(rendered)
                             priority_entries.append(
                                 (rendered, ORIGIN_TEMPLATE, raw,
-                                 f"priority:{pt_shape_key}:{spec_label}",
+                                 f"priority:{slot_key}:{spec_label}",
                                  None, None, None)
                             )
                             emitted += 1

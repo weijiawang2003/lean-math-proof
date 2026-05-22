@@ -185,29 +185,34 @@ def _ns3_sqrt_pow(g: dict[str, Any]) -> dict[str, Any]:
 
 
 def _ns3_combined(g: dict[str, Any]) -> dict[str, Any]:
-    """All NS3 patches stacked. Order: dvd → sqrt-pow → eq → div-le →
-    add-mod (highest risk last; lowest probability of DojoCrash effect
-    if it does crash).
+    """All NS3 patches stacked.
 
-    Cross-shape broadcast: the add_mod_eq_ite multi-step template is
-    also mirrored into the `eq` slot, because the wrapper's shape gate
-    is exclusive — once an `eq` slot exists, eq-shaped goals never fall
-    back to `any`. ``Nat.add_mod_eq_ite`` classifies as `eq` (it's an
-    equation), so without this mirror the new eq slot would shadow the
-    add_mod multi-step template that ns3-add-mod-ite proved closes it.
+    Historical note: pre-NS3.5 versions of this function also mirrored
+    every `any` template into the `eq` and `le` slots, because the
+    wrapper's shape gate used to be exclusive — once a specific-shape
+    slot existed for shape S, goals of shape S could never reach the
+    `any` slot. NS3.5 changed the wrapper to make `any` a true fallback
+    (emitted after the shape-specific slot's templates), so the manual
+    mirroring is no longer needed and has been removed. The resulting
+    genome is exactly what the audit suggested: one patch per target
+    failure, plus the existing v5-27 base.
     """
     g = _ns3_dvd(g)
     g = _ns3_sqrt_pow(g)
     g = _ns3_eq_one_mul(g)
     g = _ns3_div_le(g)
     g = _ns3_add_mod_ite(g)
-    # Cross-shape broadcast: the wrapper's shape gate is exclusive —
-    # once a specific shape slot exists, goals of that shape never fall
-    # back to `any`. ``Nat.add_mod_eq_ite`` classifies as `le` (its
-    # if-then-else contains a `≤` inside) and could in principle hit
-    # `eq` too, so we mirror every `any` template into both. The shape
-    # classifier checks ``≤`` before ``=``, so in practice it's `le`,
-    # but mirroring into eq is cheap and keeps the broadcast complete.
+    return g
+
+
+def _ns3_combined_mirrored(g: dict[str, Any]) -> dict[str, Any]:
+    """Pre-NS3.5 form of `_ns3_combined`: manually mirrors `any`
+    templates into every configured shape slot. Kept for the NS3.5
+    ablation — verifies the cleaned genome (without the mirror) hits
+    the same 37/38 as the mirrored one once the wrapper does the
+    fallback automatically.
+    """
+    g = _ns3_combined(g)
     pt = deepcopy(g["priority_templates"])
     any_slot = pt.get("any", [])
     for target_shape in ("eq", "le"):
@@ -234,12 +239,13 @@ def _seed_from_v5_27(patch: Callable[[dict[str, Any]], dict[str, Any]]):
 
 
 VARIANTS_NS3: list[Variant] = [
-    Variant("ns3-dvd",          "NS3: fix dvd_iff_div_mul_eq template",          "A+priority", _seed_from_v5_27(_ns3_dvd)),
-    Variant("ns3-eq-one-mul",   "NS3: new eq slot for eq_one_of_mul_eq_one_left", "A+priority", _seed_from_v5_27(_ns3_eq_one_mul)),
-    Variant("ns3-add-mod-ite",  "NS3: multi-step add_mod_eq_ite template",       "C+priority", _seed_from_v5_27(_ns3_add_mod_ite)),
-    Variant("ns3-div-le",       "NS3: new le slot for div_le_div_right (gcongr)", "A+priority", _seed_from_v5_27(_ns3_div_le)),
-    Variant("ns3-sqrt-pow",     "NS3: fix sqrt_lt + pow_lt_pow_iff_left",        "A+priority", _seed_from_v5_27(_ns3_sqrt_pow)),
-    Variant("ns3-combined",     "NS3: all promising patches stacked",            "all+priority", _seed_from_v5_27(_ns3_combined)),
+    Variant("ns3-dvd",                  "NS3: fix dvd_iff_div_mul_eq template",                 "A+priority", _seed_from_v5_27(_ns3_dvd)),
+    Variant("ns3-eq-one-mul",           "NS3: new eq slot for eq_one_of_mul_eq_one_left",       "A+priority", _seed_from_v5_27(_ns3_eq_one_mul)),
+    Variant("ns3-add-mod-ite",          "NS3: multi-step add_mod_eq_ite template",              "C+priority", _seed_from_v5_27(_ns3_add_mod_ite)),
+    Variant("ns3-div-le",               "NS3: new le slot for div_le_div_right (gcongr)",       "A+priority", _seed_from_v5_27(_ns3_div_le)),
+    Variant("ns3-sqrt-pow",             "NS3: fix sqrt_lt + pow_lt_pow_iff_left",               "A+priority", _seed_from_v5_27(_ns3_sqrt_pow)),
+    Variant("ns3-combined",             "NS3: all promising patches stacked (no manual mirror)", "all+priority", _seed_from_v5_27(_ns3_combined)),
+    Variant("ns3-combined-mirrored",    "NS3: pre-NS3.5 form with manual eq/le mirror",         "all+priority", _seed_from_v5_27(_ns3_combined_mirrored)),
 ]
 
 
