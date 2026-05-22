@@ -73,7 +73,8 @@ The +2 vs v3.6: `Nat.div_lt_one_iff` (new) and `Nat.add_eq_one_iff`
 
 | variant | proved | rate |
 |---|---|---|
-| **v5-27-w4-master** | **11 / 15** | **73%** |
+| gen_v5 raw (no wrapper) | 10 / 15 | 67% |
+| **v5-27-w4-master** | **11 / 15** | **73%** (wrapper adds only +1: the Nat.mul_add_mod' family win) |
 
 Distribution: 10 wins from `generative_topk` on Set theorems
 (the model knows Set basics); 1 win from `family_tactic` on
