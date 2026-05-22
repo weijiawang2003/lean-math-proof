@@ -94,6 +94,16 @@ class SearchCandidate:
     # theorems). Substring match keeps the deny-list compact when the
     # same tactic is wrapped differently across families/fallbacks.
     theorem_tactic_denylist: dict[str, list[str]] = field(default_factory=dict)
+    # v4.1 premise-retrieval config. When retrieval_enabled is True the
+    # strategy wrapper calls premise_retriever.retrieve_for_state on every
+    # state whose theorem-family key has a catalog bucket (currently only
+    # "div" via _FAMILY_CATALOG_KEYS). Retrieved lemma names are wrapped
+    # in retrieval_tactic_forms (rw / simp / exact / apply) and inserted
+    # between family tactics and generic fallbacks. retrieval_top_k = 0
+    # silently no-ops even when retrieval_enabled is True.
+    retrieval_enabled: bool = False
+    retrieval_top_k: int = 0
+    retrieval_tactic_forms: list[str] = field(default_factory=list)
     metadata: dict[str, Any] = field(default_factory=dict)
 
     # -- serialization ----------------------------------------------------

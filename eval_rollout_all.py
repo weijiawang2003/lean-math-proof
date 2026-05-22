@@ -111,15 +111,24 @@ def _load_policy(
             seed=seed,
         )
         if strategy_config:
-            fb, tmpl, cap, fam, fam_budgets, deny = load_strategy_config(strategy_config)
+            (fb, tmpl, cap, fam, fam_budgets, deny,
+             retrieval_enabled, retrieval_top_k, retrieval_forms) = (
+                load_strategy_config(strategy_config)
+            )
         else:
-            fb, tmpl, cap, fam, fam_budgets, deny = [], [], None, {}, {}, {}
+            (fb, tmpl, cap, fam, fam_budgets, deny,
+             retrieval_enabled, retrieval_top_k, retrieval_forms) = (
+                [], [], None, {}, {}, {}, False, 0, []
+            )
         return StrategyWrapperPolicy(
             base_policy=base, fallback_tactics=fb, tactic_templates=tmpl,
             max_extra_tactics_per_state=cap,
             theorem_family_tactics=fam,
             family_budgets=fam_budgets,
             theorem_tactic_denylist=deny,
+            retrieval_enabled=retrieval_enabled,
+            retrieval_top_k=retrieval_top_k,
+            retrieval_tactic_forms=retrieval_forms,
         )
     else:
         raise ValueError(
@@ -168,6 +177,7 @@ def rollout_one_theorem(
         "winning_tactic_origin": None,
         "winning_tactic_template_source": None,
         "winning_tactic_family_source": None,
+        "winning_tactic_retrieved_premise": None,
         "fallbacks_used": 0,
         # v3.3 per-theorem counters
         "loop_transition_count": 0,
@@ -180,6 +190,14 @@ def rollout_one_theorem(
         # v3.6: count of tactics filtered out by the per-theorem deny-list
         # across all rank_tactics calls in this rollout.
         "denied_tactic_count": 0,
+        # v4.1 per-theorem retrieval counters. retrieval_activated is True
+        # if at least one rank_tactics call on this theorem returned a non-
+        # empty retrieved_lemma_set; attempt counts the retrieved_premise
+        # tactics actually run; advanced counts those that produced a
+        # non-error transition (closing or advancing state).
+        "retrieval_activated": False,
+        "retrieved_premise_attempt_count": 0,
+        "retrieved_premise_advanced_count": 0,
     }
 
     # Per-theorem state tracking (only consulted when enable_loop_avoidance).
@@ -205,6 +223,10 @@ def rollout_one_theorem(
                     getattr(pol, "last_family_sources", None)
                     or [None] * len(ranked)
                 )
+                retrieved_premises = (
+                    getattr(pol, "last_retrieved_premises", None)
+                    or [None] * len(ranked)
+                )
                 # Capture activated families once (depends only on theorem name).
                 if step == 1:
                     fams = getattr(pol, "last_activated_families", None) or []
@@ -213,6 +235,10 @@ def rollout_one_theorem(
                 result["denied_tactic_count"] += int(
                     getattr(pol, "last_denied_count", 0) or 0
                 )
+                # v4.1: mark retrieval activated if this step's wrapper call
+                # produced a non-empty retrieved lemma set.
+                if getattr(pol, "last_retrieved_lemma_set", None):
+                    result["retrieval_activated"] = True
 
                 step_succeeded = False
                 deferred = None  # (rank, tac, origin, tmpl_src, outcome, state_h_after)
@@ -228,6 +254,10 @@ def rollout_one_theorem(
                     fam_src = (
                         family_sources[rank]
                         if rank < len(family_sources) else None
+                    )
+                    retr_premise = (
+                        retrieved_premises[rank]
+                        if rank < len(retrieved_premises) else None
                     )
 
                     # Pre-filter: skip tactics already known to error on this state.
@@ -253,8 +283,15 @@ def rollout_one_theorem(
                             synthetic["tactic_template_source"] = tmpl_src
                         if fam_src is not None:
                             synthetic["tactic_family_source"] = fam_src
+                        if retr_premise is not None:
+                            synthetic["tactic_retrieved_premise"] = retr_premise
                         append_jsonl(traces_path, synthetic)
                         continue
+
+                    # v4.1: count attempt before run_transition so REPL crashes
+                    # on a retrieved tactic still register as attempted.
+                    if origin == "retrieved_premise":
+                        result["retrieved_premise_attempt_count"] += 1
 
                     outcome = run_transition(
                         dojo, theorem, state, tac,
@@ -273,6 +310,8 @@ def rollout_one_theorem(
                         record_dict["tactic_template_source"] = tmpl_src
                     if fam_src is not None:
                         record_dict["tactic_family_source"] = fam_src
+                    if retr_premise is not None:
+                        record_dict["tactic_retrieved_premise"] = retr_premise
                     record_dict["state_hash_before"] = state_h_before
 
                     # REPL crashed — Dojo is dead, abort theorem
@@ -293,9 +332,13 @@ def rollout_one_theorem(
                         result["winning_tactic_origin"] = origin
                         result["winning_tactic_template_source"] = tmpl_src
                         result["winning_tactic_family_source"] = fam_src
+                        result["winning_tactic_retrieved_premise"] = retr_premise
                         result["num_steps"] = step
                         result["tactics_used"].append(tac)
                         result["tactics_used_origins"].append(origin)
+                        if origin == "retrieved_premise":
+                            # Closing the goal counts as an advance too.
+                            result["retrieved_premise_advanced_count"] += 1
                         if rank > 0:
                             result["fallbacks_used"] += 1
                         step_succeeded = True
@@ -336,6 +379,8 @@ def rollout_one_theorem(
                         seen_state_hashes.add(state_h_after)
                     if not produced_seen:
                         result["unseen_progress_count"] += 1
+                    if origin == "retrieved_premise":
+                        result["retrieved_premise_advanced_count"] += 1
                     state = outcome.next_state
                     result["num_steps"] = step
                     result["tactics_used"].append(tac)
@@ -587,6 +632,36 @@ def main():
     )
     if denied_tactic_total:
         print(f"  Denied tactics:     {denied_tactic_total} (per-theorem deny-list)")
+
+    # v4.1 retrieval aggregates.
+    retrieved_premise_activation_count = sum(
+        1 for r in results if r.get("retrieval_activated")
+    )
+    retrieved_premise_attempt_count = sum(
+        int(r.get("retrieved_premise_attempt_count") or 0) for r in results
+    )
+    retrieved_premise_advanced_count = sum(
+        int(r.get("retrieved_premise_advanced_count") or 0) for r in results
+    )
+    retrieved_premise_proved_count = sum(
+        1 for r in proved if r.get("winning_tactic_origin") == "retrieved_premise"
+    )
+    retrieved_premise_wins: list[dict] = [
+        {
+            "theorem": r["full_name"],
+            "premise": r.get("winning_tactic_retrieved_premise"),
+            "tactic": r.get("winning_tactic"),
+        }
+        for r in proved
+        if r.get("winning_tactic_origin") == "retrieved_premise"
+    ]
+    if retrieved_premise_activation_count:
+        print(
+            f"  Retrieval:          activated on {retrieved_premise_activation_count} theorems, "
+            f"{retrieved_premise_attempt_count} tactics attempted, "
+            f"{retrieved_premise_advanced_count} advanced, "
+            f"{retrieved_premise_proved_count} won"
+        )
     print(f"{'='*64}\n")
 
     metrics = {
@@ -620,6 +695,12 @@ def main():
         "family_activated_theorems": family_activated_theorems,
         # v3.6 per-theorem deny-list aggregate
         "denied_tactic_total": denied_tactic_total,
+        # v4.1 retrieval aggregates
+        "retrieved_premise_activation_count": retrieved_premise_activation_count,
+        "retrieved_premise_attempt_count": retrieved_premise_attempt_count,
+        "retrieved_premise_advanced_count": retrieved_premise_advanced_count,
+        "retrieved_premise_proved_count": retrieved_premise_proved_count,
+        "retrieved_premise_wins": retrieved_premise_wins,
         "per_theorem": results,
     }
     write_metrics(artifacts["metrics_path"], metrics)

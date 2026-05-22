@@ -117,6 +117,21 @@ STATIC_PREMISES: dict[str, list[str]] = {
         "Nat.mul_add_mod", "Nat.add_mod", "Nat.mul_mod",
         "Nat.mod_eq_of_lt",
     ],
+    # v4.1: div-family premises for Nat. Verified present in
+    # Mathlib/Data/Nat/Defs.lean (or transitively imported there) against
+    # the lean_dojo Mathlib4 cache at HEAD. Used by retrieve_for_state to
+    # surface candidate `rw [..]` / `exact ..` lemmas when the wrapper's
+    # div family activates on a Nat.div_* / Nat.dvd_* theorem.
+    "Nat.div": [
+        "Nat.div_le_div_right", "Nat.div_le_iff_le_mul",
+        "Nat.div_lt_iff_lt_mul", "Nat.div_lt_iff_lt_mul'",
+        "Nat.div_eq_of_lt", "Nat.div_pos", "Nat.div_pos_iff",
+        "Nat.div_lt_one_iff", "Nat.div_eq_zero_iff",
+        "Nat.dvd_iff_div_mul_eq",
+        "Nat.mul_div_cancel", "Nat.div_mul_cancel",
+        "Nat.mod_add_div", "Nat.lt_of_lt_of_le",
+        "Nat.pos_of_ne_zero", "Nat.mod_eq_of_lt",
+    ],
     "List": [
         "List.mem_cons_iff", "List.length_cons", "List.append_nil",
         "List.nil_append", "List.map_cons", "List.filter_cons",
@@ -135,6 +150,97 @@ STATIC_PREMISES: dict[str, list[str]] = {
         "Int.neg_neg", "Int.sub_self",
     ],
 }
+
+
+# ── v4.1 stateless retrieval helper ─────────────────────────────────
+
+# Cheap family-key → catalog-bucket mapping. Used by retrieve_for_state
+# to decide which static premise bucket to draw from when a strategy
+# wrapper family activates. Kept narrow on purpose: v4.1 ships the div
+# family only; v4.2 / v4.3 will extend this map.
+_FAMILY_CATALOG_KEYS: dict[str, list[str]] = {
+    "div": ["Nat.div"],
+}
+
+
+def retrieve_for_state(
+    state_pp: str,
+    theorem_name: str | None = None,
+    k: int = 10,
+    family_key: str | None = None,
+) -> list[str]:
+    """Return up to `k` lemma names relevant to the given proof state.
+
+    Stateless and deterministic — does not load traces or external models.
+    Designed to be called once per state by `StrategyWrapperPolicy` when a
+    theorem family activates. Returns lemma names only; the caller is
+    responsible for wrapping them in `rw [..]` / `exact ..` etc.
+
+    Args:
+        state_pp: the Lean state pretty-print (full hypotheses + goal).
+        theorem_name: full theorem name (e.g. `Nat.div_pos_iff`); used to
+            bias scoring toward premises whose name shares tokens with it.
+        k: max number of names to return.
+        family_key: which family the caller has identified (e.g. "div").
+            If provided, the corresponding catalog bucket is used; otherwise
+            buckets are picked by substring detection on the theorem name
+            and the state.
+
+    Returns:
+        Up to k lemma names, ranked by token-overlap score (descending).
+        Order is deterministic for a given input.
+    """
+    if k <= 0:
+        return []
+
+    # Pick catalog buckets to draw from
+    buckets: list[str] = []
+    if family_key and family_key in _FAMILY_CATALOG_KEYS:
+        buckets = list(_FAMILY_CATALOG_KEYS[family_key])
+    else:
+        # Heuristic fallback: substring-match on the theorem name
+        name_lower = (theorem_name or "").lower()
+        if "div" in name_lower or "dvd" in name_lower:
+            buckets = list(_FAMILY_CATALOG_KEYS["div"])
+
+    if not buckets:
+        return []
+
+    candidates: list[str] = []
+    seen: set[str] = set()
+    for bucket in buckets:
+        for premise in STATIC_PREMISES.get(bucket, []):
+            if premise not in seen:
+                seen.add(premise)
+                candidates.append(premise)
+
+    if not candidates:
+        return []
+
+    # Score by token overlap. The query tokens come from both the state
+    # pretty-print and the theorem name (the latter is highly diagnostic
+    # — e.g. `Nat.div_pos_iff` shares `div`, `pos`, `iff` with the right
+    # premises in the bucket).
+    query_tokens: set[str] = set(_tokenize_state(state_pp))
+    if theorem_name:
+        # Split the name on dots and underscores so e.g. "Nat.div_pos_iff"
+        # yields {"Nat", "div", "pos", "iff"}.
+        for part in re.split(r"[._]", theorem_name):
+            part = part.strip()
+            if len(part) > 1:
+                query_tokens.add(part)
+
+    scored: list[tuple[float, int, str]] = []
+    for idx, premise in enumerate(candidates):
+        # Split premise name into parts (Nat.div_pos_iff → div, pos, iff).
+        # Drop the "Nat" namespace token — too generic to be diagnostic.
+        parts = [p for p in re.split(r"[._]", premise) if p and p != "Nat"]
+        overlap = sum(1 for p in parts if p in query_tokens)
+        # Tiebreak by catalog order (lower idx wins) so the output is stable.
+        scored.append((-overlap, idx, premise))
+
+    scored.sort()
+    return [premise for _score, _idx, premise in scored[:k]]
 
 
 # ── BM25-like token overlap scorer ──────────────────────────────────

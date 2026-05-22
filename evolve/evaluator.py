@@ -296,6 +296,11 @@ def _real_metrics(
             theorem_tactic_denylist=getattr(
                 candidate, "theorem_tactic_denylist", None
             ),
+            retrieval_enabled=getattr(candidate, "retrieval_enabled", False),
+            retrieval_top_k=getattr(candidate, "retrieval_top_k", 0),
+            retrieval_tactic_forms=getattr(
+                candidate, "retrieval_tactic_forms", None
+            ),
         )
         cmd.extend(["--strategy-config", str(strategy_path)])
 

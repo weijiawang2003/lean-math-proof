@@ -37,6 +37,18 @@ ORIGIN_GENERATIVE = "generative_topk"
 ORIGIN_FALLBACK = "fallback_tactic"
 ORIGIN_TEMPLATE = "tactic_template"
 ORIGIN_FAMILY = "family_tactic"
+# v4.1: retrieved premise origin. Tagged on synthesized rw/simp/exact/apply
+# entries whose lemma name came from premise_retriever.retrieve_for_state.
+ORIGIN_RETRIEVED = "retrieved_premise"
+
+# Default tactic forms used to wrap a retrieved lemma name. `{p}` is the
+# substitution placeholder. Override per-call via retrieval_tactic_forms.
+_DEFAULT_RETRIEVAL_TACTIC_FORMS: list[str] = [
+    "rw [{p}]",
+    "simp [{p}]",
+    "exact {p}",
+    "apply {p}",
+]
 
 
 def _match_families(theorem_name: str, family_keys: list[str]) -> list[str]:
@@ -124,12 +136,22 @@ class StrategyWrapperPolicy:
                                     populated for tactic_template entries;
                                     None otherwise)
       - `last_family_sources`     — parallel family-key strings (only
-                                    populated for family_tactic entries;
-                                    None otherwise)
+                                    populated for family_tactic AND
+                                    retrieved_premise entries; None
+                                    otherwise)
+      - `last_retrieved_premises` — parallel lemma names (only populated
+                                    for retrieved_premise entries; None
+                                    otherwise)
       - `last_activated_families` — list of family keys that matched the
                                     current theorem name (in declaration
                                     order; used by eval to aggregate
                                     per-family counts)
+      - `last_retrieval_activation` — family key that triggered v4.1
+                                    premise retrieval on this call, or
+                                    None if retrieval did not activate
+      - `last_retrieved_lemma_set` — ordered list of lemma names returned
+                                    by retrieve_for_state on this call
+                                    (before tactic-form expansion)
     """
 
     def __init__(
@@ -141,6 +163,9 @@ class StrategyWrapperPolicy:
         theorem_family_tactics: dict[str, list[str]] | None = None,
         family_budgets: dict[str, int] | None = None,
         theorem_tactic_denylist: dict[str, list[str]] | None = None,
+        retrieval_enabled: bool = False,
+        retrieval_top_k: int = 0,
+        retrieval_tactic_forms: list[str] | None = None,
     ) -> None:
         self.base_policy = base_policy
         self.fallback_tactics: list[str] = [
@@ -172,11 +197,22 @@ class StrategyWrapperPolicy:
             for k, v in (theorem_tactic_denylist or {}).items()
             if k
         }
+        # v4.1 premise-retrieval config. Off by default — only activates
+        # when retrieval_enabled is True AND an activated family has a
+        # matching catalog bucket in premise_retriever._FAMILY_CATALOG_KEYS.
+        self.retrieval_enabled: bool = bool(retrieval_enabled)
+        self.retrieval_top_k: int = max(0, int(retrieval_top_k or 0))
+        self.retrieval_tactic_forms: list[str] = list(
+            retrieval_tactic_forms or _DEFAULT_RETRIEVAL_TACTIC_FORMS
+        )
         self.last_ranked_tactics: list[str] = []
         self.last_origins: list[str] = []
         self.last_template_sources: list[str | None] = []
         self.last_family_sources: list[str | None] = []
+        self.last_retrieved_premises: list[str | None] = []
         self.last_activated_families: list[str] = []
+        self.last_retrieval_activation: str | None = None
+        self.last_retrieved_lemma_set: list[str] = []
         # v3.6: number of (already-deduped) entries filtered by the deny-
         # list in the most recent rank_tactics call. Reset per call.
         self.last_denied_count: int = 0
@@ -187,14 +223,20 @@ class StrategyWrapperPolicy:
         base = self.base_policy.rank_tactics(state_pp, full_name, k=k)
         nat_vars = _extract_nat_vars(state_pp)
 
-        # Build base entries (deduped against themselves). Each entry:
-        # (tactic, origin, template_source, family_source)
-        base_entries: list[tuple[str, str, str | None, str | None]] = []
+        # v4.1: entries are 5-tuples
+        # (tactic, origin, template_source, family_source, retrieved_premise).
+        # retrieved_premise is the lemma name for ORIGIN_RETRIEVED entries
+        # and None for every other origin. The extra field exists so the
+        # eval trace can attribute a successful tactic back to the lemma
+        # the retriever surfaced.
+        Entry = tuple[str, str, str | None, str | None, str | None]
+
+        base_entries: list[Entry] = []
         seen: set[str] = set()
         for t in base:
             if t and t not in seen:
                 seen.add(t)
-                base_entries.append((t, ORIGIN_GENERATIVE, None, None))
+                base_entries.append((t, ORIGIN_GENERATIVE, None, None, None))
 
         # v3.4: family-specific tactics first (they encode targeted
         # knowledge for the matched theorem family), then generic
@@ -204,32 +246,66 @@ class StrategyWrapperPolicy:
         )
         self.last_activated_families = list(activated_families)
 
-        family_entries: list[tuple[str, str, str | None, str | None]] = []
+        family_entries: list[Entry] = []
         for fam in activated_families:
             for raw in self.theorem_family_tactics.get(fam, []):
                 for rendered in _render_template(raw, nat_vars):
                     if rendered and rendered not in seen:
                         seen.add(rendered)
                         family_entries.append(
-                            (rendered, ORIGIN_FAMILY, None, fam)
+                            (rendered, ORIGIN_FAMILY, None, fam, None)
                         )
 
-        # Generic fallbacks + rendered templates, deduped against base and
-        # family entries, in deterministic genome order.
-        generic_entries: list[tuple[str, str, str | None, str | None]] = []
+        # v4.1: premise retrieval. Insert between family and generic
+        # entries. Only activates when retrieval_enabled and an activated
+        # family has a catalog bucket in _FAMILY_CATALOG_KEYS. For each
+        # retrieved lemma name, synthesize one entry per configured
+        # tactic form (rw / simp / exact / apply by default).
+        retrieved_entries: list[Entry] = []
+        retrieval_activation: str | None = None
+        retrieved_lemma_set: list[str] = []
+        if self.retrieval_enabled and self.retrieval_top_k > 0 and activated_families:
+            from premise_retriever import (
+                _FAMILY_CATALOG_KEYS,
+                retrieve_for_state,
+            )
+            for fam in activated_families:
+                if fam in _FAMILY_CATALOG_KEYS:
+                    retrieval_activation = fam
+                    retrieved_lemma_set = retrieve_for_state(
+                        state_pp=state_pp,
+                        theorem_name=full_name or None,
+                        k=self.retrieval_top_k,
+                        family_key=fam,
+                    )
+                    break
+            for premise in retrieved_lemma_set:
+                for form in self.retrieval_tactic_forms:
+                    tactic = form.replace("{p}", premise).strip()
+                    if tactic and tactic not in seen:
+                        seen.add(tactic)
+                        retrieved_entries.append(
+                            (tactic, ORIGIN_RETRIEVED, None, retrieval_activation, premise)
+                        )
+        self.last_retrieval_activation = retrieval_activation
+        self.last_retrieved_lemma_set = list(retrieved_lemma_set)
+
+        # Generic fallbacks + rendered templates, deduped against base,
+        # family and retrieval entries, in deterministic genome order.
+        generic_entries: list[Entry] = []
         for t in self.fallback_tactics:
             if t and t not in seen:
                 seen.add(t)
-                generic_entries.append((t, ORIGIN_FALLBACK, None, None))
+                generic_entries.append((t, ORIGIN_FALLBACK, None, None, None))
         for raw_template in self.tactic_templates:
             for rendered in _render_template(raw_template, nat_vars):
                 if rendered and rendered not in seen:
                     seen.add(rendered)
                     generic_entries.append(
-                        (rendered, ORIGIN_TEMPLATE, raw_template, None)
+                        (rendered, ORIGIN_TEMPLATE, raw_template, None, None)
                     )
 
-        extra_entries = family_entries + generic_entries
+        extra_entries = family_entries + retrieved_entries + generic_entries
 
         # v3.6 per-theorem deny-list: filter entries whose tactic string
         # contains any denied substring for this theorem. Applied after
@@ -241,14 +317,14 @@ class StrategyWrapperPolicy:
         if denied_substrings:
             def _is_denied(tac: str) -> bool:
                 return any(d and d in tac for d in denied_substrings)
-            base_kept: list[tuple[str, str, str | None, str | None]] = []
+            base_kept: list[Entry] = []
             for e in base_entries:
                 if _is_denied(e[0]):
                     denied_count += 1
                 else:
                     base_kept.append(e)
             base_entries = base_kept
-            extra_kept: list[tuple[str, str, str | None, str | None]] = []
+            extra_kept: list[Entry] = []
             for e in extra_entries:
                 if _is_denied(e[0]):
                     denied_count += 1
@@ -260,6 +336,11 @@ class StrategyWrapperPolicy:
         # Effective per-state extras cap: when any family activates, use
         # max(family_budgets[f] for f in activated). Otherwise use the
         # global max_extra_tactics_per_state (None = unbounded).
+        # v4.1: when premise retrieval activates on this state, reserve
+        # additional cap slots so retrieved tactics fit alongside the
+        # family tactics (otherwise the cap drops them all). Slot count =
+        # len(retrieval_tactic_forms) * retrieval_top_k — an upper bound
+        # on retrieved_entries before dedup.
         cap = self.max_extra_tactics_per_state
         if activated_families:
             budgets = [
@@ -269,6 +350,8 @@ class StrategyWrapperPolicy:
             ]
             if budgets:
                 cap = max(budgets)
+        if retrieval_activation is not None and cap is not None:
+            cap += len(self.retrieval_tactic_forms) * self.retrieval_top_k
         if cap is not None:
             extra_entries = extra_entries[:cap]
 
@@ -277,6 +360,7 @@ class StrategyWrapperPolicy:
         self.last_origins = [e[1] for e in all_entries]
         self.last_template_sources = [e[2] for e in all_entries]
         self.last_family_sources = [e[3] for e in all_entries]
+        self.last_retrieved_premises = [e[4] for e in all_entries]
         return self.last_ranked_tactics
 
     def origin_of_rank(self, rank: int) -> str | None:
@@ -290,15 +374,17 @@ def load_strategy_config(
 ) -> tuple[
     list[str], list[str], int | None,
     dict[str, list[str]], dict[str, int], dict[str, list[str]],
+    bool, int, list[str],
 ]:
     """Read the strategy config from JSON.
 
     Returns (fallback_tactics, tactic_templates, max_extra_tactics_per_state,
-            theorem_family_tactics, family_budgets, theorem_tactic_denylist).
+            theorem_family_tactics, family_budgets, theorem_tactic_denylist,
+            retrieval_enabled, retrieval_top_k, retrieval_tactic_forms).
 
-    Missing keys produce empty lists / dicts / None; unknown keys are
-    ignored. Older configs (pre-v3.4 / pre-v3.6) just get empty dicts for
-    the newer fields, which is a no-op in the wrapper.
+    Missing keys produce empty lists / dicts / None / False / 0; unknown keys
+    are ignored. Older configs (pre-v3.4 / pre-v3.6 / pre-v4.1) just get
+    empty defaults for the newer fields, which is a no-op in the wrapper.
     """
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
     fb = list(raw.get("fallback_tactics") or [])
@@ -311,7 +397,14 @@ def load_strategy_config(
     fam_budgets = {str(k): int(v) for k, v in fb_raw.items()}
     deny_raw = raw.get("theorem_tactic_denylist") or {}
     deny = {str(k): list(v or []) for k, v in deny_raw.items()}
-    return fb, tmpl, cap, fam, fam_budgets, deny
+    retrieval_enabled = bool(raw.get("retrieval_enabled", False))
+    retrieval_top_k = int(raw.get("retrieval_top_k", 0) or 0)
+    forms_raw = raw.get("retrieval_tactic_forms") or []
+    retrieval_tactic_forms = [str(s) for s in forms_raw if s]
+    return (
+        fb, tmpl, cap, fam, fam_budgets, deny,
+        retrieval_enabled, retrieval_top_k, retrieval_tactic_forms,
+    )
 
 
 def dump_strategy_config(
@@ -322,6 +415,9 @@ def dump_strategy_config(
     theorem_family_tactics: dict[str, list[str]] | None = None,
     family_budgets: dict[str, int] | None = None,
     theorem_tactic_denylist: dict[str, list[str]] | None = None,
+    retrieval_enabled: bool = False,
+    retrieval_top_k: int = 0,
+    retrieval_tactic_forms: list[str] | None = None,
 ) -> None:
     """Write the JSON config the subprocess will read. Parent dirs are
     created if needed."""
@@ -344,6 +440,11 @@ def dump_strategy_config(
                     str(k): list(v or [])
                     for k, v in (theorem_tactic_denylist or {}).items()
                 },
+                "retrieval_enabled": bool(retrieval_enabled),
+                "retrieval_top_k": int(retrieval_top_k or 0),
+                "retrieval_tactic_forms": [
+                    str(s) for s in (retrieval_tactic_forms or []) if s
+                ],
             },
             indent=2,
             ensure_ascii=False,

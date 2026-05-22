@@ -146,9 +146,17 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         }
         max_extra_tactics_per_state = 10
         timeout_per_theorem = 60
+        # v4.1: premise retrieval on the div family. retrieval_top_k = 10 yields
+        # up to 40 candidate retrieved tactics (10 lemmas × 4 forms) per state
+        # whose theorem name contains "div"/"dvd". The wrapper bumps the cap
+        # automatically while retrieval is active, so non-div theorems still
+        # see v3.6 budgeting and ordering unchanged.
+        retrieval_enabled = True
+        retrieval_top_k = 10
+        retrieval_tactic_forms: list[str] = []  # empty → wrapper uses defaults
         description = (
-            "v3.6 hybrid_evolved seed: v3.5 library + per-theorem deny-list "
-            "for the simp_all/add_mod crash on Nat.add_mod_eq_ite."
+            "v4.1 hybrid_evolved seed: v3.6 library + div-family premise "
+            "retrieval (retrieve_for_state, top-k=10, forms=rw/simp/exact/apply)."
         )
     else:
         fallback_tactics = ["simp", "aesop", "omega", "norm_num", "rfl"]
@@ -158,6 +166,9 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         theorem_tactic_denylist = {}
         max_extra_tactics_per_state = None
         timeout_per_theorem = 20
+        retrieval_enabled = False
+        retrieval_top_k = 0
+        retrieval_tactic_forms = []
         description = "Baseline wrapper: top-k=8, max-steps=8 (gen_v5 reference)."
 
     return SearchCandidate(
@@ -174,6 +185,9 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         theorem_family_tactics=theorem_family_tactics,
         family_budgets=family_budgets,
         theorem_tactic_denylist=theorem_tactic_denylist,
+        retrieval_enabled=retrieval_enabled,
+        retrieval_top_k=retrieval_top_k,
+        retrieval_tactic_forms=retrieval_tactic_forms,
         metadata={"role": "seed"},
     )
 
