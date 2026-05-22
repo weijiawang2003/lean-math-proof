@@ -160,10 +160,18 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         retrieval_tactic_forms: list[str] = ["rw", "simp", "apply"]
         retrieval_filter_self = True
         retrieval_filter_unavailable = True
+        # v4.3: goal-shape filter for retrieved-apply. Per-theorem only —
+        # if `apply LEMMA` ever produces a strictly larger open-goal stack,
+        # subsequent `apply LEMMA` candidates are pre-filtered on that
+        # theorem. The lemma is NOT globally banned; rw/simp forms still
+        # flow. Suppresses the pathological `apply Nat.lt_of_lt_of_le`
+        # bloat that consumed most of v4.2's retrieval search budget.
+        retrieval_skip_bloating_apply = True
         description = (
-            "v4.2 hybrid_evolved seed: v3.6 library + div-family premise "
+            "v4.3 hybrid_evolved seed: v3.6 library + div-family premise "
             "retrieval (retrieve_for_state, top-k=8, forms=rw/simp/apply) "
-            "with self/unavailable filtering."
+            "with self/unavailable filtering and per-theorem retrieved-apply "
+            "bloat rejection."
         )
     else:
         fallback_tactics = ["simp", "aesop", "omega", "norm_num", "rfl"]
@@ -178,6 +186,7 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         retrieval_tactic_forms = []
         retrieval_filter_self = True
         retrieval_filter_unavailable = True
+        retrieval_skip_bloating_apply = True
         description = "Baseline wrapper: top-k=8, max-steps=8 (gen_v5 reference)."
 
     return SearchCandidate(
@@ -199,6 +208,7 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         retrieval_tactic_forms=retrieval_tactic_forms,
         retrieval_filter_self=retrieval_filter_self,
         retrieval_filter_unavailable=retrieval_filter_unavailable,
+        retrieval_skip_bloating_apply=retrieval_skip_bloating_apply,
         metadata={"role": "seed"},
     )
 

@@ -191,3 +191,57 @@ need a goal-shape filter to suppress.
 - Generated reports:
   `project/evolve/reports/nat_defs_medium_v4_1.md`,
   `project/evolve/reports/nat_defs_medium_v4_2.md`
+
+## v4.3 — Goal-shape filter on retrieved `apply` tactics
+
+v4.1/v4.2 surfaced one structural waste pattern that the hygiene layer
+did not address: the only retrieved tactic that ever produced a state
+advance in v4.2 was `apply Nat.lt_of_lt_of_le`, and every one of those
+16 advances strictly grew the open-goal count by 2 (1→3→5→7→9→11) on
+`Nat.div_le_div_right` / `Nat.div_lt_one_iff` / `Nat.div_pos_iff`. The
+extra subgoals could never be closed by the wrapper, so each accepted
+bloat advance just added 27 wasted Lean roundtrips at the next step.
+
+v4.3 adds a per-theorem goal-shape filter to `rollout_one_theorem`:
+
+* When a retrieved `apply LEMMA` produces a TacticState transition with
+  `num_goals_after > num_goals_before`, the trace is written with
+  `bloat_rejected=True`, the lemma joins a per-theorem
+  `bloating_apply_lemmas` set, and the advance is **not taken** (the
+  rollout continues at the same state).
+* Subsequent retrieved `apply LEMMA` candidates on the same theorem
+  emit `SkippedBloatingApply` traces and are skipped before Lean is
+  invoked.
+* The lemma is NOT globally banned — `rw [LEMMA]` / `simp [LEMMA]` for
+  the same lemma still flow.
+* Toggled by `SearchCandidate.retrieval_skip_bloating_apply` (default
+  True). The default seed enables it.
+
+**Outcome (Experiment B, the new default)**: 25/38 preserved (zero
+regressions), `proved_by_origin` bit-identical to v3.6. The 16
+pathological apply chains in v4.2 collapse to 3 first-time observations
+(one per affected theorem) which are then rejected; the chain is killed
+before it eats Lean budget. Retrieval attempts drop from v4.2's 303 to
+**121** (-60%). Wallclock drops from 4m19s to **3m42s** (-37s).
+Errored/Exhausted distribution restored to v3.6's shape (10/3) — the
+v4.1/v4.2 EXH @8 status on 3 div theorems was an artifact of the
+bloating chain extending the rollout, not real progress.
+
+Two ablations confirm:
+
+* **Experiment A** (bloat filter OFF, forms `rw/simp/apply`) reproduces
+  v4.2 (303 attempts, 16 bloat advances, 25/38, errored 7 / exhausted 6)
+  — confirming the v4.3 code path is behavior-equivalent to v4.2 when
+  the filter is off.
+* **Experiment C** (bloat filter ON, forms `rw/simp` only) — same 25/38,
+  73 attempts, 3m28s, but loses the `apply` diagnostic surface.
+
+Default kept as B (apply enabled, bloat-filtered) because the
+diagnostic value of seeing which lemmas bloat outweighs the 0.2 min /
+48-roundtrip saving of dropping `apply` entirely.
+
+- `project/evolve/runs/evolve-20260522-034524-d10acf/` — **v4.3 / B
+  medium** (25/38, retrieval + bloat filter, 16 → 3 bloat events,
+  current published default)
+- `/tmp/v4_3_exp_A/`, `/tmp/v4_3_exp_C/` — ablation runs
+- Generated report: `project/evolve/reports/nat_defs_medium_v4_3.md`

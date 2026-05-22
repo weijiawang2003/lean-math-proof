@@ -449,20 +449,20 @@ def load_strategy_config(
 ) -> tuple[
     list[str], list[str], int | None,
     dict[str, list[str]], dict[str, int], dict[str, list[str]],
-    bool, int, list[str], bool, bool,
+    bool, int, list[str], bool, bool, bool,
 ]:
     """Read the strategy config from JSON.
 
     Returns (fallback_tactics, tactic_templates, max_extra_tactics_per_state,
             theorem_family_tactics, family_budgets, theorem_tactic_denylist,
             retrieval_enabled, retrieval_top_k, retrieval_tactic_forms,
-            retrieval_filter_self, retrieval_filter_unavailable).
+            retrieval_filter_self, retrieval_filter_unavailable,
+            retrieval_skip_bloating_apply).
 
-    Missing keys produce empty lists / dicts / None / False / 0; unknown keys
-    are ignored. Older configs (pre-v3.4 / pre-v3.6 / pre-v4.1 / pre-v4.2)
-    just get safe defaults for the newer fields. For backward compatibility
-    the v4.2 filter flags default to True — older configs that simply omit
-    them will benefit from the new filters automatically.
+    Missing keys produce safe defaults; unknown keys are ignored. Older
+    configs (pre-v3.4 / pre-v3.6 / pre-v4.1 / pre-v4.2 / pre-v4.3) just
+    get safe defaults for the newer fields. v4.2/v4.3 filter flags default
+    to True so older configs benefit from the new filters automatically.
     """
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
     fb = list(raw.get("fallback_tactics") or [])
@@ -481,10 +481,14 @@ def load_strategy_config(
     retrieval_tactic_forms = [str(s) for s in forms_raw if s]
     retrieval_filter_self = bool(raw.get("retrieval_filter_self", True))
     retrieval_filter_unavailable = bool(raw.get("retrieval_filter_unavailable", True))
+    retrieval_skip_bloating_apply = bool(
+        raw.get("retrieval_skip_bloating_apply", True)
+    )
     return (
         fb, tmpl, cap, fam, fam_budgets, deny,
         retrieval_enabled, retrieval_top_k, retrieval_tactic_forms,
         retrieval_filter_self, retrieval_filter_unavailable,
+        retrieval_skip_bloating_apply,
     )
 
 
@@ -501,6 +505,7 @@ def dump_strategy_config(
     retrieval_tactic_forms: list[str] | None = None,
     retrieval_filter_self: bool = True,
     retrieval_filter_unavailable: bool = True,
+    retrieval_skip_bloating_apply: bool = True,
 ) -> None:
     """Write the JSON config the subprocess will read. Parent dirs are
     created if needed."""
@@ -530,6 +535,9 @@ def dump_strategy_config(
                 ],
                 "retrieval_filter_self": bool(retrieval_filter_self),
                 "retrieval_filter_unavailable": bool(retrieval_filter_unavailable),
+                "retrieval_skip_bloating_apply": bool(
+                    retrieval_skip_bloating_apply
+                ),
             },
             indent=2,
             ensure_ascii=False,

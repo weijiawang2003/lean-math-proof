@@ -307,6 +307,9 @@ def _real_metrics(
             retrieval_filter_unavailable=getattr(
                 candidate, "retrieval_filter_unavailable", True
             ),
+            retrieval_skip_bloating_apply=getattr(
+                candidate, "retrieval_skip_bloating_apply", True
+            ),
         )
         cmd.extend(["--strategy-config", str(strategy_path)])
 

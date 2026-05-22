@@ -112,6 +112,15 @@ class SearchCandidate:
     # Both default True since they are net wins on the v4.1 traces.
     retrieval_filter_self: bool = True
     retrieval_filter_unavailable: bool = True
+    # v4.3 goal-shape filter for retrieved-premise `apply LEMMA` tactics.
+    # When True (default), the eval rollout rejects retrieved-apply
+    # transitions that strictly increase the open-goal count and
+    # pre-filters subsequent `apply LEMMA` candidates on the same
+    # theorem. Suppresses the pathological `apply Nat.lt_of_lt_of_le`
+    # 2-per-step goal-stack bloat observed in v4.2. Per-theorem only —
+    # the lemma is not globally banned, only its `apply` form is
+    # suppressed after one observed bloat on the theorem being proved.
+    retrieval_skip_bloating_apply: bool = True
     metadata: dict[str, Any] = field(default_factory=dict)
 
     # -- serialization ----------------------------------------------------

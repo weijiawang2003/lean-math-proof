@@ -113,16 +113,18 @@ def _load_policy(
         if strategy_config:
             (fb, tmpl, cap, fam, fam_budgets, deny,
              retrieval_enabled, retrieval_top_k, retrieval_forms,
-             retrieval_filter_self, retrieval_filter_unavailable) = (
+             retrieval_filter_self, retrieval_filter_unavailable,
+             retrieval_skip_bloating_apply) = (
                 load_strategy_config(strategy_config)
             )
         else:
             (fb, tmpl, cap, fam, fam_budgets, deny,
              retrieval_enabled, retrieval_top_k, retrieval_forms,
-             retrieval_filter_self, retrieval_filter_unavailable) = (
-                [], [], None, {}, {}, {}, False, 0, [], True, True
+             retrieval_filter_self, retrieval_filter_unavailable,
+             retrieval_skip_bloating_apply) = (
+                [], [], None, {}, {}, {}, False, 0, [], True, True, True
             )
-        return StrategyWrapperPolicy(
+        wrapper = StrategyWrapperPolicy(
             base_policy=base, fallback_tactics=fb, tactic_templates=tmpl,
             max_extra_tactics_per_state=cap,
             theorem_family_tactics=fam,
@@ -134,6 +136,14 @@ def _load_policy(
             retrieval_filter_self=retrieval_filter_self,
             retrieval_filter_unavailable=retrieval_filter_unavailable,
         )
+        # v4.3 bloat-filter flag is consumed by rollout_one_theorem, not
+        # the wrapper itself. Stash it on the wrapper so the eval loop
+        # can read it via a single getattr without restructuring the
+        # _load_policy / rollout_one_theorem signatures.
+        wrapper.retrieval_skip_bloating_apply = bool(
+            retrieval_skip_bloating_apply
+        )
+        return wrapper
     else:
         raise ValueError(
             f"Unknown policy type: {policy_type}. "
@@ -215,7 +225,27 @@ def rollout_one_theorem(
         "retrieved_premise_filtered_self_count": 0,
         "retrieved_premise_filtered_unavailable_count": 0,
         "winning_tactic_retrieved_form": None,
+        # v4.3 goal-shape filter counters. retrieved_apply_goal_*_count
+        # bucket every retrieved-apply transition by whether it grew /
+        # shrunk / held the open-goal count. skipped_bloating_apply
+        # counts the pre-filter hits (apply LEMMA suppressed because
+        # the same lemma's apply already bloated earlier on this
+        # theorem). bloating_apply_lemmas lists the lemma names that
+        # bloated at least once.
+        "retrieved_apply_goal_increase_count": 0,
+        "retrieved_apply_goal_decrease_count": 0,
+        "retrieved_apply_no_goal_change_count": 0,
+        "skipped_bloating_apply_count": 0,
+        "bloating_apply_lemmas": [],
     }
+
+    # v4.3: per-theorem set of (lemma) names whose `apply LEMMA` already
+    # produced a strictly-bloating transition on this theorem. Once a
+    # lemma appears here, subsequent `apply LEMMA` retrieved tactics are
+    # pre-filtered for this theorem only. The lemma is NOT globally
+    # banned — `rw [LEMMA]`/`simp [LEMMA]` for the same lemma still flow.
+    bloating_apply_lemmas: set[str] = set()
+    skip_bloating_apply = bool(getattr(pol, "retrieval_skip_bloating_apply", True))
 
     # Per-theorem state tracking (only consulted when enable_loop_avoidance).
     seen_state_hashes: set[str] = set()
@@ -291,6 +321,37 @@ def rollout_one_theorem(
                         retrieved_forms[rank]
                         if rank < len(retrieved_forms) else None
                     )
+
+                    # v4.3 pre-filter: suppress retrieved `apply LEMMA` if
+                    # the same lemma's apply form already bloated the goal
+                    # stack earlier on this theorem. The retriever can still
+                    # emit `rw [LEMMA]` / `simp [LEMMA]` for the same lemma
+                    # — only the apply form is suppressed.
+                    if (skip_bloating_apply
+                            and origin == "retrieved_premise"
+                            and retr_form == "apply"
+                            and retr_premise in bloating_apply_lemmas):
+                        result["skipped_bloating_apply_count"] += 1
+                        synthetic = {
+                            "file_path": str(theorem.file_path),
+                            "full_name": theorem.full_name,
+                            "state_pp": state.pp,
+                            "tactic": tac,
+                            "result_kind": "SkippedBloatingApply",
+                            "proof_finished": False,
+                            "step": step,
+                            "domain": domain,
+                            "run_id": run_id,
+                            "episode_id": episode_id,
+                            "method": "policy_rollout_topk",
+                            "tactic_origin": origin,
+                            "tactic_retrieved_premise": retr_premise,
+                            "tactic_retrieved_form": retr_form,
+                            "state_hash_before": state_h_before,
+                            "skipped_bloating_apply": True,
+                        }
+                        append_jsonl(traces_path, synthetic)
+                        continue
 
                     # Pre-filter: skip tactics already known to error on this state.
                     if enable_loop_avoidance and tac in already_errored:
@@ -404,6 +465,45 @@ def rollout_one_theorem(
                     )
                     record_dict["produced_seen_state"] = produced_seen
                     record_dict["loop_detected"] = produced_seen and enable_loop_avoidance
+                    # v4.3 goal-shape annotation. num_goals_before/after
+                    # come from the TransitionRecord; they're None when
+                    # Lean doesn't surface a count. delta/increased fields
+                    # are set whenever both are integers.
+                    g_before = record_dict.get("num_goals_before")
+                    g_after = record_dict.get("num_goals_after")
+                    goal_increased = False
+                    if isinstance(g_before, int) and isinstance(g_after, int):
+                        delta = g_after - g_before
+                        record_dict["goal_count_delta"] = delta
+                        record_dict["goal_count_increased"] = delta > 0
+                        goal_increased = delta > 0
+                        if origin == "retrieved_premise" and retr_form == "apply":
+                            if delta > 0:
+                                result["retrieved_apply_goal_increase_count"] += 1
+                            elif delta < 0:
+                                result["retrieved_apply_goal_decrease_count"] += 1
+                            else:
+                                result["retrieved_apply_no_goal_change_count"] += 1
+
+                    # v4.3 bloat-reject: a retrieved `apply LEMMA` that
+                    # strictly increases the open-goal count is treated
+                    # as if it errored — the advance is not taken, the
+                    # lemma joins the per-theorem bloat set, and the
+                    # rollout continues at the same state. The trace
+                    # record is still written with `bloat_rejected=True`
+                    # so the diagnostic is preserved.
+                    if (skip_bloating_apply
+                            and origin == "retrieved_premise"
+                            and retr_form == "apply"
+                            and goal_increased
+                            and retr_premise):
+                        record_dict["bloat_rejected"] = True
+                        append_jsonl(traces_path, record_dict)
+                        if retr_premise not in bloating_apply_lemmas:
+                            bloating_apply_lemmas.add(retr_premise)
+                            result["bloating_apply_lemmas"].append(retr_premise)
+                        continue
+
                     append_jsonl(traces_path, record_dict)
 
                     if produced_seen:
@@ -721,6 +821,25 @@ def main():
         int(r.get("retrieved_premise_filtered_unavailable_count") or 0)
         for r in results
     )
+    # v4.3 bloat-filter aggregates.
+    retrieved_apply_goal_increase_count = sum(
+        int(r.get("retrieved_apply_goal_increase_count") or 0) for r in results
+    )
+    retrieved_apply_goal_decrease_count = sum(
+        int(r.get("retrieved_apply_goal_decrease_count") or 0) for r in results
+    )
+    retrieved_apply_no_goal_change_count = sum(
+        int(r.get("retrieved_apply_no_goal_change_count") or 0) for r in results
+    )
+    skipped_bloating_apply_count = sum(
+        int(r.get("skipped_bloating_apply_count") or 0) for r in results
+    )
+    bloating_apply_lemma_counts: dict[str, int] = {}
+    for r in results:
+        for lem in (r.get("bloating_apply_lemmas") or []):
+            bloating_apply_lemma_counts[lem] = (
+                bloating_apply_lemma_counts.get(lem, 0) + 1
+            )
     if retrieved_premise_activation_count:
         print(
             f"  Retrieval:          activated on {retrieved_premise_activation_count} theorems, "
@@ -736,6 +855,18 @@ def main():
             print(f"  Retrieval forms:    {retrieved_premise_form_counts}")
         if retrieved_premise_form_success_counts:
             print(f"  Retrieval form ok:  {retrieved_premise_form_success_counts}")
+        if (retrieved_apply_goal_increase_count
+                or retrieved_apply_goal_decrease_count
+                or retrieved_apply_no_goal_change_count
+                or skipped_bloating_apply_count):
+            print(
+                f"  Apply goal-shape:   inc={retrieved_apply_goal_increase_count}, "
+                f"dec={retrieved_apply_goal_decrease_count}, "
+                f"same={retrieved_apply_no_goal_change_count}, "
+                f"skipped_bloating={skipped_bloating_apply_count}"
+            )
+        if bloating_apply_lemma_counts:
+            print(f"  Bloating lemmas:    {bloating_apply_lemma_counts}")
     print(f"{'='*64}\n")
 
     metrics = {
@@ -780,6 +911,12 @@ def main():
         "retrieved_premise_form_success_counts": retrieved_premise_form_success_counts,
         "retrieved_premise_filtered_self_count": retrieved_premise_filtered_self_count,
         "retrieved_premise_filtered_unavailable_count": retrieved_premise_filtered_unavailable_count,
+        # v4.3 bloat-filter aggregates
+        "retrieved_apply_goal_increase_count": retrieved_apply_goal_increase_count,
+        "retrieved_apply_goal_decrease_count": retrieved_apply_goal_decrease_count,
+        "retrieved_apply_no_goal_change_count": retrieved_apply_no_goal_change_count,
+        "skipped_bloating_apply_count": skipped_bloating_apply_count,
+        "bloating_apply_lemma_counts": bloating_apply_lemma_counts,
         "per_theorem": results,
     }
     write_metrics(artifacts["metrics_path"], metrics)
