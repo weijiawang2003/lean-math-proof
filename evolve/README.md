@@ -160,6 +160,25 @@ parse the `metrics.json` it writes. The wiring is now end-to-end:
    `tactic_family_source` and (when anti-loop is enabled) `state_hash_*`
    and `loop_detected`.
 
+## Snapshotting state for ChatGPT
+
+After every local experiment or long Claude Code run, generate a single
+compact file with everything needed to bring an outside reviewer (e.g.
+ChatGPT) up to speed:
+
+```bash
+python scripts/export_context_for_chatgpt.py
+```
+
+Writes `project/evolve/reports/chatgpt_context.md` — a ~1–2k-word digest
+covering current git state (with a checkpoint-artefact warning if any
+model files show as modified), the best result so far on `nat_defs_medium`
+and `nat_defs_large_v5`, the most recent autonomous-run cycle, key
+reports, open problems pulled from the latest `V5_README.md` / `v5_next_steps.md`,
+the changed-file list vs `main`, and a suggested next question to ask
+ChatGPT. Reads only small JSON / JSONL / Markdown files — never traces,
+subprocess logs, or checkpoint binaries.
+
 ## Roadmap
 
 - **v1 (done)** — deterministic mutator, dry-run evaluator. Loop works end-to-end.
