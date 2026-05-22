@@ -325,6 +325,7 @@ def _real_metrics(
             priority_template_budget=getattr(
                 candidate, "priority_template_budget", 0
             ),
+            use_skeleton_bag=getattr(candidate, "use_skeleton_bag", False),
         )
         cmd.extend(["--strategy-config", str(strategy_path)])
 

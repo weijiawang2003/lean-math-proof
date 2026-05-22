@@ -144,6 +144,13 @@ class SearchCandidate:
     # been observed to advance state into a worse form.
     priority_templates: dict[str, list[str]] = field(default_factory=dict)
     priority_template_budget: int = 0
+    # NS4 prototype flag. When True, the strategy wrapper routes the
+    # priority_template emission through evolve.skeleton_bag.SkeletonBag
+    # instead of the inline legacy block. Output ordering is identical;
+    # the flag only changes which code path produces it. Other origins
+    # (family / fallback / term_builder / tactic_template / retrieval)
+    # are unaffected by this flag in the NS4 prototype.
+    use_skeleton_bag: bool = False
     metadata: dict[str, Any] = field(default_factory=dict)
 
     # -- serialization ----------------------------------------------------

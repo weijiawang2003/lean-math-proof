@@ -87,6 +87,7 @@ def baseline_genome() -> dict[str, Any]:
         "term_builder_budget": 0,
         "priority_templates": {},
         "priority_template_budget": 0,
+        "use_skeleton_bag": False,
         "max_steps": 8,
         "top_k": 8,
         "timeout_per_theorem": 60,
@@ -409,6 +410,7 @@ def write_strategy_config(genome: dict[str, Any], out_path: Path) -> None:
         term_builder_budget=genome["term_builder_budget"],
         priority_templates=genome.get("priority_templates", {}),
         priority_template_budget=genome.get("priority_template_budget", 0),
+        use_skeleton_bag=genome.get("use_skeleton_bag", False),
     )
 
 

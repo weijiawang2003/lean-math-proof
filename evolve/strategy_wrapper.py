@@ -349,6 +349,7 @@ class StrategyWrapperPolicy:
         term_builder_budget: int = 0,
         priority_templates: dict[str, list[str]] | None = None,
         priority_template_budget: int = 0,
+        use_skeleton_bag: bool = False,
     ) -> None:
         self.base_policy = base_policy
         self.fallback_tactics: list[str] = [
@@ -433,6 +434,20 @@ class StrategyWrapperPolicy:
             if k
         }
         self.priority_template_budget: int = max(0, int(priority_template_budget or 0))
+        # NS4 prototype: when True, the priority_template emit block delegates
+        # to evolve.skeleton_bag.SkeletonBag. Everything else (family /
+        # retrieval / term_builder / generic fallback) keeps using the
+        # legacy code path. Default False = current behavior verbatim.
+        self.use_skeleton_bag: bool = bool(use_skeleton_bag)
+        self._skeleton_bag = None  # lazily built on first rank_tactics call
+        # When NS4 emits the priority block, this is populated with the
+        # EmittedTactic instances for the most recent call (parallel to
+        # priority_entries). Used for skeleton-attribution diagnostics.
+        self.last_priority_emitted: list = []
+        # Parallel skeleton_name list for every entry in last_ranked_tactics;
+        # only populated when use_skeleton_bag is True. Non-priority entries
+        # carry None.
+        self.last_skeleton_names: list[str | None] = []
         self.last_priority_template_attempt_count: int = 0
         self.last_ranked_tactics: list[str] = []
         self.last_origins: list[str] = []
@@ -487,59 +502,90 @@ class StrategyWrapperPolicy:
         # the model's `simp [...]` advances state into a less useful
         # form. Tagged with ORIGIN_TEMPLATE (template_source carries the
         # raw key for traceability).
+        #
+        # NS4 prototype: when use_skeleton_bag is True, delegate this
+        # block to evolve.skeleton_bag.SkeletonBag. Output is identical
+        # to the legacy path (same ordering, same tactics, same family_source
+        # strings) — verified by parity test in
+        # project/evolve/reports/ns4_skeleton_bag_repro.md.
         seen: set[str] = set()
         priority_entries: list[Entry] = []
+        priority_emitted: list = []
         if self.priority_templates:
             try:
                 from premise_retriever import classify_goal_shape
                 pt_goal_shape = classify_goal_shape(state_pp)
             except Exception:
                 pt_goal_shape = "unknown"
-            # v5 NS3.5: emit shape-specific templates first, then `any`
-            # as a TRUE fallback (not an exclusive alternative). The
-            # previous semantics — "shape if present else any" — meant
-            # that once a genome configured a slot for shape S, goals
-            # of shape S could never reach `any` even when the shape
-            # slot's tactics all failed; that forced authors to
-            # manually mirror `any` into every configured shape slot.
-            #
-            # New order (per goal):
-            #   1. shape-slot specifics (NS1-sorted)
-            #   2. shape-slot generics
-            #   3. any-slot specifics (NS1-sorted)
-            #   4. any-slot generics
-            # Then base / family / retrieval / fallback layers as before.
-            slots_to_emit: list[tuple[str, list[str]]] = []
-            if (pt_goal_shape != "any"
-                    and pt_goal_shape in self.priority_templates):
-                slots_to_emit.append((pt_goal_shape, self.priority_templates[pt_goal_shape]))
-            if "any" in self.priority_templates:
-                slots_to_emit.append(("any", self.priority_templates["any"]))
-            emitted = 0
-            for slot_key, raw_templates in slots_to_emit:
-                if self.priority_template_budget and emitted >= self.priority_template_budget:
-                    break
-                # NS1 stable-sort applied per slot.
-                ordered_templates = sorted(
-                    raw_templates,
-                    key=lambda t: classify_template_specificity(t)[0],
+
+            if self.use_skeleton_bag:
+                # NS4 path: route through SkeletonBag.
+                if self._skeleton_bag is None:
+                    from evolve.skeleton_bag import SkeletonBag
+                    self._skeleton_bag = SkeletonBag.from_legacy_strategy_config({
+                        "priority_templates": self.priority_templates,
+                    })
+                emitted_list = self._skeleton_bag.emit_priority_tactics(
+                    state_pp=state_pp,
+                    goal_shape=pt_goal_shape,
+                    nat_vars=nat_vars,
+                    hypotheses=hypotheses,
+                    budget=self.priority_template_budget,
+                    already_seen=seen,
                 )
-                for raw in ordered_templates:
-                    spec_label = classify_template_specificity(raw)[1]
-                    for rendered in _render_template(raw, nat_vars, hypotheses):
-                        if rendered and rendered not in seen:
-                            seen.add(rendered)
-                            priority_entries.append(
-                                (rendered, ORIGIN_TEMPLATE, raw,
-                                 f"priority:{slot_key}:{spec_label}",
-                                 None, None, None)
-                            )
-                            emitted += 1
-                            if self.priority_template_budget and emitted >= self.priority_template_budget:
-                                break
+                for et in emitted_list:
+                    priority_entries.append(
+                        (et.tactic, ORIGIN_TEMPLATE, et.template_source,
+                         et.family_source, None, None, None)
+                    )
+                    priority_emitted.append(et)
+            else:
+                # v5 NS3.5: emit shape-specific templates first, then `any`
+                # as a TRUE fallback (not an exclusive alternative). The
+                # previous semantics — "shape if present else any" — meant
+                # that once a genome configured a slot for shape S, goals
+                # of shape S could never reach `any` even when the shape
+                # slot's tactics all failed; that forced authors to
+                # manually mirror `any` into every configured shape slot.
+                #
+                # New order (per goal):
+                #   1. shape-slot specifics (NS1-sorted)
+                #   2. shape-slot generics
+                #   3. any-slot specifics (NS1-sorted)
+                #   4. any-slot generics
+                # Then base / family / retrieval / fallback layers as before.
+                slots_to_emit: list[tuple[str, list[str]]] = []
+                if (pt_goal_shape != "any"
+                        and pt_goal_shape in self.priority_templates):
+                    slots_to_emit.append((pt_goal_shape, self.priority_templates[pt_goal_shape]))
+                if "any" in self.priority_templates:
+                    slots_to_emit.append(("any", self.priority_templates["any"]))
+                emitted = 0
+                for slot_key, raw_templates in slots_to_emit:
                     if self.priority_template_budget and emitted >= self.priority_template_budget:
                         break
+                    # NS1 stable-sort applied per slot.
+                    ordered_templates = sorted(
+                        raw_templates,
+                        key=lambda t: classify_template_specificity(t)[0],
+                    )
+                    for raw in ordered_templates:
+                        spec_label = classify_template_specificity(raw)[1]
+                        for rendered in _render_template(raw, nat_vars, hypotheses):
+                            if rendered and rendered not in seen:
+                                seen.add(rendered)
+                                priority_entries.append(
+                                    (rendered, ORIGIN_TEMPLATE, raw,
+                                     f"priority:{slot_key}:{spec_label}",
+                                     None, None, None)
+                                )
+                                emitted += 1
+                                if self.priority_template_budget and emitted >= self.priority_template_budget:
+                                    break
+                        if self.priority_template_budget and emitted >= self.priority_template_budget:
+                            break
         self.last_priority_template_attempt_count = len(priority_entries)
+        self.last_priority_emitted = priority_emitted
 
         base_entries: list[Entry] = []
         for t in base:
@@ -789,6 +835,7 @@ def load_strategy_config(
     dict[str, list[str]], dict[str, int], dict[str, list[str]],
     bool, int, list[str], bool, bool, bool, bool,
     dict[str, list[str]], int,
+    dict[str, list[str]], int, bool,
 ]:
     """Read the strategy config from JSON.
 
@@ -797,12 +844,16 @@ def load_strategy_config(
             retrieval_enabled, retrieval_top_k, retrieval_tactic_forms,
             retrieval_filter_self, retrieval_filter_unavailable,
             retrieval_skip_bloating_apply, retrieval_shape_filter,
-            term_builder_templates, term_builder_budget).
+            term_builder_templates, term_builder_budget,
+            priority_templates, priority_template_budget,
+            use_skeleton_bag).
 
     Missing keys produce safe defaults; unknown keys are ignored. All
     retrieval filter flags default to True so older configs benefit
     from the newer filters automatically. v5 term_builder fields
-    default to empty / 0 so older configs are no-ops.
+    default to empty / 0 so older configs are no-ops. NS4
+    use_skeleton_bag defaults to False so the legacy code path runs
+    unchanged unless the genome explicitly opts in.
     """
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
     fb = list(raw.get("fallback_tactics") or [])
@@ -831,6 +882,7 @@ def load_strategy_config(
     pt_raw = raw.get("priority_templates") or {}
     priority_templates = {str(k): list(v or []) for k, v in pt_raw.items()}
     priority_template_budget = int(raw.get("priority_template_budget", 0) or 0)
+    use_skeleton_bag = bool(raw.get("use_skeleton_bag", False))
     return (
         fb, tmpl, cap, fam, fam_budgets, deny,
         retrieval_enabled, retrieval_top_k, retrieval_tactic_forms,
@@ -838,6 +890,7 @@ def load_strategy_config(
         retrieval_skip_bloating_apply, retrieval_shape_filter,
         term_builder_templates, term_builder_budget,
         priority_templates, priority_template_budget,
+        use_skeleton_bag,
     )
 
 
@@ -860,6 +913,7 @@ def dump_strategy_config(
     term_builder_budget: int = 0,
     priority_templates: dict[str, list[str]] | None = None,
     priority_template_budget: int = 0,
+    use_skeleton_bag: bool = False,
 ) -> None:
     """Write the JSON config the subprocess will read. Parent dirs are
     created if needed."""
@@ -903,6 +957,7 @@ def dump_strategy_config(
                     for k, v in (priority_templates or {}).items()
                 },
                 "priority_template_budget": int(priority_template_budget or 0),
+                "use_skeleton_bag": bool(use_skeleton_bag),
             },
             indent=2,
             ensure_ascii=False,
