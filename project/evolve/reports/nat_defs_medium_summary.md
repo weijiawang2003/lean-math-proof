@@ -346,3 +346,60 @@ pass at run-evolve setup time) before adding more templates.
   (25/38, retrieval pipeline + 8 structured div templates, current
   published default)
 - Generated report: `project/evolve/reports/nat_defs_medium_v4_5.md`
+
+---
+
+## v4.6 — controlled template-variant sweep + verifier (2026-05-22)
+
+Built and shipped `evolve/template_verifier.py` — the template-side
+analog of `premise_retriever._UNAVAILABLE_LEMMAS` recommended by v4.5.
+It statically filters templates referencing constants in either a
+known-unavailable set (`Nat.div_le_div_right`, `Nat.div_le_iff_le_mul`,
+`Nat.left_comm`) or a known-type-mismatch set (`Nat.le_refl`,
+`Nat.div_le_succ_div`). On the v4.5 div family this drops 4 of 19
+templates with zero regression — they never advanced any goal across
+v4.1-v4.5.
+
+Added `--template-variant` CLI to `run_evolve.py` with 6 presets:
+`v45`, `verified`, `constructor`, `div-rewrite`, `mixed-small`,
+`verified-no-rw-eq`. The seed candidate's `theorem_family_tactics["div"]`
+and `family_budgets["div"]` are rewritten from the variant spec at
+run-evolve startup.
+
+Ran the full sweep on nat_defs_medium:
+
+  | variant            | proved   |   delta vs v4.5 |
+  |--------------------|---------:|----------------:|
+  | v45 (reference)    | 25 / 38  |              0 |
+  | verified           | 25 / 38  |              0 |
+  | **constructor**    | **26/38**|             **+1** |
+  | div-rewrite        | 25 / 38  |              0 |
+  | mixed-small        | 25 / 38  |              0 |
+  | verified-no-rw-eq  | 25 / 38  |              0 |
+
+**Constructor variant closed `Nat.div_lt_iff_lt_mul'` — first div-family
+closure since v3.6.** The mechanism: removing all rw-style family
+tactics lets retrieval emit `rw [Nat.div_lt_iff_lt_mul]` (no prime)
+as the first advancing tactic; generative `simp_all` closes step 2.
+The hypothesis-confirmation variant (`verified-no-rw-eq`) shows that
+dropping `rw [Nat.div_eq_of_lt]` alone is *not* sufficient — multiple
+rewrite templates have to be removed for retrieval to get first shot.
+
+The other four variants produce byte-identical metrics (proved=25,
+retrieval=354/0/0, mismatch=238). Variant-level changes that don't
+affect the first family tactic to fire on any theorem do not affect
+the trajectory.
+
+Adopt constructor as the new seed; verifier on by default. v4.7
+direction: small evolution sweep on the constructor seed, or term-mode
+proof builder for the three div theorems still erroring at step 3-5
+(`Nat.div_pos`, `Nat.div_pos_iff`, `Nat.dvd_iff_div_mul_eq`).
+
+- `project/evolve/runs/evolve-20260522-061049-9be813/` — v4.6 v45 baseline
+- `project/evolve/runs/evolve-20260522-061553-122264/` — v4.6 verified
+- `project/evolve/runs/evolve-20260522-062048-3673c6/` — **v4.6 constructor (26/38)**
+- `project/evolve/runs/evolve-20260522-062457-6e9f3e/` — v4.6 div-rewrite
+- `project/evolve/runs/evolve-20260522-062940-b62ae9/` — v4.6 mixed-small
+- `project/evolve/runs/evolve-20260522-064654-332077/` — v4.6 verified-no-rw-eq
+- Generated reports: `project/evolve/reports/nat_defs_medium_v4_6_overnight.md`,
+  `project/evolve/reports/v4_6_template_failure_diagnostics.md`

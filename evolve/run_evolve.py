@@ -38,6 +38,124 @@ from evolve.population import (
     append_record,
     select_top,
 )
+from evolve.template_verifier import (
+    default_type_mismatch,
+    default_unavailable,
+    filter_templates,
+    verification_summary,
+)
+
+
+# v4.6 template variants. Each entry is a (description, div_templates,
+# div_budget) triple. The div family is the only family we vary in this
+# sweep — mod / AM_GM are held constant. `v45` is the v4.5 reference and
+# matches the hard-coded list in `make_seed_candidate`. Other variants
+# are derivable by subset.
+TEMPLATE_VARIANTS: dict[str, dict] = {
+    "v45": {
+        "description": "v4.5 reference; full 19-template div family; no verification",
+        "verification_enabled": False,
+        "div_templates": None,  # use the seed default
+        "div_budget": None,
+    },
+    "verified": {
+        "description": (
+            "verified-conservative: v4.5 div family with template verification "
+            "enabled; constants in _UNAVAILABLE_LEMMAS / _TYPE_MISMATCH_CONSTANTS "
+            "are filtered out at config-load time"
+        ),
+        "verification_enabled": True,
+        "div_templates": None,  # let verifier strip from default
+        "div_budget": None,
+    },
+    "constructor": {
+        "description": (
+            "constructor-only: iff-decomposition + omega/simp_all. Tests whether "
+            "iff-shaped div theorems benefit from the iff constructor split alone."
+        ),
+        "verification_enabled": True,
+        "div_templates": [
+            "omega",
+            "simp",
+            "simp_all",
+            "constructor <;> intro h_split <;> omega",
+            "constructor <;> intro h_split <;> simp_all",
+            "constructor <;> intro h_split <;> simp_all <;> omega",
+        ],
+        "div_budget": 8,
+    },
+    "div-rewrite": {
+        "description": (
+            "div-rewrite-only: simp/rw with div_eq_of_lt + div_lt_iff_lt_mul "
+            "variants. Tests rewrite-side closure without iff machinery."
+        ),
+        "verification_enabled": True,
+        "div_templates": [
+            "omega",
+            "simp",
+            "simp_all",
+            "simp [Nat.div_eq_of_lt]",
+            "simp [Nat.div_eq_of_lt, Nat.lt_of_lt_of_le]",
+            "rw [Nat.div_eq_of_lt]",
+            "rw [Nat.div_lt_iff_lt_mul']",
+            "rw [Nat.div_lt_iff_lt_mul]",
+        ],
+        "div_budget": 10,
+    },
+    "mixed-small": {
+        "description": (
+            "mixed-small: union of constructor-only + div-rewrite; tests the "
+            "best of both subsets against the v4.5 reference."
+        ),
+        "verification_enabled": True,
+        "div_templates": [
+            "omega",
+            "simp",
+            "simp_all",
+            "simp [Nat.div_eq_of_lt]",
+            "simp [Nat.div_eq_of_lt, Nat.lt_of_lt_of_le]",
+            "rw [Nat.div_eq_of_lt]",
+            "rw [Nat.div_lt_iff_lt_mul']",
+            "rw [Nat.div_lt_iff_lt_mul]",
+            "constructor <;> intro h_split <;> omega",
+            "constructor <;> intro h_split <;> simp_all",
+            "constructor <;> intro h_split <;> simp_all <;> omega",
+        ],
+        "div_budget": 14,
+    },
+    "verified-no-rw-eq": {
+        # Hypothesis test: in v4.5 the family tactic `rw [Nat.div_eq_of_lt]`
+        # fires first on iff goals like ⊢ a/b < c ↔ ... and introduces a
+        # stray side-goal (1→2) that derails subsequent retrieval. Drop just
+        # that template from the verified-conservative list and see if the
+        # +1 closure (Nat.div_lt_iff_lt_mul') reproduces with the rest of
+        # the v4.5 div family intact.
+        "description": (
+            "verified-no-rw-eq: v4.5 div family minus `rw [Nat.div_eq_of_lt]`"
+            " and the four verifier-filtered constants; isolates the family"
+            " ordering effect that closes Nat.div_lt_iff_lt_mul'."
+        ),
+        "verification_enabled": True,
+        "div_templates": [
+            "omega",
+            "simp",
+            "simp_all",
+            "simp [Nat.div_eq_of_lt]",
+            "simp [Nat.div_eq_of_lt, Nat.lt_of_lt_of_le]",
+            # "rw [Nat.div_eq_of_lt]" intentionally removed
+            "rw [Nat.div_lt_iff_lt_mul']",
+            "rw [Nat.div_lt_iff_lt_mul]",
+            "simp [Nat.div_lt_iff_lt_mul, Nat.mul_one]",
+            "simp_all [Nat.div_lt_iff_lt_mul, Nat.mul_one]",
+            "simp_all [Nat.div_lt_iff_lt_mul', Nat.mul_one]",
+            "rw [Nat.div_lt_iff_lt_mul {hyp_pos}, Nat.mul_one]",
+            "constructor <;> intro h_split <;> omega",
+            "constructor <;> intro h_split <;> simp_all",
+            "induction {hyp_le} <;> simp_all",
+        ],
+        "div_budget": 18,
+    },
+}
 
 
 def _resolve(path: str | Path) -> Path:
@@ -47,7 +165,70 @@ def _resolve(path: str | Path) -> Path:
     return p if p.is_absolute() else (REPO_ROOT / p)
 
 
-def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
+def _apply_template_variant(
+    base_div_templates: list[str],
+    base_div_budget: int,
+    variant_name: str,
+) -> tuple[list[str], int, str, dict]:
+    """Apply a v4.6 template variant to the seed candidate's div family.
+
+    Returns (div_templates, div_budget, description_suffix, diagnostic).
+    The diagnostic dict is the `verification_summary` output (or an empty
+    placeholder for variant 'v45' which disables verification).
+
+    Variants:
+      v45         : v4.5 reference. Returns (base_div_templates,
+                    base_div_budget, "", empty_diag).
+      verified    : v4.5 templates filtered by `template_verifier`.
+      constructor : prescribed minimal iff-constructor list.
+      div-rewrite : prescribed minimal rewrite list.
+      mixed-small : union of constructor + div-rewrite.
+
+    For 'verified' and the three prescribed variants, the prescribed
+    template list is passed through `filter_templates` so a user-supplied
+    list still benefits from the unavailable-constant filter. The
+    `v45` variant is the only one that skips verification.
+    """
+    spec = TEMPLATE_VARIANTS.get(variant_name)
+    if spec is None:
+        raise ValueError(
+            f"Unknown --template-variant: {variant_name!r}. "
+            f"Choices: {sorted(TEMPLATE_VARIANTS)}"
+        )
+
+    if not spec["verification_enabled"]:
+        # v45: keep base as-is.
+        return base_div_templates, base_div_budget, spec["description"], {
+            "variant": variant_name,
+            "verification_enabled": False,
+            "template_count": len(base_div_templates),
+            "filtered_template_count": 0,
+            "filtered_templates": [],
+            "filtered_template_constants": [],
+        }
+
+    candidates = list(spec["div_templates"] if spec["div_templates"] is not None else base_div_templates)
+    unavailable = default_unavailable()
+    type_mismatch = default_type_mismatch()
+    kept, dropped = filter_templates(candidates, unavailable, type_mismatch)
+    diag = verification_summary(candidates, unavailable, type_mismatch)
+    diag["variant"] = variant_name
+    diag["verification_enabled"] = True
+    diag["dropped_diagnostics"] = dropped
+
+    budget_raw = spec["div_budget"]
+    if budget_raw is None:
+        budget = base_div_budget
+    else:
+        budget = int(budget_raw)
+    return kept, budget, spec["description"], diag
+
+
+def make_seed_candidate(
+    policy_type: str,
+    ckpt_dir: str,
+    template_variant: str = "v45",
+) -> tuple[SearchCandidate, dict]:
     """Generation-0 candidate: the current baseline wrapper.
 
     Defaults mirror the known gen_v5 baseline (top-k=8, max-steps=8 on
@@ -195,6 +376,23 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
             "templates (induction on hyp_le, iff-constructor splits, "
             "rw-with-positivity-hypothesis chains)."
         )
+        # v4.6 template variants. Picks a subset / verified version of
+        # the div family. The seed default ('v45') leaves the family
+        # untouched and emits an empty diagnostic.
+        new_div_templates, new_div_budget, variant_desc, template_diag = (
+            _apply_template_variant(
+                theorem_family_tactics["div"],
+                family_budgets["div"],
+                template_variant,
+            )
+        )
+        theorem_family_tactics["div"] = new_div_templates
+        family_budgets["div"] = new_div_budget
+        if template_variant != "v45":
+            description = (
+                f"v4.6/{template_variant} hybrid_evolved seed: "
+                + variant_desc
+            )
     else:
         fallback_tactics = ["simp", "aesop", "omega", "norm_num", "rfl"]
         tactic_templates = []
@@ -211,8 +409,16 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         retrieval_skip_bloating_apply = True
         retrieval_shape_filter = True
         description = "Baseline wrapper: top-k=8, max-steps=8 (gen_v5 reference)."
+        template_diag = {
+            "variant": template_variant,
+            "verification_enabled": False,
+            "template_count": 0,
+            "filtered_template_count": 0,
+            "filtered_templates": [],
+            "filtered_template_constants": [],
+        }
 
-    return SearchCandidate(
+    cand = SearchCandidate(
         name="seed-baseline",
         description=description,
         policy_type=policy_type,
@@ -233,8 +439,9 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         retrieval_filter_unavailable=retrieval_filter_unavailable,
         retrieval_skip_bloating_apply=retrieval_skip_bloating_apply,
         retrieval_shape_filter=retrieval_shape_filter,
-        metadata={"role": "seed"},
+        metadata={"role": "seed", "template_variant": template_variant},
     )
+    return cand, template_diag
 
 
 def _fmt_record(rank: int, rec: CandidateRecord) -> str:
@@ -284,6 +491,12 @@ def main() -> None:
                              "Default: timeout_per_theorem × n_theorems × 1.05 + 60. "
                              "On timeout the candidate is recorded with "
                              "timeout_count = n_theorems and a heavy score penalty.")
+    parser.add_argument("--template-variant", default="v45",
+                        choices=sorted(TEMPLATE_VARIANTS),
+                        help="v4.6 sweep selector. v45 = baseline (no changes). "
+                             "verified = v4.5 templates with unavailable-constant "
+                             "filter. constructor / div-rewrite / mixed-small = "
+                             "prescribed subset variants.")
     args = parser.parse_args()
 
     run_id = (
@@ -304,6 +517,7 @@ def main() -> None:
         "dry_run": args.dry_run,
         "population_path": str(pop_path),
         "eval_timeout_seconds": args.eval_timeout_seconds,
+        "template_variant": args.template_variant,
     }
     (run_root / "config.json").write_text(
         json.dumps(config, indent=2, ensure_ascii=False), encoding="utf-8"
@@ -327,7 +541,19 @@ def main() -> None:
     # Pre-flight: verify the seed's generative checkpoint exists. Children
     # inherit ckpt_dir from the seed (the mutator never touches it), so this
     # one check catches the whole run before any compute is spent.
-    seed_for_check = make_seed_candidate(args.policy_type, args.ckpt_dir)
+    seed_for_check, template_diag = make_seed_candidate(
+        args.policy_type, args.ckpt_dir, template_variant=args.template_variant,
+    )
+    (run_root / "template_verification.json").write_text(
+        json.dumps(template_diag, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    print(f"  template var  : {args.template_variant}")
+    if template_diag.get("verification_enabled"):
+        print(
+            f"  templates     : kept {template_diag['template_count'] - template_diag['filtered_template_count']}"
+            f" / dropped {template_diag['filtered_template_count']}"
+            f" ; bad constants {template_diag['filtered_template_constants']}"
+        )
     if not args.dry_run:
         try:
             check_ckpt_exists(seed_for_check)
@@ -362,7 +588,10 @@ def main() -> None:
 
     # ---- generation 0: the seed -----------------------------------------
     print("\nGeneration 0 — seed candidate")
-    evaluate_and_record(make_seed_candidate(args.policy_type, args.ckpt_dir), 0)
+    seed_cand, _ = make_seed_candidate(
+        args.policy_type, args.ckpt_dir, template_variant=args.template_variant,
+    )
+    evaluate_and_record(seed_cand, 0)
     print_leaderboard(run_records, "Leaderboard after generation 0")
 
     # ---- generations 1..N -----------------------------------------------
