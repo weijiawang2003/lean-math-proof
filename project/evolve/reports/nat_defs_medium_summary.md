@@ -516,3 +516,39 @@ The five priority_templates wins all stack: `Nat.div_lt_one_iff`,
   - Final genome: `project/evolve/autonomous_runs/v5-wave4-20260522-111556-3063e7/eval/v5-27-w4-master/genome.json`
   - Final eval (medium): `project/evolve/autonomous_runs/v5-wave4-20260522-111556-3063e7/eval/v5-27-w4-master/eval-*/metrics.json`
   - Final eval (large_v5): `project/evolve/autonomous_runs/large_v5_master/eval-*/eval-*/metrics.json`
+
+### NS1 (post-v5): per-slot specificity ordering
+
+The wrapper now stable-sorts each `priority_templates` shape slot so
+templates naming a dotted Mathlib lemma or using a typed hypothesis
+placeholder emit before any generic omega/simp_all template. Closes
+the wave-5 v5-31 regression (`27/38 → 31/38`) without changing v5-27
+master's behaviour (still 31/38). See
+`project/evolve/reports/ns1_specificity_ordering.md`.
+
+### NS3 (post-v5): lemma-name audit on the remaining 7 failures
+
+Audit (`project/evolve/reports/ns3_lemma_audit.md`) read the verbatim
+Mathlib proof of each failure and verified every premise in the cached
+LeanDojo source (`scripts/check_lean_names.py`, commit `29dcec07`).
+Results (`ns3_lemma_audit_results.md`):
+
+  - nat_defs_medium: **37 / 38** (97%, +6 over v5-27 master)
+  - newly closed: `Nat.dvd_iff_div_mul_eq`, `Nat.eq_one_of_mul_eq_one_left`,
+    `Nat.add_mod_eq_ite`, `Nat.div_le_div_right`, `Nat.sqrt_lt`, `Nat.pow_lt_pow_iff_left`
+  - remaining: `Nat.AM_GM` only (env-limited — needs `nlinarith`)
+  - regressions: 0; DojoCrash: 0; unknown-constant errors: 0
+  - Final genome: `project/evolve/autonomous_runs/v5-ns3-20260522-200519-d374c5/eval/ns3-combined/genome.json`
+
+NS3 surfaced two non-obvious wrapper interactions worth documenting
+for v6:
+
+  - Within-specific ordering matters: `simp only [← Nat.not_le, ...]`
+    has a universal side effect and must follow other specifics to
+    avoid shadowing them.
+  - The wrapper's shape gate is exclusive — once a specific-shape
+    slot exists, goals of that shape never fall back to `any`. The
+    fix at the genome level is to mirror `any` templates into every
+    configured shape slot; the cleaner fix is a small wrapper change
+    (NS-3.5) to always run `any` as a fallback after the specific
+    slot's tactics fail.
