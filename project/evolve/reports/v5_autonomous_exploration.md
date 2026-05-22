@@ -131,6 +131,28 @@ theorems over the v4.7 26/38 plateau. Two distinct combos converge
 to the same proof-set, suggesting the priority_templates slot is
 saturated for this theorem set under the current model.
 
+## Headline scoreboard (wave 5 — robustness probes around v5-27)
+
+| # | variant | proved | observation |
+|---|---|---|---|
+| 1 | v5-29-w5-le-shape | 31/38 | le-shape priorities added no new wins |
+| 2 | v5-30-w5-add-mod-ite | 31/38 | split_ifs etc. don't close Nat.add_mod_eq_ite |
+| 3 | v5-31-w5-iff-reorder | **27/38** | **regressed -4 — within-slot ordering matters!** |
+| 4 | v5-32-w5-dvd-specific | 31/38 | dvd term-mode templates didn't close |
+| 5 | v5-33-w5-eq-one-of-mul | 31/38 | eq-shape templates didn't close `Nat.eq_one_of_mul_eq_one_left` |
+
+**Wave 5 finding:** The 31/38 ceiling is robust under all five
+inner-tier mutations of v5-27. The interesting failure was v5-31's
+**iff list reordering** — putting generic omega-omega templates
+FIRST inside the iff slot regressed 4 wins. This confirms that
+within-slot ordering propagates the "first-non-erroring-wins"
+shadowing problem from the wrapper's outer iteration.
+
+Lesson for v6: a skeleton bag with typed slots should encode
+specificity per-slot, not rely on hand-ordering of templates inside
+a single list. See `v5_alphaevolve_architecture.md` and the updated
+`v5_priority_templates_insight.md`.
+
 ## Headline scoreboard (Direction D — generalization)
 
 Two v5 candidates evaluated on `nat_defs_large_v5` (38 medium +
@@ -152,6 +174,47 @@ Two v5 candidates evaluated on `nat_defs_large_v5` (38 medium +
 
 The v5-27 / v5-28 super-kitchen is therefore the recommended v5
 production candidate.
+
+### Baseline gen_v5 raw (no wrapper)
+
+  - **proved: 4 / 64** (6%)
+  - The raw model closes only 4 of 64 theorems on its own.
+
+So the v5 wrapper contributes **+39 theorems** on the large set vs
+raw gen_v5. The wrapper does almost all the work; the model
+contributes 4 closures.
+
+| candidate | nat_defs_medium | nat_defs_large_v5 |
+|---|---|---|
+| gen_v5 raw  | 3 / 38   | 4 / 64   |
+| v4.7 hybrid (carries) | 26 / 38  | (not run; should be ~38-40/64 by extrapolation) |
+| v5-18 kitchen | 29 / 38 | 41 / 64 |
+| **v5-27 master** | **31 / 38** | **43 / 64** |
+
+The architecture story: gen_v5 + wrapper closes ~10× more theorems
+than gen_v5 alone. The v5 priority_templates contribution is +5
+medium / +2 large beyond v4.7 — small in absolute terms compared to
+the v3 → v4 jump, but structurally significant because it requires
+an outer-tier change.
+
+### Cross-domain check (demo_v1, 15 theorems from Nat / Set / Finset)
+
+v5-27 master on demo_v1: **11 / 15 (73%)**, origins
+`{family_tactic: 1, generative_topk: 10}`.
+
+  - Of the 11 wins, 10 came from gen_v5's generative_topk on Set
+    theorems (the model already knows Set basics).
+  - 1 came from the mod family on `Nat.mul_add_mod'`.
+  - Priority_templates did **not** fire on demo_v1. The templates are
+    Nat-domain-specific (rely on `Nat.div_lt_iff_lt_mul`,
+    `Nat.eq_of_mul_eq_mul_left`, etc.); they don't apply to Set or
+    Finset goals.
+
+This confirms: priority_templates is **domain-targeted**. It
+generalizes within Nat goals (5 transfer wins on nat_defs_large_v5)
+but does not cross-domain — exactly what one would expect, since
+the templates name Nat-specific lemmas. A v6 skeleton bag would
+likely need per-domain shape keys.
   - on the 26 NEW theorems (not in medium): **12 / 26 (46%)** proved.
   - of those 12, **5 came from priority_templates firing on theorems
     the templates were never designed for** — clean transfer:

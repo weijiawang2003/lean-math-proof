@@ -224,3 +224,50 @@ research was looking for. With it, the v3 → v4 26/38 plateau is
 broken by at least three new theorems, each requiring an asymmetric
 or hypothesis-aware proof skeleton that the prior architecture
 could not surface.
+
+## Wave 4 result: 5 new wins stack
+
+The master combo `v5-27-w4-master` and the super-kitchen
+`v5-28-w4-super-kitchen` both include all five working priority
+templates (div_lt_one_iff, mul_eq_left, mul_eq_right, div_pos,
+div_pos_iff) and both score **31 / 38** — the highest in the v5
+exploration. The five new wins all stack with no regressions.
+
+## Wave 5 finding: ordering within priority_templates matters
+
+Variant `v5-31-w5-iff-reorder` ships the same set of iff-shape
+priority templates as `v5-27-w4-master` but **reorders them**:
+generic omega-omega first, then mul, then div. Result: **27 / 38
+(-4 vs master)**.
+
+Why? The same first-non-erroring-wins semantics that shadowed
+templates behind generative_topk *also operates within priority_templates*.
+When `exact ⟨fun h => by omega, fun h => by omega⟩` is the first
+priority entry, it fires on every iff state at step 1. On the easy
+iff theorems it closes the goal. On `Nat.div_lt_one_iff` (an iff
+where omega-omega doesn't close because of div), it ERRORS and the
+wrapper continues to the next template. So in principle the next
+specific rw template should fire.
+
+But what we observe is: omega-omega errored, the wrapper continued,
+the next template (more specific) also tried, but somewhere along
+the way one of the templates ADVANCED state (not closed) and the
+wrapper accepted that advance — derailing the proof for that step.
+The constructor `<;>` split is the likely culprit: it produces 2
+goals, then `simp_all` simplifies one, leaving an advanced state
+that the next step can't close.
+
+**Lesson for v6 skeleton bag design.** The within-slot order is
+load-bearing. Templates inside a shape key should be ordered from
+**most specific** to **most generic**, NOT the other way around.
+Generic closers (omega/simp_all/intro+omega) belong at the bottom
+of the slot or as a separate fallback layer that fires only when
+no specific template advances *or* closes the goal.
+
+In code form: the wrapper's per-step semantics should be "first
+*specific* tactic that closes, else first *generic* tactic that
+closes, else first *specific* tactic that advances, else first
+*generic* tactic that advances". Tonight's `priority_templates`
+slot collapses the first two into one bucket — which works as long
+as the genome writer hand-orders within. A v6 skeleton bag with
+typed slots would make this constraint explicit.
