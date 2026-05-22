@@ -153,6 +153,37 @@ specificity per-slot, not rely on hand-ordering of templates inside
 a single list. See `v5_alphaevolve_architecture.md` and the updated
 `v5_priority_templates_insight.md`.
 
+## Headline scoreboard (wave 6 — targeted attempts at remaining 7 failures)
+
+| # | variant | proved | newly tried theorem | result |
+|---|---|---|---|---|
+| 1 | v5-34-w6-dvd-alt | 31/38 | `Nat.dvd_iff_div_mul_eq` | no new close |
+| 2 | v5-35-w6-add-mod-ite | 31/38 | `Nat.add_mod_eq_ite` | no new close |
+| 3 | v5-36-w6-eq-one-alt | 31/38 | `Nat.eq_one_of_mul_eq_one_left` | no new close |
+| 4 | v5-37-w6-div-le-div | 31/38 | `Nat.div_le_div_right` | no new close |
+| 5 | v5-38-w6-combined | 31/38 | (all of the above) | no new close |
+
+**Wave 6 conclusion:** the 31/38 ceiling is the priority_templates
+saturation point for nat_defs_medium on gen_v5. The remaining 7
+failures break down:
+
+  - `Nat.AM_GM` — needs `nlinarith [sq_nonneg (a-b)]`; tactic unavailable.
+  - `Nat.add_mod_eq_ite` — `split_ifs` advances one step then no
+    closing tactic. Needs a structured case-analysis skeleton.
+  - `Nat.eq_one_of_mul_eq_one_left` — needs case decomposition;
+    `Nat.mul_eq_one` lemma form may not be the right one.
+  - `Nat.div_le_div_right` — no working Mathlib lemma form found.
+  - `Nat.sqrt_lt` — `Nat.sqrt_lt'` doesn't exist; no alternative
+    found.
+  - `Nat.pow_lt_pow_iff_left` — self-reference blocks; no clean
+    alternative form found.
+  - `Nat.dvd_iff_div_mul_eq` — asymmetric dvd-iff; the term-mode
+    skeletons tried don't unify.
+
+The first one is environment-limited; the others would yield to
+either better lemma-name lookup (a v6 feature) or more flexible
+skeleton structure (also v6).
+
 ## Headline scoreboard (Direction D — generalization)
 
 Two v5 candidates evaluated on `nat_defs_large_v5` (38 medium +
@@ -186,7 +217,7 @@ contributes 4 closures.
 
 | candidate | nat_defs_medium | nat_defs_large_v5 |
 |---|---|---|
-| gen_v5 raw  | 3 / 38   | 4 / 64   |
+| gen_v5 raw  | 3 / 38 (confirmed tonight)  | 4 / 64 (confirmed tonight)  |
 | v4.7 hybrid (carries) | 26 / 38  | (not run; should be ~38-40/64 by extrapolation) |
 | v5-18 kitchen | 29 / 38 | 41 / 64 |
 | **v5-27 master** | **31 / 38** | **43 / 64** |
