@@ -122,6 +122,20 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
                 "rw [Nat.div_le_iff_le_mul]",
                 "exact Nat.div_le_div_right ‹_›",
                 "apply Nat.div_le_div_right",
+                # v4.5 structured templates. `{hyp_pos}` / `{hyp_le}` are
+                # rendered to the actual hypothesis names found in the
+                # state (e.g. `hb` / `h`); templates referencing absent
+                # hypotheses are skipped silently (not emitted as
+                # malformed Lean). See `_render_template` /
+                # `_extract_hypotheses` in evolve/strategy_wrapper.py.
+                "simp [Nat.div_lt_iff_lt_mul, Nat.mul_one]",
+                "simp_all [Nat.div_lt_iff_lt_mul, Nat.mul_one]",
+                "simp_all [Nat.div_lt_iff_lt_mul', Nat.mul_one]",
+                "rw [Nat.div_lt_iff_lt_mul {hyp_pos}, Nat.mul_one]",
+                "constructor <;> intro h_split <;> omega",
+                "constructor <;> intro h_split <;> simp_all",
+                "induction {hyp_le} <;> simp_all",
+                "induction {hyp_le} with | refl => exact Nat.le_refl _ | step h_step ih => exact ih.trans (Nat.div_le_succ_div _ _)",
             ],
             "mod": [
                 "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
@@ -131,7 +145,7 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         }
         family_budgets = {
             "AM_GM": 8,
-            "div": 12,
+            "div": 20,  # v4.5: bumped from 12 to fit the 8 new structured templates
             "mod": 12,
         }
         # v3.6 per-theorem deny-list. simp_all [Nat.add_mod, Nat.mod_eq_of_lt]
@@ -175,9 +189,11 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         # v4.3 was still trying.
         retrieval_shape_filter = True
         description = (
-            "v4.4 hybrid_evolved seed: v3.6 library + div-family premise "
+            "v4.5 hybrid_evolved seed: v3.6 library + div-family premise "
             "retrieval with self/unavailable/bloating-apply filters and "
-            "shape-aware (goal_shape × lemma_shape) form emission."
+            "shape-aware form emission; plus 8 structured div-family "
+            "templates (induction on hyp_le, iff-constructor splits, "
+            "rw-with-positivity-hypothesis chains)."
         )
     else:
         fallback_tactics = ["simp", "aesop", "omega", "norm_num", "rfl"]

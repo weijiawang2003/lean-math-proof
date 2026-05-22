@@ -116,6 +116,54 @@ _NAT_LINE = re.compile(
     r"^\s*([A-Za-z_][\w']*(?:\s+[A-Za-z_][\w']*)*)\s*:\s*(ℕ|Nat)\s*$"
 )
 
+# v4.5: matches a single-named hypothesis line like "h : a ≤ b" or
+# "hba : b ≤ a" or "hb : 0 < b". The single-name LHS distinguishes
+# these from multi-name binder lines (`a b c : ℕ`) which `_NAT_LINE`
+# already catches.
+_HYP_LINE = re.compile(r"^\s*([A-Za-z_][\w']*)\s*:\s*(.+)$")
+_POS_PREFIX = re.compile(r"^\s*0\s*<")
+
+
+def _extract_hypotheses(state_pp: str) -> dict[str, str | None]:
+    """Return a map of hypothesis-shape placeholders to actual names.
+
+    The current shapes supported:
+      hyp_le:        first hypothesis of shape `x ≤ y` (any expressions)
+      hyp_pos:       first hypothesis of shape `0 < x`
+      hyp_ne_zero:   first hypothesis of shape `x ≠ 0`
+
+    The first match wins (stable ordering). Hypothesis lines after the
+    `⊢` goal line are ignored. Lines that aren't single-named hypotheses
+    (e.g. `a b c : ℕ` binders) are silently skipped.
+    """
+    result: dict[str, str | None] = {
+        "hyp_le": None,
+        "hyp_pos": None,
+        "hyp_ne_zero": None,
+    }
+    for line in state_pp.splitlines():
+        s = line.lstrip()
+        if s.startswith("⊢"):
+            break
+        m = _HYP_LINE.match(s)
+        if not m:
+            continue
+        name, type_str = m.group(1), m.group(2)
+        # Skip the `a b c : ℕ` binder line — it has multiple names left
+        # of `:` and would be caught by `_NAT_LINE`. Defensive recheck.
+        if name in ("⊢",):
+            continue
+        if result["hyp_le"] is None and " ≤ " in type_str:
+            result["hyp_le"] = name
+        if result["hyp_pos"] is None and _POS_PREFIX.match(type_str):
+            result["hyp_pos"] = name
+        if result["hyp_ne_zero"] is None and "≠ 0" in type_str:
+            result["hyp_ne_zero"] = name
+    return result
+
+
+_PLACEHOLDER_RE = re.compile(r"\{(\w+)\}")
+
 
 def _extract_nat_vars(state_pp: str) -> list[str]:
     """Extract Nat-typed identifiers from a Lean state pretty-print.
@@ -151,19 +199,59 @@ def _extract_nat_vars(state_pp: str) -> list[str]:
     return nat_vars
 
 
-def _render_template(template: str, nat_vars: list[str]) -> list[str]:
-    """Render a tactic template once per Nat variable in scope.
+def _render_template(
+    template: str,
+    nat_vars: list[str],
+    hypotheses: dict[str, str | None] | None = None,
+) -> list[str]:
+    """Render a tactic template, substituting placeholders.
 
-    If the template has no `{var}` placeholder, render it once verbatim.
-    If `{var}` is present but no Nat variables were extracted, skip it
-    entirely (rendering with a fictitious name would just guarantee a
-    Lean error and waste a roundtrip).
+    Supported placeholders (any subset can appear in a template):
+      `{var}`        renders once per Nat-typed identifier in scope
+      `{hyp_le}`     name of a hypothesis with type `x ≤ y`
+      `{hyp_pos}`    name of a hypothesis with type `0 < x`
+      `{hyp_ne_zero}` name of a hypothesis with type `x ≠ 0`
+
+    Rules:
+      * No placeholders → render the template verbatim once.
+      * `{var}` present, no Nat vars → skip (fictitious name would just
+        error in Lean and waste a roundtrip).
+      * Any `{hyp_*}` placeholder present but the corresponding
+        hypothesis isn't in scope → skip the template entirely.
+      * If `{var}` AND `{hyp_*}` both present, render once per Nat var
+        with the same hypothesis name substituted.
+
+    The shape-extractors run once per `rank_tactics` call and the same
+    `hypotheses` dict is reused across every template.
     """
-    if "{var}" not in template:
+    hypotheses = hypotheses or {}
+    placeholders = set(_PLACEHOLDER_RE.findall(template))
+    if not placeholders:
         return [template]
-    if not nat_vars:
-        return []
-    return [template.replace("{var}", v) for v in nat_vars]
+
+    # Verify every hyp_* placeholder has a backing hypothesis name.
+    for ph in placeholders:
+        if ph == "var":
+            continue
+        if hypotheses.get(ph) is None:
+            return []
+
+    def _substitute(s: str, var: str | None = None) -> str:
+        if var is not None:
+            s = s.replace("{var}", var)
+        for ph in placeholders:
+            if ph == "var":
+                continue
+            name = hypotheses.get(ph)
+            if name is not None:
+                s = s.replace(f"{{{ph}}}", name)
+        return s
+
+    if "var" in placeholders:
+        if not nat_vars:
+            return []
+        return [_substitute(template, var=v) for v in nat_vars]
+    return [_substitute(template)]
 
 
 class StrategyWrapperPolicy:
@@ -298,6 +386,11 @@ class StrategyWrapperPolicy:
     ) -> list[str]:
         base = self.base_policy.rank_tactics(state_pp, full_name, k=k)
         nat_vars = _extract_nat_vars(state_pp)
+        # v4.5: extract hypothesis-shape placeholders once per state so
+        # the same dict is reused across every family / generic template
+        # render. Templates that reference an absent {hyp_*} placeholder
+        # are skipped silently.
+        hypotheses = _extract_hypotheses(state_pp)
 
         # v4.4: entries are 7-tuples
         # (tactic, origin, template_source, family_source,
@@ -330,7 +423,7 @@ class StrategyWrapperPolicy:
         family_entries: list[Entry] = []
         for fam in activated_families:
             for raw in self.theorem_family_tactics.get(fam, []):
-                for rendered in _render_template(raw, nat_vars):
+                for rendered in _render_template(raw, nat_vars, hypotheses):
                     if rendered and rendered not in seen:
                         seen.add(rendered)
                         family_entries.append(
@@ -421,7 +514,7 @@ class StrategyWrapperPolicy:
                 seen.add(t)
                 generic_entries.append((t, ORIGIN_FALLBACK, None, None, None, None, None))
         for raw_template in self.tactic_templates:
-            for rendered in _render_template(raw_template, nat_vars):
+            for rendered in _render_template(raw_template, nat_vars, hypotheses):
                 if rendered and rendered not in seen:
                     seen.add(rendered)
                     generic_entries.append(

@@ -289,7 +289,60 @@ structural reasons the form filter cannot fix: hypothesis-chaining gaps
 template gaps (`Nat.div_le_div_right` needs induction on the `a ≤ b`
 hypothesis). v4.5 → induction templates.
 
-- `project/evolve/runs/evolve-20260522-044315-1c0395/` — **v4.4 medium**
-  (25/38, retrieval + shape filter, 213 shape-mismatch forms suppressed,
-  current published default)
+- `project/evolve/runs/evolve-20260522-044315-1c0395/` — v4.4 medium
+  (25/38, retrieval + shape filter, 213 shape-mismatch forms suppressed)
 - Generated report: `project/evolve/reports/nat_defs_medium_v4_4.md`
+
+## v4.5 — Structured div-family templates
+
+v4.4's report flagged hypothesis-chaining and induction templates as
+the remaining wall. v4.5 attacks the induction half: add 8 structured
+templates to `theorem_family_tactics["div"]` covering iff-constructor
+splits, induction on `≤`-hypotheses, and `rw [Nat.div_lt_iff_lt_mul hb,
+Nat.mul_one]`-style chains. The wrapper gains hypothesis placeholders
+`{hyp_le}` / `{hyp_pos}` / `{hyp_ne_zero}` so templates render against
+the actual hypothesis names in scope (`h`, `hba`, `hb` etc.) and skip
+silently when the required hypothesis is absent.
+
+* `_extract_hypotheses(state_pp)` scans hypothesis lines (stops at `⊢`)
+  and returns a dict of {placeholder → name|None}.
+* `_render_template(template, nat_vars, hypotheses)` accepts the dict;
+  templates whose placeholders have no backing hypothesis render to
+  the empty list and are dropped.
+* Templates 7–8 (`induction {hyp_le} with | refl => ... | step _ ih => ...`)
+  test the multi-line `induction with` form for the first time in
+  this codebase.
+* `family_budgets["div"]` bumped 12 → 20 to fit the 8 new templates.
+
+**Outcome**: 25/38 preserved with `proved_by_origin` bit-identical to
+v3.6. **Zero new closures.** All 8 templates emit correctly (hypothesis
+substitution traced as expected — `h`, `hba`, `hb`) but every template
+hits one of three failure modes:
+
+1. **Lemma name/signature wrong for actual mathlib** — `Nat.le_refl`
+   produces type-mismatch (probable rename); `rw [Nat.div_lt_iff_lt_mul
+   hb, ...]` produces "did not find instance of the pattern" (argument
+   order or LHS/RHS swap).
+2. **`simp`/`simp_all` cannot fire hypothesis-conditioned lemmas**
+   without explicit hypothesis hints — every `simp [Nat.div_lt_iff_lt_mul,
+   Nat.mul_one]` produces "made no progress" across all 6 div theorems.
+3. **`omega` and `simp_all` don't understand `Nat.div`** — `constructor
+   <;> intro h_split <;> omega` correctly splits iff goals but neither
+   omega nor simp_all can close the resulting subgoals with `a/b` in
+   them.
+
+One small win: `Nat.dvd_iff_div_mul_eq` moved from v4.4's ERR @3 to
+v4.5's EXH @8 — `constructor <;> intro h_split <;> simp_all` advances
+state where every prior tactic errored. No proof, but more exploration.
+
+No crashes, no regressions, no new `unknown constant`. The
+infrastructure for hypothesis-aware templates is solid; the *content*
+of the new templates needs verification against the actual mathlib
+declarations the eval environment uses. v4.6 should write a
+template-side analog of v4.2's `_UNAVAILABLE_LEMMAS` (a `#check`
+pass at run-evolve setup time) before adding more templates.
+
+- `project/evolve/runs/evolve-20260522-050325-0fe236/` — **v4.5 medium**
+  (25/38, retrieval pipeline + 8 structured div templates, current
+  published default)
+- Generated report: `project/evolve/reports/nat_defs_medium_v4_5.md`
