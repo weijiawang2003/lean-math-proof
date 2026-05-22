@@ -167,11 +167,17 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         # flow. Suppresses the pathological `apply Nat.lt_of_lt_of_le`
         # bloat that consumed most of v4.2's retrieval search budget.
         retrieval_skip_bloating_apply = True
+        # v4.4: shape-aware retrieval. Classifies the current goal's head
+        # connective and gates which forms (rw/simp/apply/exact) each
+        # retrieved lemma emits, by lemma-shape vs goal-shape compatibility.
+        # On the 6 div theorems (4 iff, 1 le, 1 lt), suppresses the
+        # majority of guaranteed-fail `apply iff_lemma` emissions that
+        # v4.3 was still trying.
+        retrieval_shape_filter = True
         description = (
-            "v4.3 hybrid_evolved seed: v3.6 library + div-family premise "
-            "retrieval (retrieve_for_state, top-k=8, forms=rw/simp/apply) "
-            "with self/unavailable filtering and per-theorem retrieved-apply "
-            "bloat rejection."
+            "v4.4 hybrid_evolved seed: v3.6 library + div-family premise "
+            "retrieval with self/unavailable/bloating-apply filters and "
+            "shape-aware (goal_shape × lemma_shape) form emission."
         )
     else:
         fallback_tactics = ["simp", "aesop", "omega", "norm_num", "rfl"]
@@ -187,6 +193,7 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         retrieval_filter_self = True
         retrieval_filter_unavailable = True
         retrieval_skip_bloating_apply = True
+        retrieval_shape_filter = True
         description = "Baseline wrapper: top-k=8, max-steps=8 (gen_v5 reference)."
 
     return SearchCandidate(
@@ -209,6 +216,7 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         retrieval_filter_self=retrieval_filter_self,
         retrieval_filter_unavailable=retrieval_filter_unavailable,
         retrieval_skip_bloating_apply=retrieval_skip_bloating_apply,
+        retrieval_shape_filter=retrieval_shape_filter,
         metadata={"role": "seed"},
     )
 

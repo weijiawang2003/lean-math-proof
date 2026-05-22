@@ -213,6 +213,7 @@ class StrategyWrapperPolicy:
         retrieval_tactic_forms: list[str] | None = None,
         retrieval_filter_self: bool = True,
         retrieval_filter_unavailable: bool = True,
+        retrieval_shape_filter: bool = True,
     ) -> None:
         self.base_policy = base_policy
         self.fallback_tactics: list[str] = [
@@ -260,6 +261,12 @@ class StrategyWrapperPolicy:
         # and known-unavailable lemmas before scoring.
         self.retrieval_filter_self: bool = bool(retrieval_filter_self)
         self.retrieval_filter_unavailable: bool = bool(retrieval_filter_unavailable)
+        # v4.4 shape filter. When True the retriever computes goal_shape
+        # from state_pp and gives matching lemma shapes a scoring bonus;
+        # the wrapper restricts the emitted forms per lemma using
+        # `forms_for_shape_pair`. When False the v4.3 behavior is
+        # preserved (every retrieved lemma emits every configured form).
+        self.retrieval_shape_filter: bool = bool(retrieval_shape_filter)
         self.last_ranked_tactics: list[str] = []
         self.last_origins: list[str] = []
         self.last_template_sources: list[str | None] = []
@@ -268,12 +275,20 @@ class StrategyWrapperPolicy:
         # v4.2: parallel form-family label per entry ("rw" / "simp" /
         # "apply" / "exact"); None for non-retrieved entries.
         self.last_retrieved_forms: list[str | None] = []
+        # v4.4: parallel lemma-shape label per entry ("iff" / "eq" /
+        # "lt" / "le" / "dvd" / "unknown"); None for non-retrieved entries.
+        self.last_retrieved_shapes: list[str | None] = []
+        self.last_goal_shape: str = "unknown"
         self.last_activated_families: list[str] = []
         self.last_retrieval_activation: str | None = None
         self.last_retrieved_lemma_set: list[str] = []
         # v4.2 per-call diagnostic counts from the retriever's filter step.
         self.last_retrieval_filtered_self_count: int = 0
         self.last_retrieval_filtered_unavailable_count: int = 0
+        # v4.4 per-call shape-mismatch filter count (forms dropped by
+        # shape_filter that would have been emitted under the configured
+        # form list).
+        self.last_shape_mismatch_filtered_count: int = 0
         # v3.6: number of (already-deduped) entries filtered by the deny-
         # list in the most recent rank_tactics call. Reset per call.
         self.last_denied_count: int = 0
@@ -284,20 +299,25 @@ class StrategyWrapperPolicy:
         base = self.base_policy.rank_tactics(state_pp, full_name, k=k)
         nat_vars = _extract_nat_vars(state_pp)
 
-        # v4.2: entries are 6-tuples
+        # v4.4: entries are 7-tuples
         # (tactic, origin, template_source, family_source,
-        #  retrieved_premise, retrieved_form).
-        # retrieved_premise / retrieved_form are set for ORIGIN_RETRIEVED
-        # entries (form is e.g. "rw" / "simp"); both are None for every
-        # other origin.
-        Entry = tuple[str, str, str | None, str | None, str | None, str | None]
+        #  retrieved_premise, retrieved_form, retrieved_shape).
+        # retrieved_shape is the lemma shape ("iff"/"eq"/"lt"/"le"/"dvd"/
+        # "unknown") for ORIGIN_RETRIEVED entries; None for every other
+        # origin.
+        Entry = tuple[
+            str, str, str | None, str | None,
+            str | None, str | None, str | None,
+        ]
 
         base_entries: list[Entry] = []
         seen: set[str] = set()
         for t in base:
             if t and t not in seen:
                 seen.add(t)
-                base_entries.append((t, ORIGIN_GENERATIVE, None, None, None, None))
+                base_entries.append(
+                    (t, ORIGIN_GENERATIVE, None, None, None, None, None)
+                )
 
         # v3.4: family-specific tactics first (they encode targeted
         # knowledge for the matched theorem family), then generic
@@ -314,7 +334,7 @@ class StrategyWrapperPolicy:
                     if rendered and rendered not in seen:
                         seen.add(rendered)
                         family_entries.append(
-                            (rendered, ORIGIN_FAMILY, None, fam, None, None)
+                            (rendered, ORIGIN_FAMILY, None, fam, None, None, None)
                         )
 
         # v4.1: premise retrieval. Insert between family and generic
@@ -329,9 +349,13 @@ class StrategyWrapperPolicy:
         retrieved_lemma_set: list[str] = []
         filtered_self = 0
         filtered_unavailable = 0
+        goal_shape = "unknown"
+        lemma_shapes: dict[str, str] = {}
+        shape_mismatch_filtered = 0
         if self.retrieval_enabled and self.retrieval_top_k > 0 and activated_families:
             from premise_retriever import (
                 _FAMILY_CATALOG_KEYS,
+                forms_for_shape_pair,
                 retrieve_for_state,
             )
             for fam in activated_families:
@@ -344,25 +368,50 @@ class StrategyWrapperPolicy:
                         family_key=fam,
                         filter_self=self.retrieval_filter_self,
                         filter_unavailable=self.retrieval_filter_unavailable,
+                        shape_aware=self.retrieval_shape_filter,
                         return_diagnostics=True,
                     )
                     filtered_self = diag.get("filtered_self", 0)
                     filtered_unavailable = diag.get("filtered_unavailable", 0)
+                    goal_shape = diag.get("goal_shape", "unknown")
+                    lemma_shapes = diag.get("lemma_shapes", {}) or {}
                     break
+            # Configured form-family labels (e.g. ["rw","simp","apply"]),
+            # used both for emission and for shape-aware filtering.
+            configured_form_labels = [
+                _form_family_label(t) for t in self.retrieval_tactic_forms
+            ]
+            label_to_template = dict(
+                zip(configured_form_labels, self.retrieval_tactic_forms)
+            )
             for premise in retrieved_lemma_set:
-                for form in self.retrieval_tactic_forms:
+                lemma_shape = lemma_shapes.get(premise, "unknown")
+                if self.retrieval_shape_filter:
+                    allowed_labels = forms_for_shape_pair(
+                        goal_shape, lemma_shape, configured_form_labels,
+                    )
+                else:
+                    allowed_labels = list(configured_form_labels)
+                shape_mismatch_filtered += max(
+                    0, len(configured_form_labels) - len(allowed_labels)
+                )
+                for label in allowed_labels:
+                    form = label_to_template.get(label)
+                    if not form:
+                        continue
                     tactic = form.replace("{p}", premise).strip()
                     if tactic and tactic not in seen:
                         seen.add(tactic)
-                        form_label = _form_family_label(form)
                         retrieved_entries.append(
                             (tactic, ORIGIN_RETRIEVED, None,
-                             retrieval_activation, premise, form_label)
+                             retrieval_activation, premise, label, lemma_shape)
                         )
         self.last_retrieval_activation = retrieval_activation
         self.last_retrieved_lemma_set = list(retrieved_lemma_set)
         self.last_retrieval_filtered_self_count = filtered_self
         self.last_retrieval_filtered_unavailable_count = filtered_unavailable
+        self.last_goal_shape = goal_shape
+        self.last_shape_mismatch_filtered_count = shape_mismatch_filtered
 
         # Generic fallbacks + rendered templates, deduped against base,
         # family and retrieval entries, in deterministic genome order.
@@ -370,13 +419,13 @@ class StrategyWrapperPolicy:
         for t in self.fallback_tactics:
             if t and t not in seen:
                 seen.add(t)
-                generic_entries.append((t, ORIGIN_FALLBACK, None, None, None, None))
+                generic_entries.append((t, ORIGIN_FALLBACK, None, None, None, None, None))
         for raw_template in self.tactic_templates:
             for rendered in _render_template(raw_template, nat_vars):
                 if rendered and rendered not in seen:
                     seen.add(rendered)
                     generic_entries.append(
-                        (rendered, ORIGIN_TEMPLATE, raw_template, None, None, None)
+                        (rendered, ORIGIN_TEMPLATE, raw_template, None, None, None, None)
                     )
 
         extra_entries = family_entries + retrieved_entries + generic_entries
@@ -436,6 +485,7 @@ class StrategyWrapperPolicy:
         self.last_family_sources = [e[3] for e in all_entries]
         self.last_retrieved_premises = [e[4] for e in all_entries]
         self.last_retrieved_forms = [e[5] for e in all_entries]
+        self.last_retrieved_shapes = [e[6] for e in all_entries]
         return self.last_ranked_tactics
 
     def origin_of_rank(self, rank: int) -> str | None:
@@ -449,7 +499,7 @@ def load_strategy_config(
 ) -> tuple[
     list[str], list[str], int | None,
     dict[str, list[str]], dict[str, int], dict[str, list[str]],
-    bool, int, list[str], bool, bool, bool,
+    bool, int, list[str], bool, bool, bool, bool,
 ]:
     """Read the strategy config from JSON.
 
@@ -457,12 +507,11 @@ def load_strategy_config(
             theorem_family_tactics, family_budgets, theorem_tactic_denylist,
             retrieval_enabled, retrieval_top_k, retrieval_tactic_forms,
             retrieval_filter_self, retrieval_filter_unavailable,
-            retrieval_skip_bloating_apply).
+            retrieval_skip_bloating_apply, retrieval_shape_filter).
 
-    Missing keys produce safe defaults; unknown keys are ignored. Older
-    configs (pre-v3.4 / pre-v3.6 / pre-v4.1 / pre-v4.2 / pre-v4.3) just
-    get safe defaults for the newer fields. v4.2/v4.3 filter flags default
-    to True so older configs benefit from the new filters automatically.
+    Missing keys produce safe defaults; unknown keys are ignored. All
+    retrieval filter flags default to True so older configs benefit
+    from the newer filters automatically.
     """
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
     fb = list(raw.get("fallback_tactics") or [])
@@ -484,11 +533,12 @@ def load_strategy_config(
     retrieval_skip_bloating_apply = bool(
         raw.get("retrieval_skip_bloating_apply", True)
     )
+    retrieval_shape_filter = bool(raw.get("retrieval_shape_filter", True))
     return (
         fb, tmpl, cap, fam, fam_budgets, deny,
         retrieval_enabled, retrieval_top_k, retrieval_tactic_forms,
         retrieval_filter_self, retrieval_filter_unavailable,
-        retrieval_skip_bloating_apply,
+        retrieval_skip_bloating_apply, retrieval_shape_filter,
     )
 
 
@@ -506,6 +556,7 @@ def dump_strategy_config(
     retrieval_filter_self: bool = True,
     retrieval_filter_unavailable: bool = True,
     retrieval_skip_bloating_apply: bool = True,
+    retrieval_shape_filter: bool = True,
 ) -> None:
     """Write the JSON config the subprocess will read. Parent dirs are
     created if needed."""
@@ -538,6 +589,7 @@ def dump_strategy_config(
                 "retrieval_skip_bloating_apply": bool(
                     retrieval_skip_bloating_apply
                 ),
+                "retrieval_shape_filter": bool(retrieval_shape_filter),
             },
             indent=2,
             ensure_ascii=False,

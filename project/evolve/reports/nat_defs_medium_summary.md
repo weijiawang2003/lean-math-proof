@@ -245,3 +245,51 @@ diagnostic value of seeing which lemmas bloat outweighs the 0.2 min /
   current published default)
 - `/tmp/v4_3_exp_A/`, `/tmp/v4_3_exp_C/` — ablation runs
 - Generated report: `project/evolve/reports/nat_defs_medium_v4_3.md`
+
+## v4.4 — Shape-aware retrieval ranking
+
+v4.3 killed the symptom (apply-bloat) but identified the deeper cause:
+4 of the 6 unproved div theorems have `iff` goals, 1 has `le`, 1 has
+`lt` — yet v4.3 default emitted `apply LEMMA` against every retrieved
+lemma regardless of goal shape, guaranteed to `failed to unify` on iff
+goals.
+
+v4.4 classifies the goal's head connective and gates which forms each
+retrieved lemma emits per the `(goal_shape, lemma_shape)` pair:
+
+* `premise_retriever.classify_goal_shape(state_pp)` returns one of
+  `eq` / `iff` / `lt` / `le` / `dvd` / `and` / `or` / `unknown` from
+  the `⊢` line.
+* `lemma_shape_from_name(name)` heuristically tags catalog lemmas
+  (16/16 match their conclusion shape on the `Nat.div` bucket).
+* `_SHAPE_FORM_ALLOW[(goal, lemma)] → set[form]` whitelist: iff×iff
+  emits rw/simp/apply; iff×eq emits rw/simp; le×le emits apply/exact;
+  iff×lt emits rw/simp (no apply); etc. Default fallback for unlisted
+  pairs is `{rw, simp}`.
+
+The retriever also adds a shape-bonus to scoring (+1.5 for exact
+match, smaller bonuses for compatible cross-shape pairs, −0.5
+penalty for distant mismatch with no token overlap). Wrapper now
+exposes `last_retrieved_shapes` / `last_goal_shape` /
+`last_shape_mismatch_filtered_count`; trace records tagged with
+`goal_shape` / `tactic_retrieved_shape` / `shape_match`.
+
+**Outcome**: 25/38 preserved with `proved_by_origin` bit-identical to
+v3.6. **213 shape-mismatched forms suppressed** across 6 div theorems
+(63 emissions on average, 6+ forms suppressed per `rank_tactics` call).
+**Zero `unknown constant` errors** in retrieved traces (v4.2 hygiene
+preserved). **3 div theorems escape the v4.3 ERR @early failure mode**
+and now run to EXH @8 — confirming shape-aware emission unblocks
+exploration. Wallclock 4m 21s (vs v4.3's 3m 42s; the +0.6 min is paid
+to run those theorems deeper, not on wasted Lean roundtrips).
+
+**Still no new proofs.** The remaining 6 div theorems all fail for
+structural reasons the form filter cannot fix: hypothesis-chaining gaps
+(`Nat.div_pos_iff.mpr ⟨_, _⟩` needs a term builder) and induction-
+template gaps (`Nat.div_le_div_right` needs induction on the `a ≤ b`
+hypothesis). v4.5 → induction templates.
+
+- `project/evolve/runs/evolve-20260522-044315-1c0395/` — **v4.4 medium**
+  (25/38, retrieval + shape filter, 213 shape-mismatch forms suppressed,
+  current published default)
+- Generated report: `project/evolve/reports/nat_defs_medium_v4_4.md`

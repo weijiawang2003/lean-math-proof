@@ -203,6 +203,142 @@ _UNAVAILABLE_LEMMAS: set[str] = {
 }
 
 
+# ── v4.4 goal-shape and lemma-shape classifiers ─────────────────────
+
+# Canonical shape labels.
+SHAPE_EQ = "eq"
+SHAPE_IFF = "iff"
+SHAPE_LT = "lt"
+SHAPE_LE = "le"
+SHAPE_DVD = "dvd"
+SHAPE_AND = "and"
+SHAPE_OR = "or"
+SHAPE_UNKNOWN = "unknown"
+
+
+def classify_goal_shape(state_pp: str) -> str:
+    """Classify the proof state's main-goal head connective.
+
+    Returns one of: "eq", "iff", "lt", "le", "dvd", "and", "or", "unknown".
+
+    Only the line beginning with `⊢` is inspected, and order matters:
+    `↔` and `∣` are checked first because their Unicode glyphs cannot be
+    confused with `<`/`≤`/`=`. Equality is checked last so a `x = y ↔
+    p` goal classifies as iff, not eq. The classifier is intentionally
+    string-based; it does not parse Lean syntax and will misclassify
+    pathological goals (e.g. an iff hidden inside a quantifier). For
+    the nat_defs_medium set this is sufficient — every div-family goal
+    has its connective at the top level.
+    """
+    if not state_pp:
+        return SHAPE_UNKNOWN
+    goal = None
+    for ln in state_pp.splitlines():
+        s = ln.lstrip()
+        if s.startswith("⊢"):
+            goal = s[1:].strip()
+            break
+    if not goal:
+        return SHAPE_UNKNOWN
+    if "↔" in goal:
+        return SHAPE_IFF
+    if "∣" in goal:
+        return SHAPE_DVD
+    if "∧" in goal:
+        return SHAPE_AND
+    if "∨" in goal:
+        return SHAPE_OR
+    if "≤" in goal:
+        return SHAPE_LE
+    if "<" in goal:
+        return SHAPE_LT
+    if "=" in goal:
+        return SHAPE_EQ
+    return SHAPE_UNKNOWN
+
+
+def lemma_shape_from_name(name: str) -> str:
+    """Heuristic shape classification for a fully-qualified lemma name.
+
+    Inspects only the bare (post-last-dot) name in lowercase. Checks in
+    decreasing specificity:
+      1. `_iff_` substring or `_iff` suffix → iff
+      2. contains `dvd` → dvd
+      3. `_eq_` substring or `_eq` suffix, or `cancel` (`*_cancel` lemmas
+         in this catalog are equalities) → eq
+      4. contains `pos` → lt (e.g. `Nat.div_pos: 0 < a/b`)
+      5. `_lt_` or `_lt` → lt
+      6. `_le_` or `_le` → le
+
+    Falls back to "unknown" so the caller can choose to emit all
+    configured forms rather than over-aggressively filtering.
+    """
+    if not name:
+        return SHAPE_UNKNOWN
+    n = name.split(".")[-1].lower()
+    if "_iff_" in n or n.endswith("_iff"):
+        return SHAPE_IFF
+    if "dvd" in n:
+        return SHAPE_DVD
+    if "_eq_" in n or n.endswith("_eq") or "cancel" in n:
+        return SHAPE_EQ
+    if "pos" in n:
+        return SHAPE_LT
+    if "_lt_" in n or n.endswith("_lt"):
+        return SHAPE_LT
+    if "_le_" in n or n.endswith("_le"):
+        return SHAPE_LE
+    return SHAPE_UNKNOWN
+
+
+# Goal-shape × lemma-shape → set of form-family labels worth emitting.
+# Default if not listed: {"rw", "simp"} — these almost never crash and
+# can engage a lemma into any goal that contains its LHS/RHS terms. The
+# entries below add `apply`/`exact` only where the conclusion shapes
+# match (so `apply LEMMA` won't produce `failed to unify` for free).
+_SHAPE_FORM_ALLOW: dict[tuple[str, str], set[str]] = {
+    (SHAPE_IFF, SHAPE_IFF): {"rw", "simp", "apply"},
+    (SHAPE_IFF, SHAPE_EQ): {"rw", "simp"},
+    (SHAPE_IFF, SHAPE_LT): {"rw", "simp"},
+    (SHAPE_IFF, SHAPE_LE): {"rw", "simp"},
+    (SHAPE_IFF, SHAPE_DVD): {"rw", "simp"},
+    (SHAPE_LE, SHAPE_LE): {"apply", "exact", "rw", "simp"},
+    (SHAPE_LE, SHAPE_LT): {"apply", "exact"},
+    (SHAPE_LE, SHAPE_IFF): {"rw", "simp"},
+    (SHAPE_LE, SHAPE_EQ): {"rw", "simp"},
+    (SHAPE_LT, SHAPE_LT): {"apply", "exact", "rw", "simp"},
+    (SHAPE_LT, SHAPE_LE): {"apply", "exact"},
+    (SHAPE_LT, SHAPE_IFF): {"rw", "simp"},
+    (SHAPE_LT, SHAPE_EQ): {"rw", "simp"},
+    (SHAPE_DVD, SHAPE_DVD): {"apply", "exact", "rw", "simp"},
+    (SHAPE_DVD, SHAPE_IFF): {"rw", "simp", "apply"},
+    (SHAPE_DVD, SHAPE_EQ): {"rw", "simp"},
+    (SHAPE_EQ, SHAPE_EQ): {"rw", "simp", "apply", "exact"},
+    (SHAPE_EQ, SHAPE_IFF): {"rw", "simp"},
+}
+
+
+def forms_for_shape_pair(
+    goal_shape: str,
+    lemma_shape: str,
+    configured: list[str],
+) -> list[str]:
+    """Return the subset of `configured` form labels safe to emit for
+    a (goal_shape, lemma_shape) pair.
+
+    Preserves the order of `configured` for determinism. Unknown shapes
+    on either side fall through to the configured list unchanged (so we
+    do not over-prune when classification is uncertain).
+    """
+    if goal_shape == SHAPE_UNKNOWN or lemma_shape == SHAPE_UNKNOWN:
+        return list(configured)
+    allowed = _SHAPE_FORM_ALLOW.get((goal_shape, lemma_shape))
+    if allowed is None:
+        # No explicit rule for this pair — default to rw / simp only.
+        allowed = {"rw", "simp"}
+    return [f for f in configured if f in allowed]
+
+
 def _name_namespace_variants(theorem_name: str) -> set[str]:
     """Return name variants for self-comparison.
 
@@ -226,6 +362,7 @@ def retrieve_for_state(
     filter_self: bool = True,
     filter_unavailable: bool = True,
     return_diagnostics: bool = False,
+    shape_aware: bool = True,
 ):
     """Return up to `k` lemma names relevant to the given proof state.
 
@@ -247,12 +384,21 @@ def retrieve_for_state(
     Returns:
         By default, up to k lemma names ranked by token-overlap score
         (descending). When return_diagnostics=True, returns a tuple
-        ``(premises, diag)`` where ``diag`` is a dict with counts of
-        ``filtered_self`` and ``filtered_unavailable`` premises removed
-        from the catalog before scoring. Order is deterministic for a
-        given input.
+        ``(premises, diag)`` where ``diag`` is a dict with:
+          - filtered_self (int): catalog entries removed by self-filter
+          - filtered_unavailable (int): removed by unavailability denylist
+          - goal_shape (str): inferred shape of the current goal
+          - lemma_shapes (dict[str, str]): per-returned-premise shape
+          - shape_aware (bool): whether shape scoring was applied
+        Order is deterministic for a given input.
     """
-    diag = {"filtered_self": 0, "filtered_unavailable": 0}
+    diag: dict[str, object] = {
+        "filtered_self": 0,
+        "filtered_unavailable": 0,
+        "goal_shape": SHAPE_UNKNOWN,
+        "lemma_shapes": {},
+        "shape_aware": bool(shape_aware),
+    }
     if k <= 0:
         return ([], diag) if return_diagnostics else []
 
@@ -323,7 +469,13 @@ def retrieve_for_state(
     # (e.g. "div") rank above premises that happen to share other tokens.
     family_token = family_key.lower() if family_key else None
 
+    # v4.4: goal shape — classified once and used to bias scoring toward
+    # lemmas whose conclusion shape can engage with the goal.
+    goal_shape = classify_goal_shape(state_pp) if shape_aware else SHAPE_UNKNOWN
+    diag["goal_shape"] = goal_shape
+
     scored: list[tuple[float, int, str]] = []
+    candidate_shapes: dict[str, str] = {}
     for idx, premise in enumerate(candidates):
         # Split premise name into parts (Nat.div_pos_iff → div, pos, iff).
         # Drop the "Nat" namespace token — too generic to be diagnostic.
@@ -333,12 +485,46 @@ def retrieve_for_state(
         # Family bonus: lemma shares the family token with the theorem.
         family_bonus = 0.5 if (family_token and family_token in parts_set
                                and family_token in theorem_tokens) else 0.0
-        score = overlap + family_bonus
+        # v4.4 shape bias.
+        lemma_shape = lemma_shape_from_name(premise) if shape_aware else SHAPE_UNKNOWN
+        candidate_shapes[premise] = lemma_shape
+        shape_bonus = 0.0
+        if shape_aware and goal_shape != SHAPE_UNKNOWN and lemma_shape != SHAPE_UNKNOWN:
+            if lemma_shape == goal_shape:
+                # Exact match: rank ahead of token-overlap-only neighbors.
+                shape_bonus = 1.5
+            elif (goal_shape == SHAPE_IFF and lemma_shape == SHAPE_EQ):
+                # eq lemmas can sometimes rewrite inside an iff goal.
+                shape_bonus = 0.5
+            elif (goal_shape == SHAPE_IFF and lemma_shape == SHAPE_DVD):
+                # dvd lemmas can characterize an iff (e.g. dvd_iff_*).
+                shape_bonus = 0.3
+            elif (goal_shape in (SHAPE_LT, SHAPE_LE)
+                  and lemma_shape in (SHAPE_LT, SHAPE_LE)):
+                # lt vs le near-match — still both inequalities.
+                shape_bonus = 0.8
+            elif (goal_shape in (SHAPE_LT, SHAPE_LE)
+                  and lemma_shape == SHAPE_IFF):
+                # iff lemma can characterize an inequality via rw/simp.
+                shape_bonus = 0.4
+            elif (goal_shape == SHAPE_EQ and lemma_shape == SHAPE_IFF):
+                shape_bonus = 0.3
+            elif (goal_shape == SHAPE_DVD and lemma_shape == SHAPE_IFF):
+                # dvd_iff_* characterizations.
+                shape_bonus = 0.7
+            else:
+                # Distant mismatch (e.g. eq lemma vs iff goal with no
+                # token overlap). Only penalize when token overlap is
+                # weak, so a well-named lemma can still win.
+                if overlap == 0:
+                    shape_bonus = -0.5
+        score = overlap + family_bonus + shape_bonus
         # Tiebreak by catalog order (lower idx wins) so the output is stable.
         scored.append((-score, idx, premise))
 
     scored.sort()
     result = [premise for _score, _idx, premise in scored[:k]]
+    diag["lemma_shapes"] = {p: candidate_shapes[p] for p in result}
     return (result, diag) if return_diagnostics else result
 
 

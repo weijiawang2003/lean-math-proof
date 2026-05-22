@@ -114,15 +114,15 @@ def _load_policy(
             (fb, tmpl, cap, fam, fam_budgets, deny,
              retrieval_enabled, retrieval_top_k, retrieval_forms,
              retrieval_filter_self, retrieval_filter_unavailable,
-             retrieval_skip_bloating_apply) = (
+             retrieval_skip_bloating_apply, retrieval_shape_filter) = (
                 load_strategy_config(strategy_config)
             )
         else:
             (fb, tmpl, cap, fam, fam_budgets, deny,
              retrieval_enabled, retrieval_top_k, retrieval_forms,
              retrieval_filter_self, retrieval_filter_unavailable,
-             retrieval_skip_bloating_apply) = (
-                [], [], None, {}, {}, {}, False, 0, [], True, True, True
+             retrieval_skip_bloating_apply, retrieval_shape_filter) = (
+                [], [], None, {}, {}, {}, False, 0, [], True, True, True, True
             )
         wrapper = StrategyWrapperPolicy(
             base_policy=base, fallback_tactics=fb, tactic_templates=tmpl,
@@ -135,6 +135,7 @@ def _load_policy(
             retrieval_tactic_forms=retrieval_forms,
             retrieval_filter_self=retrieval_filter_self,
             retrieval_filter_unavailable=retrieval_filter_unavailable,
+            retrieval_shape_filter=retrieval_shape_filter,
         )
         # v4.3 bloat-filter flag is consumed by rollout_one_theorem, not
         # the wrapper itself. Stash it on the wrapper so the eval loop
@@ -237,6 +238,18 @@ def rollout_one_theorem(
         "retrieved_apply_no_goal_change_count": 0,
         "skipped_bloating_apply_count": 0,
         "bloating_apply_lemmas": [],
+        # v4.4 shape-filter counters. retrieved_shape_counts buckets each
+        # retrieved-tactic *attempt* by its lemma shape; *_success_counts
+        # buckets the non-error transitions; goal_shape captures the
+        # current target's shape at step 1 (the iff/lt/le/dvd label that
+        # drove the shape-aware form selection). shape_mismatch_filtered_
+        # count sums the (configured forms − allowed forms) drop across
+        # rank_tactics calls — i.e. how many candidate forms shape-aware
+        # emission suppressed.
+        "goal_shape": "unknown",
+        "retrieved_shape_counts": {},
+        "retrieved_shape_success_counts": {},
+        "shape_mismatch_filtered_count": 0,
     }
 
     # v4.3: per-theorem set of (lemma) names whose `apply LEMMA` already
@@ -278,10 +291,18 @@ def rollout_one_theorem(
                     getattr(pol, "last_retrieved_forms", None)
                     or [None] * len(ranked)
                 )
+                retrieved_shapes = (
+                    getattr(pol, "last_retrieved_shapes", None)
+                    or [None] * len(ranked)
+                )
                 # Capture activated families once (depends only on theorem name).
                 if step == 1:
                     fams = getattr(pol, "last_activated_families", None) or []
                     result["activated_families"] = list(fams)
+                    # v4.4 capture the inferred goal shape at step 1.
+                    result["goal_shape"] = getattr(
+                        pol, "last_goal_shape", "unknown"
+                    ) or "unknown"
                 # v3.6: accumulate per-call deny-list filter count.
                 result["denied_tactic_count"] += int(
                     getattr(pol, "last_denied_count", 0) or 0
@@ -297,6 +318,12 @@ def rollout_one_theorem(
                 result["retrieved_premise_filtered_unavailable_count"] += int(
                     getattr(pol, "last_retrieval_filtered_unavailable_count", 0) or 0
                 )
+                # v4.4: accumulate per-call shape-mismatch filter count.
+                result["shape_mismatch_filtered_count"] += int(
+                    getattr(pol, "last_shape_mismatch_filtered_count", 0) or 0
+                )
+                # Goal shape on this step (used to tag each retrieved trace).
+                step_goal_shape = getattr(pol, "last_goal_shape", "unknown") or "unknown"
 
                 step_succeeded = False
                 deferred = None  # (rank, tac, origin, tmpl_src, outcome, state_h_after)
@@ -320,6 +347,10 @@ def rollout_one_theorem(
                     retr_form = (
                         retrieved_forms[rank]
                         if rank < len(retrieved_forms) else None
+                    )
+                    retr_shape = (
+                        retrieved_shapes[rank]
+                        if rank < len(retrieved_shapes) else None
                     )
 
                     # v4.3 pre-filter: suppress retrieved `apply LEMMA` if
@@ -347,6 +378,13 @@ def rollout_one_theorem(
                             "tactic_origin": origin,
                             "tactic_retrieved_premise": retr_premise,
                             "tactic_retrieved_form": retr_form,
+                            "tactic_retrieved_shape": retr_shape,
+                            "goal_shape": step_goal_shape,
+                            "shape_match": (
+                                retr_shape is not None
+                                and retr_shape == step_goal_shape
+                                and retr_shape != "unknown"
+                            ),
                             "state_hash_before": state_h_before,
                             "skipped_bloating_apply": True,
                         }
@@ -390,6 +428,9 @@ def rollout_one_theorem(
                         if retr_form is not None:
                             d = result["retrieved_premise_attempt_by_form"]
                             d[retr_form] = d.get(retr_form, 0) + 1
+                        if retr_shape is not None:
+                            ds = result["retrieved_shape_counts"]
+                            ds[retr_shape] = ds.get(retr_shape, 0) + 1
 
                     outcome = run_transition(
                         dojo, theorem, state, tac,
@@ -412,6 +453,13 @@ def rollout_one_theorem(
                         record_dict["tactic_retrieved_premise"] = retr_premise
                     if retr_form is not None:
                         record_dict["tactic_retrieved_form"] = retr_form
+                    if retr_shape is not None:
+                        record_dict["tactic_retrieved_shape"] = retr_shape
+                        record_dict["goal_shape"] = step_goal_shape
+                        record_dict["shape_match"] = (
+                            retr_shape == step_goal_shape
+                            and retr_shape != "unknown"
+                        )
                     record_dict["state_hash_before"] = state_h_before
 
                     # REPL crashed — Dojo is dead, abort theorem
@@ -443,6 +491,9 @@ def rollout_one_theorem(
                             if retr_form is not None:
                                 d = result["retrieved_premise_advanced_by_form"]
                                 d[retr_form] = d.get(retr_form, 0) + 1
+                            if retr_shape is not None:
+                                ds = result["retrieved_shape_success_counts"]
+                                ds[retr_shape] = ds.get(retr_shape, 0) + 1
                         if rank > 0:
                             result["fallbacks_used"] += 1
                         step_succeeded = True
@@ -527,6 +578,9 @@ def rollout_one_theorem(
                         if retr_form is not None:
                             d = result["retrieved_premise_advanced_by_form"]
                             d[retr_form] = d.get(retr_form, 0) + 1
+                        if retr_shape is not None:
+                            ds = result["retrieved_shape_success_counts"]
+                            ds[retr_shape] = ds.get(retr_shape, 0) + 1
                     state = outcome.next_state
                     result["num_steps"] = step
                     result["tactics_used"].append(tac)
@@ -840,6 +894,20 @@ def main():
             bloating_apply_lemma_counts[lem] = (
                 bloating_apply_lemma_counts.get(lem, 0) + 1
             )
+    # v4.4 shape-filter aggregates.
+    retrieved_shape_counts: dict[str, int] = {}
+    retrieved_shape_success_counts: dict[str, int] = {}
+    shape_mismatch_filtered_count = 0
+    for r in results:
+        for s, c in (r.get("retrieved_shape_counts") or {}).items():
+            retrieved_shape_counts[s] = retrieved_shape_counts.get(s, 0) + int(c or 0)
+        for s, c in (r.get("retrieved_shape_success_counts") or {}).items():
+            retrieved_shape_success_counts[s] = (
+                retrieved_shape_success_counts.get(s, 0) + int(c or 0)
+            )
+        shape_mismatch_filtered_count += int(
+            r.get("shape_mismatch_filtered_count") or 0
+        )
     if retrieved_premise_activation_count:
         print(
             f"  Retrieval:          activated on {retrieved_premise_activation_count} theorems, "
@@ -867,6 +935,12 @@ def main():
             )
         if bloating_apply_lemma_counts:
             print(f"  Bloating lemmas:    {bloating_apply_lemma_counts}")
+        if retrieved_shape_counts or shape_mismatch_filtered_count:
+            print(
+                f"  Shape attempts:     {retrieved_shape_counts}  "
+                f"success={retrieved_shape_success_counts}  "
+                f"mismatch_filtered={shape_mismatch_filtered_count}"
+            )
     print(f"{'='*64}\n")
 
     metrics = {
@@ -917,6 +991,10 @@ def main():
         "retrieved_apply_no_goal_change_count": retrieved_apply_no_goal_change_count,
         "skipped_bloating_apply_count": skipped_bloating_apply_count,
         "bloating_apply_lemma_counts": bloating_apply_lemma_counts,
+        # v4.4 shape-filter aggregates
+        "retrieved_shape_counts": retrieved_shape_counts,
+        "retrieved_shape_success_counts": retrieved_shape_success_counts,
+        "shape_mismatch_filtered_count": shape_mismatch_filtered_count,
         "per_theorem": results,
     }
     write_metrics(artifacts["metrics_path"], metrics)

@@ -121,6 +121,14 @@ class SearchCandidate:
     # the lemma is not globally banned, only its `apply` form is
     # suppressed after one observed bloat on the theorem being proved.
     retrieval_skip_bloating_apply: bool = True
+    # v4.4 shape-aware retrieval. When True, the retriever classifies
+    # the current goal's head connective (eq/iff/lt/le/dvd/...) and
+    # the wrapper emits only the tactic forms appropriate for the
+    # (goal_shape, lemma_shape) pair (forms_for_shape_pair in
+    # premise_retriever). Suppresses the v4.3 mismatch where every
+    # retrieved iff lemma also emitted `apply LEMMA` against an iff
+    # goal, guaranteed to fail to unify.
+    retrieval_shape_filter: bool = True
     metadata: dict[str, Any] = field(default_factory=dict)
 
     # -- serialization ----------------------------------------------------
