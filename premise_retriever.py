@@ -163,12 +163,70 @@ _FAMILY_CATALOG_KEYS: dict[str, list[str]] = {
 }
 
 
+# v4.2 static availability denylist. Lemma names that produced `unknown
+# constant` during the v4.1 eval AND would still produce it after the
+# self-filter — i.e. unavailable for reasons other than self-reference.
+# Two sub-classes:
+#
+#   1. Genuinely outside the import closure of nat_defs_medium's eval
+#      environment (e.g. defined in a Mathlib file not transitively
+#      imported by Mathlib/Data/Nat/Defs.lean):
+#        - Nat.div_eq_zero_iff
+#        - Nat.div_le_iff_le_mul
+#
+#   2. Forward-reference traps: target theorems of the eval set that
+#      live in the same source file as other targets, so they are
+#      unknown at the proof position of any target declared *earlier*
+#      in the file. Confirmed in the v4.2-pre run where, after the
+#      self-filter eliminated 116 attempts, 20 cross-theorem unknown_
+#      constant errors remained — all pairs (target, other-target):
+#        - Nat.div_le_div_right
+#        - Nat.div_lt_one_iff
+#        - Nat.div_pos
+#        - Nat.div_pos_iff
+#        - Nat.dvd_iff_div_mul_eq
+#
+# Listing class-2 lemmas globally is technically broader than the v4.1
+# self-only behavior, but it captures the same intent (don't waste Lean
+# roundtrips on lemmas we know will fail) and keeps the diagnostic
+# separable from the self-filter via the filtered_self / filtered_
+# unavailable counts. Class-2 lemmas can be re-added once v4.3's import-
+# reachability checker can resolve their availability per proof site.
+_UNAVAILABLE_LEMMAS: set[str] = {
+    "Nat.div_eq_zero_iff",
+    "Nat.div_le_iff_le_mul",
+    "Nat.div_le_div_right",
+    "Nat.div_lt_one_iff",
+    "Nat.div_pos",
+    "Nat.div_pos_iff",
+    "Nat.dvd_iff_div_mul_eq",
+}
+
+
+def _name_namespace_variants(theorem_name: str) -> set[str]:
+    """Return name variants for self-comparison.
+
+    Returns the original name plus the bare unqualified name (after the
+    last dot) and lowercased forms — enough to catch e.g. retrieved
+    `Nat.div_pos` when the target is also `Nat.div_pos` even if the
+    catalog ever ships an unqualified alias.
+    """
+    variants: set[str] = {theorem_name}
+    if "." in theorem_name:
+        variants.add(theorem_name.rsplit(".", 1)[-1])
+    variants.add(theorem_name.lower())
+    return variants
+
+
 def retrieve_for_state(
     state_pp: str,
     theorem_name: str | None = None,
     k: int = 10,
     family_key: str | None = None,
-) -> list[str]:
+    filter_self: bool = True,
+    filter_unavailable: bool = True,
+    return_diagnostics: bool = False,
+):
     """Return up to `k` lemma names relevant to the given proof state.
 
     Stateless and deterministic — does not load traces or external models.
@@ -187,11 +245,16 @@ def retrieve_for_state(
             and the state.
 
     Returns:
-        Up to k lemma names, ranked by token-overlap score (descending).
-        Order is deterministic for a given input.
+        By default, up to k lemma names ranked by token-overlap score
+        (descending). When return_diagnostics=True, returns a tuple
+        ``(premises, diag)`` where ``diag`` is a dict with counts of
+        ``filtered_self`` and ``filtered_unavailable`` premises removed
+        from the catalog before scoring. Order is deterministic for a
+        given input.
     """
+    diag = {"filtered_self": 0, "filtered_unavailable": 0}
     if k <= 0:
-        return []
+        return ([], diag) if return_diagnostics else []
 
     # Pick catalog buckets to draw from
     buckets: list[str] = []
@@ -204,43 +267,79 @@ def retrieve_for_state(
             buckets = list(_FAMILY_CATALOG_KEYS["div"])
 
     if not buckets:
-        return []
+        return ([], diag) if return_diagnostics else []
 
     candidates: list[str] = []
     seen: set[str] = set()
     for bucket in buckets:
         for premise in STATIC_PREMISES.get(bucket, []):
-            if premise not in seen:
-                seen.add(premise)
-                candidates.append(premise)
+            if premise in seen:
+                continue
+            seen.add(premise)
+            candidates.append(premise)
+
+    # v4.2 filters: target-theorem self-retrieval and known-unavailable
+    # lemmas. Applied before scoring so the diagnostic counts reflect
+    # how many catalog entries each filter actually removed for this call.
+    if filter_self and theorem_name:
+        self_variants = _name_namespace_variants(theorem_name)
+        kept: list[str] = []
+        for p in candidates:
+            if p in self_variants:
+                diag["filtered_self"] += 1
+            else:
+                kept.append(p)
+        candidates = kept
+
+    if filter_unavailable:
+        kept = []
+        for p in candidates:
+            if p in _UNAVAILABLE_LEMMAS:
+                diag["filtered_unavailable"] += 1
+            else:
+                kept.append(p)
+        candidates = kept
 
     if not candidates:
-        return []
+        return ([], diag) if return_diagnostics else []
 
     # Score by token overlap. The query tokens come from both the state
     # pretty-print and the theorem name (the latter is highly diagnostic
     # — e.g. `Nat.div_pos_iff` shares `div`, `pos`, `iff` with the right
     # premises in the bucket).
-    query_tokens: set[str] = set(_tokenize_state(state_pp))
+    state_tokens: set[str] = set(_tokenize_state(state_pp))
+    theorem_tokens: set[str] = set()
     if theorem_name:
         # Split the name on dots and underscores so e.g. "Nat.div_pos_iff"
         # yields {"Nat", "div", "pos", "iff"}.
         for part in re.split(r"[._]", theorem_name):
             part = part.strip()
             if len(part) > 1:
-                query_tokens.add(part)
+                theorem_tokens.add(part)
+    query_tokens = state_tokens | theorem_tokens
+
+    # Family token: which top-level family this call is targeting. Used
+    # as a small bonus so premises whose names contain the family token
+    # (e.g. "div") rank above premises that happen to share other tokens.
+    family_token = family_key.lower() if family_key else None
 
     scored: list[tuple[float, int, str]] = []
     for idx, premise in enumerate(candidates):
         # Split premise name into parts (Nat.div_pos_iff → div, pos, iff).
         # Drop the "Nat" namespace token — too generic to be diagnostic.
         parts = [p for p in re.split(r"[._]", premise) if p and p != "Nat"]
+        parts_set = set(parts)
         overlap = sum(1 for p in parts if p in query_tokens)
+        # Family bonus: lemma shares the family token with the theorem.
+        family_bonus = 0.5 if (family_token and family_token in parts_set
+                               and family_token in theorem_tokens) else 0.0
+        score = overlap + family_bonus
         # Tiebreak by catalog order (lower idx wins) so the output is stable.
-        scored.append((-overlap, idx, premise))
+        scored.append((-score, idx, premise))
 
     scored.sort()
-    return [premise for _score, _idx, premise in scored[:k]]
+    result = [premise for _score, _idx, premise in scored[:k]]
+    return (result, diag) if return_diagnostics else result
 
 
 # ── BM25-like token overlap scorer ──────────────────────────────────

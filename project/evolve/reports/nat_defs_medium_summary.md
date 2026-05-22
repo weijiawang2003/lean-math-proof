@@ -141,3 +141,53 @@ new — `Nat.mod_two_ne_one`, `Nat.mod_two_ne_zero`).
 - `/tmp/gen_v5_baseline_medium_v3_6/` — paired gen_v5 plain baseline
   (3/38) used to generate the v3.6 report
 - Generated report: `project/evolve/reports/nat_defs_medium_v3_6.md`
+
+## v4.1 / v4.2 — Div-family premise retrieval
+
+v4.1 wired a static premise retriever into the `hybrid_evolved` wrapper so
+that `Nat.div_*` / `Nat.dvd_*` theorems get a curated `Nat.div` lemma
+bucket converted to `rw / simp / exact / apply` tactic candidates. The
+plumbing landed in `premise_retriever.retrieve_for_state`,
+`StrategyWrapperPolicy.retrieval_*`, and the eval / candidate / evolve
+config surfaces. **Outcome**: 25/38 preserved exactly, with retrieval
+activated on all 6 div theorems but **0 new closures**. The diagnostic
+report identified three structural failures: target-theorem
+self-retrieval, lemmas unavailable in the eval-env import closure (200
+`unknown constant` errors), and tactic-form shotgun firing.
+
+v4.2 shipped the hygiene layer over v4.1. Three filters added to
+`retrieve_for_state`:
+
+* **Self-filter**: target theorem excluded from its own retrieved set.
+* **Static unavailability denylist** (`_UNAVAILABLE_LEMMAS`): 7 lemmas
+  empirically observed to produce `unknown constant` — 2 genuinely
+  outside the import closure (`Nat.div_eq_zero_iff`,
+  `Nat.div_le_iff_le_mul`) plus 5 forward-reference target theorems that
+  are unknown at the proof position of other in-file targets
+  (`Nat.div_le_div_right`, `Nat.div_lt_one_iff`, `Nat.div_pos`,
+  `Nat.div_pos_iff`, `Nat.dvd_iff_div_mul_eq`).
+* **Tactic-form ablation**: default forms shrunk to `["rw","simp","apply"]`
+  (dropped `exact`, which produced zero wins and many type-mismatch errors
+  in v4.1).
+
+**Outcome (v4.2)**: 25/38 preserved, **zero `unknown constant` errors**
+(200 → 0), retrieval attempts **−61 %** (783 → 303), wallclock −1 min
+vs v4.1. Baseline B (v4.2 wrapper, retrieval off) confirms 25/38 with
+identical `proved_by_origin` — retrieval is a clean addition. The
+remaining 16 retrieved-tactic state advances all hit one pathological
+pattern (`apply Nat.lt_of_lt_of_le` growing the goal count by 2 per
+step on `Nat.div_le_div_right` / `Nat.div_lt_one_iff`) that v4.3 will
+need a goal-shape filter to suppress.
+
+- `project/evolve/runs/evolve-20260521-233937-cf2370/` — v4.1 medium
+  (25/38, retrieval plumbing, 200 unknown-constant errors,
+  pre-hygiene baseline)
+- `project/evolve/runs/evolve-20260522-025521-bc3e5a/` — **v4.2 medium**
+  (25/38, retrieval + self/unavailable filters, **0 unknown-constant
+  errors**, current published run)
+- `/tmp/v4_2_baseline_B/` — Baseline B paired run (v4.2 wrapper, retrieval
+  off): 25/38, same proved_by_origin — confirms retrieval is a clean
+  addition rather than a contributing factor to the 25 wins
+- Generated reports:
+  `project/evolve/reports/nat_defs_medium_v4_1.md`,
+  `project/evolve/reports/nat_defs_medium_v4_2.md`

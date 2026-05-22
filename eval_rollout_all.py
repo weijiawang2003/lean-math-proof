@@ -112,13 +112,15 @@ def _load_policy(
         )
         if strategy_config:
             (fb, tmpl, cap, fam, fam_budgets, deny,
-             retrieval_enabled, retrieval_top_k, retrieval_forms) = (
+             retrieval_enabled, retrieval_top_k, retrieval_forms,
+             retrieval_filter_self, retrieval_filter_unavailable) = (
                 load_strategy_config(strategy_config)
             )
         else:
             (fb, tmpl, cap, fam, fam_budgets, deny,
-             retrieval_enabled, retrieval_top_k, retrieval_forms) = (
-                [], [], None, {}, {}, {}, False, 0, []
+             retrieval_enabled, retrieval_top_k, retrieval_forms,
+             retrieval_filter_self, retrieval_filter_unavailable) = (
+                [], [], None, {}, {}, {}, False, 0, [], True, True
             )
         return StrategyWrapperPolicy(
             base_policy=base, fallback_tactics=fb, tactic_templates=tmpl,
@@ -129,6 +131,8 @@ def _load_policy(
             retrieval_enabled=retrieval_enabled,
             retrieval_top_k=retrieval_top_k,
             retrieval_tactic_forms=retrieval_forms,
+            retrieval_filter_self=retrieval_filter_self,
+            retrieval_filter_unavailable=retrieval_filter_unavailable,
         )
     else:
         raise ValueError(
@@ -198,6 +202,19 @@ def rollout_one_theorem(
         "retrieval_activated": False,
         "retrieved_premise_attempt_count": 0,
         "retrieved_premise_advanced_count": 0,
+        # v4.2 retrieval form / filter tracking. Forms are the short
+        # form-family labels ("rw" / "simp" / "apply" / "exact") attached
+        # to each retrieved-tactic candidate; attempt_by_form counts how
+        # many of those forms were actually run (Lean roundtripped) on
+        # this theorem; advanced_by_form counts those that produced a
+        # non-error transition. Filter counts sum across rank_tactics
+        # calls — how many catalog entries the wrapper dropped via the
+        # self-filter and the static unavailable-lemma denylist.
+        "retrieved_premise_attempt_by_form": {},
+        "retrieved_premise_advanced_by_form": {},
+        "retrieved_premise_filtered_self_count": 0,
+        "retrieved_premise_filtered_unavailable_count": 0,
+        "winning_tactic_retrieved_form": None,
     }
 
     # Per-theorem state tracking (only consulted when enable_loop_avoidance).
@@ -227,6 +244,10 @@ def rollout_one_theorem(
                     getattr(pol, "last_retrieved_premises", None)
                     or [None] * len(ranked)
                 )
+                retrieved_forms = (
+                    getattr(pol, "last_retrieved_forms", None)
+                    or [None] * len(ranked)
+                )
                 # Capture activated families once (depends only on theorem name).
                 if step == 1:
                     fams = getattr(pol, "last_activated_families", None) or []
@@ -239,6 +260,13 @@ def rollout_one_theorem(
                 # produced a non-empty retrieved lemma set.
                 if getattr(pol, "last_retrieved_lemma_set", None):
                     result["retrieval_activated"] = True
+                # v4.2: accumulate per-call self / unavailable filter counts.
+                result["retrieved_premise_filtered_self_count"] += int(
+                    getattr(pol, "last_retrieval_filtered_self_count", 0) or 0
+                )
+                result["retrieved_premise_filtered_unavailable_count"] += int(
+                    getattr(pol, "last_retrieval_filtered_unavailable_count", 0) or 0
+                )
 
                 step_succeeded = False
                 deferred = None  # (rank, tac, origin, tmpl_src, outcome, state_h_after)
@@ -258,6 +286,10 @@ def rollout_one_theorem(
                     retr_premise = (
                         retrieved_premises[rank]
                         if rank < len(retrieved_premises) else None
+                    )
+                    retr_form = (
+                        retrieved_forms[rank]
+                        if rank < len(retrieved_forms) else None
                     )
 
                     # Pre-filter: skip tactics already known to error on this state.
@@ -285,13 +317,18 @@ def rollout_one_theorem(
                             synthetic["tactic_family_source"] = fam_src
                         if retr_premise is not None:
                             synthetic["tactic_retrieved_premise"] = retr_premise
+                        if retr_form is not None:
+                            synthetic["tactic_retrieved_form"] = retr_form
                         append_jsonl(traces_path, synthetic)
                         continue
 
-                    # v4.1: count attempt before run_transition so REPL crashes
-                    # on a retrieved tactic still register as attempted.
+                    # v4.1/v4.2: count attempt before run_transition so REPL
+                    # crashes on a retrieved tactic still register as attempted.
                     if origin == "retrieved_premise":
                         result["retrieved_premise_attempt_count"] += 1
+                        if retr_form is not None:
+                            d = result["retrieved_premise_attempt_by_form"]
+                            d[retr_form] = d.get(retr_form, 0) + 1
 
                     outcome = run_transition(
                         dojo, theorem, state, tac,
@@ -312,6 +349,8 @@ def rollout_one_theorem(
                         record_dict["tactic_family_source"] = fam_src
                     if retr_premise is not None:
                         record_dict["tactic_retrieved_premise"] = retr_premise
+                    if retr_form is not None:
+                        record_dict["tactic_retrieved_form"] = retr_form
                     record_dict["state_hash_before"] = state_h_before
 
                     # REPL crashed — Dojo is dead, abort theorem
@@ -333,12 +372,16 @@ def rollout_one_theorem(
                         result["winning_tactic_template_source"] = tmpl_src
                         result["winning_tactic_family_source"] = fam_src
                         result["winning_tactic_retrieved_premise"] = retr_premise
+                        result["winning_tactic_retrieved_form"] = retr_form
                         result["num_steps"] = step
                         result["tactics_used"].append(tac)
                         result["tactics_used_origins"].append(origin)
                         if origin == "retrieved_premise":
                             # Closing the goal counts as an advance too.
                             result["retrieved_premise_advanced_count"] += 1
+                            if retr_form is not None:
+                                d = result["retrieved_premise_advanced_by_form"]
+                                d[retr_form] = d.get(retr_form, 0) + 1
                         if rank > 0:
                             result["fallbacks_used"] += 1
                         step_succeeded = True
@@ -381,6 +424,9 @@ def rollout_one_theorem(
                         result["unseen_progress_count"] += 1
                     if origin == "retrieved_premise":
                         result["retrieved_premise_advanced_count"] += 1
+                        if retr_form is not None:
+                            d = result["retrieved_premise_advanced_by_form"]
+                            d[retr_form] = d.get(retr_form, 0) + 1
                     state = outcome.next_state
                     result["num_steps"] = step
                     result["tactics_used"].append(tac)
@@ -651,10 +697,30 @@ def main():
             "theorem": r["full_name"],
             "premise": r.get("winning_tactic_retrieved_premise"),
             "tactic": r.get("winning_tactic"),
+            "form": r.get("winning_tactic_retrieved_form"),
         }
         for r in proved
         if r.get("winning_tactic_origin") == "retrieved_premise"
     ]
+    # v4.2 form-level aggregates.
+    retrieved_premise_form_counts: dict[str, int] = {}
+    retrieved_premise_form_success_counts: dict[str, int] = {}
+    for r in results:
+        for form, c in (r.get("retrieved_premise_attempt_by_form") or {}).items():
+            retrieved_premise_form_counts[form] = (
+                retrieved_premise_form_counts.get(form, 0) + int(c or 0)
+            )
+        for form, c in (r.get("retrieved_premise_advanced_by_form") or {}).items():
+            retrieved_premise_form_success_counts[form] = (
+                retrieved_premise_form_success_counts.get(form, 0) + int(c or 0)
+            )
+    retrieved_premise_filtered_self_count = sum(
+        int(r.get("retrieved_premise_filtered_self_count") or 0) for r in results
+    )
+    retrieved_premise_filtered_unavailable_count = sum(
+        int(r.get("retrieved_premise_filtered_unavailable_count") or 0)
+        for r in results
+    )
     if retrieved_premise_activation_count:
         print(
             f"  Retrieval:          activated on {retrieved_premise_activation_count} theorems, "
@@ -662,6 +728,14 @@ def main():
             f"{retrieved_premise_advanced_count} advanced, "
             f"{retrieved_premise_proved_count} won"
         )
+        print(
+            f"  Retrieval filters:  filtered_self={retrieved_premise_filtered_self_count}, "
+            f"filtered_unavailable={retrieved_premise_filtered_unavailable_count}"
+        )
+        if retrieved_premise_form_counts:
+            print(f"  Retrieval forms:    {retrieved_premise_form_counts}")
+        if retrieved_premise_form_success_counts:
+            print(f"  Retrieval form ok:  {retrieved_premise_form_success_counts}")
     print(f"{'='*64}\n")
 
     metrics = {
@@ -701,6 +775,11 @@ def main():
         "retrieved_premise_advanced_count": retrieved_premise_advanced_count,
         "retrieved_premise_proved_count": retrieved_premise_proved_count,
         "retrieved_premise_wins": retrieved_premise_wins,
+        # v4.2 retrieval aggregates
+        "retrieved_premise_form_counts": retrieved_premise_form_counts,
+        "retrieved_premise_form_success_counts": retrieved_premise_form_success_counts,
+        "retrieved_premise_filtered_self_count": retrieved_premise_filtered_self_count,
+        "retrieved_premise_filtered_unavailable_count": retrieved_premise_filtered_unavailable_count,
         "per_theorem": results,
     }
     write_metrics(artifacts["metrics_path"], metrics)

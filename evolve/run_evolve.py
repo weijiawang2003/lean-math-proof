@@ -146,17 +146,24 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         }
         max_extra_tactics_per_state = 10
         timeout_per_theorem = 60
-        # v4.1: premise retrieval on the div family. retrieval_top_k = 10 yields
-        # up to 40 candidate retrieved tactics (10 lemmas × 4 forms) per state
-        # whose theorem name contains "div"/"dvd". The wrapper bumps the cap
-        # automatically while retrieval is active, so non-div theorems still
-        # see v3.6 budgeting and ordering unchanged.
+        # v4.1 → v4.2: premise retrieval on the div family with hygiene
+        # filters. retrieval_top_k=8 (lowered from 10) × 3 forms (rw/simp/
+        # apply) = up to 24 retrieved tactics per state — fewer than v4.1's
+        # 40, focused on the forms most likely to make progress on iff /
+        # propositional div lemmas. The cap auto-bumps while retrieval is
+        # active so non-div theorems retain v3.6 budgeting unchanged.
         retrieval_enabled = True
-        retrieval_top_k = 10
-        retrieval_tactic_forms: list[str] = []  # empty → wrapper uses defaults
+        retrieval_top_k = 8
+        # v4.2: drop "exact" from the default forms — none of v4.1's 783
+        # attempts proved via `exact LEMMA`, and the form generates many
+        # type-mismatch errors on iff/prop lemmas. Keep rw/simp/apply.
+        retrieval_tactic_forms: list[str] = ["rw", "simp", "apply"]
+        retrieval_filter_self = True
+        retrieval_filter_unavailable = True
         description = (
-            "v4.1 hybrid_evolved seed: v3.6 library + div-family premise "
-            "retrieval (retrieve_for_state, top-k=10, forms=rw/simp/exact/apply)."
+            "v4.2 hybrid_evolved seed: v3.6 library + div-family premise "
+            "retrieval (retrieve_for_state, top-k=8, forms=rw/simp/apply) "
+            "with self/unavailable filtering."
         )
     else:
         fallback_tactics = ["simp", "aesop", "omega", "norm_num", "rfl"]
@@ -169,6 +176,8 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         retrieval_enabled = False
         retrieval_top_k = 0
         retrieval_tactic_forms = []
+        retrieval_filter_self = True
+        retrieval_filter_unavailable = True
         description = "Baseline wrapper: top-k=8, max-steps=8 (gen_v5 reference)."
 
     return SearchCandidate(
@@ -188,6 +197,8 @@ def make_seed_candidate(policy_type: str, ckpt_dir: str) -> SearchCandidate:
         retrieval_enabled=retrieval_enabled,
         retrieval_top_k=retrieval_top_k,
         retrieval_tactic_forms=retrieval_tactic_forms,
+        retrieval_filter_self=retrieval_filter_self,
+        retrieval_filter_unavailable=retrieval_filter_unavailable,
         metadata={"role": "seed"},
     )
 

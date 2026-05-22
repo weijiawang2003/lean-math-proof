@@ -104,6 +104,14 @@ class SearchCandidate:
     retrieval_enabled: bool = False
     retrieval_top_k: int = 0
     retrieval_tactic_forms: list[str] = field(default_factory=list)
+    # v4.2 filter knobs. retrieval_filter_self excludes the target
+    # theorem from its own retrieved-premise set (eliminates the v4.1
+    # self-reference trap). retrieval_filter_unavailable applies a static
+    # denylist of lemmas observed to produce `unknown constant` in the
+    # eval environment's import closure (premise_retriever._UNAVAILABLE_LEMMAS).
+    # Both default True since they are net wins on the v4.1 traces.
+    retrieval_filter_self: bool = True
+    retrieval_filter_unavailable: bool = True
     metadata: dict[str, Any] = field(default_factory=dict)
 
     # -- serialization ----------------------------------------------------

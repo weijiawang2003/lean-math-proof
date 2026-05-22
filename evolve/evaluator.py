@@ -301,6 +301,12 @@ def _real_metrics(
             retrieval_tactic_forms=getattr(
                 candidate, "retrieval_tactic_forms", None
             ),
+            retrieval_filter_self=getattr(
+                candidate, "retrieval_filter_self", True
+            ),
+            retrieval_filter_unavailable=getattr(
+                candidate, "retrieval_filter_unavailable", True
+            ),
         )
         cmd.extend(["--strategy-config", str(strategy_path)])
 
