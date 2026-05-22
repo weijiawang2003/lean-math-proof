@@ -66,6 +66,44 @@ _FORM_FAMILY_TEMPLATES: dict[str, str] = {
 }
 
 
+# v5 NS1: classifier for priority_template specificity. Templates that name
+# a dotted Mathlib lemma (e.g. `Nat.div_lt_iff_lt_mul`) or use a typed
+# hypothesis placeholder (e.g. `{hyp_pos}`) are "specific"; everything else
+# (`omega`, `simp_all`, `exact ⟨fun h => by omega, ...⟩`, `constructor <;>
+# intro h_split <;> simp_all`, `split_ifs <;> omega`, …) is "generic". The
+# wrapper stable-sorts each shape slot so all specifics emit before any
+# generic, regardless of declared order — closes the v5-31 regression
+# where putting an omega-omega template at the top of the iff slot shadowed
+# every specific template downstream.
+_PRIORITY_HYP_PLACEHOLDER_RE = re.compile(r"\{hyp_[a-zA-Z_][A-Za-z0-9_]*\}")
+_PRIORITY_MATHLIB_LEMMA_RE = re.compile(
+    r"[A-Z][A-Za-z0-9_']*(?:\.[a-zA-Z_][A-Za-z0-9_']*)+"
+)
+
+
+def classify_template_specificity(template: str) -> tuple[int, str]:
+    """Classify a priority template as 'specific' or 'generic'.
+
+    Returns ``(rank, label)`` where ``rank=0`` means specific (emit first)
+    and ``rank=1`` means generic (emit later). The label is the
+    human-readable tag used in trace metadata.
+
+    Heuristic:
+      - typed hypothesis placeholder (``{hyp_pos}``, ``{hyp_ne_zero}``,
+        ``{hyp_le}``, …) → specific
+      - dotted Mathlib lemma name (``Nat.div_lt_iff_lt_mul``,
+        ``Nat.pos_of_ne_zero``, ``Mathlib.Nat.foo``) → specific
+      - otherwise → generic
+    """
+    if not template:
+        return (1, "generic")
+    if _PRIORITY_HYP_PLACEHOLDER_RE.search(template):
+        return (0, "specific")
+    if _PRIORITY_MATHLIB_LEMMA_RE.search(template):
+        return (0, "specific")
+    return (1, "generic")
+
+
 def _normalize_retrieval_forms(forms: list[str] | None) -> list[str]:
     """Expand short form-family names to full templates.
 
@@ -463,14 +501,24 @@ class StrategyWrapperPolicy:
             elif "any" in self.priority_templates:
                 pt_shape_key = "any"
             if pt_shape_key is not None:
+                # v5 NS1: stable-sort each shape slot so all specific
+                # templates emit before any generic ones. Preserves
+                # declared order within each class, so authors still
+                # control specific-vs-specific ordering and the wrapper
+                # only fixes the specific-vs-generic ordering bug.
+                ordered_templates = sorted(
+                    self.priority_templates[pt_shape_key],
+                    key=lambda t: classify_template_specificity(t)[0],
+                )
                 emitted = 0
-                for raw in self.priority_templates[pt_shape_key]:
+                for raw in ordered_templates:
+                    spec_label = classify_template_specificity(raw)[1]
                     for rendered in _render_template(raw, nat_vars, hypotheses):
                         if rendered and rendered not in seen:
                             seen.add(rendered)
                             priority_entries.append(
                                 (rendered, ORIGIN_TEMPLATE, raw,
-                                 f"priority:{pt_shape_key}",
+                                 f"priority:{pt_shape_key}:{spec_label}",
                                  None, None, None)
                             )
                             emitted += 1
