@@ -450,6 +450,9 @@ class StrategyWrapperPolicy:
         self.last_term_builder_emitted: list = []
         self.last_fallback_emitted: list = []
         self.last_tactic_template_emitted: list = []
+        # NS4.2: retrieved-premise emit list (populated only when
+        # use_skeleton_bag is True).
+        self.last_retrieved_emitted: list = []
         # Parallel skeleton-name / shape / specificity / family lists for
         # every entry in last_ranked_tactics. Non-skeleton entries
         # (generative_topk, retrieved_premise, or legacy-path entries)
@@ -665,6 +668,7 @@ class StrategyWrapperPolicy:
         # passes filter_self / filter_unavailable through and records
         # the per-call filter counts.
         retrieved_entries: list[Entry] = []
+        retrieved_emitted: list = []
         retrieval_activation: str | None = None
         retrieved_lemma_set: list[str] = []
         filtered_self = 0
@@ -673,64 +677,105 @@ class StrategyWrapperPolicy:
         lemma_shapes: dict[str, str] = {}
         shape_mismatch_filtered = 0
         if self.retrieval_enabled and self.retrieval_top_k > 0 and activated_families:
-            from premise_retriever import (
-                _FAMILY_CATALOG_KEYS,
-                forms_for_shape_pair,
-                retrieve_for_state,
-            )
-            for fam in activated_families:
-                if fam in _FAMILY_CATALOG_KEYS:
-                    retrieval_activation = fam
-                    retrieved_lemma_set, diag = retrieve_for_state(
-                        state_pp=state_pp,
-                        theorem_name=full_name or None,
-                        k=self.retrieval_top_k,
-                        family_key=fam,
-                        filter_self=self.retrieval_filter_self,
-                        filter_unavailable=self.retrieval_filter_unavailable,
-                        shape_aware=self.retrieval_shape_filter,
-                        return_diagnostics=True,
-                    )
-                    filtered_self = diag.get("filtered_self", 0)
-                    filtered_unavailable = diag.get("filtered_unavailable", 0)
-                    goal_shape = diag.get("goal_shape", "unknown")
-                    lemma_shapes = diag.get("lemma_shapes", {}) or {}
-                    break
-            # Configured form-family labels (e.g. ["rw","simp","apply"]),
-            # used both for emission and for shape-aware filtering.
-            configured_form_labels = [
-                _form_family_label(t) for t in self.retrieval_tactic_forms
-            ]
-            label_to_template = dict(
-                zip(configured_form_labels, self.retrieval_tactic_forms)
-            )
-            for premise in retrieved_lemma_set:
-                lemma_shape = lemma_shapes.get(premise, "unknown")
-                if self.retrieval_shape_filter:
-                    allowed_labels = forms_for_shape_pair(
-                        goal_shape, lemma_shape, configured_form_labels,
-                    )
-                else:
-                    allowed_labels = list(configured_form_labels)
-                shape_mismatch_filtered += max(
-                    0, len(configured_form_labels) - len(allowed_labels)
+            if self.use_skeleton_bag:
+                # NS4.2: delegate retrieved emission to the bag. The bag
+                # method synthesizes EmittedTactic instances per-state
+                # (dynamic skeletons) and returns the same diagnostics
+                # the legacy block exposes.
+                if self._skeleton_bag is None:
+                    from evolve.skeleton_bag import SkeletonBag
+                    self._skeleton_bag = SkeletonBag.from_legacy_strategy_config({
+                        "priority_templates": self.priority_templates,
+                        "theorem_family_tactics": self.theorem_family_tactics,
+                        "term_builder_templates": self.term_builder_templates,
+                        "fallback_tactics": self.fallback_tactics,
+                        "tactic_templates": self.tactic_templates,
+                    })
+                retr_entries_list, diag = self._skeleton_bag.emit_retrieved_tactics(
+                    state_pp=state_pp,
+                    theorem_name=full_name or None,
+                    activated_families=activated_families,
+                    retrieval_top_k=self.retrieval_top_k,
+                    retrieval_tactic_forms=self.retrieval_tactic_forms,
+                    retrieval_filter_self=self.retrieval_filter_self,
+                    retrieval_filter_unavailable=self.retrieval_filter_unavailable,
+                    retrieval_shape_filter=self.retrieval_shape_filter,
+                    already_seen=seen,
                 )
-                for label in allowed_labels:
-                    form = label_to_template.get(label)
-                    if not form:
-                        continue
-                    tactic = form.replace("{p}", premise).strip()
-                    if tactic and tactic not in seen:
-                        seen.add(tactic)
-                        retrieved_entries.append(
-                            (tactic, ORIGIN_RETRIEVED, None,
-                             retrieval_activation, premise, label, lemma_shape)
+                retrieval_activation = diag["activation"]
+                retrieved_lemma_set = diag["retrieved_lemma_set"]
+                filtered_self = diag["filtered_self"]
+                filtered_unavailable = diag["filtered_unavailable"]
+                goal_shape = diag["goal_shape"]
+                lemma_shapes = diag["lemma_shapes"]
+                shape_mismatch_filtered = diag["shape_mismatch_filtered"]
+                for et in retr_entries_list:
+                    retrieved_entries.append(
+                        (et.tactic, ORIGIN_RETRIEVED, None,
+                         et.family_source, et.retrieved_premise,
+                         et.retrieved_form, et.retrieved_shape)
+                    )
+                    retrieved_emitted.append(et)
+            else:
+                from premise_retriever import (
+                    _FAMILY_CATALOG_KEYS,
+                    forms_for_shape_pair,
+                    retrieve_for_state,
+                )
+                for fam in activated_families:
+                    if fam in _FAMILY_CATALOG_KEYS:
+                        retrieval_activation = fam
+                        retrieved_lemma_set, diag = retrieve_for_state(
+                            state_pp=state_pp,
+                            theorem_name=full_name or None,
+                            k=self.retrieval_top_k,
+                            family_key=fam,
+                            filter_self=self.retrieval_filter_self,
+                            filter_unavailable=self.retrieval_filter_unavailable,
+                            shape_aware=self.retrieval_shape_filter,
+                            return_diagnostics=True,
                         )
+                        filtered_self = diag.get("filtered_self", 0)
+                        filtered_unavailable = diag.get("filtered_unavailable", 0)
+                        goal_shape = diag.get("goal_shape", "unknown")
+                        lemma_shapes = diag.get("lemma_shapes", {}) or {}
+                        break
+                # Configured form-family labels (e.g. ["rw","simp","apply"]),
+                # used both for emission and for shape-aware filtering.
+                configured_form_labels = [
+                    _form_family_label(t) for t in self.retrieval_tactic_forms
+                ]
+                label_to_template = dict(
+                    zip(configured_form_labels, self.retrieval_tactic_forms)
+                )
+                for premise in retrieved_lemma_set:
+                    lemma_shape = lemma_shapes.get(premise, "unknown")
+                    if self.retrieval_shape_filter:
+                        allowed_labels = forms_for_shape_pair(
+                            goal_shape, lemma_shape, configured_form_labels,
+                        )
+                    else:
+                        allowed_labels = list(configured_form_labels)
+                    shape_mismatch_filtered += max(
+                        0, len(configured_form_labels) - len(allowed_labels)
+                    )
+                    for label in allowed_labels:
+                        form = label_to_template.get(label)
+                        if not form:
+                            continue
+                        tactic = form.replace("{p}", premise).strip()
+                        if tactic and tactic not in seen:
+                            seen.add(tactic)
+                            retrieved_entries.append(
+                                (tactic, ORIGIN_RETRIEVED, None,
+                                 retrieval_activation, premise, label, lemma_shape)
+                            )
         self.last_retrieval_activation = retrieval_activation
         self.last_retrieved_lemma_set = list(retrieved_lemma_set)
         self.last_retrieval_filtered_self_count = filtered_self
         self.last_retrieval_filtered_unavailable_count = filtered_unavailable
         self.last_shape_mismatch_filtered_count = shape_mismatch_filtered
+        self.last_retrieved_emitted = retrieved_emitted
 
         # v5 term-mode proof skeleton block. If `term_builder_templates`
         # is configured, classify the current goal shape (independently
@@ -935,11 +980,13 @@ class StrategyWrapperPolicy:
         # (generative_topk, retrieved_premise, or legacy-path entries)
         # carry None on every skeleton_* field.
         if (priority_emitted or family_emitted or term_builder_emitted
-                or fallback_emitted or tactic_template_emitted):
+                or fallback_emitted or tactic_template_emitted
+                or retrieved_emitted):
             emitted_lookup: dict[str, Any] = {}
             for emitted_list in (
                 priority_emitted, family_emitted, term_builder_emitted,
                 fallback_emitted, tactic_template_emitted,
+                retrieved_emitted,
             ):
                 for et in emitted_list:
                     emitted_lookup[et.tactic] = et
