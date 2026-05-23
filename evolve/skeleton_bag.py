@@ -1,24 +1,25 @@
-"""NS4 skeleton-bag prototype.
+"""NS4 / NS4.1 skeleton-bag.
 
-A minimal skeleton-based representation that coexists with the existing
-flat-field wrapper. Implements:
+A skeleton-based representation that coexists with the legacy flat-field
+wrapper. Implements:
 
   - `Skeleton`: one emit unit, gated by shape and (optionally) family.
   - `SkeletonBag`: ordered collection keyed by shape; produces EmittedTactic
     lists in the same order today's wrapper produces them.
   - `EmittedTactic`: a rendered tactic with origin / attribution metadata.
 
-Scope (NS4 4-hour prototype):
-  - Only `priority_templates` is actually emitted through this path. The
-    other origins (family / fallback / term_builder / tactic_template) are
-    *parsed* into Skeletons by the adapter for introspection but still
-    emitted via the legacy code path in `strategy_wrapper.py`.
-  - No slot-vocabulary mutation. Templates rendered through
+Scope (NS4.1):
+  - `priority_template`, `family_tactic`, `fallback_tactic`,
+    `tactic_template`, and `term_builder` origins all flow through the
+    bag when `use_skeleton_bag=True`. The retrieved_premise origin still
+    runs through the legacy inline block (it has its own per-state
+    classification and shape-form filtering).
+  - No slot-vocabulary mutation. Templates render through
     `strategy_wrapper._render_template`.
-  - No changes to genome JSON schema beyond an optional `use_skeleton_bag`
-    flag.
+  - No JSON schema changes beyond the existing `use_skeleton_bag` flag.
 
-See `project/evolve/reports/ns4_skeleton_bag_design_note.md` for context.
+See `project/evolve/reports/ns4_skeleton_bag_design_note.md` and
+`project/evolve/reports/ns4_1_skeleton_unification.md` for context.
 """
 
 from __future__ import annotations
@@ -104,11 +105,18 @@ class SkeletonBag:
 
     def __init__(self) -> None:
         self.skeletons: dict[str, list[Skeleton]] = {}
+        # Secondary index by family name, preserving insertion order so
+        # `_match_families` semantics carry over (declare-most-specific-first).
+        self.families: dict[str, list[Skeleton]] = {}
 
     def add(self, skeleton: Skeleton) -> None:
         if skeleton.shape not in self.skeletons:
             self.skeletons[skeleton.shape] = []
         self.skeletons[skeleton.shape].append(skeleton)
+        if skeleton.family is not None:
+            if skeleton.family not in self.families:
+                self.families[skeleton.family] = []
+            self.families[skeleton.family].append(skeleton)
 
     def for_shape(self, shape: str) -> list[Skeleton]:
         """Return the shape-slot list followed by the any-slot list,
@@ -219,6 +227,198 @@ class SkeletonBag:
                 if budget and emitted >= budget:
                     break
         return out
+
+    def emit_family_tactics(
+        self,
+        full_name: str,
+        nat_vars: list[str],
+        hypotheses: dict[str, str | None],
+        already_seen: set[str] | None = None,
+    ) -> tuple[list[EmittedTactic], list[str]]:
+        """Emit family-gated tactics for the matched theorem name.
+
+        Families are matched via `_match_families` (substring match,
+        preserving declaration order). Within each family, skeletons
+        are stable-sorted by specificity (NS1 invariant lifted from
+        priority_templates into the family path — see NS4.1 unification
+        report for parity discussion).
+
+        Returns `(entries, active_families)`. `family_source` on each
+        EmittedTactic is the raw family key (not the `priority:...`
+        format used for priority entries), preserving the legacy trace
+        attribution.
+        """
+        from evolve.strategy_wrapper import _match_families, _render_template
+
+        family_keys = list(self.families.keys())
+        active = _match_families(full_name, family_keys)
+        seen = already_seen if already_seen is not None else set()
+        out: list[EmittedTactic] = []
+        for fam in active:
+            skels = [
+                s for s in self.families.get(fam, [])
+                if s.enabled and s.origin == "family_tactic"
+            ]
+            ordered = sorted(skels, key=lambda s: s.specificity)
+            for skel in ordered:
+                for rendered in _render_template(
+                    skel.template, nat_vars, hypotheses
+                ):
+                    if not rendered or rendered in seen:
+                        continue
+                    seen.add(rendered)
+                    out.append(EmittedTactic(
+                        tactic=rendered,
+                        origin=skel.origin,
+                        skeleton_name=skel.name,
+                        shape=skel.shape,
+                        family=skel.family,
+                        specificity=skel.specificity,
+                        priority=skel.priority,
+                        template_source=skel.template,
+                        family_source=fam,
+                    ))
+        return out, list(active)
+
+    def emit_fallback_tactics(
+        self,
+        already_seen: set[str] | None = None,
+    ) -> list[EmittedTactic]:
+        """Emit fallback skeletons verbatim in insertion order.
+
+        Fallback skeletons are literal tactic strings (no `{var}` /
+        `{hyp_*}` placeholders in practice). To match the legacy
+        wrapper exactly we DO NOT render them — render would split
+        templated entries per-variable and the legacy code never did
+        that for fallback_tactics.
+        """
+        seen = already_seen if already_seen is not None else set()
+        out: list[EmittedTactic] = []
+        for skel in self.skeletons.get(SHAPE_ANY, []):
+            if not skel.enabled or skel.origin != "fallback_tactic":
+                continue
+            t = skel.template
+            if t and t not in seen:
+                seen.add(t)
+                out.append(EmittedTactic(
+                    tactic=t,
+                    origin=skel.origin,
+                    skeleton_name=skel.name,
+                    shape=skel.shape,
+                    family=skel.family,
+                    specificity=skel.specificity,
+                    priority=skel.priority,
+                    template_source=skel.template,
+                    family_source=None,
+                ))
+        return out
+
+    def emit_tactic_template_tactics(
+        self,
+        nat_vars: list[str],
+        hypotheses: dict[str, str | None],
+        already_seen: set[str] | None = None,
+    ) -> list[EmittedTactic]:
+        """Emit `tactic_template` (generic, shape=any) skeletons.
+
+        Rendered via `_render_template` — matches the legacy generic-
+        block behavior where templated strings expanded one tactic per
+        Nat-var in scope. Origin is `tactic_template` (mapped to the
+        legacy `ORIGIN_TEMPLATE` constant at the call site).
+        """
+        from evolve.strategy_wrapper import _render_template
+
+        seen = already_seen if already_seen is not None else set()
+        out: list[EmittedTactic] = []
+        for skel in self.skeletons.get(SHAPE_ANY, []):
+            if not skel.enabled or skel.origin != "tactic_template":
+                continue
+            for rendered in _render_template(
+                skel.template, nat_vars, hypotheses
+            ):
+                if not rendered or rendered in seen:
+                    continue
+                seen.add(rendered)
+                out.append(EmittedTactic(
+                    tactic=rendered,
+                    origin=skel.origin,
+                    skeleton_name=skel.name,
+                    shape=skel.shape,
+                    family=skel.family,
+                    specificity=skel.specificity,
+                    priority=skel.priority,
+                    template_source=skel.template,
+                    family_source=None,
+                ))
+        return out
+
+    def emit_term_builder_tactics(
+        self,
+        goal_shape: str,
+        nat_vars: list[str],
+        hypotheses: dict[str, str | None],
+        budget: int = 0,
+        already_seen: set[str] | None = None,
+    ) -> tuple[list[EmittedTactic], str | None]:
+        """Emit term_builder skeletons.
+
+        IMPORTANT: term_builder uses LEGACY "shape XOR any" semantics
+        (the older path that priority_templates moved away from in
+        NS3.5). Exact shape match wins; if no skeleton matches the
+        current goal_shape, fall back to the `any` slot. There is no
+        "shape then any" merge — that would change behavior versus the
+        legacy wrapper. Preserving the legacy semantics keeps NS4.1
+        bit-for-bit parity with the legacy path on this origin.
+
+        Returns `(entries, shape_key)` where `shape_key` is the slot
+        actually used (e.g. "iff" or "any" or None when no tb skeletons
+        are configured at all).
+        """
+        from evolve.strategy_wrapper import _render_template
+
+        tb_skels = [
+            s for s in self.all_skeletons()
+            if s.origin == "term_builder" and s.enabled
+        ]
+        if not tb_skels:
+            return [], None
+
+        shape_key: str | None = None
+        if any(s.shape == goal_shape for s in tb_skels):
+            shape_key = goal_shape
+        elif any(s.shape == SHAPE_ANY for s in tb_skels):
+            shape_key = SHAPE_ANY
+        if shape_key is None:
+            return [], None
+
+        seen = already_seen if already_seen is not None else set()
+        out: list[EmittedTactic] = []
+        emitted = 0
+        matching = [s for s in tb_skels if s.shape == shape_key]
+        for skel in matching:
+            for rendered in _render_template(
+                skel.template, nat_vars, hypotheses
+            ):
+                if not rendered or rendered in seen:
+                    continue
+                seen.add(rendered)
+                out.append(EmittedTactic(
+                    tactic=rendered,
+                    origin=skel.origin,
+                    skeleton_name=skel.name,
+                    shape=skel.shape,
+                    family=skel.family,
+                    specificity=skel.specificity,
+                    priority=skel.priority,
+                    template_source=skel.template,
+                    family_source=shape_key,
+                ))
+                emitted += 1
+                if budget and emitted >= budget:
+                    return out, shape_key
+            if budget and emitted >= budget:
+                return out, shape_key
+        return out, shape_key
 
     # ------------------------------------------------------------------
     # Legacy adapter.

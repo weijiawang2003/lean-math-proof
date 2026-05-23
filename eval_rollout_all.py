@@ -26,6 +26,22 @@ from lean_dojo import Dojo
 from env import make_repo, make_theorem, run_transition
 
 
+def _agg_by_key(rows: list[dict], key: str) -> dict[str, int]:
+    """NS4.1 helper: count how many rows carry each value at row[key].
+
+    Used to aggregate `winning_tactic_skeleton_*` fields over the
+    proved-theorem set. None values are dropped. Integer specificities
+    are stringified so the resulting dict is JSON-friendly.
+    """
+    out: dict[str, int] = {}
+    for r in rows:
+        v = r.get(key)
+        if v is None:
+            continue
+        out[str(v)] = out.get(str(v), 0) + 1
+    return out
+
+
 def _state_hash(state_pp: str | None) -> str | None:
     """Short, deterministic, cross-run-stable hash of a normalized Lean
     pretty-printed state. None when state_pp is empty/None.
@@ -238,6 +254,22 @@ def rollout_one_theorem(
         "retrieved_premise_filtered_self_count": 0,
         "retrieved_premise_filtered_unavailable_count": 0,
         "winning_tactic_retrieved_form": None,
+        # NS4.1 skeleton attribution. Populated only when the winning
+        # tactic was emitted by a Skeleton (via use_skeleton_bag=True);
+        # None on legacy-path proofs and on generative_topk wins.
+        "winning_tactic_skeleton_name": None,
+        "winning_tactic_skeleton_shape": None,
+        "winning_tactic_skeleton_family": None,
+        "winning_tactic_skeleton_specificity": None,
+        "winning_tactic_skeleton_priority": None,
+        # NS4.1 per-theorem skeleton-level counters. attempt counts every
+        # skeleton-sourced candidate run on this theorem; advanced counts
+        # those that produced a non-error transition; proved is 1 if the
+        # winning tactic was skeleton-sourced. skeletons_seen accumulates
+        # the set of skeleton names encountered (closed by step).
+        "skeleton_attempt_count": 0,
+        "skeleton_advanced_count": 0,
+        "skeletons_seen": [],
         # v4.3 goal-shape filter counters. retrieved_apply_goal_*_count
         # bucket every retrieved-apply transition by whether it grew /
         # shrunk / held the open-goal count. skipped_bloating_apply
@@ -317,6 +349,30 @@ def rollout_one_theorem(
                     getattr(pol, "last_retrieved_shapes", None)
                     or [None] * len(ranked)
                 )
+                # NS4.1 skeleton attribution: parallel lists exposed by
+                # the wrapper when use_skeleton_bag is True. Entries that
+                # did not come from a Skeleton (generative_topk, legacy-
+                # routed, retrieved_premise) carry None.
+                skeleton_names = (
+                    getattr(pol, "last_skeleton_names", None)
+                    or [None] * len(ranked)
+                )
+                skeleton_shapes = (
+                    getattr(pol, "last_skeleton_shapes", None)
+                    or [None] * len(ranked)
+                )
+                skeleton_families = (
+                    getattr(pol, "last_skeleton_families", None)
+                    or [None] * len(ranked)
+                )
+                skeleton_specificities = (
+                    getattr(pol, "last_skeleton_specificities", None)
+                    or [None] * len(ranked)
+                )
+                skeleton_priorities = (
+                    getattr(pol, "last_skeleton_priorities", None)
+                    or [None] * len(ranked)
+                )
                 # Capture activated families once (depends only on theorem name).
                 if step == 1:
                     fams = getattr(pol, "last_activated_families", None) or []
@@ -365,6 +421,26 @@ def rollout_one_theorem(
                     retr_premise = (
                         retrieved_premises[rank]
                         if rank < len(retrieved_premises) else None
+                    )
+                    skel_name = (
+                        skeleton_names[rank]
+                        if rank < len(skeleton_names) else None
+                    )
+                    skel_shape = (
+                        skeleton_shapes[rank]
+                        if rank < len(skeleton_shapes) else None
+                    )
+                    skel_family = (
+                        skeleton_families[rank]
+                        if rank < len(skeleton_families) else None
+                    )
+                    skel_specificity = (
+                        skeleton_specificities[rank]
+                        if rank < len(skeleton_specificities) else None
+                    )
+                    skel_priority = (
+                        skeleton_priorities[rank]
+                        if rank < len(skeleton_priorities) else None
                     )
                     retr_form = (
                         retrieved_forms[rank]
@@ -461,6 +537,12 @@ def rollout_one_theorem(
                         # for term_builder entries — surface it once.
                         if fam_src is not None and fam_src not in result["term_builder_shape_keys"]:
                             result["term_builder_shape_keys"].append(fam_src)
+                    # NS4.1 skeleton-level attempt counter. Tracks every
+                    # skeleton-sourced candidate that reaches run_transition.
+                    if skel_name is not None:
+                        result["skeleton_attempt_count"] += 1
+                        if skel_name not in result["skeletons_seen"]:
+                            result["skeletons_seen"].append(skel_name)
 
                     outcome = run_transition(
                         dojo, theorem, state, tac,
@@ -512,6 +594,11 @@ def rollout_one_theorem(
                         result["winning_tactic_family_source"] = fam_src
                         result["winning_tactic_retrieved_premise"] = retr_premise
                         result["winning_tactic_retrieved_form"] = retr_form
+                        result["winning_tactic_skeleton_name"] = skel_name
+                        result["winning_tactic_skeleton_shape"] = skel_shape
+                        result["winning_tactic_skeleton_family"] = skel_family
+                        result["winning_tactic_skeleton_specificity"] = skel_specificity
+                        result["winning_tactic_skeleton_priority"] = skel_priority
                         result["num_steps"] = step
                         result["tactics_used"].append(tac)
                         result["tactics_used_origins"].append(origin)
@@ -527,6 +614,9 @@ def rollout_one_theorem(
                         if origin == "term_builder":
                             result["term_builder_advanced_count"] += 1
                             result["term_builder_proved_count"] = 1
+                        # NS4.1 skeleton-advanced counter on the close path.
+                        if skel_name is not None:
+                            result["skeleton_advanced_count"] += 1
                         if rank > 0:
                             result["fallbacks_used"] += 1
                         step_succeeded = True
@@ -616,6 +706,10 @@ def rollout_one_theorem(
                             ds[retr_shape] = ds.get(retr_shape, 0) + 1
                     if origin == "term_builder":
                         result["term_builder_advanced_count"] += 1
+                    # NS4.1 skeleton-advanced counter on the non-finishing
+                    # advance path.
+                    if skel_name is not None:
+                        result["skeleton_advanced_count"] += 1
                     state = outcome.next_state
                     result["num_steps"] = step
                     result["tactics_used"].append(tac)
@@ -1055,6 +1149,42 @@ def main():
                 "shape_key": r.get("winning_tactic_family_source"),
             }
             for r in proved if r.get("winning_tactic_origin") == "term_builder"
+        ],
+        # NS4.1 skeleton-level aggregates. Populated only when at least
+        # one theorem ran with use_skeleton_bag=True; otherwise the
+        # counters are all 0 and dicts are empty. Used by the unification
+        # report and by future scoring hooks.
+        "skeleton_attempt_count": sum(
+            int(r.get("skeleton_attempt_count") or 0) for r in results
+        ),
+        "skeleton_advanced_count": sum(
+            int(r.get("skeleton_advanced_count") or 0) for r in results
+        ),
+        "skeleton_proved_count": sum(
+            1 for r in proved if r.get("winning_tactic_skeleton_name")
+        ),
+        "skeleton_proved_counts": _agg_by_key(
+            proved, "winning_tactic_skeleton_name"
+        ),
+        "skeleton_proved_counts_by_family": _agg_by_key(
+            proved, "winning_tactic_skeleton_family"
+        ),
+        "skeleton_proved_counts_by_shape": _agg_by_key(
+            proved, "winning_tactic_skeleton_shape"
+        ),
+        "skeleton_specificity_proved_counts": _agg_by_key(
+            proved, "winning_tactic_skeleton_specificity"
+        ),
+        "skeleton_wins": [
+            {
+                "theorem": r["full_name"],
+                "skeleton_name": r.get("winning_tactic_skeleton_name"),
+                "shape": r.get("winning_tactic_skeleton_shape"),
+                "family": r.get("winning_tactic_skeleton_family"),
+                "specificity": r.get("winning_tactic_skeleton_specificity"),
+                "tactic": r.get("winning_tactic"),
+            }
+            for r in proved if r.get("winning_tactic_skeleton_name")
         ],
         "per_theorem": results,
     }

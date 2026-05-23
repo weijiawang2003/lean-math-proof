@@ -185,6 +185,10 @@ def _parse_eval_metrics(raw: dict) -> EvalMetrics:
         total_steps=total_steps,
         timeout_count=timeout,
         invalid_tactic_count=invalid,
+        # NS4.1: pass-through, default unused by score_metrics.
+        skeleton_attempt_count=int(raw.get("skeleton_attempt_count") or 0),
+        skeleton_advanced_count=int(raw.get("skeleton_advanced_count") or 0),
+        skeleton_proved_count=int(raw.get("skeleton_proved_count") or 0),
     )
 
 

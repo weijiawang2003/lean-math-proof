@@ -39,6 +39,15 @@ class EvalMetrics:
     total_steps: int = 0
     timeout_count: int = 0
     invalid_tactic_count: int = 0
+    # NS4.1 skeleton-level counters. Surfaced for future scoring /
+    # archive consumers; not read by score_metrics in the default path
+    # so adding them does NOT change the scalar fitness today.
+    #   skeleton_attempt_count   — skeleton-sourced candidates run on Lean
+    #   skeleton_advanced_count  — skeleton-sourced advances (close or step)
+    #   skeleton_proved_count    — proofs whose winning tactic was a skeleton
+    skeleton_attempt_count: int = 0
+    skeleton_advanced_count: int = 0
+    skeleton_proved_count: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

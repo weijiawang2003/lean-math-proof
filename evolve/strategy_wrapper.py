@@ -434,20 +434,31 @@ class StrategyWrapperPolicy:
             if k
         }
         self.priority_template_budget: int = max(0, int(priority_template_budget or 0))
-        # NS4 prototype: when True, the priority_template emit block delegates
-        # to evolve.skeleton_bag.SkeletonBag. Everything else (family /
-        # retrieval / term_builder / generic fallback) keeps using the
-        # legacy code path. Default False = current behavior verbatim.
+        # NS4 / NS4.1 prototype: when True, priority / family / fallback /
+        # tactic_template / term_builder emission delegates to
+        # evolve.skeleton_bag.SkeletonBag. Base generative output and
+        # retrieved-premise emission still run through the legacy code
+        # path (they need integration with the live model / retriever).
+        # Default False = current behavior verbatim.
         self.use_skeleton_bag: bool = bool(use_skeleton_bag)
         self._skeleton_bag = None  # lazily built on first rank_tactics call
-        # When NS4 emits the priority block, this is populated with the
-        # EmittedTactic instances for the most recent call (parallel to
-        # priority_entries). Used for skeleton-attribution diagnostics.
+        # Per-call lists populated when the bag routes a given origin.
+        # Each contains EmittedTactic instances aligned with the
+        # corresponding entries list in rank_tactics.
         self.last_priority_emitted: list = []
-        # Parallel skeleton_name list for every entry in last_ranked_tactics;
-        # only populated when use_skeleton_bag is True. Non-priority entries
-        # carry None.
+        self.last_family_emitted: list = []
+        self.last_term_builder_emitted: list = []
+        self.last_fallback_emitted: list = []
+        self.last_tactic_template_emitted: list = []
+        # Parallel skeleton-name / shape / specificity / family lists for
+        # every entry in last_ranked_tactics. Non-skeleton entries
+        # (generative_topk, retrieved_premise, or legacy-path entries)
+        # carry None. Length always equals len(last_ranked_tactics).
         self.last_skeleton_names: list[str | None] = []
+        self.last_skeleton_shapes: list[str | None] = []
+        self.last_skeleton_families: list[str | None] = []
+        self.last_skeleton_specificities: list[int | None] = []
+        self.last_skeleton_priorities: list[int | None] = []
         self.last_priority_template_attempt_count: int = 0
         self.last_ranked_tactics: list[str] = []
         self.last_origins: list[str] = []
@@ -524,6 +535,10 @@ class StrategyWrapperPolicy:
                     from evolve.skeleton_bag import SkeletonBag
                     self._skeleton_bag = SkeletonBag.from_legacy_strategy_config({
                         "priority_templates": self.priority_templates,
+                        "theorem_family_tactics": self.theorem_family_tactics,
+                        "term_builder_templates": self.term_builder_templates,
+                        "fallback_tactics": self.fallback_tactics,
+                        "tactic_templates": self.tactic_templates,
                     })
                 emitted_list = self._skeleton_bag.emit_priority_tactics(
                     state_pp=state_pp,
@@ -604,14 +619,43 @@ class StrategyWrapperPolicy:
         self.last_activated_families = list(activated_families)
 
         family_entries: list[Entry] = []
-        for fam in activated_families:
-            for raw in self.theorem_family_tactics.get(fam, []):
-                for rendered in _render_template(raw, nat_vars, hypotheses):
-                    if rendered and rendered not in seen:
-                        seen.add(rendered)
-                        family_entries.append(
-                            (rendered, ORIGIN_FAMILY, None, fam, None, None, None)
-                        )
+        family_emitted: list = []
+        if self.use_skeleton_bag and self.theorem_family_tactics:
+            # NS4.1: delegate family emission to the bag. Bag's
+            # emit_family_tactics applies NS1 specificity sort within
+            # each family group (no-op on the ns3-combined genome where
+            # declared order already happens to be specificity-sorted).
+            if self._skeleton_bag is None:
+                from evolve.skeleton_bag import SkeletonBag
+                self._skeleton_bag = SkeletonBag.from_legacy_strategy_config({
+                    "priority_templates": self.priority_templates,
+                    "theorem_family_tactics": self.theorem_family_tactics,
+                    "term_builder_templates": self.term_builder_templates,
+                    "fallback_tactics": self.fallback_tactics,
+                    "tactic_templates": self.tactic_templates,
+                })
+            fam_entries, _active = self._skeleton_bag.emit_family_tactics(
+                full_name=full_name,
+                nat_vars=nat_vars,
+                hypotheses=hypotheses,
+                already_seen=seen,
+            )
+            for et in fam_entries:
+                family_entries.append(
+                    (et.tactic, ORIGIN_FAMILY, None, et.family_source,
+                     None, None, None)
+                )
+                family_emitted.append(et)
+        else:
+            for fam in activated_families:
+                for raw in self.theorem_family_tactics.get(fam, []):
+                    for rendered in _render_template(raw, nat_vars, hypotheses):
+                        if rendered and rendered not in seen:
+                            seen.add(rendered)
+                            family_entries.append(
+                                (rendered, ORIGIN_FAMILY, None, fam, None, None, None)
+                            )
+        self.last_family_emitted = family_emitted
 
         # v4.1: premise retrieval. Insert between family and generic
         # entries. Only activates when retrieval_enabled and an activated
@@ -699,6 +743,7 @@ class StrategyWrapperPolicy:
         # are more targeted than generic fallbacks but less targeted
         # than per-theorem family tactics, so this is the right slot.
         term_builder_entries: list[Entry] = []
+        term_builder_emitted: list = []
         tb_shape_key: str | None = None
         if self.term_builder_templates:
             if goal_shape == "unknown":
@@ -708,47 +753,109 @@ class StrategyWrapperPolicy:
                     goal_shape = classify_goal_shape(state_pp)
                 except Exception:
                     goal_shape = "unknown"
-            # Resolve which key to pull templates from. Exact shape
-            # match wins over the "any" key.
-            if goal_shape in self.term_builder_templates:
-                tb_shape_key = goal_shape
-            elif "any" in self.term_builder_templates:
-                tb_shape_key = "any"
-            if tb_shape_key is not None:
-                raw_templates = self.term_builder_templates[tb_shape_key]
-                emitted = 0
-                limit = self.term_builder_budget or len(raw_templates) * max(1, len(nat_vars) + 1)
-                for raw in raw_templates:
-                    for rendered in _render_template(raw, nat_vars, hypotheses):
-                        if rendered and rendered not in seen:
-                            seen.add(rendered)
-                            term_builder_entries.append(
-                                (rendered, ORIGIN_TERM_BUILDER, raw, tb_shape_key,
-                                 None, None, None)
-                            )
-                            emitted += 1
-                            if self.term_builder_budget and emitted >= self.term_builder_budget:
-                                break
-                    if self.term_builder_budget and emitted >= self.term_builder_budget:
-                        break
+            if self.use_skeleton_bag:
+                # NS4.1: delegate term_builder to bag. Bag preserves the
+                # legacy shape-XOR-any semantics (NOT the NS3.5 shape-then-
+                # any merge used by priority_templates).
+                if self._skeleton_bag is None:
+                    from evolve.skeleton_bag import SkeletonBag
+                    self._skeleton_bag = SkeletonBag.from_legacy_strategy_config({
+                        "priority_templates": self.priority_templates,
+                        "theorem_family_tactics": self.theorem_family_tactics,
+                        "term_builder_templates": self.term_builder_templates,
+                        "fallback_tactics": self.fallback_tactics,
+                        "tactic_templates": self.tactic_templates,
+                    })
+                tb_emitted_list, tb_shape_key = self._skeleton_bag.emit_term_builder_tactics(
+                    goal_shape=goal_shape,
+                    nat_vars=nat_vars,
+                    hypotheses=hypotheses,
+                    budget=self.term_builder_budget,
+                    already_seen=seen,
+                )
+                for et in tb_emitted_list:
+                    term_builder_entries.append(
+                        (et.tactic, ORIGIN_TERM_BUILDER, et.template_source,
+                         tb_shape_key, None, None, None)
+                    )
+                    term_builder_emitted.append(et)
+            else:
+                # Resolve which key to pull templates from. Exact shape
+                # match wins over the "any" key.
+                if goal_shape in self.term_builder_templates:
+                    tb_shape_key = goal_shape
+                elif "any" in self.term_builder_templates:
+                    tb_shape_key = "any"
+                if tb_shape_key is not None:
+                    raw_templates = self.term_builder_templates[tb_shape_key]
+                    emitted = 0
+                    limit = self.term_builder_budget or len(raw_templates) * max(1, len(nat_vars) + 1)
+                    for raw in raw_templates:
+                        for rendered in _render_template(raw, nat_vars, hypotheses):
+                            if rendered and rendered not in seen:
+                                seen.add(rendered)
+                                term_builder_entries.append(
+                                    (rendered, ORIGIN_TERM_BUILDER, raw, tb_shape_key,
+                                     None, None, None)
+                                )
+                                emitted += 1
+                                if self.term_builder_budget and emitted >= self.term_builder_budget:
+                                    break
+                        if self.term_builder_budget and emitted >= self.term_builder_budget:
+                            break
         self.last_goal_shape = goal_shape
         self.last_term_builder_attempt_count = len(term_builder_entries)
         self.last_term_builder_shape_key = tb_shape_key
+        self.last_term_builder_emitted = term_builder_emitted
 
         # Generic fallbacks + rendered templates, deduped against base,
         # family and retrieval entries, in deterministic genome order.
         generic_entries: list[Entry] = []
-        for t in self.fallback_tactics:
-            if t and t not in seen:
-                seen.add(t)
-                generic_entries.append((t, ORIGIN_FALLBACK, None, None, None, None, None))
-        for raw_template in self.tactic_templates:
-            for rendered in _render_template(raw_template, nat_vars, hypotheses):
-                if rendered and rendered not in seen:
-                    seen.add(rendered)
-                    generic_entries.append(
-                        (rendered, ORIGIN_TEMPLATE, raw_template, None, None, None, None)
-                    )
+        fallback_emitted: list = []
+        tactic_template_emitted: list = []
+        if self.use_skeleton_bag:
+            if self._skeleton_bag is None:
+                from evolve.skeleton_bag import SkeletonBag
+                self._skeleton_bag = SkeletonBag.from_legacy_strategy_config({
+                    "priority_templates": self.priority_templates,
+                    "theorem_family_tactics": self.theorem_family_tactics,
+                    "term_builder_templates": self.term_builder_templates,
+                    "fallback_tactics": self.fallback_tactics,
+                    "tactic_templates": self.tactic_templates,
+                })
+            fb_emitted_list = self._skeleton_bag.emit_fallback_tactics(
+                already_seen=seen,
+            )
+            for et in fb_emitted_list:
+                generic_entries.append(
+                    (et.tactic, ORIGIN_FALLBACK, None, None, None, None, None)
+                )
+                fallback_emitted.append(et)
+            tt_emitted_list = self._skeleton_bag.emit_tactic_template_tactics(
+                nat_vars=nat_vars,
+                hypotheses=hypotheses,
+                already_seen=seen,
+            )
+            for et in tt_emitted_list:
+                generic_entries.append(
+                    (et.tactic, ORIGIN_TEMPLATE, et.template_source,
+                     None, None, None, None)
+                )
+                tactic_template_emitted.append(et)
+        else:
+            for t in self.fallback_tactics:
+                if t and t not in seen:
+                    seen.add(t)
+                    generic_entries.append((t, ORIGIN_FALLBACK, None, None, None, None, None))
+            for raw_template in self.tactic_templates:
+                for rendered in _render_template(raw_template, nat_vars, hypotheses):
+                    if rendered and rendered not in seen:
+                        seen.add(rendered)
+                        generic_entries.append(
+                            (rendered, ORIGIN_TEMPLATE, raw_template, None, None, None, None)
+                        )
+        self.last_fallback_emitted = fallback_emitted
+        self.last_tactic_template_emitted = tactic_template_emitted
 
         extra_entries = (
             family_entries + retrieved_entries + term_builder_entries
@@ -820,6 +927,50 @@ class StrategyWrapperPolicy:
         self.last_retrieved_premises = [e[4] for e in all_entries]
         self.last_retrieved_forms = [e[5] for e in all_entries]
         self.last_retrieved_shapes = [e[6] for e in all_entries]
+
+        # NS4.1: build parallel skeleton-attribution lists. Tactics are
+        # deduped globally so a given tactic string appears in at most
+        # one of the *_emitted lists; build a single lookup keyed by
+        # tactic string. Entries whose tactic didn't come from the bag
+        # (generative_topk, retrieved_premise, or legacy-path entries)
+        # carry None on every skeleton_* field.
+        if (priority_emitted or family_emitted or term_builder_emitted
+                or fallback_emitted or tactic_template_emitted):
+            emitted_lookup: dict[str, Any] = {}
+            for emitted_list in (
+                priority_emitted, family_emitted, term_builder_emitted,
+                fallback_emitted, tactic_template_emitted,
+            ):
+                for et in emitted_list:
+                    emitted_lookup[et.tactic] = et
+            self.last_skeleton_names = [
+                emitted_lookup[e[0]].skeleton_name if e[0] in emitted_lookup else None
+                for e in all_entries
+            ]
+            self.last_skeleton_shapes = [
+                emitted_lookup[e[0]].shape if e[0] in emitted_lookup else None
+                for e in all_entries
+            ]
+            self.last_skeleton_families = [
+                emitted_lookup[e[0]].family if e[0] in emitted_lookup else None
+                for e in all_entries
+            ]
+            self.last_skeleton_specificities = [
+                emitted_lookup[e[0]].specificity if e[0] in emitted_lookup else None
+                for e in all_entries
+            ]
+            self.last_skeleton_priorities = [
+                emitted_lookup[e[0]].priority if e[0] in emitted_lookup else None
+                for e in all_entries
+            ]
+        else:
+            n = len(all_entries)
+            self.last_skeleton_names = [None] * n
+            self.last_skeleton_shapes = [None] * n
+            self.last_skeleton_families = [None] * n
+            self.last_skeleton_specificities = [None] * n
+            self.last_skeleton_priorities = [None] * n
+
         return self.last_ranked_tactics
 
     def origin_of_rank(self, rank: int) -> str | None:
