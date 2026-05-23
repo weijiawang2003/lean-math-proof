@@ -75,6 +75,28 @@ class Skeleton:
     enabled: bool = True
     tags: list[str] = field(default_factory=list)
 
+    @property
+    def stable_id(self) -> str:
+        """NS7 stable identifier — invariant across mutations / rebuilds.
+
+        `name` drifts because `from_legacy_strategy_config` re-indexes
+        skeletons by insertion order (so disabling one priority_template
+        renumbers all subsequent ones). The stable_id is computed from
+        normalized identity fields only — origin, shape, family,
+        specificity, and the canonical-form template text — so the same
+        underlying skeleton keeps the same id no matter how the genome
+        is rebuilt around it.
+        """
+        import hashlib
+        canonical = "|".join((
+            self.origin,
+            self.shape,
+            self.family or "",
+            str(self.specificity),
+            (self.template or "").strip(),
+        ))
+        return hashlib.sha1(canonical.encode("utf-8")).hexdigest()[:12]
+
 
 @dataclass
 class EmittedTactic:
@@ -103,6 +125,7 @@ class EmittedTactic:
     retrieved_premise: str | None = None
     retrieved_form: str | None = None
     retrieved_shape: str | None = None
+    skeleton_stable_id: str | None = None
 
 
 class SkeletonBag:
@@ -226,6 +249,7 @@ class SkeletonBag:
                         tactic=rendered,
                         origin=skel.origin,
                         skeleton_name=skel.name,
+                        skeleton_stable_id=skel.stable_id,
                         shape=skel.shape,
                         family=skel.family,
                         specificity=skel.specificity,
@@ -282,6 +306,7 @@ class SkeletonBag:
                         tactic=rendered,
                         origin=skel.origin,
                         skeleton_name=skel.name,
+                        skeleton_stable_id=skel.stable_id,
                         shape=skel.shape,
                         family=skel.family,
                         specificity=skel.specificity,
@@ -315,6 +340,7 @@ class SkeletonBag:
                     tactic=t,
                     origin=skel.origin,
                     skeleton_name=skel.name,
+                    skeleton_stable_id=skel.stable_id,
                     shape=skel.shape,
                     family=skel.family,
                     specificity=skel.specificity,
@@ -354,6 +380,7 @@ class SkeletonBag:
                     tactic=rendered,
                     origin=skel.origin,
                     skeleton_name=skel.name,
+                    skeleton_stable_id=skel.stable_id,
                     shape=skel.shape,
                     family=skel.family,
                     specificity=skel.specificity,
@@ -472,10 +499,22 @@ class SkeletonBag:
                 tactic = form.replace("{p}", premise).strip()
                 if tactic and tactic not in seen:
                     seen.add(tactic)
+                    import hashlib as _hl
+                    _canonical = "|".join((
+                        "retrieved_premise",
+                        goal_shape,
+                        retrieval_activation or "",
+                        str(SPECIFICITY_SPECIFIC),
+                        form.strip(),
+                        premise,
+                        label,
+                    ))
+                    _stable = _hl.sha1(_canonical.encode("utf-8")).hexdigest()[:12]
                     out.append(EmittedTactic(
                         tactic=tactic,
                         origin="retrieved_premise",
                         skeleton_name=f"retrieved:{premise}:{label}",
+                        skeleton_stable_id=_stable,
                         shape=goal_shape,
                         family=retrieval_activation,
                         specificity=SPECIFICITY_SPECIFIC,
@@ -543,6 +582,7 @@ class SkeletonBag:
                     tactic=rendered,
                     origin=skel.origin,
                     skeleton_name=skel.name,
+                    skeleton_stable_id=skel.stable_id,
                     shape=skel.shape,
                     family=skel.family,
                     specificity=skel.specificity,

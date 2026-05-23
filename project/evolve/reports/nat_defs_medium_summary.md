@@ -629,3 +629,54 @@ NS6 fixes the two design defects NS5 surfaced:
 
 See `ns6_credit_aware_mutation.md` and `ns6_assist_credit_analysis.md`
 for full design, sweep table, and NS5↔NS6 comparison.
+
+## NS7 — rank-stable skeleton evolution (2026-05-23)
+
+NS7 attacks the rank-coupling regression class NS6 identified — the
+case where disabling an uncredited skeleton silently shifts the
+wrapper's top-K window so a *correctly-protected* retrieval skeleton
+drops out of the ranked list. Five additions:
+
+1. **Stable skeleton IDs** (`Skeleton.stable_id`) — sha1 of
+   `(origin, shape, family, specificity, normalized_template)`,
+   invariant across `from_legacy_strategy_config` re-indexing.
+2. **Pre-flight rank-coupling detector** (`evolve/rank_coupling.py`)
+   that compares the bag's deterministic skeleton-emit order between
+   baseline and mutated, rejecting candidates that drop or push back
+   any protected skeleton — *without* paying for a Lean eval.
+3. **Protected skeleton set** persisted to disk
+   (`scripts/ns7_protected_set.py` → `protected_skeletons.json`),
+   built from per-step traces with direct_win / assist_win /
+   critical_advance attribution by stable_id.
+4. **Rank-diff diagnostic** (`scripts/ns7_rank_diff.py`) emits per-
+   shape rank tables and a violations summary.
+5. **Credit-aware `archive_seed_credit`** scoring
+   `10·direct + 5·assist + 1·adv − 10·regr − dead_penalty`, with
+   unconditional protection for any skeleton with non-zero assist
+   credit.
+
+**Result (21 cycles, ~50 min, `evolve/skeleton_evolve_ns7.py`):**
+
+- Best preserved at **20 enabled skeletons, 37/38 medium, 49/65
+  large** — same as NS6, no further compaction possible.
+- **3 pre-flight rejections** (cycles 5, 11, 12) saved ~7 minutes of
+  Lean evaluation. Each was a multi-skeleton drop that the
+  rank-coupling detector caught before subprocess launch.
+- 17 distinct stable_ids in the protected set (79 direct_win + 4
+  assist_win + 10 critical_advance entries).
+- **`archive_seed_credit` plateau improved from 35/38 to 36/38** —
+  credit-aware selection retains the assist skeletons NS5's wins-
+  only selector dropped, but the second-order rank-coupling cost
+  still pushes one theorem out.
+
+**The 20-skeleton compaction floor is now demonstrated to be a
+rank-coupling barrier, not a credit-gap barrier.** Even with
+perfect credit-aware selection and unconditional assist protection,
+every disable_dead/archive_seed candidate regresses on
+`Nat.div_lt_iff_lt_mul'` — the only skeleton class NS7 cannot
+help is the *uncredited skeleton whose removal shifts the merged
+top-K window for someone else*. Breaking through this floor
+requires offline model-output recording per protected state (NS8).
+
+See `ns7_rank_stable_evolution.md` for the full design, sweep
+table, and NS6↔NS7 comparison.

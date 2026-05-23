@@ -712,6 +712,90 @@ def archive_seed(
     )
 
 
+def _credit_score(c: dict[str, int]) -> int:
+    """NS7 score for credit-aware seeding.
+
+    score = 10·direct_wins + 5·assist_wins_k3 + 1·advances
+            − 10·regressions − dead-attempt penalty
+    """
+    direct = int(c.get("direct_wins", 0) or 0)
+    assist = int(c.get("assist_wins_k3", 0) or 0)
+    adv = int(c.get("advances", 0) or 0)
+    attempts = int(c.get("attempts", 0) or 0)
+    regr = int(c.get("regressions", 0) or 0)
+    dead_penalty = max(0, attempts // 4) if (direct == 0 and assist == 0 and adv == 0) else 0
+    return 10 * direct + 5 * assist + 1 * adv - 10 * regr - dead_penalty
+
+
+def top_skeletons_by_credit_score(
+    credit_stats: dict[str, dict[str, int]],
+    n: int = 20,
+) -> list[tuple[str, int]]:
+    """Return [(skeleton_name_or_stable_id, score)] sorted desc by score."""
+    rows = [(k, _credit_score(v)) for k, v in credit_stats.items()]
+    rows.sort(key=lambda t: (-t[1], t[0]))
+    return rows[:n]
+
+
+def archive_seed_credit(
+    genome: dict[str, Any],
+    archive_stats: dict[str, SkeletonStats],
+    credit_stats: dict[str, dict[str, int]] | None = None,
+    top_n: int = 25,
+) -> tuple[dict[str, Any], MutationRecord]:
+    """NS7 credit-aware compact-genome seeder.
+
+    Replaces NS5's wins-only `archive_seed`. Selection rule:
+
+      1. Take the top-N by `_credit_score` (direct + assist + advance,
+         minus regression and dead-attempt penalties). Assist credit
+         is half the weight of a direct win; advances are 1/10.
+      2. **Unconditionally protect** every skeleton with non-zero
+         assist credit (these were the must-protects NS6 identified).
+      3. Disable every other mutable skeleton.
+
+    Without `credit_stats` the operator falls back to NS5's wins-only
+    behaviour for compatibility.
+    """
+    if credit_stats is None or not credit_stats:
+        return archive_seed(genome, archive_stats, top_n=top_n)
+    bag = genome_to_bag(genome)
+    # Compute keep-set:
+    keep: set[str] = set()
+    for name, score in top_skeletons_by_credit_score(credit_stats, n=top_n):
+        if score > 0:
+            keep.add(name)
+    # Protect anything with assist credit.
+    for name, c in credit_stats.items():
+        if int(c.get("assist_wins_k3", 0) or 0) > 0:
+            keep.add(name)
+    if len(keep) < max(1, top_n // 3):
+        return deepcopy(genome), MutationRecord(
+            operator="archive_seed_credit",
+            description="No-op (credit index too sparse).",
+            rationale="Need more credit data before building a credit-aware core.",
+        )
+    affected: list[str] = []
+    for s in bag.all_skeletons():
+        if s.name not in keep and _is_mutable_skeleton(s):
+            if s.enabled:
+                s.enabled = False
+                affected.append(s.name)
+    return bag_to_genome(bag, genome), MutationRecord(
+        operator="archive_seed_credit",
+        affected=affected[:50],
+        description=(
+            f"Credit-aware compact: kept {len(keep)} skeletons (top "
+            f"credit_score and all assist-credit), disabled {len(affected)}."
+        ),
+        rationale=(
+            "Replaces wins-only archive_seed: any skeleton with "
+            "assist_wins_k3 > 0 is unconditionally kept, addressing the "
+            "NS5 35/38 ceiling that pruned `Nat.div_lt_iff_lt_mul'` assists."
+        ),
+    )
+
+
 # ---------------------------------------------------------------------- registry
 OPERATORS: dict[str, Callable] = {
     "disable_dead_skeleton": disable_dead_skeleton,
@@ -722,6 +806,7 @@ OPERATORS: dict[str, Callable] = {
     "expand_family_gate": expand_family_gate,
     "budget_trim": budget_trim,
     "archive_seed": archive_seed,
+    "archive_seed_credit": archive_seed_credit,
 }
 
 

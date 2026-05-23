@@ -369,6 +369,10 @@ def rollout_one_theorem(
                     getattr(pol, "last_skeleton_specificities", None)
                     or [None] * len(ranked)
                 )
+                skeleton_stable_ids = (
+                    getattr(pol, "last_skeleton_stable_ids", None)
+                    or [None] * len(ranked)
+                )
                 skeleton_priorities = (
                     getattr(pol, "last_skeleton_priorities", None)
                     or [None] * len(ranked)
@@ -441,6 +445,10 @@ def rollout_one_theorem(
                     skel_priority = (
                         skeleton_priorities[rank]
                         if rank < len(skeleton_priorities) else None
+                    )
+                    skel_stable_id = (
+                        skeleton_stable_ids[rank]
+                        if rank < len(skeleton_stable_ids) else None
                     )
                     retr_form = (
                         retrieved_forms[rank]
@@ -578,6 +586,8 @@ def rollout_one_theorem(
                         record_dict["skeleton_family"] = skel_family
                         record_dict["skeleton_specificity"] = skel_specificity
                         record_dict["skeleton_priority"] = skel_priority
+                        if skel_stable_id is not None:
+                            record_dict["skeleton_stable_id"] = skel_stable_id
                     record_dict["state_hash_before"] = state_h_before
 
                     # REPL crashed — Dojo is dead, abort theorem

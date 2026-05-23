@@ -462,6 +462,8 @@ class StrategyWrapperPolicy:
         self.last_skeleton_families: list[str | None] = []
         self.last_skeleton_specificities: list[int | None] = []
         self.last_skeleton_priorities: list[int | None] = []
+        # NS7 stable identifier — invariant across name renumbering.
+        self.last_skeleton_stable_ids: list[str | None] = []
         self.last_priority_template_attempt_count: int = 0
         self.last_ranked_tactics: list[str] = []
         self.last_origins: list[str] = []
@@ -1010,6 +1012,11 @@ class StrategyWrapperPolicy:
                 emitted_lookup[e[0]].priority if e[0] in emitted_lookup else None
                 for e in all_entries
             ]
+            self.last_skeleton_stable_ids = [
+                getattr(emitted_lookup[e[0]], "skeleton_stable_id", None)
+                if e[0] in emitted_lookup else None
+                for e in all_entries
+            ]
         else:
             n = len(all_entries)
             self.last_skeleton_names = [None] * n
@@ -1017,6 +1024,7 @@ class StrategyWrapperPolicy:
             self.last_skeleton_families = [None] * n
             self.last_skeleton_specificities = [None] * n
             self.last_skeleton_priorities = [None] * n
+            self.last_skeleton_stable_ids = [None] * n
 
         return self.last_ranked_tactics
 
