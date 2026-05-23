@@ -584,3 +584,48 @@ skeleton archive at `project/evolve/archive/skeletons.jsonl`.
 
 See `ns5_skeleton_evolution_plan.md` and
 `ns5_skeleton_evolution_report.md` for design and full results.
+
+## NS6 — credit-aware archive and scoped mutation (2026-05-23)
+
+NS6 fixes the two design defects NS5 surfaced:
+
+1. **Wins-only pruning blind spot** — `disable_dead_skeleton` now
+   consults a per-step trace-based credit index that tracks
+   `assist_wins_kN` (skeleton advanced state, and a different tactic
+   closed within K accepted steps). Skeletons with any assist credit
+   are protected. `scripts/ns6_assist_credit.py` builds the index.
+2. **Order-changing operators clobbered unrelated bands** — both
+   `promote_high_win_skeleton` and `demote_generic_skeleton` are now
+   scoped by `(origin, shape, family)`. Reorders touch only positions
+   inside one scope; out-of-scope skeletons keep their exact original
+   indices in `bag.skeletons[shape]`.
+
+**Result (20 cycles, ~65 min, `evolve/skeleton_evolve_ns6.py`):**
+
+- Best: **20 enabled skeletons** (vs. 25 NS5, vs. 48 raw — **20%
+  smaller than NS5, 58% smaller than raw**) preserving the same
+  **37/38 medium and 49/65 large** proved counts.
+- 3 promotions, all from credit-aware `disable_dead_skeleton`.
+- **0 regressions from the 10 scoped reorder cycles** (NS5's
+  unscoped versions regressed in 2 of their first 4 cycles).
+- 6 regressions caught by the no-regression gate — all on the same
+  theorem (`Nat.div_lt_iff_lt_mul'`), all from a *second-order
+  rank-coupling effect* that even credit-aware pruning can't see
+  (disabling an uncredited skeleton shifts the wrapper's top-K window
+  so a *correctly-protected* retrieval skeleton drops out of the
+  ranked list).
+
+**Two new findings for NS7:**
+
+1. **Skeleton names drift across mutations.** `from_legacy_strategy_config`
+   re-indexes by insertion order; the credit index needs stable
+   identifiers (UUIDs or template-hash) before it can survive multi-
+   cycle accumulation cleanly.
+2. **Rank-coupling regressions exist.** Even with perfect direct/
+   assist credit, removing an uncredited skeleton can shift the
+   wrapper's top-K cutoff. NS7 needs a pre-flight rank-coupling
+   detector — diff the pre/post ranked lists per state and reject
+   mutations that displace credit-bearing skeletons out of top-K.
+
+See `ns6_credit_aware_mutation.md` and `ns6_assist_credit_analysis.md`
+for full design, sweep table, and NS5↔NS6 comparison.

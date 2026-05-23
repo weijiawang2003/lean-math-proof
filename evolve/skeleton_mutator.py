@@ -69,17 +69,39 @@ from evolve.skeleton_bag import (
 @dataclass
 class MutationRecord:
     """Provenance of one mutation step, written into the run's
-    mutation_log.md so we can replay or audit later."""
+    mutation_log.md so we can replay or audit later.
+
+    NS6 added scope_* fields so order-changing operators can record the
+    exact (origin, shape, family) slice they mutated. This is the
+    record we need to diagnose ordering regressions like the ones
+    NS5 cycle-2 and cycle-4 produced (broad bag-wide resorts).
+    `affected_skeletons` is an alias for `affected` kept for clarity.
+    """
 
     operator: str
     affected: list[str] = field(default_factory=list)  # skeleton names
     description: str = ""
     rationale: str = ""
+    scope_origin: str | None = None
+    scope_shape: str | None = None
+    scope_family: str | None = None
+
+    @property
+    def affected_skeletons(self) -> list[str]:
+        return self.affected
 
     def to_md_line(self) -> str:
         affected = ", ".join(self.affected) if self.affected else "—"
+        scope_bits = []
+        if self.scope_origin:
+            scope_bits.append(f"origin={self.scope_origin}")
+        if self.scope_shape:
+            scope_bits.append(f"shape={self.scope_shape}")
+        if self.scope_family:
+            scope_bits.append(f"family={self.scope_family}")
+        scope = f" scope=({', '.join(scope_bits)})" if scope_bits else ""
         return (
-            f"- **{self.operator}** affected=[{affected}]  \n"
+            f"- **{self.operator}**{scope} affected=[{affected}]  \n"
             f"  description: {self.description}  \n"
             f"  rationale: {self.rationale}"
         )
@@ -88,8 +110,12 @@ class MutationRecord:
         return {
             "operator": self.operator,
             "affected": list(self.affected),
+            "affected_skeletons": list(self.affected),
             "description": self.description,
             "rationale": self.rationale,
+            "scope_origin": self.scope_origin,
+            "scope_shape": self.scope_shape,
+            "scope_family": self.scope_family,
         }
 
 
@@ -159,28 +185,89 @@ def disable_dead_skeleton(
     archive_stats: dict[str, SkeletonStats],
     min_attempts: int = DEFAULT_DEAD_ATTEMPT_THRESHOLD,
     max_disable: int = 3,
+    credit_stats: dict[str, dict[str, int]] | None = None,
 ) -> tuple[dict[str, Any], MutationRecord]:
-    """Disable up to `max_disable` skeletons that the archive flags as
-    dead. Skeletons with any archived win are kept regardless of attempt
-    count."""
+    """Disable up to `max_disable` skeletons that look dead.
+
+    NS6 safe-pruning rule (active when `credit_stats` is provided):
+    disable only if direct_wins=0 AND advances=0 AND assist_wins_k3=0
+    AND attempts >= min_attempts. Skeletons with assist credit are
+    *never* disabled, even when their wins/advances are zero.
+
+    NS5 fallback (no credit_stats supplied): keep the old wins-only
+    rule for backwards compatibility, with an inline guard that still
+    refuses to touch skeletons that won at all in the archive.
+    """
     bag = genome_to_bag(genome)
     lookup = _skeleton_lookup(bag)
-    dead = dead_skeletons(archive_stats, min_attempts=min_attempts)
     affected: list[str] = []
-    for s in dead:
-        if len(affected) >= max_disable:
-            break
-        if s.skeleton_name in lookup and _is_mutable_skeleton(lookup[s.skeleton_name]):
-            lookup[s.skeleton_name].enabled = False
-            affected.append(s.skeleton_name)
+    skipped_by_credit: list[str] = []
+
+    def _has_credit(name: str) -> bool:
+        if not credit_stats:
+            return False
+        c = credit_stats.get(name)
+        if not c:
+            return False
+        return (
+            int(c.get("direct_wins", 0)) > 0
+            or int(c.get("advances", 0)) > 0
+            or int(c.get("assist_wins_k3", 0)) > 0
+        )
+
+    if credit_stats is not None:
+        # NS6 path: walk every observed skeleton and disable only those
+        # with zero credit signals AND enough attempts. archive_stats
+        # supplies attempts; credit_stats supplies win/advance/assist.
+        candidates = []
+        for name, c in credit_stats.items():
+            if name not in lookup:
+                continue
+            attempts = int(c.get("attempts", 0))
+            if attempts < min_attempts:
+                continue
+            direct = int(c.get("direct_wins", 0))
+            adv = int(c.get("advances", 0))
+            assist = int(c.get("assist_wins_k3", 0))
+            if direct == 0 and adv == 0 and assist == 0:
+                candidates.append((name, attempts))
+        # Sort by attempts desc — high-attempt zero-credit goes first.
+        candidates.sort(key=lambda t: (-t[1], t[0]))
+        for name, _att in candidates:
+            if len(affected) >= max_disable:
+                break
+            if _is_mutable_skeleton(lookup[name]) and lookup[name].enabled:
+                lookup[name].enabled = False
+                affected.append(name)
+        # Also note any skeletons we explicitly protected by assist credit.
+        for name, c in credit_stats.items():
+            if c.get("direct_wins", 0) == 0 and c.get("advances", 0) == 0 \
+                    and c.get("assist_wins_k3", 0) > 0:
+                skipped_by_credit.append(name)
+    else:
+        # NS5 fallback path.
+        dead = dead_skeletons(archive_stats, min_attempts=min_attempts)
+        for s in dead:
+            if len(affected) >= max_disable:
+                break
+            if s.skeleton_name in lookup and _is_mutable_skeleton(lookup[s.skeleton_name]):
+                lookup[s.skeleton_name].enabled = False
+                affected.append(s.skeleton_name)
+
+    rationale_bits = [
+        f"safe-pruning: attempts>={min_attempts}",
+        "direct_wins=0",
+        "advances=0",
+        "assist_wins_k3=0" if credit_stats is not None else "(NS5 wins-only)",
+    ]
+    desc = f"Disabled {len(affected)} truly-dead skeleton(s)."
+    if skipped_by_credit:
+        desc += f" Protected {len(skipped_by_credit)} zero-win assist skeleton(s)."
     record = MutationRecord(
         operator="disable_dead_skeleton",
         affected=affected,
-        description=f"Disabled {len(affected)} dead skeleton(s).",
-        rationale=(
-            f"Archive flagged each as 0-win after >={min_attempts} attempts; "
-            "removing them shortens the per-state emit list."
-        ),
+        description=desc,
+        rationale="; ".join(rationale_bits),
     )
     return bag_to_genome(bag, genome), record
 
@@ -189,100 +276,220 @@ def promote_high_win_skeleton(
     genome: dict[str, Any],
     archive_stats: dict[str, SkeletonStats],
     top_n: int = 5,
+    scope_origin: str | None = None,
+    scope_shape: str | None = None,
+    scope_family: str | None = None,
 ) -> tuple[dict[str, Any], MutationRecord]:
-    """Move the top-winning enabled skeleton in each (origin, shape, family)
-    bucket to the front of its slot. Already-first skeletons are skipped.
+    """SCOPED: front the top archive-winning skeleton inside ONE
+    (scope_origin, scope_shape, scope_family) bucket.
 
-    Reordering inside the (origin, shape, family) bucket does NOT change
-    the band ordering — it only fronts the strongest template within a
-    band, which can help when the per-state budget cuts off early.
+    NS5 cycle-4 lost `Nat.add_mod_eq_add_mod_right` because the unscoped
+    version rebuilt the entire `bag.skeletons[shape]` list from scratch,
+    inadvertently reordering unrelated buckets that the wrapper iterates
+    in bag order. Scoping by (origin, shape, family) restricts the
+    reorder to within a single equivalence class that shares (priority,
+    specificity), so the wrapper's emit order is preserved between
+    classes.
+
+    When `scope_*` is None, no reorder happens — the caller must supply
+    a scope. This prevents the "broadest possible mutation" trap that
+    NS5 exhibited.
     """
-    top = {s.skeleton_name: s for s in top_skeletons_by_wins(archive_stats, n=top_n) if s.wins > 0}
-    if not top:
+    if scope_origin is None or scope_shape is None:
+        return deepcopy(genome), MutationRecord(
+            operator="promote_high_win_skeleton",
+            description="No scope provided — no-op.",
+            rationale="NS6 requires explicit (scope_origin, scope_shape).",
+            scope_origin=scope_origin,
+            scope_shape=scope_shape,
+            scope_family=scope_family,
+        )
+    top_names = {
+        s.skeleton_name
+        for s in top_skeletons_by_wins(archive_stats, n=top_n)
+        if s.wins > 0
+    }
+    if not top_names:
         return deepcopy(genome), MutationRecord(
             operator="promote_high_win_skeleton",
             description="No high-win skeletons in archive yet — no-op.",
             rationale="Archive empty or no winners.",
+            scope_origin=scope_origin,
+            scope_shape=scope_shape,
+            scope_family=scope_family,
         )
-
     bag = genome_to_bag(genome)
-    affected: list[str] = []
-
-    # Group bag skeletons by (origin, shape, family) and pin top-winners first.
-    groups: dict[tuple[str, str, str | None], list[Skeleton]] = {}
-    for s in bag.all_skeletons():
-        groups.setdefault((s.origin, s.shape, s.family), []).append(s)
-
-    new_skeletons: dict[str, list[Skeleton]] = {}
-    new_families: dict[str, list[Skeleton]] = {}
-    # Walk shapes in original insertion order.
-    for shape in list(bag.skeletons.keys()):
-        new_skeletons[shape] = []
-    for fam in list(bag.families.keys()):
-        new_families[fam] = []
-
-    # Rebuild per-shape, prioritizing top-winners inside their bucket.
-    visited: set[int] = set()
-    for shape in list(bag.skeletons.keys()):
-        for s in bag.skeletons[shape]:
-            if id(s) in visited:
-                continue
-            key = (s.origin, s.shape, s.family)
-            bucket = groups[key]
-            # Pull winners first.
-            winners = [b for b in bucket if b.name in top]
-            losers = [b for b in bucket if b.name not in top]
-            for b in winners + losers:
-                if id(b) in visited:
-                    continue
-                visited.add(id(b))
-                new_skeletons[b.shape].append(b)
-                if b.family is not None:
-                    new_families.setdefault(b.family, []).append(b)
-                if b.name in top and b is winners[0] if winners else False:
-                    affected.append(b.name)
-
-    bag.skeletons = new_skeletons
-    bag.families = new_families
-    record = MutationRecord(
+    if scope_shape not in bag.skeletons:
+        return deepcopy(genome), MutationRecord(
+            operator="promote_high_win_skeleton",
+            description=f"shape={scope_shape} not present — no-op.",
+            rationale="Cannot promote inside a missing shape slot.",
+            scope_origin=scope_origin,
+            scope_shape=scope_shape,
+            scope_family=scope_family,
+        )
+    skels = bag.skeletons[scope_shape]
+    # Indices of skeletons that match the scope.
+    in_scope_idx = [
+        i for i, s in enumerate(skels)
+        if s.origin == scope_origin and (
+            scope_family is None or s.family == scope_family
+        )
+    ]
+    if len(in_scope_idx) < 2:
+        return deepcopy(genome), MutationRecord(
+            operator="promote_high_win_skeleton",
+            description=(
+                f"<2 skeletons in scope (origin={scope_origin}, shape={scope_shape}, "
+                f"family={scope_family}) — nothing to reorder."
+            ),
+            rationale="Reorder requires >=2 candidates within scope.",
+            scope_origin=scope_origin,
+            scope_shape=scope_shape,
+            scope_family=scope_family,
+        )
+    in_scope_names = [skels[i].name for i in in_scope_idx]
+    # Top-winner from archive that's in this scope.
+    top_winner: str | None = None
+    for st in top_skeletons_by_wins(archive_stats, n=max(top_n, 50)):
+        if st.skeleton_name in in_scope_names and st.wins > 0:
+            top_winner = st.skeleton_name
+            break
+    if top_winner is None:
+        return deepcopy(genome), MutationRecord(
+            operator="promote_high_win_skeleton",
+            description="No archive winner inside the scope — no-op.",
+            rationale="Archive has no win record for any skeleton in this scope.",
+            scope_origin=scope_origin,
+            scope_shape=scope_shape,
+            scope_family=scope_family,
+        )
+    if skels[in_scope_idx[0]].name == top_winner:
+        return deepcopy(genome), MutationRecord(
+            operator="promote_high_win_skeleton",
+            description="Top winner already at front of scope — no-op.",
+            rationale="Idempotent: nothing to do.",
+            scope_origin=scope_origin,
+            scope_shape=scope_shape,
+            scope_family=scope_family,
+        )
+    # Build new ordering: move `top_winner` to the FIRST in-scope position;
+    # all other positions (in-scope and out-of-scope) are preserved exactly.
+    winner_idx = next(i for i in in_scope_idx if skels[i].name == top_winner)
+    front_idx = in_scope_idx[0]
+    new_list = list(skels)
+    s_win = new_list.pop(winner_idx)
+    new_list.insert(front_idx, s_win)
+    bag.skeletons[scope_shape] = new_list
+    # Families dict points at the *same* objects, so order there is
+    # unchanged — `bag_to_genome` reconstructs from `all_skeletons()` which
+    # walks `skeletons`. We touch families only if scope had `scope_family`.
+    if scope_family and scope_family in bag.families:
+        fam_list = bag.families[scope_family]
+        if any(s.name == top_winner for s in fam_list):
+            fam_list_new = [s for s in fam_list if s.name != top_winner]
+            # Insert at first position whose origin matches scope_origin.
+            inserted = False
+            for i, s in enumerate(fam_list_new):
+                if s.origin == scope_origin:
+                    fam_list_new.insert(i, s_win)
+                    inserted = True
+                    break
+            if not inserted:
+                fam_list_new.insert(0, s_win)
+            bag.families[scope_family] = fam_list_new
+    return bag_to_genome(bag, genome), MutationRecord(
         operator="promote_high_win_skeleton",
-        affected=sorted(set(affected)),
+        affected=[top_winner],
         description=(
-            f"Promoted {len(set(affected))} high-win skeleton(s) "
-            "to the front of their (origin, shape, family) bucket."
+            f"Fronted '{top_winner}' inside (origin={scope_origin}, "
+            f"shape={scope_shape}, family={scope_family}). "
+            f"Out-of-scope skeletons untouched."
         ),
         rationale=(
-            f"Archive shows each won >=1 theorem; fronting reduces the "
-            "chance of being cut off by per-state budget."
+            "Archive shows this skeleton wins inside the scope; fronting "
+            "it within scope changes ordering only between siblings of the "
+            "same (priority, specificity)."
         ),
+        scope_origin=scope_origin,
+        scope_shape=scope_shape,
+        scope_family=scope_family,
     )
-    return bag_to_genome(bag, genome), record
 
 
 def demote_generic_skeleton(
     genome: dict[str, Any],
     archive_stats: dict[str, SkeletonStats] | None = None,
+    scope_origin: str | None = None,
+    scope_shape: str | None = None,
 ) -> tuple[dict[str, Any], MutationRecord]:
-    """Within each shape slot, push generics (`specificity=1`) after all
-    specifics (`specificity=0`). This is the NS1 invariant — applied here
-    as a defensive re-sort after other mutations may have shuffled order.
+    """SCOPED: re-apply the NS1 (priority, specificity) sort within ONE
+    (scope_origin, scope_shape) slice.
+
+    Without a scope, no-op — NS5 showed that the bag-wide resort
+    reorders unrelated origins (e.g. it shuffles fallback_tactic vs
+    tactic_template entries that the wrapper emits in bag order), which
+    caused regressions on `Nat.two_mul_ne_two_mul_add_one`. Scoping to a
+    single (origin, shape) limits the resort to skeletons that all
+    share the same band, so the wrapper's emit sequence is preserved
+    between scopes.
     """
-    bag = genome_to_bag(genome)
-    moved: list[str] = []
-    for shape, skels in bag.skeletons.items():
-        ordered = sorted(
-            skels, key=lambda s: (s.priority, s.specificity)
+    if scope_origin is None or scope_shape is None:
+        return deepcopy(genome), MutationRecord(
+            operator="demote_generic_skeleton",
+            description="No scope provided — no-op.",
+            rationale="NS6 requires explicit (scope_origin, scope_shape).",
+            scope_origin=scope_origin,
+            scope_shape=scope_shape,
         )
-        if [s.name for s in ordered] != [s.name for s in skels]:
-            moved.append(shape)
-            bag.skeletons[shape] = ordered
-    record = MutationRecord(
+    bag = genome_to_bag(genome)
+    if scope_shape not in bag.skeletons:
+        return deepcopy(genome), MutationRecord(
+            operator="demote_generic_skeleton",
+            description=f"shape={scope_shape} not present — no-op.",
+            rationale="Cannot resort a missing shape slot.",
+            scope_origin=scope_origin,
+            scope_shape=scope_shape,
+        )
+    skels = bag.skeletons[scope_shape]
+    in_scope_idx = [i for i, s in enumerate(skels) if s.origin == scope_origin]
+    if len(in_scope_idx) < 2:
+        return deepcopy(genome), MutationRecord(
+            operator="demote_generic_skeleton",
+            description="<2 skeletons in scope — no-op.",
+            rationale="Resort requires >=2 candidates within scope.",
+            scope_origin=scope_origin,
+            scope_shape=scope_shape,
+        )
+    in_scope = [skels[i] for i in in_scope_idx]
+    resorted = sorted(in_scope, key=lambda s: (s.priority, s.specificity))
+    if [s.name for s in resorted] == [s.name for s in in_scope]:
+        return deepcopy(genome), MutationRecord(
+            operator="demote_generic_skeleton",
+            description="Scope already sorted — no-op.",
+            rationale="Idempotent: nothing to do.",
+            scope_origin=scope_origin,
+            scope_shape=scope_shape,
+        )
+    new_list = list(skels)
+    for new_pos, idx in zip(in_scope_idx, range(len(resorted))):
+        new_list[new_pos] = resorted[idx]
+    bag.skeletons[scope_shape] = new_list
+    affected = [s.name for s in resorted]
+    return bag_to_genome(bag, genome), MutationRecord(
         operator="demote_generic_skeleton",
-        affected=moved,
-        description=f"Re-applied NS1 specificity sort in {len(moved)} shape slot(s).",
-        rationale="Defensive: maintain (priority, specificity) order after other ops.",
+        affected=affected,
+        description=(
+            f"NS1-sorted {len(in_scope_idx)} skeleton(s) inside "
+            f"(origin={scope_origin}, shape={scope_shape}); out-of-scope untouched."
+        ),
+        rationale=(
+            "Defensive (priority, specificity) sort, scoped to a single "
+            "origin so the wrapper's emit order between origins is preserved."
+        ),
+        scope_origin=scope_origin,
+        scope_shape=scope_shape,
     )
-    return bag_to_genome(bag, genome), record
 
 
 SHAPE_CLONE_GRAPH = {

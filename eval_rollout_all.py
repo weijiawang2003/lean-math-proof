@@ -572,6 +572,12 @@ def rollout_one_theorem(
                             retr_shape == step_goal_shape
                             and retr_shape != "unknown"
                         )
+                    if skel_name is not None:
+                        record_dict["skeleton_name"] = skel_name
+                        record_dict["skeleton_shape"] = skel_shape
+                        record_dict["skeleton_family"] = skel_family
+                        record_dict["skeleton_specificity"] = skel_specificity
+                        record_dict["skeleton_priority"] = skel_priority
                     record_dict["state_hash_before"] = state_h_before
 
                     # REPL crashed — Dojo is dead, abort theorem
