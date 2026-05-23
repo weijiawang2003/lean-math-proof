@@ -552,3 +552,35 @@ for v6:
     configured shape slot; the cleaner fix is a small wrapper change
     (NS-3.5) to always run `any` as a fallback after the specific
     slot's tactics fail.
+
+## NS5 — skeleton evolution (2026-05-23)
+
+NS5 treats the skeleton-bag from NS4/NS4.1/NS4.2 as an evolvable
+genome. A time-bounded autonomous loop (`evolve/skeleton_evolve.py`)
+mutates the bag using safe, archive-guided operators (`disable_dead`,
+`promote_high_win`, `clone_to_shape`, `archive_seed`, `budget_trim`,
+`demote_generic`), runs each candidate against `nat_defs_medium`
+(and `nat_defs_large_v5` on promotions), and accumulates a JSONL
+skeleton archive at `project/evolve/archive/skeletons.jsonl`.
+
+**Result (165 cycles, 7.46h):**
+
+- Best: **25 enabled skeletons** (vs. 48 baseline — **48% smaller**)
+  with the **same 37/38 medium and 49/64 large** proved counts.
+- 11 promotions, all from `disable_dead_skeleton`.
+- 67 regressions correctly rejected by the no-regression gate.
+- 0 new theorems proved — the medium ceiling at 37 and large
+  ceiling at 49 are not skeleton-ordering problems.
+
+**Two insights for NS6:**
+
+1. **Zero-win ≠ useless.** 60 of 67 regressions removed a
+   never-winning skeleton that turned out to *advance state* into a
+   form a later tactic closed. NS5's archive only tracks `wins`; it
+   needs per-attempt `advances` to prune safely.
+2. **Compact-genome plateau at 36/38** for `archive_seed` regardless
+   of `top_n` ∈ {15..50}, because the wins-only selector throws away
+   advance-only skeletons that `Nat.div_lt_iff_lt_mul'` depends on.
+
+See `ns5_skeleton_evolution_plan.md` and
+`ns5_skeleton_evolution_report.md` for design and full results.

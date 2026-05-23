@@ -21,3 +21,9 @@ project/evolve/population.jsonl
 # Model checkpoint directories (binaries, large). gen_v5 etc. live here
 # locally but are not committed.
 project/models/
+
+# NS5 skeleton-evolution autonomous-run artifacts and the accumulated
+# archive ledger. The archive grows to ~10MB per ~150-cycle run and is
+# regeneratable by re-running `evolve.skeleton_evolve` — kept local only.
+project/evolve/skeleton_runs/
+project/evolve/archive/
