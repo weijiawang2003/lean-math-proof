@@ -66,6 +66,7 @@ def _load_policy(
     temperature: float = 0.8,
     seed: int | None = None,
     strategy_config: str | None = None,
+    route_config: str | None = None,
 ):
     """Load the appropriate policy based on type string.
 
@@ -74,6 +75,9 @@ def _load_policy(
 
     strategy_config is consumed only by 'hybrid_evolved'; it points at a JSON
     file with `fallback_tactics` and `tactic_templates` arrays.
+
+    route_config is consumed by 'routed_generative' (NS13) and optionally by
+    'hybrid_evolved' to route the inner base model by theorem domain.
     """
     if policy_type == "classifier":
         from policy import Policy
@@ -82,6 +86,19 @@ def _load_policy(
         from generative_policy import GenerativePolicy
         return GenerativePolicy(
             ckpt_dir=ckpt_dir,
+            decode_mode=decode_mode,
+            temperature=temperature,
+            seed=seed,
+        )
+    elif policy_type == "routed_generative":
+        if not route_config:
+            raise ValueError(
+                "--policy-type=routed_generative requires --route-config "
+                "pointing at a routing JSON (see project/evolve/routing/)."
+            )
+        from routed_policy import RoutedGenerativePolicy
+        return RoutedGenerativePolicy(
+            route_config=route_config,
             decode_mode=decode_mode,
             temperature=temperature,
             seed=seed,
@@ -116,16 +133,25 @@ def _load_policy(
         # v3 / v3.2 / v3.4 strategy-wrapper: GenerativePolicy + candidate-
         # provided fallback_tactics / tactic_templates + per-state extras
         # budget + theorem-name-aware family tactics, deduped, deterministic.
-        from generative_policy import GenerativePolicy
         from evolve.strategy_wrapper import (
             StrategyWrapperPolicy, load_strategy_config,
         )
-        base = GenerativePolicy(
-            ckpt_dir=ckpt_dir,
-            decode_mode=decode_mode,
-            temperature=temperature,
-            seed=seed,
-        )
+        if route_config:
+            from routed_policy import RoutedGenerativePolicy
+            base = RoutedGenerativePolicy(
+                route_config=route_config,
+                decode_mode=decode_mode,
+                temperature=temperature,
+                seed=seed,
+            )
+        else:
+            from generative_policy import GenerativePolicy
+            base = GenerativePolicy(
+                ckpt_dir=ckpt_dir,
+                decode_mode=decode_mode,
+                temperature=temperature,
+                seed=seed,
+            )
         if strategy_config:
             (fb, tmpl, cap, fam, fam_budgets, deny,
              retrieval_enabled, retrieval_top_k, retrieval_forms,
@@ -780,14 +806,22 @@ def main():
     parser.add_argument("--policy-type", default="classifier",
                         choices=["classifier", "generative", "hybrid", "strategic",
                                  "premise_augmented", "translation_guided",
-                                 "hybrid_evolved"],
+                                 "hybrid_evolved", "routed_generative"],
                         help="Policy type: 'classifier', 'generative', 'hybrid', 'strategic', "
-                             "'premise_augmented', 'translation_guided', or 'hybrid_evolved' "
-                             "(generative + per-candidate fallback_tactics/tactic_templates).")
+                             "'premise_augmented', 'translation_guided', "
+                             "'hybrid_evolved' (generative + per-candidate "
+                             "fallback_tactics/tactic_templates), or "
+                             "'routed_generative' (NS13: dispatch among "
+                             "multiple gen checkpoints by theorem domain).")
     parser.add_argument("--strategy-config", default=None,
                         help="Path to a JSON file with 'fallback_tactics' and "
                              "'tactic_templates' arrays. Consumed only by "
                              "--policy-type=hybrid_evolved.")
+    parser.add_argument("--route-config", default=None,
+                        help="Path to a routed_generative route-config JSON "
+                             "(see project/evolve/routing/). Required for "
+                             "--policy-type=routed_generative; also accepted "
+                             "by hybrid_evolved to route the base model.")
     parser.add_argument("--enable-loop-avoidance", action="store_true",
                         help="v3.3: track per-theorem seen state hashes; "
                              "prefer tactics producing unseen states; skip "
@@ -835,6 +869,7 @@ def main():
         temperature=args.temperature,
         seed=args.seed,
         strategy_config=args.strategy_config,
+        route_config=args.route_config,
     )
     repo = make_repo()
 
@@ -848,6 +883,7 @@ def main():
             "policy_type": args.policy_type,
             "theorem_set": args.theorem_set,
             "ckpt_dir": args.ckpt_dir,
+            "route_config": args.route_config,
             "max_steps": args.max_steps,
             "top_k": args.top_k,
             "num_theorems": len(theorems),
@@ -1113,6 +1149,7 @@ def main():
         "temperature": args.temperature,
         "seed": args.seed,
         "strategy_config": args.strategy_config,
+        "route_config": args.route_config,
         "total_theorems": n,
         "available": n_avail,
         "proved": n_proved,
