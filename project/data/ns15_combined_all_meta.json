@@ -1,0 +1,48 @@
+{
+  "v": "ns15",
+  "variant": "combined_all",
+  "out_path": "project/data/ns15_combined_all.jsonl",
+  "inputs": {
+    "ns11_path": "project/data/ns11_train_combined.jsonl",
+    "ns14_path": "project/data/ns14_train_combined.jsonl",
+    "n_v5_rows_in_ns11": 5577,
+    "n_ns11_evolved_rows": 152,
+    "n_ns14_rows": 30
+  },
+  "build_meta": {
+    "n_v5": 5577,
+    "n_ns11_evolved": 152,
+    "n_ns14": 30,
+    "n_dup_dropped": 6
+  },
+  "total_pairs": 5753,
+  "by_domain": {
+    "Set": 1726,
+    "Nat": 273,
+    "Finset": 3754
+  },
+  "by_origin": {
+    "unknown": 5577,
+    "tactic_template": 50,
+    "family_tactic": 6,
+    "generative_topk": 34,
+    "fallback_tactic": 60,
+    "term_builder": 15,
+    "raw_routed": 11
+  },
+  "by_role": {
+    "unknown": 5577,
+    "close": 128,
+    "advance_assist": 48
+  },
+  "by_variant": {
+    "v5_base": 5577,
+    "medium": 152,
+    "ns14": 24
+  },
+  "unique_theorems": 184,
+  "n_close_role": 128,
+  "n_advance_role": 48,
+  "n_replay_rows": 0,
+  "n_wrapper_nat_pattern_rows": 10
+}

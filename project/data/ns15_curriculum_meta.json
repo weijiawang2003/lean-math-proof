@@ -1,0 +1,52 @@
+{
+  "v": "ns15",
+  "variant": "curriculum",
+  "out_path": "project/data/ns15_curriculum.jsonl",
+  "inputs": {
+    "ns11_path": "project/data/ns11_train_combined.jsonl",
+    "ns14_path": "project/data/ns14_train_combined.jsonl",
+    "n_v5_rows_in_ns11": 5577,
+    "n_ns11_evolved_rows": 152,
+    "n_ns14_rows": 30
+  },
+  "build_meta": {
+    "n_v5": 5577,
+    "n_v5_dropped_dup": 0,
+    "n_ns11_evolved": 152,
+    "n_ns14": 30,
+    "n_oversample_extras": 90,
+    "nat_oversample_factor": 10,
+    "stage1_rows": 5577,
+    "stage2_rows": 272
+  },
+  "total_pairs": 5849,
+  "by_domain": {
+    "Set": 1726,
+    "Nat": 363,
+    "Finset": 3760
+  },
+  "by_origin": {
+    "unknown": 5577,
+    "tactic_template": 86,
+    "family_tactic": 6,
+    "generative_topk": 34,
+    "fallback_tactic": 114,
+    "term_builder": 15,
+    "raw_routed": 17
+  },
+  "by_role": {
+    "unknown": 5577,
+    "close": 224,
+    "advance_assist": 48
+  },
+  "by_variant": {
+    "v5_base": 5577,
+    "medium": 152,
+    "ns14": 120
+  },
+  "unique_theorems": 184,
+  "n_close_role": 224,
+  "n_advance_role": 48,
+  "n_replay_rows": 0,
+  "n_wrapper_nat_pattern_rows": 100
+}

@@ -94,3 +94,13 @@ project/data/ns14_train_*.jsonl
 project/evolve/eval_runs/ns14_*.log
 project/evolve/eval_runs/ns14_routed_wrapper_*/
 project/evolve/eval_runs/ns14_routed_raw_*/
+
+# NS15 wider-training artifacts. Datasets and checkpoints are
+# regeneratable via scripts/build_ns15_training_data.py and
+# train_tactic_generator.py. Dataset *_meta.json files are
+# committed; the JSONL data, model dirs, and eval logs are not.
+project/models/gen_v5_ns15_*/
+project/models/gen_v5_ns15_*_training.log
+project/data/ns15_*.jsonl
+project/evolve/eval_runs/ns15_*.log
+project/evolve/eval_runs/ns15_*/
