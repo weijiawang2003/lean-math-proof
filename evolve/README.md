@@ -22,56 +22,90 @@ of the project is built around.
 
 ## Main result (v3.6)
 
-The same `gen_v5` checkpoint, no retraining, no premise retrieval, on the
-same 38 `Mathlib/Data/Nat/Defs.lean` theorems:
+The same `gen_v5` checkpoint, no retraining, on Mathlib `Nat/Defs.lean`
+and a larger second set:
 
-| policy                         | proved | rate  | wallclock |
-|--------------------------------|-------:|------:|----------:|
-| `gen_v5` plain (baseline)      |  3/38  |  7.9% |    ~2.5 min |
-| `hybrid_evolved` (this loop)   | **25/38** | **65.8%** |  ~3.5 min |
+| policy                                       | medium (38) | large (65) | wallclock |
+|----------------------------------------------|------------:|-----------:|----------:|
+| `gen_v5` plain (baseline)                    | 3/38 (7.9%) | —          | ~2.5 min |
+| **`hybrid_evolved` NS9 best (17 skeletons)** | **37/38 (97.4%)** | **49/65 (75.4%)** | ~2.5 / ~5 min |
 
-Δ = **+22 theorems, 0 regressions** (every baseline win is also a hybrid win).
-The strategy wrapper composes the gen_v5 model's beam-search top-k with a
-deterministic, evolved layer of generic fallback tactics, theorem-name-aware
-family tactics (`div`, `mod`, `AM_GM`), and a 1-entry per-theorem deny-list
-that suppresses one `(theorem, tactic)` pair known to crash the Dojo REPL.
+Δ vs raw model on medium: **+34 theorems, 0 regressions**. The single
+residual medium failure (`Nat.AM_GM`) is a model-capability ceiling,
+not a skeleton-bag one.
 
-Win attribution (`proved_by_origin`):
-- `fallback_tactic` (`omega`, `simp_all`, …): 18
-- `family_tactic` (mod family): 4
-- `generative_topk` (gen_v5 model directly): 3
+The strategy wrapper composes the gen_v5 model's beam-search top-K with a
+small evolved layer of shape-slotted priority templates, theorem-name-aware
+family tactics, fallbacks, and shape-aware premise retrieval gated
+independently of family-tactic survival (NS9). All emissions are unified
+through a `SkeletonBag` (NS4) so each entry has a stable identity (NS7)
+and the wrapper's ranked-list output is fully deterministic given a state.
 
-The wrapper generalizes: the 23 unseen theorems added in `nat_defs_medium`
-proved at 65.2% — within 1.5 pp of the 15-theorem subset the strategy was
-evolved on. See `project/evolve/reports/nat_defs_medium_summary.md` for the
-progression v3 → v3.6 and `project/evolve/reports/nat_defs_medium_v3_6.md`
-for the paired-comparison run report.
+See `project/evolve/reports/skeleton_evolution_executive_summary.md` for
+the short version, `skeleton_evolution_final_report.md` for the full
+v3→NS9 progression, and `project/evolve/best/README.md` for the current
+best genome and reproduce command.
 
-## Reproducing the main result
+### Earlier milestones
 
-All commands run from the repo root and assume `project/models/gen_v5/` is
-present locally (gitignored binary).
+For the chronological record: v3.6 proved 25/38 with a flat fallback/
+template + family-tactic genome (no skeleton-bag, no retrieval). NS4
+(skeleton-bag refactor) preserved 25; NS5–NS9 compressed the genome
+from 48 to 17 enabled skeletons while improving medium to 37/38 and
+large to 49/65. See `project/evolve/reports/nat_defs_medium_summary.md`
+for the chronological progression.
+
+## Reproducing the NS9 best result
+
+All commands run from the repo root and assume `project/models/gen_v5/`
+is present locally (gitignored binary). The best genome ships in-repo
+at `project/evolve/best/ns9_best_genome.json`.
 
 ```bash
-# 1. Baseline — gen_v5 alone, no wrapper. ~2.5 min on CPU.
+# Medium (~2.5 min, expect 37/38)
+python eval_rollout_all.py \
+    --theorem-set nat_defs_medium \
+    --policy-type hybrid_evolved \
+    --ckpt-dir project/models/gen_v5 \
+    --top-k 8 --max-steps 8 \
+    --strategy-config project/evolve/best/ns9_best_genome.json \
+    --out-dir /tmp/ns9_repro_medium
+
+# Large (~5 min, expect 49/65)
+python eval_rollout_all.py \
+    --theorem-set nat_defs_large_v5 \
+    --policy-type hybrid_evolved \
+    --ckpt-dir project/models/gen_v5 \
+    --top-k 8 --max-steps 8 \
+    --strategy-config project/evolve/best/ns9_best_genome.json \
+    --out-dir /tmp/ns9_repro_large
+```
+
+The proved count lands in `<out-dir>/eval-*/metrics.json` as the
+`proved` field. Compare with the baseline `gen_v5` (no wrapper):
+
+```bash
 python eval_rollout_all.py --theorem-set nat_defs_medium \
     --policy-type generative --ckpt-dir project/models/gen_v5 \
     --top-k 8 --max-steps 8 --out-dir /tmp/gen_v5_baseline_medium
+```
 
-# 2. Hybrid — the v3.6 evolved wrapper. ~3.5 min on CPU.
+## Reproducing the v3.6 milestone
+
+```bash
 python -m evolve.run_evolve --theorem-set nat_defs_medium \
     --generations 0 --population-size 1 --survivors 1 \
     --policy-type hybrid_evolved --ckpt-dir project/models/gen_v5
 
-# 3. Paired Markdown report comparing the two runs.
 python -m evolve.report_run \
-    --hybrid-run project/evolve/runs/<run_id_from_step_2> \
+    --hybrid-run project/evolve/runs/<run_id> \
     --baseline-run /tmp/gen_v5_baseline_medium \
     --output project/evolve/reports/nat_defs_medium_<your_label>.md
 ```
 
-`--generations 0` evaluates only the seed (no mutations) — what you want when
-reproducing the published number rather than running fresh evolution.
+`--generations 0` evaluates only the seed (no mutations) — what you want
+when reproducing the historical v3.6 number rather than running fresh
+evolution.
 
 ## The loop
 
@@ -181,23 +215,37 @@ subprocess logs, or checkpoint binaries.
 
 ## Roadmap
 
-- **v1 (done)** — deterministic mutator, dry-run evaluator. Loop works end-to-end.
-- **v2 (done)** — wired the real evaluator; added `nat_defs_subset` theorem set;
-  subprocess watchdog; pre-flight checkpoint check.
-- **v3 (done)** — `hybrid_evolved` strategy-wrapper policy. `fallback_tactics`
-  and `tactic_templates` now affect Lean evaluation. v3.1 added per-state Nat
-  variable extraction; v3.2 added per-state extras budget + EXHAUSTED
-  diagnostics; v3.3 added an opt-in anti-loop / state-aware ranking pass
-  (default off — kept as a diagnostic, not enabled by default since it
-  doesn't change which theorems close).
-- **v3.4 (done)** — theorem-name-aware family tactics (`div`, `mod`, `AM_GM`)
-  with per-family budgets; `tactic_family_source` tracing.
-- **v3.5 (done)** — library cleanup (drop unknown-tactic AM_GM entries,
-  remove `<;>`-chained combinators); scale-out to `nat_defs_medium` (38);
-  first generalization result: 25/38 vs baseline 3/38.
-- **v3.6 (done, current)** — per-theorem tactic deny-list eliminates the
-  residual `DojoCrashError` without removing the winning tactic globally;
-  paired-comparison `report_run` script; experiment progression writeup.
-- **v4 (deferred)** — premise retriever as a new tactic source within the
-  wrapper (most likely lever for the `div` family). LLM mutator to recombine
-  the best candidates. Larger theorem sets.
+- **v1 (done)** — deterministic mutator, dry-run evaluator.
+- **v2 (done)** — wired the real evaluator; subprocess watchdog.
+- **v3 (done)** — `hybrid_evolved` wrapper. v3.1 nat-vars; v3.2 budget;
+  v3.3 anti-loop; v3.4 family tactics; v3.5 medium scale-out (25/38);
+  v3.6 per-theorem deny-list.
+- **v4 (done)** — premise retriever in wrapper (v4.1–v4.4); shape gating;
+  hypothesis-shape template params; priority_templates (v4.6, 36/38);
+  lemma audit jump (v4.7, **37/38**).
+- **NS1–NS3.5 (done)** — invariants and wrapper-side fixes:
+  specificity ordering, per-theorem failure triage, `any`-as-fallback
+  semantics.
+- **NS4 (done)** — `SkeletonBag` unified-representation refactor.
+  NS4.1 unified family/term-builder/fallback through the bag; NS4.2
+  modeled retrieved-premise emissions as dynamic per-state skeletons.
+- **NS5 (done)** — archive ledger + six evolutionary mutation operators;
+  7.5-hour autonomous sweep compressed 48 → 25 skeletons preserving
+  37/49.
+- **NS6 (done)** — per-step assist credit; scoped order-changing
+  mutations; safe pruning. Compressed 25 → 20.
+- **NS7 (done)** — stable skeleton IDs; bag-only pre-flight detector.
+  20 enabled; 10 NS6-class regressions still hit Lean.
+- **NS8 (done)** — cached `gen_v5` outputs + full ranked-list simulator;
+  pre-flight rejects all 10 NS7 Lean regressions; pinned the 20-skeleton
+  floor to a single retrieval-gate mechanism.
+- **NS9 (done, current)** — `retrieval_requires_family: bool` and
+  `retrieval_family_gates: list[str]` decouple retrieval from
+  family-tactic survival. Compressed 20 → **17 enabled skeletons**
+  preserving 37/49.
+- **NS10 (future)** — targeted `gen_v5+1` fine-tune to close
+  `Nat.AM_GM` and the ~16 unproved large theorems. The skeleton bag
+  is exhausted; the remaining gap is a model-capability issue.
+  Multi-step skeleton synthesis (an operator that emits `(rw, rw,
+  simp_all)` triples derived from successful retrieval chains in the
+  archive) is a complementary direction.
