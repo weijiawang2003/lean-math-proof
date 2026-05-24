@@ -739,3 +739,51 @@ injection.
 
 See `ns8_rank_simulation_preflight.md` for full design, simulator
 output examples, NS7-replay table, and the NS9 recommendation.
+
+## NS9 — retrieval gate decoupling (2026-05-24)
+
+NS8's simulator pinned the 20-skeleton compaction floor to a single
+mechanism: disabling `fam_div_14` (the only `family_tactic` for the
+`div` family) makes `activated_families` empty, which causes the
+wrapper's retrieval block to skip entirely (`if … and
+activated_families:` at `evolve/strategy_wrapper.py:700`). The
+critical `retrieved:Nat.div_lt_iff_lt_mul:rw` skeleton then
+disappears as a side-effect.
+
+NS9 decouples the two by adding `retrieval_requires_family: bool` and
+`retrieval_family_gates: list[str]` to the wrapper config:
+
+  - When `retrieval_requires_family=True` (default), the legacy NS8
+    behaviour holds — retrieval fires only if a family_tactic
+    activated.
+  - When `False`, retrieval fires whenever `full_name` contains any
+    substring in `retrieval_family_gates`, regardless of
+    family_tactic survival.
+
+The downstream `emit_retrieved_tactics` only requires that each gate
+key appear in `premise_retriever._FAMILY_CATALOG_KEYS`, so the change
+is wrapper-only — no bag, retriever, or simulator architecture
+changes.
+
+**Result (20 cycles, ~50 min, NS9 seed = NS8 best + gate enabled,
+runner = `evolve/skeleton_evolve_ns8.py`):**
+
+- Best at cycle 3: **17 enabled skeletons preserving 37/38 medium
+  and 49/65 large** — first sub-20 compact genome.
+- 3 promotions (cycles 1, 2, 3), each a strict_compact.
+  - Cycle 2 disabled `fb_19, fam_div_14` (the exact pair NS6 cycle 4
+    tried; NS7/NS8 always rejected).
+  - Cycle 3 disabled `pt_iff_2` (also previously rank-coupled).
+- 6 pre-flight rejections, 0 Lean rejections.
+- Critical-tactic replay: with NS9 gate + `fam_div_14` disabled, the
+  ranked list keeps the critical `rw [Nat.div_lt_iff_lt_mul]` at
+  rank 15 (vs. baseline rank 16); under NS8 gate the same disable
+  drops the critical tactic entirely.
+
+**Breaks the NS6/NS7/NS8 20-skeleton floor.** The 17-skeleton
+genome is 65% smaller than the raw NS3-combined baseline (48).
+The remaining medium gap (1 theorem on `Nat.AM_GM`) is a
+model-capability issue, not a skeleton-bag one.
+
+See `ns9_retrieval_gate_decoupling.md` for the simulator-replay
+table, sweep details, and the NS10 recommendation.

@@ -345,6 +345,18 @@ class StrategyWrapperPolicy:
         retrieval_filter_self: bool = True,
         retrieval_filter_unavailable: bool = True,
         retrieval_shape_filter: bool = True,
+        # NS9 — decouple retrieval from family-tactic survival.
+        # When `retrieval_requires_family=True` (default; matches NS8
+        # behaviour) the retrieval block fires only if the matched
+        # family produced an activated family_tactic emission. When
+        # `retrieval_requires_family=False` the retrieval block fires
+        # whenever `full_name` contains any substring in
+        # `retrieval_family_gates` (or any key of
+        # `theorem_family_tactics` if the list is empty). This lets
+        # the genome prune `fam_div_14` etc. without losing retrieval
+        # on the div family.
+        retrieval_requires_family: bool = True,
+        retrieval_family_gates: list[str] | None = None,
         term_builder_templates: dict[str, list[str]] | None = None,
         term_builder_budget: int = 0,
         priority_templates: dict[str, list[str]] | None = None,
@@ -403,6 +415,13 @@ class StrategyWrapperPolicy:
         # `forms_for_shape_pair`. When False the v4.3 behavior is
         # preserved (every retrieved lemma emits every configured form).
         self.retrieval_shape_filter: bool = bool(retrieval_shape_filter)
+        # NS9: independent retrieval gate. Default True preserves the
+        # NS8 behaviour exactly (retrieval fires only when an
+        # activated family is non-empty).
+        self.retrieval_requires_family: bool = bool(retrieval_requires_family)
+        self.retrieval_family_gates: list[str] = [
+            s for s in (retrieval_family_gates or []) if s
+        ]
         # v5 term-mode proof skeleton block. Keys are goal-shape labels
         # ("iff", "dvd", "eq", "lt", "le", "and", "or", "unknown", or
         # the special key "any" which always matches). Values are
@@ -678,7 +697,28 @@ class StrategyWrapperPolicy:
         goal_shape = "unknown"
         lemma_shapes: dict[str, str] = {}
         shape_mismatch_filtered = 0
-        if self.retrieval_enabled and self.retrieval_top_k > 0 and activated_families:
+        # NS9 — compute the family list that gates retrieval.
+        # `retrieval_requires_family=True` reproduces NS8 behaviour
+        # exactly (gate = activated_families). When False, the gate is
+        # `[fam for fam in retrieval_family_gates if fam in full_name]`
+        # — letting retrieval fire even if every family_tactic skeleton
+        # for the matched family was pruned. The downstream
+        # `emit_retrieved_tactics` only requires that each name be
+        # present in `premise_retriever._FAMILY_CATALOG_KEYS`, so
+        # passing `["div"]` works regardless of the bag's
+        # family_tactic content.
+        if self.retrieval_requires_family:
+            retrieval_families: list[str] = list(activated_families)
+        else:
+            gate_keys = self.retrieval_family_gates or list(
+                self.theorem_family_tactics.keys()
+            )
+            retrieval_families = [
+                fam for fam in gate_keys
+                if fam and full_name and fam in full_name
+            ]
+
+        if self.retrieval_enabled and self.retrieval_top_k > 0 and retrieval_families:
             if self.use_skeleton_bag:
                 # NS4.2: delegate retrieved emission to the bag. The bag
                 # method synthesizes EmittedTactic instances per-state
@@ -696,7 +736,7 @@ class StrategyWrapperPolicy:
                 retr_entries_list, diag = self._skeleton_bag.emit_retrieved_tactics(
                     state_pp=state_pp,
                     theorem_name=full_name or None,
-                    activated_families=activated_families,
+                    activated_families=retrieval_families,
                     retrieval_top_k=self.retrieval_top_k,
                     retrieval_tactic_forms=self.retrieval_tactic_forms,
                     retrieval_filter_self=self.retrieval_filter_self,
@@ -724,7 +764,7 @@ class StrategyWrapperPolicy:
                     forms_for_shape_pair,
                     retrieve_for_state,
                 )
-                for fam in activated_families:
+                for fam in retrieval_families:
                     if fam in _FAMILY_CATALOG_KEYS:
                         retrieval_activation = fam
                         retrieved_lemma_set, diag = retrieve_for_state(
@@ -1082,6 +1122,12 @@ def load_strategy_config(
         raw.get("retrieval_skip_bloating_apply", True)
     )
     retrieval_shape_filter = bool(raw.get("retrieval_shape_filter", True))
+    # NS9: independent retrieval gate, off by default for back-compat.
+    retrieval_requires_family = bool(
+        raw.get("retrieval_requires_family", True)
+    )
+    rfg_raw = raw.get("retrieval_family_gates") or []
+    retrieval_family_gates = [str(s) for s in rfg_raw if s]
     tb_raw = raw.get("term_builder_templates") or {}
     term_builder_templates = {str(k): list(v or []) for k, v in tb_raw.items()}
     term_builder_budget = int(raw.get("term_builder_budget", 0) or 0)
@@ -1097,6 +1143,7 @@ def load_strategy_config(
         term_builder_templates, term_builder_budget,
         priority_templates, priority_template_budget,
         use_skeleton_bag,
+        retrieval_requires_family, retrieval_family_gates,
     )
 
 
@@ -1120,6 +1167,8 @@ def dump_strategy_config(
     priority_templates: dict[str, list[str]] | None = None,
     priority_template_budget: int = 0,
     use_skeleton_bag: bool = False,
+    retrieval_requires_family: bool = True,
+    retrieval_family_gates: list[str] | None = None,
 ) -> None:
     """Write the JSON config the subprocess will read. Parent dirs are
     created if needed."""
@@ -1164,6 +1213,10 @@ def dump_strategy_config(
                 },
                 "priority_template_budget": int(priority_template_budget or 0),
                 "use_skeleton_bag": bool(use_skeleton_bag),
+                "retrieval_requires_family": bool(retrieval_requires_family),
+                "retrieval_family_gates": [
+                    str(s) for s in (retrieval_family_gates or []) if s
+                ],
             },
             indent=2,
             ensure_ascii=False,

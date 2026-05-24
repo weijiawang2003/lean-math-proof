@@ -133,7 +133,8 @@ def _load_policy(
              retrieval_skip_bloating_apply, retrieval_shape_filter,
              term_builder_templates, term_builder_budget,
              priority_templates, priority_template_budget,
-             use_skeleton_bag) = (
+             use_skeleton_bag,
+             retrieval_requires_family, retrieval_family_gates) = (
                 load_strategy_config(strategy_config)
             )
         else:
@@ -143,9 +144,11 @@ def _load_policy(
              retrieval_skip_bloating_apply, retrieval_shape_filter,
              term_builder_templates, term_builder_budget,
              priority_templates, priority_template_budget,
-             use_skeleton_bag) = (
+             use_skeleton_bag,
+             retrieval_requires_family, retrieval_family_gates) = (
                 [], [], None, {}, {}, {}, False, 0, [], True, True, True, True,
                 {}, 0, {}, 0, False,
+                True, [],
             )
         wrapper = StrategyWrapperPolicy(
             base_policy=base, fallback_tactics=fb, tactic_templates=tmpl,
@@ -159,6 +162,8 @@ def _load_policy(
             retrieval_filter_self=retrieval_filter_self,
             retrieval_filter_unavailable=retrieval_filter_unavailable,
             retrieval_shape_filter=retrieval_shape_filter,
+            retrieval_requires_family=retrieval_requires_family,
+            retrieval_family_gates=retrieval_family_gates,
             term_builder_templates=term_builder_templates,
             term_builder_budget=term_builder_budget,
             priority_templates=priority_templates,

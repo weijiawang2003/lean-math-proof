@@ -411,6 +411,8 @@ def write_strategy_config(genome: dict[str, Any], out_path: Path) -> None:
         priority_templates=genome.get("priority_templates", {}),
         priority_template_budget=genome.get("priority_template_budget", 0),
         use_skeleton_bag=genome.get("use_skeleton_bag", False),
+        retrieval_requires_family=genome.get("retrieval_requires_family", True),
+        retrieval_family_gates=genome.get("retrieval_family_gates", []),
     )
 
 

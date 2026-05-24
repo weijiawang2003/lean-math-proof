@@ -124,6 +124,12 @@ class RankSimulator:
             retrieval_shape_filter=bool(
                 genome.get("retrieval_shape_filter", True)
             ),
+            retrieval_requires_family=bool(
+                genome.get("retrieval_requires_family", True)
+            ),
+            retrieval_family_gates=list(
+                genome.get("retrieval_family_gates") or []
+            ),
             term_builder_templates=dict(genome.get("term_builder_templates") or {}),
             term_builder_budget=int(genome.get("term_builder_budget") or 0),
             priority_templates=dict(genome.get("priority_templates") or {}),

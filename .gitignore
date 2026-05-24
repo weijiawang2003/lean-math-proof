@@ -47,3 +47,8 @@ project/evolve/ns8_runs/
 project/evolve/archive/model_outputs_cache.jsonl
 project/evolve/archive/protected_states.jsonl
 project/evolve/archive/cache.log
+
+# NS9 retrieval-gate-decoupling artifacts. Regeneratable by re-running
+# `evolve.skeleton_evolve_ns8` on the NS9 seed genome (with
+# retrieval_requires_family=False and retrieval_family_gates set).
+project/evolve/ns9_runs/
