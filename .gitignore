@@ -84,3 +84,13 @@ project/models/gen_v5_ns12_balanced/
 project/models/gen_v5_ns12_replay/
 project/models/gen_v5_ns12_*_training.log
 project/data/ns12_train_*.jsonl
+
+# NS14 wider-surface trace-generation artifacts. Raw traces, eval
+# logs, and the combined training JSONL are regeneratable via
+# scripts/build_ns14_theorem_sets.py and
+# scripts/build_ns14_training_data.py. Metadata and reports are
+# committed.
+project/data/ns14_train_*.jsonl
+project/evolve/eval_runs/ns14_*.log
+project/evolve/eval_runs/ns14_routed_wrapper_*/
+project/evolve/eval_runs/ns14_routed_raw_*/
