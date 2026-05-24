@@ -52,3 +52,15 @@ project/evolve/archive/cache.log
 # `evolve.skeleton_evolve_ns8` on the NS9 seed genome (with
 # retrieval_requires_family=False and retrieval_family_gates set).
 project/evolve/ns9_runs/
+
+# NS10 Learn-step artifacts. The training data and resulting model
+# checkpoints are regeneratable via `scripts/build_ns10_training_data.py`
+# and `train_tactic_generator.py`. The dataset metadata is committed
+# so we know what was produced.
+project/models/gen_v5_plus1/
+project/models/gen_v5_ns10_smoke/
+project/models/gen_v5_plus1_training.log
+project/data/ns10_evolve_train.jsonl
+project/data/ns10_combined_train.jsonl
+project/evolve/eval_runs/
+project/evolve/training_runs/
