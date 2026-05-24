@@ -64,3 +64,13 @@ project/data/ns10_evolve_train.jsonl
 project/data/ns10_combined_train.jsonl
 project/evolve/eval_runs/
 project/evolve/training_runs/
+
+# NS11 Learn-step scale-up artifacts. Datasets and checkpoints are
+# regeneratable via `scripts/build_ns11_training_data.py` and
+# `train_tactic_generator.py`. Dataset *_meta.json files are
+# committed; the JSONL data and the model dirs are not.
+project/models/gen_v5_ns11_medium/
+project/models/gen_v5_ns11_combined/
+project/models/gen_v5_ns11_coverage/
+project/models/gen_v5_ns11_*_training.log
+project/data/ns11_train_*.jsonl

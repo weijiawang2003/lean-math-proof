@@ -1,0 +1,108 @@
+{
+  "v": "ns11",
+  "variant": "conservative",
+  "prompt_style": "vanilla",
+  "out_path": "project/data/ns11_train_conservative.jsonl",
+  "md5": "d1d461424ed4f7193681e6506b5eb5ee",
+  "n_pairs_total": 110,
+  "n_pairs_from_traces": 110,
+  "n_pairs_from_combine": 0,
+  "n_unique_theorems": 51,
+  "n_runs_seen": 15,
+  "held_out": [
+    "Nat.AM_GM",
+    "Nat.div_lt_iff_lt_mul'",
+    "Nat.div_lt_one_iff",
+    "Nat.div_pos",
+    "Nat.div_pos_iff",
+    "Nat.dvd_iff_div_mul_eq",
+    "Nat.mul_eq_left",
+    "Nat.mul_eq_right",
+    "Nat.pow_lt_pow_iff_left",
+    "Nat.sqrt_lt"
+  ],
+  "held_out_seen_in_traces": {
+    "Nat.div_lt_iff_lt_mul'": 582,
+    "Nat.div_lt_one_iff": 687,
+    "Nat.mul_eq_left": 331,
+    "Nat.mul_eq_right": 331,
+    "Nat.div_pos": 451,
+    "Nat.div_pos_iff": 429,
+    "Nat.sqrt_lt": 832,
+    "Nat.pow_lt_pow_iff_left": 837,
+    "Nat.dvd_iff_div_mul_eq": 472
+  },
+  "by_origin": {
+    "tactic_template": 44,
+    "family_tactic": 5,
+    "fallback_tactic": 38,
+    "generative_topk": 22,
+    "term_builder": 1
+  },
+  "by_role": {
+    "close": 110
+  },
+  "top_theorems": {
+    "Nat.add_eq_right": 6,
+    "Nat.add_eq_left": 5,
+    "Nat.add_pos_iff_pos_or_pos": 5,
+    "Nat.lt_one_iff": 5,
+    "Nat.one_add_le_iff": 5,
+    "Nat.add_eq_max_iff": 4,
+    "Nat.add_eq_min_iff": 4,
+    "Nat.add_eq_one_iff": 4,
+    "Nat.le_and_le_add_one_iff": 4,
+    "Nat.add_eq_zero": 4,
+    "Nat.le_add_one_iff": 4,
+    "Nat.sub_lt_iff_lt_add": 4,
+    "Nat.sub_lt_iff_lt_add'": 4,
+    "Nat.lt_iff_add_one_le": 3,
+    "Nat.le_one_iff_eq_zero_or_eq_one": 3
+  },
+  "top_runs": {
+    "eval-b7ee2380": 28,
+    "eval-128d0a18": 16,
+    "eval-935e9fc7": 14,
+    "eval-a2e51ad4": 14,
+    "eval-3f6bf279": 12,
+    "eval-fedb884f": 10,
+    "eval-9b97dda3": 4,
+    "eval-7e4c135c": 4,
+    "eval-037daae2": 2,
+    "eval-7f64b7bd": 1,
+    "eval-5bc37b20": 1,
+    "eval-e01e0ec8": 1,
+    "eval-f3075a9e": 1,
+    "eval-724300eb": 1,
+    "eval-a7913183": 1
+  },
+  "tactic_length_stats": {
+    "n": 110,
+    "min": 5,
+    "max": 136,
+    "mean": 23.354545454545455
+  },
+  "filters": {
+    "max_tactic_len": 200,
+    "max_state_len": 2500,
+    "allowed_origins": [
+      "fallback_tactic",
+      "family_tactic",
+      "generative_topk",
+      "tactic_template",
+      "term_builder"
+    ],
+    "include_retrieved": false,
+    "include_assist": false,
+    "k_assist_window": 0,
+    "rejects_self_reference": true,
+    "rejects_held_out": true,
+    "dedup_by_state_tactic": true
+  },
+  "combine_with": null,
+  "trace_roots": [
+    "project/evolve"
+  ],
+  "n_trace_files": 368,
+  "n_episodes_loaded": 13773
+}
