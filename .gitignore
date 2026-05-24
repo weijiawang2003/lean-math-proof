@@ -37,3 +37,13 @@ project/evolve/ns6_runs/
 # Regeneratable by re-running `evolve.skeleton_evolve_ns7` plus
 # `scripts/ns7_protected_set.py`.
 project/evolve/ns7_runs/
+
+# NS8 rank-simulation pre-flight artifacts: run dirs, the model-output
+# cache (deterministic, regeneratable from gen_v5 in ~30s), and the
+# per-state protected-states file. Regeneratable by re-running
+# `scripts/ns8_protected_states.py`, `scripts/ns8_cache_model_outputs.py`,
+# and `evolve.skeleton_evolve_ns8`.
+project/evolve/ns8_runs/
+project/evolve/archive/model_outputs_cache.jsonl
+project/evolve/archive/protected_states.jsonl
+project/evolve/archive/cache.log

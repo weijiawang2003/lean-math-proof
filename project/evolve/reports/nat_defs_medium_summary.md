@@ -680,3 +680,62 @@ requires offline model-output recording per protected state (NS8).
 
 See `ns7_rank_stable_evolution.md` for the full design, sweep
 table, and NS6↔NS7 comparison.
+
+## NS8 — full ranked-list pre-flight simulation (2026-05-23)
+
+NS8 closes the rank-coupling gap NS7 surfaced. The detector now
+simulates the wrapper's *full merged ranked list* — skeleton
+emissions interleaved with cached `gen_v5` model outputs — and
+rejects any mutation that drops a protected *critical tactic* from
+that list. Implementation:
+
+1. `scripts/ns8_protected_states.py` joins protected_skeletons.json
+   with traces to emit per-(theorem, state, skeleton, reason) rows
+   carrying `state_pp` and `critical_tactic` (52 states from the
+   NS7 best).
+2. `scripts/ns8_cache_model_outputs.py` runs `gen_v5` once per
+   protected state and caches top-8 outputs keyed by
+   `sha1(state_pp + full_name + model + decode + top_k + seed)`.
+   Resumable; ~26 KB for 52 states.
+3. `evolve/rank_simulator.py` instantiates the real
+   `StrategyWrapperPolicy` with a `CachedBasePolicy` that returns
+   cached model outputs for any seen `(state_pp, full_name)`. The
+   wrapper's existing merge runs unchanged — same dedup, same cap,
+   same priority/base/extra ordering.
+4. `evolve/rank_coupling.py::check_state_coupling` runs the
+   simulator on both genomes per protected state and emits a
+   `StateViolation` whenever the critical tactic disappears.
+5. `evolve/skeleton_evolve_ns8.py` calls the detector *before*
+   launching `eval_rollout_all.py`; pre-flight rejects never start a
+   Lean subprocess.
+
+**Validation against the NS6/NS7 known regression**: disabling
+`fam_div_14` (the only family_tactic for the `div` family) makes the
+wrapper's retrieval block skip entirely (`if activated_families:`
+gate at `evolve/strategy_wrapper.py:681`), removing
+`retrieved:Nat.div_lt_iff_lt_mul:rw` and breaking
+`Nat.div_lt_iff_lt_mul'`. The simulator catches this; NS7's
+bag-only detector did not.
+
+**Result (20 cycles, ~25 min, `evolve/skeleton_evolve_ns8.py`):**
+
+- Best at cycle 1: **20 enabled skeletons preserving 37/38 medium
+  and 49/65 large** (unchanged from NS7).
+- **12 pre-flight rejections** (vs 3 in NS7).
+- **0 Lean rejections** (vs 10 in NS7).
+- Every NS7 Lean-rejected cycle is now caught pre-flight, saving
+  ~25 min of Lean eval per sweep.
+- Every NS7 accepted cycle still passes the NS8 detector.
+- All wins-only `archive_seed` candidates rejected pre-flight (vs
+  NS7 which rejected only 2 of these).
+
+**The 20-skeleton floor is now deterministic and pre-flight-enforced.**
+The simulator confirms every safe-pruning mutation correctly causes
+a regression on `Nat.div_lt_iff_lt_mul'` (via the family-activation
+chain). Breaking through requires changes the current operator set
+doesn't support — e.g., a `retrieval_requires_family: false` genome
+flag, family-activation-as-mutation, or per-theorem priority_template
+injection.
+
+See `ns8_rank_simulation_preflight.md` for full design, simulator
+output examples, NS7-replay table, and the NS9 recommendation.

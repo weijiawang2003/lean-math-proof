@@ -191,6 +191,119 @@ def check_rank_coupling(
     return violations
 
 
+@dataclass
+class StateViolation:
+    """NS8 — violation found by the full ranked-list simulator.
+
+    Distinct from the NS7 bag-only `RankViolation`: this is computed
+    from the wrapper's actual merged ranked list (skeleton emissions
+    interleaved with cached model outputs), so it catches the
+    second-order rank-coupling effects NS7 could not.
+    """
+    theorem: str
+    state_hash: str | None
+    critical_tactic: str
+    critical_skeleton_stable_id: str | None
+    reason: str
+    baseline_rank: int | None
+    mutated_rank: int | None
+    kind: str   # "dropped" | "pushed_back"
+    notes: str = ""
+
+
+def check_state_coupling(
+    baseline_genome: dict[str, Any],
+    mutated_genome: dict[str, Any],
+    protected_states: list[dict[str, Any]],
+    simulator,
+    *,
+    rank_slack: int = 0,
+    only_critical_tactic_drop: bool = True,
+    k: int = 8,
+) -> list[StateViolation]:
+    """For each protected state, simulate both genomes' ranked lists
+    and flag the mutation when the critical_tactic disappears (or is
+    pushed back past `baseline_rank + rank_slack`).
+
+    `only_critical_tactic_drop=True` (default) reports only the
+    "tactic vanished" case. Setting it False also reports
+    backward-rank-movement.
+
+    `simulator` must be an instance of `evolve.rank_simulator.RankSimulator`.
+    """
+    violations: list[StateViolation] = []
+    for st in protected_states:
+        state_pp = st.get("state_pp")
+        full_name = st.get("full_name")
+        if not state_pp or not full_name:
+            continue
+        if not simulator.has_cache(state_pp, full_name):
+            # Skip states without cached model outputs — we can't
+            # simulate them faithfully.
+            continue
+        critical_tactic = st.get("critical_tactic")
+        if not critical_tactic:
+            continue
+        base_res = simulator.simulate(
+            baseline_genome, state_pp, full_name, k=k,
+            state_hash=st.get("state_hash"),
+        )
+        mut_res = simulator.simulate(
+            mutated_genome, state_pp, full_name, k=k,
+            state_hash=st.get("state_hash"),
+        )
+        base_rank = base_res.find(critical_tactic)
+        mut_rank = mut_res.find(critical_tactic)
+        if base_rank is None:
+            # Critical tactic isn't even in the baseline — protected
+            # set has a stale entry. Skip silently.
+            continue
+        if mut_rank is None:
+            violations.append(StateViolation(
+                theorem=st.get("theorem") or full_name,
+                state_hash=st.get("state_hash"),
+                critical_tactic=critical_tactic,
+                critical_skeleton_stable_id=st.get("critical_skeleton_stable_id"),
+                reason=st.get("reason", "?"),
+                baseline_rank=base_rank,
+                mutated_rank=None,
+                kind="dropped",
+                notes="critical tactic absent from mutated ranked list",
+            ))
+            continue
+        if not only_critical_tactic_drop and mut_rank > base_rank + rank_slack:
+            violations.append(StateViolation(
+                theorem=st.get("theorem") or full_name,
+                state_hash=st.get("state_hash"),
+                critical_tactic=critical_tactic,
+                critical_skeleton_stable_id=st.get("critical_skeleton_stable_id"),
+                reason=st.get("reason", "?"),
+                baseline_rank=base_rank,
+                mutated_rank=mut_rank,
+                kind="pushed_back",
+                notes=f"rank moved from {base_rank} to {mut_rank}",
+            ))
+    return violations
+
+
+def summarize_state_violations(
+    violations: list[StateViolation],
+) -> dict[str, Any]:
+    by_kind: dict[str, int] = {}
+    by_reason: dict[str, int] = {}
+    affected_theorems: set[str] = set()
+    for v in violations:
+        by_kind[v.kind] = by_kind.get(v.kind, 0) + 1
+        by_reason[v.reason] = by_reason.get(v.reason, 0) + 1
+        affected_theorems.add(v.theorem)
+    return {
+        "total": len(violations),
+        "by_kind": by_kind,
+        "by_reason": by_reason,
+        "affected_theorems": sorted(affected_theorems),
+    }
+
+
 def summarize_violations(violations: list[RankViolation]) -> dict[str, Any]:
     """Compact summary suitable for logging."""
     by_kind: dict[str, int] = {}
