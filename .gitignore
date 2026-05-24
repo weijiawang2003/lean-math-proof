@@ -74,3 +74,13 @@ project/models/gen_v5_ns11_combined/
 project/models/gen_v5_ns11_coverage/
 project/models/gen_v5_ns11_*_training.log
 project/data/ns11_train_*.jsonl
+
+# NS12 anti-forgetting artifacts. Datasets and checkpoints are
+# regeneratable via `scripts/build_ns12_training_data.py` and
+# `train_tactic_generator.py`. Dataset *_meta.json files are
+# committed; the JSONL data and the model dirs are not.
+project/models/gen_v5_ns12_low_lr/
+project/models/gen_v5_ns12_balanced/
+project/models/gen_v5_ns12_replay/
+project/models/gen_v5_ns12_*_training.log
+project/data/ns12_train_*.jsonl

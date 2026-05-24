@@ -1,0 +1,23 @@
+{
+  "variant": "replay_demo",
+  "source": "project/data/ns11_train_combined.jsonl",
+  "source_rows": 5729,
+  "knobs": {
+    "replay_copies": 20
+  },
+  "replay_added_rows": 40,
+  "replay_targets": [
+    "Set.empty_subset",
+    "Set.subset_univ"
+  ],
+  "total_pairs": 5769,
+  "by_domain": {
+    "Nat": 261,
+    "Set": 1756,
+    "Finset": 3752
+  },
+  "v5_base_rows": 5577,
+  "evolved_rows": 152,
+  "replay_rows": 40,
+  "unique_theorems": 166
+}

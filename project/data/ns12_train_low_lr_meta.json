@@ -1,0 +1,18 @@
+{
+  "variant": "low_lr",
+  "source": "project/data/ns11_train_combined.jsonl",
+  "source_rows": 5729,
+  "knobs": {
+    "note": "no data change; lower lr / fewer epochs in trainer"
+  },
+  "total_pairs": 5729,
+  "by_domain": {
+    "Nat": 261,
+    "Set": 1716,
+    "Finset": 3752
+  },
+  "v5_base_rows": 5577,
+  "evolved_rows": 152,
+  "replay_rows": 0,
+  "unique_theorems": 166
+}
