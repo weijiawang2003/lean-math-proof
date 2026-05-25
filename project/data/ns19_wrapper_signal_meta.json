@@ -1,0 +1,222 @@
+{
+  "finset_aesop_only": {
+    "ns19_finset_aesop_surface": {
+      "variant_solved": 58,
+      "raw_solved": 57,
+      "wrap_solved": 57,
+      "wrapper_only_count": 1,
+      "wrapper_only": [
+        "Finset.coe_cons"
+      ],
+      "new_vs_wrap_count": 1,
+      "new_vs_wrap": [
+        "Finset.coe_cons"
+      ],
+      "regressed_count": 0,
+      "regressed": [],
+      "new_wins_by_family": {
+        "fallback_aesop": [
+          "Finset.coe_cons"
+        ]
+      },
+      "raw_path": "project/evolve/eval_runs/ns19_raw_ns19_finset_aesop_surface/eval-e9482527/metrics.json",
+      "wrap_path": "project/evolve/eval_runs/ns19_ns9wrap_ns19_finset_aesop_surface/eval-328795f6/metrics.json",
+      "variant_path": "project/evolve/eval_runs/ns19_finset_aesop_only_wrapper_ns19_finset_aesop_surface/eval-77c6e10d/metrics.json"
+    },
+    "ns17_finset_extra": {
+      "variant_solved": 15,
+      "raw_solved": 12,
+      "wrap_solved": 12,
+      "wrapper_only_count": 3,
+      "wrapper_only": [
+        "Finset.coe_insert",
+        "Finset.cons_eq_insert",
+        "Finset.disjUnion_singleton"
+      ],
+      "new_vs_wrap_count": 3,
+      "new_vs_wrap": [
+        "Finset.coe_insert",
+        "Finset.cons_eq_insert",
+        "Finset.disjUnion_singleton"
+      ],
+      "regressed_count": 0,
+      "regressed": [],
+      "new_wins_by_family": {
+        "fallback_aesop": [
+          "Finset.coe_insert",
+          "Finset.cons_eq_insert",
+          "Finset.disjUnion_singleton"
+        ]
+      },
+      "raw_path": "project/evolve/eval_runs/ns17_ns15routed_raw_ns17_finset_extra/eval-aec15cba/metrics.json",
+      "wrap_path": "project/evolve/eval_runs/ns17_ns15routed_wrapper_ns17_finset_extra/eval-45ec1575/metrics.json",
+      "variant_path": "project/evolve/eval_runs/ns19_finset_aesop_only_wrapper_ns17_finset_extra/eval-10b5d4c1/metrics.json"
+    },
+    "ns17_set_extra": {
+      "variant_solved": 18,
+      "raw_solved": 18,
+      "wrap_solved": 18,
+      "wrapper_only_count": 0,
+      "wrapper_only": [],
+      "new_vs_wrap_count": 0,
+      "new_vs_wrap": [],
+      "regressed_count": 0,
+      "regressed": [],
+      "new_wins_by_family": {},
+      "raw_path": "project/evolve/eval_runs/ns17_ns15routed_raw_ns17_set_extra/eval-ab8a306f/metrics.json",
+      "wrap_path": "project/evolve/eval_runs/ns17_ns15routed_wrapper_ns17_set_extra/eval-562ed92c/metrics.json",
+      "variant_path": "project/evolve/eval_runs/ns19_finset_aesop_only_wrapper_ns17_set_extra/eval-2469bec0/metrics.json"
+    },
+    "nat_defs_medium": {
+      "variant_solved": 37,
+      "raw_solved": 23,
+      "wrap_solved": 37,
+      "wrapper_only_count": 14,
+      "wrapper_only": [
+        "Nat.add_mod_eq_add_mod_left",
+        "Nat.add_mod_eq_add_mod_right",
+        "Nat.add_mod_eq_ite",
+        "Nat.div_le_div_right",
+        "Nat.div_lt_iff_lt_mul'",
+        "Nat.div_lt_one_iff",
+        "Nat.div_pos",
+        "Nat.div_pos_iff",
+        "Nat.dvd_iff_div_mul_eq",
+        "Nat.eq_one_of_mul_eq_one_left",
+        "Nat.mul_eq_left",
+        "Nat.mul_eq_right",
+        "Nat.pow_lt_pow_iff_left",
+        "Nat.sqrt_lt"
+      ],
+      "new_vs_wrap_count": 0,
+      "new_vs_wrap": [],
+      "regressed_count": 0,
+      "regressed": [],
+      "new_wins_by_family": {},
+      "raw_path": "project/evolve/eval_runs/gen_v5_ns15_routed_raw_nat_defs_medium/eval-9cf04f2c/metrics.json",
+      "wrap_path": "project/evolve/eval_runs/gen_v5_ns15_routed_wrapper_nat_defs_medium/eval-879f0a2a/metrics.json",
+      "variant_path": "project/evolve/eval_runs/ns19_finset_aesop_only_wrapper_nat_defs_medium/eval-027fcad0/metrics.json"
+    },
+    "demo_v1": {
+      "variant_solved": 11,
+      "raw_solved": 10,
+      "wrap_solved": 11,
+      "wrapper_only_count": 1,
+      "wrapper_only": [
+        "Nat.mul_add_mod'"
+      ],
+      "new_vs_wrap_count": 0,
+      "new_vs_wrap": [],
+      "regressed_count": 0,
+      "regressed": [],
+      "new_wins_by_family": {},
+      "raw_path": "project/evolve/eval_runs/gen_v5_ns15_routed_raw_demo_v1/eval-904a2446/metrics.json",
+      "wrap_path": "project/evolve/eval_runs/gen_v5_ns15_routed_wrapper_demo_v1/eval-e52643d7/metrics.json",
+      "variant_path": "project/evolve/eval_runs/ns19_finset_aesop_only_wrapper_demo_v1/eval-14b60142/metrics.json"
+    },
+    "ns14_set_finset_extra": {
+      "variant_solved": 13,
+      "raw_solved": 13,
+      "wrap_solved": 13,
+      "wrapper_only_count": 0,
+      "wrapper_only": [],
+      "new_vs_wrap_count": 0,
+      "new_vs_wrap": [],
+      "regressed_count": 0,
+      "regressed": [],
+      "new_wins_by_family": {},
+      "raw_path": "project/evolve/eval_runs/gen_v5_ns15_routed_raw_ns14_set_finset_extra/eval-68d1675d/metrics.json",
+      "wrap_path": "project/evolve/eval_runs/gen_v5_ns15_routed_wrapper_ns14_set_finset_extra/eval-57020f0a/metrics.json",
+      "variant_path": "project/evolve/eval_runs/ns19_finset_aesop_only_wrapper_ns14_set_finset_extra/eval-37d02a52/metrics.json"
+    }
+  },
+  "nat_simp_arith_targeted": {
+    "ns19_nat_simp_arith_replay": {
+      "variant_solved": 4,
+      "raw_solved": 4,
+      "wrap_solved": 4,
+      "wrapper_only_count": 0,
+      "wrapper_only": [],
+      "new_vs_wrap_count": 0,
+      "new_vs_wrap": [],
+      "regressed_count": 0,
+      "regressed": [],
+      "new_wins_by_family": {},
+      "raw_path": "project/evolve/eval_runs/ns19_raw_ns19_nat_simp_arith_replay/eval-f14efc6c/metrics.json",
+      "wrap_path": "project/evolve/eval_runs/ns19_ns9wrap_ns19_nat_simp_arith_replay/eval-8ef32550/metrics.json",
+      "variant_path": "project/evolve/eval_runs/ns19_nat_simp_arith_targeted_wrapper_ns19_nat_simp_arith_replay/eval-6ee7cb96/metrics.json"
+    },
+    "nat_defs_medium": {
+      "variant_solved": 36,
+      "raw_solved": 23,
+      "wrap_solved": 37,
+      "wrapper_only_count": 13,
+      "wrapper_only": [
+        "Nat.add_mod_eq_add_mod_left",
+        "Nat.add_mod_eq_add_mod_right",
+        "Nat.add_mod_eq_ite",
+        "Nat.div_le_div_right",
+        "Nat.div_lt_one_iff",
+        "Nat.div_pos",
+        "Nat.div_pos_iff",
+        "Nat.dvd_iff_div_mul_eq",
+        "Nat.eq_one_of_mul_eq_one_left",
+        "Nat.mul_eq_left",
+        "Nat.mul_eq_right",
+        "Nat.pow_lt_pow_iff_left",
+        "Nat.sqrt_lt"
+      ],
+      "new_vs_wrap_count": 0,
+      "new_vs_wrap": [],
+      "regressed_count": 1,
+      "regressed": [
+        "Nat.div_lt_iff_lt_mul'"
+      ],
+      "new_wins_by_family": {},
+      "raw_path": "project/evolve/eval_runs/gen_v5_ns15_routed_raw_nat_defs_medium/eval-9cf04f2c/metrics.json",
+      "wrap_path": "project/evolve/eval_runs/gen_v5_ns15_routed_wrapper_nat_defs_medium/eval-879f0a2a/metrics.json",
+      "variant_path": "project/evolve/eval_runs/ns19_nat_simp_arith_targeted_wrapper_nat_defs_medium/eval-46516475/metrics.json"
+    },
+    "demo_v1": {
+      "variant_solved": 11,
+      "raw_solved": 10,
+      "wrap_solved": 11,
+      "wrapper_only_count": 1,
+      "wrapper_only": [
+        "Nat.mul_add_mod'"
+      ],
+      "new_vs_wrap_count": 0,
+      "new_vs_wrap": [],
+      "regressed_count": 0,
+      "regressed": [],
+      "new_wins_by_family": {},
+      "raw_path": "project/evolve/eval_runs/gen_v5_ns15_routed_raw_demo_v1/eval-904a2446/metrics.json",
+      "wrap_path": "project/evolve/eval_runs/gen_v5_ns15_routed_wrapper_demo_v1/eval-e52643d7/metrics.json",
+      "variant_path": "project/evolve/eval_runs/ns19_nat_simp_arith_targeted_wrapper_demo_v1/eval-669f6cdd/metrics.json"
+    },
+    "ns16_nat_div_mod_extra": {
+      "variant_solved": 2,
+      "raw_solved": 0,
+      "wrap_solved": 1,
+      "wrapper_only_count": 2,
+      "wrapper_only": [
+        "Nat.mul_add_mod_of_lt",
+        "Nat.mul_mod_mod"
+      ],
+      "new_vs_wrap_count": 1,
+      "new_vs_wrap": [
+        "Nat.mul_mod_mod"
+      ],
+      "regressed_count": 0,
+      "regressed": [],
+      "new_wins_by_family": {
+        "simp_all": [
+          "Nat.mul_mod_mod"
+        ]
+      },
+      "raw_path": "project/evolve/eval_runs/ns16_ns15routed_raw_ns16_nat_div_mod_extra/eval-b56db8db/metrics.json",
+      "wrap_path": "project/evolve/eval_runs/ns16_ns15routed_wrapper_ns16_nat_div_mod_extra/eval-9cc2e93c/metrics.json",
+      "variant_path": "project/evolve/eval_runs/ns19_nat_simp_arith_targeted_wrapper_ns16_nat_div_mod_extra/eval-3a19fba5/metrics.json"
+    }
+  }
+}

@@ -160,7 +160,8 @@ def _load_policy(
              term_builder_templates, term_builder_budget,
              priority_templates, priority_template_budget,
              use_skeleton_bag,
-             retrieval_requires_family, retrieval_family_gates) = (
+             retrieval_requires_family, retrieval_family_gates,
+             theorem_name_tactic_gates) = (
                 load_strategy_config(strategy_config)
             )
         else:
@@ -171,10 +172,11 @@ def _load_policy(
              term_builder_templates, term_builder_budget,
              priority_templates, priority_template_budget,
              use_skeleton_bag,
-             retrieval_requires_family, retrieval_family_gates) = (
+             retrieval_requires_family, retrieval_family_gates,
+             theorem_name_tactic_gates) = (
                 [], [], None, {}, {}, {}, False, 0, [], True, True, True, True,
                 {}, 0, {}, 0, False,
-                True, [],
+                True, [], {},
             )
         wrapper = StrategyWrapperPolicy(
             base_policy=base, fallback_tactics=fb, tactic_templates=tmpl,
@@ -195,6 +197,7 @@ def _load_policy(
             priority_templates=priority_templates,
             priority_template_budget=priority_template_budget,
             use_skeleton_bag=use_skeleton_bag,
+            theorem_name_tactic_gates=theorem_name_tactic_gates,
         )
         # v4.3 bloat-filter flag is consumed by rollout_one_theorem, not
         # the wrapper itself. Stash it on the wrapper so the eval loop

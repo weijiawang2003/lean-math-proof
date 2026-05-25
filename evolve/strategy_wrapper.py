@@ -362,6 +362,7 @@ class StrategyWrapperPolicy:
         priority_templates: dict[str, list[str]] | None = None,
         priority_template_budget: int = 0,
         use_skeleton_bag: bool = False,
+        theorem_name_tactic_gates: dict[str, list[str]] | None = None,
     ) -> None:
         self.base_policy = base_policy
         self.fallback_tactics: list[str] = [
@@ -453,6 +454,16 @@ class StrategyWrapperPolicy:
             if k
         }
         self.priority_template_budget: int = max(0, int(priority_template_budget or 0))
+        # NS19 theorem-name prefix gating. Maps a tactic substring to a
+        # list of allowed full_name prefixes. When a candidate tactic
+        # contains the substring AND full_name is non-empty AND
+        # full_name does not start with any allowed prefix, the tactic
+        # is dropped. Empty / missing keeps wrapper behavior unchanged.
+        self.theorem_name_tactic_gates: dict[str, list[str]] = {
+            str(k): [str(p) for p in (v or []) if p]
+            for k, v in (theorem_name_tactic_gates or {}).items()
+            if k
+        }
         # NS4 / NS4.1 prototype: when True, priority / family / fallback /
         # tactic_template / term_builder emission delegates to
         # evolve.skeleton_bag.SkeletonBag. Base generative output and
@@ -625,6 +636,29 @@ class StrategyWrapperPolicy:
                             break
         self.last_priority_template_attempt_count = len(priority_entries)
         self.last_priority_emitted = priority_emitted
+
+        # NS19 prefix gate (early pass for priority_entries). Run BEFORE
+        # base emission so that a gated priority tactic does not occupy
+        # the seen-set slot and accidentally suppress the base policy's
+        # legitimate emission of the same tactic. The same gate is
+        # applied again to extra_entries further down (where they are
+        # built); priority_entries are not re-gated.
+        early_gate_denied = 0
+        if self.theorem_name_tactic_gates and full_name:
+            def _gate_denied_early(tac: str) -> bool:
+                for sub, prefixes in self.theorem_name_tactic_gates.items():
+                    if sub and sub in tac:
+                        if not any(full_name.startswith(p) for p in prefixes):
+                            return True
+                return False
+            priority_kept_early: list[Entry] = []
+            for e in priority_entries:
+                if _gate_denied_early(e[0]):
+                    early_gate_denied += 1
+                    seen.discard(e[0])
+                else:
+                    priority_kept_early.append(e)
+            priority_entries = priority_kept_early
 
         base_entries: list[Entry] = []
         for t in base:
@@ -973,6 +1007,35 @@ class StrategyWrapperPolicy:
                 else:
                     extra_kept.append(e)
             extra_entries = extra_kept
+        # NS19 prefix gates. For each (substring → allowed prefix list)
+        # in self.theorem_name_tactic_gates, drop any candidate tactic
+        # that contains the substring unless full_name starts with one
+        # of the allowed prefixes. No-op when full_name is empty (so
+        # eval calls that don't set full_name are unaffected) or when
+        # the gates dict is empty.
+        # NS19 gate semantics: only filter wrapper-added entries
+        # (priority_templates already filtered above, plus
+        # family_tactics, fallback, term_builder, retrieved here).
+        # Generative-model output (base_entries / ORIGIN_GENERATIVE) is
+        # NEVER filtered — the routed base model knows when to emit
+        # aesop / simp_all on different namespaces, and gating its
+        # output would remove existing capability (NS9 wrapper baseline
+        # used to solve 10 Set thms via base-model aesop).
+        denied_count += early_gate_denied
+        if self.theorem_name_tactic_gates and full_name:
+            def _gate_denied(tac: str) -> bool:
+                for sub, prefixes in self.theorem_name_tactic_gates.items():
+                    if sub and sub in tac:
+                        if not any(full_name.startswith(p) for p in prefixes):
+                            return True
+                return False
+            extra_kept2: list[Entry] = []
+            for e in extra_entries:
+                if _gate_denied(e[0]):
+                    denied_count += 1
+                else:
+                    extra_kept2.append(e)
+            extra_entries = extra_kept2
         self.last_denied_count = denied_count
 
         # Effective per-state extras cap: when any family activates, use
@@ -1135,6 +1198,13 @@ def load_strategy_config(
     priority_templates = {str(k): list(v or []) for k, v in pt_raw.items()}
     priority_template_budget = int(raw.get("priority_template_budget", 0) or 0)
     use_skeleton_bag = bool(raw.get("use_skeleton_bag", False))
+    # NS19 name-prefix gates. Loader is tolerant — missing key means
+    # empty dict, which preserves wrapper behavior exactly.
+    gates_raw = raw.get("theorem_name_tactic_gates") or {}
+    theorem_name_tactic_gates = {
+        str(k): [str(p) for p in (v or []) if p]
+        for k, v in gates_raw.items() if k
+    }
     return (
         fb, tmpl, cap, fam, fam_budgets, deny,
         retrieval_enabled, retrieval_top_k, retrieval_tactic_forms,
@@ -1144,6 +1214,7 @@ def load_strategy_config(
         priority_templates, priority_template_budget,
         use_skeleton_bag,
         retrieval_requires_family, retrieval_family_gates,
+        theorem_name_tactic_gates,
     )
 
 
