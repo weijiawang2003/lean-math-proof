@@ -117,3 +117,10 @@ project/data/ns16_*.jsonl
 project/evolve/eval_runs/ns16_*.log
 project/evolve/eval_runs/ns16_*/
 project/evolve/eval_runs/gen_v5_ns16_*/
+
+# NS17 pattern-family audit artifacts. No training in NS17 — just
+# read-only inventory + new theorem-surface probes. The eval-run
+# traces and per-surface metrics live local; the audit JSON, pool
+# meta, and the four theorem-set configs are committed.
+project/evolve/eval_runs/ns17_*.log
+project/evolve/eval_runs/ns17_*/
