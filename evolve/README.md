@@ -20,15 +20,27 @@ LeanEvolve  : don't search for one proof script;
 Lean is the evaluator — the same strict, no-partial-credit supervisor the rest
 of the project is built around.
 
-## Main result (v3.6)
+## Main result — wrapper (NS9) + Learn track (NS15)
 
-The same `gen_v5` checkpoint, no retraining, on Mathlib `Nat/Defs.lean`
-and a larger second set:
+Two complementary results sit on top of the same `gen_v5`
+training corpus. NS9 is search-only: a 17-skeleton wrapper
+around the un-modified `gen_v5` checkpoint. NS15 is the Learn
+track: a routed pair of fine-tunes (`gen_v5_ns15_nat_oversample`
+for Nat, `gen_v5_ns12_balanced` for Set/Finset) distilled from
+the wrapper's successful traces.
 
-| policy                                       | medium (38) | large (65) | wallclock |
-|----------------------------------------------|------------:|-----------:|----------:|
-| `gen_v5` plain (baseline)                    | 3/38 (7.9%) | —          | ~2.5 min |
-| **`hybrid_evolved` NS9 best (17 skeletons)** | **37/38 (97.4%)** | **49/65 (75.4%)** | ~2.5 / ~5 min |
+| policy                                       | medium (38) | large (65) | demo_v1 (15) |
+|----------------------------------------------|------------:|-----------:|-------------:|
+| `gen_v5` plain (baseline)                    | 3/38 (7.9%) | —          | 10/15        |
+| **`hybrid_evolved` NS9 best (17 skeletons)** | **37/38 (97.4%)** | **49/65 (75.4%)** | 11/15 |
+| **NS15 routed raw model (no wrapper)**       | **23/38 (60.5%)** | **35/65 (53.8%)** | **10/15** |
+| NS9 wrapper composed on top of NS15 routed   | 37/38 | 49/65 | 11/15 |
+
+Δ vs raw baseline on medium: **+34 with the wrapper, +20 from
+training alone**. The NS15 raw lift (3 → 23) came from
+fine-tuning on a single 8-pair iff-omega pattern harvested from
+NS14 wrapper traces — the smallest possible homogeneous pool
+that produced clean transfer.
 
 Δ vs raw model on medium: **+34 theorems, 0 regressions**. The single
 residual medium failure (`Nat.AM_GM`) is a model-capability ceiling,
@@ -243,9 +255,75 @@ subprocess logs, or checkpoint binaries.
   `retrieval_family_gates: list[str]` decouple retrieval from
   family-tactic survival. Compressed 20 → **17 enabled skeletons**
   preserving 37/49.
-- **NS10 (future)** — targeted `gen_v5+1` fine-tune to close
-  `Nat.AM_GM` and the ~16 unproved large theorems. The skeleton bag
-  is exhausted; the remaining gap is a model-capability issue.
-  Multi-step skeleton synthesis (an operator that emits `(rw, rw,
-  simp_all)` triples derived from successful retrieval chains in the
-  archive) is a complementary direction.
+- **NS10 (done)** — proof-of-concept Learn step. Fine-tuned
+  `gen_v5` on 152 wrapper-success pairs harvested from NS9
+  runs, producing `gen_v5_plus1`: 3/38 → 4/38 on medium. Lift
+  was tiny but confirmed the Learn step works in principle.
+- **NS11 (done)** — Learn scale-up. Three datasets
+  (`medium` 152 / `combined` 5,729 / `coverage` ~6k). Best
+  raw model `gen_v5_ns11_combined`: 3/38 → 9/38 on medium,
+  but cost 2/15 demo_v1.
+- **NS12 (done)** — anti-forgetting. `gen_v5_ns12_balanced`
+  restored 10/15 demo_v1 while keeping 5/38 medium and 6/65
+  large. Pareto tradeoff between Nat-specialized and
+  Set/Finset-balanced sub-models surfaced clearly.
+- **NS13 (done)** — stateless `RoutedGenerativePolicy` matches
+  full_name against regex routes. Achieves the oracle union
+  across NS11/NS12 checkpoints with zero regressions.
+- **NS14 (done)** — fresh theorem surface. Mined 70 fresh
+  theorems from `project/discovered_theorems.json`, ran the
+  NS9 wrapper, harvested **30 wrapper-only pairs across 24
+  theorems** (27% yield vs NS11's 1.1%).
+- **NS15 (done, current Learn-track main result)** — trained
+  `gen_v5_ns15_nat_oversample` on NS11 + NS14 with 10× over-
+  sampling of the iff-omega NS14 rows. NS15 routed (Nat →
+  oversample, Set/Finset → ns12_balanced) achieves **23/38
+  medium, 35/65 large, 10/15 demo_v1 raw** — a 6.6× lift over
+  the gen_v5 baseline from a single homogeneous 8-pair pool.
+- **NS16 (done)** — negative-transfer arc. 19 heterogeneous
+  wrapper-only Nat rows produced ZERO additional transfer
+  over NS15. Confirmed that pool homogeneity, not pool size,
+  drives Learn-step success.
+- **NS17 (done)** — pattern-family audit. No homogeneous
+  family met the NS18 training gate on 114 fresh theorems.
+- **NS18 (done)** — wrapper-expansion arc. Six experimental
+  wrapper configs probed; 5 truly-new wrapper-only wins
+  beyond NS9 across two families
+  (aesop on Finset: 3 wins; simp_all on Nat-arith: 2 wins).
+  One −1 Set regression introduced.
+- **NS19 (done)** — namespace-gated wrapper. New
+  `theorem_name_tactic_gates` field on `StrategyWrapperPolicy`
+  (filters wrapper-injected entries only — never base-model
+  output). Gated aesop variant added +1 Finset/aesop win
+  (`Finset.coe_cons`) and eliminated the NS18 Set regression.
+  Pool: 4 unique Finset/aesop wins; 2 unique simp_all-Nat
+  wins. Catalog-exhaustion finding: 208/208 Nat theorems
+  already covered by existing sets.
+- **NS20 (done, mining exhaustion)** — evaluated the gated
+  aesop variant against the full 74-theorem Finset catalog
+  remainder. **0 new wins.** Pool stays at 4 unique.
+  Preservation confirmed on all benchmarks (49/65 large_v5,
+  37/38 medium, 11/15 demo_v1). The Learn track has converged
+  against the current Mathlib catalog and 8-step search
+  budget.
+
+### Recommended next directions
+
+In rough order of likely yield (none of these is an NS21
+training arc — training is blocked until one of them lands):
+
+1. **Catalog extension from Mathlib.** Pull more theorems
+   (`Finset.image/filter/map`, `Nat.gcd/dvd`, `Nat.mod`
+   chains) to 2-4× the search surface. Most promising.
+2. **Stronger wrapper capabilities.** `aesop` with rule_sets
+   or explicit lemma bundles; `decide`; term-mode synthesis
+   for non-omega proofs. A wrapper-only probe analogous to
+   NS18 with broader tactic vocabulary.
+3. **Different learning objective.** Search-then-decide
+   reranker, or a state-value pruner. Outside the current
+   tactic-token-generator paradigm.
+
+See `project/evolve/reports/learn_track_final_report_ns10_ns20.md`
+for the full Learn-track narrative and
+`project/evolve/reports/learn_track_executive_summary.md` for
+the short version.
