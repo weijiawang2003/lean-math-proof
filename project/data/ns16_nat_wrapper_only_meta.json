@@ -1,0 +1,103 @@
+{
+  "include_all_wrapper": false,
+  "k_assist_window": 3,
+  "total_rows_pre_dedup": 35,
+  "total_rows_post_dedup": 19,
+  "n_dup_dropped": 16,
+  "unique_theorems": 16,
+  "by_role": {
+    "close": 16,
+    "advance_assist": 3
+  },
+  "by_origin": {
+    "family_tactic": 3,
+    "tactic_template": 12,
+    "generative_topk": 3,
+    "retrieved_premise": 1
+  },
+  "by_set": {
+    "nat_defs_medium": 16,
+    "ns16_nat_iff_extra": 2,
+    "ns16_nat_div_mod_extra": 1
+  },
+  "n_wrapper_only_rows": 19,
+  "n_ns11_heldout_rows": 11,
+  "per_set": {
+    "nat_defs_medium": {
+      "raw_solved": 23,
+      "wrap_solved": 37,
+      "wrapper_only_count": 14,
+      "wrapper_only_theorems": [
+        "Nat.add_mod_eq_add_mod_left",
+        "Nat.add_mod_eq_add_mod_right",
+        "Nat.add_mod_eq_ite",
+        "Nat.div_le_div_right",
+        "Nat.div_lt_iff_lt_mul'",
+        "Nat.div_lt_one_iff",
+        "Nat.div_pos",
+        "Nat.div_pos_iff",
+        "Nat.dvd_iff_div_mul_eq",
+        "Nat.eq_one_of_mul_eq_one_left",
+        "Nat.mul_eq_left",
+        "Nat.mul_eq_right",
+        "Nat.pow_lt_pow_iff_left",
+        "Nat.sqrt_lt"
+      ],
+      "rows_extracted": 16
+    },
+    "nat_defs_large_v5": {
+      "raw_solved": 35,
+      "wrap_solved": 49,
+      "wrapper_only_count": 14,
+      "wrapper_only_theorems": [
+        "Nat.add_mod_eq_add_mod_left",
+        "Nat.add_mod_eq_add_mod_right",
+        "Nat.add_mod_eq_ite",
+        "Nat.div_le_div_right",
+        "Nat.div_lt_iff_lt_mul'",
+        "Nat.div_lt_one_iff",
+        "Nat.div_pos",
+        "Nat.div_pos_iff",
+        "Nat.dvd_iff_div_mul_eq",
+        "Nat.eq_one_of_mul_eq_one_left",
+        "Nat.mul_eq_left",
+        "Nat.mul_eq_right",
+        "Nat.pow_lt_pow_iff_left",
+        "Nat.sqrt_lt"
+      ],
+      "rows_extracted": 16
+    },
+    "ns16_nat_iff_extra": {
+      "raw_solved": 1,
+      "wrap_solved": 2,
+      "wrapper_only_count": 1,
+      "wrapper_only_theorems": [
+        "Nat.lt_find_iff"
+      ],
+      "rows_extracted": 2
+    },
+    "ns16_nat_div_mod_extra": {
+      "raw_solved": 0,
+      "wrap_solved": 1,
+      "wrapper_only_count": 1,
+      "wrapper_only_theorems": [
+        "Nat.mul_add_mod_of_lt"
+      ],
+      "rows_extracted": 1
+    },
+    "ns16_nat_order_extra": {
+      "raw_solved": 3,
+      "wrap_solved": 3,
+      "wrapper_only_count": 0,
+      "wrapper_only_theorems": [],
+      "rows_extracted": 0
+    },
+    "ns16_nat_mixed_extra": {
+      "raw_solved": 0,
+      "wrap_solved": 0,
+      "wrapper_only_count": 0,
+      "wrapper_only_theorems": [],
+      "rows_extracted": 0
+    }
+  }
+}

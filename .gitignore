@@ -104,3 +104,16 @@ project/models/gen_v5_ns15_*_training.log
 project/data/ns15_*.jsonl
 project/evolve/eval_runs/ns15_*.log
 project/evolve/eval_runs/ns15_*/
+
+# NS16 wrapper-only Nat training artifacts. Datasets and checkpoints
+# are regeneratable via scripts/build_ns16_theorem_sets.py,
+# scripts/build_ns16_training_data.py, scripts/build_ns16_datasets.py,
+# and train_tactic_generator.py. Dataset *_meta.json files are
+# committed; the JSONL data, model dirs, raw traces, and eval logs
+# are not.
+project/models/gen_v5_ns16_*/
+project/models/gen_v5_ns16_*_training.log
+project/data/ns16_*.jsonl
+project/evolve/eval_runs/ns16_*.log
+project/evolve/eval_runs/ns16_*/
+project/evolve/eval_runs/gen_v5_ns16_*/

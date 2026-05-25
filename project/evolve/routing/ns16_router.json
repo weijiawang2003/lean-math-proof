@@ -1,0 +1,9 @@
+{
+  "_about": "NS16 domain-aware router. Nat goals route to gen_v5_ns16_oversample_10x (best NS16 Nat model, statistically equal to NS15's nat_oversample at 23/38 medium, 35/65 large, 9/20 ns14_nat_extra, 0–3 across NS16 sets — the wrapper-only training rows on the expanded Nat surface did not transfer at 10x or 20x). Set/Finset goals continue to route to gen_v5_ns12_balanced for demo retention. See project/evolve/reports/ns16_expand_nat_surface_report.md.",
+  "routes": [
+    {"pattern": "^Nat\\.",    "ckpt_dir": "project/models/gen_v5_ns16_oversample_10x"},
+    {"pattern": "^Set\\.",    "ckpt_dir": "project/models/gen_v5_ns12_balanced"},
+    {"pattern": "^Finset\\.", "ckpt_dir": "project/models/gen_v5_ns12_balanced"}
+  ],
+  "default_ckpt_dir": "project/models/gen_v5_ns12_balanced"
+}

@@ -1,0 +1,26 @@
+{
+  "variant": "oversample_10x",
+  "out_path": "project/data/ns16_train_oversample_10x.jsonl",
+  "n_rows": 6033,
+  "n_ns16_rows": 190,
+  "n_ns16_source_rows": 19,
+  "n_ns16_unique_theorems": 16,
+  "oversample_factor": 10,
+  "init_from": "from_gen_v5",
+  "by_origin": {
+    "unknown": 5577,
+    "tactic_template": 206,
+    "family_tactic": 36,
+    "generative_topk": 64,
+    "fallback_tactic": 114,
+    "term_builder": 15,
+    "raw_routed": 11,
+    "retrieved_premise": 10
+  },
+  "by_role": {
+    "unknown": 5577,
+    "close": 378,
+    "advance_assist": 78
+  },
+  "n_ns15_base_rows": 5843
+}
