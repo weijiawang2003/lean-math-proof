@@ -1,0 +1,192 @@
+{
+  "training_gate_unique_required": 5,
+  "per_set_summary": [
+    {
+      "arc": "CX1",
+      "set": "cx1_bool_option_int",
+      "raw_solved": 26,
+      "wrap_solved": 29,
+      "wrap_only": 3,
+      "wrap_only_int": 3
+    },
+    {
+      "arc": "CX2",
+      "set": "cx2_int_iff_omega_easy",
+      "raw_solved": 1,
+      "wrap_solved": 5,
+      "wrap_only": 4,
+      "wrap_only_int": 4
+    },
+    {
+      "arc": "CX2",
+      "set": "cx2_int_iff_omega_medium",
+      "raw_solved": 0,
+      "wrap_solved": 2,
+      "wrap_only": 2,
+      "wrap_only_int": 2
+    },
+    {
+      "arc": "CX2",
+      "set": "cx2_int_order_arith",
+      "raw_solved": 4,
+      "wrap_solved": 16,
+      "wrap_only": 12,
+      "wrap_only_int": 12
+    },
+    {
+      "arc": "CX2",
+      "set": "cx2_int_mixed",
+      "raw_solved": 4,
+      "wrap_solved": 6,
+      "wrap_only": 2,
+      "wrap_only_int": 2
+    }
+  ],
+  "families": {
+    "fallback_omega|Int": {
+      "family": "fallback_omega",
+      "namespace": "Int",
+      "unique_count": 13,
+      "trainable": true,
+      "recommended_oversample_factor": 2,
+      "theorems": {
+        "Int.emod_two_eq_zero_or_one": {
+          "winning_tactic": "omega",
+          "first_seen_arc": "CX1",
+          "first_seen_set": "cx1_bool_option_int"
+        },
+        "Int.le_of_eq": {
+          "winning_tactic": "omega",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_order_arith"
+        },
+        "Int.natAbs_coe_sub_coe_lt_of_lt": {
+          "winning_tactic": "omega",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_order_arith"
+        },
+        "Int.le_or_lt": {
+          "winning_tactic": "omega",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_order_arith"
+        },
+        "Int.natAbs_coe_sub_coe_le_of_le": {
+          "winning_tactic": "omega",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_order_arith"
+        },
+        "Int.zero_le_ofNat": {
+          "winning_tactic": "omega",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_order_arith"
+        },
+        "Int.lt_or_lt_of_ne": {
+          "winning_tactic": "omega",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_order_arith"
+        },
+        "Int.natAbs_add_of_nonpos": {
+          "winning_tactic": "omega",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_order_arith"
+        },
+        "Int.lt_asymm": {
+          "winning_tactic": "omega",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_order_arith"
+        },
+        "Int.le_natCast_sub": {
+          "winning_tactic": "omega",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_order_arith"
+        },
+        "Int.neg_emod_two": {
+          "winning_tactic": "omega",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_order_arith"
+        },
+        "Int.lt_or_le": {
+          "winning_tactic": "omega",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_order_arith"
+        },
+        "Int.natCast_pred_of_pos": {
+          "winning_tactic": "omega",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_mixed"
+        }
+      },
+      "source_breakdown": {
+        "CX1:cx1_bool_option_int": 1,
+        "CX2:cx2_int_order_arith": 11,
+        "CX2:cx2_int_mixed": 1
+      }
+    },
+    "iff_omega_pair|Int": {
+      "family": "iff_omega_pair",
+      "namespace": "Int",
+      "unique_count": 10,
+      "trainable": true,
+      "recommended_oversample_factor": 5,
+      "theorems": {
+        "Int.le_add_one_iff": {
+          "winning_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX1",
+          "first_seen_set": "cx1_bool_option_int"
+        },
+        "Int.le_iff_lt_or_eq": {
+          "winning_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX1",
+          "first_seen_set": "cx1_bool_option_int"
+        },
+        "Int.le_sub_one_iff": {
+          "winning_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_iff_omega_easy"
+        },
+        "Int.sub_one_lt_iff": {
+          "winning_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_iff_omega_easy"
+        },
+        "Int.le_antisymm_iff": {
+          "winning_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_iff_omega_easy"
+        },
+        "Int.le_iff_eq_or_lt": {
+          "winning_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_iff_omega_easy"
+        },
+        "Int.natCast_nonpos_iff": {
+          "winning_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_iff_omega_medium"
+        },
+        "Int.natCast_ne_zero_iff_pos": {
+          "winning_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_iff_omega_medium"
+        },
+        "Int.lt_toNat": {
+          "winning_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_order_arith"
+        },
+        "Int.natCast_eq_zero": {
+          "winning_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2",
+          "first_seen_set": "cx2_int_mixed"
+        }
+      },
+      "source_breakdown": {
+        "CX1:cx1_bool_option_int": 2,
+        "CX2:cx2_int_iff_omega_easy": 4,
+        "CX2:cx2_int_iff_omega_medium": 2,
+        "CX2:cx2_int_order_arith": 1,
+        "CX2:cx2_int_mixed": 1
+      }
+    }
+  }
+}

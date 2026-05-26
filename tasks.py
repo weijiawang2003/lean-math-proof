@@ -470,6 +470,27 @@ def _load_cx1_sets() -> None:
 _load_cx1_sets()
 
 
+# ---- CX2: load the Int iff_omega mining theorem sets ----
+def _load_cx2_sets() -> None:
+    import json as _json
+    from pathlib import Path as _Path
+    p = _Path("project/evolve/routing/cx2_theorem_sets.json")
+    if not p.exists():
+        return
+    try:
+        data = _json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return
+    for name, items in data.items():
+        THEOREM_SETS[name] = [
+            TheoremConfig(file_path=t["file_path"], full_name=t["full_name"])
+            for t in items
+        ]
+
+
+_load_cx2_sets()
+
+
 def list_theorem_sets() -> list[str]:
     return sorted(THEOREM_SETS)
 
