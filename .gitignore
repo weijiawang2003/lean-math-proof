@@ -156,3 +156,14 @@ project/evolve/eval_runs/ns20_*/
 # they are the durable output of catalog mining.
 project/evolve/eval_runs/cx1_*.log
 project/evolve/eval_runs/cx1_*/
+
+# NS21 Finset/aesop imitation-training artifacts. Datasets and
+# checkpoints are regeneratable via scripts/build_ns21_training_data.py
+# and train_tactic_generator.py. Dataset *_meta.json files are
+# committed; the JSONL data, model dirs, raw traces, and eval logs
+# are not.
+project/models/gen_v5_ns21_*/
+project/models/gen_v5_ns21_*_training.log
+project/data/ns21_finset_aesop_*.jsonl
+project/evolve/eval_runs/ns21_*.log
+project/evolve/eval_runs/ns21_*/

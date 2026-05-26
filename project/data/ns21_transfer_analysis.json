@@ -1,0 +1,346 @@
+{
+  "candidates": {
+    "gen_v5_ns21_finset_aesop_10x": {
+      "ckpt": "gen_v5_ns21_finset_aesop_10x",
+      "pool": {
+        "Finset.disjUnion_singleton": {
+          "found_in_set": "ns17_finset_extra",
+          "solved": true,
+          "tactic": "aesop"
+        },
+        "Finset.cons_eq_insert": {
+          "found_in_set": "ns17_finset_extra",
+          "solved": true,
+          "tactic": "aesop"
+        },
+        "Finset.coe_insert": {
+          "found_in_set": "ns17_finset_extra",
+          "solved": true,
+          "tactic": "aesop"
+        },
+        "Finset.image_id": {
+          "found_in_set": "cx1_finset_image_filter",
+          "solved": true,
+          "tactic": "aesop"
+        },
+        "Finset.card_insert_eq_ite": {
+          "found_in_set": "cx1_finset_image_filter",
+          "solved": true,
+          "tactic": "aesop"
+        }
+      },
+      "held_out_finset": {
+        "ns17_finset_extra": {
+          "n_held_out_thms": 27,
+          "n_baseline_wins": 12,
+          "n_candidate_wins": 12,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        },
+        "cx1_finset_image_filter": {
+          "n_held_out_thms": 98,
+          "n_baseline_wins": 28,
+          "n_candidate_wins": 28,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        },
+        "ns20_finset_aesop_extra_easy": {
+          "n_held_out_thms": 0,
+          "n_baseline_wins": 0,
+          "n_candidate_wins": 0,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        },
+        "ns20_finset_aesop_extra_medium": {
+          "n_held_out_thms": 16,
+          "n_baseline_wins": 7,
+          "n_candidate_wins": 7,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        },
+        "ns20_finset_aesop_extra_hard": {
+          "n_held_out_thms": 0,
+          "n_baseline_wins": 0,
+          "n_candidate_wins": 0,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        }
+      },
+      "neg_control": {
+        "ns17_set_extra": {
+          "n_baseline_wins": 18,
+          "n_candidate_wins": 19,
+          "n_gains": 1,
+          "n_losses": 0,
+          "losses": []
+        },
+        "ns14_set_finset_extra": {
+          "n_baseline_wins": 13,
+          "n_candidate_wins": 11,
+          "n_gains": 0,
+          "n_losses": 2,
+          "losses": [
+            "Set.ne_univ_iff_exists_not_mem",
+            "Set.not_subset_iff_exists_mem_not_mem"
+          ]
+        },
+        "demo_v1": {
+          "n_baseline_wins": 10,
+          "n_candidate_wins": 10,
+          "n_gains": 0,
+          "n_losses": 0,
+          "losses": []
+        }
+      },
+      "summary": {
+        "pool_solved": 5,
+        "pool_total": 6,
+        "held_out_finset_gains_total": 0,
+        "neg_control_losses_total": 2,
+        "verdict": "memorization"
+      }
+    },
+    "gen_v5_ns21_finset_aesop_20x": {
+      "ckpt": "gen_v5_ns21_finset_aesop_20x",
+      "pool": {
+        "Finset.disjUnion_singleton": {
+          "found_in_set": "ns17_finset_extra",
+          "solved": true,
+          "tactic": "aesop"
+        },
+        "Finset.cons_eq_insert": {
+          "found_in_set": "ns17_finset_extra",
+          "solved": true,
+          "tactic": "aesop"
+        },
+        "Finset.coe_insert": {
+          "found_in_set": "ns17_finset_extra",
+          "solved": true,
+          "tactic": "aesop"
+        },
+        "Finset.image_id": {
+          "found_in_set": "cx1_finset_image_filter",
+          "solved": true,
+          "tactic": "aesop"
+        },
+        "Finset.card_insert_eq_ite": {
+          "found_in_set": "cx1_finset_image_filter",
+          "solved": true,
+          "tactic": "aesop"
+        }
+      },
+      "held_out_finset": {
+        "ns17_finset_extra": {
+          "n_held_out_thms": 27,
+          "n_baseline_wins": 12,
+          "n_candidate_wins": 12,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        },
+        "cx1_finset_image_filter": {
+          "n_held_out_thms": 98,
+          "n_baseline_wins": 28,
+          "n_candidate_wins": 28,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        },
+        "ns20_finset_aesop_extra_easy": {
+          "n_held_out_thms": 0,
+          "n_baseline_wins": 0,
+          "n_candidate_wins": 0,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        },
+        "ns20_finset_aesop_extra_medium": {
+          "n_held_out_thms": 16,
+          "n_baseline_wins": 7,
+          "n_candidate_wins": 7,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        },
+        "ns20_finset_aesop_extra_hard": {
+          "n_held_out_thms": 0,
+          "n_baseline_wins": 0,
+          "n_candidate_wins": 0,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        }
+      },
+      "neg_control": {
+        "ns17_set_extra": {
+          "n_baseline_wins": 18,
+          "n_candidate_wins": 18,
+          "n_gains": 1,
+          "n_losses": 1,
+          "losses": [
+            "Set.subset_insert_diff_singleton"
+          ]
+        },
+        "ns14_set_finset_extra": {
+          "n_baseline_wins": 13,
+          "n_candidate_wins": 12,
+          "n_gains": 0,
+          "n_losses": 1,
+          "losses": [
+            "Set.not_subset_iff_exists_mem_not_mem"
+          ]
+        },
+        "demo_v1": {
+          "n_baseline_wins": 10,
+          "n_candidate_wins": 11,
+          "n_gains": 1,
+          "n_losses": 0,
+          "losses": []
+        }
+      },
+      "summary": {
+        "pool_solved": 5,
+        "pool_total": 6,
+        "held_out_finset_gains_total": 0,
+        "neg_control_losses_total": 2,
+        "verdict": "memorization"
+      }
+    },
+    "gen_v5_ns21_finset_aesop_minimal": {
+      "ckpt": "gen_v5_ns21_finset_aesop_minimal",
+      "pool": {
+        "Finset.disjUnion_singleton": {
+          "found_in_set": "ns17_finset_extra",
+          "solved": true,
+          "tactic": "aesop"
+        },
+        "Finset.cons_eq_insert": {
+          "found_in_set": "ns17_finset_extra",
+          "solved": true,
+          "tactic": "aesop"
+        },
+        "Finset.coe_insert": {
+          "found_in_set": "ns17_finset_extra",
+          "solved": true,
+          "tactic": "aesop"
+        },
+        "Finset.image_id": {
+          "found_in_set": "cx1_finset_image_filter",
+          "solved": true,
+          "tactic": "aesop"
+        },
+        "Finset.card_insert_eq_ite": {
+          "found_in_set": "cx1_finset_image_filter",
+          "solved": true,
+          "tactic": "aesop"
+        }
+      },
+      "held_out_finset": {
+        "ns17_finset_extra": {
+          "n_held_out_thms": 27,
+          "n_baseline_wins": 12,
+          "n_candidate_wins": 12,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        },
+        "cx1_finset_image_filter": {
+          "n_held_out_thms": 98,
+          "n_baseline_wins": 28,
+          "n_candidate_wins": 28,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        },
+        "ns20_finset_aesop_extra_easy": {
+          "n_held_out_thms": 0,
+          "n_baseline_wins": 0,
+          "n_candidate_wins": 0,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        },
+        "ns20_finset_aesop_extra_medium": {
+          "n_held_out_thms": 16,
+          "n_baseline_wins": 7,
+          "n_candidate_wins": 7,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        },
+        "ns20_finset_aesop_extra_hard": {
+          "n_held_out_thms": 0,
+          "n_baseline_wins": 0,
+          "n_candidate_wins": 0,
+          "n_gains": 0,
+          "n_losses": 0,
+          "gains": [],
+          "losses": []
+        }
+      },
+      "neg_control": {
+        "ns17_set_extra": {
+          "n_baseline_wins": 18,
+          "n_candidate_wins": 18,
+          "n_gains": 1,
+          "n_losses": 1,
+          "losses": [
+            "Set.inter_singleton_eq_empty"
+          ]
+        },
+        "ns14_set_finset_extra": {
+          "n_baseline_wins": 13,
+          "n_candidate_wins": 10,
+          "n_gains": 0,
+          "n_losses": 3,
+          "losses": [
+            "Finset.not_mem_empty",
+            "Set.ne_univ_iff_exists_not_mem",
+            "Set.not_subset_iff_exists_mem_not_mem"
+          ]
+        },
+        "demo_v1": {
+          "n_baseline_wins": 10,
+          "n_candidate_wins": 10,
+          "n_gains": 0,
+          "n_losses": 0,
+          "losses": []
+        }
+      },
+      "summary": {
+        "pool_solved": 5,
+        "pool_total": 6,
+        "held_out_finset_gains_total": 0,
+        "neg_control_losses_total": 4,
+        "verdict": "memorization"
+      }
+    }
+  },
+  "pool_theorems": [
+    "Finset.card_insert_eq_ite",
+    "Finset.coe_cons",
+    "Finset.coe_insert",
+    "Finset.cons_eq_insert",
+    "Finset.disjUnion_singleton",
+    "Finset.image_id"
+  ]
+}

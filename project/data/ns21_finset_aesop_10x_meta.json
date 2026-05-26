@@ -1,0 +1,64 @@
+{
+  "variant": "10x",
+  "out_path": "project/data/ns21_finset_aesop_10x.jsonl",
+  "n_rows": 7505,
+  "n_pool_rows": 60,
+  "n_pool_unique_theorems": 6,
+  "n_pool_source_rows": 6,
+  "oversample_factor": 10,
+  "n_replay_rows": 7445,
+  "replay_source": "project/data/ns12_train_balanced.jsonl",
+  "init_from_recommended": "project/models/gen_v5_ns12_balanced",
+  "exclusions": [
+    "Nat simp_all wrapper-only (sub-gate)",
+    "Int iff_omega_pair / fallback_omega (sub-gate)",
+    "heterogeneous wrapper-only rows"
+  ],
+  "by_role": {
+    "unknown": 7282,
+    "close": 180,
+    "advance_assist": 43
+  },
+  "by_origin": {
+    "unknown": 7282,
+    "tactic_template": 106,
+    "fallback_tactic": 54,
+    "generative_topk": 42,
+    "term_builder": 15,
+    "family_tactic": 6
+  },
+  "by_namespace": {
+    "?": 7445,
+    "Finset": 60
+  },
+  "top_tactics_truncated": {
+    "aesop": 712,
+    "simp_all": 329,
+    "tauto": 293,
+    "simp [*]": 204,
+    "simp [Set.subset_def]": 173,
+    "simp [Set.ext_iff]": 139,
+    "simpa": 137,
+    "constructor <;> intro h <;> simp_all": 134,
+    "simp_arith": 133,
+    "simp [Nat.add_comm, Nat.add_left_comm, N": 133,
+    "simp at *": 129,
+    "simp [Nat.add_zero]": 129,
+    "simp [Nat.mul_zero]": 128,
+    "simp [Nat.zero_mul]": 127,
+    "simp [Nat.zero_add]": 127,
+    "simp [List.length_cons]": 127,
+    "simp [Nat.sub_self]": 126,
+    "simp [List.nil_append]": 126,
+    "simp": 126,
+    "simp [Nat.mul_add_mod, Nat.mul_comm]": 126
+  },
+  "pool_theorems": [
+    "Finset.card_insert_eq_ite",
+    "Finset.coe_cons",
+    "Finset.coe_insert",
+    "Finset.cons_eq_insert",
+    "Finset.disjUnion_singleton",
+    "Finset.image_id"
+  ]
+}
