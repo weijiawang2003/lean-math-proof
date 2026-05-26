@@ -1,0 +1,22 @@
+{
+  "_about": "NS22 domain-aware router. Routes Int goals to the NS22 fallback_omega ablation checkpoint (which outperformed the iff_omega_pair candidates 57/158 vs 39/158 vs 35/158 on the CX1+CX2 Int test surface). Finset stays on NS21 20x, Nat on NS15, Set/default on NS12. The choice of omega_5x for Int is contrary to the initial NS22-A plan; per the Stage 4 matrix, the short `omega` tactic transferred broadly to the iff_omega pool (9/10 solved via omega) while the long iff-pair tactic failed to memorize at all.",
+  "_chosen_int_ckpt": "gen_v5_ns22_int_fallback_omega_5x",
+  "_int_eval_summary": {
+    "NS12_baseline_int_total": 35,
+    "iff_5x_int_total": 39,
+    "iff_10x_int_total": 35,
+    "omega_5x_int_total": 57,
+    "denominator": 158,
+    "pool_resolved_by_omega_5x": {
+      "iff_omega_pair": "9/10",
+      "fallback_omega": "13/13"
+    }
+  },
+  "routes": [
+    {"pattern": "^Nat\\.",    "ckpt_dir": "project/models/gen_v5_ns15_nat_oversample"},
+    {"pattern": "^Int\\.",    "ckpt_dir": "project/models/gen_v5_ns22_int_fallback_omega_5x"},
+    {"pattern": "^Finset\\.", "ckpt_dir": "project/models/gen_v5_ns21_finset_aesop_20x"},
+    {"pattern": "^Set\\.",    "ckpt_dir": "project/models/gen_v5_ns12_balanced"}
+  ],
+  "default_ckpt_dir": "project/models/gen_v5_ns12_balanced"
+}

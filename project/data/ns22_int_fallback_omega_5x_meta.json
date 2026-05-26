@@ -1,0 +1,38 @@
+{
+  "variant": "omega_5x",
+  "pool_family_label": "fallback_omega",
+  "out_path": "project/data/ns22_int_fallback_omega_5x.jsonl",
+  "n_rows": 7510,
+  "n_pool_rows": 65,
+  "n_pool_unique_theorems": 13,
+  "n_pool_source_rows": 13,
+  "oversample_factor": 5,
+  "n_replay_rows": 7445,
+  "replay_source": "project/data/ns12_train_balanced.jsonl",
+  "init_from_recommended": "project/models/gen_v5_ns12_balanced",
+  "hard_exclusions": "no fallback_omega mixed into iff_omega corpus; no Nat simp_all rows; no Set/Finset wrapper-only rows",
+  "by_namespace": {
+    "?": 7445,
+    "Int": 65
+  },
+  "by_tactic_kind": {
+    "other": 7361,
+    "iff_omega_pair": 24,
+    "fallback_omega": 125
+  },
+  "pool_theorems": [
+    "Int.emod_two_eq_zero_or_one",
+    "Int.le_natCast_sub",
+    "Int.le_of_eq",
+    "Int.le_or_lt",
+    "Int.lt_asymm",
+    "Int.lt_or_le",
+    "Int.lt_or_lt_of_ne",
+    "Int.natAbs_add_of_nonpos",
+    "Int.natAbs_coe_sub_coe_le_of_le",
+    "Int.natAbs_coe_sub_coe_lt_of_lt",
+    "Int.natCast_pred_of_pos",
+    "Int.neg_emod_two",
+    "Int.zero_le_ofNat"
+  ]
+}

@@ -1,0 +1,655 @@
+{
+  "iff_omega_pool": [
+    "Int.le_add_one_iff",
+    "Int.le_antisymm_iff",
+    "Int.le_iff_eq_or_lt",
+    "Int.le_iff_lt_or_eq",
+    "Int.le_sub_one_iff",
+    "Int.lt_toNat",
+    "Int.natCast_eq_zero",
+    "Int.natCast_ne_zero_iff_pos",
+    "Int.natCast_nonpos_iff",
+    "Int.sub_one_lt_iff"
+  ],
+  "fallback_omega_pool": [
+    "Int.emod_two_eq_zero_or_one",
+    "Int.le_natCast_sub",
+    "Int.le_of_eq",
+    "Int.le_or_lt",
+    "Int.lt_asymm",
+    "Int.lt_or_le",
+    "Int.lt_or_lt_of_ne",
+    "Int.natAbs_add_of_nonpos",
+    "Int.natAbs_coe_sub_coe_le_of_le",
+    "Int.natAbs_coe_sub_coe_lt_of_lt",
+    "Int.natCast_pred_of_pos",
+    "Int.neg_emod_two",
+    "Int.zero_le_ofNat"
+  ],
+  "candidates": {
+    "gen_v5_ns22_int_iff_omega_5x": {
+      "ckpt": "gen_v5_ns22_int_iff_omega_5x",
+      "own_pool_family": "iff_omega_pair",
+      "pool_resolution": {
+        "own_pool_solved": 2,
+        "own_pool_size": 10,
+        "own_via_trained_tactic": 0,
+        "detail": [
+          {
+            "theorem": "Int.natCast_eq_zero",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_mixed"
+          },
+          {
+            "theorem": "Int.sub_one_lt_iff",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_iff_omega_easy"
+          },
+          {
+            "theorem": "Int.le_antisymm_iff",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_iff_omega_easy"
+          },
+          {
+            "theorem": "Int.lt_toNat",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.le_iff_eq_or_lt",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_iff_omega_easy"
+          },
+          {
+            "theorem": "Int.le_sub_one_iff",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_iff_omega_easy"
+          },
+          {
+            "theorem": "Int.natCast_ne_zero_iff_pos",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_iff_omega_medium"
+          },
+          {
+            "theorem": "Int.natCast_nonpos_iff",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_iff_omega_medium"
+          },
+          {
+            "theorem": "Int.le_add_one_iff",
+            "solved": false,
+            "tactic": "",
+            "set": "cx1_bool_option_int"
+          },
+          {
+            "theorem": "Int.le_iff_lt_or_eq",
+            "solved": false,
+            "tactic": "",
+            "set": "cx1_bool_option_int"
+          }
+        ]
+      },
+      "cross_family_resolution": {
+        "other_pool_solved": 2,
+        "other_pool_size": 13,
+        "detail": [
+          {
+            "theorem": "Int.emod_two_eq_zero_or_one",
+            "solved": false,
+            "tactic": "",
+            "set": "cx1_bool_option_int"
+          },
+          {
+            "theorem": "Int.lt_asymm",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.natAbs_coe_sub_coe_le_of_le",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.natAbs_add_of_nonpos",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.lt_or_le",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.natCast_pred_of_pos",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_mixed"
+          },
+          {
+            "theorem": "Int.zero_le_ofNat",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.lt_or_lt_of_ne",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.le_or_lt",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.le_natCast_sub",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.neg_emod_two",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.natAbs_coe_sub_coe_lt_of_lt",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.le_of_eq",
+            "solved": true,
+            "tactic": "simp_all",
+            "set": "cx2_int_order_arith"
+          }
+        ]
+      },
+      "held_out_int": {
+        "n_int_held_out": 135,
+        "n_baseline_wins": 35,
+        "n_candidate_wins": 35,
+        "n_gains": 0,
+        "n_losses": 0,
+        "gains": [],
+        "losses": []
+      },
+      "neg_control": {
+        "demo_v1": {
+          "n_baseline_wins": 10,
+          "n_candidate_wins": 10,
+          "n_gains": 1,
+          "n_losses": 1,
+          "losses": [
+            "Set.subset_univ"
+          ]
+        },
+        "ns17_set_extra": {
+          "n_baseline_wins": 18,
+          "n_candidate_wins": 18,
+          "n_gains": 0,
+          "n_losses": 0,
+          "losses": []
+        },
+        "ns17_finset_extra": {
+          "n_baseline_wins": 12,
+          "n_candidate_wins": 13,
+          "n_gains": 1,
+          "n_losses": 0,
+          "losses": []
+        },
+        "ns14_set_finset_extra": {
+          "n_baseline_wins": 13,
+          "n_candidate_wins": 11,
+          "n_gains": 0,
+          "n_losses": 2,
+          "losses": [
+            "Set.ne_univ_iff_exists_not_mem",
+            "Set.not_subset_iff_exists_mem_not_mem"
+          ]
+        }
+      },
+      "summary": {
+        "own_pool_solved": 2,
+        "own_pool_size": 10,
+        "own_via_trained_tactic": 0,
+        "other_pool_solved": 2,
+        "other_pool_size": 13,
+        "held_out_int_gains": 0,
+        "neg_control_losses": 3,
+        "verdict": "weak_or_no_signal"
+      }
+    },
+    "gen_v5_ns22_int_iff_omega_10x": {
+      "ckpt": "gen_v5_ns22_int_iff_omega_10x",
+      "own_pool_family": "iff_omega_pair",
+      "pool_resolution": {
+        "own_pool_solved": 0,
+        "own_pool_size": 10,
+        "own_via_trained_tactic": 0,
+        "detail": [
+          {
+            "theorem": "Int.natCast_eq_zero",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_mixed"
+          },
+          {
+            "theorem": "Int.sub_one_lt_iff",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_iff_omega_easy"
+          },
+          {
+            "theorem": "Int.le_antisymm_iff",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_iff_omega_easy"
+          },
+          {
+            "theorem": "Int.lt_toNat",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.le_iff_eq_or_lt",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_iff_omega_easy"
+          },
+          {
+            "theorem": "Int.le_sub_one_iff",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_iff_omega_easy"
+          },
+          {
+            "theorem": "Int.natCast_ne_zero_iff_pos",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_iff_omega_medium"
+          },
+          {
+            "theorem": "Int.natCast_nonpos_iff",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_iff_omega_medium"
+          },
+          {
+            "theorem": "Int.le_add_one_iff",
+            "solved": false,
+            "tactic": "",
+            "set": "cx1_bool_option_int"
+          },
+          {
+            "theorem": "Int.le_iff_lt_or_eq",
+            "solved": false,
+            "tactic": "",
+            "set": "cx1_bool_option_int"
+          }
+        ]
+      },
+      "cross_family_resolution": {
+        "other_pool_solved": 1,
+        "other_pool_size": 13,
+        "detail": [
+          {
+            "theorem": "Int.emod_two_eq_zero_or_one",
+            "solved": false,
+            "tactic": "",
+            "set": "cx1_bool_option_int"
+          },
+          {
+            "theorem": "Int.lt_asymm",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.natAbs_coe_sub_coe_le_of_le",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.natAbs_add_of_nonpos",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.lt_or_le",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.natCast_pred_of_pos",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_mixed"
+          },
+          {
+            "theorem": "Int.zero_le_ofNat",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.lt_or_lt_of_ne",
+            "solved": true,
+            "tactic": "exact fun h => by omega",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.le_or_lt",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.le_natCast_sub",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.neg_emod_two",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.natAbs_coe_sub_coe_lt_of_lt",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.le_of_eq",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          }
+        ]
+      },
+      "held_out_int": {
+        "n_int_held_out": 135,
+        "n_baseline_wins": 35,
+        "n_candidate_wins": 34,
+        "n_gains": 0,
+        "n_losses": 1,
+        "gains": [],
+        "losses": [
+          {
+            "theorem": "Bool.lt_iff"
+          }
+        ]
+      },
+      "neg_control": {
+        "demo_v1": {
+          "n_baseline_wins": 10,
+          "n_candidate_wins": 10,
+          "n_gains": 0,
+          "n_losses": 0,
+          "losses": []
+        },
+        "ns17_set_extra": {
+          "n_baseline_wins": 18,
+          "n_candidate_wins": 19,
+          "n_gains": 1,
+          "n_losses": 0,
+          "losses": []
+        },
+        "ns17_finset_extra": {
+          "n_baseline_wins": 12,
+          "n_candidate_wins": 14,
+          "n_gains": 2,
+          "n_losses": 0,
+          "losses": []
+        },
+        "ns14_set_finset_extra": {
+          "n_baseline_wins": 13,
+          "n_candidate_wins": 13,
+          "n_gains": 0,
+          "n_losses": 0,
+          "losses": []
+        }
+      },
+      "summary": {
+        "own_pool_solved": 0,
+        "own_pool_size": 10,
+        "own_via_trained_tactic": 0,
+        "other_pool_solved": 1,
+        "other_pool_size": 13,
+        "held_out_int_gains": 0,
+        "neg_control_losses": 0,
+        "verdict": "weak_or_no_signal"
+      }
+    },
+    "gen_v5_ns22_int_fallback_omega_5x": {
+      "ckpt": "gen_v5_ns22_int_fallback_omega_5x",
+      "own_pool_family": "fallback_omega",
+      "pool_resolution": {
+        "own_pool_solved": 13,
+        "own_pool_size": 13,
+        "own_via_trained_tactic": 13,
+        "detail": [
+          {
+            "theorem": "Int.emod_two_eq_zero_or_one",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx1_bool_option_int"
+          },
+          {
+            "theorem": "Int.lt_asymm",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.natAbs_coe_sub_coe_le_of_le",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.natAbs_add_of_nonpos",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.lt_or_le",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.natCast_pred_of_pos",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_mixed"
+          },
+          {
+            "theorem": "Int.zero_le_ofNat",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.lt_or_lt_of_ne",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.le_or_lt",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.le_natCast_sub",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.neg_emod_two",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.natAbs_coe_sub_coe_lt_of_lt",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.le_of_eq",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_order_arith"
+          }
+        ]
+      },
+      "cross_family_resolution": {
+        "other_pool_solved": 9,
+        "other_pool_size": 10,
+        "detail": [
+          {
+            "theorem": "Int.sub_one_lt_iff",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_iff_omega_easy"
+          },
+          {
+            "theorem": "Int.natCast_eq_zero",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_mixed"
+          },
+          {
+            "theorem": "Int.le_antisymm_iff",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_iff_omega_easy"
+          },
+          {
+            "theorem": "Int.lt_toNat",
+            "solved": false,
+            "tactic": "",
+            "set": "cx2_int_order_arith"
+          },
+          {
+            "theorem": "Int.le_iff_eq_or_lt",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_iff_omega_easy"
+          },
+          {
+            "theorem": "Int.natCast_ne_zero_iff_pos",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_iff_omega_medium"
+          },
+          {
+            "theorem": "Int.le_sub_one_iff",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_iff_omega_easy"
+          },
+          {
+            "theorem": "Int.natCast_nonpos_iff",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx2_int_iff_omega_medium"
+          },
+          {
+            "theorem": "Int.le_add_one_iff",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx1_bool_option_int"
+          },
+          {
+            "theorem": "Int.le_iff_lt_or_eq",
+            "solved": true,
+            "tactic": "omega",
+            "set": "cx1_bool_option_int"
+          }
+        ]
+      },
+      "held_out_int": {
+        "n_int_held_out": 135,
+        "n_baseline_wins": 35,
+        "n_candidate_wins": 35,
+        "n_gains": 0,
+        "n_losses": 0,
+        "gains": [],
+        "losses": []
+      },
+      "neg_control": {
+        "demo_v1": {
+          "n_baseline_wins": 10,
+          "n_candidate_wins": 10,
+          "n_gains": 0,
+          "n_losses": 0,
+          "losses": []
+        },
+        "ns17_set_extra": {
+          "n_baseline_wins": 18,
+          "n_candidate_wins": 19,
+          "n_gains": 1,
+          "n_losses": 0,
+          "losses": []
+        },
+        "ns17_finset_extra": {
+          "n_baseline_wins": 12,
+          "n_candidate_wins": 12,
+          "n_gains": 0,
+          "n_losses": 0,
+          "losses": []
+        },
+        "ns14_set_finset_extra": {
+          "n_baseline_wins": 13,
+          "n_candidate_wins": 11,
+          "n_gains": 0,
+          "n_losses": 2,
+          "losses": [
+            "Set.not_subset",
+            "Set.not_subset_iff_exists_mem_not_mem"
+          ]
+        }
+      },
+      "summary": {
+        "own_pool_solved": 13,
+        "own_pool_size": 13,
+        "own_via_trained_tactic": 13,
+        "other_pool_solved": 9,
+        "other_pool_size": 10,
+        "held_out_int_gains": 0,
+        "neg_control_losses": 2,
+        "verdict": "cross_family_transfer"
+      }
+    }
+  }
+}
