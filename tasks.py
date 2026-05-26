@@ -449,6 +449,27 @@ def _load_ns20_sets() -> None:
 _load_ns20_sets()
 
 
+# ---- CX1: load the Mathlib-catalog-extension theorem sets ----
+def _load_cx1_sets() -> None:
+    import json as _json
+    from pathlib import Path as _Path
+    p = _Path("project/evolve/routing/cx1_theorem_sets.json")
+    if not p.exists():
+        return
+    try:
+        data = _json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return
+    for name, items in data.items():
+        THEOREM_SETS[name] = [
+            TheoremConfig(file_path=t["file_path"], full_name=t["full_name"])
+            for t in items
+        ]
+
+
+_load_cx1_sets()
+
+
 def list_theorem_sets() -> list[str]:
     return sorted(THEOREM_SETS)
 

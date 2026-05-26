@@ -147,3 +147,12 @@ project/evolve/eval_runs/ns19_*/
 # are committed.
 project/evolve/eval_runs/ns20_*.log
 project/evolve/eval_runs/ns20_*/
+
+# CX1 Mathlib-catalog-extension artifacts. Eval traces, logs,
+# and the availability-probe raw log are local-only; theorem-set
+# configs, catalog metadata, and reports are committed. The
+# discovered_theorems_cx1.json file (~3989 candidates) and the
+# cx1_available_theorems.json filtered subset ARE committed —
+# they are the durable output of catalog mining.
+project/evolve/eval_runs/cx1_*.log
+project/evolve/eval_runs/cx1_*/
