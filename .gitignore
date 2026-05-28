@@ -203,3 +203,10 @@ project/evolve/eval_runs/ns24_*/
 # regeneratable via scripts/cx3_run_eval.sh and are not.
 project/evolve/eval_runs/cx3_*.log
 project/evolve/eval_runs/cx3_*/
+
+# WX1 state-aware Option-cases wrapper probe. No training/checkpoints.
+# The experimental wrapper configs (project/evolve/experiments/wx1/*.json),
+# scripts, probe/relabel/inventory metadata JSONs, and reports ARE
+# committed; eval traces, logs, and run dirs are not.
+project/evolve/eval_runs/wx1_*.log
+project/evolve/eval_runs/wx1_*/

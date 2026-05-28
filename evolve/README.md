@@ -421,6 +421,21 @@ subprocess logs, or checkpoint binaries.
   memorize at 60M (plain simp/aesop genuinely fail on all 13). **No
   short-token training gate met.** The relabel did its job: it
   prevented a likely-null NS25.
+- **WX1 (done — positive, wrapper expansion)** — state-aware Option
+  cases-wrapper. Rather than train on CX3's structured headroom, added a
+  namespace-gated, off-by-default `option_cases_skeletons` block to the
+  wrapper that reads the case variable from the proof state and emits
+  `cases <var> <;> simp_all`. **+19 new Option wins beyond NS9, zero
+  regressions** (option surfaces 42 → 61; Bool control + broader Bool
+  config add nothing). Minimal-tactic relabel: all wins are the
+  state-aware compound `cases <var> <;> simp` (17-theorem
+  `option_cases_simp` family) — **wrapper-ready, not short-token
+  SFT-ready**, exactly as CX3 predicted. Preservation is by construction
+  (gated; byte-identical ranked lists on Nat/Set/Finset, verified
+  empirically: nat_medium 37/38, set 18/30, finset 15/30, 0 emissions).
+  Stored as an experiment config under `project/evolve/experiments/wx1/`;
+  the NS9 genome is unmodified. Recommendation: promote as a wrapper
+  capability, do **not** fine-tune.
 
 ### Recommended next directions
 
@@ -428,30 +443,29 @@ The minimal-tactic principle (NS23/NS24) is validated as an
 **attribution/gating** step — it correctly identifies which family to
 train and prevents wasted long-tactic imitation — but it only adds
 *wins* on a family the base model has not already absorbed. The Int
-omega surface is saturated (NS22 ≈ NS24), and CX3 showed the
-fresh-namespace short-token thesis does **not** carry to Bool/Option
-(wrapper is a no-op there; the only headroom is a structured tactic).
-In rough order of likely yield:
+omega surface is saturated (NS22 ≈ NS24), CX3 showed the
+fresh-namespace short-token thesis does **not** carry to Bool/Option,
+and WX1 showed the right response to a state-dependent headroom is a
+**wrapper** capability, not fine-tuning. In rough order of likely yield:
 
-1. **List/Multiset short-tactic mining.** Large fresh surface (276 +
-   260 catalog), unprobed by the wrapper-only-vs-routed lens — the most
-   likely place left to find a clean `simp`/`aesop` short-token gate
-   analogous to Int/omega.
-2. **State-conditioned `cases_simp` NS25 probe (research bet).** CX3's
-   13-theorem Option cases pool uses a *state-readable* variable, so —
-   unlike NS22's fixed template — a state-conditioned generative model
-   could plausibly learn `intros <;> cases <binder> <;> simp_all`.
-   Distinct hypothesis from NS22; high oversample; flagged as a bet,
-   not a gate.
+1. **Generalize the WX1 state-aware cases skeleton to List/Multiset.**
+   The same `cases/rcases <var> <;> simp` mechanism likely unlocks an
+   analogous wrapper frontier on the large unprobed List/Multiset
+   surface (276 + 260 catalog) — the highest-yield next step.
+2. **Fold WX1 into the canonical wrapper** (genome + router sign-off),
+   then re-baseline the full matrix; it adds +19 Option with 0
+   regressions and is namespace-gated-safe.
 3. **Mine fresh held-out Int.** The CX2 audit left ~50 sub-bitwise/dvd
    Int order/arith candidates unprobed — measures whether the 22-pool
    transfers to genuinely-unseen Int.
-4. **Keep minimal-tactic relabel as a pre-training gate** (cheap; ran
-   in CX3 and correctly blocked a null NS25), and **DPO / ranker** for
-   structured tactics still deferred until a genuinely long-tactic-only
-   family with no short substitute appears.
+4. **Short-token SFT stays gated** on finding a genuinely short-token
+   family (none since Int/omega); keep the minimal-tactic relabel as a
+   pre-training gate (it correctly blocked a null NS25 in CX3), and
+   **DPO / ranker** for structured tactics still deferred.
 
-See `project/evolve/reports/cx3_bool_option_decide_mining_report.md`
+See `project/evolve/reports/wx1_option_cases_wrapper_report.md` for the
+WX1 state-aware Option cases-wrapper arc,
+`project/evolve/reports/cx3_bool_option_decide_mining_report.md`
 for the CX3 mining arc and
 `project/evolve/reports/post_ns24_current_status.md` for the one-page
 current status,

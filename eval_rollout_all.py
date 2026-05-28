@@ -206,6 +206,21 @@ def _load_policy(
         wrapper.retrieval_skip_bloating_apply = bool(
             retrieval_skip_bloating_apply
         )
+        # WX1 (experimental): read the optional state-aware option-cases
+        # skeleton block directly from the genome JSON and stash it on the
+        # wrapper, mirroring the retrieval_skip_bloating_apply pattern above.
+        # This keeps the load_strategy_config return-tuple (and its rigid
+        # unpacking) untouched. Absent block => None => NS9 behaviour.
+        if strategy_config:
+            try:
+                _raw_cfg = json.loads(
+                    Path(strategy_config).read_text(encoding="utf-8")
+                )
+                wrapper.option_cases_skeletons = _raw_cfg.get(
+                    "option_cases_skeletons"
+                )
+            except Exception:
+                wrapper.option_cases_skeletons = None
         return wrapper
     else:
         raise ValueError(

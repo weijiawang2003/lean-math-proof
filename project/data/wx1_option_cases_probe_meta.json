@@ -1,0 +1,288 @@
+{
+  "router_used": "ns24_router",
+  "baselines": {
+    "raw": "cx3_rawrouted_ns24_router_*",
+    "ns9": "cx3_wraprouted_ns24_router_* (NS9 best genome)"
+  },
+  "wx1_option_config": "project/evolve/experiments/wx1/wx1_option_cases_safe.json",
+  "wx1_bool_option_config": "project/evolve/experiments/wx1/wx1_bool_option_cases_safe.json",
+  "eval_settings": {
+    "top_k": 8,
+    "max_steps": 8
+  },
+  "per_set_summary": [
+    {
+      "set": "cx3_option_simp_easy",
+      "wx1_tag": "wx1",
+      "raw_wins": 15,
+      "ns9_wins": 15,
+      "wx1_wins": 26,
+      "wx1_only_beyond_ns9": 11,
+      "regressions_vs_ns9": 0,
+      "wx1_only_theorems": [
+        "Option.bnot_isNone",
+        "Option.bnot_isSome",
+        "Option.casesOn'_eq_elim",
+        "Option.casesOn'_none_coe",
+        "Option.elim'_eq_elim",
+        "Option.elim_apply",
+        "Option.elim_comp",
+        "Option.isSome_map",
+        "Option.orElse_eq_none",
+        "Option.orElse_eq_some",
+        "Option.orElse_none'"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "set": "cx3_option_cases_medium",
+      "wx1_tag": "wx1",
+      "raw_wins": 7,
+      "ns9_wins": 7,
+      "wx1_wins": 11,
+      "wx1_only_beyond_ns9": 4,
+      "regressions_vs_ns9": 0,
+      "wx1_only_theorems": [
+        "Option.bind_congr'",
+        "Option.map_bind",
+        "Option.map_bind'",
+        "Option.pmap_bind"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "set": "cx3_bool_option_mixed",
+      "wx1_tag": "wx1",
+      "raw_wins": 18,
+      "ns9_wins": 18,
+      "wx1_wins": 22,
+      "wx1_only_beyond_ns9": 4,
+      "regressions_vs_ns9": 0,
+      "wx1_only_theorems": [
+        "Option.eq_none_or_eq_some",
+        "Option.iget_mem",
+        "Option.orElse_eq_none'",
+        "Option.orElse_eq_some'"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "set": "cx3_bool_decide_easy",
+      "wx1_tag": "wx1",
+      "raw_wins": 2,
+      "ns9_wins": 2,
+      "wx1_wins": 2,
+      "wx1_only_beyond_ns9": 0,
+      "regressions_vs_ns9": 0,
+      "wx1_only_theorems": [],
+      "regression_theorems": []
+    }
+  ],
+  "wx1b_bool_summary": [
+    {
+      "set": "cx3_bool_decide_easy",
+      "ns9_wins": 2,
+      "wx1b_wins": 2,
+      "wx1b_only_beyond_ns9": 0,
+      "wx1b_only_theorems": [],
+      "regressions_vs_ns9": 0
+    },
+    {
+      "set": "cx3_bool_simp_medium",
+      "ns9_wins": 1,
+      "wx1b_wins": 1,
+      "wx1b_only_beyond_ns9": 0,
+      "wx1b_only_theorems": [],
+      "regressions_vs_ns9": 0
+    }
+  ],
+  "totals": {
+    "wx1_only_beyond_ns9": 19,
+    "regressions_vs_ns9": 0
+  },
+  "wx1_only_win_origin_counts": {
+    "wrapper_option_cases": 18,
+    "generative_topk": 1
+  },
+  "wx1_only_by_family": {
+    "option_cases_simp": 18,
+    "?": 1
+  },
+  "wx1_only_by_namespace": {
+    "Option": 19
+  },
+  "regression_theorems": [],
+  "wx1_only_theorems": [
+    {
+      "full_name": "Option.bnot_isNone",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_simp_easy",
+      "wx1_winning_tactic": "cases a <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.bnot_isSome",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_simp_easy",
+      "wx1_winning_tactic": "cases a <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.casesOn'_eq_elim",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_simp_easy",
+      "wx1_winning_tactic": "cases a <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.casesOn'_none_coe",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_simp_easy",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.elim'_eq_elim",
+      "file_path": "Mathlib/Data/Option/Defs.lean",
+      "namespace": "Option",
+      "set": "cx3_option_simp_easy",
+      "wx1_winning_tactic": "cases a <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.elim_apply",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_simp_easy",
+      "wx1_winning_tactic": "cases i <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.elim_comp",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_simp_easy",
+      "wx1_winning_tactic": "cases i <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.isSome_map",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_simp_easy",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.orElse_eq_none",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_simp_easy",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.orElse_eq_some",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_simp_easy",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.orElse_none'",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_simp_easy",
+      "wx1_winning_tactic": "cases x <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.bind_congr'",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_cases_medium",
+      "wx1_winning_tactic": "cases x <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.map_bind",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_cases_medium",
+      "wx1_winning_tactic": "cases x <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.map_bind'",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_cases_medium",
+      "wx1_winning_tactic": "cases x <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.pmap_bind",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_option_cases_medium",
+      "wx1_winning_tactic": "aesop",
+      "wx1_winning_origin": "generative_topk",
+      "wx1_winning_family": null
+    },
+    {
+      "full_name": "Option.eq_none_or_eq_some",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_bool_option_mixed",
+      "wx1_winning_tactic": "cases a <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.iget_mem",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_bool_option_mixed",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.orElse_eq_none'",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_bool_option_mixed",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    },
+    {
+      "full_name": "Option.orElse_eq_some'",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "set": "cx3_bool_option_mixed",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "wx1_winning_family": "option_cases_simp"
+    }
+  ]
+}
