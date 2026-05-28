@@ -58,6 +58,41 @@ the short version, `skeleton_evolution_final_report.md` for the full
 v3→NS9 progression, and `project/evolve/best/README.md` for the current
 best genome and reproduce command.
 
+### Post-catalog-extension result — NS22 Int omega branch
+
+NS15 remains the main **Nat** raw-model result. After NS20 the Learn
+track looked converged, but NS20 was **old-catalog exhaustion, not
+framework exhaustion**: CX1 extended the catalog 527 → 1,817 theorems
+across 8 namespaces and immediately re-surfaced trainable signal. CX2
+then mined a fresh **Int** surface (26% wrapper-only strike rate) and
+NS22 distilled it. NS22 is the main **post-CX result for Int transfer**.
+
+| layer / policy              | Nat medium | Nat large | demo_v1 | Int suite                  |
+|-----------------------------|-----------:|----------:|--------:|----------------------------|
+| `gen_v5` plain              |       3/38 |         — |   10/15 | —                          |
+| NS9 wrapper                 |      37/38 |     49/65 |   11/15 | —                          |
+| NS15 routed raw             |      23/38 |     35/65 |   10/15 | —                          |
+| NS21 routed raw             |      23/38 |     35/65 |   10/15 | Finset local gains         |
+| **NS22 routed raw**         |  **23/38** | **35/65** |   10/15 | **57 vs 35 NS12 baseline** |
+| NS9 wrapper + NS22 router   |      37/38 |     49/65 |   11/15 | wrapper adds ~0 on Int     |
+
+NS22 routes `^Int\.` to `gen_v5_ns22_int_fallback_omega_5x` and adds
+**+22 raw Int wins (35 → 57) vs the NS12 baseline across the CX1+CX2
+Int suite**, while preserving every Nat / Set / Finset / demo baseline
+exactly. The branch trained on the short `omega` tactic was intended as
+an ablation but became the chosen route: it solved 13/13 of the
+`fallback_omega` pool and 9/10 of the `iff_omega` pool **without ever
+seeing an iff_omega theorem in training**. The long, structured iff-pair
+tactic (`exact ⟨fun h => by omega, fun h => by omega⟩`) did not memorize
+at 60M-param scale; the short `omega` tactic is the transferable signal.
+
+The research principle that follows: **train on the shortest sufficient
+tactic family, not merely the wrapper-attributed family.** NS9's win
+attribution can award a goal to the iff-pair template when plain `omega`
+would also have closed it, so future mining should aggregate
+`iff_omega_pair` and `fallback_omega` into one minimal `omega` family.
+See `project/evolve/reports/post_cx1_ns21_cx2_ns22_update.md`.
+
 ### Earlier milestones
 
 For the chronological record: v3.6 proved 25/38 with a flat fallback/
@@ -303,27 +338,74 @@ subprocess logs, or checkpoint binaries.
   aesop variant against the full 74-theorem Finset catalog
   remainder. **0 new wins.** Pool stays at 4 unique.
   Preservation confirmed on all benchmarks (49/65 large_v5,
-  37/38 medium, 11/15 demo_v1). The Learn track has converged
-  against the current Mathlib catalog and 8-step search
-  budget.
+  37/38 medium, 11/15 demo_v1). The Learn track had converged
+  against the *current* Mathlib catalog and 8-step search
+  budget — old-catalog exhaustion, not framework exhaustion
+  (CX1 reopened the loop).
+- **CX1 (done)** — Mathlib catalog extension. Scanned 44 new
+  source files and grew the catalog **527 → 1,817 available
+  theorems across 8 namespaces** (Int / Option / Bool entirely
+  new). A limited eval probe surfaced 6 truly-new wrapper-only
+  wins; the **aesop/Finset pool reached 6 unique** (all winning
+  tactic `aesop`: `coe_insert`, `cons_eq_insert`,
+  `disjUnion_singleton`, `coe_cons`, `card_insert_eq_ite`,
+  `image_id`), meeting the NS21 training gate.
+- **NS21 (done)** — Finset/aesop imitation training. Best
+  checkpoint `gen_v5_ns21_finset_aesop_20x`, routed on `^Finset\.`.
+  **Honest memorization / narrow imitation:** 5/6 pool theorems
+  solved raw with `aesop`, but **0 held-out gains** because NS12
+  already emitted `aesop` on held-out Finset surfaces. Local
+  Finset gains only (`ns17_finset_extra` 12→15,
+  `cx1_finset_image_filter` 28→30). All Nat/Set/demo routed-raw
+  and wrapper baselines preserved exactly.
+- **CX2 (done)** — Int iff/omega mining. Extended the Int
+  catalog **120 → 216 candidates**; 78 fresh after exclusions.
+  **Wrapper-only strike rate 20/78 = 26%** (the NS9 wrapper alone
+  produced the signal; no experimental wrapper needed). Two
+  homogeneous gates met: **`iff_omega_pair` / Int at 10 unique**
+  (all `exact ⟨fun h => by omega, fun h => by omega⟩`) and
+  **`fallback_omega` / Int at 13 unique** (all `omega`).
+- **NS22 (done, current post-CX main result)** — Int omega
+  training. The router sends `^Int\.` to
+  `gen_v5_ns22_int_fallback_omega_5x` — intended as an ablation,
+  it became the chosen route. **+22 raw Int wins (NS12 baseline
+  35 → 57)** across the CX1+CX2 Int suite. `omega_5x` solved
+  13/13 of the `fallback_omega` pool and 9/10 of the `iff_omega`
+  pool *without seeing iff_omega theorems in training*. The long
+  iff-pair tactic is unlearnable at 60M-param scale; the short
+  `omega` tactic is the transferable signal. All Nat/Set/Finset/
+  demo routed-raw and wrapper baselines preserved exactly.
 
 ### Recommended next directions
 
-In rough order of likely yield (none of these is an NS21
-training arc — training is blocked until one of them lands):
+NS22 exposed a **wrapper-attribution mismatch**: some goals
+attributed to `iff_omega_pair` were actually `omega`-sufficient,
+because the first winning wrapper tactic is not necessarily the
+shortest sufficient one. The guiding principle is now **train on
+the shortest sufficient tactic family, not the wrapper-attributed
+family.** In rough order of likely yield:
 
-1. **Catalog extension from Mathlib.** Pull more theorems
-   (`Finset.image/filter/map`, `Nat.gcd/dvd`, `Nat.mod`
-   chains) to 2-4× the search surface. Most promising.
-2. **Stronger wrapper capabilities.** `aesop` with rule_sets
-   or explicit lemma bundles; `decide`; term-mode synthesis
-   for non-omega proofs. A wrapper-only probe analogous to
-   NS18 with broader tactic vocabulary.
-3. **Different learning objective.** Search-then-decide
-   reranker, or a state-value pruner. Outside the current
-   tactic-token-generator paradigm.
+1. **NS23 minimal-tactic relabeling / attribution repair.** Re-run
+   wrapper wins through a minimal-sufficient-tactic check and
+   aggregate `iff_omega_pair` + `fallback_omega` into one `omega`
+   family wherever `omega` succeeds, *before* declaring any
+   training gate met. This is the recommended next step — not
+   another immediate training run.
+2. **CX3 Bool/Option decide-family mining.** Bool (35) and Option
+   (47) remain mostly unprobed; the NS22 omega-absorption pattern
+   suggests a `decide`-family wrapper-only pool could yield similar
+   broad transfer on a fresh namespace.
+3. **DPO / ranker or reranker objective for long structured
+   tactics.** Simple imitation cannot absorb long iff-pair / multi-
+   step terms at this model scale; a preference/ranking objective
+   over competing wrapper-only tactics may be needed.
+4. **Stronger wrapper capabilities — only after attribution repair.**
+   `aesop` with rule_sets / lemma bundles, `decide`, term-mode
+   synthesis. Defer until minimal-tactic labels are trustworthy.
 
-See `project/evolve/reports/learn_track_final_report_ns10_ns20.md`
-for the full Learn-track narrative and
+See `project/evolve/reports/post_cx1_ns21_cx2_ns22_update.md`
+for the CX1→NS22 update,
+`project/evolve/reports/learn_track_final_report_ns10_ns20.md`
+for the full Learn-track narrative, and
 `project/evolve/reports/learn_track_executive_summary.md` for
 the short version.
