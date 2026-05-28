@@ -1,0 +1,35 @@
+{
+  "variant": "iff_10x",
+  "pool_family_label": "iff_omega_pair",
+  "out_path": "project/data/ns22_int_iff_omega_10x.jsonl",
+  "n_rows": 7545,
+  "n_pool_rows": 100,
+  "n_pool_unique_theorems": 10,
+  "n_pool_source_rows": 10,
+  "oversample_factor": 10,
+  "n_replay_rows": 7445,
+  "replay_source": "project/data/ns12_train_balanced.jsonl",
+  "init_from_recommended": "project/models/gen_v5_ns12_balanced",
+  "hard_exclusions": "no fallback_omega mixed into iff_omega corpus; no Nat simp_all rows; no Set/Finset wrapper-only rows",
+  "by_namespace": {
+    "?": 7445,
+    "Int": 100
+  },
+  "by_tactic_kind": {
+    "other": 7361,
+    "iff_omega_pair": 124,
+    "fallback_omega": 60
+  },
+  "pool_theorems": [
+    "Int.le_add_one_iff",
+    "Int.le_antisymm_iff",
+    "Int.le_iff_eq_or_lt",
+    "Int.le_iff_lt_or_eq",
+    "Int.le_sub_one_iff",
+    "Int.lt_toNat",
+    "Int.natCast_eq_zero",
+    "Int.natCast_ne_zero_iff_pos",
+    "Int.natCast_nonpos_iff",
+    "Int.sub_one_lt_iff"
+  ]
+}

@@ -1,0 +1,181 @@
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/models/gen_v8
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/31] Set.union_comm
+Loading weights:   0%|          | 0/257 [00:00<?, ?it/s]Loading weights: 100%|██████████| 257/257 [00:00<00:00, 10355.01it/s]
+Loaded generative policy from project/models/gen_v8 (type=seq2seq)
+  Base model: t5-base
+  Unique tactics in training: 93
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[2/31] Set.inter_comm
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[3/31] Set.mem_union
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[4/31] Set.mem_inter_iff
+       PROVED in 2 step(s) (used 1 fallback(s))
+       Proof: aesop -> tauto
+
+[5/31] Set.subset_univ
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[6/31] Set.empty_subset
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[7/31] Set.union_empty
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[8/31] Set.empty_union
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ext_iff]
+
+[9/31] Set.inter_univ
+       PROVED in 1 step(s)
+       Proof: simp [Set.ext_iff]
+
+[10/31] Set.univ_inter
+       PROVED in 1 step(s)
+       Proof: simp [Set.subset_def]
+
+[11/31] Set.ite_univ
+       PROVED in 1 step(s)
+       Proof: simp [Set.ite]
+
+[12/31] Nat.mul_add_mod'
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[13/31] Set.union_assoc
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[14/31] Set.inter_assoc
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[15/31] Set.union_self
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[16/31] Set.inter_self
+       PROVED in 1 step(s)
+       Proof: simp [Set.ext_iff]
+
+[17/31] Set.union_univ
+       PROVED in 1 step(s)
+       Proof: simp [Nat.add_zero]
+
+[18/31] Set.inter_empty
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[19/31] Set.subset_union_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: tauto
+
+[20/31] Set.subset_union_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: tauto
+
+[21/31] Set.inter_subset_left
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[22/31] Set.inter_subset_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.subset_def]
+
+[23/31] Finset.mem_insert
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[24/31] Finset.mem_singleton
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[25/31] Set.union_inter_distrib_left
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[26/31] Set.inter_union_distrib_left
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[27/31] Set.diff_self
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[28/31] Set.diff_empty
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[29/31] Set.empty_diff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[30/31] Finset.disjoint_insert_right
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[31/31] Finset.insert_comm
+       SKIP  (unavailable: Failed to locate the theorem with `Finset.insert_comm` as it)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.union_comm                           PROVED       1      aesop
+  Set.inter_comm                           PROVED       1      aesop
+  Set.mem_union                            PROVED       1      aesop
+  Set.mem_inter_iff                        PROVED       2      tauto
+  Set.subset_univ                          ERROR        1      
+  Set.empty_subset                         ERROR        1      
+  Set.union_empty                          PROVED       1      aesop
+  Set.empty_union                          PROVED       1      simp [Set.ext_iff]
+  Set.inter_univ                           PROVED       1      simp [Set.ext_iff]
+  Set.univ_inter                           PROVED       1      simp [Set.subset_def]
+  Set.ite_univ                             PROVED       1      simp [Set.ite]
+  Nat.mul_add_mod'                         ERROR        1      
+  Set.union_assoc                          PROVED       1      aesop
+  Set.inter_assoc                          PROVED       1      aesop
+  Set.union_self                           PROVED       1      aesop
+  Set.inter_self                           PROVED       1      simp [Set.ext_iff]
+  Set.union_univ                           PROVED       1      simp [Nat.add_zero]
+  Set.inter_empty                          PROVED       1      aesop
+  Set.subset_union_left                    PROVED       1      tauto
+  Set.subset_union_right                   PROVED       1      tauto
+  Set.inter_subset_left                    ERROR        1      
+  Set.inter_subset_right                   PROVED       1      simp [Set.subset_def]
+  Finset.mem_insert                        ERROR        2      
+  Finset.mem_singleton                     ERROR        2      
+  Set.union_inter_distrib_left             PROVED       1      aesop
+  Set.inter_union_distrib_left             PROVED       1      aesop
+  Set.diff_self                            PROVED       1      aesop
+  Set.diff_empty                           PROVED       1      aesop
+  Set.empty_diff                           PROVED       1      aesop
+  Finset.disjoint_insert_right             ERROR        2      
+  Finset.insert_comm                       SKIP         —      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    31
+  Available:         30/31
+  Proved:            23/30  (77%)
+  Errored:           7/30
+  Exhausted:         0/30
+  Skipped:           1/31
+  Avg steps (proved): 1.0
+  Fallbacks used:     11
+================================================================
+
+Run artifacts: experiments/gen_v8_20260502_192009/eval/eval-f41156ca

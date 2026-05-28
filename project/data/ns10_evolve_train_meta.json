@@ -1,0 +1,102 @@
+{
+  "v": "ns10",
+  "out_path": "project/data/ns10_evolve_train.jsonl",
+  "md5": "e5f122555d034eb5b1d5c43c9a69606b",
+  "n_pairs": 143,
+  "n_unique_theorems": 51,
+  "n_runs_seen": 10,
+  "runs_seen": [
+    "eval-037daae2",
+    "eval-128d0a18",
+    "eval-52480ba3",
+    "eval-724300eb",
+    "eval-935e9fc7",
+    "eval-9b97dda3",
+    "eval-a2e51ad4",
+    "eval-c33141e2",
+    "eval-f3075a9e",
+    "eval-fedb884f"
+  ],
+  "held_out": [
+    "Nat.AM_GM",
+    "Nat.div_lt_iff_lt_mul'",
+    "Nat.div_lt_one_iff",
+    "Nat.div_pos",
+    "Nat.div_pos_iff",
+    "Nat.dvd_iff_div_mul_eq",
+    "Nat.mul_eq_left",
+    "Nat.mul_eq_right",
+    "Nat.pow_lt_pow_iff_left",
+    "Nat.sqrt_lt"
+  ],
+  "held_out_seen_in_traces": {
+    "Nat.div_lt_iff_lt_mul'": 213,
+    "Nat.div_lt_one_iff": 294,
+    "Nat.mul_eq_left": 124,
+    "Nat.mul_eq_right": 124,
+    "Nat.div_pos": 200,
+    "Nat.div_pos_iff": 161,
+    "Nat.sqrt_lt": 467,
+    "Nat.pow_lt_pow_iff_left": 469,
+    "Nat.dvd_iff_div_mul_eq": 195
+  },
+  "by_origin": {
+    "tactic_template": 46,
+    "family_tactic": 5,
+    "generative_topk": 28,
+    "fallback_tactic": 49,
+    "term_builder": 15
+  },
+  "by_role": {
+    "close": 103,
+    "advance_assist": 40
+  },
+  "top_theorems": {
+    "Nat.add_pos_iff_pos_or_pos": 8,
+    "Nat.sub_lt_iff_lt_add": 7,
+    "Nat.add_eq_left": 6,
+    "Nat.add_eq_max_iff": 6,
+    "Nat.add_eq_min_iff": 6,
+    "Nat.add_eq_one_iff": 6,
+    "Nat.add_eq_right": 6,
+    "Nat.le_and_le_add_one_iff": 6,
+    "Nat.add_eq_zero": 6,
+    "Nat.lt_one_iff": 6,
+    "Nat.le_add_one_iff": 6,
+    "Nat.one_add_le_iff": 6,
+    "Nat.sub_lt_iff_lt_add'": 6,
+    "Nat.le_one_iff_eq_zero_or_eq_one": 5,
+    "Nat.eq_zero_of_double_le": 4
+  },
+  "top_skeletons": {
+    "(none)": 106,
+    "pt_iff_8": 23,
+    "fb_18": 9,
+    "fam_mod_15": 2,
+    "pt_le_13": 1,
+    "pt_any_10": 1,
+    "pt_eq_12": 1
+  },
+  "tactic_length_stats": {
+    "n": 143,
+    "min": 5,
+    "max": 136,
+    "mean": 22.517482517482517
+  },
+  "filters": {
+    "max_tactic_len": 200,
+    "max_state_len": 2500,
+    "allowed_origins": [
+      "fallback_tactic",
+      "family_tactic",
+      "generative_topk",
+      "tactic_template",
+      "term_builder"
+    ],
+    "include_retrieved": false,
+    "k_assist_window": 3,
+    "rejects_self_reference": true,
+    "rejects_held_out": true,
+    "dedup_by_state_tactic": true
+  }
+}

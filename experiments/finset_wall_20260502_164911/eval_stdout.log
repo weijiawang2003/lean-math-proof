@@ -1,0 +1,178 @@
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/gen_ckpt_v6_premise
+  Policy type : premise_augmented
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/31] Set.union_comm
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 12823.03it/s]
+Loaded generative policy from project/gen_ckpt_v6_premise (type=seq2seq)
+  Base model: t5-small
+  Unique tactics in training: 93
+[PremiseAugmentedPolicy] Loaded premise index from project/premise_index.json
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[2/31] Set.inter_comm
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[3/31] Set.mem_union
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[4/31] Set.mem_inter_iff
+       PROVED in 2 step(s) (used 1 fallback(s))
+       Proof: aesop -> tauto
+
+[5/31] Set.subset_univ
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[6/31] Set.empty_subset
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[7/31] Set.union_empty
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[8/31] Set.empty_union
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[9/31] Set.inter_univ
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[10/31] Set.univ_inter
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[11/31] Set.ite_univ
+       FAILED at step 3 (All top-8 tactics errored at step 3)
+
+[12/31] Nat.mul_add_mod'
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[13/31] Set.union_assoc
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[14/31] Set.inter_assoc
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[15/31] Set.union_self
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[16/31] Set.inter_self
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[17/31] Set.union_univ
+       PROVED in 1 step(s)
+       Proof: simp [Nat.sub_self]
+
+[18/31] Set.inter_empty
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[19/31] Set.subset_union_left
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[20/31] Set.subset_union_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[21/31] Set.inter_subset_left
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[22/31] Set.inter_subset_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[23/31] Finset.mem_insert
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[24/31] Finset.mem_singleton
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[25/31] Set.union_inter_distrib_left
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[26/31] Set.inter_union_distrib_left
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[27/31] Set.diff_self
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[28/31] Set.diff_empty
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[29/31] Set.empty_diff
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[30/31] Finset.disjoint_insert_right
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[31/31] Finset.insert_comm
+       SKIP  (unavailable: Failed to locate the theorem with `Finset.insert_comm` as it)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.union_comm                           PROVED       1      aesop
+  Set.inter_comm                           PROVED       1      aesop
+  Set.mem_union                            PROVED       1      aesop
+  Set.mem_inter_iff                        PROVED       2      tauto
+  Set.subset_univ                          ERROR        1      
+  Set.empty_subset                         ERROR        1      
+  Set.union_empty                          PROVED       1      aesop
+  Set.empty_union                          PROVED       1      aesop
+  Set.inter_univ                           PROVED       1      aesop
+  Set.univ_inter                           PROVED       1      aesop
+  Set.ite_univ                             ERROR        3      
+  Nat.mul_add_mod'                         ERROR        1      
+  Set.union_assoc                          PROVED       1      aesop
+  Set.inter_assoc                          PROVED       1      aesop
+  Set.union_self                           PROVED       1      aesop
+  Set.inter_self                           PROVED       1      aesop
+  Set.union_univ                           PROVED       1      simp [Nat.sub_self]
+  Set.inter_empty                          PROVED       1      aesop
+  Set.subset_union_left                    ERROR        1      
+  Set.subset_union_right                   ERROR        1      
+  Set.inter_subset_left                    ERROR        1      
+  Set.inter_subset_right                   ERROR        1      
+  Finset.mem_insert                        ERROR        2      
+  Finset.mem_singleton                     ERROR        2      
+  Set.union_inter_distrib_left             PROVED       1      aesop
+  Set.inter_union_distrib_left             PROVED       1      aesop
+  Set.diff_self                            PROVED       1      aesop
+  Set.diff_empty                           PROVED       1      aesop
+  Set.empty_diff                           PROVED       1      aesop
+  Finset.disjoint_insert_right             ERROR        2      
+  Finset.insert_comm                       SKIP         —      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    31
+  Available:         30/31
+  Proved:            19/30  (63%)
+  Errored:           11/30
+  Exhausted:         0/30
+  Skipped:           1/31
+  Avg steps (proved): 1.1
+  Fallbacks used:     2
+================================================================
+
+Run artifacts: experiments/finset_wall_20260502_164911/eval-9365fd17

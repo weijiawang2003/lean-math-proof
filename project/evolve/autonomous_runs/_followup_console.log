@@ -1,0 +1,108 @@
+# v5 followup run — v5-followup-20260522-103058-537f36
+
+- variants queued: 11
+
+## cycle 1 — v5-12-prio-div-hyp  [B+priority]
+- priority div rewrites with hyp_pos
+- elapsed: 0.00h  remaining: 3.00h
+  [v5-12-prio-div-hyp] running eval (1800s timeout)...
+  [v5-12-prio-div-hyp] eval finished in 239s (rc=0)
+- proved: 27 (Δ +0)  prog: 4  err: 7
+- origins: {'fallback_tactic': 18, 'family_tactic': 4, 'generative_topk': 4, 'tactic_template': 1}
+
+## cycle 2 — v5-13-prio-iff-constructor  [A+priority]
+- priority iff constructor split
+- elapsed: 0.07h  remaining: 2.93h
+  [v5-13-prio-iff-constructor] running eval (1800s timeout)...
+  [v5-13-prio-iff-constructor] eval finished in 248s (rc=0)
+- proved: 26 (Δ -1)  prog: 5  err: 7
+- origins: {'tactic_template': 16, 'family_tactic': 2, 'generative_topk': 3, 'fallback_tactic': 5}
+- REGRESSIONS: ['Nat.div_lt_one_iff']
+
+## cycle 3 — v5-14-prio-combo  [A+B+priority]
+- priority + family + term + split_ifs
+- elapsed: 0.14h  remaining: 2.86h
+  [v5-14-prio-combo] running eval (1800s timeout)...
+  [v5-14-prio-combo] eval finished in 225s (rc=0)
+- proved: 27 (Δ +0)  prog: 4  err: 7
+- origins: {'tactic_template': 18, 'family_tactic': 2, 'generative_topk': 3, 'fallback_tactic': 4}
+- term_builder: 32/0/0
+
+## cycle 4 — v5-15-prio-mul-specific  [B+priority]
+- priority mul_eq term-mode skeletons
+- elapsed: 0.20h  remaining: 2.80h
+  [v5-15-prio-mul-specific] running eval (1800s timeout)...
+  [v5-15-prio-mul-specific] eval finished in 251s (rc=0)
+- proved: 28 (Δ +1)  prog: 5  err: 5
+- origins: {'fallback_tactic': 18, 'family_tactic': 4, 'generative_topk': 4, 'tactic_template': 2}
+- NEW WINS: ['Nat.mul_eq_left', 'Nat.mul_eq_right']
+- REGRESSIONS: ['Nat.div_lt_one_iff']
+
+## cycle 5 — v5-16-prio-sqrt-pow  [B+priority]
+- priority sqrt and pow
+- elapsed: 0.27h  remaining: 2.73h
+  [v5-16-prio-sqrt-pow] running eval (1800s timeout)...
+  [v5-16-prio-sqrt-pow] eval finished in 265s (rc=0)
+- proved: 26 (Δ -1)  prog: 5  err: 7
+- origins: {'fallback_tactic': 18, 'family_tactic': 4, 'generative_topk': 4}
+- REGRESSIONS: ['Nat.div_lt_one_iff']
+
+## cycle 6 — v5-17-prio-term-iff  [A+priority]
+- priority term_builder iff (advanced)
+- elapsed: 0.34h  remaining: 2.66h
+  [v5-17-prio-term-iff] running eval (1800s timeout)...
+  [v5-17-prio-term-iff] eval finished in 245s (rc=0)
+- proved: 26 (Δ -1)  prog: 5  err: 7
+- origins: {'tactic_template': 17, 'family_tactic': 2, 'generative_topk': 3, 'fallback_tactic': 4}
+- REGRESSIONS: ['Nat.div_lt_one_iff']
+
+## cycle 7 — v5-18-prio-kitchen  [all+priority]
+- kitchen sink: every priority template
+- elapsed: 0.41h  remaining: 2.59h
+  [v5-18-prio-kitchen] running eval (1800s timeout)...
+  [v5-18-prio-kitchen] eval finished in 233s (rc=0)
+- proved: 29 (Δ +2)  prog: 4  err: 5
+- origins: {'tactic_template': 20, 'family_tactic': 2, 'generative_topk': 3, 'fallback_tactic': 4}
+- term_builder: 8/0/0
+- NEW WINS: ['Nat.mul_eq_left', 'Nat.mul_eq_right']
+
+## cycle 8 — v5-19-prio-split-ifs  [B+priority]
+- priority split_ifs under 'any' key
+- elapsed: 0.47h  remaining: 2.53h
+  [v5-19-prio-split-ifs] running eval (1800s timeout)...
+  [v5-19-prio-split-ifs] eval finished in 276s (rc=0)
+- proved: 26 (Δ -1)  prog: 5  err: 7
+- origins: {'fallback_tactic': 18, 'family_tactic': 4, 'generative_topk': 4}
+- REGRESSIONS: ['Nat.div_lt_one_iff']
+
+## cycle 9 — v5-20-prio-div-pos  [B+priority]
+- priority div_pos and div_pos_iff
+- elapsed: 0.55h  remaining: 2.45h
+  [v5-20-prio-div-pos] running eval (1800s timeout)...
+  [v5-20-prio-div-pos] eval finished in 242s (rc=0)
+- proved: 28 (Δ +1)  prog: 5  err: 5
+- origins: {'fallback_tactic': 18, 'family_tactic': 4, 'tactic_template': 3, 'generative_topk': 3}
+- NEW WINS: ['Nat.div_pos', 'Nat.div_pos_iff']
+- REGRESSIONS: ['Nat.div_lt_one_iff']
+
+## cycle 10 — v5-21-prio-iff-basic  [A+priority]
+- priority iff term_builder basic (minimal)
+- elapsed: 0.62h  remaining: 2.38h
+  [v5-21-prio-iff-basic] running eval (1800s timeout)...
+  [v5-21-prio-iff-basic] eval finished in 241s (rc=0)
+- proved: 26 (Δ -1)  prog: 5  err: 7
+- origins: {'tactic_template': 17, 'family_tactic': 2, 'generative_topk': 3, 'fallback_tactic': 4}
+- REGRESSIONS: ['Nat.div_lt_one_iff']
+
+## cycle 11 — v5-22-deny-derailers  [B+priority+deny]
+- deny derailing simps + priority kitchen
+- elapsed: 0.68h  remaining: 2.32h
+  [v5-22-deny-derailers] running eval (1800s timeout)...
+  [v5-22-deny-derailers] eval finished in 212s (rc=0)
+- proved: 29 (Δ +2)  prog: 4  err: 5
+- origins: {'tactic_template': 20, 'family_tactic': 2, 'generative_topk': 3, 'fallback_tactic': 4}
+- NEW WINS: ['Nat.mul_eq_left', 'Nat.mul_eq_right']
+
+## complete — 0.74h, 11 cycles, best=v5-18-prio-kitchen proved=29
+
+[autonomous_research_followup] complete: /Users/weijiawang/dev/dojo_sandbox/project/evolve/autonomous_runs/v5-followup-20260522-103058-537f36

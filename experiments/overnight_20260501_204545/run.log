@@ -1,0 +1,341 @@
+[smoke] Running tiny smoke test
+[smoke]   - 1 theorem (set_small)
+[smoke]   - all 3 checkpoints, beam + 1 seed each
+[smoke]   - confirms every load path before committing to overnight
+============================================================
+  OVERNIGHT A+D RUN
+============================================================
+  Started   : Fri May  1 20:45:45 CDT 2026
+  Root dir  : experiments/overnight_20260501_204545
+  Theorems  : set_small
+  Top-k     : 8
+  Max steps : 8
+  Sample T  : 0.8
+  Seeds     : 42
+============================================================
+
+------------------------------------------------------------
+  Phase 1: v5 (beam, deterministic anchor)
+  out: experiments/overnight_20260501_204545/v5_beam
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : set_small (1 theorems)
+  Checkpoint  : project/models/gen_v5
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/1] Set.ite_univ
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 8309.07it/s]
+Loaded generative policy from project/models/gen_v5 (type=seq2seq)
+  Base model: t5-small
+  Unique tactics in training: 93
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.ite_univ                             ERROR        1      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    1
+  Available:         1/1
+  Proved:            0/1  (0%)
+  Errored:           1/1
+  Exhausted:         0/1
+  Skipped:           0/1
+================================================================
+
+Run artifacts: experiments/overnight_20260501_204545/v5_beam/eval-56bb3370
+[ok] Phase 1: v5 (beam, deterministic anchor)
+
+------------------------------------------------------------
+  Phase 1: premise (beam, deterministic anchor)
+  out: experiments/overnight_20260501_204545/premise_beam
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : set_small (1 theorems)
+  Checkpoint  : project/gen_ckpt_v6_premise
+  Policy type : premise_augmented
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/1] Set.ite_univ
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 20129.46it/s]
+Loaded generative policy from project/gen_ckpt_v6_premise (type=seq2seq)
+  Base model: t5-small
+  Unique tactics in training: 93
+[PremiseAugmentedPolicy] Loaded premise index from project/premise_index.json
+       FAILED at step 3 (All top-8 tactics errored at step 3)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.ite_univ                             ERROR        3      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    1
+  Available:         1/1
+  Proved:            0/1  (0%)
+  Errored:           1/1
+  Exhausted:         0/1
+  Skipped:           0/1
+================================================================
+
+Run artifacts: experiments/overnight_20260501_204545/premise_beam/eval-bc1e14b9
+[ok] Phase 1: premise (beam, deterministic anchor)
+
+------------------------------------------------------------
+  Phase 1: base (beam, deterministic anchor)
+  out: experiments/overnight_20260501_204545/base_beam
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : set_small (1 theorems)
+  Checkpoint  : project/models/gen_v6
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/1] Set.ite_univ
+Loading weights:   0%|          | 0/257 [00:00<?, ?it/s]Loading weights: 100%|██████████| 257/257 [00:00<00:00, 9796.93it/s]
+Loaded generative policy from project/models/gen_v6 (type=seq2seq)
+  Base model: t5-base
+  Unique tactics in training: 119
+       PROVED in 1 step(s)
+       Proof: simp [Set.ite]
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.ite_univ                             PROVED       1      simp [Set.ite]
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    1
+  Available:         1/1
+  Proved:            1/1  (100%)
+  Errored:           0/1
+  Exhausted:         0/1
+  Skipped:           0/1
+  Avg steps (proved): 1.0
+  Fallbacks used:     0
+================================================================
+
+Run artifacts: experiments/overnight_20260501_204545/base_beam/eval-3a724419
+[ok] Phase 1: base (beam, deterministic anchor)
+
+------------------------------------------------------------
+  Phase 2: v5 sample seed=42
+  out: experiments/overnight_20260501_204545/v5_sample_seed42
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : set_small (1 theorems)
+  Checkpoint  : project/models/gen_v5
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/1] Set.ite_univ
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 13117.53it/s]
+Loaded generative policy from project/models/gen_v5 (type=seq2seq)
+  Base model: t5-small
+  Unique tactics in training: 93
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.ite_univ                             ERROR        2      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    1
+  Available:         1/1
+  Proved:            0/1  (0%)
+  Errored:           1/1
+  Exhausted:         0/1
+  Skipped:           0/1
+================================================================
+
+Run artifacts: experiments/overnight_20260501_204545/v5_sample_seed42/eval-0e1f7039
+[ok] Phase 2: v5 sample seed=42
+
+------------------------------------------------------------
+  Phase 2: premise sample seed=42
+  out: experiments/overnight_20260501_204545/premise_sample_seed42
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : set_small (1 theorems)
+  Checkpoint  : project/gen_ckpt_v6_premise
+  Policy type : premise_augmented
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/1] Set.ite_univ
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 47139.14it/s]
+Loaded generative policy from project/gen_ckpt_v6_premise (type=seq2seq)
+  Base model: t5-small
+  Unique tactics in training: 93
+[PremiseAugmentedPolicy] Loaded premise index from project/premise_index.json
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.ite_univ                             ERROR        1      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    1
+  Available:         1/1
+  Proved:            0/1  (0%)
+  Errored:           1/1
+  Exhausted:         0/1
+  Skipped:           0/1
+================================================================
+
+Run artifacts: experiments/overnight_20260501_204545/premise_sample_seed42/eval-7b68d9b9
+[ok] Phase 2: premise sample seed=42
+
+------------------------------------------------------------
+  Phase 2: base sample seed=42
+  out: experiments/overnight_20260501_204545/base_sample_seed42
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : set_small (1 theorems)
+  Checkpoint  : project/models/gen_v6
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/1] Set.ite_univ
+Loading weights:   0%|          | 0/257 [00:00<?, ?it/s]Loading weights: 100%|██████████| 257/257 [00:00<00:00, 32450.36it/s]
+Loaded generative policy from project/models/gen_v6 (type=seq2seq)
+  Base model: t5-base
+  Unique tactics in training: 119
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.ite_univ                             PROVED       1      simp [Set.ite]
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    1
+  Available:         1/1
+  Proved:            1/1  (100%)
+  Errored:           0/1
+  Exhausted:         0/1
+  Skipped:           0/1
+  Avg steps (proved): 1.0
+  Fallbacks used:     1
+================================================================
+
+Run artifacts: experiments/overnight_20260501_204545/base_sample_seed42/eval-20572eb4
+[ok] Phase 2: base sample seed=42
+
+------------------------------------------------------------
+  Phase 3: retriever quality probe
+------------------------------------------------------------
+[probe] 262 proven theorems in project/project_state.json
+[probe] 268 unique theorem names indexed from traces
+[probe] Wrote experiments/overnight_20260501_204545/retriever_probe.json
+
+================================================================
+  RETRIEVER QUALITY PROBE — SUMMARY
+================================================================
+  Total proved: 262
+  Evaluable (named premises + state available): 28
+  Skipped — no named premises in tactic:  222
+  Skipped — no first-state in traces:     12
+
+  Bucket                  N      R@1      R@5     R@10     R@15
+  -------------------- ---- -------- -------- -------- --------
+  Set.Basic              12   50.0%   83.3%   83.3%   83.3%
+  Nat.Defs                2   16.7%   50.0%   50.0%   50.0%
+  Finset.Basic           14    0.0%    0.0%    0.0%    0.0%
+  __OVERALL__            28   22.6%   39.3%   39.3%   39.3%
+================================================================
+[ok] retriever probe
+
+------------------------------------------------------------
+  Phase 4: summary
+------------------------------------------------------------
+[summarize] Wrote experiments/overnight_20260501_204545/SUMMARY.md
+
+# Overnight A+D — Summary
+
+Run directory: `experiments/overnight_20260501_204545`
+
+## Curriculum eval (curriculum_all, 30 theorems)
+
+Headline: deterministic beam-k=8 anchor + sampling variance (temp=0.8, top-p=0.95, k=8) over 5 seeds.
+
+| Checkpoint | Beam (anchor) | Sample mean ± std | Sample range | N seeds |
+|---|---|---|---|---|
+| gen_v5  (t5-small, baseline) | 0/1 | 0.0 ± 0.0 | 0 – 0 | 1 |
+| gen_v6_premise (t5-small + premise injection) | 0/1 | 0.0 ± 0.0 | 0 – 0 | 1 |
+| gen_v6  (t5-base, never previously evaluated) | 1/1 | 1.0 ± 0.0 | 1 – 1 | 1 |
+
+### Per-seed sample results
+
+| Checkpoint | seed 42 |
+|---|---|
+| gen_v5  (t5-small, baseline) | 0 |
+| gen_v6_premise (t5-small + premise injection) | 0 |
+| gen_v6  (t5-base, never previously evaluated) | 1 |
+
+## Reading the result
+
+- **Capacity scaling (t5-small → t5-base):** 0 → 1 (Δ = ↑ 1 theorems on the curriculum, beam).
+- **Premise injection at t5-small:** 0 → 0 (Δ = → 0, beam). Reproducing the v5/v6_premise contrast.
+- **v5 vs premise gap under sampling:** 0.0 ± 0.0  vs  0.0 ± 0.0.  Gap = +0.0, pooled sd = 0.00.  → ROBUST.
+- **t5-small vs t5-base gap under sampling:** 0.0 ± 0.0  vs  1.0 ± 0.0.  Gap = +1.0, pooled sd = 0.00.  → ROBUST.
+
+## Retriever quality probe (D)
+[ok] summary written
+
+============================================================
+  DONE  Fri May  1 20:46:56 CDT 2026
+  See: experiments/overnight_20260501_204545/SUMMARY.md
+============================================================

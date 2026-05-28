@@ -1,0 +1,36 @@
+{
+  "run_id": "eval-20572eb4",
+  "method": "policy_rollout_topk",
+  "theorem_set": "set_small",
+  "ckpt_dir": "project/models/gen_v6",
+  "policy_type": "generative",
+  "max_steps": 8,
+  "top_k": 8,
+  "decode_mode": "sample",
+  "temperature": 0.8,
+  "seed": 42,
+  "total_theorems": 1,
+  "available": 1,
+  "proved": 1,
+  "errored": 0,
+  "exhausted": 0,
+  "skipped": 0,
+  "success_rate": 1.0,
+  "per_theorem": [
+    {
+      "full_name": "Set.ite_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "num_steps": 1,
+      "tactics_used": [
+        "simp [Set.ite]"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "winning_tactic": "simp [Set.ite]",
+      "fallbacks_used": 1
+    }
+  ]
+}

@@ -1,0 +1,792 @@
+{
+  "cx1_int_count": 120,
+  "cx1_additional_files_scanned": {
+    "Mathlib/Data/Int/ModEq.lean": 45,
+    "Mathlib/Data/Int/Order/Lemmas.lean": 5,
+    "Mathlib/Data/Int/Order/Units.lean": 11,
+    "Mathlib/Data/Int/Lemmas.lean": 17,
+    "Mathlib/Data/Int/SuccPred.lean": 9,
+    "Mathlib/Data/Int/Cast/Lemmas.lean": 40
+  },
+  "cx2_additional_int_candidates": 96,
+  "total_int_candidates": 216,
+  "known_wrapper_only_wins": [
+    "Int.emod_two_eq_zero_or_one",
+    "Int.le_add_one_iff",
+    "Int.le_iff_lt_or_eq"
+  ],
+  "tag_distribution": {
+    "add_sub_arith": 56,
+    "dvd_gcd_lcm": 48,
+    "mod_div": 40,
+    "le_lt_order": 36,
+    "iff_candidate": 33,
+    "bitwise": 31,
+    "cast_natCast": 24,
+    "abs_natAbs_sign": 24,
+    "other": 22,
+    "succ_pred": 19
+  },
+  "iff_omega_candidate_count": 13,
+  "omega_only_candidate_count": 53,
+  "cast_candidate_count": 24,
+  "iff_omega_candidates": [
+    {
+      "full_name": "Int.le_antisymm_iff",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "iff_candidate",
+        "le_lt_order"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.le_iff_eq_or_lt",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "iff_candidate",
+        "le_lt_order"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.mul_nonneg_iff_of_pos_right",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "iff_candidate",
+        "add_sub_arith"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.sub_one_lt_iff",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "iff_candidate",
+        "le_lt_order",
+        "add_sub_arith"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.le_sub_one_iff",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "iff_candidate",
+        "le_lt_order",
+        "add_sub_arith"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.modEq_iff_add_fac",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "iff_candidate",
+        "add_sub_arith",
+        "mod_div"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.natAbs_eq_iff_mul_self_eq",
+      "file": "Mathlib/Data/Int/Order/Lemmas.lean",
+      "tags": [
+        "iff_candidate",
+        "add_sub_arith",
+        "abs_natAbs_sign"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.natAbs_lt_iff_mul_self_lt",
+      "file": "Mathlib/Data/Int/Order/Lemmas.lean",
+      "tags": [
+        "iff_candidate",
+        "le_lt_order",
+        "add_sub_arith",
+        "abs_natAbs_sign"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.natAbs_le_iff_mul_self_le",
+      "file": "Mathlib/Data/Int/Order/Lemmas.lean",
+      "tags": [
+        "iff_candidate",
+        "le_lt_order",
+        "add_sub_arith",
+        "abs_natAbs_sign"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.natAbs_lt_iff_sq_lt",
+      "file": "Mathlib/Data/Int/Lemmas.lean",
+      "tags": [
+        "iff_candidate",
+        "le_lt_order",
+        "abs_natAbs_sign"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.natAbs_le_iff_sq_le",
+      "file": "Mathlib/Data/Int/Lemmas.lean",
+      "tags": [
+        "iff_candidate",
+        "le_lt_order",
+        "abs_natAbs_sign"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.pos_iff_one_le",
+      "file": "Mathlib/Data/Int/SuccPred.lean",
+      "tags": [
+        "iff_candidate",
+        "le_lt_order"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.covBy_iff_succ_eq",
+      "file": "Mathlib/Data/Int/SuccPred.lean",
+      "tags": [
+        "iff_candidate",
+        "succ_pred"
+      ],
+      "source": "cx2_scan"
+    }
+  ],
+  "omega_only_candidates": [
+    {
+      "full_name": "Int.le_rfl",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.lt_or_lt_of_ne",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.lt_or_le",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.le_or_lt",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.lt_asymm",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.le_of_eq",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.zero_le_ofNat",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order",
+        "cast_natCast"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.succ_neg_succ",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "add_sub_arith",
+        "succ_pred"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.neg_pred",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "add_sub_arith",
+        "succ_pred"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.pred_neg_pred",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "add_sub_arith",
+        "succ_pred"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.lt_succ_self",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order",
+        "succ_pred"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.pred_self_lt",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order",
+        "succ_pred"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.inductionOn'_add_one",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "add_sub_arith",
+        "succ_pred"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.inductionOn'_sub_one",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "add_sub_arith",
+        "succ_pred"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.le_induction",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order",
+        "succ_pred"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.le_induction_down",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order",
+        "succ_pred"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.natAbs_add_of_nonpos",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "add_sub_arith",
+        "abs_natAbs_sign"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.ediv_of_neg_of_pos",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "add_sub_arith",
+        "mod_div"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.add_emod_eq_add_mod_right",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "add_sub_arith",
+        "mod_div"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.neg_emod_two",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "add_sub_arith",
+        "mod_div"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.ofNat_add_negSucc_of_ge",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "add_sub_arith",
+        "cast_natCast"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.sign_add_eq_of_sign_eq",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "add_sub_arith",
+        "abs_natAbs_sign"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.toNat_le",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.lt_toNat",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.toNat_le_toNat",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.toNat_lt_toNat",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.natMod_lt",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.neg_modEq_neg",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith",
+        "mod_div"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.ModEq.mul_left'",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.ModEq.mul_right'",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.ModEq.add_left_cancel",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.ModEq.add_left_cancel'",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.ModEq.add_right_cancel",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.ModEq.add_right_cancel'",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.ModEq.of_mul_left",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.ModEq.of_mul_right",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.add_modEq_left",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith",
+        "mod_div"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.add_modEq_right",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith",
+        "mod_div"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.modEq_add_fac",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith",
+        "mod_div"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.modEq_sub_fac",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith",
+        "mod_div"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.modEq_add_fac_self",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith",
+        "mod_div"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.mod_mul_right_mod",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith",
+        "mod_div"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.mod_mul_left_mod",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "add_sub_arith",
+        "mod_div"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.units_mul_self",
+      "file": "Mathlib/Data/Int/Order/Units.lean",
+      "tags": [
+        "add_sub_arith"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.units_coe_mul_self",
+      "file": "Mathlib/Data/Int/Order/Units.lean",
+      "tags": [
+        "add_sub_arith"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.neg_one_pow_ne_zero",
+      "file": "Mathlib/Data/Int/Order/Units.lean",
+      "tags": [
+        "add_sub_arith"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.sq_eq_one_of_sq_lt_four",
+      "file": "Mathlib/Data/Int/Order/Units.lean",
+      "tags": [
+        "le_lt_order"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.sq_eq_one_of_sq_le_three",
+      "file": "Mathlib/Data/Int/Order/Units.lean",
+      "tags": [
+        "le_lt_order"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.le_natCast_sub",
+      "file": "Mathlib/Data/Int/Lemmas.lean",
+      "tags": [
+        "le_lt_order",
+        "cast_natCast"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.natAbs_coe_sub_coe_le_of_le",
+      "file": "Mathlib/Data/Int/Lemmas.lean",
+      "tags": [
+        "le_lt_order",
+        "add_sub_arith",
+        "abs_natAbs_sign"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.natAbs_coe_sub_coe_lt_of_lt",
+      "file": "Mathlib/Data/Int/Lemmas.lean",
+      "tags": [
+        "le_lt_order",
+        "add_sub_arith",
+        "abs_natAbs_sign"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.sub_one_covBy",
+      "file": "Mathlib/Data/Int/SuccPred.lean",
+      "tags": [
+        "add_sub_arith"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.covBy_add_one",
+      "file": "Mathlib/Data/Int/SuccPred.lean",
+      "tags": [
+        "add_sub_arith"
+      ],
+      "source": "cx2_scan"
+    }
+  ],
+  "cast_candidates_top20": [
+    {
+      "full_name": "Int.bodd_negOfNat",
+      "file": "Mathlib/Data/Int/Bitwise.lean",
+      "tags": [
+        "cast_natCast",
+        "bitwise"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.zero_le_ofNat",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "le_lt_order",
+        "cast_natCast"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.natCast_eq_zero",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "cast_natCast"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.natCast_ne_zero",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "cast_natCast"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.natCast_ne_zero_iff_pos",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "iff_candidate",
+        "cast_natCast"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.natCast_pos",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "cast_natCast"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.natCast_nonpos_iff",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "iff_candidate",
+        "cast_natCast"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.natCast_pred_of_pos",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "succ_pred",
+        "cast_natCast"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.natCast_dvd_natCast",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "cast_natCast",
+        "dvd_gcd_lcm"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.natCast_dvd",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "cast_natCast",
+        "dvd_gcd_lcm"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.dvd_natCast",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "cast_natCast",
+        "dvd_gcd_lcm"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.ofNat_add_negSucc_of_ge",
+      "file": "Mathlib/Data/Int/Defs.lean",
+      "tags": [
+        "add_sub_arith",
+        "cast_natCast"
+      ],
+      "source": "cx1_catalog"
+    },
+    {
+      "full_name": "Int.natCast_modEq_iff",
+      "file": "Mathlib/Data/Int/ModEq.lean",
+      "tags": [
+        "iff_candidate",
+        "cast_natCast",
+        "mod_div"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.le_natCast_sub",
+      "file": "Mathlib/Data/Int/Lemmas.lean",
+      "tags": [
+        "le_lt_order",
+        "cast_natCast"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.succ_natCast_pos",
+      "file": "Mathlib/Data/Int/Lemmas.lean",
+      "tags": [
+        "succ_pred",
+        "cast_natCast"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.natCast_covBy",
+      "file": "Mathlib/Data/Int/SuccPred.lean",
+      "tags": [
+        "cast_natCast"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.cast_ite",
+      "file": "Mathlib/Data/Int/Cast/Lemmas.lean",
+      "tags": [
+        "cast_natCast"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.cast_inj",
+      "file": "Mathlib/Data/Int/Cast/Lemmas.lean",
+      "tags": [
+        "cast_natCast"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.cast_injective",
+      "file": "Mathlib/Data/Int/Cast/Lemmas.lean",
+      "tags": [
+        "cast_natCast"
+      ],
+      "source": "cx2_scan"
+    },
+    {
+      "full_name": "Int.cast_ne_zero",
+      "file": "Mathlib/Data/Int/Cast/Lemmas.lean",
+      "tags": [
+        "cast_natCast"
+      ],
+      "source": "cx2_scan"
+    }
+  ]
+}

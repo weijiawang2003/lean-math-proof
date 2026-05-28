@@ -1,0 +1,794 @@
+[WARN] Availability precheck filtered 1 theorem(s).
+  - Finset.insert_comm: missing_trace_artifact
+
+=== Theorem: Finset.mem_insert ===
+α : Type u_1
+β : Type u_2
+γ : Type u_3
+inst✝ : DecidableEq α
+s t u v : Finset α
+a b : α
+⊢ a ∈ insert b s ↔ a = b ∨ a ∈ s
+#goals: 1
+
+
+==== Depth 1 ====
+  OK: `constructor` : 1 -> 2 goals
+  OK: `aesop` : 1 -> 3 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `refine ⟨?_, ?_⟩` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_left` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_right` : 1 -> 2 goals
+Beam size: 9, finished: 0
+
+==== Depth 2 ====
+  OK: `constructor` : 1 -> 2 goals
+  OK: `aesop` : 1 -> 3 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `refine ⟨?_, ?_⟩` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_left` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_right` : 1 -> 2 goals
+  OK: `constructor` : 1 -> 2 goals
+  OK: `aesop` : 1 -> 3 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `refine ⟨?_, ?_⟩` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_left` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_right` : 1 -> 2 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `apply h` : 1 -> 1 goals
+  OK: `simp at *` : 1 -> 1 goals
+  OK: `intro` : 2 -> 2 goals
+  OK: `aesop` : 2 -> 2 goals
+  OK: `intro h` : 2 -> 2 goals
+  OK: `intro x` : 2 -> 2 goals
+  OK: `simp [Finset.mem_insert, Finset.mem_singleton]` : 2 -> 1 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intro a` : 2 -> 2 goals
+  OK: `intro b` : 2 -> 2 goals
+  OK: `intro ha` : 2 -> 2 goals
+  OK: `intro hb` : 2 -> 2 goals
+  OK: `intro hab` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `simp [Finset.mem_insert]` : 2 -> 1 goals
+  OK: `rw [Finset.mem_insert]` : 2 -> 2 goals
+  OK: `intro` : 2 -> 2 goals
+  OK: `aesop` : 2 -> 2 goals
+  OK: `intro h` : 2 -> 2 goals
+  OK: `intro x` : 2 -> 2 goals
+  OK: `simp [Finset.mem_insert, Finset.mem_singleton]` : 2 -> 1 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intro a` : 2 -> 2 goals
+  OK: `intro b` : 2 -> 2 goals
+  OK: `intro ha` : 2 -> 2 goals
+  OK: `intro hb` : 2 -> 2 goals
+  OK: `intro hab` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `simp [Finset.mem_insert]` : 2 -> 1 goals
+  OK: `rw [Finset.mem_insert]` : 2 -> 2 goals
+  OK: `simp` : 2 -> 2 goals
+  OK: `simp [Nat.mul_add_mod, Nat.mul_comm]` : 2 -> 2 goals
+  OK: `constructor` : 2 -> 3 goals
+  OK: `aesop` : 2 -> 3 goals
+  OK: `simp_all` : 2 -> 2 goals
+  OK: `simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]` : 2 -> 2 goals
+  OK: `simp [Nat.mul_comm, Nat.mul_left_comm, Nat.mul_assoc]` : 2 -> 2 goals
+  OK: `simp [Set.mem_univ]` : 2 -> 2 goals
+  OK: `simp [Finset.mem_insert, Finset.mem_singleton]` : 2 -> 2 goals
+  [CRASH] REPL died on `trivial` — aborting theorem
+Beam size: 32, finished: 0
+
+==== Depth 3 ====
+  [CRASH] REPL died on `intro` — aborting theorem
+No valid successors, stop.
+
+=== Theorem: Finset.mem_singleton ===
+α : Type u_1
+β : Type u_2
+γ : Type u_3
+s : Finset α
+a✝ b✝ a b : α
+⊢ b ∈ {a} ↔ b = a
+#goals: 1
+
+
+==== Depth 1 ====
+  OK: `constructor` : 1 -> 2 goals
+  OK: `aesop` : 1 -> 2 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `refine ⟨?_, ?_⟩` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_left` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_right` : 1 -> 2 goals
+Beam size: 9, finished: 0
+
+==== Depth 2 ====
+  OK: `constructor` : 1 -> 2 goals
+  OK: `aesop` : 1 -> 2 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `refine ⟨?_, ?_⟩` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_left` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_right` : 1 -> 2 goals
+  OK: `constructor` : 1 -> 2 goals
+  OK: `aesop` : 1 -> 2 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `refine ⟨?_, ?_⟩` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_left` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_right` : 1 -> 2 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `apply h` : 1 -> 1 goals
+  OK: `simp at *` : 1 -> 1 goals
+  OK: `intro` : 2 -> 2 goals
+  OK: `aesop` : 2 -> 2 goals
+  OK: `intro h` : 2 -> 2 goals
+  OK: `intro x` : 2 -> 2 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intro a` : 2 -> 2 goals
+  OK: `intro b` : 2 -> 2 goals
+  OK: `intro ha` : 2 -> 2 goals
+  OK: `intro hb` : 2 -> 2 goals
+  OK: `intro hab` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `apply Set.inter_subset_left` : 2 -> 3 goals
+  OK: `apply Set.inter_subset_right` : 2 -> 3 goals
+  OK: `intro` : 2 -> 2 goals
+  OK: `aesop` : 2 -> 2 goals
+  OK: `intro h` : 2 -> 2 goals
+  OK: `intro x` : 2 -> 2 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intro a` : 2 -> 2 goals
+  OK: `intro b` : 2 -> 2 goals
+  OK: `intro ha` : 2 -> 2 goals
+  OK: `intro hb` : 2 -> 2 goals
+  OK: `intro hab` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `simp` : 2 -> 2 goals
+  OK: `simp [Nat.mul_add_mod, Nat.mul_comm]` : 2 -> 2 goals
+  OK: `constructor` : 2 -> 3 goals
+  OK: `aesop` : 2 -> 3 goals
+  OK: `simp_all` : 2 -> 2 goals
+  OK: `simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]` : 2 -> 2 goals
+  OK: `simp [Nat.mul_comm, Nat.mul_left_comm, Nat.mul_assoc]` : 2 -> 2 goals
+  OK: `simp [Set.mem_univ]` : 2 -> 2 goals
+  [CRASH] REPL died on `trivial` — aborting theorem
+Beam size: 32, finished: 0
+
+==== Depth 3 ====
+  [CRASH] REPL died on `intro` — aborting theorem
+No valid successors, stop.
+
+=== Theorem: Finset.disjoint_insert_right ===
+α : Type u_1
+β : Type u_2
+γ : Type u_3
+inst✝ : DecidableEq α
+s t u v : Finset α
+a b : α
+⊢ _root_.Disjoint s (insert a t) ↔ a ∉ s ∧ _root_.Disjoint s t
+#goals: 1
+
+
+==== Depth 1 ====
+  OK: `constructor` : 1 -> 2 goals
+  OK: `aesop` : 1 -> 3 goals
+  OK: `rw [Finset.disjoint_left]` : 1 -> 1 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `simp [Finset.disjoint_left]` : 1 -> 1 goals
+  OK: `simp [Finset.disjoint_iff_ne]` : 1 -> 1 goals
+  OK: `refine ⟨?_, ?_⟩` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_left` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_right` : 1 -> 2 goals
+Beam size: 12, finished: 0
+
+==== Depth 2 ====
+  OK: `simp` : 1 -> 1 goals
+  OK: `simp [Nat.mul_add_mod, Nat.mul_comm]` : 1 -> 1 goals
+  OK: `constructor` : 1 -> 2 goals
+  OK: `aesop` : 1 -> 3 goals
+  OK: `simp_all` : 1 -> 1 goals
+  OK: `simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]` : 1 -> 1 goals
+  OK: `simp [Nat.mul_comm, Nat.mul_left_comm, Nat.mul_assoc]` : 1 -> 1 goals
+  OK: `simp [Set.mem_univ]` : 1 -> 1 goals
+  OK: `simp [Finset.mem_insert, Finset.mem_singleton]` : 1 -> 1 goals
+  OK: `rw [Finset.disjoint_left]` : 1 -> 1 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `simp [Nat.succ_eq_add_one]` : 1 -> 1 goals
+  OK: `simp [Nat.add_sub_cancel]` : 1 -> 1 goals
+  OK: `simp [Nat.sub_self]` : 1 -> 1 goals
+  OK: `simp [Nat.zero_add]` : 1 -> 1 goals
+  OK: `simp [Nat.add_zero]` : 1 -> 1 goals
+  OK: `simp [Nat.mul_zero]` : 1 -> 1 goals
+  OK: `simp [Nat.zero_mul]` : 1 -> 1 goals
+  OK: `simp [Nat.mul_one]` : 1 -> 1 goals
+  OK: `simp [Nat.one_mul]` : 1 -> 1 goals
+  OK: `simp [*]` : 1 -> 1 goals
+  OK: `simp_arith` : 1 -> 1 goals
+  OK: `simp [Set.ite]` : 1 -> 1 goals
+  OK: `simp [Set.mem_setOf_eq]` : 1 -> 1 goals
+  OK: `simp [Set.mem_union]` : 1 -> 1 goals
+  OK: `simp [Set.mem_inter_iff]` : 1 -> 1 goals
+  OK: `simp [Set.mem_diff]` : 1 -> 1 goals
+  OK: `simp [Set.mem_compl_iff]` : 1 -> 1 goals
+  OK: `simp [Set.subset_def]` : 1 -> 1 goals
+  OK: `simp [Set.ext_iff]` : 1 -> 1 goals
+  OK: `simp [Set.univ_eq_empty_iff]` : 1 -> 1 goals
+  OK: `simp [Finset.mem_insert]` : 1 -> 1 goals
+  OK: `simp [Finset.disjoint_left]` : 1 -> 1 goals
+  OK: `simp [Finset.disjoint_insert_right]` : 1 -> 1 goals
+  OK: `simp [Finset.disjoint_iff_ne]` : 1 -> 1 goals
+  OK: `simp [List.length_cons]` : 1 -> 1 goals
+  OK: `simp [List.append_nil]` : 1 -> 1 goals
+  OK: `simp [List.nil_append]` : 1 -> 1 goals
+  OK: `simp [List.map]` : 1 -> 1 goals
+  OK: `simp [List.filter]` : 1 -> 1 goals
+  OK: `simp [Bool.and_comm]` : 1 -> 1 goals
+  OK: `simp [Bool.or_comm]` : 1 -> 1 goals
+  OK: `constructor <;> intro h <;> simp_all` : 1 -> 2 goals
+  OK: `constructor <;> simp` : 1 -> 2 goals
+  OK: `refine ⟨?_, ?_⟩` : 1 -> 2 goals
+  OK: `simp at *` : 1 -> 1 goals
+  OK: `simp [Set.union_assoc]` : 1 -> 1 goals
+  OK: `simp [Set.inter_assoc]` : 1 -> 1 goals
+  OK: `simp [Set.union_self]` : 1 -> 1 goals
+  OK: `simp [Set.inter_self]` : 1 -> 1 goals
+  OK: `simp [Set.union_univ]` : 1 -> 1 goals
+  OK: `simp [Set.inter_empty]` : 1 -> 1 goals
+  OK: `simp [Set.empty_inter]` : 1 -> 1 goals
+  OK: `simp [Set.univ_union]` : 1 -> 1 goals
+  OK: `apply Set.inter_subset_left` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_right` : 1 -> 2 goals
+  OK: `simp [Set.diff_self]` : 1 -> 1 goals
+  OK: `simp [Set.diff_empty]` : 1 -> 1 goals
+  OK: `simp [Set.empty_diff]` : 1 -> 1 goals
+  OK: `simp [Set.diff_eq]` : 1 -> 1 goals
+  OK: `simp [Set.diff_union_self]` : 1 -> 1 goals
+  OK: `simp [Set.union_inter_distrib_left]` : 1 -> 1 goals
+  OK: `simp [Set.inter_union_distrib_left]` : 1 -> 1 goals
+  OK: `constructor <;> intro h <;> simp_all [Finset.mem_insert]` : 1 -> 2 goals
+  OK: `constructor` : 1 -> 2 goals
+  OK: `aesop` : 1 -> 3 goals
+  OK: `rw [Finset.disjoint_left]` : 1 -> 1 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `simp [Finset.disjoint_left]` : 1 -> 1 goals
+  OK: `simp [Finset.disjoint_iff_ne]` : 1 -> 1 goals
+  OK: `refine ⟨?_, ?_⟩` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_left` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_right` : 1 -> 2 goals
+  OK: `constructor` : 1 -> 2 goals
+  OK: `aesop` : 1 -> 3 goals
+  OK: `rw [Finset.disjoint_left]` : 1 -> 1 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `simp [Finset.disjoint_left]` : 1 -> 1 goals
+  OK: `simp [Finset.disjoint_iff_ne]` : 1 -> 1 goals
+  OK: `refine ⟨?_, ?_⟩` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_left` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_right` : 1 -> 2 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `apply h` : 1 -> 1 goals
+  OK: `simp at *` : 1 -> 1 goals
+  OK: `constructor` : 1 -> 2 goals
+  OK: `aesop` : 1 -> 1 goals
+  OK: `push_neg` : 1 -> 1 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `constructor <;> intro h <;> simp_all` : 1 -> 1 goals
+  OK: `refine ⟨?_, ?_⟩` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_left` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_right` : 1 -> 2 goals
+  OK: `constructor <;> intro h <;> simp_all [Finset.mem_insert]` : 1 -> 1 goals
+  OK: `constructor` : 1 -> 2 goals
+  OK: `aesop` : 1 -> 1 goals
+  OK: `push_neg` : 1 -> 1 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `constructor <;> intro h <;> simp_all` : 1 -> 1 goals
+  OK: `refine ⟨?_, ?_⟩` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_left` : 1 -> 2 goals
+  OK: `apply Set.inter_subset_right` : 1 -> 2 goals
+  OK: `constructor <;> intro h <;> simp_all [Finset.mem_insert]` : 1 -> 1 goals
+  OK: `intro` : 2 -> 2 goals
+  OK: `aesop` : 2 -> 3 goals
+  OK: `intro h` : 2 -> 2 goals
+  OK: `intro x` : 2 -> 2 goals
+  OK: `rw [Finset.disjoint_left]` : 2 -> 2 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intro a` : 2 -> 2 goals
+  OK: `intro b` : 2 -> 2 goals
+  OK: `intro ha` : 2 -> 2 goals
+  OK: `intro hb` : 2 -> 2 goals
+  OK: `intro hab` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `simp [Finset.disjoint_left]` : 2 -> 2 goals
+  OK: `simp [Finset.disjoint_insert_right]` : 2 -> 1 goals
+  OK: `simp [Finset.disjoint_iff_ne]` : 2 -> 2 goals
+  OK: `rw [Finset.disjoint_insert_right]` : 2 -> 2 goals
+  OK: `intro` : 2 -> 2 goals
+  OK: `aesop` : 2 -> 3 goals
+  OK: `intro h` : 2 -> 2 goals
+  OK: `intro x` : 2 -> 2 goals
+  OK: `rw [Finset.disjoint_left]` : 2 -> 2 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intro a` : 2 -> 2 goals
+  OK: `intro b` : 2 -> 2 goals
+  OK: `intro ha` : 2 -> 2 goals
+  OK: `intro hb` : 2 -> 2 goals
+  OK: `intro hab` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `simp [Finset.disjoint_left]` : 2 -> 2 goals
+  OK: `simp [Finset.disjoint_insert_right]` : 2 -> 1 goals
+  OK: `simp [Finset.disjoint_iff_ne]` : 2 -> 2 goals
+  OK: `rw [Finset.disjoint_insert_right]` : 2 -> 2 goals
+  OK: `simp` : 2 -> 2 goals
+  OK: `simp [Nat.mul_add_mod, Nat.mul_comm]` : 2 -> 2 goals
+  OK: `constructor` : 2 -> 3 goals
+  OK: `aesop` : 2 -> 3 goals
+  OK: `simp_all` : 2 -> 2 goals
+  OK: `simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]` : 2 -> 2 goals
+  OK: `simp [Nat.mul_comm, Nat.mul_left_comm, Nat.mul_assoc]` : 2 -> 2 goals
+  OK: `simp [Set.mem_univ]` : 2 -> 2 goals
+  OK: `simp [Finset.mem_insert, Finset.mem_singleton]` : 2 -> 2 goals
+  OK: `rw [Finset.disjoint_left]` : 2 -> 2 goals
+  [CRASH] REPL died on `trivial` — aborting theorem
+Beam size: 32, finished: 0
+
+==== Depth 3 ====
+  [CRASH] REPL died on `intro` — aborting theorem
+No valid successors, stop.
+
+=== Theorem: Nat.mul_add_mod' ===
+a✝ b✝ c✝ d m n k : ℕ
+p q : ℕ → Prop
+a b c : ℕ
+⊢ (a * b + c) % b = c % b
+#goals: 1
+
+
+==== Depth 1 ====
+  OK: `cases a` : 1 -> 2 goals
+  OK: `induction a` : 1 -> 2 goals
+  OK: `rw [Nat.mul_comm]` : 1 -> 1 goals
+FOUND PROOF at depth 1 with history ['rw [Nat.mul_comm, Nat.mul_add_mod]']
+FOUND PROOF at depth 1 with history ['simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]']
+  OK: `rw [Nat.add_comm]` : 1 -> 1 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 1 -> 2 goals
+  OK: `rw [Nat.add_mod]` : 1 -> 1 goals
+  OK: `cases n` : 1 -> 2 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `induction n` : 1 -> 2 goals
+  OK: `induction m` : 1 -> 2 goals
+  OK: `induction k` : 1 -> 2 goals
+  OK: `apply le_antisymm` : 1 -> 2 goals
+Beam size: 17, finished: 2
+
+==== Depth 2 ====
+  OK: `cases a` : 1 -> 2 goals
+  OK: `induction a` : 1 -> 2 goals
+FOUND PROOF at depth 2 with history ['rw [Nat.mul_comm]', 'rw [Nat.mul_add_mod]']
+  OK: `rw [Nat.mul_comm]` : 1 -> 1 goals
+  OK: `simp [Nat.mul_add_mod, Nat.mul_comm]` : 1 -> 1 goals
+FOUND PROOF at depth 2 with history ['rw [Nat.mul_comm]', 'simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]']
+  OK: `simp [Nat.mul_comm, Nat.mul_left_comm, Nat.mul_assoc]` : 1 -> 1 goals
+  OK: `rw [Nat.add_comm]` : 1 -> 1 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 1 -> 2 goals
+  OK: `rw [Nat.add_mod]` : 1 -> 1 goals
+  OK: `cases n` : 1 -> 2 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `induction n` : 1 -> 2 goals
+  OK: `induction m` : 1 -> 2 goals
+  OK: `induction k` : 1 -> 2 goals
+  OK: `apply le_antisymm` : 1 -> 2 goals
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp']
+  OK: `cases a` : 1 -> 2 goals
+  OK: `induction a` : 1 -> 2 goals
+  OK: `rw [Nat.mul_comm]` : 1 -> 1 goals
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Nat.mul_add_mod, Nat.mul_comm]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp_all']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simpa']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Nat.mul_comm, Nat.mul_left_comm, Nat.mul_assoc]']
+  OK: `rw [Nat.add_comm]` : 1 -> 1 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 1 -> 2 goals
+  OK: `rw [Nat.add_mod]` : 1 -> 1 goals
+  OK: `cases n` : 1 -> 2 goals
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'induction n with | zero => simp | succ n ih => simp [ih]']
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Nat.succ_eq_add_one]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Nat.add_sub_cancel]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Nat.sub_self]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Nat.zero_add]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Nat.add_zero]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Nat.mul_zero]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Nat.zero_mul]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Nat.mul_one]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Nat.one_mul]']
+  OK: `induction n` : 1 -> 2 goals
+  OK: `induction m` : 1 -> 2 goals
+  OK: `induction k` : 1 -> 2 goals
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [*]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp_arith']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [List.length_cons]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [List.append_nil]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [List.nil_append]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [List.map]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [List.filter]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Bool.and_comm]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp [Bool.or_comm]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_comm]', 'simp at *']
+  OK: `apply le_antisymm` : 1 -> 2 goals
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp']
+  OK: `cases a` : 1 -> 2 goals
+  OK: `induction a` : 1 -> 2 goals
+  OK: `rw [Nat.mul_comm]` : 1 -> 1 goals
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Nat.mul_add_mod, Nat.mul_comm]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp_all']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simpa']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Nat.mul_comm, Nat.mul_left_comm, Nat.mul_assoc]']
+  OK: `rw [Nat.add_comm]` : 1 -> 1 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 1 -> 2 goals
+  OK: `rw [Nat.add_mod]` : 1 -> 1 goals
+  OK: `rw [Nat.mul_mod]` : 1 -> 1 goals
+  OK: `cases n` : 1 -> 2 goals
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'induction n with | zero => simp | succ n ih => simp [ih]']
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Nat.succ_eq_add_one]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Nat.add_sub_cancel]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Nat.sub_self]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Nat.zero_add]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Nat.add_zero]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Nat.mul_zero]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Nat.zero_mul]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Nat.mul_one]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Nat.one_mul]']
+  OK: `induction n` : 1 -> 2 goals
+  OK: `induction m` : 1 -> 2 goals
+  OK: `induction k` : 1 -> 2 goals
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [*]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp_arith']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [List.length_cons]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [List.append_nil]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [List.nil_append]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [List.map]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [List.filter]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Bool.and_comm]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp [Bool.or_comm]']
+FOUND PROOF at depth 2 with history ['rw [Nat.add_mod]', 'simp at *']
+  OK: `apply le_antisymm` : 1 -> 2 goals
+  OK: `cases a` : 1 -> 2 goals
+  OK: `induction a` : 1 -> 2 goals
+  OK: `rw [Nat.mul_comm]` : 1 -> 1 goals
+FOUND PROOF at depth 2 with history ['push_neg at *', 'rw [Nat.mul_comm, Nat.mul_add_mod]']
+FOUND PROOF at depth 2 with history ['push_neg at *', 'simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]']
+  OK: `rw [Nat.add_comm]` : 1 -> 1 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 1 -> 2 goals
+  OK: `rw [Nat.add_mod]` : 1 -> 1 goals
+  OK: `cases n` : 1 -> 2 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `induction n` : 1 -> 2 goals
+  OK: `induction m` : 1 -> 2 goals
+  OK: `induction k` : 1 -> 2 goals
+  OK: `apply le_antisymm` : 1 -> 2 goals
+  OK: `cases a` : 1 -> 2 goals
+  OK: `induction a` : 1 -> 2 goals
+  OK: `rw [Nat.mul_comm]` : 1 -> 1 goals
+FOUND PROOF at depth 2 with history ['intros', 'rw [Nat.mul_comm, Nat.mul_add_mod]']
+FOUND PROOF at depth 2 with history ['intros', 'simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]']
+  OK: `rw [Nat.add_comm]` : 1 -> 1 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 1 -> 2 goals
+  OK: `rw [Nat.add_mod]` : 1 -> 1 goals
+  OK: `cases n` : 1 -> 2 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `induction n` : 1 -> 2 goals
+  OK: `induction m` : 1 -> 2 goals
+  OK: `induction k` : 1 -> 2 goals
+  OK: `apply le_antisymm` : 1 -> 2 goals
+  OK: `cases a` : 1 -> 2 goals
+  OK: `induction a` : 1 -> 2 goals
+  OK: `cases n` : 1 -> 2 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `induction n` : 1 -> 2 goals
+  OK: `induction m` : 1 -> 2 goals
+  OK: `induction k` : 1 -> 2 goals
+  OK: `cases a` : 1 -> 2 goals
+  OK: `induction a` : 1 -> 2 goals
+  OK: `cases n` : 1 -> 2 goals
+  OK: `push_neg at *` : 1 -> 1 goals
+  OK: `intros` : 1 -> 1 goals
+  OK: `exfalso` : 1 -> 1 goals
+  OK: `by_contra h` : 1 -> 1 goals
+  OK: `apply h` : 1 -> 1 goals
+  OK: `induction n` : 1 -> 2 goals
+  OK: `induction m` : 1 -> 2 goals
+  OK: `induction k` : 1 -> 2 goals
+  OK: `simp at *` : 1 -> 1 goals
+  OK: `simp` : 2 -> 1 goals
+  OK: `cases a` : 2 -> 3 goals
+  OK: `induction a` : 2 -> 3 goals
+  OK: `rw [Nat.mul_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mul_comm, Nat.mul_add_mod]` : 2 -> 1 goals
+  OK: `simp [Nat.mul_add_mod, Nat.mul_comm]` : 2 -> 1 goals
+  OK: `simp_all` : 2 -> 1 goals
+  OK: `simpa` : 2 -> 1 goals
+  OK: `simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]` : 2 -> 1 goals
+  OK: `simp [Nat.mul_comm, Nat.mul_left_comm, Nat.mul_assoc]` : 2 -> 1 goals
+  OK: `rw [Nat.add_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 2 -> 3 goals
+  OK: `rw [Nat.add_mod]` : 2 -> 2 goals
+  OK: `cases n` : 2 -> 3 goals
+  OK: `induction n with | zero => simp | succ n ih => simp [ih]` : 2 -> 1 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `simp [Nat.succ_eq_add_one]` : 2 -> 1 goals
+  OK: `simp [Nat.add_sub_cancel]` : 2 -> 1 goals
+  OK: `simp [Nat.sub_self]` : 2 -> 1 goals
+  OK: `simp [Nat.zero_add]` : 2 -> 1 goals
+  OK: `simp [Nat.add_zero]` : 2 -> 1 goals
+  OK: `simp [Nat.mul_zero]` : 2 -> 1 goals
+  OK: `simp [Nat.zero_mul]` : 2 -> 1 goals
+  OK: `simp [Nat.mul_one]` : 2 -> 1 goals
+  OK: `simp [Nat.one_mul]` : 2 -> 1 goals
+  OK: `rw [Nat.zero_mul]` : 2 -> 2 goals
+  OK: `induction n` : 2 -> 3 goals
+  OK: `induction m` : 2 -> 3 goals
+  OK: `induction k` : 2 -> 3 goals
+  OK: `simp [*]` : 2 -> 1 goals
+  OK: `simp_arith` : 2 -> 1 goals
+  OK: `simp [List.length_cons]` : 2 -> 1 goals
+  OK: `simp [List.append_nil]` : 2 -> 1 goals
+  OK: `simp [List.nil_append]` : 2 -> 1 goals
+  OK: `simp [List.map]` : 2 -> 1 goals
+  OK: `simp [List.filter]` : 2 -> 1 goals
+  OK: `simp [Bool.and_comm]` : 2 -> 1 goals
+  OK: `simp [Bool.or_comm]` : 2 -> 1 goals
+  OK: `simp at *` : 2 -> 1 goals
+  OK: `apply le_antisymm` : 2 -> 3 goals
+  OK: `simp` : 2 -> 1 goals
+  OK: `cases a` : 2 -> 3 goals
+  OK: `induction a` : 2 -> 3 goals
+  OK: `rw [Nat.mul_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mul_comm, Nat.mul_add_mod]` : 2 -> 1 goals
+  OK: `simp [Nat.mul_add_mod, Nat.mul_comm]` : 2 -> 1 goals
+  OK: `simp_all` : 2 -> 1 goals
+  OK: `simpa` : 2 -> 1 goals
+  OK: `simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]` : 2 -> 1 goals
+  OK: `simp [Nat.mul_comm, Nat.mul_left_comm, Nat.mul_assoc]` : 2 -> 1 goals
+  OK: `rw [Nat.add_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 2 -> 3 goals
+  OK: `rw [Nat.add_mod]` : 2 -> 2 goals
+  OK: `cases n` : 2 -> 3 goals
+  OK: `induction n with | zero => simp | succ n ih => simp [ih]` : 2 -> 1 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `simp [Nat.succ_eq_add_one]` : 2 -> 1 goals
+  OK: `simp [Nat.add_sub_cancel]` : 2 -> 1 goals
+  OK: `simp [Nat.sub_self]` : 2 -> 1 goals
+  OK: `simp [Nat.zero_add]` : 2 -> 1 goals
+  OK: `simp [Nat.add_zero]` : 2 -> 1 goals
+  OK: `simp [Nat.mul_zero]` : 2 -> 1 goals
+  OK: `simp [Nat.zero_mul]` : 2 -> 1 goals
+  OK: `simp [Nat.mul_one]` : 2 -> 1 goals
+  OK: `simp [Nat.one_mul]` : 2 -> 1 goals
+  OK: `rw [Nat.zero_mul]` : 2 -> 2 goals
+  OK: `induction n` : 2 -> 3 goals
+  OK: `induction m` : 2 -> 3 goals
+  OK: `induction k` : 2 -> 3 goals
+  OK: `simp [*]` : 2 -> 1 goals
+  OK: `simp_arith` : 2 -> 1 goals
+  OK: `simp [List.length_cons]` : 2 -> 1 goals
+  OK: `simp [List.append_nil]` : 2 -> 1 goals
+  OK: `simp [List.nil_append]` : 2 -> 1 goals
+  OK: `simp [List.map]` : 2 -> 1 goals
+  OK: `simp [List.filter]` : 2 -> 1 goals
+  OK: `simp [Bool.and_comm]` : 2 -> 1 goals
+  OK: `simp [Bool.or_comm]` : 2 -> 1 goals
+  OK: `simp at *` : 2 -> 1 goals
+  OK: `apply le_antisymm` : 2 -> 3 goals
+  OK: `cases a` : 2 -> 3 goals
+  OK: `induction a` : 2 -> 3 goals
+  OK: `rw [Nat.mul_comm]` : 2 -> 2 goals
+  OK: `simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]` : 2 -> 2 goals
+  OK: `rw [Nat.add_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 2 -> 3 goals
+  OK: `cases n` : 2 -> 3 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `induction n` : 2 -> 3 goals
+  OK: `induction m` : 2 -> 3 goals
+  OK: `induction k` : 2 -> 3 goals
+  OK: `apply le_antisymm` : 2 -> 3 goals
+  OK: `cases a` : 2 -> 3 goals
+  OK: `induction a` : 2 -> 3 goals
+  OK: `rw [Nat.mul_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mul_comm, Nat.mul_add_mod]` : 2 -> 1 goals
+  OK: `simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]` : 2 -> 1 goals
+  OK: `rw [Nat.add_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 2 -> 3 goals
+  OK: `rw [Nat.add_mod]` : 2 -> 2 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `induction m` : 2 -> 3 goals
+  OK: `induction k` : 2 -> 3 goals
+  OK: `apply le_antisymm` : 2 -> 3 goals
+  OK: `cases a` : 2 -> 3 goals
+  OK: `induction a` : 2 -> 3 goals
+  OK: `rw [Nat.mul_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mul_comm, Nat.mul_add_mod]` : 2 -> 1 goals
+  OK: `simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]` : 2 -> 1 goals
+  OK: `rw [Nat.add_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 2 -> 3 goals
+  OK: `rw [Nat.add_mod]` : 2 -> 2 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `induction m` : 2 -> 3 goals
+  OK: `induction k` : 2 -> 3 goals
+  OK: `apply le_antisymm` : 2 -> 3 goals
+  OK: `cases a` : 2 -> 3 goals
+  OK: `induction a` : 2 -> 3 goals
+  OK: `rw [Nat.mul_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mul_comm, Nat.mul_add_mod]` : 2 -> 1 goals
+  OK: `simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]` : 2 -> 1 goals
+  OK: `rw [Nat.add_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 2 -> 3 goals
+  OK: `rw [Nat.add_mod]` : 2 -> 2 goals
+  OK: `cases n` : 2 -> 3 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `induction n` : 2 -> 3 goals
+  OK: `induction k` : 2 -> 3 goals
+  OK: `apply le_antisymm` : 2 -> 3 goals
+  OK: `cases a` : 2 -> 3 goals
+  OK: `induction a` : 2 -> 3 goals
+  OK: `rw [Nat.mul_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mul_comm, Nat.mul_add_mod]` : 2 -> 1 goals
+  OK: `simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]` : 2 -> 1 goals
+  OK: `rw [Nat.add_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 2 -> 3 goals
+  OK: `rw [Nat.add_mod]` : 2 -> 2 goals
+  OK: `cases n` : 2 -> 3 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `induction n` : 2 -> 3 goals
+  OK: `induction m` : 2 -> 3 goals
+  OK: `apply le_antisymm` : 2 -> 3 goals
+  OK: `cases a` : 2 -> 3 goals
+  OK: `induction a` : 2 -> 3 goals
+  OK: `rw [Nat.mul_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mul_comm, Nat.mul_add_mod]` : 2 -> 1 goals
+  OK: `simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]` : 2 -> 1 goals
+  OK: `rw [Nat.add_comm]` : 2 -> 2 goals
+  OK: `rw [Nat.mod_eq_of_lt]` : 2 -> 3 goals
+  OK: `rw [Nat.add_mod]` : 2 -> 2 goals
+  OK: `cases n` : 2 -> 3 goals
+  OK: `push_neg at *` : 2 -> 2 goals
+  OK: `intros` : 2 -> 2 goals
+  OK: `exfalso` : 2 -> 2 goals
+  OK: `by_contra h` : 2 -> 2 goals
+  OK: `induction n` : 2 -> 3 goals
+  OK: `induction m` : 2 -> 3 goals
+  OK: `induction k` : 2 -> 3 goals
+Beam size: 32, finished: 32
+
+==== Depth 3 ====
+Beam size: 32, finished: 32
+
+==== Depth 4 ====
+Beam size: 32, finished: 32
+
+==== Depth 5 ====
+Beam size: 32, finished: 32
+
+==== Depth 6 ====
+Beam size: 32, finished: 32
+
+==== Depth 7 ====
+Beam size: 32, finished: 32
+
+==== Depth 8 ====
+Beam size: 32, finished: 32
+
+Run artifacts: experiments/search_frontier_20260502_170824/search-b9c392e3
+Processed theorems: 4, unavailable(precheck): 1, runtime skipped: 0

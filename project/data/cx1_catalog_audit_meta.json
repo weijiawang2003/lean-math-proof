@@ -1,0 +1,233 @@
+{
+  "catalog_commit": "29dcec074de168ac2bf835a77ef68bbe069194c5",
+  "catalog_files_scanned": [
+    "Mathlib/Data/Nat/Defs.lean",
+    "Mathlib/Data/Set/Basic.lean",
+    "Mathlib/Data/Finset/Basic.lean"
+  ],
+  "catalog_total_theorems": 527,
+  "per_difficulty": {
+    "easy": 420,
+    "medium": 60,
+    "hard": 47
+  },
+  "by_namespace": {
+    "Finset": 200,
+    "_no_ns_": 1,
+    "Multiset": 13,
+    "List": 13,
+    "Nat": 208,
+    "Set": 89,
+    "Function": 1,
+    "Prop": 1,
+    "Eq": 1
+  },
+  "by_namespace_difficulty": {
+    "Finset": {
+      "easy": 171,
+      "medium": 21,
+      "hard": 8
+    },
+    "_no_ns_": {
+      "easy": 1
+    },
+    "Multiset": {
+      "easy": 10,
+      "hard": 3
+    },
+    "List": {
+      "easy": 12,
+      "medium": 1
+    },
+    "Nat": {
+      "easy": 147,
+      "medium": 28,
+      "hard": 33
+    },
+    "Set": {
+      "easy": 76,
+      "medium": 10,
+      "hard": 3
+    },
+    "Function": {
+      "easy": 1
+    },
+    "Prop": {
+      "easy": 1
+    },
+    "Eq": {
+      "easy": 1
+    }
+  },
+  "by_source_file": {
+    "Mathlib/Data/Finset/Basic.lean": 228,
+    "Mathlib/Data/Nat/Defs.lean": 208,
+    "Mathlib/Data/Set/Basic.lean": 91
+  },
+  "theorem_sets_count": 32,
+  "all_used_unique": 508,
+  "used_not_in_catalog_count": 31,
+  "used_not_in_catalog_sample": [
+    "Finset.insert_comm",
+    "Finset.mem_insert",
+    "Finset.mem_singleton",
+    "Nat.add_mod",
+    "Nat.mod_add_mod",
+    "Nat.mul_mod",
+    "Set.diff_empty",
+    "Set.diff_self",
+    "Set.empty_diff",
+    "Set.empty_subset",
+    "Set.empty_union",
+    "Set.inter_assoc",
+    "Set.inter_comm",
+    "Set.inter_empty",
+    "Set.inter_self",
+    "Set.inter_subset_left",
+    "Set.inter_subset_right",
+    "Set.inter_union_distrib_left",
+    "Set.inter_univ",
+    "Set.mem_inter_iff"
+  ],
+  "used_count_by_namespace": {
+    "Finset": 200,
+    "Multiset": 10,
+    "List": 13,
+    "Nat": 208,
+    "Set": 46
+  },
+  "unused_count_by_namespace": {
+    "_no_ns_": 1,
+    "Set": 43,
+    "Function": 1,
+    "Prop": 1,
+    "Eq": 1,
+    "Multiset": 3
+  },
+  "exhaustion_verdicts": {
+    "Nat": "Nat: EXHAUSTED (208/208 used)",
+    "Finset": "Finset: EXHAUSTED (200/200 used)",
+    "Set": "Set: HAS REMAINING SURFACE (43/89 unused)",
+    "List": "List: EXHAUSTED (13/13 used)",
+    "Multiset": "Multiset: HAS REMAINING SURFACE (3/13 unused)",
+    "Bool": "Bool: ABSENT from catalog",
+    "Option": "Option: ABSENT from catalog",
+    "Int": "Int: ABSENT from catalog"
+  },
+  "theorem_set_namespace_breakdown": {
+    "nat_single": {
+      "Nat": 1
+    },
+    "demo_v1": {
+      "Nat": 1,
+      "Set": 11,
+      "Finset": 3
+    },
+    "curriculum_tier1": {
+      "Set": 11,
+      "Nat": 1
+    },
+    "curriculum_tier2": {
+      "Set": 10,
+      "Finset": 2
+    },
+    "curriculum_tier3": {
+      "Set": 5,
+      "Finset": 2
+    },
+    "curriculum_all": {
+      "Set": 26,
+      "Nat": 1,
+      "Finset": 4
+    },
+    "nat_defs_subset": {
+      "Nat": 15
+    },
+    "nat_defs_medium": {
+      "Nat": 38
+    },
+    "nat_defs_large_v5": {
+      "Nat": 65
+    },
+    "frontier_v1": {
+      "Finset": 4,
+      "Nat": 1
+    },
+    "toy_search": {
+      "Nat": 4,
+      "Set": 1,
+      "Finset": 1
+    },
+    "nat_more": {
+      "Nat": 4
+    },
+    "set_small": {
+      "Set": 1
+    },
+    "finset_small": {
+      "Finset": 3
+    },
+    "mixed_easy_v2": {
+      "Nat": 3,
+      "Set": 1,
+      "Finset": 2
+    },
+    "ns14_nat_extra": {
+      "Nat": 20
+    },
+    "ns14_set_finset_extra": {
+      "Set": 10,
+      "Finset": 10
+    },
+    "ns14_mixed_easy": {
+      "Nat": 5,
+      "Set": 5,
+      "Finset": 5
+    },
+    "ns14_mixed_medium": {
+      "Nat": 5,
+      "Set": 5,
+      "Finset": 5
+    },
+    "ns16_nat_iff_extra": {
+      "Nat": 17
+    },
+    "ns16_nat_div_mod_extra": {
+      "Nat": 25
+    },
+    "ns16_nat_order_extra": {
+      "Nat": 16
+    },
+    "ns16_nat_mixed_extra": {
+      "Nat": 28
+    },
+    "ns17_nat_remaining": {
+      "Nat": 31
+    },
+    "ns17_set_extra": {
+      "Set": 30
+    },
+    "ns17_finset_extra": {
+      "Finset": 30
+    },
+    "ns17_list_multiset": {
+      "List": 13,
+      "Multiset": 10
+    },
+    "ns19_finset_aesop_surface": {
+      "Finset": 80
+    },
+    "ns19_nat_simp_arith_replay": {
+      "Nat": 98
+    },
+    "ns20_finset_aesop_extra_easy": {
+      "Finset": 50
+    },
+    "ns20_finset_aesop_extra_medium": {
+      "Finset": 16
+    },
+    "ns20_finset_aesop_extra_hard": {
+      "Finset": 8
+    }
+  }
+}

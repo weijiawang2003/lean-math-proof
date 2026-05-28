@@ -1,0 +1,9 @@
+{
+  "_about": "NS13 domain-aware router. Routes by theorem-name prefix to the best fine-tuned base checkpoint per domain. See project/evolve/reports/ns13_domain_router_report.md.",
+  "routes": [
+    {"pattern": "^Nat\\.",    "ckpt_dir": "project/models/gen_v5_ns11_combined"},
+    {"pattern": "^Set\\.",    "ckpt_dir": "project/models/gen_v5_ns12_balanced"},
+    {"pattern": "^Finset\\.", "ckpt_dir": "project/models/gen_v5_ns12_balanced"}
+  ],
+  "default_ckpt_dir": "project/models/gen_v5_ns12_balanced"
+}

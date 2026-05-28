@@ -1,0 +1,37 @@
+{
+  "run_id": "eval-bc1e14b9",
+  "method": "policy_rollout_topk",
+  "theorem_set": "set_small",
+  "ckpt_dir": "project/gen_ckpt_v6_premise",
+  "policy_type": "premise_augmented",
+  "max_steps": 8,
+  "top_k": 8,
+  "decode_mode": "beam",
+  "temperature": 0.8,
+  "seed": null,
+  "total_theorems": 1,
+  "available": 1,
+  "proved": 0,
+  "errored": 1,
+  "exhausted": 0,
+  "skipped": 0,
+  "success_rate": 0.0,
+  "per_theorem": [
+    {
+      "full_name": "Set.ite_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "num_steps": 3,
+      "tactics_used": [
+        "simp [Set.ext_iff]",
+        "aesop"
+      ],
+      "error_message": "All top-8 tactics errored at step 3",
+      "skip_reason": null,
+      "winning_tactic": null,
+      "fallbacks_used": 1
+    }
+  ]
+}

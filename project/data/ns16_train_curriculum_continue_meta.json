@@ -1,0 +1,20 @@
+{
+  "variant": "curriculum_continue",
+  "out_path": "project/data/ns16_train_curriculum_continue.jsonl",
+  "n_rows": 380,
+  "n_ns16_rows": 380,
+  "n_ns16_source_rows": 19,
+  "n_ns16_unique_theorems": 16,
+  "oversample_factor": 20,
+  "init_from": "from_ns15_nat_oversample",
+  "by_origin": {
+    "family_tactic": 60,
+    "tactic_template": 240,
+    "generative_topk": 60,
+    "retrieved_premise": 20
+  },
+  "by_role": {
+    "close": 320,
+    "advance_assist": 60
+  }
+}

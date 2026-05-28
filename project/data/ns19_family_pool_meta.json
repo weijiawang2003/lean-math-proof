@@ -1,0 +1,59 @@
+{
+  "families": {
+    "aesop": {
+      "family": "aesop",
+      "rows": 7,
+      "unique_theorems": 4,
+      "wrapper_only_theorems": [
+        "Finset.coe_cons",
+        "Finset.coe_insert",
+        "Finset.cons_eq_insert",
+        "Finset.disjUnion_singleton"
+      ],
+      "tactic_strings_sample": [
+        "aesop"
+      ],
+      "source_breakdown": {
+        "NS18:aesop_wrapper:ns17_finset_extra": 3,
+        "NS19:finset_aesop_only:ns19_finset_aesop_surface": 1,
+        "NS19:finset_aesop_only:ns17_finset_extra": 3
+      },
+      "namespace_breakdown": {
+        "Finset": 7
+      },
+      "trainable": false,
+      "trainable_by_count": false,
+      "trainable_by_rows": false,
+      "recommended_oversample_factor": 10
+    },
+    "simp_all": {
+      "family": "simp_all",
+      "rows": 4,
+      "unique_theorems": 2,
+      "wrapper_only_theorems": [
+        "Nat.mod_mul_mod",
+        "Nat.mul_mod_mod"
+      ],
+      "tactic_strings_sample": [
+        "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]"
+      ],
+      "source_breakdown": {
+        "NS18:nat_simp_arith:ns16_nat_div_mod_extra": 1,
+        "NS18:combined_safe:nat_defs_large_v5": 1,
+        "NS18:combined_safe:ns16_nat_div_mod_extra": 1,
+        "NS19:nat_simp_arith_targeted:ns16_nat_div_mod_extra": 1
+      },
+      "namespace_breakdown": {
+        "Nat": 4
+      },
+      "trainable": false,
+      "trainable_by_count": false,
+      "trainable_by_rows": false,
+      "recommended_oversample_factor": 15
+    }
+  },
+  "targets": [
+    "aesop",
+    "simp_all"
+  ]
+}

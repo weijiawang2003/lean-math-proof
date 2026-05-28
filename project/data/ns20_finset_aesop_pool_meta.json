@@ -1,0 +1,76 @@
+{
+  "family": "aesop",
+  "namespace": "Finset",
+  "training_gate_unique_required": 5,
+  "unique_count": 4,
+  "rows_total": 7,
+  "trainable": false,
+  "recommended_oversample_factor": 10,
+  "tactic_strings_sample": [
+    "aesop"
+  ],
+  "rows": [
+    {
+      "full_name": "Finset.coe_insert",
+      "winning_tactic": "aesop",
+      "source_arc": "NS18",
+      "source_set": "ns17_finset_extra",
+      "raw_solved": false,
+      "wrap_solved": false,
+      "variant_solved": true,
+      "also_proved_in": [
+        {
+          "arc": "NS19",
+          "set": "ns17_finset_extra"
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.cons_eq_insert",
+      "winning_tactic": "aesop",
+      "source_arc": "NS18",
+      "source_set": "ns17_finset_extra",
+      "raw_solved": false,
+      "wrap_solved": false,
+      "variant_solved": true,
+      "also_proved_in": [
+        {
+          "arc": "NS19",
+          "set": "ns17_finset_extra"
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.disjUnion_singleton",
+      "winning_tactic": "aesop",
+      "source_arc": "NS18",
+      "source_set": "ns17_finset_extra",
+      "raw_solved": false,
+      "wrap_solved": false,
+      "variant_solved": true,
+      "also_proved_in": [
+        {
+          "arc": "NS19",
+          "set": "ns17_finset_extra"
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.coe_cons",
+      "winning_tactic": "aesop",
+      "source_arc": "NS19",
+      "source_set": "ns19_finset_aesop_surface",
+      "raw_solved": false,
+      "wrap_solved": false,
+      "variant_solved": true,
+      "also_proved_in": []
+    }
+  ],
+  "namespace_breakdown": {
+    "Finset": 4
+  },
+  "source_arc_breakdown": {
+    "NS18": 3,
+    "NS19": 1
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "_about": "NS21 domain-aware router. Routes Finset goals to the chosen NS21 Finset/aesop checkpoint, Nat goals to NS15 nat_oversample, and Set/default to NS12 balanced. Selection by scripts/ns21_pick_router.py.",
+  "_chosen_ckpt_score_detail": {
+    "ckpt": "gen_v5_ns21_finset_aesop_20x",
+    "finset": {
+      "ns17_finset_extra": 15,
+      "cx1_finset_image_filter": 30,
+      "ns20_finset_aesop_extra_easy": null,
+      "ns20_finset_aesop_extra_medium": 7,
+      "ns20_finset_aesop_extra_hard": null
+    },
+    "set": {
+      "ns17_set_extra": {
+        "ckpt": 18,
+        "baseline": 18
+      },
+      "ns14_set_finset_extra": {
+        "ckpt": 12,
+        "baseline": 13
+      }
+    },
+    "demo": {
+      "demo_v1": {
+        "ckpt": 11,
+        "baseline": 10
+      }
+    },
+    "nat": {
+      "nat_defs_medium": {
+        "ckpt": null,
+        "baseline": null
+      },
+      "nat_defs_large_v5": {
+        "ckpt": null,
+        "baseline": null
+      }
+    },
+    "finset_total_wins": 52,
+    "set_regressions": 1,
+    "demo_regressions": 0,
+    "nat_regressions": 0,
+    "score": 51.5
+  },
+  "_all_candidates": [
+    {
+      "ckpt": "gen_v5_ns21_finset_aesop_20x",
+      "finset": {
+        "ns17_finset_extra": 15,
+        "cx1_finset_image_filter": 30,
+        "ns20_finset_aesop_extra_easy": null,
+        "ns20_finset_aesop_extra_medium": 7,
+        "ns20_finset_aesop_extra_hard": null
+      },
+      "set": {
+        "ns17_set_extra": {
+          "ckpt": 18,
+          "baseline": 18
+        },
+        "ns14_set_finset_extra": {
+          "ckpt": 12,
+          "baseline": 13
+        }
+      },
+      "demo": {
+        "demo_v1": {
+          "ckpt": 11,
+          "baseline": 10
+        }
+      },
+      "nat": {
+        "nat_defs_medium": {
+          "ckpt": null,
+          "baseline": null
+        },
+        "nat_defs_large_v5": {
+          "ckpt": null,
+          "baseline": null
+        }
+      },
+      "finset_total_wins": 52,
+      "set_regressions": 1,
+      "demo_regressions": 0,
+      "nat_regressions": 0,
+      "score": 51.5
+    },
+    {
+      "ckpt": "gen_v5_ns21_finset_aesop_10x",
+      "finset": {
+        "ns17_finset_extra": 15,
+        "cx1_finset_image_filter": 30,
+        "ns20_finset_aesop_extra_easy": null,
+        "ns20_finset_aesop_extra_medium": 7,
+        "ns20_finset_aesop_extra_hard": null
+      },
+      "set": {
+        "ns17_set_extra": {
+          "ckpt": 19,
+          "baseline": 18
+        },
+        "ns14_set_finset_extra": {
+          "ckpt": 11,
+          "baseline": 13
+        }
+      },
+      "demo": {
+        "demo_v1": {
+          "ckpt": 10,
+          "baseline": 10
+        }
+      },
+      "nat": {
+        "nat_defs_medium": {
+          "ckpt": null,
+          "baseline": null
+        },
+        "nat_defs_large_v5": {
+          "ckpt": null,
+          "baseline": null
+        }
+      },
+      "finset_total_wins": 52,
+      "set_regressions": 2,
+      "demo_regressions": 0,
+      "nat_regressions": 0,
+      "score": 51.0
+    },
+    {
+      "ckpt": "gen_v5_ns21_finset_aesop_minimal",
+      "finset": {
+        "ns17_finset_extra": 15,
+        "cx1_finset_image_filter": 30,
+        "ns20_finset_aesop_extra_easy": null,
+        "ns20_finset_aesop_extra_medium": 7,
+        "ns20_finset_aesop_extra_hard": null
+      },
+      "set": {
+        "ns17_set_extra": {
+          "ckpt": 18,
+          "baseline": 18
+        },
+        "ns14_set_finset_extra": {
+          "ckpt": 10,
+          "baseline": 13
+        }
+      },
+      "demo": {
+        "demo_v1": {
+          "ckpt": 10,
+          "baseline": 10
+        }
+      },
+      "nat": {
+        "nat_defs_medium": {
+          "ckpt": null,
+          "baseline": null
+        },
+        "nat_defs_large_v5": {
+          "ckpt": null,
+          "baseline": null
+        }
+      },
+      "finset_total_wins": 52,
+      "set_regressions": 3,
+      "demo_regressions": 0,
+      "nat_regressions": 0,
+      "score": 50.5
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "^Nat\\.",
+      "ckpt_dir": "project/models/gen_v5_ns15_nat_oversample"
+    },
+    {
+      "pattern": "^Finset\\.",
+      "ckpt_dir": "project/models/gen_v5_ns21_finset_aesop_20x"
+    },
+    {
+      "pattern": "^Set\\.",
+      "ckpt_dir": "project/models/gen_v5_ns12_balanced"
+    }
+  ],
+  "default_ckpt_dir": "project/models/gen_v5_ns12_balanced"
+}

@@ -1,0 +1,9 @@
+{
+  "_about": "NS15 domain-aware router. Routes Nat goals to the NS15 nat_oversample model (which learned the wrapper-only iff-omega Nat patterns from NS14), and Set/Finset goals to the NS12 balanced model (still the strongest on demo_v1 and ns14_set_finset_extra). See project/evolve/reports/ns15_wider_training_report.md.",
+  "routes": [
+    {"pattern": "^Nat\\.",    "ckpt_dir": "project/models/gen_v5_ns15_nat_oversample"},
+    {"pattern": "^Set\\.",    "ckpt_dir": "project/models/gen_v5_ns12_balanced"},
+    {"pattern": "^Finset\\.", "ckpt_dir": "project/models/gen_v5_ns12_balanced"}
+  ],
+  "default_ckpt_dir": "project/models/gen_v5_ns12_balanced"
+}

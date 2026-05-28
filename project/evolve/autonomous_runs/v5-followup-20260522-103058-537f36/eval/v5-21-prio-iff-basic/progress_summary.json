@@ -1,0 +1,237 @@
+[
+  {
+    "theorem": "Nat.div_le_div_right",
+    "num_steps": 8,
+    "advancing_tactics": [
+      {
+        "tactic": "rw [Nat.div_eq_of_lt]",
+        "origin": "retrieved_premise",
+        "step": 1
+      },
+      {
+        "tactic": "simp [Nat.mul_zero]",
+        "origin": "generative_topk",
+        "step": 2
+      },
+      {
+        "tactic": "simp_arith",
+        "origin": "fallback_tactic",
+        "step": 3
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 4
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 5
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 6
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 7
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 8
+      }
+    ],
+    "any_template_advanced": false
+  },
+  {
+    "theorem": "Nat.div_lt_one_iff",
+    "num_steps": 8,
+    "advancing_tactics": [
+      {
+        "tactic": "refine ⟨?_, ?_⟩ <;> intro h <;> simp_all",
+        "origin": "tactic_template",
+        "step": 1
+      },
+      {
+        "tactic": "simp_arith",
+        "origin": "fallback_tactic",
+        "step": 2
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 3
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 4
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 5
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 6
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 7
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 8
+      }
+    ],
+    "any_template_advanced": true
+  },
+  {
+    "theorem": "Nat.add_mod_eq_ite",
+    "num_steps": 8,
+    "advancing_tactics": [
+      {
+        "tactic": "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+        "origin": "family_tactic",
+        "step": 1
+      },
+      {
+        "tactic": "simp [Nat.add_zero]",
+        "origin": "generative_topk",
+        "step": 2
+      },
+      {
+        "tactic": "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+        "origin": "family_tactic",
+        "step": 3
+      },
+      {
+        "tactic": "simp [Nat.add_zero]",
+        "origin": "generative_topk",
+        "step": 4
+      },
+      {
+        "tactic": "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+        "origin": "family_tactic",
+        "step": 5
+      },
+      {
+        "tactic": "simp [Nat.add_zero]",
+        "origin": "generative_topk",
+        "step": 6
+      },
+      {
+        "tactic": "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+        "origin": "family_tactic",
+        "step": 7
+      },
+      {
+        "tactic": "simp [Nat.add_zero]",
+        "origin": "generative_topk",
+        "step": 8
+      }
+    ],
+    "any_template_advanced": false
+  },
+  {
+    "theorem": "Nat.sqrt_lt",
+    "num_steps": 8,
+    "advancing_tactics": [
+      {
+        "tactic": "simp_arith",
+        "origin": "fallback_tactic",
+        "step": 1
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 2
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 3
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 4
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 5
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 6
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 7
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 8
+      }
+    ],
+    "any_template_advanced": false
+  },
+  {
+    "theorem": "Nat.pow_lt_pow_iff_left",
+    "num_steps": 8,
+    "advancing_tactics": [
+      {
+        "tactic": "refine ⟨?_, ?_⟩ <;> intro h <;> simp_all",
+        "origin": "tactic_template",
+        "step": 1
+      },
+      {
+        "tactic": "simp_arith",
+        "origin": "fallback_tactic",
+        "step": 2
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 3
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 4
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 5
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 6
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 7
+      },
+      {
+        "tactic": "rw [Nat.add_comm]",
+        "origin": "fallback_tactic",
+        "step": 8
+      }
+    ],
+    "any_template_advanced": true
+  }
+]

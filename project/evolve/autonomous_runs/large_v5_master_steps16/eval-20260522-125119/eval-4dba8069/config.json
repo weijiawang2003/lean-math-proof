@@ -1,0 +1,12 @@
+{
+  "method": "policy_rollout_topk",
+  "policy_type": "hybrid_evolved",
+  "theorem_set": "nat_defs_large_v5",
+  "ckpt_dir": "project/models/gen_v5",
+  "max_steps": 16,
+  "top_k": 8,
+  "num_theorems": 65,
+  "decode_mode": "beam",
+  "temperature": 0.8,
+  "seed": null
+}

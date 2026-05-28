@@ -1,0 +1,256 @@
+{
+  "ns17_surface_wrapper_only": {
+    "ns17_nat_remaining": {
+      "raw_solved": 1,
+      "wrap_solved": 1,
+      "wrapper_only_count": 0,
+      "wrapper_only_theorems": []
+    },
+    "ns17_set_extra": {
+      "raw_solved": 18,
+      "wrap_solved": 18,
+      "wrapper_only_count": 0,
+      "wrapper_only_theorems": []
+    },
+    "ns17_finset_extra": {
+      "raw_solved": 12,
+      "wrap_solved": 12,
+      "wrapper_only_count": 0,
+      "wrapper_only_theorems": []
+    },
+    "ns17_list_multiset": {
+      "raw_solved": 11,
+      "wrap_solved": 11,
+      "wrapper_only_count": 0,
+      "wrapper_only_theorems": []
+    }
+  },
+  "ns17_wrapper_only_total": 0,
+  "decision_gate_criteria": {
+    "rule_1": "evolved wrapper-only rows >= 10",
+    "rule_2": "pool size >= 20 AND unique theorems >= 20"
+  },
+  "family_pools": {
+    "constructor_omega": {
+      "evolved_rows": 16,
+      "evolved_unique_theorems": 16,
+      "evolved_wrapper_only": 0,
+      "evolved_held_out": 0,
+      "trace_rows": 0,
+      "trace_unique_theorems": 0,
+      "combined_pool_size": 16,
+      "suggested_oversample_factor": 7,
+      "ns18_gate_pass": false,
+      "example_tactic": "constructor <;> intro h_split <;> omega",
+      "by_namespace": {
+        "Nat": 16
+      }
+    },
+    "apply_named": {
+      "evolved_rows": 1,
+      "evolved_unique_theorems": 1,
+      "evolved_wrapper_only": 1,
+      "evolved_held_out": 1,
+      "trace_rows": 0,
+      "trace_unique_theorems": 0,
+      "combined_pool_size": 1,
+      "suggested_oversample_factor": 100,
+      "ns18_gate_pass": false,
+      "example_tactic": "apply Nat.div_lt_iff_lt_mul",
+      "by_namespace": {
+        "Nat": 1
+      }
+    },
+    "exact_named": {
+      "evolved_rows": 3,
+      "evolved_unique_theorems": 2,
+      "evolved_wrapper_only": 2,
+      "evolved_held_out": 1,
+      "trace_rows": 2,
+      "trace_unique_theorems": 2,
+      "combined_pool_size": 5,
+      "suggested_oversample_factor": 20,
+      "ns18_gate_pass": false,
+      "example_tactic": "exact (Nat.le_div_iff_mul_le hb).mpr (by simpa using hba)",
+      "by_namespace": {
+        "Nat": 3
+      }
+    },
+    "nat_div_rw": {
+      "evolved_rows": 2,
+      "evolved_unique_theorems": 2,
+      "evolved_wrapper_only": 2,
+      "evolved_held_out": 2,
+      "trace_rows": 2,
+      "trace_unique_theorems": 2,
+      "combined_pool_size": 4,
+      "suggested_oversample_factor": 25,
+      "ns18_gate_pass": false,
+      "example_tactic": "rw [Nat.div_lt_iff_lt_mul hb, Nat.one_mul]",
+      "by_namespace": {
+        "Nat": 2
+      }
+    },
+    "split_ifs_omega": {
+      "evolved_rows": 2,
+      "evolved_unique_theorems": 1,
+      "evolved_wrapper_only": 1,
+      "evolved_held_out": 0,
+      "trace_rows": 1,
+      "trace_unique_theorems": 1,
+      "combined_pool_size": 3,
+      "suggested_oversample_factor": 34,
+      "ns18_gate_pass": false,
+      "example_tactic": "split_ifs <;> omega",
+      "by_namespace": {
+        "Nat": 2
+      }
+    },
+    "nat_simp_arith": {
+      "evolved_rows": 14,
+      "evolved_unique_theorems": 11,
+      "evolved_wrapper_only": 4,
+      "evolved_held_out": 0,
+      "trace_rows": 5,
+      "trace_unique_theorems": 5,
+      "combined_pool_size": 19,
+      "suggested_oversample_factor": 6,
+      "ns18_gate_pass": false,
+      "example_tactic": "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "by_namespace": {
+        "Nat": 12,
+        "Set": 2
+      }
+    },
+    "other": {
+      "evolved_rows": 49,
+      "evolved_unique_theorems": 35,
+      "evolved_wrapper_only": 9,
+      "evolved_held_out": 7,
+      "trace_rows": 10,
+      "trace_unique_theorems": 10,
+      "combined_pool_size": 59,
+      "suggested_oversample_factor": 2,
+      "ns18_gate_pass": true,
+      "example_tactic": "by_cases hc : c = 0 <;> [simp [hc]; exact (Nat.le_div_iff_mul_le' (Nat.pos_of_ne_zero hc)).2 (Nat.le_trans (Nat.div_mul_le_self _ _) h)]",
+      "by_namespace": {
+        "Nat": 45,
+        "Set": 3,
+        "Finset": 1
+      }
+    },
+    "set_ext_simp": {
+      "evolved_rows": 5,
+      "evolved_unique_theorems": 5,
+      "evolved_wrapper_only": 0,
+      "evolved_held_out": 0,
+      "trace_rows": 5,
+      "trace_unique_theorems": 5,
+      "combined_pool_size": 10,
+      "suggested_oversample_factor": 10,
+      "ns18_gate_pass": false,
+      "example_tactic": "simp [Set.ext_iff]",
+      "by_namespace": {
+        "Set": 4,
+        "Finset": 1
+      }
+    },
+    "iff_omega_pair": {
+      "evolved_rows": 28,
+      "evolved_unique_theorems": 27,
+      "evolved_wrapper_only": 0,
+      "evolved_held_out": 0,
+      "trace_rows": 28,
+      "trace_unique_theorems": 28,
+      "combined_pool_size": 56,
+      "suggested_oversample_factor": 2,
+      "ns18_gate_pass": true,
+      "example_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "by_namespace": {
+        "Nat": 28
+      }
+    },
+    "rw_named": {
+      "evolved_rows": 1,
+      "evolved_unique_theorems": 1,
+      "evolved_wrapper_only": 0,
+      "evolved_held_out": 0,
+      "trace_rows": 0,
+      "trace_unique_theorems": 0,
+      "combined_pool_size": 1,
+      "suggested_oversample_factor": 100,
+      "ns18_gate_pass": false,
+      "example_tactic": "rw [Nat.add_comm]",
+      "by_namespace": {
+        "Nat": 1
+      }
+    },
+    "fallback_omega": {
+      "evolved_rows": 58,
+      "evolved_unique_theorems": 32,
+      "evolved_wrapper_only": 0,
+      "evolved_held_out": 0,
+      "trace_rows": 19,
+      "trace_unique_theorems": 19,
+      "combined_pool_size": 77,
+      "suggested_oversample_factor": 2,
+      "ns18_gate_pass": true,
+      "example_tactic": "omega",
+      "by_namespace": {
+        "Nat": 58
+      }
+    },
+    "simp_baseline": {
+      "evolved_rows": 4,
+      "evolved_unique_theorems": 4,
+      "evolved_wrapper_only": 0,
+      "evolved_held_out": 0,
+      "trace_rows": 1,
+      "trace_unique_theorems": 1,
+      "combined_pool_size": 5,
+      "suggested_oversample_factor": 20,
+      "ns18_gate_pass": false,
+      "example_tactic": "simp [List.length_cons]",
+      "by_namespace": {
+        "Nat": 4
+      }
+    },
+    "set_subset_simp": {
+      "evolved_rows": 5,
+      "evolved_unique_theorems": 5,
+      "evolved_wrapper_only": 0,
+      "evolved_held_out": 0,
+      "trace_rows": 6,
+      "trace_unique_theorems": 6,
+      "combined_pool_size": 11,
+      "suggested_oversample_factor": 10,
+      "ns18_gate_pass": false,
+      "example_tactic": "simp [Set.subset_def]",
+      "by_namespace": {
+        "Set": 5
+      }
+    },
+    "fallback_aesop": {
+      "evolved_rows": 13,
+      "evolved_unique_theorems": 13,
+      "evolved_wrapper_only": 0,
+      "evolved_held_out": 0,
+      "trace_rows": 11,
+      "trace_unique_theorems": 11,
+      "combined_pool_size": 24,
+      "suggested_oversample_factor": 5,
+      "ns18_gate_pass": true,
+      "example_tactic": "aesop",
+      "by_namespace": {
+        "Set": 7,
+        "Finset": 6
+      }
+    }
+  },
+  "families_passing_gate": [
+    "fallback_aesop",
+    "fallback_omega",
+    "iff_omega_pair",
+    "other"
+  ]
+}

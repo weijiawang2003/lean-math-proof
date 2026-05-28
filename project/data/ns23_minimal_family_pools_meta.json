@@ -1,0 +1,1119 @@
+{
+  "n_theorems_relabeled": 32,
+  "n_unchanged": 18,
+  "n_relabeled": 13,
+  "n_unresolved": 1,
+  "relabel_crosstab": {
+    "aesop": {
+      "aesop": 6
+    },
+    "simp_all": {
+      "wrapper_original": 3
+    },
+    "iff_omega_pair": {
+      "fallback_omega": 9,
+      "unresolved": 1
+    },
+    "fallback_omega": {
+      "fallback_omega": 12,
+      "constructor_omega": 1
+    }
+  },
+  "minimal_family_pools": {
+    "aesop|Finset": {
+      "unique_count": 6,
+      "theorems": [
+        {
+          "theorem": "Finset.disjUnion_singleton",
+          "minimal_tactic": "aesop",
+          "original_family": "aesop",
+          "wrapper_tactic": "aesop",
+          "first_seen_arc": "NS18"
+        },
+        {
+          "theorem": "Finset.cons_eq_insert",
+          "minimal_tactic": "aesop",
+          "original_family": "aesop",
+          "wrapper_tactic": "aesop",
+          "first_seen_arc": "NS18"
+        },
+        {
+          "theorem": "Finset.coe_insert",
+          "minimal_tactic": "aesop",
+          "original_family": "aesop",
+          "wrapper_tactic": "aesop",
+          "first_seen_arc": "NS18"
+        },
+        {
+          "theorem": "Finset.coe_cons",
+          "minimal_tactic": "aesop",
+          "original_family": "aesop",
+          "wrapper_tactic": "aesop",
+          "first_seen_arc": "NS19"
+        },
+        {
+          "theorem": "Finset.card_insert_eq_ite",
+          "minimal_tactic": "aesop",
+          "original_family": "aesop",
+          "wrapper_tactic": "aesop",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Finset.image_id",
+          "minimal_tactic": "aesop",
+          "original_family": "aesop",
+          "wrapper_tactic": "aesop",
+          "first_seen_arc": "CX1"
+        }
+      ]
+    },
+    "wrapper_original|Nat": {
+      "unique_count": 3,
+      "theorems": [
+        {
+          "theorem": "Nat.mul_mod_mod",
+          "minimal_tactic": "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]",
+          "original_family": "simp_all",
+          "wrapper_tactic": "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]",
+          "first_seen_arc": "NS18"
+        },
+        {
+          "theorem": "Nat.mod_mul_mod",
+          "minimal_tactic": "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]",
+          "original_family": "simp_all",
+          "wrapper_tactic": "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]",
+          "first_seen_arc": "NS18"
+        },
+        {
+          "theorem": "Nat.add_mod_of_add_mod_lt",
+          "minimal_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+          "original_family": "simp_all",
+          "wrapper_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+          "first_seen_arc": "CX1"
+        }
+      ]
+    },
+    "fallback_omega|Int": {
+      "unique_count": 21,
+      "theorems": [
+        {
+          "theorem": "Int.le_add_one_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Int.le_iff_lt_or_eq",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Int.emod_two_eq_zero_or_one",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Int.le_of_eq",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natAbs_coe_sub_coe_lt_of_lt",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_or_lt",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natAbs_coe_sub_coe_le_of_le",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.lt_or_lt_of_ne",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natAbs_add_of_nonpos",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.lt_asymm",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_natCast_sub",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.neg_emod_two",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.lt_or_le",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_pred_of_pos",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_sub_one_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.sub_one_lt_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_antisymm_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_iff_eq_or_lt",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_nonpos_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_ne_zero_iff_pos",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_eq_zero",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        }
+      ]
+    },
+    "constructor_omega|Int": {
+      "unique_count": 1,
+      "theorems": [
+        {
+          "theorem": "Int.zero_le_ofNat",
+          "minimal_tactic": "constructor <;> omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        }
+      ]
+    }
+  },
+  "omega_aggregate_by_namespace": {
+    "Int": {
+      "unique_count": 22,
+      "theorems": [
+        {
+          "theorem": "Int.le_add_one_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Int.le_iff_lt_or_eq",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Int.emod_two_eq_zero_or_one",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Int.le_of_eq",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natAbs_coe_sub_coe_lt_of_lt",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_or_lt",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natAbs_coe_sub_coe_le_of_le",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.lt_or_lt_of_ne",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natAbs_add_of_nonpos",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.lt_asymm",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_natCast_sub",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.neg_emod_two",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.lt_or_le",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_pred_of_pos",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_sub_one_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.sub_one_lt_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_antisymm_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_iff_eq_or_lt",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_nonpos_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_ne_zero_iff_pos",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_eq_zero",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.zero_le_ofNat",
+          "minimal_tactic": "constructor <;> omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        }
+      ]
+    }
+  },
+  "gated_pools": [
+    {
+      "family": "aesop",
+      "namespace": "Finset",
+      "unique_count": 6,
+      "trainable": true,
+      "theorems": [
+        {
+          "theorem": "Finset.disjUnion_singleton",
+          "minimal_tactic": "aesop",
+          "original_family": "aesop",
+          "wrapper_tactic": "aesop",
+          "first_seen_arc": "NS18"
+        },
+        {
+          "theorem": "Finset.cons_eq_insert",
+          "minimal_tactic": "aesop",
+          "original_family": "aesop",
+          "wrapper_tactic": "aesop",
+          "first_seen_arc": "NS18"
+        },
+        {
+          "theorem": "Finset.coe_insert",
+          "minimal_tactic": "aesop",
+          "original_family": "aesop",
+          "wrapper_tactic": "aesop",
+          "first_seen_arc": "NS18"
+        },
+        {
+          "theorem": "Finset.coe_cons",
+          "minimal_tactic": "aesop",
+          "original_family": "aesop",
+          "wrapper_tactic": "aesop",
+          "first_seen_arc": "NS19"
+        },
+        {
+          "theorem": "Finset.card_insert_eq_ite",
+          "minimal_tactic": "aesop",
+          "original_family": "aesop",
+          "wrapper_tactic": "aesop",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Finset.image_id",
+          "minimal_tactic": "aesop",
+          "original_family": "aesop",
+          "wrapper_tactic": "aesop",
+          "first_seen_arc": "CX1"
+        }
+      ]
+    },
+    {
+      "family": "fallback_omega",
+      "namespace": "Int",
+      "unique_count": 21,
+      "trainable": true,
+      "theorems": [
+        {
+          "theorem": "Int.le_add_one_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Int.le_iff_lt_or_eq",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Int.emod_two_eq_zero_or_one",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Int.le_of_eq",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natAbs_coe_sub_coe_lt_of_lt",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_or_lt",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natAbs_coe_sub_coe_le_of_le",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.lt_or_lt_of_ne",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natAbs_add_of_nonpos",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.lt_asymm",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_natCast_sub",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.neg_emod_two",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.lt_or_le",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_pred_of_pos",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_sub_one_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.sub_one_lt_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_antisymm_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_iff_eq_or_lt",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_nonpos_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_ne_zero_iff_pos",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_eq_zero",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        }
+      ]
+    },
+    {
+      "family": "omega_aggregate",
+      "namespace": "Int",
+      "unique_count": 22,
+      "trainable": true,
+      "theorems": [
+        {
+          "theorem": "Int.le_add_one_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Int.le_iff_lt_or_eq",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Int.emod_two_eq_zero_or_one",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX1"
+        },
+        {
+          "theorem": "Int.le_of_eq",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natAbs_coe_sub_coe_lt_of_lt",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_or_lt",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natAbs_coe_sub_coe_le_of_le",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.lt_or_lt_of_ne",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natAbs_add_of_nonpos",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.lt_asymm",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_natCast_sub",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.neg_emod_two",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.lt_or_le",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_pred_of_pos",
+          "minimal_tactic": "omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_sub_one_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.sub_one_lt_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_antisymm_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.le_iff_eq_or_lt",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_nonpos_iff",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_ne_zero_iff_pos",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.natCast_eq_zero",
+          "minimal_tactic": "omega",
+          "original_family": "iff_omega_pair",
+          "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "first_seen_arc": "CX2"
+        },
+        {
+          "theorem": "Int.zero_le_ofNat",
+          "minimal_tactic": "constructor <;> omega",
+          "original_family": "fallback_omega",
+          "wrapper_tactic": "omega",
+          "first_seen_arc": "CX2"
+        }
+      ],
+      "_aggregate_of": [
+        "fallback_omega",
+        "iff_omega_pair",
+        "constructor_omega",
+        "split_ifs_omega"
+      ]
+    }
+  ],
+  "per_theorem": [
+    {
+      "full_name": "Finset.disjUnion_singleton",
+      "namespace": "Finset",
+      "original_family": "aesop",
+      "minimal_family": "aesop",
+      "minimal_tactic": "aesop",
+      "changed": false,
+      "wrapper_tactic": "aesop",
+      "first_seen_arc": "NS18"
+    },
+    {
+      "full_name": "Finset.cons_eq_insert",
+      "namespace": "Finset",
+      "original_family": "aesop",
+      "minimal_family": "aesop",
+      "minimal_tactic": "aesop",
+      "changed": false,
+      "wrapper_tactic": "aesop",
+      "first_seen_arc": "NS18"
+    },
+    {
+      "full_name": "Finset.coe_insert",
+      "namespace": "Finset",
+      "original_family": "aesop",
+      "minimal_family": "aesop",
+      "minimal_tactic": "aesop",
+      "changed": false,
+      "wrapper_tactic": "aesop",
+      "first_seen_arc": "NS18"
+    },
+    {
+      "full_name": "Finset.coe_cons",
+      "namespace": "Finset",
+      "original_family": "aesop",
+      "minimal_family": "aesop",
+      "minimal_tactic": "aesop",
+      "changed": false,
+      "wrapper_tactic": "aesop",
+      "first_seen_arc": "NS19"
+    },
+    {
+      "full_name": "Finset.card_insert_eq_ite",
+      "namespace": "Finset",
+      "original_family": "aesop",
+      "minimal_family": "aesop",
+      "minimal_tactic": "aesop",
+      "changed": false,
+      "wrapper_tactic": "aesop",
+      "first_seen_arc": "CX1"
+    },
+    {
+      "full_name": "Finset.image_id",
+      "namespace": "Finset",
+      "original_family": "aesop",
+      "minimal_family": "aesop",
+      "minimal_tactic": "aesop",
+      "changed": false,
+      "wrapper_tactic": "aesop",
+      "first_seen_arc": "CX1"
+    },
+    {
+      "full_name": "Nat.mul_mod_mod",
+      "namespace": "Nat",
+      "original_family": "simp_all",
+      "minimal_family": "wrapper_original",
+      "minimal_tactic": "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]",
+      "changed": true,
+      "wrapper_tactic": "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]",
+      "first_seen_arc": "NS18"
+    },
+    {
+      "full_name": "Nat.mod_mul_mod",
+      "namespace": "Nat",
+      "original_family": "simp_all",
+      "minimal_family": "wrapper_original",
+      "minimal_tactic": "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]",
+      "changed": true,
+      "wrapper_tactic": "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]",
+      "first_seen_arc": "NS18"
+    },
+    {
+      "full_name": "Nat.add_mod_of_add_mod_lt",
+      "namespace": "Nat",
+      "original_family": "simp_all",
+      "minimal_family": "wrapper_original",
+      "minimal_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "changed": true,
+      "wrapper_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "first_seen_arc": "CX1"
+    },
+    {
+      "full_name": "Int.le_add_one_iff",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": true,
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "first_seen_arc": "CX1"
+    },
+    {
+      "full_name": "Int.le_iff_lt_or_eq",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": true,
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "first_seen_arc": "CX1"
+    },
+    {
+      "full_name": "Int.emod_two_eq_zero_or_one",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": false,
+      "wrapper_tactic": "omega",
+      "first_seen_arc": "CX1"
+    },
+    {
+      "full_name": "Int.le_of_eq",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": false,
+      "wrapper_tactic": "omega",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.natAbs_coe_sub_coe_lt_of_lt",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": false,
+      "wrapper_tactic": "omega",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.le_or_lt",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": false,
+      "wrapper_tactic": "omega",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.natAbs_coe_sub_coe_le_of_le",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": false,
+      "wrapper_tactic": "omega",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.zero_le_ofNat",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "minimal_family": "constructor_omega",
+      "minimal_tactic": "constructor <;> omega",
+      "changed": true,
+      "wrapper_tactic": "omega",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.lt_or_lt_of_ne",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": false,
+      "wrapper_tactic": "omega",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.natAbs_add_of_nonpos",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": false,
+      "wrapper_tactic": "omega",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.lt_asymm",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": false,
+      "wrapper_tactic": "omega",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.le_natCast_sub",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": false,
+      "wrapper_tactic": "omega",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.neg_emod_two",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": false,
+      "wrapper_tactic": "omega",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.lt_or_le",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": false,
+      "wrapper_tactic": "omega",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.natCast_pred_of_pos",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": false,
+      "wrapper_tactic": "omega",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.le_sub_one_iff",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": true,
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.sub_one_lt_iff",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": true,
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.le_antisymm_iff",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": true,
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.le_iff_eq_or_lt",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": true,
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.natCast_nonpos_iff",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": true,
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.natCast_ne_zero_iff_pos",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": true,
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.lt_toNat",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "minimal_family": null,
+      "minimal_tactic": null,
+      "changed": false,
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "first_seen_arc": "CX2"
+    },
+    {
+      "full_name": "Int.natCast_eq_zero",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "minimal_family": "fallback_omega",
+      "minimal_tactic": "omega",
+      "changed": true,
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "first_seen_arc": "CX2"
+    }
+  ]
+}

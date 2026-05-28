@@ -40,13 +40,27 @@ class GenerativePolicy:
     Auto-detects model type (seq2seq vs decoder) from checkpoint metadata.
     """
 
-    def __init__(self, ckpt_dir: str = DEFAULT_GEN_CKPT):
+    def __init__(
+        self,
+        ckpt_dir: str = DEFAULT_GEN_CKPT,
+        decode_mode: str = "beam",
+        temperature: float = 0.8,
+        top_p: float = 0.95,
+        seed: int | None = None,
+    ):
         self._ckpt_dir = ckpt_dir
         self._model = None
         self._tokenizer = None
         self._device = "cuda" if torch.cuda.is_available() else "cpu"
         self._meta: dict | None = None
         self._model_type: str = "seq2seq"  # default, auto-detected on load
+        # Decoding controls. Default beam preserves prior behavior exactly;
+        # sampling support is not wired into rank_tactics yet (added in
+        # the stashed pre-v4 work — re-apply if sampling is needed).
+        self._decode_mode = decode_mode
+        self._temperature = temperature
+        self._top_p = top_p
+        self._seed = seed
 
     def _ensure_loaded(self) -> None:
         if self._model is not None:
@@ -269,8 +283,18 @@ class PremiseAugmentedPolicy:
         traces_path: str = "project/all_traces.jsonl",
         max_premises: int = 10,
         k_retrieved: int = 15,
+        decode_mode: str = "beam",
+        temperature: float = 0.8,
+        top_p: float = 0.95,
+        seed: int | None = None,
     ):
-        self._inner = GenerativePolicy(ckpt_dir=ckpt_dir)
+        self._inner = GenerativePolicy(
+            ckpt_dir=ckpt_dir,
+            decode_mode=decode_mode,
+            temperature=temperature,
+            top_p=top_p,
+            seed=seed,
+        )
         self._premise_index_path = premise_index_path
         self._traces_path = traces_path
         self._max_premises = max_premises

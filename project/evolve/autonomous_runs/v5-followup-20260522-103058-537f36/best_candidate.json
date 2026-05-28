@@ -1,0 +1,25 @@
+{
+  "name": "v5-18-prio-kitchen",
+  "direction": "all+priority",
+  "description": "kitchen sink: every priority template",
+  "proved": 29,
+  "progress": 4,
+  "errored": 5,
+  "proved_by_origin": {
+    "tactic_template": 20,
+    "family_tactic": 2,
+    "generative_topk": 3,
+    "fallback_tactic": 4
+  },
+  "term_builder_attempt": 8,
+  "term_builder_advanced": 0,
+  "term_builder_proved": 0,
+  "runtime_seconds": 232.51853895187378,
+  "delta_vs_baseline": 2,
+  "newly_proved": [
+    "Nat.mul_eq_left",
+    "Nat.mul_eq_right"
+  ],
+  "newly_lost": [],
+  "eval_dir": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/autonomous_runs/v5-followup-20260522-103058-537f36/eval/v5-18-prio-kitchen/eval-99ee4ef2"
+}

@@ -117,6 +117,21 @@ STATIC_PREMISES: dict[str, list[str]] = {
         "Nat.mul_add_mod", "Nat.add_mod", "Nat.mul_mod",
         "Nat.mod_eq_of_lt",
     ],
+    # v4.1: div-family premises for Nat. Verified present in
+    # Mathlib/Data/Nat/Defs.lean (or transitively imported there) against
+    # the lean_dojo Mathlib4 cache at HEAD. Used by retrieve_for_state to
+    # surface candidate `rw [..]` / `exact ..` lemmas when the wrapper's
+    # div family activates on a Nat.div_* / Nat.dvd_* theorem.
+    "Nat.div": [
+        "Nat.div_le_div_right", "Nat.div_le_iff_le_mul",
+        "Nat.div_lt_iff_lt_mul", "Nat.div_lt_iff_lt_mul'",
+        "Nat.div_eq_of_lt", "Nat.div_pos", "Nat.div_pos_iff",
+        "Nat.div_lt_one_iff", "Nat.div_eq_zero_iff",
+        "Nat.dvd_iff_div_mul_eq",
+        "Nat.mul_div_cancel", "Nat.div_mul_cancel",
+        "Nat.mod_add_div", "Nat.lt_of_lt_of_le",
+        "Nat.pos_of_ne_zero", "Nat.mod_eq_of_lt",
+    ],
     "List": [
         "List.mem_cons_iff", "List.length_cons", "List.append_nil",
         "List.nil_append", "List.map_cons", "List.filter_cons",
@@ -135,6 +150,382 @@ STATIC_PREMISES: dict[str, list[str]] = {
         "Int.neg_neg", "Int.sub_self",
     ],
 }
+
+
+# ── v4.1 stateless retrieval helper ─────────────────────────────────
+
+# Cheap family-key → catalog-bucket mapping. Used by retrieve_for_state
+# to decide which static premise bucket to draw from when a strategy
+# wrapper family activates. Kept narrow on purpose: v4.1 ships the div
+# family only; v4.2 / v4.3 will extend this map.
+_FAMILY_CATALOG_KEYS: dict[str, list[str]] = {
+    "div": ["Nat.div"],
+}
+
+
+# v4.2 static availability denylist. Lemma names that produced `unknown
+# constant` during the v4.1 eval AND would still produce it after the
+# self-filter — i.e. unavailable for reasons other than self-reference.
+# Two sub-classes:
+#
+#   1. Genuinely outside the import closure of nat_defs_medium's eval
+#      environment (e.g. defined in a Mathlib file not transitively
+#      imported by Mathlib/Data/Nat/Defs.lean):
+#        - Nat.div_eq_zero_iff
+#        - Nat.div_le_iff_le_mul
+#
+#   2. Forward-reference traps: target theorems of the eval set that
+#      live in the same source file as other targets, so they are
+#      unknown at the proof position of any target declared *earlier*
+#      in the file. Confirmed in the v4.2-pre run where, after the
+#      self-filter eliminated 116 attempts, 20 cross-theorem unknown_
+#      constant errors remained — all pairs (target, other-target):
+#        - Nat.div_le_div_right
+#        - Nat.div_lt_one_iff
+#        - Nat.div_pos
+#        - Nat.div_pos_iff
+#        - Nat.dvd_iff_div_mul_eq
+#
+# Listing class-2 lemmas globally is technically broader than the v4.1
+# self-only behavior, but it captures the same intent (don't waste Lean
+# roundtrips on lemmas we know will fail) and keeps the diagnostic
+# separable from the self-filter via the filtered_self / filtered_
+# unavailable counts. Class-2 lemmas can be re-added once v4.3's import-
+# reachability checker can resolve their availability per proof site.
+_UNAVAILABLE_LEMMAS: set[str] = {
+    "Nat.div_eq_zero_iff",
+    "Nat.div_le_iff_le_mul",
+    "Nat.div_le_div_right",
+    "Nat.div_lt_one_iff",
+    "Nat.div_pos",
+    "Nat.div_pos_iff",
+    "Nat.dvd_iff_div_mul_eq",
+}
+
+
+# ── v4.4 goal-shape and lemma-shape classifiers ─────────────────────
+
+# Canonical shape labels.
+SHAPE_EQ = "eq"
+SHAPE_IFF = "iff"
+SHAPE_LT = "lt"
+SHAPE_LE = "le"
+SHAPE_DVD = "dvd"
+SHAPE_AND = "and"
+SHAPE_OR = "or"
+SHAPE_UNKNOWN = "unknown"
+
+
+def classify_goal_shape(state_pp: str) -> str:
+    """Classify the proof state's main-goal head connective.
+
+    Returns one of: "eq", "iff", "lt", "le", "dvd", "and", "or", "unknown".
+
+    Only the line beginning with `⊢` is inspected, and order matters:
+    `↔` and `∣` are checked first because their Unicode glyphs cannot be
+    confused with `<`/`≤`/`=`. Equality is checked last so a `x = y ↔
+    p` goal classifies as iff, not eq. The classifier is intentionally
+    string-based; it does not parse Lean syntax and will misclassify
+    pathological goals (e.g. an iff hidden inside a quantifier). For
+    the nat_defs_medium set this is sufficient — every div-family goal
+    has its connective at the top level.
+    """
+    if not state_pp:
+        return SHAPE_UNKNOWN
+    goal = None
+    for ln in state_pp.splitlines():
+        s = ln.lstrip()
+        if s.startswith("⊢"):
+            goal = s[1:].strip()
+            break
+    if not goal:
+        return SHAPE_UNKNOWN
+    if "↔" in goal:
+        return SHAPE_IFF
+    if "∣" in goal:
+        return SHAPE_DVD
+    if "∧" in goal:
+        return SHAPE_AND
+    if "∨" in goal:
+        return SHAPE_OR
+    if "≤" in goal:
+        return SHAPE_LE
+    if "<" in goal:
+        return SHAPE_LT
+    if "=" in goal:
+        return SHAPE_EQ
+    return SHAPE_UNKNOWN
+
+
+def lemma_shape_from_name(name: str) -> str:
+    """Heuristic shape classification for a fully-qualified lemma name.
+
+    Inspects only the bare (post-last-dot) name in lowercase. Checks in
+    decreasing specificity:
+      1. `_iff_` substring or `_iff` suffix → iff
+      2. contains `dvd` → dvd
+      3. `_eq_` substring or `_eq` suffix, or `cancel` (`*_cancel` lemmas
+         in this catalog are equalities) → eq
+      4. contains `pos` → lt (e.g. `Nat.div_pos: 0 < a/b`)
+      5. `_lt_` or `_lt` → lt
+      6. `_le_` or `_le` → le
+
+    Falls back to "unknown" so the caller can choose to emit all
+    configured forms rather than over-aggressively filtering.
+    """
+    if not name:
+        return SHAPE_UNKNOWN
+    n = name.split(".")[-1].lower()
+    if "_iff_" in n or n.endswith("_iff"):
+        return SHAPE_IFF
+    if "dvd" in n:
+        return SHAPE_DVD
+    if "_eq_" in n or n.endswith("_eq") or "cancel" in n:
+        return SHAPE_EQ
+    if "pos" in n:
+        return SHAPE_LT
+    if "_lt_" in n or n.endswith("_lt"):
+        return SHAPE_LT
+    if "_le_" in n or n.endswith("_le"):
+        return SHAPE_LE
+    return SHAPE_UNKNOWN
+
+
+# Goal-shape × lemma-shape → set of form-family labels worth emitting.
+# Default if not listed: {"rw", "simp"} — these almost never crash and
+# can engage a lemma into any goal that contains its LHS/RHS terms. The
+# entries below add `apply`/`exact` only where the conclusion shapes
+# match (so `apply LEMMA` won't produce `failed to unify` for free).
+_SHAPE_FORM_ALLOW: dict[tuple[str, str], set[str]] = {
+    (SHAPE_IFF, SHAPE_IFF): {"rw", "simp", "apply"},
+    (SHAPE_IFF, SHAPE_EQ): {"rw", "simp"},
+    (SHAPE_IFF, SHAPE_LT): {"rw", "simp"},
+    (SHAPE_IFF, SHAPE_LE): {"rw", "simp"},
+    (SHAPE_IFF, SHAPE_DVD): {"rw", "simp"},
+    (SHAPE_LE, SHAPE_LE): {"apply", "exact", "rw", "simp"},
+    (SHAPE_LE, SHAPE_LT): {"apply", "exact"},
+    (SHAPE_LE, SHAPE_IFF): {"rw", "simp"},
+    (SHAPE_LE, SHAPE_EQ): {"rw", "simp"},
+    (SHAPE_LT, SHAPE_LT): {"apply", "exact", "rw", "simp"},
+    (SHAPE_LT, SHAPE_LE): {"apply", "exact"},
+    (SHAPE_LT, SHAPE_IFF): {"rw", "simp"},
+    (SHAPE_LT, SHAPE_EQ): {"rw", "simp"},
+    (SHAPE_DVD, SHAPE_DVD): {"apply", "exact", "rw", "simp"},
+    (SHAPE_DVD, SHAPE_IFF): {"rw", "simp", "apply"},
+    (SHAPE_DVD, SHAPE_EQ): {"rw", "simp"},
+    (SHAPE_EQ, SHAPE_EQ): {"rw", "simp", "apply", "exact"},
+    (SHAPE_EQ, SHAPE_IFF): {"rw", "simp"},
+}
+
+
+def forms_for_shape_pair(
+    goal_shape: str,
+    lemma_shape: str,
+    configured: list[str],
+) -> list[str]:
+    """Return the subset of `configured` form labels safe to emit for
+    a (goal_shape, lemma_shape) pair.
+
+    Preserves the order of `configured` for determinism. Unknown shapes
+    on either side fall through to the configured list unchanged (so we
+    do not over-prune when classification is uncertain).
+    """
+    if goal_shape == SHAPE_UNKNOWN or lemma_shape == SHAPE_UNKNOWN:
+        return list(configured)
+    allowed = _SHAPE_FORM_ALLOW.get((goal_shape, lemma_shape))
+    if allowed is None:
+        # No explicit rule for this pair — default to rw / simp only.
+        allowed = {"rw", "simp"}
+    return [f for f in configured if f in allowed]
+
+
+def _name_namespace_variants(theorem_name: str) -> set[str]:
+    """Return name variants for self-comparison.
+
+    Returns the original name plus the bare unqualified name (after the
+    last dot) and lowercased forms — enough to catch e.g. retrieved
+    `Nat.div_pos` when the target is also `Nat.div_pos` even if the
+    catalog ever ships an unqualified alias.
+    """
+    variants: set[str] = {theorem_name}
+    if "." in theorem_name:
+        variants.add(theorem_name.rsplit(".", 1)[-1])
+    variants.add(theorem_name.lower())
+    return variants
+
+
+def retrieve_for_state(
+    state_pp: str,
+    theorem_name: str | None = None,
+    k: int = 10,
+    family_key: str | None = None,
+    filter_self: bool = True,
+    filter_unavailable: bool = True,
+    return_diagnostics: bool = False,
+    shape_aware: bool = True,
+):
+    """Return up to `k` lemma names relevant to the given proof state.
+
+    Stateless and deterministic — does not load traces or external models.
+    Designed to be called once per state by `StrategyWrapperPolicy` when a
+    theorem family activates. Returns lemma names only; the caller is
+    responsible for wrapping them in `rw [..]` / `exact ..` etc.
+
+    Args:
+        state_pp: the Lean state pretty-print (full hypotheses + goal).
+        theorem_name: full theorem name (e.g. `Nat.div_pos_iff`); used to
+            bias scoring toward premises whose name shares tokens with it.
+        k: max number of names to return.
+        family_key: which family the caller has identified (e.g. "div").
+            If provided, the corresponding catalog bucket is used; otherwise
+            buckets are picked by substring detection on the theorem name
+            and the state.
+
+    Returns:
+        By default, up to k lemma names ranked by token-overlap score
+        (descending). When return_diagnostics=True, returns a tuple
+        ``(premises, diag)`` where ``diag`` is a dict with:
+          - filtered_self (int): catalog entries removed by self-filter
+          - filtered_unavailable (int): removed by unavailability denylist
+          - goal_shape (str): inferred shape of the current goal
+          - lemma_shapes (dict[str, str]): per-returned-premise shape
+          - shape_aware (bool): whether shape scoring was applied
+        Order is deterministic for a given input.
+    """
+    diag: dict[str, object] = {
+        "filtered_self": 0,
+        "filtered_unavailable": 0,
+        "goal_shape": SHAPE_UNKNOWN,
+        "lemma_shapes": {},
+        "shape_aware": bool(shape_aware),
+    }
+    if k <= 0:
+        return ([], diag) if return_diagnostics else []
+
+    # Pick catalog buckets to draw from
+    buckets: list[str] = []
+    if family_key and family_key in _FAMILY_CATALOG_KEYS:
+        buckets = list(_FAMILY_CATALOG_KEYS[family_key])
+    else:
+        # Heuristic fallback: substring-match on the theorem name
+        name_lower = (theorem_name or "").lower()
+        if "div" in name_lower or "dvd" in name_lower:
+            buckets = list(_FAMILY_CATALOG_KEYS["div"])
+
+    if not buckets:
+        return ([], diag) if return_diagnostics else []
+
+    candidates: list[str] = []
+    seen: set[str] = set()
+    for bucket in buckets:
+        for premise in STATIC_PREMISES.get(bucket, []):
+            if premise in seen:
+                continue
+            seen.add(premise)
+            candidates.append(premise)
+
+    # v4.2 filters: target-theorem self-retrieval and known-unavailable
+    # lemmas. Applied before scoring so the diagnostic counts reflect
+    # how many catalog entries each filter actually removed for this call.
+    if filter_self and theorem_name:
+        self_variants = _name_namespace_variants(theorem_name)
+        kept: list[str] = []
+        for p in candidates:
+            if p in self_variants:
+                diag["filtered_self"] += 1
+            else:
+                kept.append(p)
+        candidates = kept
+
+    if filter_unavailable:
+        kept = []
+        for p in candidates:
+            if p in _UNAVAILABLE_LEMMAS:
+                diag["filtered_unavailable"] += 1
+            else:
+                kept.append(p)
+        candidates = kept
+
+    if not candidates:
+        return ([], diag) if return_diagnostics else []
+
+    # Score by token overlap. The query tokens come from both the state
+    # pretty-print and the theorem name (the latter is highly diagnostic
+    # — e.g. `Nat.div_pos_iff` shares `div`, `pos`, `iff` with the right
+    # premises in the bucket).
+    state_tokens: set[str] = set(_tokenize_state(state_pp))
+    theorem_tokens: set[str] = set()
+    if theorem_name:
+        # Split the name on dots and underscores so e.g. "Nat.div_pos_iff"
+        # yields {"Nat", "div", "pos", "iff"}.
+        for part in re.split(r"[._]", theorem_name):
+            part = part.strip()
+            if len(part) > 1:
+                theorem_tokens.add(part)
+    query_tokens = state_tokens | theorem_tokens
+
+    # Family token: which top-level family this call is targeting. Used
+    # as a small bonus so premises whose names contain the family token
+    # (e.g. "div") rank above premises that happen to share other tokens.
+    family_token = family_key.lower() if family_key else None
+
+    # v4.4: goal shape — classified once and used to bias scoring toward
+    # lemmas whose conclusion shape can engage with the goal.
+    goal_shape = classify_goal_shape(state_pp) if shape_aware else SHAPE_UNKNOWN
+    diag["goal_shape"] = goal_shape
+
+    scored: list[tuple[float, int, str]] = []
+    candidate_shapes: dict[str, str] = {}
+    for idx, premise in enumerate(candidates):
+        # Split premise name into parts (Nat.div_pos_iff → div, pos, iff).
+        # Drop the "Nat" namespace token — too generic to be diagnostic.
+        parts = [p for p in re.split(r"[._]", premise) if p and p != "Nat"]
+        parts_set = set(parts)
+        overlap = sum(1 for p in parts if p in query_tokens)
+        # Family bonus: lemma shares the family token with the theorem.
+        family_bonus = 0.5 if (family_token and family_token in parts_set
+                               and family_token in theorem_tokens) else 0.0
+        # v4.4 shape bias.
+        lemma_shape = lemma_shape_from_name(premise) if shape_aware else SHAPE_UNKNOWN
+        candidate_shapes[premise] = lemma_shape
+        shape_bonus = 0.0
+        if shape_aware and goal_shape != SHAPE_UNKNOWN and lemma_shape != SHAPE_UNKNOWN:
+            if lemma_shape == goal_shape:
+                # Exact match: rank ahead of token-overlap-only neighbors.
+                shape_bonus = 1.5
+            elif (goal_shape == SHAPE_IFF and lemma_shape == SHAPE_EQ):
+                # eq lemmas can sometimes rewrite inside an iff goal.
+                shape_bonus = 0.5
+            elif (goal_shape == SHAPE_IFF and lemma_shape == SHAPE_DVD):
+                # dvd lemmas can characterize an iff (e.g. dvd_iff_*).
+                shape_bonus = 0.3
+            elif (goal_shape in (SHAPE_LT, SHAPE_LE)
+                  and lemma_shape in (SHAPE_LT, SHAPE_LE)):
+                # lt vs le near-match — still both inequalities.
+                shape_bonus = 0.8
+            elif (goal_shape in (SHAPE_LT, SHAPE_LE)
+                  and lemma_shape == SHAPE_IFF):
+                # iff lemma can characterize an inequality via rw/simp.
+                shape_bonus = 0.4
+            elif (goal_shape == SHAPE_EQ and lemma_shape == SHAPE_IFF):
+                shape_bonus = 0.3
+            elif (goal_shape == SHAPE_DVD and lemma_shape == SHAPE_IFF):
+                # dvd_iff_* characterizations.
+                shape_bonus = 0.7
+            else:
+                # Distant mismatch (e.g. eq lemma vs iff goal with no
+                # token overlap). Only penalize when token overlap is
+                # weak, so a well-named lemma can still win.
+                if overlap == 0:
+                    shape_bonus = -0.5
+        score = overlap + family_bonus + shape_bonus
+        # Tiebreak by catalog order (lower idx wins) so the output is stable.
+        scored.append((-score, idx, premise))
+
+    scored.sort()
+    result = [premise for _score, _idx, premise in scored[:k]]
+    diag["lemma_shapes"] = {p: candidate_shapes[p] for p in result}
+    return (result, diag) if return_diagnostics else result
 
 
 # ── BM25-like token overlap scorer ──────────────────────────────────

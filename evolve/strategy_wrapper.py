@@ -1,0 +1,1296 @@
+"""Strategy wrapper — the v3 / v3.1 hybrid_evolved policy.
+
+Wraps a base generative policy (typically GenerativePolicy on gen_v5) and
+augments each rank_tactics() output with the candidate's fallback_tactics
+and tactic_templates. The wrapper exists so that those two genome fields,
+which were inert in v1/v2, actually affect Lean evaluation without
+retraining the model or touching its checkpoint.
+
+Ordering at every step:
+  1. base policy's top-k generative tactics (in beam-search order)
+  2. candidate.fallback_tactics (in list order, applied verbatim)
+  3. candidate.tactic_templates (in list order, rendered per Nat variable in
+     scope at this state; templates without `{var}` are emitted once)
+
+Duplicates are removed preserving first-occurrence order. The wrapper also
+exposes `last_origins` parallel to the returned list so the eval loop can
+tag the winning tactic by source, and `last_template_sources` so the trace
+can also record the raw (pre-render) template string for template entries.
+
+Read from a JSON config (so the eval subprocess can pick up the candidate's
+genome without a CLI explosion):
+
+    {
+      "fallback_tactics": ["omega", "simp_arith", ...],
+      "tactic_templates": ["induction {var} with | zero => simp | succ n ih => simp [ih]"]
+    }
+"""
+
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+from typing import Any
+
+ORIGIN_GENERATIVE = "generative_topk"
+ORIGIN_FALLBACK = "fallback_tactic"
+ORIGIN_TEMPLATE = "tactic_template"
+ORIGIN_FAMILY = "family_tactic"
+# v4.1: retrieved premise origin. Tagged on synthesized rw/simp/exact/apply
+# entries whose lemma name came from premise_retriever.retrieve_for_state.
+ORIGIN_RETRIEVED = "retrieved_premise"
+# v5: term-mode proof skeleton origin. Tagged on candidate tactics emitted
+# by the term_builder block (exact ⟨…, …⟩ / refine ⟨?_, ?_⟩ etc.). The
+# block runs per goal shape so each candidate carries its own shape-gate
+# in the genome rather than being broadcast against every state.
+ORIGIN_TERM_BUILDER = "term_builder"
+
+# Default tactic forms used to wrap a retrieved lemma name. `{p}` is the
+# substitution placeholder. Override per-call via retrieval_tactic_forms.
+_DEFAULT_RETRIEVAL_TACTIC_FORMS: list[str] = [
+    "rw [{p}]",
+    "simp [{p}]",
+    "exact {p}",
+    "apply {p}",
+]
+
+# v4.2 form-family aliases: when the candidate ships short names like
+# "rw" / "simp" / "apply" / "exact" instead of full templates, expand
+# them so the JSON config surface can stay terse.
+_FORM_FAMILY_TEMPLATES: dict[str, str] = {
+    "rw": "rw [{p}]",
+    "simp": "simp [{p}]",
+    "apply": "apply {p}",
+    "exact": "exact {p}",
+}
+
+
+# v5 NS1: classifier for priority_template specificity. Templates that name
+# a dotted Mathlib lemma (e.g. `Nat.div_lt_iff_lt_mul`) or use a typed
+# hypothesis placeholder (e.g. `{hyp_pos}`) are "specific"; everything else
+# (`omega`, `simp_all`, `exact ⟨fun h => by omega, ...⟩`, `constructor <;>
+# intro h_split <;> simp_all`, `split_ifs <;> omega`, …) is "generic". The
+# wrapper stable-sorts each shape slot so all specifics emit before any
+# generic, regardless of declared order — closes the v5-31 regression
+# where putting an omega-omega template at the top of the iff slot shadowed
+# every specific template downstream.
+_PRIORITY_HYP_PLACEHOLDER_RE = re.compile(r"\{hyp_[a-zA-Z_][A-Za-z0-9_]*\}")
+_PRIORITY_MATHLIB_LEMMA_RE = re.compile(
+    r"[A-Z][A-Za-z0-9_']*(?:\.[a-zA-Z_][A-Za-z0-9_']*)+"
+)
+
+
+def classify_template_specificity(template: str) -> tuple[int, str]:
+    """Classify a priority template as 'specific' or 'generic'.
+
+    Returns ``(rank, label)`` where ``rank=0`` means specific (emit first)
+    and ``rank=1`` means generic (emit later). The label is the
+    human-readable tag used in trace metadata.
+
+    Heuristic:
+      - typed hypothesis placeholder (``{hyp_pos}``, ``{hyp_ne_zero}``,
+        ``{hyp_le}``, …) → specific
+      - dotted Mathlib lemma name (``Nat.div_lt_iff_lt_mul``,
+        ``Nat.pos_of_ne_zero``, ``Mathlib.Nat.foo``) → specific
+      - otherwise → generic
+    """
+    if not template:
+        return (1, "generic")
+    if _PRIORITY_HYP_PLACEHOLDER_RE.search(template):
+        return (0, "specific")
+    if _PRIORITY_MATHLIB_LEMMA_RE.search(template):
+        return (0, "specific")
+    return (1, "generic")
+
+
+def _normalize_retrieval_forms(forms: list[str] | None) -> list[str]:
+    """Expand short form-family names to full templates.
+
+    Accepts a mix: "rw" → "rw [{p}]", "simp [{p}]" passes through.
+    Empty / None falls back to the default form list. Deduplicates while
+    preserving caller order.
+    """
+    if not forms:
+        return list(_DEFAULT_RETRIEVAL_TACTIC_FORMS)
+    out: list[str] = []
+    seen: set[str] = set()
+    for f in forms:
+        if not f:
+            continue
+        expanded = _FORM_FAMILY_TEMPLATES.get(f.strip(), f)
+        if expanded not in seen:
+            seen.add(expanded)
+            out.append(expanded)
+    return out or list(_DEFAULT_RETRIEVAL_TACTIC_FORMS)
+
+
+def _form_family_label(form_template: str) -> str:
+    """Return the canonical form-family label for a tactic form.
+
+    Examples:
+        "rw [{p}]" → "rw"
+        "simp [{p}]" → "simp"
+        "exact {p}" → "exact"
+        "apply {p}" → "apply"
+    Anything unusual returns the first whitespace-separated token.
+    """
+    token = form_template.strip().split(None, 1)[0] if form_template.strip() else ""
+    return token.strip("[]")
+
+
+def _match_families(theorem_name: str, family_keys: list[str]) -> list[str]:
+    """Return the subset of family_keys whose key appears as a substring
+    in theorem_name, preserving the order of family_keys.
+
+    Case-sensitive match on the literal substring — keeps activation
+    deterministic and predictable across runs. The caller controls
+    specificity ordering by the order in which they declare families
+    (more-specific keys, e.g. "add_mod_eq_ite", should appear before
+    less-specific keys, e.g. "mod", so their tactics queue first).
+    """
+    name = theorem_name or ""
+    return [k for k in family_keys if k and k in name]
+
+# Matches a Lean state line like "a b c d m n k : ℕ" (or "n : Nat").
+# Function-typed hypotheses (e.g. "p q : ℕ → Prop") are intentionally
+# rejected because the type doesn't terminate at the end of line.
+_NAT_LINE = re.compile(
+    r"^\s*([A-Za-z_][\w']*(?:\s+[A-Za-z_][\w']*)*)\s*:\s*(ℕ|Nat)\s*$"
+)
+
+# v4.5: matches a single-named hypothesis line like "h : a ≤ b" or
+# "hba : b ≤ a" or "hb : 0 < b". The single-name LHS distinguishes
+# these from multi-name binder lines (`a b c : ℕ`) which `_NAT_LINE`
+# already catches.
+_HYP_LINE = re.compile(r"^\s*([A-Za-z_][\w']*)\s*:\s*(.+)$")
+_POS_PREFIX = re.compile(r"^\s*0\s*<")
+
+
+def _extract_hypotheses(state_pp: str) -> dict[str, str | None]:
+    """Return a map of hypothesis-shape placeholders to actual names.
+
+    The current shapes supported:
+      hyp_le:        first hypothesis of shape `x ≤ y` (any expressions)
+      hyp_pos:       first hypothesis of shape `0 < x`
+      hyp_ne_zero:   first hypothesis of shape `x ≠ 0`
+
+    The first match wins (stable ordering). Hypothesis lines after the
+    `⊢` goal line are ignored. Lines that aren't single-named hypotheses
+    (e.g. `a b c : ℕ` binders) are silently skipped.
+    """
+    result: dict[str, str | None] = {
+        "hyp_le": None,
+        "hyp_pos": None,
+        "hyp_ne_zero": None,
+    }
+    for line in state_pp.splitlines():
+        s = line.lstrip()
+        if s.startswith("⊢"):
+            break
+        m = _HYP_LINE.match(s)
+        if not m:
+            continue
+        name, type_str = m.group(1), m.group(2)
+        # Skip the `a b c : ℕ` binder line — it has multiple names left
+        # of `:` and would be caught by `_NAT_LINE`. Defensive recheck.
+        if name in ("⊢",):
+            continue
+        if result["hyp_le"] is None and " ≤ " in type_str:
+            result["hyp_le"] = name
+        if result["hyp_pos"] is None and _POS_PREFIX.match(type_str):
+            result["hyp_pos"] = name
+        if result["hyp_ne_zero"] is None and "≠ 0" in type_str:
+            result["hyp_ne_zero"] = name
+    return result
+
+
+_PLACEHOLDER_RE = re.compile(r"\{(\w+)\}")
+
+
+def _extract_nat_vars(state_pp: str) -> list[str]:
+    """Extract Nat-typed identifiers from a Lean state pretty-print.
+
+    Preference: variables that actually appear in the current goal line
+    (the one beginning with `⊢`). This keeps templates focused — inducting
+    on a variable that never appears in the goal is wasted Lean time.
+    Falls back to the full Nat-binding set when no goal var matches (rare).
+    """
+    nat_vars: list[str] = []
+    seen: set[str] = set()
+    goal_text: str | None = None
+
+    for line in state_pp.splitlines():
+        m = _NAT_LINE.match(line)
+        if m:
+            for tok in m.group(1).split():
+                if tok and tok not in seen:
+                    seen.add(tok)
+                    nat_vars.append(tok)
+            continue
+        stripped = line.lstrip()
+        if goal_text is None and stripped.startswith("⊢"):
+            goal_text = stripped[1:]
+
+    if goal_text and nat_vars:
+        used = [
+            v for v in nat_vars
+            if re.search(rf"\b{re.escape(v)}\b", goal_text)
+        ]
+        if used:
+            return used
+    return nat_vars
+
+
+def _render_template(
+    template: str,
+    nat_vars: list[str],
+    hypotheses: dict[str, str | None] | None = None,
+) -> list[str]:
+    """Render a tactic template, substituting placeholders.
+
+    Supported placeholders (any subset can appear in a template):
+      `{var}`        renders once per Nat-typed identifier in scope
+      `{hyp_le}`     name of a hypothesis with type `x ≤ y`
+      `{hyp_pos}`    name of a hypothesis with type `0 < x`
+      `{hyp_ne_zero}` name of a hypothesis with type `x ≠ 0`
+
+    Rules:
+      * No placeholders → render the template verbatim once.
+      * `{var}` present, no Nat vars → skip (fictitious name would just
+        error in Lean and waste a roundtrip).
+      * Any `{hyp_*}` placeholder present but the corresponding
+        hypothesis isn't in scope → skip the template entirely.
+      * If `{var}` AND `{hyp_*}` both present, render once per Nat var
+        with the same hypothesis name substituted.
+
+    The shape-extractors run once per `rank_tactics` call and the same
+    `hypotheses` dict is reused across every template.
+    """
+    hypotheses = hypotheses or {}
+    placeholders = set(_PLACEHOLDER_RE.findall(template))
+    if not placeholders:
+        return [template]
+
+    # Verify every hyp_* placeholder has a backing hypothesis name.
+    for ph in placeholders:
+        if ph == "var":
+            continue
+        if hypotheses.get(ph) is None:
+            return []
+
+    def _substitute(s: str, var: str | None = None) -> str:
+        if var is not None:
+            s = s.replace("{var}", var)
+        for ph in placeholders:
+            if ph == "var":
+                continue
+            name = hypotheses.get(ph)
+            if name is not None:
+                s = s.replace(f"{{{ph}}}", name)
+        return s
+
+    if "var" in placeholders:
+        if not nat_vars:
+            return []
+        return [_substitute(template, var=v) for v in nat_vars]
+    return [_substitute(template)]
+
+
+class StrategyWrapperPolicy:
+    """Augment a base generative policy with candidate-provided tactics.
+
+    The base policy's `rank_tactics(state_pp, full_name, k)` is called
+    unchanged; the wrapper then appends fallback_tactics + rendered
+    tactic_templates, deduped, and returns the longer list. eval_rollout_all
+    will try every tactic in this list before declaring the step a failure.
+
+    After each `rank_tactics` call:
+      - `last_ranked_tactics`     — the full (possibly-extended) list
+      - `last_origins`            — parallel origin labels
+      - `last_template_sources`   — parallel raw template strings (only
+                                    populated for tactic_template entries;
+                                    None otherwise)
+      - `last_family_sources`     — parallel family-key strings (only
+                                    populated for family_tactic AND
+                                    retrieved_premise entries; None
+                                    otherwise)
+      - `last_retrieved_premises` — parallel lemma names (only populated
+                                    for retrieved_premise entries; None
+                                    otherwise)
+      - `last_activated_families` — list of family keys that matched the
+                                    current theorem name (in declaration
+                                    order; used by eval to aggregate
+                                    per-family counts)
+      - `last_retrieval_activation` — family key that triggered v4.1
+                                    premise retrieval on this call, or
+                                    None if retrieval did not activate
+      - `last_retrieved_lemma_set` — ordered list of lemma names returned
+                                    by retrieve_for_state on this call
+                                    (before tactic-form expansion)
+    """
+
+    def __init__(
+        self,
+        base_policy: Any,
+        fallback_tactics: list[str] | None = None,
+        tactic_templates: list[str] | None = None,
+        max_extra_tactics_per_state: int | None = None,
+        theorem_family_tactics: dict[str, list[str]] | None = None,
+        family_budgets: dict[str, int] | None = None,
+        theorem_tactic_denylist: dict[str, list[str]] | None = None,
+        retrieval_enabled: bool = False,
+        retrieval_top_k: int = 0,
+        retrieval_tactic_forms: list[str] | None = None,
+        retrieval_filter_self: bool = True,
+        retrieval_filter_unavailable: bool = True,
+        retrieval_shape_filter: bool = True,
+        # NS9 — decouple retrieval from family-tactic survival.
+        # When `retrieval_requires_family=True` (default; matches NS8
+        # behaviour) the retrieval block fires only if the matched
+        # family produced an activated family_tactic emission. When
+        # `retrieval_requires_family=False` the retrieval block fires
+        # whenever `full_name` contains any substring in
+        # `retrieval_family_gates` (or any key of
+        # `theorem_family_tactics` if the list is empty). This lets
+        # the genome prune `fam_div_14` etc. without losing retrieval
+        # on the div family.
+        retrieval_requires_family: bool = True,
+        retrieval_family_gates: list[str] | None = None,
+        term_builder_templates: dict[str, list[str]] | None = None,
+        term_builder_budget: int = 0,
+        priority_templates: dict[str, list[str]] | None = None,
+        priority_template_budget: int = 0,
+        use_skeleton_bag: bool = False,
+        theorem_name_tactic_gates: dict[str, list[str]] | None = None,
+    ) -> None:
+        self.base_policy = base_policy
+        self.fallback_tactics: list[str] = [
+            t for t in (fallback_tactics or []) if t and t.strip()
+        ]
+        # Templates kept RAW — rendered per state inside rank_tactics.
+        self.tactic_templates: list[str] = [
+            t for t in (tactic_templates or []) if t and t.strip()
+        ]
+        # When set, cap the number of *extra* (fallback + template) tactics
+        # appended after the generative top-k. None = no cap (v3.1 behavior).
+        self.max_extra_tactics_per_state = max_extra_tactics_per_state
+        # v3.4: theorem-name-aware tactic families. Keys are substrings to
+        # match against full_name; values are ordered tactic strings (may
+        # contain `{var}` placeholders rendered per Nat var in scope).
+        # Insertion order controls activation priority (declare most-
+        # specific keys first).
+        self.theorem_family_tactics: dict[str, list[str]] = {
+            k: [t for t in (v or []) if t and t.strip()]
+            for k, v in (theorem_family_tactics or {}).items()
+            if k
+        }
+        self.family_budgets: dict[str, int] = dict(family_budgets or {})
+        # v3.6 per-theorem tactic deny-list. Substring match against the
+        # tactic string; any match filters that tactic out of the ranked
+        # list for the named theorem only.
+        self.theorem_tactic_denylist: dict[str, list[str]] = {
+            k: [s for s in (v or []) if s]
+            for k, v in (theorem_tactic_denylist or {}).items()
+            if k
+        }
+        # v4.1 premise-retrieval config. Off by default — only activates
+        # when retrieval_enabled is True AND an activated family has a
+        # matching catalog bucket in premise_retriever._FAMILY_CATALOG_KEYS.
+        self.retrieval_enabled: bool = bool(retrieval_enabled)
+        self.retrieval_top_k: int = max(0, int(retrieval_top_k or 0))
+        # v4.2: accept either full templates ("rw [{p}]") or short
+        # form-family names ("rw"). _normalize_retrieval_forms expands
+        # short names to templates and dedupes.
+        self.retrieval_tactic_forms: list[str] = _normalize_retrieval_forms(
+            retrieval_tactic_forms
+        )
+        # v4.2 filter knobs. When set, the wrapper passes them to
+        # retrieve_for_state which removes target-theorem self-retrievals
+        # and known-unavailable lemmas before scoring.
+        self.retrieval_filter_self: bool = bool(retrieval_filter_self)
+        self.retrieval_filter_unavailable: bool = bool(retrieval_filter_unavailable)
+        # v4.4 shape filter. When True the retriever computes goal_shape
+        # from state_pp and gives matching lemma shapes a scoring bonus;
+        # the wrapper restricts the emitted forms per lemma using
+        # `forms_for_shape_pair`. When False the v4.3 behavior is
+        # preserved (every retrieved lemma emits every configured form).
+        self.retrieval_shape_filter: bool = bool(retrieval_shape_filter)
+        # NS9: independent retrieval gate. Default True preserves the
+        # NS8 behaviour exactly (retrieval fires only when an
+        # activated family is non-empty).
+        self.retrieval_requires_family: bool = bool(retrieval_requires_family)
+        self.retrieval_family_gates: list[str] = [
+            s for s in (retrieval_family_gates or []) if s
+        ]
+        # v5 term-mode proof skeleton block. Keys are goal-shape labels
+        # ("iff", "dvd", "eq", "lt", "le", "and", "or", "unknown", or
+        # the special key "any" which always matches). Values are
+        # template strings rendered via _render_template, then emitted
+        # with ORIGIN_TERM_BUILDER between family/retrieval and generic
+        # fallbacks. Activates only when the current state's classified
+        # goal_shape matches a configured key (or the "any" key is set).
+        # term_builder_budget caps how many term-mode entries are
+        # appended to the per-state list; 0 means unbounded within the
+        # existing extras cap.
+        self.term_builder_templates: dict[str, list[str]] = {
+            str(k): [t for t in (v or []) if t and t.strip()]
+            for k, v in (term_builder_templates or {}).items()
+            if k
+        }
+        self.term_builder_budget: int = max(0, int(term_builder_budget or 0))
+        # v5: count of term_builder entries emitted in the most recent
+        # rank_tactics call (post-dedup). Reset per call.
+        self.last_term_builder_attempt_count: int = 0
+        self.last_term_builder_shape_key: str | None = None
+        # v5: priority_templates block — same shape-keyed schema as
+        # term_builder, but emitted BEFORE generative_topk. Used when
+        # the family's template is more reliable than the model's
+        # guess and we want to skip the model entirely on this state.
+        # Set via the same load/dump_strategy_config plumbing.
+        self.priority_templates: dict[str, list[str]] = {
+            str(k): [t for t in (v or []) if t and t.strip()]
+            for k, v in (priority_templates or {}).items()
+            if k
+        }
+        self.priority_template_budget: int = max(0, int(priority_template_budget or 0))
+        # NS19 theorem-name prefix gating. Maps a tactic substring to a
+        # list of allowed full_name prefixes. When a candidate tactic
+        # contains the substring AND full_name is non-empty AND
+        # full_name does not start with any allowed prefix, the tactic
+        # is dropped. Empty / missing keeps wrapper behavior unchanged.
+        self.theorem_name_tactic_gates: dict[str, list[str]] = {
+            str(k): [str(p) for p in (v or []) if p]
+            for k, v in (theorem_name_tactic_gates or {}).items()
+            if k
+        }
+        # NS4 / NS4.1 prototype: when True, priority / family / fallback /
+        # tactic_template / term_builder emission delegates to
+        # evolve.skeleton_bag.SkeletonBag. Base generative output and
+        # retrieved-premise emission still run through the legacy code
+        # path (they need integration with the live model / retriever).
+        # Default False = current behavior verbatim.
+        self.use_skeleton_bag: bool = bool(use_skeleton_bag)
+        self._skeleton_bag = None  # lazily built on first rank_tactics call
+        # Per-call lists populated when the bag routes a given origin.
+        # Each contains EmittedTactic instances aligned with the
+        # corresponding entries list in rank_tactics.
+        self.last_priority_emitted: list = []
+        self.last_family_emitted: list = []
+        self.last_term_builder_emitted: list = []
+        self.last_fallback_emitted: list = []
+        self.last_tactic_template_emitted: list = []
+        # NS4.2: retrieved-premise emit list (populated only when
+        # use_skeleton_bag is True).
+        self.last_retrieved_emitted: list = []
+        # Parallel skeleton-name / shape / specificity / family lists for
+        # every entry in last_ranked_tactics. Non-skeleton entries
+        # (generative_topk, retrieved_premise, or legacy-path entries)
+        # carry None. Length always equals len(last_ranked_tactics).
+        self.last_skeleton_names: list[str | None] = []
+        self.last_skeleton_shapes: list[str | None] = []
+        self.last_skeleton_families: list[str | None] = []
+        self.last_skeleton_specificities: list[int | None] = []
+        self.last_skeleton_priorities: list[int | None] = []
+        # NS7 stable identifier — invariant across name renumbering.
+        self.last_skeleton_stable_ids: list[str | None] = []
+        self.last_priority_template_attempt_count: int = 0
+        self.last_ranked_tactics: list[str] = []
+        self.last_origins: list[str] = []
+        self.last_template_sources: list[str | None] = []
+        self.last_family_sources: list[str | None] = []
+        self.last_retrieved_premises: list[str | None] = []
+        # v4.2: parallel form-family label per entry ("rw" / "simp" /
+        # "apply" / "exact"); None for non-retrieved entries.
+        self.last_retrieved_forms: list[str | None] = []
+        # v4.4: parallel lemma-shape label per entry ("iff" / "eq" /
+        # "lt" / "le" / "dvd" / "unknown"); None for non-retrieved entries.
+        self.last_retrieved_shapes: list[str | None] = []
+        self.last_goal_shape: str = "unknown"
+        self.last_activated_families: list[str] = []
+        self.last_retrieval_activation: str | None = None
+        self.last_retrieved_lemma_set: list[str] = []
+        # v4.2 per-call diagnostic counts from the retriever's filter step.
+        self.last_retrieval_filtered_self_count: int = 0
+        self.last_retrieval_filtered_unavailable_count: int = 0
+        # v4.4 per-call shape-mismatch filter count (forms dropped by
+        # shape_filter that would have been emitted under the configured
+        # form list).
+        self.last_shape_mismatch_filtered_count: int = 0
+        # v3.6: number of (already-deduped) entries filtered by the deny-
+        # list in the most recent rank_tactics call. Reset per call.
+        self.last_denied_count: int = 0
+
+    def rank_tactics(
+        self, state_pp: str, full_name: str = "", k: int = 5
+    ) -> list[str]:
+        base = self.base_policy.rank_tactics(state_pp, full_name, k=k)
+        nat_vars = _extract_nat_vars(state_pp)
+        # v4.5: extract hypothesis-shape placeholders once per state so
+        # the same dict is reused across every family / generic template
+        # render. Templates that reference an absent {hyp_*} placeholder
+        # are skipped silently.
+        hypotheses = _extract_hypotheses(state_pp)
+
+        # v4.4: entries are 7-tuples
+        # (tactic, origin, template_source, family_source,
+        #  retrieved_premise, retrieved_form, retrieved_shape).
+        # retrieved_shape is the lemma shape ("iff"/"eq"/"lt"/"le"/"dvd"/
+        # "unknown") for ORIGIN_RETRIEVED entries; None for every other
+        # origin.
+        Entry = tuple[
+            str, str, str | None, str | None,
+            str | None, str | None, str | None,
+        ]
+
+        # v5: priority_templates block — emitted before generative_topk
+        # so that a known-good family template runs at step 1, before
+        # the model's `simp [...]` advances state into a less useful
+        # form. Tagged with ORIGIN_TEMPLATE (template_source carries the
+        # raw key for traceability).
+        #
+        # NS4 prototype: when use_skeleton_bag is True, delegate this
+        # block to evolve.skeleton_bag.SkeletonBag. Output is identical
+        # to the legacy path (same ordering, same tactics, same family_source
+        # strings) — verified by parity test in
+        # project/evolve/reports/ns4_skeleton_bag_repro.md.
+        seen: set[str] = set()
+        priority_entries: list[Entry] = []
+        priority_emitted: list = []
+        if self.priority_templates:
+            try:
+                from premise_retriever import classify_goal_shape
+                pt_goal_shape = classify_goal_shape(state_pp)
+            except Exception:
+                pt_goal_shape = "unknown"
+
+            if self.use_skeleton_bag:
+                # NS4 path: route through SkeletonBag.
+                if self._skeleton_bag is None:
+                    from evolve.skeleton_bag import SkeletonBag
+                    self._skeleton_bag = SkeletonBag.from_legacy_strategy_config({
+                        "priority_templates": self.priority_templates,
+                        "theorem_family_tactics": self.theorem_family_tactics,
+                        "term_builder_templates": self.term_builder_templates,
+                        "fallback_tactics": self.fallback_tactics,
+                        "tactic_templates": self.tactic_templates,
+                    })
+                emitted_list = self._skeleton_bag.emit_priority_tactics(
+                    state_pp=state_pp,
+                    goal_shape=pt_goal_shape,
+                    nat_vars=nat_vars,
+                    hypotheses=hypotheses,
+                    budget=self.priority_template_budget,
+                    already_seen=seen,
+                )
+                for et in emitted_list:
+                    priority_entries.append(
+                        (et.tactic, ORIGIN_TEMPLATE, et.template_source,
+                         et.family_source, None, None, None)
+                    )
+                    priority_emitted.append(et)
+            else:
+                # v5 NS3.5: emit shape-specific templates first, then `any`
+                # as a TRUE fallback (not an exclusive alternative). The
+                # previous semantics — "shape if present else any" — meant
+                # that once a genome configured a slot for shape S, goals
+                # of shape S could never reach `any` even when the shape
+                # slot's tactics all failed; that forced authors to
+                # manually mirror `any` into every configured shape slot.
+                #
+                # New order (per goal):
+                #   1. shape-slot specifics (NS1-sorted)
+                #   2. shape-slot generics
+                #   3. any-slot specifics (NS1-sorted)
+                #   4. any-slot generics
+                # Then base / family / retrieval / fallback layers as before.
+                slots_to_emit: list[tuple[str, list[str]]] = []
+                if (pt_goal_shape != "any"
+                        and pt_goal_shape in self.priority_templates):
+                    slots_to_emit.append((pt_goal_shape, self.priority_templates[pt_goal_shape]))
+                if "any" in self.priority_templates:
+                    slots_to_emit.append(("any", self.priority_templates["any"]))
+                emitted = 0
+                for slot_key, raw_templates in slots_to_emit:
+                    if self.priority_template_budget and emitted >= self.priority_template_budget:
+                        break
+                    # NS1 stable-sort applied per slot.
+                    ordered_templates = sorted(
+                        raw_templates,
+                        key=lambda t: classify_template_specificity(t)[0],
+                    )
+                    for raw in ordered_templates:
+                        spec_label = classify_template_specificity(raw)[1]
+                        for rendered in _render_template(raw, nat_vars, hypotheses):
+                            if rendered and rendered not in seen:
+                                seen.add(rendered)
+                                priority_entries.append(
+                                    (rendered, ORIGIN_TEMPLATE, raw,
+                                     f"priority:{slot_key}:{spec_label}",
+                                     None, None, None)
+                                )
+                                emitted += 1
+                                if self.priority_template_budget and emitted >= self.priority_template_budget:
+                                    break
+                        if self.priority_template_budget and emitted >= self.priority_template_budget:
+                            break
+        self.last_priority_template_attempt_count = len(priority_entries)
+        self.last_priority_emitted = priority_emitted
+
+        # NS19 prefix gate (early pass for priority_entries). Run BEFORE
+        # base emission so that a gated priority tactic does not occupy
+        # the seen-set slot and accidentally suppress the base policy's
+        # legitimate emission of the same tactic. The same gate is
+        # applied again to extra_entries further down (where they are
+        # built); priority_entries are not re-gated.
+        early_gate_denied = 0
+        if self.theorem_name_tactic_gates and full_name:
+            def _gate_denied_early(tac: str) -> bool:
+                for sub, prefixes in self.theorem_name_tactic_gates.items():
+                    if sub and sub in tac:
+                        if not any(full_name.startswith(p) for p in prefixes):
+                            return True
+                return False
+            priority_kept_early: list[Entry] = []
+            for e in priority_entries:
+                if _gate_denied_early(e[0]):
+                    early_gate_denied += 1
+                    seen.discard(e[0])
+                else:
+                    priority_kept_early.append(e)
+            priority_entries = priority_kept_early
+
+        base_entries: list[Entry] = []
+        for t in base:
+            if t and t not in seen:
+                seen.add(t)
+                base_entries.append(
+                    (t, ORIGIN_GENERATIVE, None, None, None, None, None)
+                )
+
+        # v3.4: family-specific tactics first (they encode targeted
+        # knowledge for the matched theorem family), then generic
+        # fallbacks/templates.
+        activated_families = _match_families(
+            full_name, list(self.theorem_family_tactics.keys())
+        )
+        self.last_activated_families = list(activated_families)
+
+        family_entries: list[Entry] = []
+        family_emitted: list = []
+        if self.use_skeleton_bag and self.theorem_family_tactics:
+            # NS4.1: delegate family emission to the bag. Bag's
+            # emit_family_tactics applies NS1 specificity sort within
+            # each family group (no-op on the ns3-combined genome where
+            # declared order already happens to be specificity-sorted).
+            if self._skeleton_bag is None:
+                from evolve.skeleton_bag import SkeletonBag
+                self._skeleton_bag = SkeletonBag.from_legacy_strategy_config({
+                    "priority_templates": self.priority_templates,
+                    "theorem_family_tactics": self.theorem_family_tactics,
+                    "term_builder_templates": self.term_builder_templates,
+                    "fallback_tactics": self.fallback_tactics,
+                    "tactic_templates": self.tactic_templates,
+                })
+            fam_entries, _active = self._skeleton_bag.emit_family_tactics(
+                full_name=full_name,
+                nat_vars=nat_vars,
+                hypotheses=hypotheses,
+                already_seen=seen,
+            )
+            for et in fam_entries:
+                family_entries.append(
+                    (et.tactic, ORIGIN_FAMILY, None, et.family_source,
+                     None, None, None)
+                )
+                family_emitted.append(et)
+        else:
+            for fam in activated_families:
+                for raw in self.theorem_family_tactics.get(fam, []):
+                    for rendered in _render_template(raw, nat_vars, hypotheses):
+                        if rendered and rendered not in seen:
+                            seen.add(rendered)
+                            family_entries.append(
+                                (rendered, ORIGIN_FAMILY, None, fam, None, None, None)
+                            )
+        self.last_family_emitted = family_emitted
+
+        # v4.1: premise retrieval. Insert between family and generic
+        # entries. Only activates when retrieval_enabled and an activated
+        # family has a catalog bucket in _FAMILY_CATALOG_KEYS. For each
+        # retrieved lemma name, synthesize one entry per configured
+        # tactic form (rw / simp / exact / apply by default). v4.2 also
+        # passes filter_self / filter_unavailable through and records
+        # the per-call filter counts.
+        retrieved_entries: list[Entry] = []
+        retrieved_emitted: list = []
+        retrieval_activation: str | None = None
+        retrieved_lemma_set: list[str] = []
+        filtered_self = 0
+        filtered_unavailable = 0
+        goal_shape = "unknown"
+        lemma_shapes: dict[str, str] = {}
+        shape_mismatch_filtered = 0
+        # NS9 — compute the family list that gates retrieval.
+        # `retrieval_requires_family=True` reproduces NS8 behaviour
+        # exactly (gate = activated_families). When False, the gate is
+        # `[fam for fam in retrieval_family_gates if fam in full_name]`
+        # — letting retrieval fire even if every family_tactic skeleton
+        # for the matched family was pruned. The downstream
+        # `emit_retrieved_tactics` only requires that each name be
+        # present in `premise_retriever._FAMILY_CATALOG_KEYS`, so
+        # passing `["div"]` works regardless of the bag's
+        # family_tactic content.
+        if self.retrieval_requires_family:
+            retrieval_families: list[str] = list(activated_families)
+        else:
+            gate_keys = self.retrieval_family_gates or list(
+                self.theorem_family_tactics.keys()
+            )
+            retrieval_families = [
+                fam for fam in gate_keys
+                if fam and full_name and fam in full_name
+            ]
+
+        if self.retrieval_enabled and self.retrieval_top_k > 0 and retrieval_families:
+            if self.use_skeleton_bag:
+                # NS4.2: delegate retrieved emission to the bag. The bag
+                # method synthesizes EmittedTactic instances per-state
+                # (dynamic skeletons) and returns the same diagnostics
+                # the legacy block exposes.
+                if self._skeleton_bag is None:
+                    from evolve.skeleton_bag import SkeletonBag
+                    self._skeleton_bag = SkeletonBag.from_legacy_strategy_config({
+                        "priority_templates": self.priority_templates,
+                        "theorem_family_tactics": self.theorem_family_tactics,
+                        "term_builder_templates": self.term_builder_templates,
+                        "fallback_tactics": self.fallback_tactics,
+                        "tactic_templates": self.tactic_templates,
+                    })
+                retr_entries_list, diag = self._skeleton_bag.emit_retrieved_tactics(
+                    state_pp=state_pp,
+                    theorem_name=full_name or None,
+                    activated_families=retrieval_families,
+                    retrieval_top_k=self.retrieval_top_k,
+                    retrieval_tactic_forms=self.retrieval_tactic_forms,
+                    retrieval_filter_self=self.retrieval_filter_self,
+                    retrieval_filter_unavailable=self.retrieval_filter_unavailable,
+                    retrieval_shape_filter=self.retrieval_shape_filter,
+                    already_seen=seen,
+                )
+                retrieval_activation = diag["activation"]
+                retrieved_lemma_set = diag["retrieved_lemma_set"]
+                filtered_self = diag["filtered_self"]
+                filtered_unavailable = diag["filtered_unavailable"]
+                goal_shape = diag["goal_shape"]
+                lemma_shapes = diag["lemma_shapes"]
+                shape_mismatch_filtered = diag["shape_mismatch_filtered"]
+                for et in retr_entries_list:
+                    retrieved_entries.append(
+                        (et.tactic, ORIGIN_RETRIEVED, None,
+                         et.family_source, et.retrieved_premise,
+                         et.retrieved_form, et.retrieved_shape)
+                    )
+                    retrieved_emitted.append(et)
+            else:
+                from premise_retriever import (
+                    _FAMILY_CATALOG_KEYS,
+                    forms_for_shape_pair,
+                    retrieve_for_state,
+                )
+                for fam in retrieval_families:
+                    if fam in _FAMILY_CATALOG_KEYS:
+                        retrieval_activation = fam
+                        retrieved_lemma_set, diag = retrieve_for_state(
+                            state_pp=state_pp,
+                            theorem_name=full_name or None,
+                            k=self.retrieval_top_k,
+                            family_key=fam,
+                            filter_self=self.retrieval_filter_self,
+                            filter_unavailable=self.retrieval_filter_unavailable,
+                            shape_aware=self.retrieval_shape_filter,
+                            return_diagnostics=True,
+                        )
+                        filtered_self = diag.get("filtered_self", 0)
+                        filtered_unavailable = diag.get("filtered_unavailable", 0)
+                        goal_shape = diag.get("goal_shape", "unknown")
+                        lemma_shapes = diag.get("lemma_shapes", {}) or {}
+                        break
+                # Configured form-family labels (e.g. ["rw","simp","apply"]),
+                # used both for emission and for shape-aware filtering.
+                configured_form_labels = [
+                    _form_family_label(t) for t in self.retrieval_tactic_forms
+                ]
+                label_to_template = dict(
+                    zip(configured_form_labels, self.retrieval_tactic_forms)
+                )
+                for premise in retrieved_lemma_set:
+                    lemma_shape = lemma_shapes.get(premise, "unknown")
+                    if self.retrieval_shape_filter:
+                        allowed_labels = forms_for_shape_pair(
+                            goal_shape, lemma_shape, configured_form_labels,
+                        )
+                    else:
+                        allowed_labels = list(configured_form_labels)
+                    shape_mismatch_filtered += max(
+                        0, len(configured_form_labels) - len(allowed_labels)
+                    )
+                    for label in allowed_labels:
+                        form = label_to_template.get(label)
+                        if not form:
+                            continue
+                        tactic = form.replace("{p}", premise).strip()
+                        if tactic and tactic not in seen:
+                            seen.add(tactic)
+                            retrieved_entries.append(
+                                (tactic, ORIGIN_RETRIEVED, None,
+                                 retrieval_activation, premise, label, lemma_shape)
+                            )
+        self.last_retrieval_activation = retrieval_activation
+        self.last_retrieved_lemma_set = list(retrieved_lemma_set)
+        self.last_retrieval_filtered_self_count = filtered_self
+        self.last_retrieval_filtered_unavailable_count = filtered_unavailable
+        self.last_shape_mismatch_filtered_count = shape_mismatch_filtered
+        self.last_retrieved_emitted = retrieved_emitted
+
+        # v5 term-mode proof skeleton block. If `term_builder_templates`
+        # is configured, classify the current goal shape (independently
+        # of the retrieval block, which may have set goal_shape only
+        # when retrieval activated) and look up the matching template
+        # list. The "any" key fires for every goal shape; an exact
+        # shape key fires only when the goal classifies to that shape.
+        # Entries are tagged ORIGIN_TERM_BUILDER and inserted between
+        # the retrieval entries and the generic fallback entries — they
+        # are more targeted than generic fallbacks but less targeted
+        # than per-theorem family tactics, so this is the right slot.
+        term_builder_entries: list[Entry] = []
+        term_builder_emitted: list = []
+        tb_shape_key: str | None = None
+        if self.term_builder_templates:
+            if goal_shape == "unknown":
+                # Retrieval didn't classify; classify now.
+                try:
+                    from premise_retriever import classify_goal_shape
+                    goal_shape = classify_goal_shape(state_pp)
+                except Exception:
+                    goal_shape = "unknown"
+            if self.use_skeleton_bag:
+                # NS4.1: delegate term_builder to bag. Bag preserves the
+                # legacy shape-XOR-any semantics (NOT the NS3.5 shape-then-
+                # any merge used by priority_templates).
+                if self._skeleton_bag is None:
+                    from evolve.skeleton_bag import SkeletonBag
+                    self._skeleton_bag = SkeletonBag.from_legacy_strategy_config({
+                        "priority_templates": self.priority_templates,
+                        "theorem_family_tactics": self.theorem_family_tactics,
+                        "term_builder_templates": self.term_builder_templates,
+                        "fallback_tactics": self.fallback_tactics,
+                        "tactic_templates": self.tactic_templates,
+                    })
+                tb_emitted_list, tb_shape_key = self._skeleton_bag.emit_term_builder_tactics(
+                    goal_shape=goal_shape,
+                    nat_vars=nat_vars,
+                    hypotheses=hypotheses,
+                    budget=self.term_builder_budget,
+                    already_seen=seen,
+                )
+                for et in tb_emitted_list:
+                    term_builder_entries.append(
+                        (et.tactic, ORIGIN_TERM_BUILDER, et.template_source,
+                         tb_shape_key, None, None, None)
+                    )
+                    term_builder_emitted.append(et)
+            else:
+                # Resolve which key to pull templates from. Exact shape
+                # match wins over the "any" key.
+                if goal_shape in self.term_builder_templates:
+                    tb_shape_key = goal_shape
+                elif "any" in self.term_builder_templates:
+                    tb_shape_key = "any"
+                if tb_shape_key is not None:
+                    raw_templates = self.term_builder_templates[tb_shape_key]
+                    emitted = 0
+                    limit = self.term_builder_budget or len(raw_templates) * max(1, len(nat_vars) + 1)
+                    for raw in raw_templates:
+                        for rendered in _render_template(raw, nat_vars, hypotheses):
+                            if rendered and rendered not in seen:
+                                seen.add(rendered)
+                                term_builder_entries.append(
+                                    (rendered, ORIGIN_TERM_BUILDER, raw, tb_shape_key,
+                                     None, None, None)
+                                )
+                                emitted += 1
+                                if self.term_builder_budget and emitted >= self.term_builder_budget:
+                                    break
+                        if self.term_builder_budget and emitted >= self.term_builder_budget:
+                            break
+        self.last_goal_shape = goal_shape
+        self.last_term_builder_attempt_count = len(term_builder_entries)
+        self.last_term_builder_shape_key = tb_shape_key
+        self.last_term_builder_emitted = term_builder_emitted
+
+        # Generic fallbacks + rendered templates, deduped against base,
+        # family and retrieval entries, in deterministic genome order.
+        generic_entries: list[Entry] = []
+        fallback_emitted: list = []
+        tactic_template_emitted: list = []
+        if self.use_skeleton_bag:
+            if self._skeleton_bag is None:
+                from evolve.skeleton_bag import SkeletonBag
+                self._skeleton_bag = SkeletonBag.from_legacy_strategy_config({
+                    "priority_templates": self.priority_templates,
+                    "theorem_family_tactics": self.theorem_family_tactics,
+                    "term_builder_templates": self.term_builder_templates,
+                    "fallback_tactics": self.fallback_tactics,
+                    "tactic_templates": self.tactic_templates,
+                })
+            fb_emitted_list = self._skeleton_bag.emit_fallback_tactics(
+                already_seen=seen,
+            )
+            for et in fb_emitted_list:
+                generic_entries.append(
+                    (et.tactic, ORIGIN_FALLBACK, None, None, None, None, None)
+                )
+                fallback_emitted.append(et)
+            tt_emitted_list = self._skeleton_bag.emit_tactic_template_tactics(
+                nat_vars=nat_vars,
+                hypotheses=hypotheses,
+                already_seen=seen,
+            )
+            for et in tt_emitted_list:
+                generic_entries.append(
+                    (et.tactic, ORIGIN_TEMPLATE, et.template_source,
+                     None, None, None, None)
+                )
+                tactic_template_emitted.append(et)
+        else:
+            for t in self.fallback_tactics:
+                if t and t not in seen:
+                    seen.add(t)
+                    generic_entries.append((t, ORIGIN_FALLBACK, None, None, None, None, None))
+            for raw_template in self.tactic_templates:
+                for rendered in _render_template(raw_template, nat_vars, hypotheses):
+                    if rendered and rendered not in seen:
+                        seen.add(rendered)
+                        generic_entries.append(
+                            (rendered, ORIGIN_TEMPLATE, raw_template, None, None, None, None)
+                        )
+        self.last_fallback_emitted = fallback_emitted
+        self.last_tactic_template_emitted = tactic_template_emitted
+
+        extra_entries = (
+            family_entries + retrieved_entries + term_builder_entries
+            + generic_entries
+        )
+
+        # v3.6 per-theorem deny-list: filter entries whose tactic string
+        # contains any denied substring for this theorem. Applied after
+        # family/generic assembly (and dedup, which happened inline), but
+        # BEFORE the per-state budget cap so denied tactics don't consume
+        # cap slots. Substring match keeps the list compact.
+        denied_substrings = self.theorem_tactic_denylist.get(full_name, []) if full_name else []
+        denied_count = 0
+        if denied_substrings:
+            def _is_denied(tac: str) -> bool:
+                return any(d and d in tac for d in denied_substrings)
+            base_kept: list[Entry] = []
+            for e in base_entries:
+                if _is_denied(e[0]):
+                    denied_count += 1
+                else:
+                    base_kept.append(e)
+            base_entries = base_kept
+            extra_kept: list[Entry] = []
+            for e in extra_entries:
+                if _is_denied(e[0]):
+                    denied_count += 1
+                else:
+                    extra_kept.append(e)
+            extra_entries = extra_kept
+        # NS19 prefix gates. For each (substring → allowed prefix list)
+        # in self.theorem_name_tactic_gates, drop any candidate tactic
+        # that contains the substring unless full_name starts with one
+        # of the allowed prefixes. No-op when full_name is empty (so
+        # eval calls that don't set full_name are unaffected) or when
+        # the gates dict is empty.
+        # NS19 gate semantics: only filter wrapper-added entries
+        # (priority_templates already filtered above, plus
+        # family_tactics, fallback, term_builder, retrieved here).
+        # Generative-model output (base_entries / ORIGIN_GENERATIVE) is
+        # NEVER filtered — the routed base model knows when to emit
+        # aesop / simp_all on different namespaces, and gating its
+        # output would remove existing capability (NS9 wrapper baseline
+        # used to solve 10 Set thms via base-model aesop).
+        denied_count += early_gate_denied
+        if self.theorem_name_tactic_gates and full_name:
+            def _gate_denied(tac: str) -> bool:
+                for sub, prefixes in self.theorem_name_tactic_gates.items():
+                    if sub and sub in tac:
+                        if not any(full_name.startswith(p) for p in prefixes):
+                            return True
+                return False
+            extra_kept2: list[Entry] = []
+            for e in extra_entries:
+                if _gate_denied(e[0]):
+                    denied_count += 1
+                else:
+                    extra_kept2.append(e)
+            extra_entries = extra_kept2
+        self.last_denied_count = denied_count
+
+        # Effective per-state extras cap: when any family activates, use
+        # max(family_budgets[f] for f in activated). Otherwise use the
+        # global max_extra_tactics_per_state (None = unbounded).
+        # v4.1: when premise retrieval activates on this state, reserve
+        # additional cap slots so retrieved tactics fit alongside the
+        # family tactics (otherwise the cap drops them all). Slot count =
+        # len(retrieval_tactic_forms) * retrieval_top_k — an upper bound
+        # on retrieved_entries before dedup.
+        cap = self.max_extra_tactics_per_state
+        if activated_families:
+            budgets = [
+                self.family_budgets[f]
+                for f in activated_families
+                if f in self.family_budgets
+            ]
+            if budgets:
+                cap = max(budgets)
+        if retrieval_activation is not None and cap is not None:
+            cap += len(self.retrieval_tactic_forms) * self.retrieval_top_k
+        # v5: reserve cap slots for term_builder entries so they aren't
+        # crowded out by family + retrieval entries. The exact count is
+        # the number we actually emitted (already capped by the
+        # term_builder_budget if set).
+        if term_builder_entries and cap is not None:
+            cap += len(term_builder_entries)
+        if cap is not None:
+            extra_entries = extra_entries[:cap]
+
+        # v5: priority_entries go first — even before base. They are
+        # not subject to the per-state extras cap because they are part
+        # of a small targeted set the genome explicitly prioritized.
+        all_entries = priority_entries + base_entries + extra_entries
+        self.last_ranked_tactics = [e[0] for e in all_entries]
+        self.last_origins = [e[1] for e in all_entries]
+        self.last_template_sources = [e[2] for e in all_entries]
+        self.last_family_sources = [e[3] for e in all_entries]
+        self.last_retrieved_premises = [e[4] for e in all_entries]
+        self.last_retrieved_forms = [e[5] for e in all_entries]
+        self.last_retrieved_shapes = [e[6] for e in all_entries]
+
+        # NS4.1: build parallel skeleton-attribution lists. Tactics are
+        # deduped globally so a given tactic string appears in at most
+        # one of the *_emitted lists; build a single lookup keyed by
+        # tactic string. Entries whose tactic didn't come from the bag
+        # (generative_topk, retrieved_premise, or legacy-path entries)
+        # carry None on every skeleton_* field.
+        if (priority_emitted or family_emitted or term_builder_emitted
+                or fallback_emitted or tactic_template_emitted
+                or retrieved_emitted):
+            emitted_lookup: dict[str, Any] = {}
+            for emitted_list in (
+                priority_emitted, family_emitted, term_builder_emitted,
+                fallback_emitted, tactic_template_emitted,
+                retrieved_emitted,
+            ):
+                for et in emitted_list:
+                    emitted_lookup[et.tactic] = et
+            self.last_skeleton_names = [
+                emitted_lookup[e[0]].skeleton_name if e[0] in emitted_lookup else None
+                for e in all_entries
+            ]
+            self.last_skeleton_shapes = [
+                emitted_lookup[e[0]].shape if e[0] in emitted_lookup else None
+                for e in all_entries
+            ]
+            self.last_skeleton_families = [
+                emitted_lookup[e[0]].family if e[0] in emitted_lookup else None
+                for e in all_entries
+            ]
+            self.last_skeleton_specificities = [
+                emitted_lookup[e[0]].specificity if e[0] in emitted_lookup else None
+                for e in all_entries
+            ]
+            self.last_skeleton_priorities = [
+                emitted_lookup[e[0]].priority if e[0] in emitted_lookup else None
+                for e in all_entries
+            ]
+            self.last_skeleton_stable_ids = [
+                getattr(emitted_lookup[e[0]], "skeleton_stable_id", None)
+                if e[0] in emitted_lookup else None
+                for e in all_entries
+            ]
+        else:
+            n = len(all_entries)
+            self.last_skeleton_names = [None] * n
+            self.last_skeleton_shapes = [None] * n
+            self.last_skeleton_families = [None] * n
+            self.last_skeleton_specificities = [None] * n
+            self.last_skeleton_priorities = [None] * n
+            self.last_skeleton_stable_ids = [None] * n
+
+        return self.last_ranked_tactics
+
+    def origin_of_rank(self, rank: int) -> str | None:
+        if 0 <= rank < len(self.last_origins):
+            return self.last_origins[rank]
+        return None
+
+
+def load_strategy_config(
+    path: str | Path,
+) -> tuple[
+    list[str], list[str], int | None,
+    dict[str, list[str]], dict[str, int], dict[str, list[str]],
+    bool, int, list[str], bool, bool, bool, bool,
+    dict[str, list[str]], int,
+    dict[str, list[str]], int, bool,
+]:
+    """Read the strategy config from JSON.
+
+    Returns (fallback_tactics, tactic_templates, max_extra_tactics_per_state,
+            theorem_family_tactics, family_budgets, theorem_tactic_denylist,
+            retrieval_enabled, retrieval_top_k, retrieval_tactic_forms,
+            retrieval_filter_self, retrieval_filter_unavailable,
+            retrieval_skip_bloating_apply, retrieval_shape_filter,
+            term_builder_templates, term_builder_budget,
+            priority_templates, priority_template_budget,
+            use_skeleton_bag).
+
+    Missing keys produce safe defaults; unknown keys are ignored. All
+    retrieval filter flags default to True so older configs benefit
+    from the newer filters automatically. v5 term_builder fields
+    default to empty / 0 so older configs are no-ops. NS4
+    use_skeleton_bag defaults to False so the legacy code path runs
+    unchanged unless the genome explicitly opts in.
+    """
+    raw = json.loads(Path(path).read_text(encoding="utf-8"))
+    fb = list(raw.get("fallback_tactics") or [])
+    tmpl = list(raw.get("tactic_templates") or [])
+    cap_raw = raw.get("max_extra_tactics_per_state")
+    cap = int(cap_raw) if cap_raw is not None else None
+    fam_raw = raw.get("theorem_family_tactics") or {}
+    fam = {str(k): list(v or []) for k, v in fam_raw.items()}
+    fb_raw = raw.get("family_budgets") or {}
+    fam_budgets = {str(k): int(v) for k, v in fb_raw.items()}
+    deny_raw = raw.get("theorem_tactic_denylist") or {}
+    deny = {str(k): list(v or []) for k, v in deny_raw.items()}
+    retrieval_enabled = bool(raw.get("retrieval_enabled", False))
+    retrieval_top_k = int(raw.get("retrieval_top_k", 0) or 0)
+    forms_raw = raw.get("retrieval_tactic_forms") or []
+    retrieval_tactic_forms = [str(s) for s in forms_raw if s]
+    retrieval_filter_self = bool(raw.get("retrieval_filter_self", True))
+    retrieval_filter_unavailable = bool(raw.get("retrieval_filter_unavailable", True))
+    retrieval_skip_bloating_apply = bool(
+        raw.get("retrieval_skip_bloating_apply", True)
+    )
+    retrieval_shape_filter = bool(raw.get("retrieval_shape_filter", True))
+    # NS9: independent retrieval gate, off by default for back-compat.
+    retrieval_requires_family = bool(
+        raw.get("retrieval_requires_family", True)
+    )
+    rfg_raw = raw.get("retrieval_family_gates") or []
+    retrieval_family_gates = [str(s) for s in rfg_raw if s]
+    tb_raw = raw.get("term_builder_templates") or {}
+    term_builder_templates = {str(k): list(v or []) for k, v in tb_raw.items()}
+    term_builder_budget = int(raw.get("term_builder_budget", 0) or 0)
+    pt_raw = raw.get("priority_templates") or {}
+    priority_templates = {str(k): list(v or []) for k, v in pt_raw.items()}
+    priority_template_budget = int(raw.get("priority_template_budget", 0) or 0)
+    use_skeleton_bag = bool(raw.get("use_skeleton_bag", False))
+    # NS19 name-prefix gates. Loader is tolerant — missing key means
+    # empty dict, which preserves wrapper behavior exactly.
+    gates_raw = raw.get("theorem_name_tactic_gates") or {}
+    theorem_name_tactic_gates = {
+        str(k): [str(p) for p in (v or []) if p]
+        for k, v in gates_raw.items() if k
+    }
+    return (
+        fb, tmpl, cap, fam, fam_budgets, deny,
+        retrieval_enabled, retrieval_top_k, retrieval_tactic_forms,
+        retrieval_filter_self, retrieval_filter_unavailable,
+        retrieval_skip_bloating_apply, retrieval_shape_filter,
+        term_builder_templates, term_builder_budget,
+        priority_templates, priority_template_budget,
+        use_skeleton_bag,
+        retrieval_requires_family, retrieval_family_gates,
+        theorem_name_tactic_gates,
+    )
+
+
+def dump_strategy_config(
+    path: str | Path,
+    fallback_tactics: list[str],
+    tactic_templates: list[str],
+    max_extra_tactics_per_state: int | None = None,
+    theorem_family_tactics: dict[str, list[str]] | None = None,
+    family_budgets: dict[str, int] | None = None,
+    theorem_tactic_denylist: dict[str, list[str]] | None = None,
+    retrieval_enabled: bool = False,
+    retrieval_top_k: int = 0,
+    retrieval_tactic_forms: list[str] | None = None,
+    retrieval_filter_self: bool = True,
+    retrieval_filter_unavailable: bool = True,
+    retrieval_skip_bloating_apply: bool = True,
+    retrieval_shape_filter: bool = True,
+    term_builder_templates: dict[str, list[str]] | None = None,
+    term_builder_budget: int = 0,
+    priority_templates: dict[str, list[str]] | None = None,
+    priority_template_budget: int = 0,
+    use_skeleton_bag: bool = False,
+    retrieval_requires_family: bool = True,
+    retrieval_family_gates: list[str] | None = None,
+) -> None:
+    """Write the JSON config the subprocess will read. Parent dirs are
+    created if needed."""
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(
+        json.dumps(
+            {
+                "fallback_tactics": list(fallback_tactics),
+                "tactic_templates": list(tactic_templates),
+                "max_extra_tactics_per_state": max_extra_tactics_per_state,
+                "theorem_family_tactics": {
+                    str(k): list(v or [])
+                    for k, v in (theorem_family_tactics or {}).items()
+                },
+                "family_budgets": {
+                    str(k): int(v) for k, v in (family_budgets or {}).items()
+                },
+                "theorem_tactic_denylist": {
+                    str(k): list(v or [])
+                    for k, v in (theorem_tactic_denylist or {}).items()
+                },
+                "retrieval_enabled": bool(retrieval_enabled),
+                "retrieval_top_k": int(retrieval_top_k or 0),
+                "retrieval_tactic_forms": [
+                    str(s) for s in (retrieval_tactic_forms or []) if s
+                ],
+                "retrieval_filter_self": bool(retrieval_filter_self),
+                "retrieval_filter_unavailable": bool(retrieval_filter_unavailable),
+                "retrieval_skip_bloating_apply": bool(
+                    retrieval_skip_bloating_apply
+                ),
+                "retrieval_shape_filter": bool(retrieval_shape_filter),
+                "term_builder_templates": {
+                    str(k): list(v or [])
+                    for k, v in (term_builder_templates or {}).items()
+                },
+                "term_builder_budget": int(term_builder_budget or 0),
+                "priority_templates": {
+                    str(k): list(v or [])
+                    for k, v in (priority_templates or {}).items()
+                },
+                "priority_template_budget": int(priority_template_budget or 0),
+                "use_skeleton_bag": bool(use_skeleton_bag),
+                "retrieval_requires_family": bool(retrieval_requires_family),
+                "retrieval_family_gates": [
+                    str(s) for s in (retrieval_family_gates or []) if s
+                ],
+            },
+            indent=2,
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )

@@ -1,0 +1,88 @@
+{
+  "v": "ns11",
+  "variant": "coverage",
+  "prompt_style": "vanilla",
+  "out_path": "project/data/ns11_train_coverage.jsonl",
+  "md5": "94573b826fefb5f42bbb8f839847f66a",
+  "n_pairs_total": 166,
+  "n_pairs_from_traces": 166,
+  "n_pairs_from_combine": 0,
+  "n_unique_theorems": 60,
+  "n_runs_seen": 18,
+  "held_out": [],
+  "held_out_seen_in_traces": {},
+  "by_origin": {
+    "tactic_template": 58,
+    "family_tactic": 7,
+    "generative_topk": 32,
+    "fallback_tactic": 54,
+    "term_builder": 15
+  },
+  "by_role": {
+    "close": 124,
+    "advance_assist": 42
+  },
+  "top_theorems": {
+    "Nat.add_eq_right": 9,
+    "Nat.add_pos_iff_pos_or_pos": 8,
+    "Nat.add_eq_left": 7,
+    "Nat.lt_one_iff": 7,
+    "Nat.one_add_le_iff": 7,
+    "Nat.sub_lt_iff_lt_add": 7,
+    "Nat.add_eq_max_iff": 6,
+    "Nat.add_eq_min_iff": 6,
+    "Nat.add_eq_one_iff": 6,
+    "Nat.le_and_le_add_one_iff": 6,
+    "Nat.add_eq_zero": 6,
+    "Nat.le_add_one_iff": 6,
+    "Nat.sub_lt_iff_lt_add'": 6,
+    "Nat.le_one_iff_eq_zero_or_eq_one": 5,
+    "Nat.div_lt_iff_lt_mul'": 4
+  },
+  "top_runs": {
+    "eval-a2e51ad4": 43,
+    "eval-b7ee2380": 39,
+    "eval-3f6bf279": 16,
+    "eval-128d0a18": 16,
+    "eval-935e9fc7": 14,
+    "eval-fedb884f": 11,
+    "eval-9b97dda3": 6,
+    "eval-037daae2": 4,
+    "eval-7e4c135c": 4,
+    "eval-7f64b7bd": 2,
+    "eval-5bc37b20": 2,
+    "eval-c9f487e6": 2,
+    "eval-a7913183": 2,
+    "eval-4cd96eed": 1,
+    "eval-e01e0ec8": 1
+  },
+  "tactic_length_stats": {
+    "n": 166,
+    "min": 5,
+    "max": 136,
+    "mean": 24.93975903614458
+  },
+  "filters": {
+    "max_tactic_len": 200,
+    "max_state_len": 2500,
+    "allowed_origins": [
+      "fallback_tactic",
+      "family_tactic",
+      "generative_topk",
+      "tactic_template",
+      "term_builder"
+    ],
+    "include_retrieved": false,
+    "include_assist": true,
+    "k_assist_window": 5,
+    "rejects_self_reference": true,
+    "rejects_held_out": false,
+    "dedup_by_state_tactic": true
+  },
+  "combine_with": null,
+  "trace_roots": [
+    "project/evolve"
+  ],
+  "n_trace_files": 368,
+  "n_episodes_loaded": 13773
+}

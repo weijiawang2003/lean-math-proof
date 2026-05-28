@@ -1,0 +1,108 @@
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : demo_v1 (15 theorems)
+  Checkpoint  : project/models/gen_v5
+  Policy type : hybrid_evolved
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/15] Nat.mul_add_mod'
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 59554.93it/s]
+Loaded generative policy from project/models/gen_v5 (type=seq2seq)
+  Base model: t5-small
+  Unique tactics in training: 93
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp_all [Nat.add_mod, Nat.mod_eq_of_lt]
+
+[2/15] Set.ite_univ
+       FAILED at step 1 (All top-20 tactics errored at step 1)
+
+[3/15] Set.union_comm
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[4/15] Set.inter_comm
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[5/15] Set.mem_union
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[6/15] Set.mem_inter_iff
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: aesop -> tauto
+
+[7/15] Set.subset_univ
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.subset_def]
+
+[8/15] Set.empty_subset
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.subset_def]
+
+[9/15] Set.union_empty
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ext_iff]
+
+[10/15] Set.empty_union
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ext_iff]
+
+[11/15] Set.inter_univ
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Nat.add_zero]
+
+[12/15] Set.univ_inter
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.subset_def]
+
+[13/15] Finset.disjoint_insert_right
+       FAILED at step 1 (All top-21 tactics errored at step 1)
+
+[14/15] Finset.mem_insert
+       FAILED at step 2 (All top-20 tactics errored at step 2)
+
+[15/15] Finset.mem_singleton
+       FAILED at step 2 (All top-20 tactics errored at step 2)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Nat.mul_add_mod'                         PROVED       1      simp_all [Nat.add_mod, Nat.mod
+  Set.ite_univ                             ERROR        1      
+  Set.union_comm                           PROVED       1      aesop
+  Set.inter_comm                           PROVED       1      aesop
+  Set.mem_union                            PROVED       1      aesop
+  Set.mem_inter_iff                        PROVED       2      tauto
+  Set.subset_univ                          PROVED       1      simp [Set.subset_def]
+  Set.empty_subset                         PROVED       1      simp [Set.subset_def]
+  Set.union_empty                          PROVED       1      simp [Set.ext_iff]
+  Set.empty_union                          PROVED       1      simp [Set.ext_iff]
+  Set.inter_univ                           PROVED       1      simp [Nat.add_zero]
+  Set.univ_inter                           PROVED       1      simp [Set.subset_def]
+  Finset.disjoint_insert_right             ERROR        1      
+  Finset.mem_insert                        ERROR        2      
+  Finset.mem_singleton                     ERROR        2      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    15
+  Available:         15/15
+  Proved:            11/15  (73%)
+  Errored:           4/15
+  Exhausted:         0/15
+  Skipped:           0/15
+  Avg steps (proved): 1.1
+  Fallbacks used:     12
+  Proved by origin:   {'family_tactic': 1, 'generative_topk': 10}
+  Family activations: {'mod': 1}
+  Family proofs:      {'mod': 1}
+================================================================
+
+Run artifacts: project/evolve/autonomous_runs/demo_v1_master/eval-20260522-121049/eval-724300eb

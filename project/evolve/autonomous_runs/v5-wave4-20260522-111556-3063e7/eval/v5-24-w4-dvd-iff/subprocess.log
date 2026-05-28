@@ -1,0 +1,226 @@
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : nat_defs_medium (38 theorems)
+  Checkpoint  : project/models/gen_v5
+  Policy type : hybrid_evolved
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/38] Nat.add_eq_left
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 62730.20it/s]
+Loaded generative policy from project/models/gen_v5 (type=seq2seq)
+  Base model: t5-small
+  Unique tactics in training: 93
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[2/38] Nat.add_eq_max_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[3/38] Nat.add_eq_min_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[4/38] Nat.add_eq_one_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[5/38] Nat.add_eq_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[6/38] Nat.add_mod_eq_add_mod_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp_all [Nat.add_mod, Nat.mod_eq_of_lt]
+
+[7/38] Nat.add_mod_eq_add_mod_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp_all [Nat.add_mod, Nat.mod_eq_of_lt]
+
+[8/38] Nat.div_le_div_right
+       EXHAUSTED after 8 steps (no proof found)
+
+[9/38] Nat.div_lt_iff_lt_mul'
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: rw [Nat.div_lt_iff_lt_mul] -> simp_all
+
+[10/38] Nat.div_lt_one_iff
+       EXHAUSTED after 8 steps (no proof found)
+
+[11/38] Nat.half_le_of_sub_le_half
+       PROVED in 2 step(s) (used 1 fallback(s))
+       Proof: simp_all -> omega
+
+[12/38] Nat.le_and_le_add_one_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[13/38] Nat.AM_GM
+       FAILED at step 1 (All top-16 tactics errored at step 1)
+
+[14/38] Nat.le_or_le_of_add_eq_add_pred
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[15/38] Nat.add_mod_eq_ite
+       EXHAUSTED after 8 steps (no proof found)
+
+[16/38] Nat.add_eq_zero
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[17/38] Nat.add_pos_iff_pos_or_pos
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: simp_arith -> omega
+
+[18/38] Nat.mul_eq_left
+       FAILED at step 2 (All top-18 tactics errored at step 2)
+
+[19/38] Nat.mul_eq_right
+       FAILED at step 2 (All top-18 tactics errored at step 2)
+
+[20/38] Nat.lt_iff_add_one_le
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp_arith
+
+[21/38] Nat.lt_one_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[22/38] Nat.le_one_iff_eq_zero_or_eq_one
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[23/38] Nat.le_add_one_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[24/38] Nat.one_add_le_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[25/38] Nat.eq_one_of_mul_eq_one_left
+       FAILED at step 1 (All top-18 tactics errored at step 1)
+
+[26/38] Nat.eq_zero_of_double_le
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[27/38] Nat.sub_lt_iff_lt_add
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[28/38] Nat.sub_lt_iff_lt_add'
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[29/38] Nat.mod_two_ne_one
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[30/38] Nat.mod_two_ne_zero
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[31/38] Nat.div_pos
+       FAILED at step 5 (All top-40 tactics errored at step 5)
+
+[32/38] Nat.div_pos_iff
+       FAILED at step 2 (All top-40 tactics errored at step 2)
+
+[33/38] Nat.succ_succ_ne_one
+       PROVED in 1 step(s)
+       Proof: simp [Nat.mul_zero]
+
+[34/38] Nat.pred_eq_of_eq_succ
+       PROVED in 1 step(s)
+       Proof: simp_all
+
+[35/38] Nat.sqrt_lt
+       EXHAUSTED after 8 steps (no proof found)
+
+[36/38] Nat.pow_lt_pow_iff_left
+       EXHAUSTED after 8 steps (no proof found)
+
+[37/38] Nat.dvd_iff_div_mul_eq
+       FAILED at step 3 (All top-40 tactics errored at step 3)
+
+[38/38] Nat.two_mul_ne_two_mul_add_one
+       PROVED in 2 step(s) (used 1 fallback(s))
+       Proof: simp_all -> omega
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Nat.add_eq_left                          PROVED       1      omega
+  Nat.add_eq_max_iff                       PROVED       1      omega
+  Nat.add_eq_min_iff                       PROVED       1      omega
+  Nat.add_eq_one_iff                       PROVED       1      omega
+  Nat.add_eq_right                         PROVED       1      omega
+  Nat.add_mod_eq_add_mod_left              PROVED       1      simp_all [Nat.add_mod, Nat.mod
+  Nat.add_mod_eq_add_mod_right             PROVED       1      simp_all [Nat.add_mod, Nat.mod
+  Nat.div_le_div_right                     EXHAUSTED    8      
+  Nat.div_lt_iff_lt_mul'                   PROVED       2      simp_all
+  Nat.div_lt_one_iff                       EXHAUSTED    8      
+  Nat.half_le_of_sub_le_half               PROVED       2      omega
+  Nat.le_and_le_add_one_iff                PROVED       1      omega
+  Nat.AM_GM                                ERROR        1      
+  Nat.le_or_le_of_add_eq_add_pred          PROVED       1      omega
+  Nat.add_mod_eq_ite                       EXHAUSTED    8      
+  Nat.add_eq_zero                          PROVED       1      omega
+  Nat.add_pos_iff_pos_or_pos               PROVED       2      omega
+  Nat.mul_eq_left                          ERROR        2      
+  Nat.mul_eq_right                         ERROR        2      
+  Nat.lt_iff_add_one_le                    PROVED       1      simp_arith
+  Nat.lt_one_iff                           PROVED       1      omega
+  Nat.le_one_iff_eq_zero_or_eq_one         PROVED       1      omega
+  Nat.le_add_one_iff                       PROVED       1      omega
+  Nat.one_add_le_iff                       PROVED       1      omega
+  Nat.eq_one_of_mul_eq_one_left            ERROR        1      
+  Nat.eq_zero_of_double_le                 PROVED       1      omega
+  Nat.sub_lt_iff_lt_add                    PROVED       1      omega
+  Nat.sub_lt_iff_lt_add'                   PROVED       1      omega
+  Nat.mod_two_ne_one                       PROVED       1      omega
+  Nat.mod_two_ne_zero                      PROVED       1      omega
+  Nat.div_pos                              ERROR        5      
+  Nat.div_pos_iff                          ERROR        2      
+  Nat.succ_succ_ne_one                     PROVED       1      simp [Nat.mul_zero]
+  Nat.pred_eq_of_eq_succ                   PROVED       1      simp_all
+  Nat.sqrt_lt                              EXHAUSTED    8      
+  Nat.pow_lt_pow_iff_left                  EXHAUSTED    8      
+  Nat.dvd_iff_div_mul_eq                   ERROR        3      
+  Nat.two_mul_ne_two_mul_add_one           PROVED       2      omega
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    38
+  Available:         38/38
+  Proved:            26/38  (68%)
+  Errored:           7/38
+  Exhausted:         5/38
+  Skipped:           0/38
+  Avg steps (proved): 1.2
+  Fallbacks used:     26
+  Proved by origin:   {'fallback_tactic': 18, 'family_tactic': 4, 'generative_topk': 4}
+  Loop transitions:   27
+  Skipped repeats:    0
+  Unseen progress:    26
+  Family activations: {'mod': 5, 'div': 6, 'AM_GM': 1}
+  Family proofs:      {'mod': 4}
+  Denied tactics:     8 (per-theorem deny-list)
+  Retrieval:          activated on 6 theorems, 276 tactics attempted, 5 advanced, 0 won
+  Retrieval filters:  filtered_self=28, filtered_unavailable=170
+  Retrieval forms:    {'rw': 119, 'simp': 115, 'apply': 42}
+  Retrieval form ok:  {'rw': 4, 'apply': 1}
+  Apply goal-shape:   inc=2, dec=0, same=1, skipped_bloating=11
+  Bloating lemmas:    {'Nat.lt_of_lt_of_le': 2}
+  Shape attempts:     {'iff': 77, 'lt': 31, 'eq': 120, 'unknown': 48}  success={'eq': 3, 'iff': 1, 'lt': 1}  mismatch_filtered=175
+================================================================
+
+Run artifacts: /Users/weijiawang/dev/dojo_sandbox/project/evolve/autonomous_runs/v5-wave4-20260522-111556-3063e7/eval/v5-24-w4-dvd-iff/eval-dd61699e

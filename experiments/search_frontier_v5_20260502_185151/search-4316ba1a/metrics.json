@@ -1,0 +1,82 @@
+{
+  "trace_file": "experiments/search_frontier_v5_20260502_185151/traces.jsonl",
+  "transition_metrics": {
+    "rows": 504,
+    "proof_finished_rows": 60,
+    "error_rows": 0,
+    "distinct_theorem_targets": 4
+  },
+  "episode_metrics": {
+    "episodes": 4,
+    "finished_episodes": 1,
+    "error_episodes": 0,
+    "success_rate": 0.25,
+    "avg_steps_per_episode": 126.0
+  },
+  "run_metrics": {
+    "runs": 1,
+    "episodes_per_run": {
+      "search-4316ba1a": 4
+    }
+  },
+  "rows_by_method": {
+    "beam_search": 504
+  },
+  "per_theorem_transition_summary": {
+    "Finset.mem_insert|Mathlib/Data/Finset/Basic.lean": {
+      "steps": 61,
+      "finished_rows": 0
+    },
+    "Finset.mem_singleton|Mathlib/Data/Finset/Basic.lean": {
+      "steps": 58,
+      "finished_rows": 0
+    },
+    "Finset.disjoint_insert_right|Mathlib/Data/Finset/Basic.lean": {
+      "steps": 148,
+      "finished_rows": 0
+    },
+    "Nat.mul_add_mod'|Mathlib/Data/Nat/Defs.lean": {
+      "steps": 237,
+      "finished_rows": 60
+    }
+  },
+  "per_theorem_episode_summary": {
+    "Finset.mem_insert|Mathlib/Data/Finset/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 0,
+      "success_rate": 0.0
+    },
+    "Finset.mem_singleton|Mathlib/Data/Finset/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 0,
+      "success_rate": 0.0
+    },
+    "Finset.disjoint_insert_right|Mathlib/Data/Finset/Basic.lean": {
+      "episodes": 1,
+      "finished_episodes": 0,
+      "success_rate": 0.0
+    },
+    "Nat.mul_add_mod'|Mathlib/Data/Nat/Defs.lean": {
+      "episodes": 1,
+      "finished_episodes": 1,
+      "success_rate": 1.0
+    }
+  },
+  "method": "beam_search",
+  "run_id": "search-4316ba1a",
+  "run_summary": {
+    "requested_theorems": 5,
+    "available_theorems": 4,
+    "processed_theorems": 4,
+    "skipped_theorems_runtime": 0,
+    "unavailable_theorems": 1,
+    "unavailable_details": [
+      {
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "full_name": "Finset.insert_comm",
+        "reason": "missing_trace_artifact",
+        "error": "Failed to locate the theorem with `Finset.insert_comm` as its fully qualified name."
+      }
+    ]
+  }
+}

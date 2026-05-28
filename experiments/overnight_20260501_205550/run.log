@@ -1,0 +1,2730 @@
+============================================================
+  OVERNIGHT A+D RUN
+============================================================
+  Started   : Fri May  1 20:55:50 CDT 2026
+  Root dir  : experiments/overnight_20260501_205550
+  Theorems  : curriculum_all
+  Top-k     : 8
+  Max steps : 8
+  Sample T  : 0.8
+  Seeds     : 42 123 456 789 1024
+============================================================
+
+------------------------------------------------------------
+  Phase 1: v5 (beam, deterministic anchor)
+  out: experiments/overnight_20260501_205550/v5_beam
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/models/gen_v5
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/31] Set.union_comm
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 14669.71it/s]
+Loaded generative policy from project/models/gen_v5 (type=seq2seq)
+  Base model: t5-small
+  Unique tactics in training: 93
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[2/31] Set.inter_comm
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[3/31] Set.mem_union
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[4/31] Set.mem_inter_iff
+       PROVED in 2 step(s) (used 1 fallback(s))
+       Proof: aesop -> tauto
+
+[5/31] Set.subset_univ
+       PROVED in 1 step(s)
+       Proof: simp [Set.subset_def]
+
+[6/31] Set.empty_subset
+       PROVED in 1 step(s)
+       Proof: simp [Set.subset_def]
+
+[7/31] Set.union_empty
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ext_iff]
+
+[8/31] Set.empty_union
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ext_iff]
+
+[9/31] Set.inter_univ
+       PROVED in 1 step(s)
+       Proof: simp [Nat.add_zero]
+
+[10/31] Set.univ_inter
+       PROVED in 1 step(s)
+       Proof: simp [Set.subset_def]
+
+[11/31] Set.ite_univ
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[12/31] Nat.mul_add_mod'
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[13/31] Set.union_assoc
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[14/31] Set.inter_assoc
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[15/31] Set.union_self
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ext_iff]
+
+[16/31] Set.inter_self
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ext_iff]
+
+[17/31] Set.union_univ
+       PROVED in 1 step(s)
+       Proof: simp [Nat.mul_one]
+
+[18/31] Set.inter_empty
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ext_iff]
+
+[19/31] Set.subset_union_left
+       PROVED in 2 step(s) (used 1 fallback(s))
+       Proof: simp [Set.subset_def] -> aesop
+
+[20/31] Set.subset_union_right
+       PROVED in 2 step(s)
+       Proof: simp [Set.subset_def] -> aesop
+
+[21/31] Set.inter_subset_left
+       PROVED in 2 step(s) (used 1 fallback(s))
+       Proof: simp [Set.subset_def] -> aesop
+
+[22/31] Set.inter_subset_right
+       PROVED in 1 step(s)
+       Proof: simp [Set.subset_def]
+
+[23/31] Finset.mem_insert
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[24/31] Finset.mem_singleton
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[25/31] Set.union_inter_distrib_left
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[26/31] Set.inter_union_distrib_left
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[27/31] Set.diff_self
+       PROVED in 1 step(s)
+       Proof: simp [Nat.mul_zero]
+
+[28/31] Set.diff_empty
+       PROVED in 1 step(s)
+       Proof: simp [Nat.mul_zero]
+
+[29/31] Set.empty_diff
+       PROVED in 1 step(s)
+       Proof: simp [Nat.mul_zero]
+
+[30/31] Finset.disjoint_insert_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[31/31] Finset.insert_comm
+       SKIP  (unavailable: Failed to locate the theorem with `Finset.insert_comm` as it)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.union_comm                           PROVED       1      aesop
+  Set.inter_comm                           PROVED       1      aesop
+  Set.mem_union                            PROVED       1      aesop
+  Set.mem_inter_iff                        PROVED       2      tauto
+  Set.subset_univ                          PROVED       1      simp [Set.subset_def]
+  Set.empty_subset                         PROVED       1      simp [Set.subset_def]
+  Set.union_empty                          PROVED       1      simp [Set.ext_iff]
+  Set.empty_union                          PROVED       1      simp [Set.ext_iff]
+  Set.inter_univ                           PROVED       1      simp [Nat.add_zero]
+  Set.univ_inter                           PROVED       1      simp [Set.subset_def]
+  Set.ite_univ                             ERROR        1      
+  Nat.mul_add_mod'                         ERROR        1      
+  Set.union_assoc                          PROVED       1      aesop
+  Set.inter_assoc                          PROVED       1      aesop
+  Set.union_self                           PROVED       1      simp [Set.ext_iff]
+  Set.inter_self                           PROVED       1      simp [Set.ext_iff]
+  Set.union_univ                           PROVED       1      simp [Nat.mul_one]
+  Set.inter_empty                          PROVED       1      simp [Set.ext_iff]
+  Set.subset_union_left                    PROVED       2      aesop
+  Set.subset_union_right                   PROVED       2      aesop
+  Set.inter_subset_left                    PROVED       2      aesop
+  Set.inter_subset_right                   PROVED       1      simp [Set.subset_def]
+  Finset.mem_insert                        ERROR        2      
+  Finset.mem_singleton                     ERROR        2      
+  Set.union_inter_distrib_left             PROVED       1      aesop
+  Set.inter_union_distrib_left             PROVED       1      aesop
+  Set.diff_self                            PROVED       1      simp [Nat.mul_zero]
+  Set.diff_empty                           PROVED       1      simp [Nat.mul_zero]
+  Set.empty_diff                           PROVED       1      simp [Nat.mul_zero]
+  Finset.disjoint_insert_right             ERROR        1      
+  Finset.insert_comm                       SKIP         —      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    31
+  Available:         30/31
+  Proved:            25/30  (83%)
+  Errored:           5/30
+  Exhausted:         0/30
+  Skipped:           1/31
+  Avg steps (proved): 1.2
+  Fallbacks used:     8
+================================================================
+
+Run artifacts: experiments/overnight_20260501_205550/v5_beam/eval-c3c7a80e
+[ok] Phase 1: v5 (beam, deterministic anchor)
+
+------------------------------------------------------------
+  Phase 1: premise (beam, deterministic anchor)
+  out: experiments/overnight_20260501_205550/premise_beam
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/gen_ckpt_v6_premise
+  Policy type : premise_augmented
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/31] Set.union_comm
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 46320.50it/s]
+Loaded generative policy from project/gen_ckpt_v6_premise (type=seq2seq)
+  Base model: t5-small
+  Unique tactics in training: 93
+[PremiseAugmentedPolicy] Loaded premise index from project/premise_index.json
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[2/31] Set.inter_comm
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[3/31] Set.mem_union
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[4/31] Set.mem_inter_iff
+       PROVED in 2 step(s) (used 1 fallback(s))
+       Proof: aesop -> tauto
+
+[5/31] Set.subset_univ
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[6/31] Set.empty_subset
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[7/31] Set.union_empty
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[8/31] Set.empty_union
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[9/31] Set.inter_univ
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[10/31] Set.univ_inter
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[11/31] Set.ite_univ
+       FAILED at step 3 (All top-8 tactics errored at step 3)
+
+[12/31] Nat.mul_add_mod'
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[13/31] Set.union_assoc
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[14/31] Set.inter_assoc
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[15/31] Set.union_self
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[16/31] Set.inter_self
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[17/31] Set.union_univ
+       PROVED in 1 step(s)
+       Proof: simp [Nat.sub_self]
+
+[18/31] Set.inter_empty
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[19/31] Set.subset_union_left
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[20/31] Set.subset_union_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[21/31] Set.inter_subset_left
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[22/31] Set.inter_subset_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[23/31] Finset.mem_insert
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[24/31] Finset.mem_singleton
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[25/31] Set.union_inter_distrib_left
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[26/31] Set.inter_union_distrib_left
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[27/31] Set.diff_self
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[28/31] Set.diff_empty
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[29/31] Set.empty_diff
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[30/31] Finset.disjoint_insert_right
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[31/31] Finset.insert_comm
+       SKIP  (unavailable: Failed to locate the theorem with `Finset.insert_comm` as it)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.union_comm                           PROVED       1      aesop
+  Set.inter_comm                           PROVED       1      aesop
+  Set.mem_union                            PROVED       1      aesop
+  Set.mem_inter_iff                        PROVED       2      tauto
+  Set.subset_univ                          ERROR        1      
+  Set.empty_subset                         ERROR        1      
+  Set.union_empty                          PROVED       1      aesop
+  Set.empty_union                          PROVED       1      aesop
+  Set.inter_univ                           PROVED       1      aesop
+  Set.univ_inter                           PROVED       1      aesop
+  Set.ite_univ                             ERROR        3      
+  Nat.mul_add_mod'                         ERROR        1      
+  Set.union_assoc                          PROVED       1      aesop
+  Set.inter_assoc                          PROVED       1      aesop
+  Set.union_self                           PROVED       1      aesop
+  Set.inter_self                           PROVED       1      aesop
+  Set.union_univ                           PROVED       1      simp [Nat.sub_self]
+  Set.inter_empty                          PROVED       1      aesop
+  Set.subset_union_left                    ERROR        1      
+  Set.subset_union_right                   ERROR        1      
+  Set.inter_subset_left                    ERROR        1      
+  Set.inter_subset_right                   ERROR        1      
+  Finset.mem_insert                        ERROR        2      
+  Finset.mem_singleton                     ERROR        2      
+  Set.union_inter_distrib_left             PROVED       1      aesop
+  Set.inter_union_distrib_left             PROVED       1      aesop
+  Set.diff_self                            PROVED       1      aesop
+  Set.diff_empty                           PROVED       1      aesop
+  Set.empty_diff                           PROVED       1      aesop
+  Finset.disjoint_insert_right             ERROR        2      
+  Finset.insert_comm                       SKIP         —      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    31
+  Available:         30/31
+  Proved:            19/30  (63%)
+  Errored:           11/30
+  Exhausted:         0/30
+  Skipped:           1/31
+  Avg steps (proved): 1.1
+  Fallbacks used:     2
+================================================================
+
+Run artifacts: experiments/overnight_20260501_205550/premise_beam/eval-5ab20bb2
+[ok] Phase 1: premise (beam, deterministic anchor)
+
+------------------------------------------------------------
+  Phase 1: base (beam, deterministic anchor)
+  out: experiments/overnight_20260501_205550/base_beam
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/models/gen_v6
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/31] Set.union_comm
+Loading weights:   0%|          | 0/257 [00:00<?, ?it/s]Loading weights: 100%|██████████| 257/257 [00:00<00:00, 7780.29it/s]
+Loaded generative policy from project/models/gen_v6 (type=seq2seq)
+  Base model: t5-base
+  Unique tactics in training: 119
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[2/31] Set.inter_comm
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[3/31] Set.mem_union
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[4/31] Set.mem_inter_iff
+       PROVED in 2 step(s)
+       Proof: aesop -> tauto
+
+[5/31] Set.subset_univ
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[6/31] Set.empty_subset
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[7/31] Set.union_empty
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ext_iff]
+
+[8/31] Set.empty_union
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ext_iff]
+
+[9/31] Set.inter_univ
+       PROVED in 1 step(s)
+       Proof: simp [Set.ext_iff]
+
+[10/31] Set.univ_inter
+       PROVED in 1 step(s)
+       Proof: simp [Set.mem_union]
+
+[11/31] Set.ite_univ
+       PROVED in 1 step(s)
+       Proof: simp [Set.ite]
+
+[12/31] Nat.mul_add_mod'
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[13/31] Set.union_assoc
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[14/31] Set.inter_assoc
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[15/31] Set.union_self
+       PROVED in 1 step(s)
+       Proof: simp [Set.ext_iff]
+
+[16/31] Set.inter_self
+       PROVED in 1 step(s)
+       Proof: simp [Set.ext_iff]
+
+[17/31] Set.union_univ
+       PROVED in 1 step(s)
+       Proof: simp [Nat.mul_one]
+
+[18/31] Set.inter_empty
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ext_iff]
+
+[19/31] Set.subset_union_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: tauto
+
+[20/31] Set.subset_union_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: tauto
+
+[21/31] Set.inter_subset_left
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[22/31] Set.inter_subset_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[23/31] Finset.mem_insert
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[24/31] Finset.mem_singleton
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[25/31] Set.union_inter_distrib_left
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[26/31] Set.inter_union_distrib_left
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[27/31] Set.diff_self
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[28/31] Set.diff_empty
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[29/31] Set.empty_diff
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[30/31] Finset.disjoint_insert_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[31/31] Finset.insert_comm
+       SKIP  (unavailable: Failed to locate the theorem with `Finset.insert_comm` as it)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.union_comm                           PROVED       1      aesop
+  Set.inter_comm                           PROVED       1      aesop
+  Set.mem_union                            PROVED       1      aesop
+  Set.mem_inter_iff                        PROVED       2      tauto
+  Set.subset_univ                          ERROR        1      
+  Set.empty_subset                         ERROR        1      
+  Set.union_empty                          PROVED       1      simp [Set.ext_iff]
+  Set.empty_union                          PROVED       1      simp [Set.ext_iff]
+  Set.inter_univ                           PROVED       1      simp [Set.ext_iff]
+  Set.univ_inter                           PROVED       1      simp [Set.mem_union]
+  Set.ite_univ                             PROVED       1      simp [Set.ite]
+  Nat.mul_add_mod'                         ERROR        1      
+  Set.union_assoc                          PROVED       1      aesop
+  Set.inter_assoc                          PROVED       1      aesop
+  Set.union_self                           PROVED       1      simp [Set.ext_iff]
+  Set.inter_self                           PROVED       1      simp [Set.ext_iff]
+  Set.union_univ                           PROVED       1      simp [Nat.mul_one]
+  Set.inter_empty                          PROVED       1      simp [Set.ext_iff]
+  Set.subset_union_left                    PROVED       1      tauto
+  Set.subset_union_right                   PROVED       1      tauto
+  Set.inter_subset_left                    ERROR        1      
+  Set.inter_subset_right                   ERROR        1      
+  Finset.mem_insert                        ERROR        1      
+  Finset.mem_singleton                     ERROR        2      
+  Set.union_inter_distrib_left             PROVED       1      aesop
+  Set.inter_union_distrib_left             PROVED       1      aesop
+  Set.diff_self                            PROVED       1      aesop
+  Set.diff_empty                           PROVED       1      aesop
+  Set.empty_diff                           PROVED       1      aesop
+  Finset.disjoint_insert_right             ERROR        1      
+  Finset.insert_comm                       SKIP         —      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    31
+  Available:         30/31
+  Proved:            22/30  (73%)
+  Errored:           8/30
+  Exhausted:         0/30
+  Skipped:           1/31
+  Avg steps (proved): 1.0
+  Fallbacks used:     7
+================================================================
+
+Run artifacts: experiments/overnight_20260501_205550/base_beam/eval-fbc59fd6
+[ok] Phase 1: base (beam, deterministic anchor)
+
+------------------------------------------------------------
+  Phase 2: v5 sample seed=42
+  out: experiments/overnight_20260501_205550/v5_sample_seed42
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/models/gen_v5
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/31] Set.union_comm
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 15219.91it/s]
+Loaded generative policy from project/models/gen_v5 (type=seq2seq)
+  Base model: t5-small
+  Unique tactics in training: 93
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[2/31] Set.inter_comm
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[3/31] Set.mem_union
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[4/31] Set.mem_inter_iff
+       PROVED in 2 step(s) (used 1 fallback(s))
+       Proof: aesop -> tauto
+
+[5/31] Set.subset_univ
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[6/31] Set.empty_subset
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[7/31] Set.union_empty
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[8/31] Set.empty_union
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[9/31] Set.inter_univ
+       PROVED in 1 step(s)
+       Proof: simp [List.nil_append]
+
+[10/31] Set.univ_inter
+       PROVED in 1 step(s)
+       Proof: simp [List.nil_append]
+
+[11/31] Set.ite_univ
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[12/31] Nat.mul_add_mod'
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]
+
+[13/31] Set.union_assoc
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[14/31] Set.inter_assoc
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[15/31] Set.union_self
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[16/31] Set.inter_self
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[17/31] Set.union_univ
+       PROVED in 1 step(s)
+       Proof: simp [List.nil_append]
+
+[18/31] Set.inter_empty
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[19/31] Set.subset_union_left
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[20/31] Set.subset_union_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[21/31] Set.inter_subset_left
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[22/31] Set.inter_subset_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[23/31] Finset.mem_insert
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[24/31] Finset.mem_singleton
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[25/31] Set.union_inter_distrib_left
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[26/31] Set.inter_union_distrib_left
+       PROVED in 1 step(s)
+       Proof: aesop
+
+[27/31] Set.diff_self
+       PROVED in 1 step(s)
+       Proof: simp [List.nil_append]
+
+[28/31] Set.diff_empty
+       PROVED in 1 step(s)
+       Proof: simp [List.nil_append]
+
+[29/31] Set.empty_diff
+       PROVED in 1 step(s)
+       Proof: simp [List.nil_append]
+
+[30/31] Finset.disjoint_insert_right
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[31/31] Finset.insert_comm
+       SKIP  (unavailable: Failed to locate the theorem with `Finset.insert_comm` as it)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.union_comm                           PROVED       1      aesop
+  Set.inter_comm                           PROVED       1      aesop
+  Set.mem_union                            PROVED       1      aesop
+  Set.mem_inter_iff                        PROVED       2      tauto
+  Set.subset_univ                          ERROR        1      
+  Set.empty_subset                         ERROR        1      
+  Set.union_empty                          ERROR        1      
+  Set.empty_union                          ERROR        1      
+  Set.inter_univ                           PROVED       1      simp [List.nil_append]
+  Set.univ_inter                           PROVED       1      simp [List.nil_append]
+  Set.ite_univ                             ERROR        2      
+  Nat.mul_add_mod'                         PROVED       1      simp [Nat.add_comm, Nat.add_le
+  Set.union_assoc                          PROVED       1      aesop
+  Set.inter_assoc                          PROVED       1      aesop
+  Set.union_self                           PROVED       1      aesop
+  Set.inter_self                           PROVED       1      aesop
+  Set.union_univ                           PROVED       1      simp [List.nil_append]
+  Set.inter_empty                          ERROR        1      
+  Set.subset_union_left                    ERROR        1      
+  Set.subset_union_right                   ERROR        1      
+  Set.inter_subset_left                    ERROR        1      
+  Set.inter_subset_right                   ERROR        1      
+  Finset.mem_insert                        ERROR        2      
+  Finset.mem_singleton                     ERROR        2      
+  Set.union_inter_distrib_left             PROVED       1      aesop
+  Set.inter_union_distrib_left             PROVED       1      aesop
+  Set.diff_self                            PROVED       1      simp [List.nil_append]
+  Set.diff_empty                           PROVED       1      simp [List.nil_append]
+  Set.empty_diff                           PROVED       1      simp [List.nil_append]
+  Finset.disjoint_insert_right             ERROR        2      
+  Finset.insert_comm                       SKIP         —      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    31
+  Available:         30/31
+  Proved:            17/30  (57%)
+  Errored:           13/30
+  Exhausted:         0/30
+  Skipped:           1/31
+  Avg steps (proved): 1.1
+  Fallbacks used:     4
+================================================================
+
+Run artifacts: experiments/overnight_20260501_205550/v5_sample_seed42/eval-3c3f3068
+[ok] Phase 2: v5 sample seed=42
+
+------------------------------------------------------------
+  Phase 2: v5 sample seed=123
+  out: experiments/overnight_20260501_205550/v5_sample_seed123
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/models/gen_v5
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 693, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 206, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x16cb7d5b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 7 more times]
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubRetry.py", line 208, in increment
+    return super().increment(method, url, response, error, _pool, _stacktrace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x16cb7d5b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 361, in <module>
+    main()
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 235, in main
+    repo = make_repo()
+           ^^^^^^^^^^^
+  File "/Users/weijiawang/dev/dojo_sandbox/env.py", line 31, in make_repo
+    return LeanGitRepo(url=REPO_URL, commit=COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 551, in __post_init__
+    repo = url_to_repo(self.url, repo_type=repo_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 169, in url_to_repo
+    raise ex
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 158, in url_to_repo
+    return GITHUB.get_repo("/".join(url.split("/")[-2:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/MainClass.py", line 490, in get_repo
+    return github.Repository.Repository(self.__requester.withLazy(lazy), url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 570, in __init__
+    self.complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 615, in complete
+    self._completeIfNeeded()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 624, in _completeIfNeeded
+    self._complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 629, in _complete
+    headers, data = self._requester.requestJsonAndCheck(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 629, in requestJsonAndCheck
+    *self.requestJson(
+     ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1073, in requestJson
+    status, responseHeaders, output = self.__requestEncode(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1212, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1250, in __requestRaw
+    response = cnx.getresponse()
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 206, in getresponse
+    r = verb(
+        ^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x16cb7d5b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+[FAIL] Phase 2: v5 sample seed=123 (continuing)
+
+------------------------------------------------------------
+  Phase 2: v5 sample seed=456
+  out: experiments/overnight_20260501_205550/v5_sample_seed456
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/models/gen_v5
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/31] Set.union_comm
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 48697.49it/s]
+Loaded generative policy from project/models/gen_v5 (type=seq2seq)
+  Base model: t5-small
+  Unique tactics in training: 93
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[2/31] Set.inter_comm
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[3/31] Set.mem_union
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[4/31] Set.mem_inter_iff
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: aesop -> tauto
+
+[5/31] Set.subset_univ
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[6/31] Set.empty_subset
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[7/31] Set.union_empty
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[8/31] Set.empty_union
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[9/31] Set.inter_univ
+       PROVED in 1 step(s)
+       Proof: simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]
+
+[10/31] Set.univ_inter
+       PROVED in 1 step(s)
+       Proof: simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]
+
+[11/31] Set.ite_univ
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[12/31] Nat.mul_add_mod'
+       PROVED in 1 step(s)
+       Proof: simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]
+
+[13/31] Set.union_assoc
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[14/31] Set.inter_assoc
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[15/31] Set.union_self
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[16/31] Set.inter_self
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[17/31] Set.union_univ
+       PROVED in 1 step(s)
+       Proof: simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]
+
+[18/31] Set.inter_empty
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[19/31] Set.subset_union_left
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[20/31] Set.subset_union_right
+       PROVED in 2 step(s) (used 1 fallback(s))
+       Proof: simp [Set.subset_def] -> simp_all
+
+[21/31] Set.inter_subset_left
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: simp [Set.subset_def] -> aesop
+
+[22/31] Set.inter_subset_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.subset_def]
+
+[23/31] Finset.mem_insert
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[24/31] Finset.mem_singleton
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[25/31] Set.union_inter_distrib_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[26/31] Set.inter_union_distrib_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[27/31] Set.diff_self
+       PROVED in 1 step(s)
+       Proof: simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]
+
+[28/31] Set.diff_empty
+       PROVED in 1 step(s)
+       Proof: simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]
+
+[29/31] Set.empty_diff
+       PROVED in 1 step(s)
+       Proof: simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]
+
+[30/31] Finset.disjoint_insert_right
+       FAILED at step 3 (All top-8 tactics errored at step 3)
+
+[31/31] Finset.insert_comm
+       SKIP  (unavailable: Failed to locate the theorem with `Finset.insert_comm` as it)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.union_comm                           PROVED       1      aesop
+  Set.inter_comm                           PROVED       1      aesop
+  Set.mem_union                            PROVED       1      aesop
+  Set.mem_inter_iff                        PROVED       2      tauto
+  Set.subset_univ                          ERROR        1      
+  Set.empty_subset                         ERROR        1      
+  Set.union_empty                          ERROR        1      
+  Set.empty_union                          ERROR        1      
+  Set.inter_univ                           PROVED       1      simp [Nat.add_comm, Nat.add_le
+  Set.univ_inter                           PROVED       1      simp [Nat.add_comm, Nat.add_le
+  Set.ite_univ                             ERROR        1      
+  Nat.mul_add_mod'                         PROVED       1      simp [Nat.add_comm, Nat.add_le
+  Set.union_assoc                          PROVED       1      aesop
+  Set.inter_assoc                          PROVED       1      aesop
+  Set.union_self                           PROVED       1      aesop
+  Set.inter_self                           PROVED       1      aesop
+  Set.union_univ                           PROVED       1      simp [Nat.add_comm, Nat.add_le
+  Set.inter_empty                          ERROR        1      
+  Set.subset_union_left                    ERROR        1      
+  Set.subset_union_right                   PROVED       2      simp_all
+  Set.inter_subset_left                    PROVED       2      aesop
+  Set.inter_subset_right                   PROVED       1      simp [Set.subset_def]
+  Finset.mem_insert                        ERROR        2      
+  Finset.mem_singleton                     ERROR        2      
+  Set.union_inter_distrib_left             PROVED       1      aesop
+  Set.inter_union_distrib_left             PROVED       1      aesop
+  Set.diff_self                            PROVED       1      simp [Nat.add_comm, Nat.add_le
+  Set.diff_empty                           PROVED       1      simp [Nat.add_comm, Nat.add_le
+  Set.empty_diff                           PROVED       1      simp [Nat.add_comm, Nat.add_le
+  Finset.disjoint_insert_right             ERROR        3      
+  Finset.insert_comm                       SKIP         —      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    31
+  Available:         30/31
+  Proved:            20/30  (67%)
+  Errored:           10/30
+  Exhausted:         0/30
+  Skipped:           1/31
+  Avg steps (proved): 1.1
+  Fallbacks used:     15
+================================================================
+
+Run artifacts: experiments/overnight_20260501_205550/v5_sample_seed456/eval-913b72c5
+[ok] Phase 2: v5 sample seed=456
+
+------------------------------------------------------------
+  Phase 2: v5 sample seed=789
+  out: experiments/overnight_20260501_205550/v5_sample_seed789
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/models/gen_v5
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 693, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 206, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x165e7d2b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 7 more times]
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubRetry.py", line 208, in increment
+    return super().increment(method, url, response, error, _pool, _stacktrace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x165e7d2b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 361, in <module>
+    main()
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 235, in main
+    repo = make_repo()
+           ^^^^^^^^^^^
+  File "/Users/weijiawang/dev/dojo_sandbox/env.py", line 31, in make_repo
+    return LeanGitRepo(url=REPO_URL, commit=COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 551, in __post_init__
+    repo = url_to_repo(self.url, repo_type=repo_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 169, in url_to_repo
+    raise ex
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 158, in url_to_repo
+    return GITHUB.get_repo("/".join(url.split("/")[-2:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/MainClass.py", line 490, in get_repo
+    return github.Repository.Repository(self.__requester.withLazy(lazy), url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 570, in __init__
+    self.complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 615, in complete
+    self._completeIfNeeded()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 624, in _completeIfNeeded
+    self._complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 629, in _complete
+    headers, data = self._requester.requestJsonAndCheck(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 629, in requestJsonAndCheck
+    *self.requestJson(
+     ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1073, in requestJson
+    status, responseHeaders, output = self.__requestEncode(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1212, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1250, in __requestRaw
+    response = cnx.getresponse()
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 206, in getresponse
+    r = verb(
+        ^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x165e7d2b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+[FAIL] Phase 2: v5 sample seed=789 (continuing)
+
+------------------------------------------------------------
+  Phase 2: v5 sample seed=1024
+  out: experiments/overnight_20260501_205550/v5_sample_seed1024
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/models/gen_v5
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 693, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 206, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x32217d610>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 7 more times]
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubRetry.py", line 208, in increment
+    return super().increment(method, url, response, error, _pool, _stacktrace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x32217d610>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 361, in <module>
+    main()
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 235, in main
+    repo = make_repo()
+           ^^^^^^^^^^^
+  File "/Users/weijiawang/dev/dojo_sandbox/env.py", line 31, in make_repo
+    return LeanGitRepo(url=REPO_URL, commit=COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 551, in __post_init__
+    repo = url_to_repo(self.url, repo_type=repo_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 169, in url_to_repo
+    raise ex
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 158, in url_to_repo
+    return GITHUB.get_repo("/".join(url.split("/")[-2:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/MainClass.py", line 490, in get_repo
+    return github.Repository.Repository(self.__requester.withLazy(lazy), url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 570, in __init__
+    self.complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 615, in complete
+    self._completeIfNeeded()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 624, in _completeIfNeeded
+    self._complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 629, in _complete
+    headers, data = self._requester.requestJsonAndCheck(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 629, in requestJsonAndCheck
+    *self.requestJson(
+     ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1073, in requestJson
+    status, responseHeaders, output = self.__requestEncode(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1212, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1250, in __requestRaw
+    response = cnx.getresponse()
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 206, in getresponse
+    r = verb(
+        ^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x32217d610>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+[FAIL] Phase 2: v5 sample seed=1024 (continuing)
+
+------------------------------------------------------------
+  Phase 2: premise sample seed=42
+  out: experiments/overnight_20260501_205550/premise_sample_seed42
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/gen_ckpt_v6_premise
+  Policy type : premise_augmented
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 693, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 206, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x17067d2b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 7 more times]
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubRetry.py", line 208, in increment
+    return super().increment(method, url, response, error, _pool, _stacktrace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x17067d2b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 361, in <module>
+    main()
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 235, in main
+    repo = make_repo()
+           ^^^^^^^^^^^
+  File "/Users/weijiawang/dev/dojo_sandbox/env.py", line 31, in make_repo
+    return LeanGitRepo(url=REPO_URL, commit=COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 551, in __post_init__
+    repo = url_to_repo(self.url, repo_type=repo_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 169, in url_to_repo
+    raise ex
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 158, in url_to_repo
+    return GITHUB.get_repo("/".join(url.split("/")[-2:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/MainClass.py", line 490, in get_repo
+    return github.Repository.Repository(self.__requester.withLazy(lazy), url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 570, in __init__
+    self.complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 615, in complete
+    self._completeIfNeeded()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 624, in _completeIfNeeded
+    self._complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 629, in _complete
+    headers, data = self._requester.requestJsonAndCheck(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 629, in requestJsonAndCheck
+    *self.requestJson(
+     ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1073, in requestJson
+    status, responseHeaders, output = self.__requestEncode(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1212, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1250, in __requestRaw
+    response = cnx.getresponse()
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 206, in getresponse
+    r = verb(
+        ^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x17067d2b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+[FAIL] Phase 2: premise sample seed=42 (continuing)
+
+------------------------------------------------------------
+  Phase 2: premise sample seed=123
+  out: experiments/overnight_20260501_205550/premise_sample_seed123
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/gen_ckpt_v6_premise
+  Policy type : premise_augmented
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 693, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 206, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x31d3e15b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 7 more times]
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubRetry.py", line 208, in increment
+    return super().increment(method, url, response, error, _pool, _stacktrace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x31d3e15b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 361, in <module>
+    main()
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 235, in main
+    repo = make_repo()
+           ^^^^^^^^^^^
+  File "/Users/weijiawang/dev/dojo_sandbox/env.py", line 31, in make_repo
+    return LeanGitRepo(url=REPO_URL, commit=COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 551, in __post_init__
+    repo = url_to_repo(self.url, repo_type=repo_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 169, in url_to_repo
+    raise ex
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 158, in url_to_repo
+    return GITHUB.get_repo("/".join(url.split("/")[-2:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/MainClass.py", line 490, in get_repo
+    return github.Repository.Repository(self.__requester.withLazy(lazy), url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 570, in __init__
+    self.complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 615, in complete
+    self._completeIfNeeded()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 624, in _completeIfNeeded
+    self._complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 629, in _complete
+    headers, data = self._requester.requestJsonAndCheck(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 629, in requestJsonAndCheck
+    *self.requestJson(
+     ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1073, in requestJson
+    status, responseHeaders, output = self.__requestEncode(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1212, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1250, in __requestRaw
+    response = cnx.getresponse()
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 206, in getresponse
+    r = verb(
+        ^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x31d3e15b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+[FAIL] Phase 2: premise sample seed=123 (continuing)
+
+------------------------------------------------------------
+  Phase 2: premise sample seed=456
+  out: experiments/overnight_20260501_205550/premise_sample_seed456
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/gen_ckpt_v6_premise
+  Policy type : premise_augmented
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 693, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 206, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x16a57d400>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 7 more times]
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubRetry.py", line 208, in increment
+    return super().increment(method, url, response, error, _pool, _stacktrace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x16a57d400>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 361, in <module>
+    main()
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 235, in main
+    repo = make_repo()
+           ^^^^^^^^^^^
+  File "/Users/weijiawang/dev/dojo_sandbox/env.py", line 31, in make_repo
+    return LeanGitRepo(url=REPO_URL, commit=COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 551, in __post_init__
+    repo = url_to_repo(self.url, repo_type=repo_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 169, in url_to_repo
+    raise ex
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 158, in url_to_repo
+    return GITHUB.get_repo("/".join(url.split("/")[-2:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/MainClass.py", line 490, in get_repo
+    return github.Repository.Repository(self.__requester.withLazy(lazy), url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 570, in __init__
+    self.complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 615, in complete
+    self._completeIfNeeded()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 624, in _completeIfNeeded
+    self._complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 629, in _complete
+    headers, data = self._requester.requestJsonAndCheck(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 629, in requestJsonAndCheck
+    *self.requestJson(
+     ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1073, in requestJson
+    status, responseHeaders, output = self.__requestEncode(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1212, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1250, in __requestRaw
+    response = cnx.getresponse()
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 206, in getresponse
+    r = verb(
+        ^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x16a57d400>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+[FAIL] Phase 2: premise sample seed=456 (continuing)
+
+------------------------------------------------------------
+  Phase 2: premise sample seed=789
+  out: experiments/overnight_20260501_205550/premise_sample_seed789
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/gen_ckpt_v6_premise
+  Policy type : premise_augmented
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 693, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 206, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x32457d220>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 7 more times]
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubRetry.py", line 208, in increment
+    return super().increment(method, url, response, error, _pool, _stacktrace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x32457d220>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 361, in <module>
+    main()
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 235, in main
+    repo = make_repo()
+           ^^^^^^^^^^^
+  File "/Users/weijiawang/dev/dojo_sandbox/env.py", line 31, in make_repo
+    return LeanGitRepo(url=REPO_URL, commit=COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 551, in __post_init__
+    repo = url_to_repo(self.url, repo_type=repo_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 169, in url_to_repo
+    raise ex
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 158, in url_to_repo
+    return GITHUB.get_repo("/".join(url.split("/")[-2:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/MainClass.py", line 490, in get_repo
+    return github.Repository.Repository(self.__requester.withLazy(lazy), url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 570, in __init__
+    self.complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 615, in complete
+    self._completeIfNeeded()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 624, in _completeIfNeeded
+    self._complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 629, in _complete
+    headers, data = self._requester.requestJsonAndCheck(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 629, in requestJsonAndCheck
+    *self.requestJson(
+     ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1073, in requestJson
+    status, responseHeaders, output = self.__requestEncode(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1212, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1250, in __requestRaw
+    response = cnx.getresponse()
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 206, in getresponse
+    r = verb(
+        ^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x32457d220>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+[FAIL] Phase 2: premise sample seed=789 (continuing)
+
+------------------------------------------------------------
+  Phase 2: premise sample seed=1024
+  out: experiments/overnight_20260501_205550/premise_sample_seed1024
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/gen_ckpt_v6_premise
+  Policy type : premise_augmented
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 693, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 206, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x32d17d5e0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 7 more times]
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubRetry.py", line 208, in increment
+    return super().increment(method, url, response, error, _pool, _stacktrace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x32d17d5e0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 361, in <module>
+    main()
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 235, in main
+    repo = make_repo()
+           ^^^^^^^^^^^
+  File "/Users/weijiawang/dev/dojo_sandbox/env.py", line 31, in make_repo
+    return LeanGitRepo(url=REPO_URL, commit=COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 551, in __post_init__
+    repo = url_to_repo(self.url, repo_type=repo_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 169, in url_to_repo
+    raise ex
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 158, in url_to_repo
+    return GITHUB.get_repo("/".join(url.split("/")[-2:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/MainClass.py", line 490, in get_repo
+    return github.Repository.Repository(self.__requester.withLazy(lazy), url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 570, in __init__
+    self.complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 615, in complete
+    self._completeIfNeeded()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 624, in _completeIfNeeded
+    self._complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 629, in _complete
+    headers, data = self._requester.requestJsonAndCheck(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 629, in requestJsonAndCheck
+    *self.requestJson(
+     ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1073, in requestJson
+    status, responseHeaders, output = self.__requestEncode(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1212, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1250, in __requestRaw
+    response = cnx.getresponse()
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 206, in getresponse
+    r = verb(
+        ^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x32d17d5e0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+[FAIL] Phase 2: premise sample seed=1024 (continuing)
+
+------------------------------------------------------------
+  Phase 2: base sample seed=42
+  out: experiments/overnight_20260501_205550/base_sample_seed42
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/models/gen_v6
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 693, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 206, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x168e7d5e0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 7 more times]
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubRetry.py", line 208, in increment
+    return super().increment(method, url, response, error, _pool, _stacktrace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x168e7d5e0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 361, in <module>
+    main()
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 235, in main
+    repo = make_repo()
+           ^^^^^^^^^^^
+  File "/Users/weijiawang/dev/dojo_sandbox/env.py", line 31, in make_repo
+    return LeanGitRepo(url=REPO_URL, commit=COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 551, in __post_init__
+    repo = url_to_repo(self.url, repo_type=repo_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 169, in url_to_repo
+    raise ex
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 158, in url_to_repo
+    return GITHUB.get_repo("/".join(url.split("/")[-2:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/MainClass.py", line 490, in get_repo
+    return github.Repository.Repository(self.__requester.withLazy(lazy), url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 570, in __init__
+    self.complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 615, in complete
+    self._completeIfNeeded()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 624, in _completeIfNeeded
+    self._complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 629, in _complete
+    headers, data = self._requester.requestJsonAndCheck(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 629, in requestJsonAndCheck
+    *self.requestJson(
+     ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1073, in requestJson
+    status, responseHeaders, output = self.__requestEncode(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1212, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1250, in __requestRaw
+    response = cnx.getresponse()
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 206, in getresponse
+    r = verb(
+        ^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x168e7d5e0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+[FAIL] Phase 2: base sample seed=42 (continuing)
+
+------------------------------------------------------------
+  Phase 2: base sample seed=123
+  out: experiments/overnight_20260501_205550/base_sample_seed123
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/models/gen_v6
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 693, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 206, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x32987d3a0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 7 more times]
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubRetry.py", line 208, in increment
+    return super().increment(method, url, response, error, _pool, _stacktrace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x32987d3a0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 361, in <module>
+    main()
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 235, in main
+    repo = make_repo()
+           ^^^^^^^^^^^
+  File "/Users/weijiawang/dev/dojo_sandbox/env.py", line 31, in make_repo
+    return LeanGitRepo(url=REPO_URL, commit=COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 551, in __post_init__
+    repo = url_to_repo(self.url, repo_type=repo_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 169, in url_to_repo
+    raise ex
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 158, in url_to_repo
+    return GITHUB.get_repo("/".join(url.split("/")[-2:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/MainClass.py", line 490, in get_repo
+    return github.Repository.Repository(self.__requester.withLazy(lazy), url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 570, in __init__
+    self.complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 615, in complete
+    self._completeIfNeeded()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 624, in _completeIfNeeded
+    self._complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 629, in _complete
+    headers, data = self._requester.requestJsonAndCheck(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 629, in requestJsonAndCheck
+    *self.requestJson(
+     ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1073, in requestJson
+    status, responseHeaders, output = self.__requestEncode(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1212, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1250, in __requestRaw
+    response = cnx.getresponse()
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 206, in getresponse
+    r = verb(
+        ^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x32987d3a0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+[FAIL] Phase 2: base sample seed=123 (continuing)
+
+------------------------------------------------------------
+  Phase 2: base sample seed=456
+  out: experiments/overnight_20260501_205550/base_sample_seed456
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/models/gen_v6
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 693, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 206, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x17bf7d160>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 7 more times]
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubRetry.py", line 208, in increment
+    return super().increment(method, url, response, error, _pool, _stacktrace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x17bf7d160>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 361, in <module>
+    main()
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 235, in main
+    repo = make_repo()
+           ^^^^^^^^^^^
+  File "/Users/weijiawang/dev/dojo_sandbox/env.py", line 31, in make_repo
+    return LeanGitRepo(url=REPO_URL, commit=COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 551, in __post_init__
+    repo = url_to_repo(self.url, repo_type=repo_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 169, in url_to_repo
+    raise ex
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 158, in url_to_repo
+    return GITHUB.get_repo("/".join(url.split("/")[-2:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/MainClass.py", line 490, in get_repo
+    return github.Repository.Repository(self.__requester.withLazy(lazy), url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 570, in __init__
+    self.complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 615, in complete
+    self._completeIfNeeded()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 624, in _completeIfNeeded
+    self._complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 629, in _complete
+    headers, data = self._requester.requestJsonAndCheck(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 629, in requestJsonAndCheck
+    *self.requestJson(
+     ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1073, in requestJson
+    status, responseHeaders, output = self.__requestEncode(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1212, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1250, in __requestRaw
+    response = cnx.getresponse()
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 206, in getresponse
+    r = verb(
+        ^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x17bf7d160>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+[FAIL] Phase 2: base sample seed=456 (continuing)
+
+------------------------------------------------------------
+  Phase 2: base sample seed=789
+  out: experiments/overnight_20260501_205550/base_sample_seed789
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/models/gen_v6
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 693, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 206, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x168e7d2b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 7 more times]
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubRetry.py", line 208, in increment
+    return super().increment(method, url, response, error, _pool, _stacktrace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x168e7d2b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 361, in <module>
+    main()
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 235, in main
+    repo = make_repo()
+           ^^^^^^^^^^^
+  File "/Users/weijiawang/dev/dojo_sandbox/env.py", line 31, in make_repo
+    return LeanGitRepo(url=REPO_URL, commit=COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 551, in __post_init__
+    repo = url_to_repo(self.url, repo_type=repo_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 169, in url_to_repo
+    raise ex
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 158, in url_to_repo
+    return GITHUB.get_repo("/".join(url.split("/")[-2:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/MainClass.py", line 490, in get_repo
+    return github.Repository.Repository(self.__requester.withLazy(lazy), url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 570, in __init__
+    self.complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 615, in complete
+    self._completeIfNeeded()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 624, in _completeIfNeeded
+    self._complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 629, in _complete
+    headers, data = self._requester.requestJsonAndCheck(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 629, in requestJsonAndCheck
+    *self.requestJson(
+     ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1073, in requestJson
+    status, responseHeaders, output = self.__requestEncode(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1212, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1250, in __requestRaw
+    response = cnx.getresponse()
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 206, in getresponse
+    r = verb(
+        ^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x168e7d2b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+[FAIL] Phase 2: base sample seed=789 (continuing)
+
+------------------------------------------------------------
+  Phase 2: base sample seed=1024
+  out: experiments/overnight_20260501_205550/base_sample_seed1024
+------------------------------------------------------------
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : curriculum_all (31 theorems)
+  Checkpoint  : project/models/gen_v6
+  Policy type : generative
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 693, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connection.py", line 206, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x31307d2b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 7 more times]
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubRetry.py", line 208, in increment
+    return super().increment(method, url, response, error, _pool, _stacktrace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x31307d2b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 361, in <module>
+    main()
+  File "/Users/weijiawang/dev/dojo_sandbox/eval_rollout_all.py", line 235, in main
+    repo = make_repo()
+           ^^^^^^^^^^^
+  File "/Users/weijiawang/dev/dojo_sandbox/env.py", line 31, in make_repo
+    return LeanGitRepo(url=REPO_URL, commit=COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 551, in __post_init__
+    repo = url_to_repo(self.url, repo_type=repo_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 169, in url_to_repo
+    raise ex
+  File "/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py", line 158, in url_to_repo
+    return GITHUB.get_repo("/".join(url.split("/")[-2:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/MainClass.py", line 490, in get_repo
+    return github.Repository.Repository(self.__requester.withLazy(lazy), url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 570, in __init__
+    self.complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 615, in complete
+    self._completeIfNeeded()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 624, in _completeIfNeeded
+    self._complete()
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/GithubObject.py", line 629, in _complete
+    headers, data = self._requester.requestJsonAndCheck(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 629, in requestJsonAndCheck
+    *self.requestJson(
+     ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1073, in requestJson
+    status, responseHeaders, output = self.__requestEncode(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1212, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 1250, in __requestRaw
+    response = cnx.getresponse()
+               ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/github/Requester.py", line 206, in getresponse
+    r = verb(
+        ^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/leanprover-community/mathlib4 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x31307d2b0>: Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)"))
+[FAIL] Phase 2: base sample seed=1024 (continuing)
+
+------------------------------------------------------------
+  Phase 3: retriever quality probe
+------------------------------------------------------------
+[probe] 262 proven theorems in project/project_state.json
+[probe] 268 unique theorem names indexed from traces
+[probe] Wrote experiments/overnight_20260501_205550/retriever_probe.json
+
+================================================================
+  RETRIEVER QUALITY PROBE — SUMMARY
+================================================================
+  Total proved: 262
+  Evaluable (named premises + state available): 28
+  Skipped — no named premises in tactic:  222
+  Skipped — no first-state in traces:     12
+
+  Bucket                  N      R@1      R@5     R@10     R@15
+  -------------------- ---- -------- -------- -------- --------
+  Set.Basic              12   50.0%   83.3%   83.3%   83.3%
+  Nat.Defs                2   16.7%   50.0%   50.0%   50.0%
+  Finset.Basic           14    0.0%    0.0%    0.0%    0.0%
+  __OVERALL__            28   22.6%   39.3%   39.3%   39.3%
+================================================================
+[ok] retriever probe
+
+------------------------------------------------------------
+  Phase 4: summary
+------------------------------------------------------------
+[summarize] Wrote experiments/overnight_20260501_205550/SUMMARY.md
+
+# Overnight A+D — Summary
+
+Run directory: `experiments/overnight_20260501_205550`
+
+## Curriculum eval (curriculum_all, 30 theorems)
+
+Headline: deterministic beam-k=8 anchor + sampling variance (temp=0.8, top-p=0.95, k=8) over 5 seeds.
+
+| Checkpoint | Beam (anchor) | Sample mean ± std | Sample range | N seeds |
+|---|---|---|---|---|
+| gen_v5  (t5-small, baseline) | 25/30 | 18.5 ± 2.1 | 17 – 20 | 2 |
+| gen_v6_premise (t5-small + premise injection) | 19/30 | — | — | 0 |
+| gen_v6  (t5-base, never previously evaluated) | 22/30 | — | — | 0 |
+
+### Per-seed sample results
+
+| Checkpoint | seed 42 | seed 456 |
+|---|---|---|
+| gen_v5  (t5-small, baseline) | 17 | 20 |
+| gen_v6_premise (t5-small + premise injection) | — | — |
+| gen_v6  (t5-base, never previously evaluated) | — | — |
+
+## Reading the result
+
+- **Capacity scaling (t5-small → t5-base):** 25 → 22 (Δ = ↓ 3 theorems on the curriculum, beam).
+- **Premise injection at t5-small:** 25 → 19 (Δ = ↓ 6, beam). Reproducing the v5/v6_premise contrast.
+
+## Retriever quality probe (D)
+
+- Total proven theorems in `project_state.json`: **262**
+[ok] summary written
+
+============================================================
+  DONE  Fri May  1 21:09:37 CDT 2026
+  See: experiments/overnight_20260501_205550/SUMMARY.md
+============================================================

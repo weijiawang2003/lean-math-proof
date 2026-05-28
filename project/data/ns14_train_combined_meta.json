@@ -1,0 +1,50 @@
+{
+  "trace_files_scanned": 6,
+  "total_rows_pre_dedup": 61,
+  "total_rows_post_dedup": 30,
+  "unique_theorems": 24,
+  "per_run_rows_pre_dedup": {
+    "ns14_routed_raw_nat": 0,
+    "ns14_routed_raw_set_finset": 17,
+    "ns14_routed_wrapper_mixed_easy": 14,
+    "ns14_routed_wrapper_mixed_medium": 4,
+    "ns14_routed_wrapper_nat": 9,
+    "ns14_routed_wrapper_set_finset": 17
+  },
+  "namespace_distribution": {
+    "Set": 10,
+    "Finset": 8,
+    "Nat": 12
+  },
+  "origin_distribution": {
+    "raw_routed": 17,
+    "tactic_template": 4,
+    "generative_topk": 3,
+    "fallback_tactic": 6
+  },
+  "role_distribution": {
+    "close": 24,
+    "advance_assist": 6
+  },
+  "filters": {
+    "max_tactic_len": 200,
+    "max_state_len": 2500,
+    "k_assist_window": 3,
+    "allowed_origins": [
+      "fallback_tactic",
+      "family_tactic",
+      "generative_topk",
+      "priority_template",
+      "retrieved_premise",
+      "skeleton_emitted",
+      "tactic_template",
+      "term_builder"
+    ],
+    "dir_origin_fallback": {
+      "ns14_routed_wrapper": "wrapper_routed",
+      "ns14_routed_raw": "raw_routed",
+      "ns14_gen_v5_wrapper": "wrapper_gen_v5",
+      "ns14_gen_v5_raw": "raw_gen_v5"
+    }
+  }
+}

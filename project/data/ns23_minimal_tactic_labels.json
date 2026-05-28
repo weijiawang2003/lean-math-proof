@@ -1,0 +1,3172 @@
+{
+  "relabel_results": [
+    {
+      "full_name": "Finset.disjUnion_singleton",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "original_family": "aesop",
+      "wrapper_tactic": "aesop",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "aesop",
+      "minimal_family": "aesop",
+      "minimal_kind": "general",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Finset.cons_eq_insert",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "original_family": "aesop",
+      "wrapper_tactic": "aesop",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "aesop",
+      "minimal_family": "aesop",
+      "minimal_kind": "general",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Finset.coe_insert",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "original_family": "aesop",
+      "wrapper_tactic": "aesop",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "aesop",
+      "minimal_family": "aesop",
+      "minimal_kind": "general",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Finset.coe_cons",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "original_family": "aesop",
+      "wrapper_tactic": "aesop",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "aesop",
+      "minimal_family": "aesop",
+      "minimal_kind": "general",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Finset.card_insert_eq_ite",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "original_family": "aesop",
+      "wrapper_tactic": "aesop",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "aesop",
+      "minimal_family": "aesop",
+      "minimal_kind": "general",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Finset.image_id",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "original_family": "aesop",
+      "wrapper_tactic": "aesop",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "aesop",
+      "minimal_family": "aesop",
+      "minimal_kind": "general",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Nat.mul_mod_mod",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "original_family": "simp_all",
+      "wrapper_tactic": "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]",
+      "minimal_family": "wrapper_original",
+      "minimal_kind": "wrapper_original",
+      "wrapper_tactic_succeeds": true,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Nat.mod_mul_mod",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "original_family": "simp_all",
+      "wrapper_tactic": "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "simp_all [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_of_lt]",
+      "minimal_family": "wrapper_original",
+      "minimal_kind": "wrapper_original",
+      "wrapper_tactic_succeeds": true,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Nat.add_mod_of_add_mod_lt",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "original_family": "simp_all",
+      "wrapper_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "TacticState"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "minimal_family": "wrapper_original",
+      "minimal_kind": "wrapper_original",
+      "wrapper_tactic_succeeds": true,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.le_add_one_iff",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.le_iff_lt_or_eq",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.emod_two_eq_zero_or_one",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "wrapper_tactic": "omega",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.le_of_eq",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "wrapper_tactic": "omega",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.natAbs_coe_sub_coe_lt_of_lt",
+      "file_path": "Mathlib/Data/Int/Lemmas.lean",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "wrapper_tactic": "omega",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.le_or_lt",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "wrapper_tactic": "omega",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.natAbs_coe_sub_coe_le_of_le",
+      "file_path": "Mathlib/Data/Int/Lemmas.lean",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "wrapper_tactic": "omega",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.zero_le_ofNat",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "wrapper_tactic": "omega",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "TacticState"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "TacticState"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "constructor <;> omega",
+      "minimal_family": "constructor_omega",
+      "minimal_kind": "iff_arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.lt_or_lt_of_ne",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "wrapper_tactic": "omega",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "TacticState"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "TacticState"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.natAbs_add_of_nonpos",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "wrapper_tactic": "omega",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.lt_asymm",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "wrapper_tactic": "omega",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.le_natCast_sub",
+      "file_path": "Mathlib/Data/Int/Lemmas.lean",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "wrapper_tactic": "omega",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "TacticState"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "TacticState"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "TacticState"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.neg_emod_two",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "wrapper_tactic": "omega",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.lt_or_le",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "wrapper_tactic": "omega",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.natCast_pred_of_pos",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "fallback_omega",
+      "wrapper_tactic": "omega",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.le_sub_one_iff",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.sub_one_lt_iff",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.le_antisymm_iff",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "TacticState"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.le_iff_eq_or_lt",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.natCast_nonpos_iff",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.natCast_ne_zero_iff_pos",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "TacticState"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "TacticState"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "TacticState"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.lt_toNat",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": false,
+          "error_kind": "LeanError"
+        }
+      ],
+      "minimal_tactic": null,
+      "minimal_family": null,
+      "minimal_kind": null,
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    },
+    {
+      "full_name": "Int.natCast_eq_zero",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "original_family": "iff_omega_pair",
+      "wrapper_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "trivial",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "omega",
+          "family": "fallback_omega",
+          "kind": "arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "norm_num",
+          "family": "norm_num",
+          "kind": "arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "general",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "constructor <;> omega",
+          "family": "constructor_omega",
+          "kind": "iff_arith",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        },
+        {
+          "tactic": "constructor <;> simp_all",
+          "family": "constructor_simp_all",
+          "kind": "iff_simp",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "split_ifs <;> omega",
+          "family": "split_ifs_omega",
+          "kind": "conditional_arith",
+          "finished": false,
+          "error_kind": "LeanError"
+        },
+        {
+          "tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+          "family": "iff_omega_pair",
+          "kind": "iff_pair_omega",
+          "finished": true,
+          "error_kind": "ProofFinished"
+        }
+      ],
+      "minimal_tactic": "omega",
+      "minimal_family": "fallback_omega",
+      "minimal_kind": "arith",
+      "wrapper_tactic_succeeds": null,
+      "dojo_status": "ok",
+      "error": null
+    }
+  ]
+}

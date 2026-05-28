@@ -1,0 +1,129 @@
+{
+  "rows": [
+    {
+      "theorem": "Finset.card_insert_eq_ite",
+      "namespace": "Finset",
+      "theorem_set": "cx1_finset_image_filter",
+      "variant": "finset_aesop_only",
+      "raw_solved": false,
+      "wrap_solved": false,
+      "variant_solved": true,
+      "winning_tactic": "aesop",
+      "tactic_origin": "tactic_template",
+      "family": "aesop",
+      "shape": "eq",
+      "homogeneous_candidate": false,
+      "family_ns_unique_count": 2,
+      "trainable": false
+    },
+    {
+      "theorem": "Finset.image_id",
+      "namespace": "Finset",
+      "theorem_set": "cx1_finset_image_filter",
+      "variant": "finset_aesop_only",
+      "raw_solved": false,
+      "wrap_solved": false,
+      "variant_solved": true,
+      "winning_tactic": "aesop",
+      "tactic_origin": "tactic_template",
+      "family": "aesop",
+      "shape": "image",
+      "homogeneous_candidate": false,
+      "family_ns_unique_count": 2,
+      "trainable": false
+    },
+    {
+      "theorem": "Nat.add_mod_of_add_mod_lt",
+      "namespace": "Nat",
+      "theorem_set": "cx1_nat_gcd_dvd_mod",
+      "variant": "ns9_wrap",
+      "raw_solved": false,
+      "wrap_solved": true,
+      "variant_solved": true,
+      "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "tactic_origin": "family_tactic",
+      "family": "simp_all",
+      "shape": "lt",
+      "homogeneous_candidate": false,
+      "family_ns_unique_count": 1,
+      "trainable": false
+    },
+    {
+      "theorem": "Int.emod_two_eq_zero_or_one",
+      "namespace": "Int",
+      "theorem_set": "cx1_bool_option_int",
+      "variant": "ns9_wrap",
+      "raw_solved": false,
+      "wrap_solved": true,
+      "variant_solved": true,
+      "winning_tactic": "omega",
+      "tactic_origin": "family_tactic",
+      "family": "fallback_omega",
+      "shape": "eq",
+      "homogeneous_candidate": false,
+      "family_ns_unique_count": 1,
+      "trainable": false
+    },
+    {
+      "theorem": "Int.le_add_one_iff",
+      "namespace": "Int",
+      "theorem_set": "cx1_bool_option_int",
+      "variant": "ns9_wrap",
+      "raw_solved": false,
+      "wrap_solved": true,
+      "variant_solved": true,
+      "winning_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "tactic_origin": "tactic_template",
+      "family": "iff_omega_pair",
+      "shape": "iff",
+      "homogeneous_candidate": false,
+      "family_ns_unique_count": 2,
+      "trainable": false
+    },
+    {
+      "theorem": "Int.le_iff_lt_or_eq",
+      "namespace": "Int",
+      "theorem_set": "cx1_bool_option_int",
+      "variant": "ns9_wrap",
+      "raw_solved": false,
+      "wrap_solved": true,
+      "variant_solved": true,
+      "winning_tactic": "exact \u27e8fun h => by omega, fun h => by omega\u27e9",
+      "tactic_origin": "tactic_template",
+      "family": "iff_omega_pair",
+      "shape": "iff",
+      "homogeneous_candidate": false,
+      "family_ns_unique_count": 2,
+      "trainable": false
+    }
+  ],
+  "row_count": 6,
+  "unique_theorems": 6,
+  "family_ns_breakdown": {
+    "aesop|Finset": 2,
+    "simp_all|Nat": 1,
+    "fallback_omega|Int": 1,
+    "iff_omega_pair|Int": 2
+  },
+  "raw_paths": {
+    "cx1_finset_image_filter": "project/evolve/eval_runs/cx1_raw_cx1_finset_image_filter/eval-91b1679c/metrics.json",
+    "cx1_nat_gcd_dvd_mod": "project/evolve/eval_runs/cx1_raw_cx1_nat_gcd_dvd_mod/eval-d7994d37/metrics.json",
+    "cx1_list_multiset": "project/evolve/eval_runs/cx1_raw_cx1_list_multiset/eval-845ff1b1/metrics.json",
+    "cx1_bool_option_int": "project/evolve/eval_runs/cx1_raw_cx1_bool_option_int/eval-772fec2e/metrics.json",
+    "cx1_mixed_easy": null,
+    "cx1_mixed_medium": null
+  },
+  "wrap_paths": {
+    "cx1_finset_image_filter": "project/evolve/eval_runs/cx1_ns9wrap_cx1_finset_image_filter/eval-45fd4890/metrics.json",
+    "cx1_nat_gcd_dvd_mod": "project/evolve/eval_runs/cx1_ns9wrap_cx1_nat_gcd_dvd_mod/eval-4b52ba9c/metrics.json",
+    "cx1_list_multiset": "project/evolve/eval_runs/cx1_ns9wrap_cx1_list_multiset/eval-0d706751/metrics.json",
+    "cx1_bool_option_int": "project/evolve/eval_runs/cx1_ns9wrap_cx1_bool_option_int/eval-3d617a82/metrics.json",
+    "cx1_mixed_easy": null,
+    "cx1_mixed_medium": null
+  },
+  "variant_paths": {
+    "finset_aesop_only|cx1_finset_image_filter": "project/evolve/eval_runs/cx1_finset_aesop_only_wrapper_cx1_finset_image_filter/eval-efff074c/metrics.json",
+    "finset_aesop_only|cx1_mixed_easy": null,
+    "finset_aesop_only|cx1_mixed_medium": null
+  }
+}

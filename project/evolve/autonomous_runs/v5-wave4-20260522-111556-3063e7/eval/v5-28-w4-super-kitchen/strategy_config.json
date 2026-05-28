@@ -1,0 +1,93 @@
+{
+  "fallback_tactics": [
+    "simp [Nat.add_comm, Nat.add_assoc, Nat.left_comm]",
+    "simp_all",
+    "simp",
+    "omega",
+    "ac_rfl",
+    "simp [Nat.mul_comm, Nat.mul_assoc, Nat.left_comm]",
+    "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+    "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+    "rw [Nat.add_comm]",
+    "simp_arith",
+    "simp [Nat.add_mod, Nat.mod_eq_of_lt] at *",
+    "simp [Nat.add_comm, Nat.add_assoc, Nat.left_comm, Nat.add_mod, Nat.mod_eq_of_lt]"
+  ],
+  "tactic_templates": [
+    "induction {var} with | zero => simp | succ n ih => simp [ih]",
+    "cases {var} <;> simp",
+    "by_cases h : {var} = 0 <;> simp [h] <;> omega"
+  ],
+  "max_extra_tactics_per_state": 10,
+  "theorem_family_tactics": {
+    "AM_GM": [
+      "omega",
+      "simp",
+      "simp_all"
+    ],
+    "div": [
+      "omega",
+      "simp",
+      "simp_all",
+      "constructor <;> intro h_split <;> omega",
+      "constructor <;> intro h_split <;> simp_all",
+      "constructor <;> intro h_split <;> simp_all <;> omega"
+    ],
+    "mod": [
+      "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "omega"
+    ]
+  },
+  "family_budgets": {
+    "AM_GM": 8,
+    "div": 8,
+    "mod": 12
+  },
+  "theorem_tactic_denylist": {
+    "Nat.add_mod_eq_ite": [
+      "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]"
+    ]
+  },
+  "retrieval_enabled": true,
+  "retrieval_top_k": 8,
+  "retrieval_tactic_forms": [
+    "rw",
+    "simp",
+    "apply"
+  ],
+  "retrieval_filter_self": true,
+  "retrieval_filter_unavailable": true,
+  "retrieval_skip_bloating_apply": true,
+  "retrieval_shape_filter": true,
+  "term_builder_templates": {},
+  "term_builder_budget": 0,
+  "priority_templates": {
+    "iff": [
+      "rw [Nat.div_lt_iff_lt_mul {hyp_pos}, Nat.one_mul]",
+      "rw [Nat.div_lt_iff_lt_mul {hyp_pos}, Nat.mul_one]",
+      "rw [Nat.div_lt_iff_lt_mul' {hyp_pos}, Nat.mul_one]",
+      "rw [Nat.div_lt_iff_lt_mul' {hyp_pos}, Nat.one_mul]",
+      "exact ⟨fun h => Nat.eq_of_mul_eq_mul_left (Nat.pos_of_ne_zero {hyp_ne_zero}) (h.trans (Nat.mul_one _).symm), fun h => by simp [h]⟩",
+      "exact ⟨fun h => Nat.eq_of_mul_eq_mul_right (Nat.pos_of_ne_zero {hyp_ne_zero}) (h.trans (Nat.one_mul _).symm), fun h => by simp [h]⟩",
+      "rw [Nat.pos_iff_ne_zero, Nat.div_ne_zero_iff {hyp_ne_zero}]",
+      "exact ⟨fun h => by omega, fun h => by omega⟩",
+      "exact ⟨fun h => by simp_all, fun h => by simp_all⟩",
+      "constructor <;> intro h_split <;> simp_all"
+    ],
+    "lt": [
+      "exact (Nat.one_le_div_iff {hyp_pos}).mpr {hyp_le}",
+      "exact Nat.one_le_div_iff_le.mpr {hyp_le}",
+      "rw [Nat.div_lt_iff_lt_mul {hyp_pos}, Nat.one_mul]"
+    ],
+    "dvd": [
+      "exact ⟨_, by simp_all⟩",
+      "exact ⟨_, rfl⟩"
+    ],
+    "any": [
+      "split_ifs <;> omega",
+      "split_ifs <;> simp_all"
+    ]
+  },
+  "priority_template_budget": 16
+}
