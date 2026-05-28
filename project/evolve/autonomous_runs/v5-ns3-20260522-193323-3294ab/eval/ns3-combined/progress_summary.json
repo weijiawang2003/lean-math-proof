@@ -1,0 +1,49 @@
+[
+  {
+    "theorem": "Nat.add_mod_eq_ite",
+    "num_steps": 8,
+    "advancing_tactics": [
+      {
+        "tactic": "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+        "origin": "family_tactic",
+        "step": 1
+      },
+      {
+        "tactic": "simp [Nat.add_zero]",
+        "origin": "generative_topk",
+        "step": 2
+      },
+      {
+        "tactic": "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+        "origin": "family_tactic",
+        "step": 3
+      },
+      {
+        "tactic": "simp [Nat.add_zero]",
+        "origin": "generative_topk",
+        "step": 4
+      },
+      {
+        "tactic": "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+        "origin": "family_tactic",
+        "step": 5
+      },
+      {
+        "tactic": "simp [Nat.add_zero]",
+        "origin": "generative_topk",
+        "step": 6
+      },
+      {
+        "tactic": "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+        "origin": "family_tactic",
+        "step": 7
+      },
+      {
+        "tactic": "simp [Nat.add_zero]",
+        "origin": "generative_topk",
+        "step": 8
+      }
+    ],
+    "any_template_advanced": false
+  }
+]

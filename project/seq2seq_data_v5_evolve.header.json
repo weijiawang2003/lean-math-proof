@@ -1,0 +1,53 @@
+{
+  "v": 5,
+  "out_path": "project/seq2seq_data_v5_evolve.jsonl",
+  "md5": "268864e8ce50e04e129bf13881690197",
+  "n_pairs": 157,
+  "n_unique_theorems": 29,
+  "n_runs_seen": 1,
+  "runs_seen": [
+    "eval"
+  ],
+  "held_out": [
+    "Nat.add_mod_eq_add_mod_left",
+    "Nat.div_lt_iff_lt_mul'",
+    "Nat.div_lt_one_iff",
+    "Nat.mod_two_ne_zero",
+    "Nat.mul_eq_left",
+    "Nat.mul_eq_right",
+    "Nat.succ_succ_ne_one"
+  ],
+  "origin_counts": {
+    "term_builder": 31,
+    "family_tactic": 6,
+    "generative_topk": 20,
+    "fallback_tactic": 64,
+    "tactic_template": 36
+  },
+  "top_theorem_counts": {
+    "Nat.pow_lt_pow_iff_left": 18,
+    "Nat.dvd_iff_div_mul_eq": 9,
+    "Nat.add_pos_iff_pos_or_pos": 8,
+    "Nat.sqrt_lt": 8,
+    "Nat.sub_lt_iff_lt_add": 7,
+    "Nat.div_pos_iff": 7,
+    "Nat.add_eq_left": 6,
+    "Nat.add_eq_max_iff": 6,
+    "Nat.add_eq_min_iff": 6,
+    "Nat.add_eq_one_iff": 6
+  },
+  "filters": {
+    "max_tactic_len": 200,
+    "max_state_len": 2500,
+    "allowed_origins": [
+      "fallback_tactic",
+      "family_tactic",
+      "generative_topk",
+      "tactic_template",
+      "term_builder"
+    ],
+    "rejects_self_reference": true,
+    "rejects_held_out": true,
+    "dedup_by_state_tactic": true
+  }
+}

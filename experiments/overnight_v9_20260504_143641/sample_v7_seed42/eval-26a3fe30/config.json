@@ -1,0 +1,12 @@
+{
+  "method": "policy_rollout_topk",
+  "policy_type": "generative",
+  "theorem_set": "curriculum_all",
+  "ckpt_dir": "project/models/gen_v7_base_on_v5data",
+  "max_steps": 8,
+  "top_k": 8,
+  "num_theorems": 31,
+  "decode_mode": "sample",
+  "temperature": 0.8,
+  "seed": 42
+}

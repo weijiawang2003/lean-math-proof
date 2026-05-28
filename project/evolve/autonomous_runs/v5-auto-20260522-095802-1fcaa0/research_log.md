@@ -1,0 +1,91 @@
+# v5 autonomous research run — v5-auto-20260522-095802-1fcaa0
+
+- start: 2026-05-22T09:58:02.333958+00:00
+- theorem set: nat_defs_medium
+- min hours: 5.0  max hours: 7.0
+- ckpt: project/models/gen_v5
+- variants queued: 12
+
+
+## cycle 1 — v5-00-baseline-repro  [baseline]
+- Reproduce the v4.7 constructor 26/38 seed
+- elapsed: 0.00h  remaining: 7.00h
+- (set as baseline reference for diff)
+- proved: 26 (Δ +0)  progress: 5  errored: 7
+- origins: {'fallback_tactic': 18, 'family_tactic': 4, 'generative_topk': 4}
+
+## cycle 2 — v5-01-div-hyp-pos  [B]
+- Restore v45 {hyp_pos} div templates
+- elapsed: 0.07h  remaining: 6.93h
+- proved: 26 (Δ +0)  progress: 6  errored: 6
+- origins: {'fallback_tactic': 18, 'family_tactic': 5, 'generative_topk': 3}
+
+## cycle 3 — v5-02-mul-family  [B]
+- Add mul family with cancellation lemmas
+- elapsed: 0.14h  remaining: 6.86h
+- proved: 26 (Δ +0)  progress: 5  errored: 7
+- origins: {'fallback_tactic': 18, 'family_tactic': 4, 'generative_topk': 4}
+
+## cycle 4 — v5-03-split-ifs  [B]
+- Add split_ifs fallbacks
+- elapsed: 0.21h  remaining: 6.79h
+- proved: 26 (Δ +0)  progress: 5  errored: 7
+- origins: {'fallback_tactic': 18, 'family_tactic': 4, 'generative_topk': 4}
+
+## cycle 5 — v5-04-term-iff-basic  [A]
+- term_builder origin with basic iff skeletons
+- elapsed: 0.28h  remaining: 6.72h
+- proved: 26 (Δ +0)  progress: 5  errored: 7
+- origins: {'term_builder': 14, 'family_tactic': 4, 'generative_topk': 4, 'fallback_tactic': 4}
+- term_builder: 122 attempts / 16 advanced / 14 proved
+
+## cycle 6 — v5-05-term-iff-adv  [A]
+- term_builder iff with subst / simp [h] inner tactics
+- elapsed: 0.35h  remaining: 6.65h
+- proved: 26 (Δ +0)  progress: 5  errored: 7
+- origins: {'term_builder': 14, 'family_tactic': 4, 'generative_topk': 4, 'fallback_tactic': 4}
+- term_builder: 138 attempts / 16 advanced / 14 proved
+
+## cycle 7 — v5-06-term-iff-hyp  [A]
+- term_builder iff with hypothesis-aware rewrites
+- elapsed: 0.42h  remaining: 6.58h
+- proved: 26 (Δ +0)  progress: 5  errored: 7
+- origins: {'term_builder': 14, 'family_tactic': 4, 'generative_topk': 4, 'fallback_tactic': 4}
+- term_builder: 54 attempts / 14 advanced / 14 proved
+
+## cycle 8 — v5-07-term-dvd  [A]
+- term_builder dvd-shape iff handling
+- elapsed: 0.49h  remaining: 6.51h
+- proved: 26 (Δ +0)  progress: 5  errored: 7
+- origins: {'generative_topk': 9, 'fallback_tactic': 13, 'family_tactic': 4}
+- term_builder: 57 attempts / 19 advanced / 0 proved
+
+## cycle 9 — v5-08-pow-sqrt  [B]
+- pow_lt and sqrt families
+- elapsed: 0.57h  remaining: 6.43h
+- proved: 26 (Δ +0)  progress: 3  errored: 9
+- origins: {'fallback_tactic': 18, 'family_tactic': 4, 'generative_topk': 4}
+
+## cycle 10 — v5-09-skeleton-mut  [C]
+- Direction C — skeleton mutation around term_builder basic
+- elapsed: 0.64h  remaining: 6.36h
+- proved: 26 (Δ +0)  progress: 5  errored: 7
+- origins: {'term_builder': 14, 'family_tactic': 4, 'generative_topk': 4, 'fallback_tactic': 4}
+- term_builder: 102 attempts / 16 advanced / 14 proved
+
+## cycle 11 — v5-10-combo-minimal  [B]
+- Combo: hyp_pos div + mul + split_ifs + term_iff_basic
+- elapsed: 0.71h  remaining: 6.29h
+- proved: 26 (Δ +0)  progress: 6  errored: 6
+- origins: {'term_builder': 14, 'family_tactic': 5, 'fallback_tactic': 4, 'generative_topk': 3}
+- term_builder: 122 attempts / 14 advanced / 14 proved
+
+## cycle 12 — v5-11-combo-aggressive  [B]
+- Aggressive combo: combo-minimal + term_iff_advanced + pow_sqrt
+- elapsed: 0.79h  remaining: 6.21h
+- proved: 26 (Δ +0)  progress: 4  errored: 8
+- origins: {'term_builder': 14, 'family_tactic': 5, 'fallback_tactic': 4, 'generative_topk': 3}
+- term_builder: 47 attempts / 14 advanced / 14 proved
+
+## run complete — 0.86h, 12 cycles
+- best: v5-01-div-hyp-pos  proved=26 (Δ +0)

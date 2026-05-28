@@ -1,0 +1,275 @@
+{
+  "Set->automation": {
+    "source": "Set",
+    "target": "automation",
+    "tactics": [
+      "aesop",
+      "tauto"
+    ],
+    "success_count": 54,
+    "attempt_count": 54,
+    "success_rate": 1.0,
+    "is_cross_field": false,
+    "example_theorems": [
+      "Set.union_comm",
+      "Set.inter_comm",
+      "Set.mem_union",
+      "Set.mem_inter_iff",
+      "Set.union_assoc",
+      "Set.inter_assoc",
+      "Set.subset_union_left",
+      "Set.subset_union_right",
+      "Set.inter_subset_left",
+      "Set.union_inter_distrib_left"
+    ]
+  },
+  "Set->logic": {
+    "source": "Set",
+    "target": "logic",
+    "tactics": [
+      "simp [Set.subset_def]",
+      "simp [Set.ext_iff]"
+    ],
+    "success_count": 15,
+    "attempt_count": 15,
+    "success_rate": 1.0,
+    "is_cross_field": true,
+    "example_theorems": [
+      "Set.subset_univ",
+      "Set.empty_subset",
+      "Set.union_empty",
+      "Set.empty_union",
+      "Set.inter_univ",
+      "Set.union_self",
+      "Set.inter_self",
+      "Set.inter_empty",
+      "Set.inter_subset_right",
+      "Set.not_subset"
+    ]
+  },
+  "Set->membership": {
+    "source": "Set",
+    "target": "membership",
+    "tactics": [
+      "simp [Set.mem_union]"
+    ],
+    "success_count": 2,
+    "attempt_count": 2,
+    "success_rate": 1.0,
+    "is_cross_field": true,
+    "example_theorems": [
+      "Set.univ_inter",
+      "Set.exists_mem_insert"
+    ]
+  },
+  "Set->Set": {
+    "source": "Set",
+    "target": "Set",
+    "tactics": [
+      "simp [Set.ite]"
+    ],
+    "success_count": 6,
+    "attempt_count": 6,
+    "success_rate": 1.0,
+    "is_cross_field": false,
+    "example_theorems": [
+      "Set.ite_univ",
+      "Set.ite_left",
+      "Set.ite_right",
+      "Set.ite_empty",
+      "Set.ite_empty_left",
+      "Set.ite_empty_right"
+    ]
+  },
+  "Nat->arithmetic": {
+    "source": "Nat",
+    "target": "arithmetic",
+    "tactics": [
+      "simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]",
+      "simp_arith",
+      "omega"
+    ],
+    "success_count": 47,
+    "attempt_count": 101,
+    "success_rate": 0.46534653465346537,
+    "is_cross_field": true,
+    "example_theorems": [
+      "Nat.mul_add_mod'",
+      "Nat.lt_iff_add_one_le",
+      "Nat.lt_one_add_iff",
+      "Nat.one_add_le_iff",
+      "Nat.le_one_iff_eq_zero_or_eq_one",
+      "Nat.lt_one_iff",
+      "Nat.min_eq_zero_iff",
+      "Nat.max_eq_zero_iff",
+      "Nat.pred_one_add",
+      "Nat.pred_eq_self_iff"
+    ]
+  },
+  "Set->arithmetic": {
+    "source": "Set",
+    "target": "arithmetic",
+    "tactics": [
+      "simp [Nat.mul_one]"
+    ],
+    "success_count": 1,
+    "attempt_count": 1,
+    "success_rate": 1.0,
+    "is_cross_field": true,
+    "example_theorems": [
+      "Set.union_univ"
+    ]
+  },
+  "Finset->automation": {
+    "source": "Finset",
+    "target": "automation",
+    "tactics": [
+      "aesop",
+      "tauto",
+      "simp [*]",
+      "simp_all"
+    ],
+    "success_count": 118,
+    "attempt_count": 179,
+    "success_rate": 0.659217877094972,
+    "is_cross_field": false,
+    "example_theorems": [
+      "Finset.forall_mem_not_eq",
+      "Finset.forall_mem_not_eq'",
+      "Finset.coe_ssubset",
+      "Finset.not_mem_empty",
+      "Finset.coe_empty",
+      "Finset.isEmpty_coe_sort",
+      "Finset.disjoint_singleton",
+      "Finset.coe_disjUnion",
+      "Finset.disjUnion_singleton",
+      "Finset.insert_val_of_not_mem"
+    ]
+  },
+  "Finset->Set": {
+    "source": "Finset",
+    "target": "Set",
+    "tactics": [
+      "simp [Set.union_self]",
+      "simp [Set.univ_union]",
+      "simp [Set.inter_empty]",
+      "simp [Set.diff_empty]",
+      "simp [Set.union_univ]"
+    ],
+    "success_count": 12,
+    "attempt_count": 12,
+    "success_rate": 1.0,
+    "is_cross_field": true,
+    "example_theorems": [
+      "Finset.singleton_subset_set_iff",
+      "Finset.singleton_subset_singleton",
+      "Finset.not_nontrivial_empty",
+      "Finset.not_nontrivial_singleton",
+      "Finset.forall_mem_cons",
+      "Finset.mem_insert_coe",
+      "Finset.not_mem_union",
+      "Finset.insert_union_distrib",
+      "Finset.insert_union_comm",
+      "Finset.exists_mem_empty_iff"
+    ]
+  },
+  "Finset->membership": {
+    "source": "Finset",
+    "target": "membership",
+    "tactics": [
+      "simp [Set.mem_diff]"
+    ],
+    "success_count": 2,
+    "attempt_count": 63,
+    "success_rate": 0.031746031746031744,
+    "is_cross_field": true,
+    "example_theorems": [
+      "Finset.insert_idem",
+      "Finset.erase_idem"
+    ]
+  },
+  "Finset->other": {
+    "source": "Finset",
+    "target": "other",
+    "tactics": [
+      "congr 1"
+    ],
+    "success_count": 1,
+    "attempt_count": 1,
+    "success_rate": 1.0,
+    "is_cross_field": true,
+    "example_theorems": [
+      "coe_notMemRangeEquiv_symm"
+    ]
+  },
+  "Nat->List": {
+    "source": "Nat",
+    "target": "List",
+    "tactics": [
+      "simp [List.map]"
+    ],
+    "success_count": 1,
+    "attempt_count": 1,
+    "success_rate": 1.0,
+    "is_cross_field": true,
+    "example_theorems": [
+      "Nat.succ_succ_ne_one"
+    ]
+  },
+  "Nat->automation": {
+    "source": "Nat",
+    "target": "automation",
+    "tactics": [
+      "simp [*]"
+    ],
+    "success_count": 3,
+    "attempt_count": 57,
+    "success_rate": 0.05263157894736842,
+    "is_cross_field": false,
+    "example_theorems": [
+      "Nat.pred_eq_of_eq_succ",
+      "Nat.sub_eq_of_eq_add'",
+      "Nat.one_lt_two_pow'"
+    ]
+  },
+  "Finset->logic": {
+    "source": "Finset",
+    "target": "logic",
+    "tactics": [],
+    "success_count": 0,
+    "attempt_count": 61,
+    "success_rate": 0.0,
+    "is_cross_field": true,
+    "example_theorems": []
+  },
+  "Finset->arithmetic": {
+    "source": "Finset",
+    "target": "arithmetic",
+    "tactics": [],
+    "success_count": 0,
+    "attempt_count": 61,
+    "success_rate": 0.0,
+    "is_cross_field": true,
+    "example_theorems": []
+  },
+  "Nat->logic": {
+    "source": "Nat",
+    "target": "logic",
+    "tactics": [],
+    "success_count": 0,
+    "attempt_count": 54,
+    "success_rate": 0.0,
+    "is_cross_field": true,
+    "example_theorems": []
+  },
+  "Nat->membership": {
+    "source": "Nat",
+    "target": "membership",
+    "tactics": [],
+    "success_count": 0,
+    "attempt_count": 54,
+    "success_rate": 0.0,
+    "is_cross_field": true,
+    "example_theorems": []
+  }
+}

@@ -1,0 +1,299 @@
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : nat_defs_large_v5 (65 theorems)
+  Checkpoint  : project/models/gen_v5
+  Policy type : hybrid_evolved
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+[1/65] Nat.add_eq_left
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 47604.73it/s]
+Loaded generative policy from project/models/gen_v5 (type=seq2seq)
+  Base model: t5-small
+  Unique tactics in training: 93
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[2/65] Nat.add_eq_max_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[3/65] Nat.add_eq_min_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[4/65] Nat.add_eq_one_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[5/65] Nat.add_eq_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[6/65] Nat.add_mod_eq_add_mod_left
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[7/65] Nat.add_mod_eq_add_mod_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[8/65] Nat.div_le_div_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[9/65] Nat.div_lt_iff_lt_mul'
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[10/65] Nat.div_lt_one_iff
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[11/65] Nat.half_le_of_sub_le_half
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[12/65] Nat.le_and_le_add_one_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[13/65] Nat.AM_GM
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[14/65] Nat.le_or_le_of_add_eq_add_pred
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[15/65] Nat.add_mod_eq_ite
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[16/65] Nat.add_eq_zero
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[17/65] Nat.add_pos_iff_pos_or_pos
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[18/65] Nat.mul_eq_left
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[19/65] Nat.mul_eq_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[20/65] Nat.lt_iff_add_one_le
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp_arith
+
+[21/65] Nat.lt_one_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[22/65] Nat.le_one_iff_eq_zero_or_eq_one
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[23/65] Nat.le_add_one_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[24/65] Nat.one_add_le_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[25/65] Nat.eq_one_of_mul_eq_one_left
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[26/65] Nat.eq_zero_of_double_le
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[27/65] Nat.sub_lt_iff_lt_add
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[28/65] Nat.sub_lt_iff_lt_add'
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[29/65] Nat.mod_two_ne_one
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[30/65] Nat.mod_two_ne_zero
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[31/65] Nat.div_pos
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[32/65] Nat.div_pos_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[33/65] Nat.succ_succ_ne_one
+       PROVED in 1 step(s)
+       Proof: simp [Nat.mul_zero]
+
+[34/65] Nat.pred_eq_of_eq_succ
+       PROVED in 1 step(s)
+       Proof: simp_all
+
+[35/65] Nat.sqrt_lt
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[36/65] Nat.pow_lt_pow_iff_left
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[37/65] Nat.dvd_iff_div_mul_eq
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[38/65] Nat.two_mul_ne_two_mul_add_one
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[39/65] Nat.add_eq_two_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[40/65] Nat.add_eq_three_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[41/65] Nat.div_ne_zero_iff
+       FAILED at step 3 (All top-8 tactics errored at step 3)
+
+[42/65] Nat.dvd_right_iff_eq
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[43/65] Nat.dvd_left_iff_eq
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[44/65] Nat.eq_div_of_mul_eq_left
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[45/65] Nat.eq_mul_of_div_eq_left
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[46/65] Nat.find_eq_zero
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[47/65] Nat.forall_lt_succ
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[48/65] Nat.le_add_pred_of_pos
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[49/65] Nat.le_of_mul_le_mul_right
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[50/65] Nat.lt_one_add_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[51/65] Nat.max_eq_zero_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[52/65] Nat.min_eq_zero_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[53/65] Nat.mod_mul_mod
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[54/65] Nat.mod_eq_iff_lt
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[55/65] Nat.one_le_div_iff
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[56/65] Nat.one_le_pow
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[57/65] Nat.pow_le_pow_iff_left
+       SKIP  (unavailable: Cannot interact with theorems with the `where` keyword.)
+
+[58/65] Nat.pred_eq_self_iff
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[59/65] Nat.pred_one_add
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[60/65] Nat.self_add_sub_one
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[61/65] Nat.sqrt_lt'
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[62/65] Nat.sub_eq_of_eq_add'
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp_all
+
+[63/65] Nat.succ_add_sub_one
+       FAILED at step 2 (All top-8 tactics errored at step 2)
+
+[64/65] Nat.two_pow_succ
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+[65/65] Nat.zero_eq_mul
+       FAILED at step 1 (All top-8 tactics errored at step 1)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Nat.add_eq_left                          ERROR        1      
+  Nat.add_eq_max_iff                       ERROR        1      
+  Nat.add_eq_min_iff                       ERROR        1      
+  Nat.add_eq_one_iff                       ERROR        1      
+  Nat.add_eq_right                         ERROR        1      
+  Nat.add_mod_eq_add_mod_left              ERROR        1      
+  Nat.add_mod_eq_add_mod_right             ERROR        1      
+  Nat.div_le_div_right                     ERROR        1      
+  Nat.div_lt_iff_lt_mul'                   ERROR        1      
+  Nat.div_lt_one_iff                       ERROR        2      
+  Nat.half_le_of_sub_le_half               ERROR        2      
+  Nat.le_and_le_add_one_iff                ERROR        1      
+  Nat.AM_GM                                ERROR        1      
+  Nat.le_or_le_of_add_eq_add_pred          ERROR        1      
+  Nat.add_mod_eq_ite                       ERROR        1      
+  Nat.add_eq_zero                          ERROR        1      
+  Nat.add_pos_iff_pos_or_pos               ERROR        2      
+  Nat.mul_eq_left                          ERROR        1      
+  Nat.mul_eq_right                         ERROR        1      
+  Nat.lt_iff_add_one_le                    PROVED       1      simp_arith
+  Nat.lt_one_iff                           ERROR        1      
+  Nat.le_one_iff_eq_zero_or_eq_one         ERROR        1      
+  Nat.le_add_one_iff                       ERROR        1      
+  Nat.one_add_le_iff                       ERROR        1      
+  Nat.eq_one_of_mul_eq_one_left            ERROR        1      
+  Nat.eq_zero_of_double_le                 ERROR        1      
+  Nat.sub_lt_iff_lt_add                    ERROR        1      
+  Nat.sub_lt_iff_lt_add'                   ERROR        1      
+  Nat.mod_two_ne_one                       ERROR        1      
+  Nat.mod_two_ne_zero                      ERROR        1      
+  Nat.div_pos                              ERROR        1      
+  Nat.div_pos_iff                          ERROR        1      
+  Nat.succ_succ_ne_one                     PROVED       1      simp [Nat.mul_zero]
+  Nat.pred_eq_of_eq_succ                   PROVED       1      simp_all
+  Nat.sqrt_lt                              ERROR        1      
+  Nat.pow_lt_pow_iff_left                  ERROR        2      
+  Nat.dvd_iff_div_mul_eq                   ERROR        1      
+  Nat.two_mul_ne_two_mul_add_one           ERROR        2      
+  Nat.add_eq_two_iff                       ERROR        1      
+  Nat.add_eq_three_iff                     ERROR        1      
+  Nat.div_ne_zero_iff                      ERROR        3      
+  Nat.dvd_right_iff_eq                     ERROR        1      
+  Nat.dvd_left_iff_eq                      ERROR        1      
+  Nat.eq_div_of_mul_eq_left                ERROR        2      
+  Nat.eq_mul_of_div_eq_left                ERROR        1      
+  Nat.find_eq_zero                         ERROR        1      
+  Nat.forall_lt_succ                       ERROR        1      
+  Nat.le_add_pred_of_pos                   ERROR        2      
+  Nat.le_of_mul_le_mul_right               ERROR        1      
+  Nat.lt_one_add_iff                       ERROR        1      
+  Nat.max_eq_zero_iff                      ERROR        1      
+  Nat.min_eq_zero_iff                      ERROR        1      
+  Nat.mod_mul_mod                          ERROR        1      
+  Nat.mod_eq_iff_lt                        ERROR        1      
+  Nat.one_le_div_iff                       ERROR        1      
+  Nat.one_le_pow                           ERROR        1      
+  Nat.pow_le_pow_iff_left                  SKIP         —      
+  Nat.pred_eq_self_iff                     ERROR        2      
+  Nat.pred_one_add                         ERROR        2      
+  Nat.self_add_sub_one                     ERROR        1      
+  Nat.sqrt_lt'                             ERROR        1      
+  Nat.sub_eq_of_eq_add'                    PROVED       1      simp_all
+  Nat.succ_add_sub_one                     ERROR        2      
+  Nat.two_pow_succ                         ERROR        1      
+  Nat.zero_eq_mul                          ERROR        1      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    65
+  Available:         64/65
+  Proved:            4/64  (6%)
+  Errored:           60/64
+  Exhausted:         0/64
+  Skipped:           1/65
+  Avg steps (proved): 1.0
+  Fallbacks used:     2
+  Proved by origin:   {'generative_topk': 4}
+================================================================
+
+Run artifacts: project/evolve/autonomous_runs/large_v5_raw_baseline/eval-20260522-114855/eval-ca465037

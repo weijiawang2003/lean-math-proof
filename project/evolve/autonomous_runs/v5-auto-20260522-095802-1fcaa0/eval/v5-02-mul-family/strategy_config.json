@@ -1,0 +1,74 @@
+{
+  "fallback_tactics": [
+    "simp [Nat.add_comm, Nat.add_assoc, Nat.left_comm]",
+    "simp_all",
+    "simp",
+    "omega",
+    "ac_rfl",
+    "simp [Nat.mul_comm, Nat.mul_assoc, Nat.left_comm]",
+    "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+    "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+    "rw [Nat.add_comm]",
+    "simp_arith",
+    "simp [Nat.add_mod, Nat.mod_eq_of_lt] at *",
+    "simp [Nat.add_comm, Nat.add_assoc, Nat.left_comm, Nat.add_mod, Nat.mod_eq_of_lt]"
+  ],
+  "tactic_templates": [
+    "induction {var} with | zero => simp | succ n ih => simp [ih]",
+    "cases {var} <;> simp",
+    "by_cases h : {var} = 0 <;> simp [h] <;> omega"
+  ],
+  "max_extra_tactics_per_state": 10,
+  "theorem_family_tactics": {
+    "AM_GM": [
+      "omega",
+      "simp",
+      "simp_all"
+    ],
+    "div": [
+      "omega",
+      "simp",
+      "simp_all",
+      "constructor <;> intro h_split <;> omega",
+      "constructor <;> intro h_split <;> simp_all",
+      "constructor <;> intro h_split <;> simp_all <;> omega"
+    ],
+    "mod": [
+      "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "omega"
+    ],
+    "mul_eq": [
+      "omega",
+      "simp_all",
+      "simp [Nat.mul_one, Nat.one_mul]",
+      "constructor <;> intro h_split <;> simp_all",
+      "rw [Nat.mul_right_cancel_iff (Nat.pos_of_ne_zero {hyp_ne_zero})]",
+      "rw [Nat.mul_left_cancel_iff (Nat.pos_of_ne_zero {hyp_ne_zero})]"
+    ]
+  },
+  "family_budgets": {
+    "AM_GM": 8,
+    "div": 8,
+    "mod": 12,
+    "mul_eq": 10
+  },
+  "theorem_tactic_denylist": {
+    "Nat.add_mod_eq_ite": [
+      "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]"
+    ]
+  },
+  "retrieval_enabled": true,
+  "retrieval_top_k": 8,
+  "retrieval_tactic_forms": [
+    "rw",
+    "simp",
+    "apply"
+  ],
+  "retrieval_filter_self": true,
+  "retrieval_filter_unavailable": true,
+  "retrieval_skip_bloating_apply": true,
+  "retrieval_shape_filter": true,
+  "term_builder_templates": {},
+  "term_builder_budget": 0
+}

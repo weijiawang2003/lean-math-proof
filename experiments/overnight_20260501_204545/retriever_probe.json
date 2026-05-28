@@ -1,0 +1,952 @@
+{
+  "config": {
+    "state_path": "project/project_state.json",
+    "traces_path": "project/all_traces.jsonl",
+    "premise_index": "project/premise_index.json",
+    "k_retrieve": 15
+  },
+  "counts": {
+    "total_proved": 262,
+    "evaluated": 28,
+    "skipped_no_named_premises": 222,
+    "skipped_no_state_in_traces": 12
+  },
+  "summary_by_bucket": {
+    "Set.Basic": {
+      "n_theorems": 12,
+      "mean_recall@1": 0.5,
+      "mean_recall@5": 0.8333333333333334,
+      "mean_recall@10": 0.8333333333333334,
+      "mean_recall@15": 0.8333333333333334
+    },
+    "Nat.Defs": {
+      "n_theorems": 2,
+      "mean_recall@1": 0.16666666666666666,
+      "mean_recall@5": 0.5,
+      "mean_recall@10": 0.5,
+      "mean_recall@15": 0.5
+    },
+    "Finset.Basic": {
+      "n_theorems": 14,
+      "mean_recall@1": 0.0,
+      "mean_recall@5": 0.0,
+      "mean_recall@10": 0.0,
+      "mean_recall@15": 0.0
+    },
+    "__OVERALL__": {
+      "n_theorems": 28,
+      "mean_recall@1": 0.2261904761904762,
+      "mean_recall@5": 0.39285714285714285,
+      "mean_recall@10": 0.39285714285714285,
+      "mean_recall@15": 0.39285714285714285
+    }
+  },
+  "per_theorem": {
+    "Set.Basic": [
+      {
+        "full_name": "Set.subset_univ",
+        "file_path": "Mathlib/Data/Set/Basic.lean",
+        "winning_tactic": "simp [Set.subset_def]",
+        "ground_truth_premises": [
+          "Set.subset_def"
+        ],
+        "retrieved_top15": [
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union",
+          "Set.mem_inter_iff",
+          "Set.mem_diff",
+          "Set.mem_compl_iff",
+          "Set.mem_setOf_eq",
+          "Set.union_comm",
+          "Set.inter_comm",
+          "Set.union_assoc",
+          "Set.inter_assoc",
+          "Set.union_empty",
+          "Set.empty_union",
+          "Set.inter_univ",
+          "Set.univ_inter"
+        ],
+        "per_premise_ranks": {
+          "Set.subset_def": 2
+        },
+        "recall@1": 0.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@15": 1.0
+      },
+      {
+        "full_name": "Set.empty_subset",
+        "file_path": "Mathlib/Data/Set/Basic.lean",
+        "winning_tactic": "simp [Set.subset_def]",
+        "ground_truth_premises": [
+          "Set.subset_def"
+        ],
+        "retrieved_top15": [
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union",
+          "Set.mem_inter_iff",
+          "Set.mem_diff",
+          "Set.mem_compl_iff",
+          "Set.mem_setOf_eq",
+          "Set.union_comm",
+          "Set.inter_comm",
+          "Set.union_assoc",
+          "Set.inter_assoc",
+          "Set.union_empty",
+          "Set.empty_union",
+          "Set.inter_univ",
+          "Set.univ_inter"
+        ],
+        "per_premise_ranks": {
+          "Set.subset_def": 2
+        },
+        "recall@1": 0.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@15": 1.0
+      },
+      {
+        "full_name": "Set.union_empty",
+        "file_path": "Mathlib/Data/Set/Basic.lean",
+        "winning_tactic": "simp [Set.ext_iff]",
+        "ground_truth_premises": [
+          "Set.ext_iff"
+        ],
+        "retrieved_top15": [
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union",
+          "Set.mem_inter_iff",
+          "Set.mem_diff",
+          "Set.mem_compl_iff",
+          "Set.mem_setOf_eq",
+          "Set.union_comm",
+          "Set.inter_comm",
+          "Set.union_assoc",
+          "Set.inter_assoc",
+          "Set.union_empty",
+          "Set.empty_union",
+          "Set.inter_univ",
+          "Set.univ_inter"
+        ],
+        "per_premise_ranks": {
+          "Set.ext_iff": 1
+        },
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@15": 1.0
+      },
+      {
+        "full_name": "Set.empty_union",
+        "file_path": "Mathlib/Data/Set/Basic.lean",
+        "winning_tactic": "simp [Set.ext_iff]",
+        "ground_truth_premises": [
+          "Set.ext_iff"
+        ],
+        "retrieved_top15": [
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union",
+          "Set.mem_inter_iff",
+          "Set.mem_diff",
+          "Set.mem_compl_iff",
+          "Set.mem_setOf_eq",
+          "Set.union_comm",
+          "Set.inter_comm",
+          "Set.union_assoc",
+          "Set.inter_assoc",
+          "Set.union_empty",
+          "Set.empty_union",
+          "Set.inter_univ",
+          "Set.univ_inter"
+        ],
+        "per_premise_ranks": {
+          "Set.ext_iff": 1
+        },
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@15": 1.0
+      },
+      {
+        "full_name": "Set.inter_univ",
+        "file_path": "Mathlib/Data/Set/Basic.lean",
+        "winning_tactic": "simp [Set.ext_iff]",
+        "ground_truth_premises": [
+          "Set.ext_iff"
+        ],
+        "retrieved_top15": [
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union",
+          "Set.mem_inter_iff",
+          "Set.mem_diff",
+          "Set.mem_compl_iff",
+          "Set.mem_setOf_eq",
+          "Set.union_comm",
+          "Set.inter_comm",
+          "Set.union_assoc",
+          "Set.inter_assoc",
+          "Set.union_empty",
+          "Set.empty_union",
+          "Set.inter_univ",
+          "Set.univ_inter"
+        ],
+        "per_premise_ranks": {
+          "Set.ext_iff": 1
+        },
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@15": 1.0
+      },
+      {
+        "full_name": "Set.univ_inter",
+        "file_path": "Mathlib/Data/Set/Basic.lean",
+        "winning_tactic": "simp [Set.mem_union]",
+        "ground_truth_premises": [
+          "Set.mem_union"
+        ],
+        "retrieved_top15": [
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union",
+          "Set.mem_inter_iff",
+          "Set.mem_diff",
+          "Set.mem_compl_iff",
+          "Set.mem_setOf_eq",
+          "Set.union_comm",
+          "Set.inter_comm",
+          "Set.union_assoc",
+          "Set.inter_assoc",
+          "Set.union_empty",
+          "Set.empty_union",
+          "Set.inter_univ",
+          "Set.univ_inter"
+        ],
+        "per_premise_ranks": {
+          "Set.mem_union": 3
+        },
+        "recall@1": 0.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@15": 1.0
+      },
+      {
+        "full_name": "Set.ite_univ",
+        "file_path": "Mathlib/Data/Set/Basic.lean",
+        "winning_tactic": "simp [Set.ite]",
+        "ground_truth_premises": [
+          "Set.ite"
+        ],
+        "retrieved_top15": [
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union",
+          "Set.mem_inter_iff",
+          "Set.mem_diff",
+          "Set.mem_compl_iff",
+          "Set.mem_setOf_eq",
+          "Set.union_comm",
+          "Set.inter_comm",
+          "Set.union_assoc",
+          "Set.inter_assoc",
+          "Set.union_empty",
+          "Set.empty_union",
+          "Set.inter_univ",
+          "Set.univ_inter"
+        ],
+        "per_premise_ranks": {
+          "Set.ite": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Set.union_self",
+        "file_path": "Mathlib/Data/Set/Basic.lean",
+        "winning_tactic": "simp [Set.ext_iff]",
+        "ground_truth_premises": [
+          "Set.ext_iff"
+        ],
+        "retrieved_top15": [
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union",
+          "Set.mem_inter_iff",
+          "Set.mem_diff",
+          "Set.mem_compl_iff",
+          "Set.mem_setOf_eq",
+          "Set.union_comm",
+          "Set.inter_comm",
+          "Set.union_assoc",
+          "Set.inter_assoc",
+          "Set.union_empty",
+          "Set.empty_union",
+          "Set.inter_univ",
+          "Set.univ_inter"
+        ],
+        "per_premise_ranks": {
+          "Set.ext_iff": 1
+        },
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@15": 1.0
+      },
+      {
+        "full_name": "Set.inter_self",
+        "file_path": "Mathlib/Data/Set/Basic.lean",
+        "winning_tactic": "simp [Set.ext_iff]",
+        "ground_truth_premises": [
+          "Set.ext_iff"
+        ],
+        "retrieved_top15": [
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union",
+          "Set.mem_inter_iff",
+          "Set.mem_diff",
+          "Set.mem_compl_iff",
+          "Set.mem_setOf_eq",
+          "Set.union_comm",
+          "Set.inter_comm",
+          "Set.union_assoc",
+          "Set.inter_assoc",
+          "Set.union_empty",
+          "Set.empty_union",
+          "Set.inter_univ",
+          "Set.univ_inter"
+        ],
+        "per_premise_ranks": {
+          "Set.ext_iff": 1
+        },
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@15": 1.0
+      },
+      {
+        "full_name": "Set.union_univ",
+        "file_path": "Mathlib/Data/Set/Basic.lean",
+        "winning_tactic": "simp [Nat.mul_one]",
+        "ground_truth_premises": [
+          "Nat.mul_one"
+        ],
+        "retrieved_top15": [
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union",
+          "Set.mem_inter_iff",
+          "Set.mem_diff",
+          "Set.mem_compl_iff",
+          "Set.mem_setOf_eq",
+          "Set.union_comm",
+          "Set.inter_comm",
+          "Set.union_assoc",
+          "Set.inter_assoc",
+          "Set.union_empty",
+          "Set.empty_union",
+          "Set.inter_univ",
+          "Set.univ_inter"
+        ],
+        "per_premise_ranks": {
+          "Nat.mul_one": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Set.inter_empty",
+        "file_path": "Mathlib/Data/Set/Basic.lean",
+        "winning_tactic": "simp [Set.ext_iff]",
+        "ground_truth_premises": [
+          "Set.ext_iff"
+        ],
+        "retrieved_top15": [
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union",
+          "Set.mem_inter_iff",
+          "Set.mem_diff",
+          "Set.mem_compl_iff",
+          "Set.mem_setOf_eq",
+          "Set.union_comm",
+          "Set.inter_comm",
+          "Set.union_assoc",
+          "Set.inter_assoc",
+          "Set.union_empty",
+          "Set.empty_union",
+          "Set.inter_univ",
+          "Set.univ_inter"
+        ],
+        "per_premise_ranks": {
+          "Set.ext_iff": 1
+        },
+        "recall@1": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@15": 1.0
+      },
+      {
+        "full_name": "Set.inter_subset_right",
+        "file_path": "Mathlib/Data/Set/Basic.lean",
+        "winning_tactic": "simp [Set.subset_def]",
+        "ground_truth_premises": [
+          "Set.subset_def"
+        ],
+        "retrieved_top15": [
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union",
+          "Set.mem_inter_iff",
+          "Set.mem_diff",
+          "Set.mem_compl_iff",
+          "Set.mem_setOf_eq",
+          "Set.union_comm",
+          "Set.inter_comm",
+          "Set.union_assoc",
+          "Set.inter_assoc",
+          "Set.union_empty",
+          "Set.empty_union",
+          "Set.inter_univ",
+          "Set.univ_inter"
+        ],
+        "per_premise_ranks": {
+          "Set.subset_def": 2
+        },
+        "recall@1": 0.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@15": 1.0
+      }
+    ],
+    "Nat.Defs": [
+      {
+        "full_name": "Nat.mul_add_mod'",
+        "file_path": "Mathlib/Data/Nat/Defs.lean",
+        "winning_tactic": "simp [Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]",
+        "ground_truth_premises": [
+          "Nat.add_comm",
+          "Nat.add_left_comm",
+          "Nat.add_assoc"
+        ],
+        "retrieved_top15": [
+          "Nat.add_comm",
+          "Nat.add_assoc",
+          "Nat.add_left_comm",
+          "Nat.mul_comm",
+          "Nat.mul_assoc",
+          "Nat.mul_left_comm",
+          "Nat.add_zero",
+          "Nat.zero_add",
+          "Nat.mul_one",
+          "Nat.one_mul",
+          "Nat.mul_zero",
+          "Nat.zero_mul",
+          "Nat.succ_eq_add_one",
+          "Nat.add_sub_cancel",
+          "Nat.sub_self"
+        ],
+        "per_premise_ranks": {
+          "Nat.add_comm": 1,
+          "Nat.add_left_comm": 3,
+          "Nat.add_assoc": 2
+        },
+        "recall@1": 0.3333333333333333,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@15": 1.0
+      },
+      {
+        "full_name": "Nat.succ_succ_ne_one",
+        "file_path": "Mathlib/Data/Nat/Defs.lean",
+        "winning_tactic": "simp [List.map]",
+        "ground_truth_premises": [
+          "List.map"
+        ],
+        "retrieved_top15": [
+          "Nat.add_comm",
+          "Nat.add_assoc",
+          "Nat.add_left_comm",
+          "Nat.mul_comm",
+          "Nat.mul_assoc",
+          "Nat.mul_left_comm",
+          "Nat.add_zero",
+          "Nat.zero_add",
+          "Nat.mul_one",
+          "Nat.one_mul",
+          "Nat.mul_zero",
+          "Nat.zero_mul",
+          "Nat.succ_eq_add_one",
+          "Nat.add_sub_cancel",
+          "Nat.sub_self"
+        ],
+        "per_premise_ranks": {
+          "List.map": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      }
+    ],
+    "Finset.Basic": [
+      {
+        "full_name": "Finset.singleton_subset_set_iff",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.union_self]",
+        "ground_truth_premises": [
+          "Set.union_self"
+        ],
+        "retrieved_top15": [
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union",
+          "Set.mem_inter_iff",
+          "Set.mem_diff",
+          "Set.mem_compl_iff",
+          "Set.mem_setOf_eq",
+          "Set.union_comm",
+          "Set.inter_comm",
+          "Set.union_assoc",
+          "Set.inter_assoc",
+          "Set.union_empty",
+          "Set.empty_union",
+          "Set.inter_univ",
+          "Set.univ_inter"
+        ],
+        "per_premise_ranks": {
+          "Set.union_self": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Finset.singleton_subset_singleton",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.univ_union]",
+        "ground_truth_premises": [
+          "Set.univ_union"
+        ],
+        "retrieved_top15": [
+          "Finset.mem_insert",
+          "Finset.mem_singleton",
+          "Finset.mem_union",
+          "Finset.mem_filter",
+          "Finset.mem_sdiff",
+          "Finset.mem_inter",
+          "Finset.disjoint_left",
+          "Finset.disjoint_insert_right",
+          "Finset.insert_comm",
+          "Finset.subset_iff",
+          "Finset.card_insert_of_not_mem",
+          "Finset.card_union_add_card_inter",
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union"
+        ],
+        "per_premise_ranks": {
+          "Set.univ_union": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Finset.not_nontrivial_empty",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.inter_empty]",
+        "ground_truth_premises": [
+          "Set.inter_empty"
+        ],
+        "retrieved_top15": [
+          "Finset.mem_insert",
+          "Finset.mem_singleton",
+          "Finset.mem_union",
+          "Finset.mem_filter",
+          "Finset.mem_sdiff",
+          "Finset.mem_inter",
+          "Finset.disjoint_left",
+          "Finset.disjoint_insert_right",
+          "Finset.insert_comm",
+          "Finset.subset_iff",
+          "Finset.card_insert_of_not_mem",
+          "Finset.card_union_add_card_inter",
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union"
+        ],
+        "per_premise_ranks": {
+          "Set.inter_empty": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Finset.not_nontrivial_singleton",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.inter_empty]",
+        "ground_truth_premises": [
+          "Set.inter_empty"
+        ],
+        "retrieved_top15": [
+          "Finset.mem_insert",
+          "Finset.mem_singleton",
+          "Finset.mem_union",
+          "Finset.mem_filter",
+          "Finset.mem_sdiff",
+          "Finset.mem_inter",
+          "Finset.disjoint_left",
+          "Finset.disjoint_insert_right",
+          "Finset.insert_comm",
+          "Finset.subset_iff",
+          "Finset.card_insert_of_not_mem",
+          "Finset.card_union_add_card_inter",
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union"
+        ],
+        "per_premise_ranks": {
+          "Set.inter_empty": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Finset.forall_mem_cons",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.union_self]",
+        "ground_truth_premises": [
+          "Set.union_self"
+        ],
+        "retrieved_top15": [
+          "Finset.mem_insert",
+          "Finset.mem_singleton",
+          "Finset.mem_union",
+          "Finset.mem_filter",
+          "Finset.mem_sdiff",
+          "Finset.mem_inter",
+          "Finset.disjoint_left",
+          "Finset.disjoint_insert_right",
+          "Finset.insert_comm",
+          "Finset.subset_iff",
+          "Finset.card_insert_of_not_mem",
+          "Finset.card_union_add_card_inter",
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union"
+        ],
+        "per_premise_ranks": {
+          "Set.union_self": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Finset.mem_insert_coe",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.diff_empty]",
+        "ground_truth_premises": [
+          "Set.diff_empty"
+        ],
+        "retrieved_top15": [
+          "Finset.mem_insert",
+          "Finset.mem_singleton",
+          "Finset.mem_union",
+          "Finset.mem_filter",
+          "Finset.mem_sdiff",
+          "Finset.mem_inter",
+          "Finset.disjoint_left",
+          "Finset.disjoint_insert_right",
+          "Finset.insert_comm",
+          "Finset.subset_iff",
+          "Finset.card_insert_of_not_mem",
+          "Finset.card_union_add_card_inter",
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union"
+        ],
+        "per_premise_ranks": {
+          "Set.diff_empty": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Finset.insert_idem",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.mem_diff]",
+        "ground_truth_premises": [
+          "Set.mem_diff"
+        ],
+        "retrieved_top15": [
+          "Finset.mem_insert",
+          "Finset.mem_singleton",
+          "Finset.mem_union",
+          "Finset.mem_filter",
+          "Finset.mem_sdiff",
+          "Finset.mem_inter",
+          "Finset.disjoint_left",
+          "Finset.disjoint_insert_right",
+          "Finset.insert_comm",
+          "Finset.subset_iff",
+          "Finset.card_insert_of_not_mem",
+          "Finset.card_union_add_card_inter",
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union"
+        ],
+        "per_premise_ranks": {
+          "Set.mem_diff": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Finset.not_mem_union",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.union_univ]",
+        "ground_truth_premises": [
+          "Set.union_univ"
+        ],
+        "retrieved_top15": [
+          "Finset.mem_insert",
+          "Finset.mem_singleton",
+          "Finset.mem_union",
+          "Finset.mem_filter",
+          "Finset.mem_sdiff",
+          "Finset.mem_inter",
+          "Finset.disjoint_left",
+          "Finset.disjoint_insert_right",
+          "Finset.insert_comm",
+          "Finset.subset_iff",
+          "Finset.card_insert_of_not_mem",
+          "Finset.card_union_add_card_inter",
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union"
+        ],
+        "per_premise_ranks": {
+          "Set.union_univ": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Finset.insert_union_distrib",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.union_univ]",
+        "ground_truth_premises": [
+          "Set.union_univ"
+        ],
+        "retrieved_top15": [
+          "Finset.mem_insert",
+          "Finset.mem_singleton",
+          "Finset.mem_union",
+          "Finset.mem_filter",
+          "Finset.mem_sdiff",
+          "Finset.mem_inter",
+          "Finset.disjoint_left",
+          "Finset.disjoint_insert_right",
+          "Finset.insert_comm",
+          "Finset.subset_iff",
+          "Finset.card_insert_of_not_mem",
+          "Finset.card_union_add_card_inter",
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union"
+        ],
+        "per_premise_ranks": {
+          "Set.union_univ": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Finset.erase_idem",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.mem_diff]",
+        "ground_truth_premises": [
+          "Set.mem_diff"
+        ],
+        "retrieved_top15": [
+          "Finset.mem_insert",
+          "Finset.mem_singleton",
+          "Finset.mem_union",
+          "Finset.mem_filter",
+          "Finset.mem_sdiff",
+          "Finset.mem_inter",
+          "Finset.disjoint_left",
+          "Finset.disjoint_insert_right",
+          "Finset.insert_comm",
+          "Finset.subset_iff",
+          "Finset.card_insert_of_not_mem",
+          "Finset.card_union_add_card_inter",
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union"
+        ],
+        "per_premise_ranks": {
+          "Set.mem_diff": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Finset.insert_union_comm",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.union_univ]",
+        "ground_truth_premises": [
+          "Set.union_univ"
+        ],
+        "retrieved_top15": [
+          "Finset.mem_insert",
+          "Finset.mem_singleton",
+          "Finset.mem_union",
+          "Finset.mem_filter",
+          "Finset.mem_sdiff",
+          "Finset.mem_inter",
+          "Finset.disjoint_left",
+          "Finset.disjoint_insert_right",
+          "Finset.insert_comm",
+          "Finset.subset_iff",
+          "Finset.card_insert_of_not_mem",
+          "Finset.card_union_add_card_inter",
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union"
+        ],
+        "per_premise_ranks": {
+          "Set.union_univ": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Finset.exists_mem_empty_iff",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.univ_union]",
+        "ground_truth_premises": [
+          "Set.univ_union"
+        ],
+        "retrieved_top15": [
+          "or_comm",
+          "and_comm",
+          "or_assoc",
+          "and_assoc",
+          "or_self",
+          "and_self",
+          "or_true",
+          "true_or",
+          "and_true",
+          "true_and",
+          "or_false",
+          "false_or",
+          "and_false",
+          "false_and",
+          "not_not"
+        ],
+        "per_premise_ranks": {
+          "Set.univ_union": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Finset.exists_mem_insert",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.union_univ]",
+        "ground_truth_premises": [
+          "Set.union_univ"
+        ],
+        "retrieved_top15": [
+          "Finset.mem_insert",
+          "Finset.mem_singleton",
+          "Finset.mem_union",
+          "Finset.mem_filter",
+          "Finset.mem_sdiff",
+          "Finset.mem_inter",
+          "Finset.disjoint_left",
+          "Finset.disjoint_insert_right",
+          "Finset.insert_comm",
+          "Finset.subset_iff",
+          "Finset.card_insert_of_not_mem",
+          "Finset.card_union_add_card_inter",
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union"
+        ],
+        "per_premise_ranks": {
+          "Set.union_univ": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      },
+      {
+        "full_name": "Finset.forall_mem_insert",
+        "file_path": "Mathlib/Data/Finset/Basic.lean",
+        "winning_tactic": "simp [Set.univ_union]",
+        "ground_truth_premises": [
+          "Set.univ_union"
+        ],
+        "retrieved_top15": [
+          "Finset.mem_insert",
+          "Finset.mem_singleton",
+          "Finset.mem_union",
+          "Finset.mem_filter",
+          "Finset.mem_sdiff",
+          "Finset.mem_inter",
+          "Finset.disjoint_left",
+          "Finset.disjoint_insert_right",
+          "Finset.insert_comm",
+          "Finset.subset_iff",
+          "Finset.card_insert_of_not_mem",
+          "Finset.card_union_add_card_inter",
+          "Set.ext_iff",
+          "Set.subset_def",
+          "Set.mem_union"
+        ],
+        "per_premise_ranks": {
+          "Set.univ_union": null
+        },
+        "recall@1": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@15": 0.0
+      }
+    ]
+  }
+}
