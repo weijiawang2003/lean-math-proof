@@ -408,34 +408,54 @@ subprocess logs, or checkpoint binaries.
   Nat/Set/Finset/demo and wrapper baselines preserved exactly
   (23/38, 35/65, 10/15; wrap 37/38, 49/65, 11/15). Promoted as a
   marginal best; the Int omega surface is saturated.
+- **CX3 (done — negative, mining only)** — Bool/Option short-tactic
+  mining. Audited the fresh surface (Bool/Basic was already exhausted
+  by CX1; 86 fresh candidates, ~92% Option), built five theorem sets,
+  and probed raw-routed vs NS9-wrapper. **Wrapper-only wins = 0:** the
+  default model and the wrapper solve an identical 43/83, so the
+  wrapper is a no-op on Bool/Option and there is nothing to distill.
+  The mandatory minimal-tactic relabel found the only count-meeting
+  headroom is a 13-theorem `cases_simp | Option` pool whose minimal
+  tactic is the compound, per-theorem-variable `intros <;> cases <v>
+  <;> simp_all` — the structured-tactic class NS22 showed won't
+  memorize at 60M (plain simp/aesop genuinely fail on all 13). **No
+  short-token training gate met.** The relabel did its job: it
+  prevented a likely-null NS25.
 
 ### Recommended next directions
 
-The minimal-tactic principle (NS23/NS24) is now validated as an
+The minimal-tactic principle (NS23/NS24) is validated as an
 **attribution/gating** step — it correctly identifies which family to
-train and would have saved NS22's failed iff-pair runs — but it only
-adds *wins* on a family the base model has not already absorbed. The
-Int omega surface is saturated (NS22 ≈ NS24). In rough order of likely
-yield:
+train and prevents wasted long-tactic imitation — but it only adds
+*wins* on a family the base model has not already absorbed. The Int
+omega surface is saturated (NS22 ≈ NS24), and CX3 showed the
+fresh-namespace short-token thesis does **not** carry to Bool/Option
+(wrapper is a no-op there; the only headroom is a structured tactic).
+In rough order of likely yield:
 
-1. **CX3 Bool/Option decide-family mining.** Bool (35) and Option
-   (47) remain mostly unprobed fresh namespaces with no base prior —
-   the setting where NS15/NS22-style absorption actually produced
-   broad transfer. Highest-yield next direction.
-2. **Mine fresh held-out Int.** The CX2 audit left ~50 sub-bitwise/
-   dvd Int order/arith candidates unprobed. Probing them measures
-   whether the 22-pool transfers to genuinely-unseen Int (vs the
-   saturated wrapper-only pool).
-3. **Keep minimal-tactic relabel as a pre-training gate.** Cheap; it
-   prevents wasted long-tactic imitation. Run it before declaring any
-   future training gate met.
-4. **DPO / ranker or reranker objective for long structured
-   tactics.** Still deferred — the minimal-label finding holds that
-   the transferable tactics are short and already learnable by
-   imitation; preference methods are only needed if a genuinely
-   long-tactic-only family appears.
+1. **List/Multiset short-tactic mining.** Large fresh surface (276 +
+   260 catalog), unprobed by the wrapper-only-vs-routed lens — the most
+   likely place left to find a clean `simp`/`aesop` short-token gate
+   analogous to Int/omega.
+2. **State-conditioned `cases_simp` NS25 probe (research bet).** CX3's
+   13-theorem Option cases pool uses a *state-readable* variable, so —
+   unlike NS22's fixed template — a state-conditioned generative model
+   could plausibly learn `intros <;> cases <binder> <;> simp_all`.
+   Distinct hypothesis from NS22; high oversample; flagged as a bet,
+   not a gate.
+3. **Mine fresh held-out Int.** The CX2 audit left ~50 sub-bitwise/dvd
+   Int order/arith candidates unprobed — measures whether the 22-pool
+   transfers to genuinely-unseen Int.
+4. **Keep minimal-tactic relabel as a pre-training gate** (cheap; ran
+   in CX3 and correctly blocked a null NS25), and **DPO / ranker** for
+   structured tactics still deferred until a genuinely long-tactic-only
+   family with no short substitute appears.
 
-See `project/evolve/reports/ns24_int_minimal_omega_training_report.md`
+See `project/evolve/reports/cx3_bool_option_decide_mining_report.md`
+for the CX3 mining arc and
+`project/evolve/reports/post_ns24_current_status.md` for the one-page
+current status,
+`project/evolve/reports/ns24_int_minimal_omega_training_report.md`
 for the NS24 arc,
 `project/evolve/reports/ns23_minimal_tactic_relabeling_report.md` for
 NS23, `project/evolve/reports/post_cx1_ns21_cx2_ns22_update.md`

@@ -1,0 +1,1005 @@
+{
+  "totals": {
+    "bool_candidates": 42,
+    "option_candidates": 83,
+    "all_bool_option_candidates": 125
+  },
+  "already_used_probed": {
+    "total": 39,
+    "bool": 35,
+    "option": 4
+  },
+  "fresh_unused": {
+    "total": 86,
+    "verified_available": 42,
+    "needs_probe": 44,
+    "bool": 7,
+    "option": 79
+  },
+  "fresh_bucket_distribution": {
+    "likely_simp": 70,
+    "likely_cases_simp": 9,
+    "likely_decide": 7
+  },
+  "tag_distribution_all": {
+    "option_simp": 52,
+    "bool_decide": 42,
+    "option_map_bind": 41,
+    "bool_logic": 29,
+    "option_cases": 26,
+    "bool_order": 12,
+    "iff": 11,
+    "option_mem": 11,
+    "bool_nat_cast": 7,
+    "other": 2
+  },
+  "additional_files_scanned": {
+    "Mathlib/Data/Bool/Count.lean": 0,
+    "Mathlib/Data/Bool/Set.lean": 2,
+    "Mathlib/Data/Option/NAry.lean": 31,
+    "Mathlib/Logic/Equiv/Option.lean": 0,
+    "Mathlib/Data/List/ReduceOption.lean": 0
+  },
+  "fresh_verified_candidates": [
+    {
+      "full_name": "Option.bind_pmap",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "bucket": "likely_cases_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.bnot_comp_isNone",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.bnot_comp_isSome",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.bnot_isNone",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.bnot_isSome",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.casesOn'_eq_elim",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.casesOn'_none_coe",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.elim'_eq_elim",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Defs.lean",
+      "tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.elim_apply",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.elim_comp",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.elim_none_some",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.exists_mem_map",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_mem"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.forall_mem_map",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_mem"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.getD_default_eq_iget",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.get_map",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.guard_eq_some'",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.isNone_eq_false_iff",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "iff",
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.isSome_map",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.join_pmap_eq_pmap_join",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.map_bind",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "bucket": "likely_cases_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.map_bind'",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "bucket": "likely_cases_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.map_comm",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.map_injective'",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.map_pbind",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "bucket": "likely_cases_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.map_pmap",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.mem_map",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_mem"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.mem_pmem",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_mem"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.mem_some_iff",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Defs.lean",
+      "tags": [
+        "iff",
+        "option_simp",
+        "option_mem"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.mem_toList",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Defs.lean",
+      "tags": [
+        "option_simp",
+        "option_mem"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.none_orElse'",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.orElse_eq_none",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.orElse_eq_some",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.orElse_none'",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.pbind_eq_bind",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "bucket": "likely_cases_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.pbind_eq_none",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "hard"
+    },
+    {
+      "full_name": "Option.pbind_eq_some",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "hard"
+    },
+    {
+      "full_name": "Option.pbind_map",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "bucket": "likely_cases_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.pmap_bind",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "bucket": "likely_cases_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.pmap_eq_map",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.pmap_eq_none_iff",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "iff",
+        "option_map_bind",
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    },
+    {
+      "full_name": "Option.pmap_eq_some_iff",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "iff",
+        "option_map_bind",
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "hard"
+    },
+    {
+      "full_name": "Option.pmap_map",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind"
+      ],
+      "bucket": "likely_simp",
+      "difficulty": "medium"
+    }
+  ],
+  "fresh_needs_probe_candidates": [
+    {
+      "full_name": "Bool.exists_bool",
+      "ns": "Bool",
+      "file": "Mathlib/Data/Bool/Basic.lean",
+      "tags": [
+        "bool_decide"
+      ],
+      "bucket": "likely_decide",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Bool.false_lt_true",
+      "ns": "Bool",
+      "file": "Mathlib/Data/Bool/Basic.lean",
+      "tags": [
+        "bool_decide",
+        "bool_order"
+      ],
+      "bucket": "likely_decide",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Bool.forall_bool",
+      "ns": "Bool",
+      "file": "Mathlib/Data/Bool/Basic.lean",
+      "tags": [
+        "bool_decide",
+        "bool_logic"
+      ],
+      "bucket": "likely_decide",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Bool.ne_not",
+      "ns": "Bool",
+      "file": "Mathlib/Data/Bool/Basic.lean",
+      "tags": [
+        "bool_decide",
+        "bool_logic"
+      ],
+      "bucket": "likely_decide",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Bool.not_ne_id",
+      "ns": "Bool",
+      "file": "Mathlib/Data/Bool/Basic.lean",
+      "tags": [
+        "bool_decide",
+        "bool_logic"
+      ],
+      "bucket": "likely_decide",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Bool.range_eq",
+      "ns": "Bool",
+      "file": "Mathlib/Data/Bool/Set.lean",
+      "tags": [
+        "bool_decide"
+      ],
+      "bucket": "likely_decide",
+      "availability": "scan",
+      "has_tactic_proof": null
+    },
+    {
+      "full_name": "Bool.univ_eq",
+      "ns": "Bool",
+      "file": "Mathlib/Data/Bool/Set.lean",
+      "tags": [
+        "bool_decide"
+      ],
+      "bucket": "likely_decide",
+      "availability": "scan",
+      "has_tactic_proof": null
+    },
+    {
+      "full_name": "Option.Mem.leftUnique",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_mem"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.bind_congr'",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "bucket": "likely_cases_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.bind_eq_bind'",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "bucket": "likely_cases_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.casesOn'_coe",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.casesOn'_none",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.casesOn'_some",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.choice_eq_none",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.coe_def",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.coe_get",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.elim'_none",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Defs.lean",
+      "tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.elim'_some",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Defs.lean",
+      "tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.eq_none_or_eq_some",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.eq_of_mem_of_mem",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_mem"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.get",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "other"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.iget_mem",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp",
+        "option_mem"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.iget_of_mem",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp",
+        "option_mem"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.iget_some",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Defs.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.joinM_eq_join",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.liftOrGet_choice",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "other"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.map",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/NAry.lean",
+      "tags": [
+        "option_map_bind"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": true
+    },
+    {
+      "full_name": "Option.map_coe",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.map_coe'",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.map_comp_some",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.map_eq_id",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.map_inj",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.map_injective",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.map_map",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/NAry.lean",
+      "tags": [
+        "option_map_bind"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": true
+    },
+    {
+      "full_name": "Option.map_uncurry",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/NAry.lean",
+      "tags": [
+        "option_map_bind"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": true
+    },
+    {
+      "full_name": "Option.none_bind'",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.orElse_eq_none'",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.orElse_eq_some'",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.pmap_none",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.pmap_some",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.seq_some",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.some_bind'",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_map_bind",
+        "option_simp",
+        "option_cases"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.some_injective",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    },
+    {
+      "full_name": "Option.some_orElse'",
+      "ns": "Option",
+      "file": "Mathlib/Data/Option/Basic.lean",
+      "tags": [
+        "option_simp"
+      ],
+      "bucket": "likely_simp",
+      "availability": "discovered",
+      "has_tactic_proof": false
+    }
+  ],
+  "bool_exhaustion_note": "All verified-available Bool theorems from Bool/Basic.lean were already consumed by cx1_bool_option_int in CX1. Fresh Bool only appears via additional-file source scans (availability unverified until Stage 4 eval)."
+}

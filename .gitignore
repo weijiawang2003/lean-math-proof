@@ -196,3 +196,10 @@ project/models/gen_v5_ns24_*_training.log
 project/data/ns24_int_minimal_omega_*.jsonl
 project/evolve/eval_runs/ns24_*.log
 project/evolve/eval_runs/ns24_*/
+
+# CX3 Bool/Option mining artifacts. CX3 is mining-only: no checkpoints
+# or training datasets are produced. The catalog/probe/relabel metadata
+# JSONs and reports ARE committed; eval traces, logs, and run dirs are
+# regeneratable via scripts/cx3_run_eval.sh and are not.
+project/evolve/eval_runs/cx3_*.log
+project/evolve/eval_runs/cx3_*/
