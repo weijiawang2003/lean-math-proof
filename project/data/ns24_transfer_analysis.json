@@ -1,0 +1,1082 @@
+{
+  "pool_groups": {
+    "old_ns22_omega": [
+      "Int.emod_two_eq_zero_or_one",
+      "Int.le_of_eq",
+      "Int.natAbs_coe_sub_coe_lt_of_lt",
+      "Int.le_or_lt",
+      "Int.natAbs_coe_sub_coe_le_of_le",
+      "Int.lt_or_lt_of_ne",
+      "Int.natAbs_add_of_nonpos",
+      "Int.lt_asymm",
+      "Int.le_natCast_sub",
+      "Int.neg_emod_two",
+      "Int.lt_or_le",
+      "Int.natCast_pred_of_pos"
+    ],
+    "relabeled_iff": [
+      "Int.le_add_one_iff",
+      "Int.le_iff_lt_or_eq",
+      "Int.le_sub_one_iff",
+      "Int.sub_one_lt_iff",
+      "Int.le_antisymm_iff",
+      "Int.le_iff_eq_or_lt",
+      "Int.natCast_nonpos_iff",
+      "Int.natCast_ne_zero_iff_pos",
+      "Int.natCast_eq_zero"
+    ],
+    "constructor": [
+      "Int.zero_le_ofNat"
+    ]
+  },
+  "ns22_baseline": "gen_v5_ns22_int_fallback_omega_5x",
+  "candidates": {
+    "gen_v5_ns24_int_minimal_omega_5x": {
+      "candidate": "gen_v5_ns24_int_minimal_omega_5x",
+      "groups": {
+        "old_ns22_omega": {
+          "size": 12,
+          "ns12_solved": 0,
+          "ns22_solved": 12,
+          "candidate_solved": 12,
+          "detail": [
+            {
+              "theorem": "Int.emod_two_eq_zero_or_one",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_of_eq",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natAbs_coe_sub_coe_lt_of_lt",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_or_lt",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natAbs_coe_sub_coe_le_of_le",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.lt_or_lt_of_ne",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natAbs_add_of_nonpos",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.lt_asymm",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_natCast_sub",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.neg_emod_two",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.lt_or_le",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_pred_of_pos",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            }
+          ]
+        },
+        "relabeled_iff": {
+          "size": 9,
+          "ns12_solved": 0,
+          "ns22_solved": 9,
+          "candidate_solved": 9,
+          "detail": [
+            {
+              "theorem": "Int.le_add_one_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_iff_lt_or_eq",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_sub_one_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.sub_one_lt_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_antisymm_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_iff_eq_or_lt",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_nonpos_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_ne_zero_iff_pos",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_eq_zero",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            }
+          ]
+        },
+        "constructor": {
+          "size": 1,
+          "ns12_solved": 0,
+          "ns22_solved": 1,
+          "candidate_solved": 1,
+          "detail": [
+            {
+              "theorem": "Int.zero_le_ofNat",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            }
+          ]
+        }
+      },
+      "held_out_int": {
+        "n_probed": 136,
+        "ns22_wins": 35,
+        "candidate_wins": 35,
+        "n_gains_vs_ns22": 1,
+        "n_losses_vs_ns22": 1,
+        "gains": [
+          {
+            "theorem": "Int.cast_ite",
+            "tactic": "aesop",
+            "set": "cx2_int_mixed"
+          }
+        ],
+        "losses": [
+          {
+            "theorem": "Bool.lt_iff",
+            "set": "cx1_bool_option_int"
+          }
+        ]
+      },
+      "int_totals": {
+        "ns12": 35,
+        "ns22": 57,
+        "candidate": 57,
+        "n_int_probed": 158
+      },
+      "candidate_tactic_distribution": {
+        "omega": 28,
+        "aesop": 5,
+        "simp_all": 24
+      },
+      "neg_control": {
+        "demo_v1": {
+          "evaluated": true,
+          "routed_away": false,
+          "ns22_wins": 10,
+          "candidate_wins": 11,
+          "gains": 1,
+          "losses": 0,
+          "loss_names": []
+        },
+        "ns17_set_extra": {
+          "evaluated": true,
+          "routed_away": true,
+          "ns22_wins": 19,
+          "candidate_wins": 18,
+          "gains": 0,
+          "losses": 1,
+          "loss_names": [
+            "Set.pair_subset_iff"
+          ]
+        },
+        "ns17_finset_extra": {
+          "evaluated": true,
+          "routed_away": true,
+          "ns22_wins": 12,
+          "candidate_wins": 14,
+          "gains": 2,
+          "losses": 0,
+          "loss_names": []
+        },
+        "ns14_set_finset_extra": {
+          "evaluated": true,
+          "routed_away": true,
+          "ns22_wins": 11,
+          "candidate_wins": 13,
+          "gains": 2,
+          "losses": 0,
+          "loss_names": []
+        }
+      },
+      "summary": {
+        "int_total_ns12": 35,
+        "int_total_ns22": 57,
+        "int_total_candidate": 57,
+        "int_delta_vs_ns22": 0,
+        "relabeled_iff_ns22": 9,
+        "relabeled_iff_candidate": 9,
+        "held_out_gains_vs_ns22": 1,
+        "held_out_losses_vs_ns22": 1,
+        "demo_losses": 0,
+        "neg_control_losses_routed": 0,
+        "verdict": "reproduction_near_null"
+      }
+    },
+    "gen_v5_ns24_int_minimal_omega_10x": {
+      "candidate": "gen_v5_ns24_int_minimal_omega_10x",
+      "groups": {
+        "old_ns22_omega": {
+          "size": 12,
+          "ns12_solved": 0,
+          "ns22_solved": 12,
+          "candidate_solved": 12,
+          "detail": [
+            {
+              "theorem": "Int.emod_two_eq_zero_or_one",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_of_eq",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natAbs_coe_sub_coe_lt_of_lt",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_or_lt",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natAbs_coe_sub_coe_le_of_le",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.lt_or_lt_of_ne",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natAbs_add_of_nonpos",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.lt_asymm",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_natCast_sub",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.neg_emod_two",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.lt_or_le",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_pred_of_pos",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            }
+          ]
+        },
+        "relabeled_iff": {
+          "size": 9,
+          "ns12_solved": 0,
+          "ns22_solved": 9,
+          "candidate_solved": 9,
+          "detail": [
+            {
+              "theorem": "Int.le_add_one_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_iff_lt_or_eq",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_sub_one_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.sub_one_lt_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_antisymm_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_iff_eq_or_lt",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_nonpos_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_ne_zero_iff_pos",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_eq_zero",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            }
+          ]
+        },
+        "constructor": {
+          "size": 1,
+          "ns12_solved": 0,
+          "ns22_solved": 1,
+          "candidate_solved": 1,
+          "detail": [
+            {
+              "theorem": "Int.zero_le_ofNat",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            }
+          ]
+        }
+      },
+      "held_out_int": {
+        "n_probed": 136,
+        "ns22_wins": 35,
+        "candidate_wins": 36,
+        "n_gains_vs_ns22": 1,
+        "n_losses_vs_ns22": 0,
+        "gains": [
+          {
+            "theorem": "Int.cast_ite",
+            "tactic": "aesop",
+            "set": "cx2_int_mixed"
+          }
+        ],
+        "losses": []
+      },
+      "int_totals": {
+        "ns12": 35,
+        "ns22": 57,
+        "candidate": 58,
+        "n_int_probed": 158
+      },
+      "candidate_tactic_distribution": {
+        "omega": 28,
+        "aesop": 5,
+        "simp_all": 24,
+        "other": 1
+      },
+      "neg_control": {
+        "demo_v1": {
+          "evaluated": true,
+          "routed_away": false,
+          "ns22_wins": 10,
+          "candidate_wins": 11,
+          "gains": 1,
+          "losses": 0,
+          "loss_names": []
+        },
+        "ns17_set_extra": {
+          "evaluated": true,
+          "routed_away": true,
+          "ns22_wins": 19,
+          "candidate_wins": 17,
+          "gains": 0,
+          "losses": 2,
+          "loss_names": [
+            "Set.inter_singleton_eq_empty",
+            "Set.pair_subset_iff"
+          ]
+        },
+        "ns17_finset_extra": {
+          "evaluated": true,
+          "routed_away": true,
+          "ns22_wins": 12,
+          "candidate_wins": 14,
+          "gains": 2,
+          "losses": 0,
+          "loss_names": []
+        },
+        "ns14_set_finset_extra": {
+          "evaluated": true,
+          "routed_away": true,
+          "ns22_wins": 11,
+          "candidate_wins": 12,
+          "gains": 2,
+          "losses": 1,
+          "loss_names": [
+            "Set.ne_univ_iff_exists_not_mem"
+          ]
+        }
+      },
+      "summary": {
+        "int_total_ns12": 35,
+        "int_total_ns22": 57,
+        "int_total_candidate": 58,
+        "int_delta_vs_ns22": 1,
+        "relabeled_iff_ns22": 9,
+        "relabeled_iff_candidate": 9,
+        "held_out_gains_vs_ns22": 1,
+        "held_out_losses_vs_ns22": 0,
+        "demo_losses": 0,
+        "neg_control_losses_routed": 0,
+        "verdict": "marginal_gain"
+      }
+    },
+    "gen_v5_ns24_int_minimal_omega_plus_constructor_5x": {
+      "candidate": "gen_v5_ns24_int_minimal_omega_plus_constructor_5x",
+      "groups": {
+        "old_ns22_omega": {
+          "size": 12,
+          "ns12_solved": 0,
+          "ns22_solved": 12,
+          "candidate_solved": 12,
+          "detail": [
+            {
+              "theorem": "Int.emod_two_eq_zero_or_one",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_of_eq",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natAbs_coe_sub_coe_lt_of_lt",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_or_lt",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natAbs_coe_sub_coe_le_of_le",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.lt_or_lt_of_ne",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natAbs_add_of_nonpos",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.lt_asymm",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_natCast_sub",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.neg_emod_two",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.lt_or_le",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_pred_of_pos",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            }
+          ]
+        },
+        "relabeled_iff": {
+          "size": 9,
+          "ns12_solved": 0,
+          "ns22_solved": 9,
+          "candidate_solved": 9,
+          "detail": [
+            {
+              "theorem": "Int.le_add_one_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_iff_lt_or_eq",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_sub_one_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.sub_one_lt_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_antisymm_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_iff_eq_or_lt",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_nonpos_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_ne_zero_iff_pos",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_eq_zero",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            }
+          ]
+        },
+        "constructor": {
+          "size": 1,
+          "ns12_solved": 0,
+          "ns22_solved": 1,
+          "candidate_solved": 1,
+          "detail": [
+            {
+              "theorem": "Int.zero_le_ofNat",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            }
+          ]
+        }
+      },
+      "held_out_int": {
+        "n_probed": 136,
+        "ns22_wins": 35,
+        "candidate_wins": 36,
+        "n_gains_vs_ns22": 1,
+        "n_losses_vs_ns22": 0,
+        "gains": [
+          {
+            "theorem": "Int.cast_ite",
+            "tactic": "aesop",
+            "set": "cx2_int_mixed"
+          }
+        ],
+        "losses": []
+      },
+      "int_totals": {
+        "ns12": 35,
+        "ns22": 57,
+        "candidate": 58,
+        "n_int_probed": 158
+      },
+      "candidate_tactic_distribution": {
+        "omega": 28,
+        "aesop": 6,
+        "simp_all": 23,
+        "other": 1
+      },
+      "neg_control": {
+        "demo_v1": {
+          "evaluated": false,
+          "ns22_wins": null,
+          "candidate_wins": null,
+          "gains": null,
+          "losses": null,
+          "loss_names": []
+        },
+        "ns17_set_extra": {
+          "evaluated": false,
+          "ns22_wins": null,
+          "candidate_wins": null,
+          "gains": null,
+          "losses": null,
+          "loss_names": []
+        },
+        "ns17_finset_extra": {
+          "evaluated": false,
+          "ns22_wins": null,
+          "candidate_wins": null,
+          "gains": null,
+          "losses": null,
+          "loss_names": []
+        },
+        "ns14_set_finset_extra": {
+          "evaluated": false,
+          "ns22_wins": null,
+          "candidate_wins": null,
+          "gains": null,
+          "losses": null,
+          "loss_names": []
+        }
+      },
+      "summary": {
+        "int_total_ns12": 35,
+        "int_total_ns22": 57,
+        "int_total_candidate": 58,
+        "int_delta_vs_ns22": 1,
+        "relabeled_iff_ns22": 9,
+        "relabeled_iff_candidate": 9,
+        "held_out_gains_vs_ns22": 1,
+        "held_out_losses_vs_ns22": 0,
+        "demo_losses": 0,
+        "neg_control_losses_routed": 0,
+        "verdict": "marginal_gain"
+      }
+    },
+    "gen_v5_ns24_int_minimal_omega_5x_from_ns12": {
+      "candidate": "gen_v5_ns24_int_minimal_omega_5x_from_ns12",
+      "groups": {
+        "old_ns22_omega": {
+          "size": 12,
+          "ns12_solved": 0,
+          "ns22_solved": 12,
+          "candidate_solved": 12,
+          "detail": [
+            {
+              "theorem": "Int.emod_two_eq_zero_or_one",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_of_eq",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natAbs_coe_sub_coe_lt_of_lt",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_or_lt",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natAbs_coe_sub_coe_le_of_le",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.lt_or_lt_of_ne",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natAbs_add_of_nonpos",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.lt_asymm",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_natCast_sub",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.neg_emod_two",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.lt_or_le",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_pred_of_pos",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            }
+          ]
+        },
+        "relabeled_iff": {
+          "size": 9,
+          "ns12_solved": 0,
+          "ns22_solved": 9,
+          "candidate_solved": 9,
+          "detail": [
+            {
+              "theorem": "Int.le_add_one_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_iff_lt_or_eq",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_sub_one_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.sub_one_lt_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_antisymm_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.le_iff_eq_or_lt",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_nonpos_iff",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_ne_zero_iff_pos",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            },
+            {
+              "theorem": "Int.natCast_eq_zero",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            }
+          ]
+        },
+        "constructor": {
+          "size": 1,
+          "ns12_solved": 0,
+          "ns22_solved": 1,
+          "candidate_solved": 1,
+          "detail": [
+            {
+              "theorem": "Int.zero_le_ofNat",
+              "ns12_solved": false,
+              "ns22_solved": true,
+              "candidate_solved": true,
+              "candidate_tactic": "omega"
+            }
+          ]
+        }
+      },
+      "held_out_int": {
+        "n_probed": 136,
+        "ns22_wins": 35,
+        "candidate_wins": 36,
+        "n_gains_vs_ns22": 1,
+        "n_losses_vs_ns22": 0,
+        "gains": [
+          {
+            "theorem": "Int.cast_ite",
+            "tactic": "aesop",
+            "set": "cx2_int_mixed"
+          }
+        ],
+        "losses": []
+      },
+      "int_totals": {
+        "ns12": 35,
+        "ns22": 57,
+        "candidate": 58,
+        "n_int_probed": 158
+      },
+      "candidate_tactic_distribution": {
+        "omega": 28,
+        "aesop": 5,
+        "simp_all": 24,
+        "other": 1
+      },
+      "neg_control": {
+        "demo_v1": {
+          "evaluated": false,
+          "ns22_wins": null,
+          "candidate_wins": null,
+          "gains": null,
+          "losses": null,
+          "loss_names": []
+        },
+        "ns17_set_extra": {
+          "evaluated": false,
+          "ns22_wins": null,
+          "candidate_wins": null,
+          "gains": null,
+          "losses": null,
+          "loss_names": []
+        },
+        "ns17_finset_extra": {
+          "evaluated": false,
+          "ns22_wins": null,
+          "candidate_wins": null,
+          "gains": null,
+          "losses": null,
+          "loss_names": []
+        },
+        "ns14_set_finset_extra": {
+          "evaluated": false,
+          "ns22_wins": null,
+          "candidate_wins": null,
+          "gains": null,
+          "losses": null,
+          "loss_names": []
+        }
+      },
+      "summary": {
+        "int_total_ns12": 35,
+        "int_total_ns22": 57,
+        "int_total_candidate": 58,
+        "int_delta_vs_ns22": 1,
+        "relabeled_iff_ns22": 9,
+        "relabeled_iff_candidate": 9,
+        "held_out_gains_vs_ns22": 1,
+        "held_out_losses_vs_ns22": 0,
+        "demo_losses": 0,
+        "neg_control_losses_routed": 0,
+        "verdict": "marginal_gain"
+      }
+    }
+  }
+}

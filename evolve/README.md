@@ -75,6 +75,8 @@ NS22 distilled it. NS22 is the main **post-CX result for Int transfer**.
 | NS21 routed raw             |      23/38 |     35/65 |   10/15 | Finset local gains         |
 | **NS22 routed raw**         |  **23/38** | **35/65** |   10/15 | **57 vs 35 NS12 baseline** |
 | NS9 wrapper + NS22 router   |      37/38 |     49/65 |   11/15 | wrapper adds ~0 on Int     |
+| NS24 routed raw             |      23/38 |     35/65 |   10/15 | 58 (NS22 + 1, marginal)    |
+| NS9 wrapper + NS24 router   |      37/38 |     49/65 |   11/15 | wrapper adds ~0 on Int     |
 
 NS22 routes `^Int\.` to `gen_v5_ns22_int_fallback_omega_5x` and adds
 **+22 raw Int wins (35 → 57) vs the NS12 baseline across the CX1+CX2
@@ -92,6 +94,19 @@ attribution can award a goal to the iff-pair template when plain `omega`
 would also have closed it, so future mining should aggregate
 `iff_omega_pair` and `fallback_omega` into one minimal `omega` family.
 See `project/evolve/reports/post_cx1_ns21_cx2_ns22_update.md`.
+
+NS23 then **proved** that aggregation (9/10 iff_omega Int theorems are
+`omega`-minimal; aggregate = 22 unique), and NS24 trained on it. The
+NS24 result is a **confirmatory near-null**: the repaired minimal-omega
+labels reproduce NS22 (57 → 58/156 Int, +1) rather than reaching the
+hoped-for 65–70+. The relabeled iff group is solved 9/9 by **both** NS22
+and NS24 — NS22's ablation had already absorbed the `omega` policy, so
+the repaired labels had nothing left to teach. The lesson: minimal-tactic
+relabeling is the right *attribution/gating* step (it would have saved
+NS22's failed iff_5x/iff_10x runs) but only adds wins on a family the
+base model has **not** already absorbed. The NS24 router is promoted as a
+marginal best; the omega surface is now saturated. See
+`project/evolve/reports/ns24_int_minimal_omega_training_report.md`.
 
 ### Earlier milestones
 
@@ -375,35 +390,55 @@ subprocess logs, or checkpoint binaries.
   iff-pair tactic is unlearnable at 60M-param scale; the short
   `omega` tactic is the transferable signal. All Nat/Set/Finset/
   demo routed-raw and wrapper baselines preserved exactly.
+- **NS23 (done)** — minimal-tactic relabeling / attribution repair.
+  Re-ran all 32 wrapper-only-vs-NS9 wins through a 12-tactic
+  minimal-sufficient battery. **9/10 Int `iff_omega_pair` theorems
+  are `omega`-minimal** — the iff-pair template merely won the NS9
+  ordering race. Under repaired labels the Int **omega aggregate =
+  22 unique** (21 `omega` + 1 `constructor <;> omega`), the largest
+  homogeneous training surface across all arcs. Confirms NS22's
+  "cross-family transfer" was single-family omega absorption.
+- **NS24 (done, current — marginal)** — Int minimal-omega aggregate
+  training. Trained the 22-theorem repaired pool (variants ×5/×10/
+  +constructor/from-ns12) from `gen_v5_ns22_int_fallback_omega_5x`.
+  Best `gen_v5_ns24_int_minimal_omega_10x`, routed on `^Int\.`.
+  **Near-null result: 57 → 58/156 Int (+1).** The relabeled iff
+  group is solved 9/9 by **both** NS22 and NS24 — NS22 had already
+  absorbed `omega`, so the repaired labels added nothing. Routed
+  Nat/Set/Finset/demo and wrapper baselines preserved exactly
+  (23/38, 35/65, 10/15; wrap 37/38, 49/65, 11/15). Promoted as a
+  marginal best; the Int omega surface is saturated.
 
 ### Recommended next directions
 
-NS22 exposed a **wrapper-attribution mismatch**: some goals
-attributed to `iff_omega_pair` were actually `omega`-sufficient,
-because the first winning wrapper tactic is not necessarily the
-shortest sufficient one. The guiding principle is now **train on
-the shortest sufficient tactic family, not the wrapper-attributed
-family.** In rough order of likely yield:
+The minimal-tactic principle (NS23/NS24) is now validated as an
+**attribution/gating** step — it correctly identifies which family to
+train and would have saved NS22's failed iff-pair runs — but it only
+adds *wins* on a family the base model has not already absorbed. The
+Int omega surface is saturated (NS22 ≈ NS24). In rough order of likely
+yield:
 
-1. **NS23 minimal-tactic relabeling / attribution repair.** Re-run
-   wrapper wins through a minimal-sufficient-tactic check and
-   aggregate `iff_omega_pair` + `fallback_omega` into one `omega`
-   family wherever `omega` succeeds, *before* declaring any
-   training gate met. This is the recommended next step — not
-   another immediate training run.
-2. **CX3 Bool/Option decide-family mining.** Bool (35) and Option
-   (47) remain mostly unprobed; the NS22 omega-absorption pattern
-   suggests a `decide`-family wrapper-only pool could yield similar
-   broad transfer on a fresh namespace.
-3. **DPO / ranker or reranker objective for long structured
-   tactics.** Simple imitation cannot absorb long iff-pair / multi-
-   step terms at this model scale; a preference/ranking objective
-   over competing wrapper-only tactics may be needed.
-4. **Stronger wrapper capabilities — only after attribution repair.**
-   `aesop` with rule_sets / lemma bundles, `decide`, term-mode
-   synthesis. Defer until minimal-tactic labels are trustworthy.
+1. **CX3 Bool/Option decide-family mining.** Bool (35) and Option
+   (47) remain mostly unprobed fresh namespaces with no base prior —
+   the setting where NS15/NS22-style absorption actually produced
+   broad transfer. Highest-yield next direction.
+2. **Mine fresh held-out Int.** The CX2 audit left ~50 sub-bitwise/
+   dvd Int order/arith candidates unprobed. Probing them measures
+   whether the 22-pool transfers to genuinely-unseen Int (vs the
+   saturated wrapper-only pool).
+3. **Keep minimal-tactic relabel as a pre-training gate.** Cheap; it
+   prevents wasted long-tactic imitation. Run it before declaring any
+   future training gate met.
+4. **DPO / ranker or reranker objective for long structured
+   tactics.** Still deferred — the minimal-label finding holds that
+   the transferable tactics are short and already learnable by
+   imitation; preference methods are only needed if a genuinely
+   long-tactic-only family appears.
 
-See `project/evolve/reports/post_cx1_ns21_cx2_ns22_update.md`
+See `project/evolve/reports/ns24_int_minimal_omega_training_report.md`
+for the NS24 arc,
+`project/evolve/reports/ns23_minimal_tactic_relabeling_report.md` for
+NS23, `project/evolve/reports/post_cx1_ns21_cx2_ns22_update.md`
 for the CX1→NS22 update,
 `project/evolve/reports/learn_track_final_report_ns10_ns20.md`
 for the full Learn-track narrative, and

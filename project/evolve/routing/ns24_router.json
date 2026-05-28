@@ -1,0 +1,23 @@
+{
+  "_about": "NS24 domain-aware router. Only the Int route changes vs the NS22 router: Int goals now go to gen_v5_ns24_int_minimal_omega_10x, trained on the NS23-repaired minimal-omega aggregate (21 omega-minimal Int theorems x10 + NS12 replay). Nat/Finset/Set/default routes are UNCHANGED from the NS22 router, so Nat/Set/Finset/demo preservation carries over by construction.",
+  "_chosen_int_ckpt": "gen_v5_ns24_int_minimal_omega_10x",
+  "_promotion_note": "MARGINAL improvement only. NS24 Int total = 58/156 raw vs NS22's 57/156 (+1, the single held-out gain Int.cast_ite). The hoped-for 65-70+ broad transfer did NOT materialize: the relabeled_iff group is solved 9/9 by BOTH NS22 and NS24, confirming NS23's retrospective finding that NS22's fallback_omega ablation had already absorbed the omega policy. Promoting omega_10x because it strictly dominates NS22 on Int (no Int losses) at no preservation cost (routes unchanged); the result is best read as a confirmation of the minimal-tactic principle, not a new capability jump.",
+  "_int_eval_summary": {
+    "NS22_omega_5x_int_total": 57,
+    "NS24_omega_5x_int_total": 57,
+    "NS24_omega_10x_int_total": 58,
+    "NS24_plus_constructor_5x_int_total": 58,
+    "NS24_from_ns12_int_total": 58,
+    "denominator": 156,
+    "relabeled_iff_resolution_ns22": "9/9",
+    "relabeled_iff_resolution_ns24": "9/9",
+    "single_held_out_gain": "Int.cast_ite"
+  },
+  "routes": [
+    {"pattern": "^Nat\\.",    "ckpt_dir": "project/models/gen_v5_ns15_nat_oversample"},
+    {"pattern": "^Int\\.",    "ckpt_dir": "project/models/gen_v5_ns24_int_minimal_omega_10x"},
+    {"pattern": "^Finset\\.", "ckpt_dir": "project/models/gen_v5_ns21_finset_aesop_20x"},
+    {"pattern": "^Set\\.",    "ckpt_dir": "project/models/gen_v5_ns12_balanced"}
+  ],
+  "default_ckpt_dir": "project/models/gen_v5_ns12_balanced"
+}

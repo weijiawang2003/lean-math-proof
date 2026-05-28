@@ -1,0 +1,8 @@
+{
+  "variant": "from_ns12",
+  "out_path": "project/data/ns24_int_minimal_omega_5x.jsonl",
+  "init_from": "project/models/gen_v5_ns12_balanced",
+  "note": "ablation: identical dataset to ns24_int_minimal_omega_5x; trained from gen_v5_ns12_balanced instead of the NS22 Int specialist, to isolate continued-training effect",
+  "oversample_factor": 5,
+  "n_pool_unique_theorems": 21
+}
