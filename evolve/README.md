@@ -453,18 +453,37 @@ subprocess logs, or checkpoint binaries.
   Combined WX1+WX2 = **+29 wins beyond NS9** (Option +19, List +10), all
   wrapper-ready. NS9 genome unmodified; configs under
   `project/evolve/experiments/wx2/`.
+- **AX1 (done — prototype, symbolic action layer)** — abstraction layer
+  that factors the state-dependent variable out of the cases tactics so
+  the *label* becomes SFT-ready. Added `project/evolve/symbolic_actions.py`
+  (typed `SymbolicAction`: CASES_SIMP/INDUCTION_SIMP × Option/List/Bool ×
+  simp/simp_all/decide, stable id like `CASES_SIMP[List,simp_all]`) +
+  `project/evolve/state_vars.py` (coarse-typed state extractor), and an
+  off-by-default `symbolic_actions` wrapper block (origin
+  `wrapper_symbolic_action`). The AX1 symbolic config **reproduces WX2
+  exactly** (Δ=0 on all 6 sets, 0 regressions, 0 emissions outside gated
+  namespaces). A symbolic-label dataset prototype shows the 27 WX1+WX2
+  wins — all variable-dependent raw tactics — collapse to **4 stable
+  symbolic labels**. Recommendation: this validates **AX2 symbolic-action
+  training**. No training in AX1; NS9 genome unmodified.
 
 ### Project state
 
 - **Learn track (fine-tunes):** NS15 (Nat) and NS22 (Int/omega) are the
   positive distillations; NS24 confirmed the Int omega surface is
-  **saturated** (57→58, near-null). No SFT-ready family has appeared
-  since Int/omega.
+  **saturated** (57→58, near-null). No short-token SFT family has
+  appeared since Int/omega.
 - **Wrapper track (NS9 + WX):** NS9 is the base genome; WX1/WX2 add a
   state-aware `cases <var> <;> simp` capability (Option + List, +29
   beyond NS9, 0 regressions, namespace-gated). This is the active
-  growth edge — state-dependent headroom is captured at search time, not
-  by training.
+  growth edge — state-dependent headroom is captured at search time.
+- **Symbolic bridge (AX):** AX1 shows the three regimes connect — **raw
+  tactic SFT** works for short stable tactics (`omega`/`aesop`:
+  NS15/NS22); the **state-aware wrapper** works for variable-dependent
+  tactics (`cases <var> <;> simp`: WX1/WX2); and **symbolic-action
+  training** is the bridge — it makes the variable-dependent family
+  SFT-ready *as a label* (`CASES_SIMP[List,simp_all]`) while the wrapper
+  instantiates the variable from the state.
 - **Mining protocol:** always run NS23-style minimal-tactic relabeling
   before declaring a training gate met. It distinguishes short-token
   (SFT-ready) from state-aware compound (wrapper-ready) families and has
@@ -475,26 +494,31 @@ subprocess logs, or checkpoint binaries.
 
 The minimal-tactic principle (NS23/NS24) gates training; the Int omega
 surface is saturated; CX3 showed the fresh-namespace short-token thesis
-does not carry to Bool/Option; and WX1/WX2 showed the right response to
-state-dependent headroom is a **wrapper** capability. In rough order of
-likely yield:
+does not carry to Bool/Option; WX1/WX2 captured state-dependent headroom
+in a **wrapper**; and AX1 showed that headroom can be made SFT-ready *as
+a symbolic label*. In rough order of likely yield:
 
-1. **Fold WX1+WX2 into the canonical wrapper** (genome + router
-   sign-off), then re-baseline the full matrix; +29 beyond NS9, 0
-   regressions, namespace-gated-safe.
-2. **Extend the cases skeleton to remaining inductive surface.** Beyond
-   List the cases-friendly catalog is thin; the largest untapped surface
-   is Multiset (251 fresh) but it is a quotient — would need a
-   `Multiset.induction_on`-aware skeleton (quotient-specific).
-3. **Mine fresh held-out Int.** The CX2 audit left ~50 sub-bitwise/dvd
-   Int order/arith candidates unprobed.
-4. **Short-token SFT stays gated** on finding a genuinely short-token
-   family (none since Int/omega); keep minimal-tactic relabel as the
-   pre-training gate, and **DPO / ranker** for structured tactics still
-   deferred.
+1. **AX2: train a symbolic-action predictor.** AX1 reproduced WX2 exactly
+   and reduced 27 variable-bearing wins to 4 stable labels. Grow the
+   symbolic-label dataset (re-mine cases wins under the symbolic wrapper)
+   then train a per-state action classifier or action-id-augmented
+   generator; the wrapper instantiates the variable. First training
+   target with a genuinely new (symbolic) vocabulary since Int/omega.
+2. **Fold WX1+WX2/AX1 into the canonical wrapper** (genome + router
+   sign-off) — the AX1 symbolic config is equivalent to WX2 and more
+   general; re-baseline the full matrix.
+3. **Extend the symbolic action set to remaining inductive surface.**
+   Beyond List the cases-friendly catalog is thin; the largest untapped
+   surface is Multiset (251 fresh) but it is a quotient — would need a
+   `Multiset.induction_on`-aware action (quotient-specific).
+4. **Mine fresh held-out Int** (~50 sub-bitwise/dvd candidates unprobed);
+   short-token raw SFT stays gated on a genuinely short-token family.
 
-See `project/evolve/reports/wx2_state_aware_cases_generalization_report.md`
+See `project/evolve/reports/ax1_symbolic_action_layer_report.md` for the
+AX1 symbolic action layer,
+`project/evolve/reports/wx2_state_aware_cases_generalization_report.md`
 for the WX2 cases-wrapper generalization arc,
+`project/evolve/reports/wx1_option_cases_wrapper_report.md` for the
 `project/evolve/reports/wx1_option_cases_wrapper_report.md` for the
 WX1 state-aware Option cases-wrapper arc,
 `project/evolve/reports/cx3_bool_option_decide_mining_report.md`

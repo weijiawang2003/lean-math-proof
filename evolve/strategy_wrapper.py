@@ -50,6 +50,12 @@ ORIGIN_TERM_BUILDER = "term_builder"
 # local-context binder of a gated type (Option/Bool). Off unless the genome
 # ships an `option_cases_skeletons` block with enabled=true.
 ORIGIN_OPTION_CASES = "wrapper_option_cases"
+# AX1 (experimental): symbolic-action origin. Tagged on tactics rendered
+# from a SymbolicAction (e.g. CASES_SIMP[List,simp_all]) instantiated
+# against the live proof state. Off unless the genome ships a
+# `symbolic_actions` block with enabled=true. The action id is carried in
+# the entry's template_source slot for trace attribution.
+ORIGIN_SYMBOLIC_ACTION = "wrapper_symbolic_action"
 
 # Default tactic forms used to wrap a retrieved lemma name. `{p}` is the
 # substitution placeholder. Override per-call via retrieval_tactic_forms.
@@ -612,6 +618,14 @@ class StrategyWrapperPolicy:
         #    "family_source": "option_cases_simp"}
         self.option_cases_skeletons: dict | None = None
         self.last_option_cases_attempt_count: int = 0
+        # AX1 (experimental): symbolic-action block. Set post-construction
+        # by eval_rollout_all from the genome's optional `symbolic_actions`
+        # block; None = disabled (NS9-identical). Schema:
+        #   {"enabled": bool, "actions": [ {action_type, var_type,
+        #    simp_mode, namespace_gate, max_vars, priority, family_source} ]}
+        self.symbolic_actions: dict | None = None
+        self.last_symbolic_attempt_count: int = 0
+        self._symbolic_actions_parsed = None  # lazy-built list[SymbolicAction]
 
     def rank_tactics(
         self, state_pp: str, full_name: str = "", k: int = 5
@@ -1128,9 +1142,36 @@ class StrategyWrapperPolicy:
                             )
         self.last_option_cases_attempt_count = len(option_cases_entries)
 
+        # AX1 (experimental): symbolic-action emission. Disabled (None)
+        # unless the genome ships a `symbolic_actions` block. Each action
+        # is instantiated against the live state (variable read from the
+        # context, namespace-gated), emitted with ORIGIN_SYMBOLIC_ACTION,
+        # the action's family_source, and the action id in template_source.
+        symbolic_entries: list[Entry] = []
+        sa = self.symbolic_actions
+        if sa and sa.get("enabled"):
+            if self._symbolic_actions_parsed is None:
+                from project.evolve.symbolic_actions import load_actions
+                self._symbolic_actions_parsed = load_actions(
+                    sa.get("actions") or [])
+            from project.evolve.symbolic_actions import (
+                instantiate_symbolic_action,
+            )
+            for action in sorted(self._symbolic_actions_parsed,
+                                 key=lambda a: -a.priority):
+                for tac, fam, action_id in instantiate_symbolic_action(
+                        action, state_pp, full_name):
+                    if tac and tac not in seen:
+                        seen.add(tac)
+                        symbolic_entries.append(
+                            (tac, ORIGIN_SYMBOLIC_ACTION, action_id, fam,
+                             None, None, None)
+                        )
+        self.last_symbolic_attempt_count = len(symbolic_entries)
+
         extra_entries = (
-            option_cases_entries + family_entries + retrieved_entries
-            + term_builder_entries + generic_entries
+            symbolic_entries + option_cases_entries + family_entries
+            + retrieved_entries + term_builder_entries + generic_entries
         )
 
         # v3.6 per-theorem deny-list: filter entries whose tactic string
@@ -1218,6 +1259,8 @@ class StrategyWrapperPolicy:
         # tail family/generic entries from being dropped on their account).
         if option_cases_entries and cap is not None:
             cap += len(option_cases_entries)
+        if symbolic_entries and cap is not None:
+            cap += len(symbolic_entries)
         if cap is not None:
             extra_entries = extra_entries[:cap]
 

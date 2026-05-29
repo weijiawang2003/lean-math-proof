@@ -1,0 +1,86 @@
+{
+  "comparison": "WX2 custom cases wrapper vs AX1 symbolic-action wrapper",
+  "router": "ns24_router",
+  "ax1_config": "project/evolve/experiments/ax1/ax1_symbolic_option_list_cases.json",
+  "rows": [
+    {
+      "set": "wx2_list_cases_easy",
+      "namespace_class": "List",
+      "wx2_baseline_run": "wx1_wx2gen_wx2_list_cases_easy",
+      "wx2_wins": 9,
+      "ax1_wins": 9,
+      "delta_ax1_minus_wx2": 0,
+      "ax1_only": [],
+      "wx2_only": [],
+      "ax1_symbolic_emissions": 164,
+      "available": 38
+    },
+    {
+      "set": "wx2_list_cases_medium",
+      "namespace_class": "List",
+      "wx2_baseline_run": "wx1_wx2gen_wx2_list_cases_medium",
+      "wx2_wins": 17,
+      "ax1_wins": 17,
+      "delta_ax1_minus_wx2": 0,
+      "ax1_only": [],
+      "wx2_only": [],
+      "ax1_symbolic_emissions": 60,
+      "available": 33
+    },
+    {
+      "set": "cx3_option_simp_easy",
+      "namespace_class": "Option",
+      "wx2_baseline_run": "wx1_wx2prom_cx3_option_simp_easy",
+      "wx2_wins": 26,
+      "ax1_wins": 26,
+      "delta_ax1_minus_wx2": 0,
+      "ax1_only": [],
+      "wx2_only": [],
+      "ax1_symbolic_emissions": 15,
+      "available": 32
+    },
+    {
+      "set": "cx3_option_cases_medium",
+      "namespace_class": "Option",
+      "wx2_baseline_run": "wx1_wx2prom_cx3_option_cases_medium",
+      "wx2_wins": 11,
+      "ax1_wins": 11,
+      "delta_ax1_minus_wx2": 0,
+      "ax1_only": [],
+      "wx2_only": [],
+      "ax1_symbolic_emissions": 6,
+      "available": 11
+    },
+    {
+      "set": "cx3_bool_option_mixed",
+      "namespace_class": "Option",
+      "wx2_baseline_run": "wx1_wx2prom_cx3_bool_option_mixed",
+      "wx2_wins": 22,
+      "ax1_wins": 22,
+      "delta_ax1_minus_wx2": 0,
+      "ax1_only": [],
+      "wx2_only": [],
+      "ax1_symbolic_emissions": 14,
+      "available": 33
+    },
+    {
+      "set": "demo_v1",
+      "namespace_class": "mixed-Nat",
+      "wx2_baseline_run": "wx1_wx2prom_demo_v1",
+      "wx2_wins": 11,
+      "ax1_wins": 11,
+      "delta_ax1_minus_wx2": 0,
+      "ax1_only": [],
+      "wx2_only": [],
+      "ax1_symbolic_emissions": 0,
+      "available": 15
+    }
+  ],
+  "summary": {
+    "total_wx2_wins": 96,
+    "total_ax1_wins": 96,
+    "max_abs_per_set_delta": 0,
+    "symbolic_emissions_outside_gated_namespaces": 0,
+    "ax1_reproduces_wx2": true
+  }
+}

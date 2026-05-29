@@ -219,8 +219,11 @@ def _load_policy(
                 wrapper.option_cases_skeletons = _raw_cfg.get(
                     "option_cases_skeletons"
                 )
+                # AX1: optional symbolic-action block (same plumbing).
+                wrapper.symbolic_actions = _raw_cfg.get("symbolic_actions")
             except Exception:
                 wrapper.option_cases_skeletons = None
+                wrapper.symbolic_actions = None
         return wrapper
     else:
         raise ValueError(
