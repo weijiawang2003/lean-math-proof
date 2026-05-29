@@ -466,6 +466,23 @@ subprocess logs, or checkpoint binaries.
   wins — all variable-dependent raw tactics — collapse to **4 stable
   symbolic labels**. Recommendation: this validates **AX2 symbolic-action
   training**. No training in AX1; NS9 genome unmodified.
+- **AX2 (done — negative for training, mining/readiness study)** — mined
+  the fresh Option/List surface under the AX1 symbolic wrapper to grow the
+  symbolic-label dataset, then ran the readiness gate. **Audit:**
+  Option/Bool/Sum/Prod are exhausted (0 fresh, even in the 3989-theorem
+  discovered scan); the only fresh surface is **List (76)**. **Probe** (3
+  disjoint fresh List sets, raw vs NS9 vs AX1-symbolic on `ns24_router`):
+  the symbolic wrapper adds **+3 wins beyond NS9, 0 regressions**, but
+  minimal relabeling shows all 3 are **multi-step** (`cases l <;> simp_all`
+  advances but does not close from init; 2 symbolic-assisted + 1 aesop) —
+  **0 clean single-shot symbolic labels added**. The dataset stays at 27;
+  readiness = **RED** (<40). The single-shot `cases <;> simp` pattern
+  monetizes only the easiest constructor-split lemmas, which WX2 already
+  consumed. **Decision: do NOT train AX3; recommend WX3** (Multiset
+  quotient-aware action, or multi-step symbolic sequences). The symbolic
+  layer stays a search-time wrapper capability. No checkpoints; NS9/AX1
+  unmodified. See
+  `project/evolve/reports/ax2_symbolic_dataset_expansion_report.md`.
 
 ### Project state
 
@@ -483,7 +500,11 @@ subprocess logs, or checkpoint binaries.
   tactics (`cases <var> <;> simp`: WX1/WX2); and **symbolic-action
   training** is the bridge — it makes the variable-dependent family
   SFT-ready *as a label* (`CASES_SIMP[List,simp_all]`) while the wrapper
-  instantiates the variable from the state.
+  instantiates the variable from the state. **AX2 then tested the data
+  side and came back RED:** the symbolic-label dataset is capped at ~27
+  single-shot examples (Option exhausted; fresh List wins are multi-step),
+  so AX3 training is deferred — the symbolic layer remains a search-time
+  wrapper capability, not yet a learned predictor.
 - **Mining protocol:** always run NS23-style minimal-tactic relabeling
   before declaring a training gate met. It distinguishes short-token
   (SFT-ready) from state-aware compound (wrapper-ready) families and has
@@ -498,12 +519,17 @@ does not carry to Bool/Option; WX1/WX2 captured state-dependent headroom
 in a **wrapper**; and AX1 showed that headroom can be made SFT-ready *as
 a symbolic label*. In rough order of likely yield:
 
-1. **AX2: train a symbolic-action predictor.** AX1 reproduced WX2 exactly
-   and reduced 27 variable-bearing wins to 4 stable labels. Grow the
-   symbolic-label dataset (re-mine cases wins under the symbolic wrapper)
-   then train a per-state action classifier or action-id-augmented
-   generator; the wrapper instantiates the variable. First training
-   target with a genuinely new (symbolic) vocabulary since Int/omega.
+1. **WX3: grow the symbolic surface before any AX3 training.** AX2 mined
+   the entire fresh available surface and added **0 clean single-shot
+   symbolic labels** (Option exhausted; fresh List wins are multi-step) —
+   readiness is RED at 27 examples, so a learned symbolic-action predictor
+   (AX3) is not yet justified. To unlock more clean labels, WX3 should try
+   (a) a **Multiset quotient-aware action** (`Multiset.induction_on`; ~250
+   fresh, the largest untapped surface, needs a new action type), or (b)
+   **multi-step symbolic action sequences** to capture the `CASES_SIMP`
+   +search wins AX2 found. Keep the AX1 symbolic layer as the canonical
+   cases wrapper; defer AX3 until a surface yields enough single-shot
+   symbolic labels.
 2. **Fold WX1+WX2/AX1 into the canonical wrapper** (genome + router
    sign-off) — the AX1 symbolic config is equivalent to WX2 and more
    general; re-baseline the full matrix.

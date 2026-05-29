@@ -218,3 +218,13 @@ project/evolve/eval_runs/wx1_*/
 # wx1_* eval-run prefix, already ignored above; this covers wx2_* too.)
 project/evolve/eval_runs/wx2_*.log
 project/evolve/eval_runs/wx2_*/
+
+# AX2 symbolic-action dataset expansion. Mining + dataset construction +
+# readiness study; the optional Stage-7 classifier is an in-memory smoke
+# test (no artifact). Scripts, theorem-set config, metadata JSONs, and
+# reports ARE committed; eval traces/logs/run dirs (also covered by the
+# blanket eval_runs/ ignore) and the per-row label JSONL are not. No
+# checkpoints or classifier model artifacts are produced.
+project/evolve/eval_runs/ax2_*.log
+project/evolve/eval_runs/ax2_*/
+project/data/ax2_symbolic_label_dataset.jsonl

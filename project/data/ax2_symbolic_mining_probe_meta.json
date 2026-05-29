@@ -1,0 +1,111 @@
+{
+  "router": "ns24_router",
+  "configs": {
+    "raw": "routed_generative (no wrapper)",
+    "ns9": "project/evolve/best/ns9_best_genome.json",
+    "ax1sym": "project/evolve/experiments/ax1/ax1_symbolic_option_list_cases.json"
+  },
+  "per_set_summary": [
+    {
+      "set": "ax2_list_cases_fresh",
+      "available": 46,
+      "total_theorems": 51,
+      "raw_wins": 4,
+      "ns9_wins": 4,
+      "symbolic_wins": 7,
+      "symbolic_only_beyond_ns9": 3,
+      "symbolic_only_beyond_raw": 3,
+      "regressions_vs_ns9": 0,
+      "symbolic_only_beyond_ns9_theorems": [
+        "List.headI_dedup",
+        "List.tail_dedup",
+        "List.zipLeft_nil_right"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "set": "ax2_list_induction_fresh",
+      "available": 10,
+      "total_theorems": 10,
+      "raw_wins": 0,
+      "ns9_wins": 0,
+      "symbolic_wins": 0,
+      "symbolic_only_beyond_ns9": 0,
+      "symbolic_only_beyond_raw": 0,
+      "regressions_vs_ns9": 0,
+      "symbolic_only_beyond_ns9_theorems": [],
+      "regression_theorems": []
+    },
+    {
+      "set": "ax2_option_list_mixed_fresh",
+      "available": 15,
+      "total_theorems": 15,
+      "raw_wins": 0,
+      "ns9_wins": 0,
+      "symbolic_wins": 0,
+      "symbolic_only_beyond_ns9": 0,
+      "symbolic_only_beyond_raw": 0,
+      "regressions_vs_ns9": 0,
+      "symbolic_only_beyond_ns9_theorems": [],
+      "regression_theorems": []
+    }
+  ],
+  "totals": {
+    "symbolic_only_beyond_ns9": 3,
+    "symbolic_only_beyond_raw": 3,
+    "regressions_vs_ns9": 0
+  },
+  "symbolic_only_origin_counts": {
+    "wrapper_symbolic_action": 2,
+    "generative_topk": 1
+  },
+  "symbolic_only_action_id_counts": {
+    "CASES_SIMP[List,simp_all]": 2
+  },
+  "symbolic_only_family_counts": {
+    "symbolic_list_cases_simp_all": 2,
+    "?": 1
+  },
+  "symbolic_only_by_namespace": {
+    "List": 3
+  },
+  "regression_theorems": [],
+  "symbolic_only_beyond_ns9_theorems": [
+    {
+      "full_name": "List.headI_dedup",
+      "file_path": "Mathlib/Data/List/Dedup.lean",
+      "namespace": "List",
+      "set": "ax2_list_cases_fresh",
+      "winning_tactic": "cases l <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "symbolic_action_id": "CASES_SIMP[List,simp_all]",
+      "winning_family": "symbolic_list_cases_simp_all",
+      "variable_selected": "l",
+      "also_beyond_raw": true
+    },
+    {
+      "full_name": "List.tail_dedup",
+      "file_path": "Mathlib/Data/List/Dedup.lean",
+      "namespace": "List",
+      "set": "ax2_list_cases_fresh",
+      "winning_tactic": "cases l <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "symbolic_action_id": "CASES_SIMP[List,simp_all]",
+      "winning_family": "symbolic_list_cases_simp_all",
+      "variable_selected": "l",
+      "also_beyond_raw": true
+    },
+    {
+      "full_name": "List.zipLeft_nil_right",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "set": "ax2_list_cases_fresh",
+      "winning_tactic": "aesop",
+      "winning_origin": "generative_topk",
+      "symbolic_action_id": null,
+      "winning_family": "?",
+      "variable_selected": null,
+      "also_beyond_raw": true
+    }
+  ]
+}

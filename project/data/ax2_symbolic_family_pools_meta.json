@@ -1,0 +1,17 @@
+{
+  "gate_unique_required": 5,
+  "total_relabeled": 3,
+  "single_shot_closable": 0,
+  "clean_single_shot_symbolic_needed": 0,
+  "dropped_simpler_tactic_closes_single_shot": 0,
+  "multistep_symbolic_assisted": 2,
+  "multistep_nonsymbolic": 1,
+  "note": "clean_single_shot_symbolic_needed counts examples where a single symbolic CASES/INDUCTION action closes from init and no name-free tactic does (the AX3-trainable label class). multistep_symbolic_assisted wins used the symbolic action inside a multi-step search but no single tactic closes them -> weak labels, excluded from clean pools.",
+  "unresolved": [
+    "List.headI_dedup",
+    "List.tail_dedup",
+    "List.zipLeft_nil_right"
+  ],
+  "any_label_gate_met": false,
+  "symbolic_label_pools": {}
+}

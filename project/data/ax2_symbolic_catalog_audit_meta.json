@@ -1,0 +1,783 @@
+{
+  "note": "AX2 fresh Option/List symbolic-action candidate audit. 'used' is the union of all registered theorem sets (CX3/WX1/WX2/AX1-equivalence/demo_v1). Confirmed-available catalog is authoritative; discovered_only_unverified counts fresh candidates that appear only in the broader scan and are NOT confirmed available (excluded from mining).",
+  "sources": {
+    "available_catalog": "project/data/cx1_available_theorems.json",
+    "discovered_catalog": "project/discovered_theorems_cx1.json",
+    "used_theorem_sets": 52,
+    "used_unique_theorems": 1227
+  },
+  "per_namespace": {
+    "Option": {
+      "available_unique": 46,
+      "fresh_unused": 0,
+      "discovered_only_unverified": 0,
+      "family_buckets": {}
+    },
+    "List": {
+      "available_unique": 260,
+      "fresh_unused": 76,
+      "discovered_only_unverified": 0,
+      "family_buckets": {
+        "list_induction_simp": 10,
+        "list_cases_simp": 51,
+        "list_hard_unknown": 12,
+        "list_simp_only": 3
+      }
+    }
+  },
+  "fresh_candidates": {
+    "Option": [],
+    "List": [
+      {
+        "full_name": "List.getElem",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "easy",
+        "tags": [
+          "le"
+        ],
+        "num_tactics_approx": 1,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.getElem_attach",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "le",
+          "attach"
+        ],
+        "num_tactics_approx": 5,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.getElem_pmap",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "map",
+          "le"
+        ],
+        "num_tactics_approx": 6,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.getElem_reverse_aux",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "le"
+        ],
+        "num_tactics_approx": 11,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.getLast",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 5,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.getLast_append'",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 6,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.getLast_cons",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "cons"
+        ],
+        "num_tactics_approx": 5,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.getLast_pmap",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "map"
+        ],
+        "num_tactics_approx": 8,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.getLast_reverse",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 8,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.get_reverse_aux",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 12,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.get_set_of_ne",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 6,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.headI_dedup",
+        "file": "Mathlib/Data/List/Dedup.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 7,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.indexOf_append_of_mem",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "mem"
+        ],
+        "num_tactics_approx": 8,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.indexOf_append_of_not_mem",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "mem"
+        ],
+        "num_tactics_approx": 5,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.indexOf_eq_length",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "eq",
+          "le"
+        ],
+        "num_tactics_approx": 13,
+        "expected_family": "list_induction_simp"
+      },
+      {
+        "full_name": "List.indexOf_finRange",
+        "file": "Mathlib/Data/List/Range.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 5,
+        "expected_family": "list_hard_unknown"
+      },
+      {
+        "full_name": "List.indexOf_inj",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 11,
+        "expected_family": "list_hard_unknown"
+      },
+      {
+        "full_name": "List.indexOf_le_length",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "le"
+        ],
+        "num_tactics_approx": 9,
+        "expected_family": "list_induction_simp"
+      },
+      {
+        "full_name": "List.intercalate_splitOn",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "inter"
+        ],
+        "num_tactics_approx": 14,
+        "expected_family": "list_hard_unknown"
+      },
+      {
+        "full_name": "List.length_eraseIdx_add_one",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "le",
+          "erase"
+        ],
+        "num_tactics_approx": 8,
+        "expected_family": "list_induction_simp"
+      },
+      {
+        "full_name": "List.length_injective_iff",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "iff",
+          "le"
+        ],
+        "num_tactics_approx": 19,
+        "expected_family": "list_induction_simp"
+      },
+      {
+        "full_name": "List.lookmap.go_append",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "map"
+        ],
+        "num_tactics_approx": 11,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.lookup_graph",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 6,
+        "expected_family": "list_hard_unknown"
+      },
+      {
+        "full_name": "List.map_erase",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "map",
+          "erase"
+        ],
+        "num_tactics_approx": 5,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.map_injective_iff",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "map",
+          "iff"
+        ],
+        "num_tactics_approx": 6,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.map_subset_iff",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "map",
+          "subset",
+          "iff"
+        ],
+        "num_tactics_approx": 6,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.mem_attach",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "mem",
+          "attach"
+        ],
+        "num_tactics_approx": 5,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.mem_dedup",
+        "file": "Mathlib/Data/List/Dedup.lean",
+        "difficulty": "hard",
+        "tags": [
+          "mem"
+        ],
+        "num_tactics_approx": 6,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.mem_finRange",
+        "file": "Mathlib/Data/List/Range.lean",
+        "difficulty": "hard",
+        "tags": [
+          "mem"
+        ],
+        "num_tactics_approx": 5,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.mem_getLast",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "mem"
+        ],
+        "num_tactics_approx": 9,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.mem_map_swap",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "map",
+          "mem"
+        ],
+        "num_tactics_approx": 5,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.mem_takeWhile_imp",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "mem",
+          "le"
+        ],
+        "num_tactics_approx": 9,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.modifyLast.go_append_one",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "mod"
+        ],
+        "num_tactics_approx": 11,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.modifyLast_append",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "mod"
+        ],
+        "num_tactics_approx": 12,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.modifyLast_append_one",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "mod"
+        ],
+        "num_tactics_approx": 11,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.monotone_filter_right",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "filter",
+          "lt",
+          "filter_"
+        ],
+        "num_tactics_approx": 12,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.nodup_range",
+        "file": "Mathlib/Data/List/Range.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 10,
+        "expected_family": "list_hard_unknown"
+      },
+      {
+        "full_name": "List.nodup_range'",
+        "file": "Mathlib/Data/List/Range.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 8,
+        "expected_family": "list_hard_unknown"
+      },
+      {
+        "full_name": "List.nthLe_cons",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "le",
+          "cons"
+        ],
+        "num_tactics_approx": 9,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.nthLe_succ_scanl",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "le"
+        ],
+        "num_tactics_approx": 16,
+        "expected_family": "list_induction_simp"
+      },
+      {
+        "full_name": "List.nthLe_tail",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "le"
+        ],
+        "num_tactics_approx": 7,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.or_exists_of_exists_mem_cons",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "mem",
+          "cons"
+        ],
+        "num_tactics_approx": 8,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.pairwise_lt_range'",
+        "file": "Mathlib/Data/List/Range.lean",
+        "difficulty": "hard",
+        "tags": [
+          "lt"
+        ],
+        "num_tactics_approx": 9,
+        "expected_family": "list_hard_unknown"
+      },
+      {
+        "full_name": "List.pairwise_map'",
+        "file": "Mathlib/Data/List/Pairwise.lean",
+        "difficulty": "hard",
+        "tags": [
+          "map"
+        ],
+        "num_tactics_approx": 10,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.pairwise_of_forall_mem_list",
+        "file": "Mathlib/Data/List/Pairwise.lean",
+        "difficulty": "hard",
+        "tags": [
+          "mem"
+        ],
+        "num_tactics_approx": 6,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.pairwise_of_reflexive_of_forall_ne",
+        "file": "Mathlib/Data/List/Pairwise.lean",
+        "difficulty": "hard",
+        "tags": [
+          "le"
+        ],
+        "num_tactics_approx": 11,
+        "expected_family": "list_hard_unknown"
+      },
+      {
+        "full_name": "List.pairwise_pmap",
+        "file": "Mathlib/Data/List/Pairwise.lean",
+        "difficulty": "hard",
+        "tags": [
+          "map"
+        ],
+        "num_tactics_approx": 10,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.pmap_append",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "map"
+        ],
+        "num_tactics_approx": 5,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.pmap_congr",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "map"
+        ],
+        "num_tactics_approx": 5,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.ranges_disjoint",
+        "file": "Mathlib/Data/List/Range.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 20,
+        "expected_family": "list_induction_simp"
+      },
+      {
+        "full_name": "List.ranges_length",
+        "file": "Mathlib/Data/List/Range.lean",
+        "difficulty": "hard",
+        "tags": [
+          "le"
+        ],
+        "num_tactics_approx": 10,
+        "expected_family": "list_induction_simp"
+      },
+      {
+        "full_name": "List.reverseRecOn_concat",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 19,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.scanr_cons",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "cons"
+        ],
+        "num_tactics_approx": 7,
+        "expected_family": "list_induction_simp"
+      },
+      {
+        "full_name": "List.sizeOf_dropSlice_lt",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "lt"
+        ],
+        "num_tactics_approx": 18,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.sizeOf_lt_sizeOf_of_mem",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "mem",
+          "lt"
+        ],
+        "num_tactics_approx": 7,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.splitAt_eq_take_drop",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "eq"
+        ],
+        "num_tactics_approx": 46,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.splitOnP.go_acc",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 12,
+        "expected_family": "list_hard_unknown"
+      },
+      {
+        "full_name": "List.splitOnP_cons",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "cons"
+        ],
+        "num_tactics_approx": 5,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.splitOnP_eq_single",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "eq",
+          "le"
+        ],
+        "num_tactics_approx": 9,
+        "expected_family": "list_simp_only"
+      },
+      {
+        "full_name": "List.splitOnP_first",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 7,
+        "expected_family": "list_hard_unknown"
+      },
+      {
+        "full_name": "List.splitOnP_spec",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 21,
+        "expected_family": "list_hard_unknown"
+      },
+      {
+        "full_name": "List.splitOn_intercalate",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "inter"
+        ],
+        "num_tactics_approx": 25,
+        "expected_family": "list_hard_unknown"
+      },
+      {
+        "full_name": "List.sublist_replicate_iff",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "iff"
+        ],
+        "num_tactics_approx": 7,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.tail_dedup",
+        "file": "Mathlib/Data/List/Dedup.lean",
+        "difficulty": "hard",
+        "tags": [],
+        "num_tactics_approx": 7,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.takeWhile_eq_nil_iff",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "iff",
+          "eq",
+          "le"
+        ],
+        "num_tactics_approx": 7,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.takeWhile_eq_self_iff",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "iff",
+          "eq",
+          "le",
+          "self"
+        ],
+        "num_tactics_approx": 5,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.takeWhile_takeWhile",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "le"
+        ],
+        "num_tactics_approx": 6,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.unzip_enumFrom_eq_prod",
+        "file": "Mathlib/Data/List/Range.lean",
+        "difficulty": "medium",
+        "tags": [
+          "eq",
+          "prod"
+        ],
+        "num_tactics_approx": 2,
+        "expected_family": "list_induction_simp"
+      },
+      {
+        "full_name": "List.unzip_enum_eq_prod",
+        "file": "Mathlib/Data/List/Range.lean",
+        "difficulty": "medium",
+        "tags": [
+          "eq",
+          "prod"
+        ],
+        "num_tactics_approx": 2,
+        "expected_family": "list_induction_simp"
+      },
+      {
+        "full_name": "List.zipLeft'_nil_right",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "medium",
+        "tags": [
+          "le"
+        ],
+        "num_tactics_approx": 3,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.zipLeft_eq_zipLeft'",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "hard",
+        "tags": [
+          "eq",
+          "le"
+        ],
+        "num_tactics_approx": 12,
+        "expected_family": "list_simp_only"
+      },
+      {
+        "full_name": "List.zipLeft_nil_right",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "medium",
+        "tags": [
+          "le"
+        ],
+        "num_tactics_approx": 3,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.zipRight'_nil_left",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "medium",
+        "tags": [
+          "le"
+        ],
+        "num_tactics_approx": 3,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.zipRight_eq_zipRight'",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "medium",
+        "tags": [
+          "eq"
+        ],
+        "num_tactics_approx": 4,
+        "expected_family": "list_simp_only"
+      },
+      {
+        "full_name": "List.zipRight_nil_left",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "medium",
+        "tags": [
+          "le"
+        ],
+        "num_tactics_approx": 3,
+        "expected_family": "list_cases_simp"
+      },
+      {
+        "full_name": "List.zipWith_nil",
+        "file": "Mathlib/Data/List/Basic.lean",
+        "difficulty": "medium",
+        "tags": [],
+        "num_tactics_approx": 3,
+        "expected_family": "list_cases_simp"
+      }
+    ]
+  }
+}
