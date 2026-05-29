@@ -228,3 +228,12 @@ project/evolve/eval_runs/wx2_*/
 project/evolve/eval_runs/ax2_*.log
 project/evolve/eval_runs/ax2_*/
 project/data/ax2_symbolic_label_dataset.jsonl
+
+# WX3 Multiset quotient-aware wrapper probe. No training/checkpoints.
+# Experimental wrapper configs (project/evolve/experiments/wx3/*.json),
+# scripts, theorem-set config (project/evolve/routing/wx3_theorem_sets.json),
+# metadata/label JSONs, and reports ARE committed; eval traces, logs, run
+# dirs, and the parallel-matrix driver log are not (also covered by the
+# blanket eval_runs/ ignore above).
+project/evolve/eval_runs/wx3_*.log
+project/evolve/eval_runs/wx3_*/

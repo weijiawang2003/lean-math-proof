@@ -1,0 +1,34 @@
+{
+  "best_config": "ind",
+  "best_config_path": "project/evolve/experiments/wx3/wx3_multiset_induction_safe.json",
+  "wins_beyond_ns9": 25,
+  "robust_single_shot_symbolic_wins": 20,
+  "matrix_regressions_vs_ns9": 0,
+  "preservation_regressions": 0,
+  "multiset_emissions_outside_multiset": 0,
+  "clean_single_shot_symbolic_labels": 20,
+  "biggest_single_action_id": 18,
+  "induction_on_family_aggregate": 20,
+  "dominant_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+  "multistep_symbolic_assisted": 2,
+  "multistep_nonsymbolic": 2,
+  "dropped_over_attributed": 1,
+  "fresh_available_total": 251,
+  "evaluated_candidates": 165,
+  "held_out_surface_exists": true,
+  "induction_shape_fresh_total": 81,
+  "gates": {
+    "A_wrapper_ready": true,
+    "B_symbolic_learning_ready": true,
+    "B_strict_40_or_20_single_id": false,
+    "B_family_aggregate_20_plus_heldout": true,
+    "C_multi_step_only": false,
+    "D_negative": false
+  },
+  "verdict": "A+B",
+  "headline": "WRAPPER-READY (promote WX3) AND borderline SYMBOLIC-LEARNING-READY (induction_on family).",
+  "recommendation": [
+    "PROMOTE the WX3 Multiset wrapper (induction-only wx3_multiset_induction_safe is sufficient; combined adds ext/cases for generality at no regression cost).",
+    "AX3 is now plausible for the first time: the induction_on family reaches 18 (simp_all) / 20 (both simp modes) clean single-shot symbolic labels — at/near the >=20-in-one-family gate, unlike AX2 (0 clean labels). Recommend EXPANDING the Multiset induction surface (mine the ~86 held-out fresh + full induction-shape catalog) to push clean labels to >=40 / single-id >=20 before committing to AX3 symbolic-action training."
+  ]
+}

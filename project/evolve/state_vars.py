@@ -20,8 +20,9 @@ _BINDER_LINE = re.compile(
     r"^\s*([A-Za-z_][\w'✝]*(?:\s+[A-Za-z_][\w'✝]*)*)\s*:\s*(.+?)\s*$"
 )
 
-# Coarse type vocabulary (matches the AX1 spec).
-COARSE_TYPES = ("Option", "List", "Bool", "Nat", "Int", "unknown")
+# Coarse type vocabulary (matches the AX1 spec; WX3 adds Multiset).
+COARSE_TYPES = ("Option", "List", "Bool", "Nat", "Int", "Multiset",
+                "unknown")
 
 # Symbols that mark a binder type as a proposition (hypothesis).
 _PROP_MARKERS = ("=", "≤", "<", "≥", ">", "∈", "∉", "∧", "∨", "↔", "¬",
@@ -53,6 +54,8 @@ def _coarse_type(type_pp: str) -> str:
     t = type_pp.strip()
     if t.startswith("Option"):
         return "Option"
+    if t.startswith("Multiset"):
+        return "Multiset"
     if t.startswith("List"):
         return "List"
     if t == "Bool" or t.startswith("Bool"):

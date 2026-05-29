@@ -1,0 +1,2715 @@
+{
+  "source_available": "project/data/cx1_available_theorems.json",
+  "mathlib_commit": "29dcec074de168ac2bf835a77ef68bbe069194c5",
+  "total_multiset_discovered": 573,
+  "total_multiset_available": 260,
+  "already_probed_multiset": [
+    "Multiset.Nodup.le_dedup_iff_le",
+    "Multiset.Nodup.le_nsmul_iff_le",
+    "Multiset.Nodup.product",
+    "Multiset.Nodup.toFinset_inj",
+    "Multiset.erase_attach_map_val",
+    "Multiset.singleton_subset",
+    "Multiset.toFinset_add",
+    "Multiset.toFinset_card_eq_one_iff",
+    "Multiset.toFinset_dedup",
+    "Multiset.toFinset_filter",
+    "Multiset.toFinset_inter",
+    "Multiset.toFinset_nonempty",
+    "Multiset.toFinset_singleton",
+    "Multiset.toFinset_ssubset",
+    "Multiset.toFinset_subset",
+    "Multiset.toFinset_union",
+    "Multiset.union_zero",
+    "Multiset.zero_ssubset",
+    "Multiset.zero_union"
+  ],
+  "already_probed_count": 19,
+  "fresh_available_count": 251,
+  "category_counts": {
+    "ext": 74,
+    "simp": 79,
+    "induction": 81,
+    "quotient": 6,
+    "hard": 11
+  },
+  "difficulty_counts": {
+    "hard": 84,
+    "medium": 167
+  },
+  "shape_x_difficulty": {
+    "ext": {
+      "hard": 26,
+      "medium": 48
+    },
+    "simp": {
+      "medium": 52,
+      "hard": 27
+    },
+    "induction": {
+      "medium": 59,
+      "hard": 22
+    },
+    "quotient": {
+      "hard": 3,
+      "medium": 3
+    },
+    "hard": {
+      "hard": 6,
+      "medium": 5
+    }
+  },
+  "top_files": [
+    [
+      "Mathlib/Data/Multiset/Basic.lean",
+      189
+    ],
+    [
+      "Mathlib/Data/Multiset/Bind.lean",
+      42
+    ],
+    [
+      "Mathlib/Data/Multiset/Lattice.lean",
+      11
+    ],
+    [
+      "Mathlib/Data/Multiset/Dedup.lean",
+      5
+    ],
+    [
+      "Mathlib/Data/Finset/Lattice.lean",
+      2
+    ],
+    [
+      "Mathlib/Data/Set/Finite.lean",
+      2
+    ]
+  ],
+  "fresh_candidates": [
+    {
+      "full_name": "Multiset.Rel.countP_eq",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 9,
+      "family_tags": [
+        "eq"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.addHom_ext",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.add_eq_union_left_of_le",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 11,
+      "family_tags": [
+        "eq",
+        "le",
+        "union"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.add_eq_union_right_of_le",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "eq",
+        "le",
+        "union"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.add_inter_distrib",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "inter"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.add_union_distrib",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "union"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.card_eq_countP_add_countP",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "card",
+        "eq"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.card_erase_eq_ite",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "card",
+        "eq",
+        "erase"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.coe_count",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.coe_inter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "inter"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.countP_add",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.countP_congr",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 8,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.countP_eq_card",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "card",
+        "eq"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.countP_eq_countP_filter_add",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "filter",
+        "eq",
+        "lt",
+        "filter_"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.countP_eq_zero",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "eq"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.countP_filter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "filter",
+        "lt"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.countP_le_of_le",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.countP_map",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "map"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.countP_nsmul",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.countP_pos",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.countP_sub",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_dedup",
+      "file": "Mathlib/Data/Multiset/Dedup.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_eq_card",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "card",
+        "eq"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_eq_card_filter_eq",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "filter",
+        "card",
+        "eq",
+        "lt",
+        "filter_"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_eq_zero_of_not_mem",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "mem",
+        "eq"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_erase_of_ne",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "erase"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_erase_self",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "self",
+        "erase"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_filter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "filter",
+        "lt"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_filter_of_pos",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "filter",
+        "lt",
+        "filter_"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_finset_sup",
+      "file": "Mathlib/Data/Finset/Lattice.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 7,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_inter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "inter"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_map",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "map"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_map_eq_count",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 11,
+      "family_tags": [
+        "map",
+        "eq"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_map_eq_count'",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 7,
+      "family_tags": [
+        "map",
+        "eq"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_nsmul",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_pos",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_replicate",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_replicate_self",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "self"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_singleton",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le",
+        "singleton"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_sub",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 8,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.count_union",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "union"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.dedup_ext",
+      "file": "Mathlib/Data/Multiset/Dedup.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.dedup_map_dedup_eq",
+      "file": "Mathlib/Data/Multiset/Dedup.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "map",
+        "eq"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.dedup_nsmul",
+      "file": "Mathlib/Data/Multiset/Dedup.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.eq_union_right",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "eq",
+        "union"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.erase_add_left_neg",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le",
+        "erase"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.erase_add_right_pos",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "erase"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.erase_lt",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "lt",
+        "erase"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.ext",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.filter_union",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "filter",
+        "lt",
+        "union",
+        "filter_"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.inf_ndunion",
+      "file": "Mathlib/Data/Multiset/Lattice.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "union"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.inf_union",
+      "file": "Mathlib/Data/Multiset/Lattice.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "union"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.inter_add_distrib",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 14,
+      "family_tags": [
+        "inter"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.inter_le_right",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "le",
+        "inter"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.inter_replicate",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "inter"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.le_count_iff_replicate_le",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "iff",
+        "le"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.le_dedup_self",
+      "file": "Mathlib/Data/Multiset/Dedup.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le",
+        "self"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.le_iff_count",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 7,
+      "family_tags": [
+        "iff",
+        "le"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.le_inter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 12,
+      "family_tags": [
+        "le",
+        "inter"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.map_count_True_eq_filter_card",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "filter",
+        "map",
+        "card",
+        "eq",
+        "lt",
+        "filter_"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.map_erase",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 7,
+      "family_tags": [
+        "map",
+        "erase"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.map_erase_of_mem",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "map",
+        "mem",
+        "erase"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.map_union",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "map",
+        "union"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.mem_inter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "mem",
+        "inter"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.nodup_sup_iff",
+      "file": "Mathlib/Data/Multiset/Lattice.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "iff"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.one_le_count_iff_mem",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "mem",
+        "iff",
+        "le"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.replicate_inter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "inter"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.sub_add_inter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 8,
+      "family_tags": [
+        "inter"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.sub_inter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "inter"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.sup_ndunion",
+      "file": "Mathlib/Data/Multiset/Lattice.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "union"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.sup_union",
+      "file": "Mathlib/Data/Multiset/Lattice.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "union"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.union_add_distrib",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "union"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.union_add_inter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 10,
+      "family_tags": [
+        "union",
+        "inter"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.union_le",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "le",
+        "union"
+      ],
+      "shape": "ext"
+    },
+    {
+      "full_name": "Multiset.Nodup.sigma",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [],
+      "shape": "hard"
+    },
+    {
+      "full_name": "Multiset.Rel.mono",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 8,
+      "family_tags": [],
+      "shape": "hard"
+    },
+    {
+      "full_name": "Multiset.Rel.trans",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [],
+      "shape": "hard"
+    },
+    {
+      "full_name": "Multiset.finite_toSet",
+      "file": "Mathlib/Data/Set/Finite.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [],
+      "shape": "hard"
+    },
+    {
+      "full_name": "Multiset.inf_ndinsert",
+      "file": "Mathlib/Data/Multiset/Lattice.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "insert"
+      ],
+      "shape": "hard"
+    },
+    {
+      "full_name": "Multiset.rel_eq",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 8,
+      "family_tags": [
+        "eq"
+      ],
+      "shape": "hard"
+    },
+    {
+      "full_name": "Multiset.rel_flip_eq",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "eq"
+      ],
+      "shape": "hard"
+    },
+    {
+      "full_name": "Multiset.rel_of_forall",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 14,
+      "family_tags": [],
+      "shape": "hard"
+    },
+    {
+      "full_name": "Multiset.rel_refl_of_refl_on",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 7,
+      "family_tags": [],
+      "shape": "hard"
+    },
+    {
+      "full_name": "Multiset.sup_le",
+      "file": "Mathlib/Data/Multiset/Lattice.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "le"
+      ],
+      "shape": "hard"
+    },
+    {
+      "full_name": "Multiset.sup_ndinsert",
+      "file": "Mathlib/Data/Multiset/Lattice.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "insert"
+      ],
+      "shape": "hard"
+    },
+    {
+      "full_name": "Multiset.add_bind",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.add_cons",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.add_eq_union_iff_disjoint",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "iff",
+        "eq",
+        "union"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.add_product",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "prod"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.attach_cons",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 9,
+      "family_tags": [
+        "cons",
+        "attach"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.bind_add",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.bind_assoc",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "assoc"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.bind_bind",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.bind_congr",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.bind_cons",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.bind_hcongr",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.bind_map",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "map"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.bind_map_comm",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "map",
+        "comm"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.bind_singleton",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le",
+        "singleton"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.bind_zero",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.card_bind",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "card"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.card_join",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "card"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.card_product",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "card",
+        "prod"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.coe_bind",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.coe_product",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "prod"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.cons_add",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.cons_bind",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.cons_eq_cons",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 19,
+      "family_tags": [
+        "eq",
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.cons_inj_right",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.cons_inter_distrib",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "cons",
+        "inter"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.cons_product",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "cons",
+        "prod"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.cons_sigma",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.cons_sub_of_le",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le",
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.cons_subset",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "subset",
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.cons_union_distrib",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "cons",
+        "union"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.countP_attach",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 8,
+      "family_tags": [
+        "attach"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.countP_cons",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.countP_cons_of_neg",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.countP_cons_of_pos",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.count_attach",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "attach"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.count_sum",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "sum"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.dedup_bind_dedup",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.disjoint_add_left",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.disjoint_add_right",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_left",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "le",
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_right",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.disjoint_iff_ne",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "iff"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.disjoint_map_map",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "map"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.disjoint_singleton",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le",
+        "singleton"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.disjoint_union_left",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le",
+        "union"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.disjoint_union_right",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "union"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.eq_of_mem_map_const",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "map",
+        "mem",
+        "eq",
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.erase_attach_map",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "map",
+        "erase",
+        "attach"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.erase_cons_tail_of_mem",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "mem",
+        "cons",
+        "erase"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.erase_le_iff_le_cons",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "iff",
+        "le",
+        "cons",
+        "erase"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.filter_attach'",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "filter",
+        "lt",
+        "filter_",
+        "attach"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.filter_cons",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "filter",
+        "lt",
+        "cons",
+        "filter_"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.filter_cons_of_neg",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "filter",
+        "lt",
+        "cons",
+        "filter_"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.filter_cons_of_pos",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "filter",
+        "lt",
+        "cons",
+        "filter_"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.inter_eq_zero_iff_disjoint",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "iff",
+        "eq",
+        "inter"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.le_bind",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "le"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.le_cons_erase",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "le",
+        "cons",
+        "erase"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.le_cons_of_not_mem",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 16,
+      "family_tags": [
+        "mem",
+        "le",
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.lt_cons_self",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "lt",
+        "self",
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.map_bind",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "map"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.map_comp_cons",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "map",
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.map_eq_cons",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 13,
+      "family_tags": [
+        "map",
+        "eq",
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.map_join",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "map"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.mem_bind",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "mem"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.mem_join",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "mem"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.nodup_bind",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 9,
+      "family_tags": [],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.nsmul_cons",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.prod_bind",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "prod"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.prod_join",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 8,
+      "family_tags": [
+        "prod"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.product_add",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "prod"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.product_cons",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "cons",
+        "prod"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.product_singleton",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le",
+        "singleton",
+        "prod"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.product_zero",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "prod"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.rel_bind",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.rel_cons_left",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 16,
+      "family_tags": [
+        "le",
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.rel_cons_right",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "cons"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.rel_join",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.singleton_bind",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le",
+        "singleton"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.singleton_disjoint",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le",
+        "singleton"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.singleton_eq_cons_iff",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "iff",
+        "eq",
+        "le",
+        "cons",
+        "singleton"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.sub_eq_fold_erase",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 8,
+      "family_tags": [
+        "eq",
+        "erase",
+        "fold"
+      ],
+      "shape": "induction"
+    },
+    {
+      "full_name": "Multiset.foldl_induction'",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "fold"
+      ],
+      "shape": "quotient"
+    },
+    {
+      "full_name": "Multiset.foldr_induction'",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 7,
+      "family_tags": [
+        "fold"
+      ],
+      "shape": "quotient"
+    },
+    {
+      "full_name": "Multiset.induction",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [],
+      "shape": "quotient"
+    },
+    {
+      "full_name": "Multiset.strongDownwardInductionOn_eq",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "eq"
+      ],
+      "shape": "quotient"
+    },
+    {
+      "full_name": "Multiset.strongDownwardInduction_eq",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "eq"
+      ],
+      "shape": "quotient"
+    },
+    {
+      "full_name": "Multiset.strongInductionOn_eq",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "eq"
+      ],
+      "shape": "quotient"
+    },
+    {
+      "full_name": "Multiset.Rel.add",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.add_sigma",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.add_singleton_eq_iff",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 7,
+      "family_tags": [
+        "iff",
+        "eq",
+        "le",
+        "singleton"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.card_eq_card_of_rel",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "card",
+        "eq"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.card_eq_zero",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "card",
+        "eq"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.card_filter_le_iff",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 8,
+      "family_tags": [
+        "filter",
+        "card",
+        "iff",
+        "le",
+        "lt",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.card_nsmul",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "card"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.card_pair",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "card"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.card_sigma",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "card"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.card_singleton",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "card",
+        "le",
+        "singleton"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.card_sub",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "card"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.coe_eq_singleton",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "eq",
+        "le",
+        "singleton"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.coe_sigma",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.eq_zero_of_forall_not_mem",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "mem",
+        "eq"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.exists_mem_of_ne_zero",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 8,
+      "family_tags": [
+        "mem"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.exists_mem_of_rel_of_mem",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 8,
+      "family_tags": [
+        "mem"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filterMap_eq_filter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 9,
+      "family_tags": [
+        "filter",
+        "map",
+        "eq",
+        "lt"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filterMap_filter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "filter",
+        "map",
+        "lt"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filter_add_filter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "filter",
+        "lt",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filter_add_not",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "filter",
+        "lt",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filter_comm",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "filter",
+        "lt",
+        "comm",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filter_congr",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "filter",
+        "lt",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filter_eq",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "filter",
+        "eq",
+        "lt",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filter_eq'",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "filter",
+        "eq",
+        "lt",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filter_eq_nil",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "filter",
+        "eq",
+        "lt",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filter_eq_self",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "filter",
+        "eq",
+        "lt",
+        "self",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filter_filter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "filter",
+        "lt",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filter_map",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "filter",
+        "map",
+        "lt",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filter_nsmul",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 10,
+      "family_tags": [
+        "filter",
+        "lt",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filter_singleton",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "filter",
+        "le",
+        "lt",
+        "singleton",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.filter_sub",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 17,
+      "family_tags": [
+        "filter",
+        "lt",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.finite_toSet_toFinset",
+      "file": "Mathlib/Data/Set/Finite.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.inf_add",
+      "file": "Mathlib/Data/Multiset/Lattice.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.le_add_left",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.le_add_right",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.le_inf",
+      "file": "Mathlib/Data/Multiset/Lattice.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "le"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.le_singleton",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le",
+        "singleton"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.length_toList",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.lt_replicate_succ",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 9,
+      "family_tags": [
+        "lt"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.lt_singleton",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "le",
+        "lt",
+        "singleton"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.map_congr",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "map"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.map_eq_map",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "map",
+        "eq"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.map_eq_singleton",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 8,
+      "family_tags": [
+        "map",
+        "eq",
+        "le",
+        "singleton"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.map_eq_zero",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "map",
+        "eq"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.map_filter'",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "filter",
+        "map",
+        "lt"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.map_hcongr",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "map"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.map_le_map_iff",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "map",
+        "iff",
+        "le"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.map_lt_map",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "map",
+        "lt"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.map_mk_eq_map_mk_of_rel",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "map",
+        "eq"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.map_replicate",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "map"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.map_set_pairwise",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "map"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.map_surjective_of_surjective",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 7,
+      "family_tags": [
+        "map"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.mem_filter",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "filter",
+        "mem",
+        "lt"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.mem_nsmul",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "mem"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.mem_of_mem_nsmul",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [
+        "mem"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.mem_singleton",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "mem",
+        "le",
+        "singleton"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.mem_singleton_self",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "mem",
+        "le",
+        "self",
+        "singleton"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.mem_sup",
+      "file": "Mathlib/Data/Finset/Lattice.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "mem"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.mem_toList",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "mem"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.monotone_filter_right",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 4,
+      "family_tags": [
+        "filter",
+        "lt",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.nsmul_singleton",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le",
+        "singleton"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.pairwise_coe_iff",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "iff"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.rel_add_left",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 12,
+      "family_tags": [
+        "le"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.rel_add_right",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.rel_map_left",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "map",
+        "le"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.rel_map_right",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "map"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.rel_replicate_left",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 10,
+      "family_tags": [
+        "le"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.rel_zero_left",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "le"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.rel_zero_right",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.replicate_le_replicate",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "le"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.sigma_add",
+      "file": "Mathlib/Data/Multiset/Bind.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 6,
+      "family_tags": [],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.singleton_inj",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "le",
+        "singleton"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.sizeOf_lt_sizeOf_of_mem",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "mem",
+        "lt"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.ssubset_singleton_iff",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "subset",
+        "iff",
+        "le",
+        "singleton"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.sub_filter_eq_filter_not",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 3,
+      "family_tags": [
+        "filter",
+        "eq",
+        "lt",
+        "filter_"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.sub_le_iff_le_add",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "hard",
+      "num_tactics_approx": 5,
+      "family_tags": [
+        "iff",
+        "le"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.sup_add",
+      "file": "Mathlib/Data/Multiset/Lattice.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.toList_eq_nil",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "eq"
+      ],
+      "shape": "simp"
+    },
+    {
+      "full_name": "Multiset.toList_eq_singleton_iff",
+      "file": "Mathlib/Data/Multiset/Basic.lean",
+      "difficulty": "medium",
+      "num_tactics_approx": 2,
+      "family_tags": [
+        "iff",
+        "eq",
+        "le",
+        "singleton"
+      ],
+      "shape": "simp"
+    }
+  ]
+}

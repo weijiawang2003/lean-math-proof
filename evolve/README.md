@@ -483,6 +483,26 @@ subprocess logs, or checkpoint binaries.
   layer stays a search-time wrapper capability. No checkpoints; NS9/AX1
   unmodified. See
   `project/evolve/reports/ax2_symbolic_dataset_expansion_report.md`.
+- **WX3 (done — wrapper-ready GREEN; symbolic-learning borderline)** — took
+  AX2's advice and opened the **Multiset** surface (**251 fresh available**,
+  the largest untapped namespace). Extended the AX1 symbolic layer
+  additively with a `Multiset` var-type and two new action types:
+  **`MULTISET_INDUCTION_SIMP`** (`induction {var} using Multiset.induction_on
+  <;> simp[_all]`) and **`EXT_SIMP`** (`ext x <;> simp[_all]`); AX1
+  Option/List rendering unchanged. Five disjoint sets (165 thms), raw vs NS9
+  vs ind/ext/comb on `ns24_router`: WX3 adds **+25 wins beyond NS9, 0
+  regressions, 0 leakage** — the workhorse is `Multiset.induction_on <;>
+  simp_all`. Minimal relabeling: **20 clean single-shot symbolic labels**
+  (vs AX2's 0), dominated by `MULTISET_INDUCTION_SIMP[Multiset,simp_all]`
+  (18; family aggregate 20). Preservation perfect (demo 11/11, medium 37/37,
+  Set 18/18, Finset 15/15; by construction, WX3 base == NS9 genome).
+  **Gate A (wrapper-ready) MET; Gate B (symbolic-learning) borderline-met by
+  the induction_on family aggregate (20 ≥ 20) with held-out surface.**
+  Decision: **promote the WX3 induction wrapper**; AX3 is plausible for the
+  first time — expand the held-out Multiset induction surface (~86 unused +
+  full induction-shape catalog) to ≥40 / ≥20-single-id, then train AX3. No
+  checkpoints; NS9/AX1/AX2 unmodified. See
+  `project/evolve/reports/wx3_multiset_quotient_wrapper_report.md`.
 
 ### Project state
 
@@ -501,10 +521,15 @@ subprocess logs, or checkpoint binaries.
   training** is the bridge — it makes the variable-dependent family
   SFT-ready *as a label* (`CASES_SIMP[List,simp_all]`) while the wrapper
   instantiates the variable from the state. **AX2 then tested the data
-  side and came back RED:** the symbolic-label dataset is capped at ~27
-  single-shot examples (Option exhausted; fresh List wins are multi-step),
-  so AX3 training is deferred — the symbolic layer remains a search-time
-  wrapper capability, not yet a learned predictor.
+  side and came back RED:** the symbolic-label dataset was capped at ~27
+  single-shot examples (Option exhausted; fresh List wins are multi-step).
+  **WX3 then broke that cap from the wrapper side:** the new Multiset
+  `induction_on` action added **20 clean single-shot symbolic labels** in a
+  fresh namespace (+25 wins beyond NS9, 0 regressions). AX3 is now plausible
+  for the first time — the `MULTISET_INDUCTION_SIMP` family is at the
+  ≥20-in-one-family gate — but is deferred one more step pending a surface
+  expansion to ≥40 / ≥20-single-id; the symbolic layer remains a search-time
+  wrapper capability until then.
 - **Mining protocol:** always run NS23-style minimal-tactic relabeling
   before declaring a training gate met. It distinguishes short-token
   (SFT-ready) from state-aware compound (wrapper-ready) families and has
@@ -519,17 +544,16 @@ does not carry to Bool/Option; WX1/WX2 captured state-dependent headroom
 in a **wrapper**; and AX1 showed that headroom can be made SFT-ready *as
 a symbolic label*. In rough order of likely yield:
 
-1. **WX3: grow the symbolic surface before any AX3 training.** AX2 mined
-   the entire fresh available surface and added **0 clean single-shot
-   symbolic labels** (Option exhausted; fresh List wins are multi-step) —
-   readiness is RED at 27 examples, so a learned symbolic-action predictor
-   (AX3) is not yet justified. To unlock more clean labels, WX3 should try
-   (a) a **Multiset quotient-aware action** (`Multiset.induction_on`; ~250
-   fresh, the largest untapped surface, needs a new action type), or (b)
-   **multi-step symbolic action sequences** to capture the `CASES_SIMP`
-   +search wins AX2 found. Keep the AX1 symbolic layer as the canonical
-   cases wrapper; defer AX3 until a surface yields enough single-shot
-   symbolic labels.
+1. **WX4 / surface expansion, then AX3.** WX3 validated the Multiset
+   `induction_on` action — **+25 wins beyond NS9, 20 clean single-shot
+   symbolic labels** (the first surface to clear AX2's null result). The
+   `MULTISET_INDUCTION_SIMP[Multiset,simp_all]` family sits at 18–20, right
+   at the ≥20-in-one-family gate. Next: mine the **held-out Multiset
+   induction surface** (~86 fresh unused + the full induction-shape catalog)
+   under the WX3 induction wrapper to push clean labels to **≥40 total / ≥20
+   in the single `simp_all` action_id**, then train **AX3** on that label
+   with a held-out Multiset eval. Keep AX1 as the canonical cases wrapper;
+   promote `wx3_multiset_induction_safe` as the canonical Multiset wrapper.
 2. **Fold WX1+WX2/AX1 into the canonical wrapper** (genome + router
    sign-off) — the AX1 symbolic config is equivalent to WX2 and more
    general; re-baseline the full matrix.

@@ -1,0 +1,648 @@
+{
+  "router": "ns24_router",
+  "top_k": 8,
+  "max_steps": 8,
+  "configs": {
+    "raw": "routed_generative (no wrapper)",
+    "ns9": "project/evolve/best/ns9_best_genome.json",
+    "ind": "project/evolve/experiments/wx3/wx3_multiset_induction_safe.json",
+    "ext": "project/evolve/experiments/wx3/wx3_multiset_ext_safe.json",
+    "comb": "project/evolve/experiments/wx3/wx3_multiset_combined_safe.json"
+  },
+  "missing_runs": [],
+  "per_set_summary": [
+    {
+      "set": "wx3_multiset_simp_easy",
+      "available": 40,
+      "total": 40,
+      "raw_wins": 4,
+      "ns9_wins": 4,
+      "ind_wins": 8,
+      "ind_only_beyond_ns9": 4,
+      "ind_regressions_vs_ns9": 0,
+      "ind_only_theorems": [
+        "Multiset.card_sigma",
+        "Multiset.finite_toSet_toFinset",
+        "Multiset.le_inf",
+        "Multiset.map_eq_zero"
+      ],
+      "ind_regression_theorems": [],
+      "ext_wins": 5,
+      "ext_only_beyond_ns9": 1,
+      "ext_regressions_vs_ns9": 0,
+      "ext_only_theorems": [
+        "Multiset.finite_toSet_toFinset"
+      ],
+      "ext_regression_theorems": [],
+      "comb_wins": 8,
+      "comb_only_beyond_ns9": 4,
+      "comb_regressions_vs_ns9": 0,
+      "comb_only_theorems": [
+        "Multiset.card_sigma",
+        "Multiset.finite_toSet_toFinset",
+        "Multiset.le_inf",
+        "Multiset.map_eq_zero"
+      ],
+      "comb_regression_theorems": []
+    },
+    {
+      "set": "wx3_multiset_induction_easy",
+      "available": 40,
+      "total": 40,
+      "raw_wins": 2,
+      "ns9_wins": 2,
+      "ind_wins": 16,
+      "ind_only_beyond_ns9": 14,
+      "ind_regressions_vs_ns9": 0,
+      "ind_only_theorems": [
+        "Multiset.bind_assoc",
+        "Multiset.bind_bind",
+        "Multiset.bind_congr",
+        "Multiset.bind_map",
+        "Multiset.bind_map_comm",
+        "Multiset.bind_singleton",
+        "Multiset.bind_zero",
+        "Multiset.card_bind",
+        "Multiset.card_join",
+        "Multiset.count_sum",
+        "Multiset.disjoint_map_map",
+        "Multiset.disjoint_union_right",
+        "Multiset.map_bind",
+        "Multiset.product_zero"
+      ],
+      "ind_regression_theorems": [],
+      "ext_wins": 2,
+      "ext_only_beyond_ns9": 0,
+      "ext_regressions_vs_ns9": 0,
+      "ext_only_theorems": [],
+      "ext_regression_theorems": [],
+      "comb_wins": 16,
+      "comb_only_beyond_ns9": 14,
+      "comb_regressions_vs_ns9": 0,
+      "comb_only_theorems": [
+        "Multiset.bind_assoc",
+        "Multiset.bind_bind",
+        "Multiset.bind_congr",
+        "Multiset.bind_map",
+        "Multiset.bind_map_comm",
+        "Multiset.bind_singleton",
+        "Multiset.bind_zero",
+        "Multiset.card_bind",
+        "Multiset.card_join",
+        "Multiset.count_sum",
+        "Multiset.disjoint_map_map",
+        "Multiset.disjoint_union_right",
+        "Multiset.map_bind",
+        "Multiset.product_zero"
+      ],
+      "comb_regression_theorems": []
+    },
+    {
+      "set": "wx3_multiset_ext_medium",
+      "available": 35,
+      "total": 35,
+      "raw_wins": 1,
+      "ns9_wins": 1,
+      "ind_wins": 2,
+      "ind_only_beyond_ns9": 1,
+      "ind_regressions_vs_ns9": 0,
+      "ind_only_theorems": [
+        "Multiset.add_inter_distrib"
+      ],
+      "ind_regression_theorems": [],
+      "ext_wins": 1,
+      "ext_only_beyond_ns9": 0,
+      "ext_regressions_vs_ns9": 0,
+      "ext_only_theorems": [],
+      "ext_regression_theorems": [],
+      "comb_wins": 2,
+      "comb_only_beyond_ns9": 1,
+      "comb_regressions_vs_ns9": 0,
+      "comb_only_theorems": [
+        "Multiset.add_inter_distrib"
+      ],
+      "comb_regression_theorems": []
+    },
+    {
+      "set": "wx3_multiset_quotient_medium",
+      "available": 20,
+      "total": 20,
+      "raw_wins": 0,
+      "ns9_wins": 0,
+      "ind_wins": 2,
+      "ind_only_beyond_ns9": 2,
+      "ind_regressions_vs_ns9": 0,
+      "ind_only_theorems": [
+        "Multiset.foldr_induction'",
+        "Multiset.map_join"
+      ],
+      "ind_regression_theorems": [],
+      "ext_wins": 0,
+      "ext_only_beyond_ns9": 0,
+      "ext_regressions_vs_ns9": 0,
+      "ext_only_theorems": [],
+      "ext_regression_theorems": [],
+      "comb_wins": 2,
+      "comb_only_beyond_ns9": 2,
+      "comb_regressions_vs_ns9": 0,
+      "comb_only_theorems": [
+        "Multiset.foldr_induction'",
+        "Multiset.map_join"
+      ],
+      "comb_regression_theorems": []
+    },
+    {
+      "set": "wx3_multiset_mixed",
+      "available": 30,
+      "total": 30,
+      "raw_wins": 1,
+      "ns9_wins": 1,
+      "ind_wins": 5,
+      "ind_only_beyond_ns9": 4,
+      "ind_regressions_vs_ns9": 0,
+      "ind_only_theorems": [
+        "Multiset.card_eq_zero",
+        "Multiset.disjoint_cons_right",
+        "Multiset.eq_zero_of_forall_not_mem",
+        "Multiset.sup_le"
+      ],
+      "ind_regression_theorems": [],
+      "ext_wins": 1,
+      "ext_only_beyond_ns9": 0,
+      "ext_regressions_vs_ns9": 0,
+      "ext_only_theorems": [],
+      "ext_regression_theorems": [],
+      "comb_wins": 5,
+      "comb_only_beyond_ns9": 4,
+      "comb_regressions_vs_ns9": 0,
+      "comb_only_theorems": [
+        "Multiset.card_eq_zero",
+        "Multiset.disjoint_cons_right",
+        "Multiset.eq_zero_of_forall_not_mem",
+        "Multiset.sup_le"
+      ],
+      "comb_regression_theorems": []
+    }
+  ],
+  "totals": {
+    "ind": {
+      "only_beyond_ns9": 25,
+      "regressions_vs_ns9": 0,
+      "origin_counts": {
+        "wrapper_symbolic_action": 22,
+        "generative_topk": 3
+      },
+      "family_counts": {
+        "multiset_induction_simp_all": 22,
+        "?": 3
+      }
+    },
+    "ext": {
+      "only_beyond_ns9": 1,
+      "regressions_vs_ns9": 0,
+      "origin_counts": {
+        "wrapper_symbolic_action": 1
+      },
+      "family_counts": {
+        "multiset_ext_simp_all": 1
+      }
+    },
+    "comb": {
+      "only_beyond_ns9": 25,
+      "regressions_vs_ns9": 0,
+      "origin_counts": {
+        "wrapper_symbolic_action": 22,
+        "generative_topk": 3
+      },
+      "family_counts": {
+        "multiset_induction_simp_all": 22,
+        "?": 3
+      }
+    }
+  },
+  "wx3_only_wins": {
+    "ind": [
+      {
+        "full_name": "Multiset.card_sigma",
+        "set": "wx3_multiset_simp_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.finite_toSet_toFinset",
+        "set": "wx3_multiset_simp_easy",
+        "file_path": "Mathlib/Data/Set/Finite.lean",
+        "winning_tactic": "aesop",
+        "winning_origin": "generative_topk",
+        "winning_family": null
+      },
+      {
+        "full_name": "Multiset.le_inf",
+        "set": "wx3_multiset_simp_easy",
+        "file_path": "Mathlib/Data/Multiset/Lattice.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.map_eq_zero",
+        "set": "wx3_multiset_simp_easy",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_assoc",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_bind",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_congr",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_map",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_map_comm",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_singleton",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_zero",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.card_bind",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.card_join",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction S using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.count_sum",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.disjoint_map_map",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "aesop",
+        "winning_origin": "generative_topk",
+        "winning_family": null
+      },
+      {
+        "full_name": "Multiset.disjoint_union_right",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.map_bind",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.product_zero",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.add_inter_distrib",
+        "set": "wx3_multiset_ext_medium",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.foldr_induction'",
+        "set": "wx3_multiset_quotient_medium",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.map_join",
+        "set": "wx3_multiset_quotient_medium",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction S using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.card_eq_zero",
+        "set": "wx3_multiset_mixed",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.disjoint_cons_right",
+        "set": "wx3_multiset_mixed",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "aesop",
+        "winning_origin": "generative_topk",
+        "winning_family": null
+      },
+      {
+        "full_name": "Multiset.eq_zero_of_forall_not_mem",
+        "set": "wx3_multiset_mixed",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.sup_le",
+        "set": "wx3_multiset_mixed",
+        "file_path": "Mathlib/Data/Multiset/Lattice.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      }
+    ],
+    "ext": [
+      {
+        "full_name": "Multiset.finite_toSet_toFinset",
+        "set": "wx3_multiset_simp_easy",
+        "file_path": "Mathlib/Data/Set/Finite.lean",
+        "winning_tactic": "ext x <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_ext_simp_all"
+      }
+    ],
+    "comb": [
+      {
+        "full_name": "Multiset.card_sigma",
+        "set": "wx3_multiset_simp_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.finite_toSet_toFinset",
+        "set": "wx3_multiset_simp_easy",
+        "file_path": "Mathlib/Data/Set/Finite.lean",
+        "winning_tactic": "aesop",
+        "winning_origin": "generative_topk",
+        "winning_family": null
+      },
+      {
+        "full_name": "Multiset.le_inf",
+        "set": "wx3_multiset_simp_easy",
+        "file_path": "Mathlib/Data/Multiset/Lattice.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.map_eq_zero",
+        "set": "wx3_multiset_simp_easy",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_assoc",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_bind",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_congr",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_map",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_map_comm",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_singleton",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.bind_zero",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.card_bind",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.card_join",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction S using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.count_sum",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.disjoint_map_map",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "aesop",
+        "winning_origin": "generative_topk",
+        "winning_family": null
+      },
+      {
+        "full_name": "Multiset.disjoint_union_right",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.map_bind",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.product_zero",
+        "set": "wx3_multiset_induction_easy",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.add_inter_distrib",
+        "set": "wx3_multiset_ext_medium",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.foldr_induction'",
+        "set": "wx3_multiset_quotient_medium",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.map_join",
+        "set": "wx3_multiset_quotient_medium",
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "winning_tactic": "induction S using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.card_eq_zero",
+        "set": "wx3_multiset_mixed",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.disjoint_cons_right",
+        "set": "wx3_multiset_mixed",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "aesop",
+        "winning_origin": "generative_topk",
+        "winning_family": null
+      },
+      {
+        "full_name": "Multiset.eq_zero_of_forall_not_mem",
+        "set": "wx3_multiset_mixed",
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      },
+      {
+        "full_name": "Multiset.sup_le",
+        "set": "wx3_multiset_mixed",
+        "file_path": "Mathlib/Data/Multiset/Lattice.lean",
+        "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+        "winning_origin": "wrapper_symbolic_action",
+        "winning_family": "multiset_induction_simp_all"
+      }
+    ]
+  },
+  "wx3_regressions": {
+    "ind": [],
+    "ext": [],
+    "comb": []
+  },
+  "syntax_failures": [],
+  "best_config": "ind",
+  "best_config_only_beyond_ns9": 25,
+  "best_config_regressions": 0
+}

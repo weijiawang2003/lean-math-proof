@@ -23,11 +23,20 @@ except ImportError:  # allow import when repo root isn't on sys.path yet
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
     from project.evolve.state_vars import vars_of_type
 
-ACTION_TYPES = ("CASES_SIMP", "INDUCTION_SIMP")
-VAR_TYPES = ("Option", "List", "Bool")
+# WX3 adds two Multiset-oriented action types:
+#   MULTISET_INDUCTION_SIMP — `induction {var} using Multiset.induction_on
+#                              <;> {simp_mode}` (quotient-aware induction).
+#   EXT_SIMP                 — `ext x <;> {simp_mode}` (extensionality; the
+#                              tactic is variable-independent, but emission is
+#                              gated on a matching variable being present so
+#                              it stays state-aware).
+ACTION_TYPES = ("CASES_SIMP", "INDUCTION_SIMP",
+                "MULTISET_INDUCTION_SIMP", "EXT_SIMP")
+VAR_TYPES = ("Option", "List", "Bool", "Multiset")
 SIMP_MODES = ("simp", "simp_all", "decide")
 
-# action_type -> Lean head tactic that consumes a variable
+# action_type -> Lean head tactic that consumes a variable (var-consuming
+# families only; MULTISET_INDUCTION_SIMP and EXT_SIMP render specially).
 _HEAD = {"CASES_SIMP": "cases", "INDUCTION_SIMP": "induction"}
 
 
@@ -49,6 +58,10 @@ class SymbolicAction:
 
     def default_family_source(self) -> str:
         vt = (self.var_type or "any").lower()
+        if self.action_type == "EXT_SIMP":
+            return f"symbolic_{vt}_ext_{self.simp_mode}"
+        if self.action_type == "MULTISET_INDUCTION_SIMP":
+            return f"symbolic_{vt}_induction_on_{self.simp_mode}"
         head = "cases" if self.action_type == "CASES_SIMP" else "induction"
         return f"symbolic_{vt}_{head}_{self.simp_mode}"
 
@@ -90,6 +103,12 @@ class SymbolicAction:
             errs.append("INDUCTION_SIMP is only meaningful for inductive "
                         "recursive types (List); got var_type="
                         f"{self.var_type!r}")
+        if self.action_type == "MULTISET_INDUCTION_SIMP" and self.var_type != "Multiset":
+            errs.append("MULTISET_INDUCTION_SIMP requires var_type=Multiset; "
+                        f"got {self.var_type!r}")
+        if self.action_type == "EXT_SIMP" and self.var_type not in ("Multiset",):
+            errs.append("EXT_SIMP is gated to var_type=Multiset for WX3; "
+                        f"got {self.var_type!r}")
         if self.max_vars < 1:
             errs.append("max_vars must be >= 1")
         return errs
@@ -122,13 +141,41 @@ def instantiate_symbolic_action(
         return []
     if action.var_type is None or action.simp_mode is None:
         return []
-    head = _HEAD.get(action.action_type)
-    if head is None:
-        return []
-    names = vars_of_type(state_pp, action.var_type, max_vars=action.max_vars)
     fam = action.family_source or action.default_family_source()
     out: list[tuple[str, str, str]] = []
     seen: set[str] = set()
+
+    at = action.action_type
+
+    # EXT_SIMP: variable-independent tactic, but gated on a matching variable
+    # being present so it only fires on states that actually carry a value of
+    # the target type. Emitted once.
+    if at == "EXT_SIMP":
+        names = vars_of_type(state_pp, action.var_type,
+                             max_vars=action.max_vars)
+        if not names:
+            return []
+        tac = f"ext x <;> {action.simp_mode}"
+        return [(tac, fam, action.action_id)]
+
+    # MULTISET_INDUCTION_SIMP: quotient-aware induction principle.
+    if at == "MULTISET_INDUCTION_SIMP":
+        names = vars_of_type(state_pp, action.var_type,
+                             max_vars=action.max_vars)
+        for v in names:
+            tac = (f"induction {v} using Multiset.induction_on "
+                   f"<;> {action.simp_mode}")
+            if tac in seen:
+                continue
+            seen.add(tac)
+            out.append((tac, fam, action.action_id))
+        return out
+
+    # CASES_SIMP / INDUCTION_SIMP (AX1 behavior — unchanged).
+    head = _HEAD.get(at)
+    if head is None:
+        return []
+    names = vars_of_type(state_pp, action.var_type, max_vars=action.max_vars)
     for v in names:
         tac = f"{head} {v} <;> {action.simp_mode}"
         if tac in seen:
