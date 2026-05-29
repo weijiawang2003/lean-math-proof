@@ -195,3 +195,158 @@ def load_actions(specs: list[dict]) -> list[SymbolicAction]:
             raise ValueError(f"invalid symbolic action {spec}: {problems}")
         actions.append(a)
     return actions
+
+
+# =====================================================================
+# SX1 Stage 2 — symbolic action *sequences* (depth-2 only).
+#
+# Motivation (SX1): AX1–AX4 emit a single symbolic action. A symbolic
+# action often *advances* the state (`TacticState`) without closing it —
+# e.g. `induction s using Multiset.induction_on <;> simp_all` leaves an
+# inductive-step goal that a follow-up (`aesop`, `simp_all`, base-model
+# top-k) closes. A `SymbolicActionSequence` makes that two-step shape a
+# first-class, namespace-gated, depth-bounded object so the wrapper can
+# emit it deliberately instead of relying on the open best-first search to
+# stumble onto the follow-up.
+#
+# Design: the FIRST step is always a typed `SymbolicAction` (the stable,
+# learnable label). The SECOND step is a *follow-up mode*, not another
+# symbolic action, because the closers we observe are plain tactics
+# (`SIMP_ALL`) or the base policy's top-k. `actions` therefore returns the
+# leading symbolic action(s); the follow-up is described separately. This
+# keeps the schema additive and faithful to the spec wording
+# ("actions: list[SymbolicAction]") while modelling the real two-step shape.
+# SX1 supports max_depth == 2 ONLY.
+# =====================================================================
+
+# Follow-up modes for the second step of a depth-2 sequence.
+FOLLOWUP_MODES = ("base_topk", "fixed_battery", "simp_all")
+SEQUENCE_STOP_CONDITIONS = ("proof_finished", "max_depth", "no_progress")
+
+# Fixed small battery, applied in order. `omega`/`decide` are only added for
+# arithmetic-flavoured namespaces by `battery_for_namespace` below.
+FIXED_BATTERY = ("simp", "simp_all", "aesop", "rfl")
+FIXED_BATTERY_ARITH = ("omega", "decide")
+_ARITH_NAMESPACES = ("Nat", "Int")
+
+
+def battery_for_namespace(full_name: str,
+                          extra_arith: bool = True) -> list[str]:
+    """The fixed follow-up battery for a theorem, in attempt order.
+
+    `omega`/`decide` are appended only for arithmetic namespaces so we never
+    emit `omega` on a Multiset/Option/List goal where it cannot apply.
+    """
+    bat = list(FIXED_BATTERY)
+    if extra_arith and full_name:
+        head = full_name.split(".", 1)[0]
+        if head in _ARITH_NAMESPACES:
+            bat += list(FIXED_BATTERY_ARITH)
+    return bat
+
+
+@dataclass(frozen=True)
+class SymbolicActionSequence:
+    """A depth-bounded symbolic-action sequence (SX1; depth 2 only).
+
+    `first_action` is the symbolic step; `followup_mode` selects how the
+    second step is produced (base-model top-k, a fixed small battery, or a
+    single `simp_all`). `namespace_gate` (falling back to the first action's
+    gate) restricts where the whole sequence may fire.
+    """
+    first_action: SymbolicAction
+    followup_mode: str = "fixed_battery"
+    max_depth: int = 2
+    namespace_gate: str | None = None
+    max_followup_tactics: int = 6
+    priority: int = 50
+    family_source: str = ""
+    sequence_id: str = ""
+    stop_condition: str = "proof_finished"
+
+    # ---- identity & (de)serialization --------------------------------
+    @property
+    def actions(self) -> list[SymbolicAction]:
+        """The leading symbolic action(s). SX1 sequences carry exactly one."""
+        return [self.first_action]
+
+    @property
+    def gate(self) -> str | None:
+        return self.namespace_gate or self.first_action.namespace_gate
+
+    @property
+    def auto_sequence_id(self) -> str:
+        return f"SEQ[{self.first_action.action_id}=>{self.followup_mode}]"
+
+    def default_family_source(self) -> str:
+        base = self.first_action.family_source or \
+            self.first_action.default_family_source()
+        return f"seq_{base}__then__{self.followup_mode}"
+
+    def to_dict(self) -> dict:
+        return {
+            "first_action": self.first_action.to_dict(),
+            "followup_mode": self.followup_mode,
+            "max_depth": self.max_depth,
+            "namespace_gate": self.gate,
+            "max_followup_tactics": self.max_followup_tactics,
+            "priority": self.priority,
+            "family_source": self.family_source or self.default_family_source(),
+            "sequence_id": self.sequence_id or self.auto_sequence_id,
+            "stop_condition": self.stop_condition,
+        }
+
+    @classmethod
+    def from_dict(cls, d: dict) -> "SymbolicActionSequence":
+        fa = d.get("first_action")
+        first = SymbolicAction.from_dict(fa) if isinstance(fa, dict) \
+            else fa
+        return cls(
+            first_action=first,
+            followup_mode=str(d.get("followup_mode", "fixed_battery")),
+            max_depth=int(d.get("max_depth", 2) or 2),
+            namespace_gate=d.get("namespace_gate"),
+            max_followup_tactics=int(d.get("max_followup_tactics", 6) or 6),
+            priority=int(d.get("priority", 50) or 50),
+            family_source=str(d.get("family_source", "") or ""),
+            sequence_id=str(d.get("sequence_id", "") or ""),
+            stop_condition=str(d.get("stop_condition", "proof_finished")),
+        )
+
+    # ---- validation --------------------------------------------------
+    def validate(self) -> list[str]:
+        errs = list(self.first_action.validate())
+        if self.followup_mode not in FOLLOWUP_MODES:
+            errs.append(f"followup_mode {self.followup_mode!r} not in "
+                        f"{FOLLOWUP_MODES}")
+        if self.max_depth != 2:
+            errs.append(f"SX1 supports max_depth == 2 only; got {self.max_depth}")
+        if self.stop_condition not in SEQUENCE_STOP_CONDITIONS:
+            errs.append(f"stop_condition {self.stop_condition!r} not in "
+                        f"{SEQUENCE_STOP_CONDITIONS}")
+        if self.max_followup_tactics < 1:
+            errs.append("max_followup_tactics must be >= 1")
+        return errs
+
+    def is_valid(self) -> bool:
+        return not self.validate()
+
+    def gate_allows(self, full_name: str) -> bool:
+        g = self.gate
+        if not g:
+            return True
+        if not full_name:
+            return False
+        return full_name.startswith(g + ".")
+
+
+def load_sequences(specs: list[dict]) -> list[SymbolicActionSequence]:
+    """Build and validate a list of sequences from dict specs (config)."""
+    seqs: list[SymbolicActionSequence] = []
+    for spec in specs or []:
+        s = SymbolicActionSequence.from_dict(spec)
+        problems = s.validate()
+        if problems:
+            raise ValueError(f"invalid symbolic sequence {spec}: {problems}")
+        seqs.append(s)
+    return seqs

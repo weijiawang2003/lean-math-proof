@@ -1,0 +1,98 @@
+{
+  "description": "SX1 Stage 6 — offline depth-2 sequence-search probe replayed from mined traces (no live Lean).",
+  "wrappers": {
+    "A": "NS9 wrapper + router (baseline)",
+    "B": "single-action symbolic oracle (WX3/WX2)",
+    "C": "AX4 learned predictor",
+    "D": "SX1 depth-2 sequence wrapper"
+  },
+  "predictor_available": true,
+  "per_set": [
+    {
+      "set": "sx1_multiset_multistep_candidates",
+      "n": 22,
+      "baseline_wins": 0,
+      "oracle_single_action_wins": 0,
+      "full_wrapper_search_wins": 3,
+      "predictor_wins": 0,
+      "sequence_wins": 3,
+      "sequence_only_beyond_oracle": 3
+    },
+    {
+      "set": "sx1_list_multistep_candidates",
+      "n": 12,
+      "baseline_wins": 0,
+      "oracle_single_action_wins": 2,
+      "full_wrapper_search_wins": 2,
+      "predictor_wins": 0,
+      "sequence_wins": 2
+    },
+    {
+      "set": "sx1_option_multistep_candidates",
+      "n": 0
+    },
+    {
+      "set": "sx1_mixed_symbolic_sequence_eval",
+      "n": 16,
+      "baseline_wins": 0,
+      "oracle_single_action_wins": 0,
+      "full_wrapper_search_wins": 0,
+      "predictor_wins": 0,
+      "sequence_wins": 0
+    },
+    {
+      "set": "sx1_negative_control",
+      "n": 20,
+      "baseline_wins": 6,
+      "oracle_single_action_wins": 0,
+      "full_wrapper_search_wins": 6,
+      "predictor_wins": 0,
+      "sequence_wins": 0
+    }
+  ],
+  "totals": {
+    "n": 70,
+    "baseline_wins": 6,
+    "oracle_single_action_wins": 2,
+    "full_wrapper_search_wins": 11,
+    "predictor_wins": 0,
+    "sequence_wins": 5,
+    "sequence_only_beyond_oracle": 3
+  },
+  "sequence_only_beyond_oracle_total": 3,
+  "sequence_only_beyond_full_wrapper_total": 0,
+  "regressions_total": 0,
+  "sequence_only_records": [
+    {
+      "set": "sx1_multiset_multistep_candidates",
+      "theorem": "Multiset.mem_add",
+      "namespace": "Multiset",
+      "first_symbolic_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "followup_tactic": "aesop",
+      "followup_mode": "fixed_battery",
+      "depth_used": 2,
+      "also_won_by_baseline": false
+    },
+    {
+      "set": "sx1_multiset_multistep_candidates",
+      "theorem": "Multiset.mem_map",
+      "namespace": "Multiset",
+      "first_symbolic_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "followup_tactic": "aesop",
+      "followup_mode": "fixed_battery",
+      "depth_used": 2,
+      "also_won_by_baseline": false
+    },
+    {
+      "set": "sx1_multiset_multistep_candidates",
+      "theorem": "Multiset.mem_sigma",
+      "namespace": "Multiset",
+      "first_symbolic_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "followup_tactic": "aesop",
+      "followup_mode": "fixed_battery",
+      "depth_used": 2,
+      "also_won_by_baseline": false
+    }
+  ],
+  "caveat": "Sequence 'wins' are reconstructed from tactics the existing best-first search ALREADY tried from the post-first-action state; the depth-2 plan would re-emit them deterministically. Every such close was therefore already a wrapper win (additive, 0 regressions). This measures whether a DELIBERATE depth-2 plan reproduces the close without the open search — it does not discover proofs absent from the corpus (that needs a live-Lean run)."
+}

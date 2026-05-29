@@ -540,6 +540,27 @@ subprocess logs, or checkpoint binaries.
   **off-by-default**; its selectivity pays only under multi-action search.
   Model + dataset JSONL git-ignored; NS9/router/AX1/AX2/WX3/AX3 unmodified. See
   `project/evolve/reports/ax4_multiset_symbolic_green_report.md`.
+- **SX1 (done — sequence-search prototype; Gate B dataset-generation)** — took
+  AX4's advice and prototyped **depth-2 symbolic-action sequences** (a symbolic
+  first action + a follow-up: base-model top-k or a fixed `simp/simp_all/aesop/
+  rfl[/omega/decide]` battery). Added `SymbolicActionSequence` (depth 2 only,
+  namespace-gated) to `symbolic_actions.py` and a flag-gated planner
+  `symbolic_sequence.py` (disabled ⇒ byte-identical to WX3; plans additive to
+  the NS9 ranked list). Offline trace replay over 70 candidate theorems found
+  the **decisive structural result**: the existing NS9/WX3 best-first search
+  *already* explores **~9 follow-ups per advanced symbolic state**, so a fixed-
+  battery depth-2 mode is **subsumed** by it — `sequence_only_beyond_oracle = 3`
+  (the Multiset `induction…simp_all ⇒ aesop` cases) but
+  **`sequence_only_beyond_full_wrapper = 0`** (production WX3 already wins all
+  3), **0 regressions**, **0 off-gate emissions**. Minimal relabel: all 5
+  multistep cases are `genuinely_sequence_needed`, but the label pool is tiny
+  (**5 labels, biggest family 3** ≪ the ≥40/≥5-per-family gate). Decision:
+  **do not flip the sequence flag in production** (0 net wins, added cost);
+  keep the schema/planner/configs as the off-by-default depth-2 capability and
+  clean-trace generator; the lever remains **selectivity** (a future AX5
+  sequence-label learner), which needs a live-Lean mine to ≥40 labels first.
+  NS9/router/WX3/AX4 artifacts unmodified. See
+  `project/evolve/reports/sx1_symbolic_sequence_search_report.md`.
 
 ### Project state
 
@@ -575,7 +596,15 @@ subprocess logs, or checkpoint binaries.
   **promising but threshold-gated**: even promotable, the deterministic oracle
   wrapper remains best for a single additive action (retains 100% vs 54% at
   zero cost), so the learned predictor stays off-by-default until multi-action
-  symbolic search makes its selectivity pay.
+  symbolic search makes its selectivity pay. **SX1 then prototyped that multi-
+  action search (depth-2 sequences) and found the best-first wrapper already
+  performs the follow-up** — a fixed-battery sequence mode adds 0 net wins over
+  production (Gate B: dataset-generation, not a search gain). The four-layer
+  architecture is now explicit: **(1) raw-tactic SFT** (short stable tactics) →
+  **(2) single symbolic-action oracle** (WX1/WX2/WX3 deterministic wrapper) →
+  **(3) learned single-action selector** (AX3/AX4, promotion-eligible, off by
+  default) → **(4) symbolic sequence search** (SX1, depth-2, experimental).
+  The open lever across (3)–(4) is *selectivity*, which is still label-gated.
 - **Mining protocol:** always run NS23-style minimal-tactic relabeling
   before declaring a training gate met. It distinguishes short-token
   (SFT-ready) from state-aware compound (wrapper-ready) families and has

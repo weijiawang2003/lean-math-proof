@@ -257,3 +257,11 @@ project/evolve/eval_runs/ax4_*.log
 project/evolve/eval_runs/ax4_*/
 project/data/ax4_multiset_symbolic_dataset.jsonl
 project/models/ax4_multiset_symbolic_clf/
+
+# SX1 symbolic sequence-search prototype. Schema/planner code, experimental
+# configs (project/evolve/experiments/sx1/*.json), theorem-set config
+# (project/evolve/routing/sx1_theorem_sets.json), scripts, metadata JSONs, and
+# reports ARE committed. SX1 is an offline trace-replay prototype (no training,
+# no checkpoints); any future live-Lean sequence eval runs/logs are local-only.
+project/evolve/eval_runs/sx1_*.log
+project/evolve/eval_runs/sx1_*/

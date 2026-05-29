@@ -1,0 +1,44 @@
+{
+  "description": "SX1 sequence family pools — genuinely-sequence-needed depth-2 labels only (candidate AX5 training rows).",
+  "gate_unique_required": 5,
+  "n_genuine_sequence_labels": 5,
+  "biggest_pool": 3,
+  "pools": {
+    "SEQ[Multiset:induction=>aesop]": {
+      "unique_count": 3,
+      "labels": [
+        {
+          "theorem": "Multiset.mem_sigma",
+          "first_symbolic_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "followup_tactic": "aesop"
+        },
+        {
+          "theorem": "Multiset.mem_add",
+          "first_symbolic_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "followup_tactic": "aesop"
+        },
+        {
+          "theorem": "Multiset.mem_map",
+          "first_symbolic_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "followup_tactic": "aesop"
+        }
+      ]
+    },
+    "SEQ[List:cases=>cases]": {
+      "unique_count": 2,
+      "labels": [
+        {
+          "theorem": "List.headI_dedup",
+          "first_symbolic_tactic": "cases l <;> simp_all",
+          "followup_tactic": "cases l <;> simp_all"
+        },
+        {
+          "theorem": "List.tail_dedup",
+          "first_symbolic_tactic": "cases l <;> simp_all",
+          "followup_tactic": "cases l <;> simp_all"
+        }
+      ]
+    }
+  },
+  "note": "A future AX5 sequence-label learner needs >=5 unique labels in a single family before training is worthwhile (cf. AX3/AX4 count gate). The current corpus is far below that — SX1 lands as dataset-generation, not a trainable sequence learner yet."
+}

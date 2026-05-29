@@ -1,0 +1,96 @@
+{
+  "description": "SX1 Stage 8 — preservation matrix. Sequence wrapper (combined config, flag ON) run over preservation-set initial states; counts plan emissions by namespace.",
+  "gated_namespaces": [
+    "List",
+    "Multiset",
+    "Option"
+  ],
+  "config": "project/evolve/experiments/sx1/sx1_combined_sequence_safe.json",
+  "per_set": [
+    {
+      "set": "demo_v1",
+      "n_theorems": 15,
+      "gated_namespace": false,
+      "sequence_emissions_gated_ns": 0,
+      "sequence_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": "11/15"
+    },
+    {
+      "set": "nat_defs_medium",
+      "n_theorems": 38,
+      "gated_namespace": false,
+      "sequence_emissions_gated_ns": 0,
+      "sequence_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": "37/38"
+    },
+    {
+      "set": "nat_defs_large_v5",
+      "n_theorems": 64,
+      "gated_namespace": false,
+      "sequence_emissions_gated_ns": 0,
+      "sequence_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": "49/65"
+    },
+    {
+      "set": "ns17_set_extra",
+      "n_theorems": 30,
+      "gated_namespace": false,
+      "sequence_emissions_gated_ns": 0,
+      "sequence_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": null
+    },
+    {
+      "set": "ns17_finset_extra",
+      "n_theorems": 30,
+      "gated_namespace": false,
+      "sequence_emissions_gated_ns": 0,
+      "sequence_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": null
+    },
+    {
+      "set": "wx2_list_cases_easy",
+      "n_theorems": 38,
+      "gated_namespace": true,
+      "sequence_emissions_gated_ns": 38,
+      "sequence_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": null
+    },
+    {
+      "set": "wx2_list_cases_medium",
+      "n_theorems": 33,
+      "gated_namespace": true,
+      "sequence_emissions_gated_ns": 27,
+      "sequence_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": null
+    },
+    {
+      "set": "wx2_list_induction",
+      "n_theorems": 12,
+      "gated_namespace": true,
+      "sequence_emissions_gated_ns": 12,
+      "sequence_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": null
+    },
+    {
+      "set": "wx3_multiset_induction_heldout",
+      "n_theorems": 45,
+      "gated_namespace": true,
+      "sequence_emissions_gated_ns": 34,
+      "sequence_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": null
+    }
+  ],
+  "total_offgate_emissions": 0,
+  "zero_offgate_emissions": true,
+  "ns9_floors_preserved": true,
+  "ns9_floors_rationale": "Genome is byte-identical to ns9_best_genome.json and sequence plans are additive to the NS9 ranked list; with 0 off-gate emissions the Nat/demo surfaces that define the floors are untouched. Floors: medium 37/38, large 49/65, demo 11/15."
+}
