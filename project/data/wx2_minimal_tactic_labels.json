@@ -1,0 +1,944 @@
+{
+  "relabel_results": [
+    {
+      "full_name": "List.head_cons_tail",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "wx2_winning_tactic": "simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases x <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases x <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases x <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "induction x <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction x <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": null,
+      "minimal_family": null,
+      "minimal_var": null,
+      "minimal_is_short_token": null,
+      "state_aware_stable": null,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "List.head_mem",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "wx2_winning_tactic": "aesop",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp",
+          "family": "list_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases l <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp",
+          "family": "list_induction_simp",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "cases l₁ <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "cases l <;> simp",
+      "minimal_family": "list_cases_simp",
+      "minimal_var": "l",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "List.isEmpty_iff_eq_nil",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "wx2_winning_tactic": "cases l <;> simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp",
+          "family": "list_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases l <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp",
+          "family": "list_induction_simp",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "cases l₁ <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "cases l <;> simp",
+      "minimal_family": "list_cases_simp",
+      "minimal_var": "l",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "List.map_tail",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "wx2_winning_tactic": "cases l <;> simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp",
+          "family": "list_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases l <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp",
+          "family": "list_induction_simp",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "cases l₁ <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "cases l <;> simp",
+      "minimal_family": "list_cases_simp",
+      "minimal_var": "l",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "List.modifyHead_modifyHead",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "wx2_winning_tactic": "cases l <;> simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp",
+          "family": "list_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases l <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp",
+          "family": "list_induction_simp",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "cases l₁ <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "cases l <;> simp",
+      "minimal_family": "list_cases_simp",
+      "minimal_var": "l",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "List.getElem_scanl_zero",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "wx2_winning_tactic": "cases l <;> simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp",
+          "family": "list_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases l <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp",
+          "family": "list_induction_simp",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "cases l₁ <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "cases l <;> simp",
+      "minimal_family": "list_cases_simp",
+      "minimal_var": "l",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "List.length_erase_add_one",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "wx2_winning_tactic": "cases l <;> simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction l <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "cases l₁ <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "cases l <;> simp_all",
+      "minimal_family": "list_cases_simp_all",
+      "minimal_var": "l",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "List.pmap_eq_nil",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "wx2_winning_tactic": "cases l <;> simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp",
+          "family": "list_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases l <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp",
+          "family": "list_induction_simp",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "cases l₁ <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "cases l <;> simp",
+      "minimal_family": "list_cases_simp",
+      "minimal_var": "l",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "List.tail_append_of_ne_nil",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "wx2_winning_tactic": "cases l <;> simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction l <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "cases l' <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l' <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases l' <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "induction l' <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction l' <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "cases l <;> simp_all",
+      "minimal_family": "list_cases_simp_all",
+      "minimal_var": "l",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "List.tail_append_singleton_of_ne_nil",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "wx2_winning_tactic": "cases l <;> simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "induction l <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction l <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "cases l₁ <;> decide",
+          "family": "list_cases_decide",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp",
+          "family": "list_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp_all",
+          "family": "list_cases_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp",
+          "family": "list_induction_simp",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp_all",
+          "family": "list_induction_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "cases l <;> simp_all",
+      "minimal_family": "list_cases_simp_all",
+      "minimal_var": "l",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    }
+  ]
+}

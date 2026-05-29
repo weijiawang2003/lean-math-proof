@@ -210,3 +210,11 @@ project/evolve/eval_runs/cx3_*/
 # committed; eval traces, logs, and run dirs are not.
 project/evolve/eval_runs/wx1_*.log
 project/evolve/eval_runs/wx1_*/
+
+# WX2 state-aware cases-wrapper generalization. No training/checkpoints.
+# Experimental wrapper configs (project/evolve/experiments/wx2/*.json),
+# scripts, theorem-set config, metadata JSONs, and reports ARE committed;
+# eval traces, logs, and run dirs are not. (WX2 eval runs reuse the
+# wx1_* eval-run prefix, already ignored above; this covers wx2_* too.)
+project/evolve/eval_runs/wx2_*.log
+project/evolve/eval_runs/wx2_*/

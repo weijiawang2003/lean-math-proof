@@ -1,0 +1,76 @@
+{
+  "training_gate_unique_required": 5,
+  "total_relabeled": 10,
+  "resolved": 9,
+  "unresolved": [
+    "List.head_cons_tail"
+  ],
+  "sft_ready_families": [],
+  "wrapper_ready_families": [
+    "list_cases_simp|List"
+  ],
+  "any_sft_gate_met": false,
+  "any_wrapper_gate_met": true,
+  "families": {
+    "list_cases_simp|List": {
+      "minimal_family": "list_cases_simp",
+      "namespace": "List",
+      "unique_count": 6,
+      "is_short_token_family": false,
+      "count_gate_met": true,
+      "sft_ready": false,
+      "wrapper_ready": true,
+      "recommended_oversample_factor": 10,
+      "theorems": {
+        "List.head_mem": {
+          "minimal_tactic": "cases l <;> simp",
+          "minimal_var": "l"
+        },
+        "List.isEmpty_iff_eq_nil": {
+          "minimal_tactic": "cases l <;> simp",
+          "minimal_var": "l"
+        },
+        "List.map_tail": {
+          "minimal_tactic": "cases l <;> simp",
+          "minimal_var": "l"
+        },
+        "List.modifyHead_modifyHead": {
+          "minimal_tactic": "cases l <;> simp",
+          "minimal_var": "l"
+        },
+        "List.getElem_scanl_zero": {
+          "minimal_tactic": "cases l <;> simp",
+          "minimal_var": "l"
+        },
+        "List.pmap_eq_nil": {
+          "minimal_tactic": "cases l <;> simp",
+          "minimal_var": "l"
+        }
+      }
+    },
+    "list_cases_simp_all|List": {
+      "minimal_family": "list_cases_simp_all",
+      "namespace": "List",
+      "unique_count": 3,
+      "is_short_token_family": false,
+      "count_gate_met": false,
+      "sft_ready": false,
+      "wrapper_ready": false,
+      "recommended_oversample_factor": 15,
+      "theorems": {
+        "List.length_erase_add_one": {
+          "minimal_tactic": "cases l <;> simp_all",
+          "minimal_var": "l"
+        },
+        "List.tail_append_of_ne_nil": {
+          "minimal_tactic": "cases l <;> simp_all",
+          "minimal_var": "l"
+        },
+        "List.tail_append_singleton_of_ne_nil": {
+          "minimal_tactic": "cases l <;> simp_all",
+          "minimal_var": "l"
+        }
+      }
+    }
+  }
+}

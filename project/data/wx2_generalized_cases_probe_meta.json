@@ -1,0 +1,186 @@
+{
+  "router": "ns24_router",
+  "configs": {
+    "raw": "routed_generative (no wrapper)",
+    "ns9": "NS9 best genome",
+    "wx2_generalized": "project/evolve/experiments/wx2/wx2_option_list_cases_safe.json",
+    "wx2_promoted_note": "Option-only; ≡ NS9 on these non-Option sets by gate (not re-run)."
+  },
+  "per_set_summary": [
+    {
+      "set": "wx2_list_cases_easy",
+      "available": 38,
+      "raw_wins": 4,
+      "ns9_wins": 4,
+      "wx2_generalized_wins": 9,
+      "generalized_only_beyond_ns9": 5,
+      "regressions_vs_ns9": 0,
+      "generalized_only_theorems": [
+        "List.head_cons_tail",
+        "List.head_mem",
+        "List.isEmpty_iff_eq_nil",
+        "List.map_tail",
+        "List.modifyHead_modifyHead"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "set": "wx2_list_cases_medium",
+      "available": 33,
+      "raw_wins": 12,
+      "ns9_wins": 12,
+      "wx2_generalized_wins": 17,
+      "generalized_only_beyond_ns9": 5,
+      "regressions_vs_ns9": 0,
+      "generalized_only_theorems": [
+        "List.getElem_scanl_zero",
+        "List.length_erase_add_one",
+        "List.pmap_eq_nil",
+        "List.tail_append_of_ne_nil",
+        "List.tail_append_singleton_of_ne_nil"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "set": "wx2_list_induction",
+      "available": 12,
+      "raw_wins": 1,
+      "ns9_wins": 1,
+      "wx2_generalized_wins": 1,
+      "generalized_only_beyond_ns9": 0,
+      "regressions_vs_ns9": 0,
+      "generalized_only_theorems": [],
+      "regression_theorems": []
+    },
+    {
+      "set": "wx2_prod_cases",
+      "available": 1,
+      "raw_wins": 0,
+      "ns9_wins": 0,
+      "wx2_generalized_wins": 0,
+      "generalized_only_beyond_ns9": 0,
+      "regressions_vs_ns9": 0,
+      "generalized_only_theorems": [],
+      "regression_theorems": []
+    },
+    {
+      "set": "wx2_bool_cases_control",
+      "available": 5,
+      "raw_wins": 2,
+      "ns9_wins": 2,
+      "wx2_generalized_wins": 2,
+      "generalized_only_beyond_ns9": 0,
+      "regressions_vs_ns9": 0,
+      "generalized_only_theorems": [],
+      "regression_theorems": []
+    }
+  ],
+  "totals": {
+    "generalized_only_beyond_ns9": 10,
+    "regressions_vs_ns9": 0
+  },
+  "generalized_only_origin_counts": {
+    "wrapper_option_cases": 8,
+    "generative_topk": 2
+  },
+  "generalized_only_family_counts": {
+    "list_cases_simp": 8,
+    "?": 2
+  },
+  "generalized_only_by_namespace": {
+    "List": 10
+  },
+  "regression_theorems": [],
+  "generalized_only_theorems": [
+    {
+      "full_name": "List.head_cons_tail",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "set": "wx2_list_cases_easy",
+      "winning_tactic": "simp_all",
+      "winning_origin": "generative_topk",
+      "winning_family": null
+    },
+    {
+      "full_name": "List.head_mem",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "set": "wx2_list_cases_easy",
+      "winning_tactic": "aesop",
+      "winning_origin": "generative_topk",
+      "winning_family": null
+    },
+    {
+      "full_name": "List.isEmpty_iff_eq_nil",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "set": "wx2_list_cases_easy",
+      "winning_tactic": "cases l <;> simp_all",
+      "winning_origin": "wrapper_option_cases",
+      "winning_family": "list_cases_simp"
+    },
+    {
+      "full_name": "List.map_tail",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "set": "wx2_list_cases_easy",
+      "winning_tactic": "cases l <;> simp_all",
+      "winning_origin": "wrapper_option_cases",
+      "winning_family": "list_cases_simp"
+    },
+    {
+      "full_name": "List.modifyHead_modifyHead",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "set": "wx2_list_cases_easy",
+      "winning_tactic": "cases l <;> simp_all",
+      "winning_origin": "wrapper_option_cases",
+      "winning_family": "list_cases_simp"
+    },
+    {
+      "full_name": "List.getElem_scanl_zero",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "set": "wx2_list_cases_medium",
+      "winning_tactic": "cases l <;> simp_all",
+      "winning_origin": "wrapper_option_cases",
+      "winning_family": "list_cases_simp"
+    },
+    {
+      "full_name": "List.length_erase_add_one",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "set": "wx2_list_cases_medium",
+      "winning_tactic": "cases l <;> simp_all",
+      "winning_origin": "wrapper_option_cases",
+      "winning_family": "list_cases_simp"
+    },
+    {
+      "full_name": "List.pmap_eq_nil",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "set": "wx2_list_cases_medium",
+      "winning_tactic": "cases l <;> simp_all",
+      "winning_origin": "wrapper_option_cases",
+      "winning_family": "list_cases_simp"
+    },
+    {
+      "full_name": "List.tail_append_of_ne_nil",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "set": "wx2_list_cases_medium",
+      "winning_tactic": "cases l <;> simp_all",
+      "winning_origin": "wrapper_option_cases",
+      "winning_family": "list_cases_simp"
+    },
+    {
+      "full_name": "List.tail_append_singleton_of_ne_nil",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "set": "wx2_list_cases_medium",
+      "winning_tactic": "cases l <;> simp_all",
+      "winning_origin": "wrapper_option_cases",
+      "winning_family": "list_cases_simp"
+    }
+  ]
+}

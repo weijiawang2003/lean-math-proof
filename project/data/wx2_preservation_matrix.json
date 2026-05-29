@@ -1,0 +1,130 @@
+{
+  "comparison": "NS9 wrapper vs WX2-promoted (Option-only) wrapper",
+  "router": "ns24_router",
+  "rows": [
+    {
+      "set": "cx3_option_simp_easy",
+      "namespace_class": "Option",
+      "ns9_baseline_run": "cx3_wraprouted_ns24_router_cx3_option_simp_easy",
+      "ns9_wins": 15,
+      "wx2_promoted_wins": 26,
+      "delta": 11,
+      "new_beyond_ns9": [
+        "Option.bnot_isNone",
+        "Option.bnot_isSome",
+        "Option.casesOn'_eq_elim",
+        "Option.casesOn'_none_coe",
+        "Option.elim'_eq_elim",
+        "Option.elim_apply",
+        "Option.elim_comp",
+        "Option.isSome_map",
+        "Option.orElse_eq_none",
+        "Option.orElse_eq_some",
+        "Option.orElse_none'"
+      ],
+      "regressions": [],
+      "option_cases_emissions": 19,
+      "available": 32
+    },
+    {
+      "set": "cx3_option_cases_medium",
+      "namespace_class": "Option",
+      "ns9_baseline_run": "cx3_wraprouted_ns24_router_cx3_option_cases_medium",
+      "ns9_wins": 7,
+      "wx2_promoted_wins": 11,
+      "delta": 4,
+      "new_beyond_ns9": [
+        "Option.bind_congr'",
+        "Option.map_bind",
+        "Option.map_bind'",
+        "Option.pmap_bind"
+      ],
+      "regressions": [],
+      "option_cases_emissions": 7,
+      "available": 11
+    },
+    {
+      "set": "cx3_bool_option_mixed",
+      "namespace_class": "Option/Bool",
+      "ns9_baseline_run": "cx3_wraprouted_ns24_router_cx3_bool_option_mixed",
+      "ns9_wins": 18,
+      "wx2_promoted_wins": 22,
+      "delta": 4,
+      "new_beyond_ns9": [
+        "Option.eq_none_or_eq_some",
+        "Option.iget_mem",
+        "Option.orElse_eq_none'",
+        "Option.orElse_eq_some'"
+      ],
+      "regressions": [],
+      "option_cases_emissions": 18,
+      "available": 33
+    },
+    {
+      "set": "cx3_bool_decide_easy",
+      "namespace_class": "Bool",
+      "ns9_baseline_run": "cx3_wraprouted_ns24_router_cx3_bool_decide_easy",
+      "ns9_wins": 2,
+      "wx2_promoted_wins": 2,
+      "delta": 0,
+      "new_beyond_ns9": [],
+      "regressions": [],
+      "option_cases_emissions": 0,
+      "available": 5
+    },
+    {
+      "set": "demo_v1",
+      "namespace_class": "mixed-Nat",
+      "ns9_baseline_run": "ns24_wraprouted_ns24_router_demo_v1",
+      "ns9_wins": 11,
+      "wx2_promoted_wins": 11,
+      "delta": 0,
+      "new_beyond_ns9": [],
+      "regressions": [],
+      "option_cases_emissions": 0,
+      "available": 15
+    },
+    {
+      "set": "nat_defs_medium",
+      "namespace_class": "Nat",
+      "ns9_baseline_run": "ns24_wraprouted_ns24_router_nat_defs_medium",
+      "ns9_wins": 37,
+      "wx2_promoted_wins": 37,
+      "delta": 0,
+      "new_beyond_ns9": [],
+      "regressions": [],
+      "option_cases_emissions": 0,
+      "available": 38
+    },
+    {
+      "set": "ns17_set_extra",
+      "namespace_class": "Set",
+      "ns9_baseline_run": "wx1_wx1pres_ns17_set_extra",
+      "ns9_wins": 18,
+      "wx2_promoted_wins": 18,
+      "delta": 0,
+      "new_beyond_ns9": [],
+      "regressions": [],
+      "option_cases_emissions": 0,
+      "available": 30
+    },
+    {
+      "set": "ns17_finset_extra",
+      "namespace_class": "Finset",
+      "ns9_baseline_run": "wx1_wx1pres_ns17_finset_extra",
+      "ns9_wins": 15,
+      "wx2_promoted_wins": 15,
+      "delta": 0,
+      "new_beyond_ns9": [],
+      "regressions": [],
+      "option_cases_emissions": 0,
+      "available": 30
+    }
+  ],
+  "summary": {
+    "option_surface_delta": 19,
+    "non_option_regressions": 0,
+    "option_cases_emissions_outside_option": 0,
+    "by_construction_note": "nat_defs_large_v5 and ns14_set_finset_extra are unchanged by the same namespace gate (ranked-list identity proof); not re-run here."
+  }
+}

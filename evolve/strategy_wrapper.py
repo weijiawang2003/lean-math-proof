@@ -258,19 +258,35 @@ _CTX_BINDER_LINE = re.compile(
 def _extract_cases_vars(
     state_pp: str, type_keywords: list[str], max_vars: int
 ) -> list[str]:
-    """Return accessible local-context variables whose type *starts with*
-    one of ``type_keywords`` (e.g. "Option", "Bool"), preferring those that
-    occur in the goal.
+    """Return accessible local-context variables whose type matches one of
+    ``type_keywords``, preferring those that occur in the goal.
 
-    Only the value itself is matched (type startswith) so a function into
-    the type (``g : α → Option β``) is NOT selected — we case on data, not
-    on arrows. Inaccessible names (containing the ``✝`` dagger) are skipped
-    because they cannot be referenced by `cases`. Returns at most
-    ``max_vars`` names.
+    Matching rule per keyword:
+      * an identifier keyword (alphanumeric, e.g. "Option", "Bool",
+        "List") matches when the binder type *starts with* it — so a
+        function into the type (``g : α → Option β``) is NOT selected; we
+        case on data, not on arrows.
+      * a notation keyword containing a non-identifier char (e.g. the sum
+        "⊕" or product "×") matches when the binder type *contains* it,
+        since those types are pretty-printed with infix notation rather
+        than a head symbol.
+
+    Inaccessible names (containing the ``✝`` dagger) are skipped because
+    they cannot be referenced by `cases`. Returns at most ``max_vars``.
     """
     kws = tuple(type_keywords)
     if not kws:
         return []
+
+    def _type_matches(type_str: str) -> bool:
+        for kw in kws:
+            if kw and kw[0].isalpha():
+                if type_str.startswith(kw):
+                    return True
+            elif kw and kw in type_str:
+                return True
+        return False
+
     cand: list[str] = []
     seen: set[str] = set()
     goal_lines: list[str] = []
@@ -288,7 +304,7 @@ def _extract_cases_vars(
         if not m:
             continue
         names_str, type_str = m.group(1), m.group(2).strip()
-        if not any(type_str.startswith(kw) for kw in kws):
+        if not _type_matches(type_str):
             continue
         for tok in names_str.split():
             if "✝" in tok or tok in seen:
@@ -1068,27 +1084,48 @@ class StrategyWrapperPolicy:
         if oc and oc.get("enabled"):
             ns_gates = [str(g) for g in (oc.get("namespace_gates") or [])]
             require_ns = bool(oc.get("require_namespace_match", True))
-            ns_ok = True
-            if require_ns:
-                ns_ok = bool(full_name) and any(
-                    full_name.startswith(g + ".") for g in ns_gates
+            # WX2: optional per-type namespace gates and family sources.
+            # `type_namespace_gates[label]` overrides the block-level gate
+            # for that type's tactics (e.g. List tactics fire only on
+            # `List.`); `family_source_by_type[label]` overrides the
+            # block-level family_source. Both fall back to the block-level
+            # values, so a WX1 Option-only config behaves unchanged.
+            type_ns_gates = oc.get("type_namespace_gates") or {}
+            fam_by_type = oc.get("family_source_by_type") or {}
+            type_match = oc.get("type_match") or {}
+            per_type = oc.get("per_type") or {}
+            max_vars = int(oc.get("max_vars_per_state", 2) or 2)
+            default_fam = str(oc.get("family_source", "option_cases_simp"))
+
+            def _ns_match(gates: list[str]) -> bool:
+                if not require_ns:
+                    return True
+                if not gates:
+                    return True
+                return bool(full_name) and any(
+                    full_name.startswith(g + ".") for g in gates
                 )
-            if ns_ok:
-                per_type = oc.get("per_type") or {}
-                max_vars = int(oc.get("max_vars_per_state", 2) or 2)
-                fam_src = str(oc.get("family_source", "option_cases_simp"))
-                for type_kw, tac_templates in per_type.items():
-                    cvars = _extract_cases_vars(
-                        state_pp, [str(type_kw)], max_vars)
-                    for var in cvars:
-                        for raw in (tac_templates or []):
-                            tac = raw.replace("{var}", var)
-                            if tac and tac not in seen:
-                                seen.add(tac)
-                                option_cases_entries.append(
-                                    (tac, ORIGIN_OPTION_CASES, raw, fam_src,
-                                     None, None, None)
-                                )
+
+            for type_kw, tac_templates in per_type.items():
+                gates_for_type = [
+                    str(g) for g in (type_ns_gates.get(type_kw) or ns_gates)
+                ]
+                if not _ns_match(gates_for_type):
+                    continue
+                # Type matcher: explicit override, else the label itself.
+                matchers = [str(m) for m in (type_match.get(type_kw)
+                                             or [type_kw])]
+                fam_src = str(fam_by_type.get(type_kw, default_fam))
+                cvars = _extract_cases_vars(state_pp, matchers, max_vars)
+                for var in cvars:
+                    for raw in (tac_templates or []):
+                        tac = raw.replace("{var}", var)
+                        if tac and tac not in seen:
+                            seen.add(tac)
+                            option_cases_entries.append(
+                                (tac, ORIGIN_OPTION_CASES, raw, fam_src,
+                                 None, None, None)
+                            )
         self.last_option_cases_attempt_count = len(option_cases_entries)
 
         extra_entries = (

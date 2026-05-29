@@ -436,34 +436,66 @@ subprocess logs, or checkpoint binaries.
   Stored as an experiment config under `project/evolve/experiments/wx1/`;
   the NS9 genome is unmodified. Recommendation: promote as a wrapper
   capability, do **not** fine-tune.
+- **WX2 (done — positive, wrapper generalization)** — consolidated WX1
+  into a promoted Option config and tested whether the state-aware cases
+  pattern generalizes. Extended the wrapper with per-type namespace
+  gates / family labels / notation matching (all backward-compatible).
+  **Preservation:** the promoted Option config retains the full +19
+  Option gain with 0 non-Option regressions and 0 emissions outside
+  Option (Nat 37/37, Set 18/18, Finset 15/15, demo 11/11 = NS9).
+  **Generalization:** the only large fresh cases surface is **List**
+  (Option/Bool exhausted, Sum absent, Prod tiny, Multiset a quotient —
+  not `cases`-able). On fresh List sets the generalized wrapper adds
+  **+10 List wins beyond NS9, zero regressions** (NS9 is a no-op on List
+  too); all are the state-aware `cases l <;> simp[_all]` family
+  (`list_cases_simp`, 6 unique gate-met) — **wrapper-ready, not
+  SFT-ready**. `induction`, Prod, and the Bool control add nothing.
+  Combined WX1+WX2 = **+29 wins beyond NS9** (Option +19, List +10), all
+  wrapper-ready. NS9 genome unmodified; configs under
+  `project/evolve/experiments/wx2/`.
+
+### Project state
+
+- **Learn track (fine-tunes):** NS15 (Nat) and NS22 (Int/omega) are the
+  positive distillations; NS24 confirmed the Int omega surface is
+  **saturated** (57→58, near-null). No SFT-ready family has appeared
+  since Int/omega.
+- **Wrapper track (NS9 + WX):** NS9 is the base genome; WX1/WX2 add a
+  state-aware `cases <var> <;> simp` capability (Option + List, +29
+  beyond NS9, 0 regressions, namespace-gated). This is the active
+  growth edge — state-dependent headroom is captured at search time, not
+  by training.
+- **Mining protocol:** always run NS23-style minimal-tactic relabeling
+  before declaring a training gate met. It distinguishes short-token
+  (SFT-ready) from state-aware compound (wrapper-ready) families and has
+  twice (CX3, WX1/WX2) correctly routed headroom to the wrapper instead
+  of a null fine-tune.
 
 ### Recommended next directions
 
-The minimal-tactic principle (NS23/NS24) is validated as an
-**attribution/gating** step — it correctly identifies which family to
-train and prevents wasted long-tactic imitation — but it only adds
-*wins* on a family the base model has not already absorbed. The Int
-omega surface is saturated (NS22 ≈ NS24), CX3 showed the
-fresh-namespace short-token thesis does **not** carry to Bool/Option,
-and WX1 showed the right response to a state-dependent headroom is a
-**wrapper** capability, not fine-tuning. In rough order of likely yield:
+The minimal-tactic principle (NS23/NS24) gates training; the Int omega
+surface is saturated; CX3 showed the fresh-namespace short-token thesis
+does not carry to Bool/Option; and WX1/WX2 showed the right response to
+state-dependent headroom is a **wrapper** capability. In rough order of
+likely yield:
 
-1. **Generalize the WX1 state-aware cases skeleton to List/Multiset.**
-   The same `cases/rcases <var> <;> simp` mechanism likely unlocks an
-   analogous wrapper frontier on the large unprobed List/Multiset
-   surface (276 + 260 catalog) — the highest-yield next step.
-2. **Fold WX1 into the canonical wrapper** (genome + router sign-off),
-   then re-baseline the full matrix; it adds +19 Option with 0
-   regressions and is namespace-gated-safe.
+1. **Fold WX1+WX2 into the canonical wrapper** (genome + router
+   sign-off), then re-baseline the full matrix; +29 beyond NS9, 0
+   regressions, namespace-gated-safe.
+2. **Extend the cases skeleton to remaining inductive surface.** Beyond
+   List the cases-friendly catalog is thin; the largest untapped surface
+   is Multiset (251 fresh) but it is a quotient — would need a
+   `Multiset.induction_on`-aware skeleton (quotient-specific).
 3. **Mine fresh held-out Int.** The CX2 audit left ~50 sub-bitwise/dvd
-   Int order/arith candidates unprobed — measures whether the 22-pool
-   transfers to genuinely-unseen Int.
+   Int order/arith candidates unprobed.
 4. **Short-token SFT stays gated** on finding a genuinely short-token
-   family (none since Int/omega); keep the minimal-tactic relabel as a
-   pre-training gate (it correctly blocked a null NS25 in CX3), and
-   **DPO / ranker** for structured tactics still deferred.
+   family (none since Int/omega); keep minimal-tactic relabel as the
+   pre-training gate, and **DPO / ranker** for structured tactics still
+   deferred.
 
-See `project/evolve/reports/wx1_option_cases_wrapper_report.md` for the
+See `project/evolve/reports/wx2_state_aware_cases_generalization_report.md`
+for the WX2 cases-wrapper generalization arc,
+`project/evolve/reports/wx1_option_cases_wrapper_report.md` for the
 WX1 state-aware Option cases-wrapper arc,
 `project/evolve/reports/cx3_bool_option_decide_mining_report.md`
 for the CX3 mining arc and
