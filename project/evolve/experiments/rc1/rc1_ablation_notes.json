@@ -1,0 +1,54 @@
+{
+  "description": "RC1 production stack — included/excluded components and rationale.",
+  "base_commit": "0d209f0",
+  "router": "project/evolve/routing/ns24_router.json (unmodified)",
+  "ns9_genome": "project/evolve/best/ns9_best_genome.json (byte-unchanged; deep-copied into RC1)",
+  "included": [
+    {
+      "component": "NS9 base wrapper",
+      "why": "proven generative+retrieval+template baseline genome"
+    },
+    {
+      "component": "WX3 Multiset induction symbolic oracle",
+      "actions": [
+        "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+        "MULTISET_INDUCTION_SIMP[Multiset,simp]"
+      ],
+      "gate": "Multiset",
+      "why": "real deterministic symbolic gain (+25 beyond NS9, WX3 GREEN); free always-emit, oracle beats AX4 learned selector"
+    },
+    {
+      "component": "MX2 narrow Set.Finite/toFinset aesop fallback",
+      "gate": [
+        "Set.Finite.",
+        "Set.toFinset"
+      ],
+      "why": "captures 2 clean-aesop Set misses (MX2 Gate B); 0 regressions, 0 off-Set emissions"
+    }
+  ],
+  "excluded": [
+    {
+      "component": "AX4 learned symbolic predictor",
+      "why": "oracle dominates a single free additive action (retains 100% vs 54%); selectivity pays only under costly search"
+    },
+    {
+      "component": "SX1 depth-2 sequence search",
+      "why": "subsumed by best-first follow-up search; 0 net wins over production"
+    },
+    {
+      "component": "Broad Set aesop gate {aesop:[Set.]}",
+      "why": "no extra wins beyond narrow gate; overfires Set-wide (wasted compute)"
+    },
+    {
+      "component": "MX1 Set/Finset ext/cases symbolic actions",
+      "why": "fire but never close (Finset) or aesop-over-attributed (Set); base policy saturates"
+    }
+  ],
+  "preservation_guarantees": [
+    "NS9 genome byte-unchanged (separate composed config)",
+    "Multiset symbolic action namespace-gated to Multiset.",
+    "Set aesop name-gated to Set.Finite./Set.toFinset.",
+    "AX4 predictor disabled; SX1 sequence disabled.",
+    "All additions additive to the NS9 ranked list => 0 regressions by construction."
+  ]
+}

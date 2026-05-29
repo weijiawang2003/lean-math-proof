@@ -593,6 +593,42 @@ subprocess logs, or checkpoint binaries.
   learning; no larger aesop headroom on the fresh Set surface. NS9/router/WX3/
   AX4/SX1/MX1 unmodified; no checkpoints. See
   `project/evolve/reports/mx2_set_aesop_fallback_report.md`.
+- **RC1 (done — production stack consolidation + final benchmark)** — composed a
+  clean release-candidate wrapper from only the proven deterministic gains:
+  **NS9 base ⊕ WX3 Multiset induction oracle ⊕ MX2 narrow Set.Finite/toFinset
+  aesop fallback** (`project/evolve/experiments/rc1/rc1_production_wrapper.json`).
+  AX4 predictor and SX1 sequence search are **off by default**; broad Set aesop
+  and MX1 Set/Finset ext actions excluded. The two additions are namespace-
+  disjoint and additive, so RC1 ≡ WX3 on Multiset, ≡ MX2-narrow on Set.Finite,
+  and ≡ NS9 elsewhere. **Final benchmark: +15 wins beyond NS9** (WX3 +12 Multiset,
+  MX2 +3 Set.Finite), **0 regressions, 0 off-gate emissions**, floors preserved
+  (medium 37/38, large 49/65, demo 11/15); a live RC1 run confirmed the combined
+  config end-to-end. NS9 genome / NS24 router / all prior artifacts unmodified;
+  no checkpoints. See `project/evolve/reports/rc1_final_project_report.md`,
+  `rc1_component_ablation.md`, `rc1_preservation_report.md`.
+
+### Production recommendation (RC1)
+
+Use **`project/evolve/experiments/rc1/rc1_production_wrapper.json`** as the
+default deterministic evaluation wrapper. Keep the AX4 learned predictor and SX1
+sequence search **off** unless explicitly experimenting (they are disabled in the
+RC1 config). Reproduce the RC1 benchmark / components:
+
+```bash
+# RC1 on a Set.Finite set (aesop fallback fires)
+python3 eval_rollout_all.py --theorem-set mx2_set_aesop_known \
+  --policy-type hybrid_evolved \
+  --route-config project/evolve/routing/ns24_router.json \
+  --strategy-config project/evolve/experiments/rc1/rc1_production_wrapper.json \
+  --top-k 8 --max-steps 8 --out-dir <run-dir>
+
+# RC1 on a Multiset set (induction_on oracle fires); swap --theorem-set
+#   ax4_multiset_induction_heldout, etc.
+
+# Re-derive the composed benchmark + ablation + preservation from arc traces:
+python3 scripts/rc1_compose_benchmark.py
+python3 scripts/rc1_preservation_check.py
+```
 
 ### Project state
 

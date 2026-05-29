@@ -283,3 +283,11 @@ project/evolve/eval_runs/mx1_*/
 # eval_runs/ ignore above).
 project/evolve/eval_runs/mx2_*.log
 project/evolve/eval_runs/mx2_*/
+
+# RC1 production-stack consolidation. RC1 configs
+# (project/evolve/experiments/rc1/*.json), benchmark/ablation/preservation
+# metadata JSONs, reports, and the README update ARE committed. RC1 is a
+# composed config + benchmark (no training/checkpoints); the live RC1
+# confirmation trace dir and logs are local-only (blanket eval_runs/ ignore).
+project/evolve/eval_runs/rc1_*.log
+project/evolve/eval_runs/rc1_*/
