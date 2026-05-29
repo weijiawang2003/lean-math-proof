@@ -521,6 +521,25 @@ subprocess logs, or checkpoint binaries.
   live wrapper integration. Classifier model + dataset JSONL git-ignored;
   NS9/router/AX1/AX2/WX3 unmodified. See
   `project/evolve/reports/ax3_multiset_symbolic_learning_report.md`.
+- **AX4 (done — expanded to GREEN; learner v2 clears the promotion bar)** —
+  took AX3's advice and mined the **broader discovered** Multiset catalog (573
+  discovered vs the 260 already-consumed available). Frontier = **313**
+  availability-unconfirmed candidates; **attrition was ~0** (every mined
+  frontier theorem loaded — the cx1 probe had just never sampled these files).
+  Mined 246 across 7 disjoint sets (incl. two reserved held-out): **+26
+  WX3-only wins, 22 symbolic, 0 regressions → 20 new clean single-shot labels**
+  (0 over-attributed). Dataset = **46 clean labels** (41 `simp_all`, 5 `simp`)
+  with **12 held-out positives** → **GREEN** (≥40 total, ≥30 simp_all, ≥10
+  held-out, controls). Learner **v2** (same TF-IDF+logreg) trained on Green:
+  CV top-1 0.90, positive recall 0.72, NULL-FP 0.08; ablation shows it keys on
+  the **proof state** (state-only recall 0.76 ≫ name-only 0.54). Held-out
+  theorem-level eval: **retains 53.8% of oracle wins, 0 regressions, 0 firing
+  on every non-Multiset control** (demo/nat/Set/Finset) → **promotion criterion
+  MET (first time)**. But for a single additive gated action the oracle still
+  dominates raw coverage (13/13 vs 7/13), so the v2 predictor stays
+  **off-by-default**; its selectivity pays only under multi-action search.
+  Model + dataset JSONL git-ignored; NS9/router/AX1/AX2/WX3/AX3 unmodified. See
+  `project/evolve/reports/ax4_multiset_symbolic_green_report.md`.
 
 ### Project state
 
@@ -548,9 +567,15 @@ subprocess logs, or checkpoint binaries.
   TF-IDF+logreg classifier over the proof state reaches **0.85 positive recall
   / 0.05 NULL-FP** in CV and retains the oracle's held-out wins with 0
   regressions — symbolic-action *learning* is empirically alive (YELLOW/smoke).
-  But at 26 labels it does not beat shipping the deterministic WX3 oracle
-  wrapper, so the learner stays experimental pending a mine-to-Green push
-  (≥40 labels / ≥20 held-out positives) and live wrapper integration.
+  **AX4 then mined the broader discovered catalog to GREEN** (46 clean labels,
+  41 `simp_all`, 12 held-out positives, 0 regressions): learner v2 keys on the
+  proof state and **clears the held-out promotion bar** (retain 53.8%, 0 regr,
+  0 non-Multiset FP) — the first learned symbolic-action predictor to do so.
+  The label cap was namespace exhaustion, not method. Symbolic learning is
+  **promising but threshold-gated**: even promotable, the deterministic oracle
+  wrapper remains best for a single additive action (retains 100% vs 54% at
+  zero cost), so the learned predictor stays off-by-default until multi-action
+  symbolic search makes its selectivity pay.
 - **Mining protocol:** always run NS23-style minimal-tactic relabeling
   before declaring a training gate met. It distinguishes short-token
   (SFT-ready) from state-aware compound (wrapper-ready) families and has

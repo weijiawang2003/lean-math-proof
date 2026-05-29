@@ -591,6 +591,26 @@ def _load_ax3_sets() -> None:
 _load_ax3_sets()
 
 
+def _load_ax4_sets() -> None:
+    import json as _json
+    from pathlib import Path as _Path
+    p = _Path("project/evolve/routing/ax4_theorem_sets.json")
+    if not p.exists():
+        return
+    try:
+        data = _json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return
+    for name, items in data.items():
+        THEOREM_SETS[name] = [
+            TheoremConfig(file_path=t["file_path"], full_name=t["full_name"])
+            for t in items
+        ]
+
+
+_load_ax4_sets()
+
+
 def list_theorem_sets() -> list[str]:
     return sorted(THEOREM_SETS)
 

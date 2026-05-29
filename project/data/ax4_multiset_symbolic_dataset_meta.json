@@ -1,0 +1,51 @@
+{
+  "arc": "AX4",
+  "jsonl": "project/data/ax4_multiset_symbolic_dataset.jsonl",
+  "total_rows": 404,
+  "clean_symbolic_labels_total": 46,
+  "positives_by_arc": {
+    "WX3": 20,
+    "AX3": 6,
+    "AX4": 20
+  },
+  "wx3_positives": 20,
+  "ax3_positives": 6,
+  "ax4_positives": 20,
+  "label_distribution": {
+    "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 41,
+    "MULTISET_INDUCTION_SIMP[Multiset,simp]": 5,
+    "NULL": 358
+  },
+  "by_action_id": {
+    "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 41,
+    "MULTISET_INDUCTION_SIMP[Multiset,simp]": 5
+  },
+  "split_distribution": {
+    "train_candidate": 202,
+    "heldout_eval": 202
+  },
+  "split_x_label": {
+    "heldout_eval|MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 12,
+    "heldout_eval|NULL": 190,
+    "train_candidate|MULTISET_INDUCTION_SIMP[Multiset,simp]": 5,
+    "train_candidate|MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 29,
+    "train_candidate|NULL": 168
+  },
+  "negatives": {
+    "multiset_null": 305,
+    "non_multiset_control_null": 53,
+    "negative_controls_available": true
+  },
+  "heldout_positive_count": 12,
+  "train_positive_count": 34,
+  "readiness": {
+    "thresholds": {
+      "green": ">=40 total AND >=30 simp_all AND >=10 held-out positives AND negative controls",
+      "yellow": ">=25 total with held-out split",
+      "red": "<25 total or no held-out"
+    },
+    "verdict": "GREEN",
+    "training_mode": "full",
+    "train_recommended": true
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "evaluated": true,
+  "confidence_threshold": 0.5,
+  "model": "project/models/ax4_multiset_symbolic_clf/model.joblib",
+  "per_set_multiset_heldout": [
+    {
+      "set": "ax4_multiset_induction_heldout",
+      "n": 45,
+      "ns9_wins": 10,
+      "oracle_symbolic_wins": 4,
+      "predictor_wins": 3,
+      "retained_fraction_of_oracle": 0.75,
+      "emissions_fired": 6,
+      "emission_precision": 0.5,
+      "false_positive_emissions": 3,
+      "regressions_vs_ns9": 0
+    },
+    {
+      "set": "ax4_multiset_induction_heldout2",
+      "n": 53,
+      "ns9_wins": 12,
+      "oracle_symbolic_wins": 4,
+      "predictor_wins": 2,
+      "retained_fraction_of_oracle": 0.5,
+      "emissions_fired": 3,
+      "emission_precision": 0.6667,
+      "false_positive_emissions": 1,
+      "regressions_vs_ns9": 0
+    },
+    {
+      "set": "ax4_multiset_negative_control",
+      "n": 28,
+      "ns9_wins": 8,
+      "oracle_symbolic_wins": 4,
+      "predictor_wins": 1,
+      "retained_fraction_of_oracle": 0.25,
+      "emissions_fired": 1,
+      "emission_precision": 1.0,
+      "false_positive_emissions": 0,
+      "regressions_vs_ns9": 0
+    },
+    {
+      "set": "ax3_multiset_induction_heldout",
+      "n": 12,
+      "ns9_wins": 0,
+      "oracle_symbolic_wins": 1,
+      "predictor_wins": 1,
+      "retained_fraction_of_oracle": 1.0,
+      "emissions_fired": 1,
+      "emission_precision": 1.0,
+      "false_positive_emissions": 0,
+      "regressions_vs_ns9": 0
+    },
+    {
+      "set": "ax3_multiset_mixed_heldout",
+      "n": 14,
+      "ns9_wins": 0,
+      "oracle_symbolic_wins": 0,
+      "predictor_wins": 0,
+      "retained_fraction_of_oracle": null,
+      "emissions_fired": 2,
+      "emission_precision": 0.0,
+      "false_positive_emissions": 2,
+      "regressions_vs_ns9": 0
+    },
+    {
+      "set": "ax3_multiset_negative_control",
+      "n": 12,
+      "ns9_wins": 0,
+      "oracle_symbolic_wins": 0,
+      "predictor_wins": 0,
+      "retained_fraction_of_oracle": null,
+      "emissions_fired": 1,
+      "emission_precision": 0.0,
+      "false_positive_emissions": 1,
+      "regressions_vs_ns9": 0
+    }
+  ],
+  "control_non_multiset": [
+    {
+      "set": "demo_v1",
+      "n": 15,
+      "raw_classifier_fires": 0,
+      "raw_fire_rate": 0.0,
+      "effective_emissions_after_namespace_gate": 0
+    },
+    {
+      "set": "nat_defs_medium",
+      "n": 38,
+      "raw_classifier_fires": 0,
+      "raw_fire_rate": 0.0,
+      "effective_emissions_after_namespace_gate": 0
+    },
+    {
+      "set": "ns17_set_extra",
+      "n": 30,
+      "raw_classifier_fires": 0,
+      "raw_fire_rate": 0.0,
+      "effective_emissions_after_namespace_gate": 0
+    },
+    {
+      "set": "ns17_finset_extra",
+      "n": 30,
+      "raw_classifier_fires": 0,
+      "raw_fire_rate": 0.0,
+      "effective_emissions_after_namespace_gate": 0
+    }
+  ],
+  "totals": {
+    "oracle_symbolic_wins": 13,
+    "predictor_wins": 7,
+    "retained_fraction_of_oracle": 0.5385,
+    "regressions_vs_ns9": 0,
+    "effective_non_multiset_fp": 0
+  },
+  "promotion": {
+    "criterion": "retain>=50% oracle held-out AND 0 regr AND effective non-Multiset FP=0",
+    "promote": true
+  }
+}
