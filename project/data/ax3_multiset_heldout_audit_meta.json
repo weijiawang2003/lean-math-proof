@@ -1,0 +1,715 @@
+{
+  "source": "project/data/wx3_multiset_catalog_audit_meta.json",
+  "fresh_available_total": 251,
+  "already_used_count": 165,
+  "heldout_total": 86,
+  "heldout_by_shape": {
+    "ext": 32,
+    "hard": 4,
+    "induction": 19,
+    "simp": 31
+  },
+  "split_sizes": {
+    "ax3_multiset_induction_mine": 47,
+    "ax3_multiset_induction_heldout": 12,
+    "ax3_multiset_mixed_heldout": 14,
+    "ax3_multiset_negative_control": 12
+  },
+  "split_total": 85,
+  "splits": {
+    "ax3_multiset_induction_mine": [
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.erase_cons_tail_of_mem",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.inter_eq_zero_iff_disjoint",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.map_comp_cons",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.singleton_eq_cons_iff",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "full_name": "Multiset.bind_hcongr",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.count_attach",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.filter_cons",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.le_cons_erase",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "full_name": "Multiset.mem_join",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "full_name": "Multiset.rel_bind",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.rel_cons_right",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "full_name": "Multiset.prod_bind",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "full_name": "Multiset.product_add",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.map_congr",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.map_hcongr",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.monotone_filter_right",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.filter_add_filter",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.filter_congr",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.filter_eq'",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.map_set_pairwise",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.ssubset_singleton_iff",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.sub_le_iff_le_add",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.Rel.add",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.filter_add_not",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.filter_eq_nil",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.filter_eq_self",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.map_le_map_iff",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.map_lt_map",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.mem_nsmul",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.mem_of_mem_nsmul",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "full_name": "Multiset.sigma_add",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.add_singleton_eq_iff",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.map_surjective_of_surjective",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.card_filter_le_iff",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.exists_mem_of_ne_zero",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.exists_mem_of_rel_of_mem",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.map_eq_singleton",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.card_erase_eq_ite",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.count_eq_zero_of_not_mem",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.count_filter",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Dedup.lean",
+        "full_name": "Multiset.dedup_nsmul",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "ext",
+        "induction_keyword": false
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.inter_le_right",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "ext",
+        "induction_keyword": false
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Lattice.lean",
+        "full_name": "Multiset.nodup_sup_iff",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.addHom_ext",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.countP_eq_countP_filter_add",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Dedup.lean",
+        "full_name": "Multiset.count_dedup",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.erase_lt",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      }
+    ],
+    "ax3_multiset_induction_heldout": [
+      {
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "full_name": "Multiset.rel_join",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "full_name": "Multiset.prod_join",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.sub_eq_fold_erase",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.rel_cons_left",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "induction",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Bind.lean",
+        "full_name": "Multiset.coe_product",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "induction",
+        "induction_keyword": false
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.filterMap_eq_filter",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.lt_replicate_succ",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.filter_nsmul",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.rel_replicate_left",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.rel_add_left",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.filter_sub",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "simp",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.lt_singleton",
+        "namespace": "Multiset",
+        "difficulty": "medium",
+        "shape": "simp",
+        "induction_keyword": false
+      }
+    ],
+    "ax3_multiset_mixed_heldout": [
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.le_count_iff_replicate_le",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.countP_map",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.count_erase_of_ne",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.count_erase_self",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.count_filter_of_pos",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.ext",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": false
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.map_erase_of_mem",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.mem_inter",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.replicate_inter",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Finset/Lattice.lean",
+        "full_name": "Multiset.count_finset_sup",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.count_map_eq_count'",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.le_iff_count",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.map_erase",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.countP_congr",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      }
+    ],
+    "ax3_multiset_negative_control": [
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.count_sub",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.sub_add_inter",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.Rel.countP_eq",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.union_add_inter",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.add_eq_union_left_of_le",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.count_map_eq_count",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.le_inter",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": false
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.inter_add_distrib",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "ext",
+        "induction_keyword": true
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.rel_refl_of_refl_on",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "hard",
+        "induction_keyword": false
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.Rel.mono",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "hard",
+        "induction_keyword": false
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.rel_eq",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "hard",
+        "induction_keyword": false
+      },
+      {
+        "file_path": "Mathlib/Data/Multiset/Basic.lean",
+        "full_name": "Multiset.rel_of_forall",
+        "namespace": "Multiset",
+        "difficulty": "hard",
+        "shape": "hard",
+        "induction_keyword": false
+      }
+    ]
+  },
+  "excluded_pathological": [
+    {
+      "full_name": "Multiset.eq_of_mem_map_const",
+      "reason": "Lean REPL hang (>50min on one tactic, no timeout caught it); dropped from mine set"
+    }
+  ]
+}

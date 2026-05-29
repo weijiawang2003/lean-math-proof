@@ -1,0 +1,94 @@
+{
+  "gate_unique_required": 5,
+  "total_relabeled": 7,
+  "ax3_new_clean_single_shot_symbolic": 6,
+  "dropped_over_attributed": 0,
+  "multistep_symbolic_assisted": 1,
+  "biggest_single_family": 5,
+  "symbolic_label_pools": {
+    "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": {
+      "symbolic_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "unique_count": 5,
+      "count_gate_met": true,
+      "recommended_oversample_factor": 10,
+      "theorems": {
+        "Multiset.count_eq_zero_of_not_mem": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "minimal_var": "s"
+        },
+        "Multiset.mem_join": {
+          "minimal_tactic": "induction S using Multiset.induction_on <;> simp_all",
+          "minimal_var": "S"
+        },
+        "Multiset.nodup_sup_iff": {
+          "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+          "minimal_var": "m"
+        },
+        "Multiset.prod_bind": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "minimal_var": "s"
+        },
+        "Multiset.prod_join": {
+          "minimal_tactic": "induction S using Multiset.induction_on <;> simp_all",
+          "minimal_var": "S"
+        }
+      }
+    },
+    "MULTISET_INDUCTION_SIMP[Multiset,simp]": {
+      "symbolic_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+      "unique_count": 1,
+      "count_gate_met": false,
+      "recommended_oversample_factor": 20,
+      "theorems": {
+        "Multiset.exists_mem_of_ne_zero": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp",
+          "minimal_var": "s"
+        }
+      }
+    }
+  },
+  "clean_theorems": [
+    {
+      "full_name": "Multiset.count_eq_zero_of_not_mem",
+      "set": "ax3_multiset_induction_mine",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "minimal_var": "s"
+    },
+    {
+      "full_name": "Multiset.exists_mem_of_ne_zero",
+      "set": "ax3_multiset_induction_mine",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp",
+      "minimal_var": "s"
+    },
+    {
+      "full_name": "Multiset.mem_join",
+      "set": "ax3_multiset_induction_mine",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_tactic": "induction S using Multiset.induction_on <;> simp_all",
+      "minimal_var": "S"
+    },
+    {
+      "full_name": "Multiset.nodup_sup_iff",
+      "set": "ax3_multiset_induction_mine",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "minimal_var": "m"
+    },
+    {
+      "full_name": "Multiset.prod_bind",
+      "set": "ax3_multiset_induction_mine",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "minimal_var": "s"
+    },
+    {
+      "full_name": "Multiset.prod_join",
+      "set": "ax3_multiset_induction_heldout",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_tactic": "induction S using Multiset.induction_on <;> simp_all",
+      "minimal_var": "S"
+    }
+  ]
+}

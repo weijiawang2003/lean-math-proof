@@ -1,0 +1,73 @@
+{
+  "comparison": "WX3 oracle wrapper (A) vs AX3 learned predictor (B) vs NS9 (C)",
+  "model": "project/models/ax3_multiset_symbolic_clf/model.joblib",
+  "confidence_threshold": 0.5,
+  "method": "offline: predictor win = oracle symbolic win AND classifier fires; additive+gated action => NS9 wins fully retained, 0 regressions by construction.",
+  "per_set": [
+    {
+      "set": "ax3_multiset_induction_heldout",
+      "n": 12,
+      "ns9_wins": 0,
+      "oracle_symbolic_wins": 1,
+      "predictor_wins": 1,
+      "predictor_total_wins_incl_ns9": 1,
+      "retained_fraction_of_oracle": 1.0,
+      "emissions_fired": 3,
+      "emission_precision": 0.3333,
+      "false_positive_emissions": 2,
+      "regressions_vs_ns9": 0
+    },
+    {
+      "set": "ax3_multiset_mixed_heldout",
+      "n": 14,
+      "ns9_wins": 0,
+      "oracle_symbolic_wins": 0,
+      "predictor_wins": 0,
+      "predictor_total_wins_incl_ns9": 0,
+      "retained_fraction_of_oracle": null,
+      "emissions_fired": 0,
+      "emission_precision": null,
+      "false_positive_emissions": 0,
+      "regressions_vs_ns9": 0
+    },
+    {
+      "set": "ax3_multiset_negative_control",
+      "n": 12,
+      "ns9_wins": 0,
+      "oracle_symbolic_wins": 0,
+      "predictor_wins": 0,
+      "predictor_total_wins_incl_ns9": 0,
+      "retained_fraction_of_oracle": null,
+      "emissions_fired": 0,
+      "emission_precision": null,
+      "false_positive_emissions": 0,
+      "regressions_vs_ns9": 0
+    }
+  ],
+  "control_preservation": [
+    {
+      "set": "demo_v1",
+      "n": 15,
+      "raw_classifier_fires": 0,
+      "raw_fire_rate": 0.0,
+      "effective_emissions_after_namespace_gate": 0,
+      "note": "namespace gate (Multiset) blocks all emission here; effective false positives = 0."
+    },
+    {
+      "set": "nat_defs_medium",
+      "n": 38,
+      "raw_classifier_fires": 1,
+      "raw_fire_rate": 0.0263,
+      "effective_emissions_after_namespace_gate": 0,
+      "note": "namespace gate (Multiset) blocks all emission here; effective false positives = 0."
+    }
+  ],
+  "totals": {
+    "oracle_symbolic_wins": 1,
+    "predictor_wins": 1,
+    "retained_fraction_of_oracle": 1.0,
+    "emissions_fired": 3,
+    "emission_precision": 0.3333,
+    "regressions_vs_ns9": 0
+  }
+}

@@ -503,6 +503,24 @@ subprocess logs, or checkpoint binaries.
   full induction-shape catalog) to ≥40 / ≥20-single-id, then train AX3. No
   checkpoints; NS9/AX1/AX2 unmodified. See
   `project/evolve/reports/wx3_multiset_quotient_wrapper_report.md`.
+- **AX3 (done — first symbolic-action learner, YELLOW/smoke)** — mined the 86
+  held-out fresh Multiset theorems under the WX3 induction wrapper and trained
+  the program's **first learned symbolic-action predictor** (not raw tactic
+  SFT). Held-out mining added **+7 WX3-only wins → 6 new clean single-shot
+  labels**; combined with WX3 → **26 clean symbolic labels** (23 `simp_all`, 3
+  `simp`). Readiness = **YELLOW** (25–39 total, dominant ≥20, held-out split
+  exists; < 40 Green). Learner = TF-IDF(char 3–5) + balanced logistic
+  regression over the proof state, classes = 2 Multiset action ids + NULL:
+  **3-fold CV positive recall 0.85, NULL FP 0.05, non-Multiset control FP 0.02
+  (0 effective after the namespace gate)**. Offline predictor-vs-oracle (the
+  action is additive+gated, so the predictor only suppresses NULL-scored
+  emissions): retains 1.0 of oracle held-out wins, **0 regressions**.
+  **Symbolic-action learning is empirically alive on Multiset**, but the pool
+  (26) is label-limited → **keep the WX3 oracle wrapper in production** and
+  mine to Green (≥40 / ≥20 held-out positives) before promoting the learner to
+  live wrapper integration. Classifier model + dataset JSONL git-ignored;
+  NS9/router/AX1/AX2/WX3 unmodified. See
+  `project/evolve/reports/ax3_multiset_symbolic_learning_report.md`.
 
 ### Project state
 
@@ -525,11 +543,14 @@ subprocess logs, or checkpoint binaries.
   single-shot examples (Option exhausted; fresh List wins are multi-step).
   **WX3 then broke that cap from the wrapper side:** the new Multiset
   `induction_on` action added **20 clean single-shot symbolic labels** in a
-  fresh namespace (+25 wins beyond NS9, 0 regressions). AX3 is now plausible
-  for the first time — the `MULTISET_INDUCTION_SIMP` family is at the
-  ≥20-in-one-family gate — but is deferred one more step pending a surface
-  expansion to ≥40 / ≥20-single-id; the symbolic layer remains a search-time
-  wrapper capability until then.
+  fresh namespace (+25 wins beyond NS9, 0 regressions). **AX3 then trained the
+  first symbolic-action learner** on the WX3+AX3 pool (26 clean labels): a
+  TF-IDF+logreg classifier over the proof state reaches **0.85 positive recall
+  / 0.05 NULL-FP** in CV and retains the oracle's held-out wins with 0
+  regressions — symbolic-action *learning* is empirically alive (YELLOW/smoke).
+  But at 26 labels it does not beat shipping the deterministic WX3 oracle
+  wrapper, so the learner stays experimental pending a mine-to-Green push
+  (≥40 labels / ≥20 held-out positives) and live wrapper integration.
 - **Mining protocol:** always run NS23-style minimal-tactic relabeling
   before declaring a training gate met. It distinguishes short-token
   (SFT-ready) from state-aware compound (wrapper-ready) families and has

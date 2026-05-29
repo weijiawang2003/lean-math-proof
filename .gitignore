@@ -237,3 +237,13 @@ project/data/ax2_symbolic_label_dataset.jsonl
 # blanket eval_runs/ ignore above).
 project/evolve/eval_runs/wx3_*.log
 project/evolve/eval_runs/wx3_*/
+
+# AX3 Multiset symbolic-action learning. Scripts, theorem-set config
+# (project/evolve/routing/ax3_theorem_sets.json), experiment config
+# (project/evolve/experiments/ax3/*.json), metadata JSONs, and reports ARE
+# committed; eval traces/logs/run dirs, the dataset JSONL, and the trained
+# classifier artifacts are NOT.
+project/evolve/eval_runs/ax3_*.log
+project/evolve/eval_runs/ax3_*/
+project/data/ax3_multiset_symbolic_dataset.jsonl
+project/models/ax3_multiset_symbolic_clf/
