@@ -185,3 +185,14 @@ project/data/ns22_int_iff_omega_*.jsonl
 project/data/ns22_int_fallback_omega_*.jsonl
 project/evolve/eval_runs/ns22_*.log
 project/evolve/eval_runs/ns22_*/
+
+# NS24 Int minimal-omega aggregate training artifacts. Datasets and
+# checkpoints are regeneratable via scripts/build_ns24_training_data.py
+# and train_tactic_generator.py. Dataset *_meta.json files are
+# committed; the JSONL data, model dirs, raw traces, and eval logs
+# are not.
+project/models/gen_v5_ns24_*/
+project/models/gen_v5_ns24_*_training.log
+project/data/ns24_int_minimal_omega_*.jsonl
+project/evolve/eval_runs/ns24_*.log
+project/evolve/eval_runs/ns24_*/

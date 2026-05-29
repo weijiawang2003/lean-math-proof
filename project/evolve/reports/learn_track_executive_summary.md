@@ -79,3 +79,13 @@ justified.
 - NS20 exhaustion: `ns20_finset_aesop_mining_report.md`
 - NS9 best genome: `project/evolve/best/ns9_best_genome.json`
 - NS15 router: `project/evolve/routing/ns15_router.json`
+
+## Postscript after CX1 / NS22
+
+Catalog extension reopened the loop: NS20 was old-catalog exhaustion,
+not framework exhaustion. CX1 grew the catalog 527 → 1,817 theorems,
+NS21 distilled a Finset/aesop pool (memorization only), CX2 mined Int
+at a 26% wrapper-only strike rate, and NS22 added +22 raw Int wins
+(35 → 57). NS22 showed that **minimal `omega` labels outperform long
+iff-pair imitation on Int**, motivating NS23 attribution repair. See
+`post_cx1_ns21_cx2_ns22_update.md`.

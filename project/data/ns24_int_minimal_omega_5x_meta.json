@@ -1,0 +1,202 @@
+{
+  "variant": "omega_5x",
+  "out_path": "project/data/ns24_int_minimal_omega_5x.jsonl",
+  "init_from": "project/models/gen_v5_ns22_int_fallback_omega_5x",
+  "n_rows": 7550,
+  "n_pool_rows_after_oversample": 105,
+  "n_pool_unique_theorems": 21,
+  "n_pool_source_rows_before_oversample": 21,
+  "oversample_factor": 5,
+  "n_replay_rows": 7445,
+  "replay_source": "project/data/ns12_train_balanced.jsonl",
+  "int_omega_rows_before_oversample": 21,
+  "int_omega_rows_after_oversample": 105,
+  "target_tactic_distribution": {
+    "omega": 105
+  },
+  "by_namespace": {
+    "?": 7445,
+    "Int": 105
+  },
+  "source_original_family_rows": {
+    "iff_omega_pair": 45,
+    "fallback_omega": 60
+  },
+  "n_rows_in_ns22_omega_training": 60,
+  "n_rows_relabeled_from_iff": 45,
+  "label_source": "ns23 minimal-sufficient tactic (NOT wrapper-attributed)",
+  "state_source": "initial (min-step) state_pp from NS9-wrapper Int traces",
+  "contamination_risk": "none: only Int omega-aggregate pool rows + NS12 balanced replay; no Nat/Set/Finset wrapper-only rows; no long iff-pair tactic targets",
+  "per_theorem_provenance": {
+    "Int.le_add_one_iff": {
+      "minimal_tactic": "omega",
+      "original_family": "iff_omega_pair",
+      "first_seen_arc": "CX1",
+      "in_ns22_omega_training": false,
+      "relabeled_from_iff": true
+    },
+    "Int.le_iff_lt_or_eq": {
+      "minimal_tactic": "omega",
+      "original_family": "iff_omega_pair",
+      "first_seen_arc": "CX1",
+      "in_ns22_omega_training": false,
+      "relabeled_from_iff": true
+    },
+    "Int.emod_two_eq_zero_or_one": {
+      "minimal_tactic": "omega",
+      "original_family": "fallback_omega",
+      "first_seen_arc": "CX1",
+      "in_ns22_omega_training": true,
+      "relabeled_from_iff": false
+    },
+    "Int.le_of_eq": {
+      "minimal_tactic": "omega",
+      "original_family": "fallback_omega",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": true,
+      "relabeled_from_iff": false
+    },
+    "Int.natAbs_coe_sub_coe_lt_of_lt": {
+      "minimal_tactic": "omega",
+      "original_family": "fallback_omega",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": true,
+      "relabeled_from_iff": false
+    },
+    "Int.le_or_lt": {
+      "minimal_tactic": "omega",
+      "original_family": "fallback_omega",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": true,
+      "relabeled_from_iff": false
+    },
+    "Int.natAbs_coe_sub_coe_le_of_le": {
+      "minimal_tactic": "omega",
+      "original_family": "fallback_omega",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": true,
+      "relabeled_from_iff": false
+    },
+    "Int.lt_or_lt_of_ne": {
+      "minimal_tactic": "omega",
+      "original_family": "fallback_omega",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": true,
+      "relabeled_from_iff": false
+    },
+    "Int.natAbs_add_of_nonpos": {
+      "minimal_tactic": "omega",
+      "original_family": "fallback_omega",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": true,
+      "relabeled_from_iff": false
+    },
+    "Int.lt_asymm": {
+      "minimal_tactic": "omega",
+      "original_family": "fallback_omega",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": true,
+      "relabeled_from_iff": false
+    },
+    "Int.le_natCast_sub": {
+      "minimal_tactic": "omega",
+      "original_family": "fallback_omega",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": true,
+      "relabeled_from_iff": false
+    },
+    "Int.neg_emod_two": {
+      "minimal_tactic": "omega",
+      "original_family": "fallback_omega",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": true,
+      "relabeled_from_iff": false
+    },
+    "Int.lt_or_le": {
+      "minimal_tactic": "omega",
+      "original_family": "fallback_omega",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": true,
+      "relabeled_from_iff": false
+    },
+    "Int.natCast_pred_of_pos": {
+      "minimal_tactic": "omega",
+      "original_family": "fallback_omega",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": true,
+      "relabeled_from_iff": false
+    },
+    "Int.le_sub_one_iff": {
+      "minimal_tactic": "omega",
+      "original_family": "iff_omega_pair",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": false,
+      "relabeled_from_iff": true
+    },
+    "Int.sub_one_lt_iff": {
+      "minimal_tactic": "omega",
+      "original_family": "iff_omega_pair",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": false,
+      "relabeled_from_iff": true
+    },
+    "Int.le_antisymm_iff": {
+      "minimal_tactic": "omega",
+      "original_family": "iff_omega_pair",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": false,
+      "relabeled_from_iff": true
+    },
+    "Int.le_iff_eq_or_lt": {
+      "minimal_tactic": "omega",
+      "original_family": "iff_omega_pair",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": false,
+      "relabeled_from_iff": true
+    },
+    "Int.natCast_nonpos_iff": {
+      "minimal_tactic": "omega",
+      "original_family": "iff_omega_pair",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": false,
+      "relabeled_from_iff": true
+    },
+    "Int.natCast_ne_zero_iff_pos": {
+      "minimal_tactic": "omega",
+      "original_family": "iff_omega_pair",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": false,
+      "relabeled_from_iff": true
+    },
+    "Int.natCast_eq_zero": {
+      "minimal_tactic": "omega",
+      "original_family": "iff_omega_pair",
+      "first_seen_arc": "CX2",
+      "in_ns22_omega_training": false,
+      "relabeled_from_iff": true
+    }
+  },
+  "pool_theorems": [
+    "Int.emod_two_eq_zero_or_one",
+    "Int.le_add_one_iff",
+    "Int.le_antisymm_iff",
+    "Int.le_iff_eq_or_lt",
+    "Int.le_iff_lt_or_eq",
+    "Int.le_natCast_sub",
+    "Int.le_of_eq",
+    "Int.le_or_lt",
+    "Int.le_sub_one_iff",
+    "Int.lt_asymm",
+    "Int.lt_or_le",
+    "Int.lt_or_lt_of_ne",
+    "Int.natAbs_add_of_nonpos",
+    "Int.natAbs_coe_sub_coe_le_of_le",
+    "Int.natAbs_coe_sub_coe_lt_of_lt",
+    "Int.natCast_eq_zero",
+    "Int.natCast_ne_zero_iff_pos",
+    "Int.natCast_nonpos_iff",
+    "Int.natCast_pred_of_pos",
+    "Int.neg_emod_two",
+    "Int.sub_one_lt_iff"
+  ]
+}
