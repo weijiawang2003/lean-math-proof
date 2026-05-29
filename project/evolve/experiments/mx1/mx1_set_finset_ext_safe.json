@@ -1,0 +1,133 @@
+{
+  "fallback_tactics": [
+    "omega"
+  ],
+  "tactic_templates": [],
+  "max_extra_tactics_per_state": 10,
+  "theorem_family_tactics": {
+    "mod": [
+      "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "omega"
+    ]
+  },
+  "family_budgets": {
+    "AM_GM": 8,
+    "div": 8,
+    "mod": 12
+  },
+  "theorem_tactic_denylist": {
+    "Nat.add_mod_eq_ite": [
+      "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]"
+    ]
+  },
+  "retrieval_enabled": true,
+  "retrieval_top_k": 8,
+  "retrieval_tactic_forms": [
+    "rw",
+    "simp",
+    "apply"
+  ],
+  "retrieval_filter_self": true,
+  "retrieval_filter_unavailable": true,
+  "retrieval_skip_bloating_apply": true,
+  "retrieval_shape_filter": true,
+  "term_builder_templates": {},
+  "term_builder_budget": 0,
+  "priority_templates": {
+    "iff": [
+      "exact ⟨fun h => Nat.div_mul_cancel h, fun h => by rw [← h]; exact Nat.dvd_mul_left _ _⟩",
+      "rw [Nat.div_lt_iff_lt_mul {hyp_pos}, Nat.one_mul]",
+      "exact ⟨fun h => Nat.eq_of_mul_eq_mul_left (Nat.pos_of_ne_zero {hyp_ne_zero}) (h.trans (Nat.mul_one _).symm), fun h => by simp [h]⟩",
+      "exact ⟨fun h => Nat.eq_of_mul_eq_mul_right (Nat.pos_of_ne_zero {hyp_ne_zero}) (h.trans (Nat.one_mul _).symm), fun h => by simp [h]⟩",
+      "rw [Nat.pos_iff_ne_zero, Nat.div_ne_zero_iff {hyp_ne_zero}]",
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "simp only [← Nat.not_le, Nat.pow_le_pow_iff_left {hyp_ne_zero}]",
+      "exact ⟨fun h => by omega, fun h => by omega⟩"
+    ],
+    "lt": [
+      "exact (Nat.le_div_iff_mul_le {hyp_pos}).mpr (by simpa using {hyp_le})"
+    ],
+    "any": [
+      "split_ifs <;> omega",
+      "cases k <;> [skip; (rw [Nat.add_mod]; split_ifs with h <;> first | (exact Nat.mod_eq_of_lt (Nat.lt_of_not_ge h)) | (rw [Nat.mod_eq_sub_mod h]; exact Nat.mod_eq_of_lt ((Nat.sub_lt_iff_lt_add h).mpr (Nat.add_lt_add (Nat.mod_lt _ (by omega)) (Nat.mod_lt _ (by omega))))))]"
+    ],
+    "eq": [
+      "exact Nat.eq_one_of_mul_eq_one_right (by rwa [Nat.mul_comm])"
+    ],
+    "le": [
+      "by_cases hc : c = 0 <;> [simp [hc]; exact (Nat.le_div_iff_mul_le' (Nat.pos_of_ne_zero hc)).2 (Nat.le_trans (Nat.div_mul_le_self _ _) {hyp_le})]"
+    ]
+  },
+  "priority_template_budget": 18,
+  "use_skeleton_bag": true,
+  "max_steps": 8,
+  "top_k": 8,
+  "timeout_per_theorem": 60,
+  "retrieval_requires_family": false,
+  "retrieval_family_gates": [
+    "div",
+    "mod",
+    "pow"
+  ],
+  "symbolic_actions": {
+    "enabled": true,
+    "actions": [
+      {
+        "action_type": "SET_EXT_SIMP",
+        "var_type": "Set",
+        "simp_mode": "simp",
+        "namespace_gate": "Set",
+        "max_vars": 1,
+        "priority": 40,
+        "family_source": "set_ext_simp"
+      },
+      {
+        "action_type": "SET_EXT_SIMP",
+        "var_type": "Set",
+        "simp_mode": "simp_all",
+        "namespace_gate": "Set",
+        "max_vars": 1,
+        "priority": 39,
+        "family_source": "set_ext_simp_all"
+      },
+      {
+        "action_type": "FINSET_EXT_SIMP",
+        "var_type": "Finset",
+        "simp_mode": "simp",
+        "namespace_gate": "Finset",
+        "max_vars": 1,
+        "priority": 40,
+        "family_source": "finset_ext_simp"
+      },
+      {
+        "action_type": "FINSET_EXT_SIMP",
+        "var_type": "Finset",
+        "simp_mode": "simp_all",
+        "namespace_gate": "Finset",
+        "max_vars": 1,
+        "priority": 39,
+        "family_source": "finset_ext_simp_all"
+      },
+      {
+        "action_type": "FINSET_CASES_SIMP",
+        "var_type": "Finset",
+        "simp_mode": "simp",
+        "namespace_gate": "Finset",
+        "max_vars": 1,
+        "priority": 30,
+        "family_source": "finset_cases_simp"
+      },
+      {
+        "action_type": "FINSET_CASES_SIMP",
+        "var_type": "Finset",
+        "simp_mode": "simp_all",
+        "namespace_gate": "Finset",
+        "max_vars": 1,
+        "priority": 29,
+        "family_source": "finset_cases_simp_all"
+      }
+    ]
+  },
+  "_mx1_note": "MX1 experimental Set/Finset ext+cases symbolic wrapper. NS9 genome base (byte-identical to WX3 base) + a Set/Finset-gated symbolic_actions block using the NEW MX1 action types (SET_EXT_SIMP/FINSET_EXT_SIMP/FINSET_CASES_SIMP). Flows through the EXISTING AX1 wrapper path (load_actions+instantiate_symbolic_action); no strategy_wrapper change. Disabled/absent => byte-identical to NS9; namespace-gated so non-Set/Finset surfaces get 0 emissions. Additive to the NS9 ranked list."
+}

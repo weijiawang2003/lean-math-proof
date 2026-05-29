@@ -30,14 +30,22 @@ except ImportError:  # allow import when repo root isn't on sys.path yet
 #                              tactic is variable-independent, but emission is
 #                              gated on a matching variable being present so
 #                              it stays state-aware).
+# MX1 adds three experimental Finset/Set action types (additive):
+#   SET_EXT_SIMP / FINSET_EXT_SIMP — `ext x <;> {simp_mode}` (extensionality;
+#                              variable-independent tactic, gated on a matching
+#                              Set/Finset value being present in the state).
+#   FINSET_CASES_SIMP        — `cases {var} <;> {simp_mode}` for a Finset value
+#                              (experimental constructor split).
 ACTION_TYPES = ("CASES_SIMP", "INDUCTION_SIMP",
-                "MULTISET_INDUCTION_SIMP", "EXT_SIMP")
-VAR_TYPES = ("Option", "List", "Bool", "Multiset")
+                "MULTISET_INDUCTION_SIMP", "EXT_SIMP",
+                "SET_EXT_SIMP", "FINSET_EXT_SIMP", "FINSET_CASES_SIMP")
+VAR_TYPES = ("Option", "List", "Bool", "Multiset", "Finset", "Set")
 SIMP_MODES = ("simp", "simp_all", "decide")
 
 # action_type -> Lean head tactic that consumes a variable (var-consuming
 # families only; MULTISET_INDUCTION_SIMP and EXT_SIMP render specially).
-_HEAD = {"CASES_SIMP": "cases", "INDUCTION_SIMP": "induction"}
+_HEAD = {"CASES_SIMP": "cases", "INDUCTION_SIMP": "induction",
+         "FINSET_CASES_SIMP": "cases"}
 
 
 @dataclass(frozen=True)
@@ -58,11 +66,13 @@ class SymbolicAction:
 
     def default_family_source(self) -> str:
         vt = (self.var_type or "any").lower()
-        if self.action_type == "EXT_SIMP":
+        if self.action_type in ("EXT_SIMP", "SET_EXT_SIMP", "FINSET_EXT_SIMP"):
             return f"symbolic_{vt}_ext_{self.simp_mode}"
         if self.action_type == "MULTISET_INDUCTION_SIMP":
             return f"symbolic_{vt}_induction_on_{self.simp_mode}"
-        head = "cases" if self.action_type == "CASES_SIMP" else "induction"
+        head = "cases" if self.action_type in ("CASES_SIMP",
+                                               "FINSET_CASES_SIMP") \
+            else "induction"
         return f"symbolic_{vt}_{head}_{self.simp_mode}"
 
     def to_dict(self) -> dict:
@@ -109,6 +119,15 @@ class SymbolicAction:
         if self.action_type == "EXT_SIMP" and self.var_type not in ("Multiset",):
             errs.append("EXT_SIMP is gated to var_type=Multiset for WX3; "
                         f"got {self.var_type!r}")
+        if self.action_type == "SET_EXT_SIMP" and self.var_type != "Set":
+            errs.append("SET_EXT_SIMP requires var_type=Set; "
+                        f"got {self.var_type!r}")
+        if self.action_type == "FINSET_EXT_SIMP" and self.var_type != "Finset":
+            errs.append("FINSET_EXT_SIMP requires var_type=Finset; "
+                        f"got {self.var_type!r}")
+        if self.action_type == "FINSET_CASES_SIMP" and self.var_type != "Finset":
+            errs.append("FINSET_CASES_SIMP requires var_type=Finset; "
+                        f"got {self.var_type!r}")
         if self.max_vars < 1:
             errs.append("max_vars must be >= 1")
         return errs
@@ -147,10 +166,11 @@ def instantiate_symbolic_action(
 
     at = action.action_type
 
-    # EXT_SIMP: variable-independent tactic, but gated on a matching variable
-    # being present so it only fires on states that actually carry a value of
-    # the target type. Emitted once.
-    if at == "EXT_SIMP":
+    # EXT_SIMP / SET_EXT_SIMP / FINSET_EXT_SIMP: variable-independent
+    # extensionality tactic, gated on a matching Multiset/Set/Finset value being
+    # present so it only fires on states that actually carry a value of the
+    # target type. Emitted once.
+    if at in ("EXT_SIMP", "SET_EXT_SIMP", "FINSET_EXT_SIMP"):
         names = vars_of_type(state_pp, action.var_type,
                              max_vars=action.max_vars)
         if not names:

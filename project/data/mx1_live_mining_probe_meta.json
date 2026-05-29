@@ -1,0 +1,119 @@
+{
+  "description": "MX1 Stage 3 — LIVE LeanDojo mining probe over fresh symbolic frontier (Set/Finset/Multiset/List).",
+  "live": true,
+  "variants": {
+    "A": "NS24 routed-raw baseline",
+    "B": "WX3 production wrapper (Multiset symbolic + NS9)",
+    "C": "AX4 predictor (offline from B Multiset traces; see relabel)",
+    "D": "SX1 depth-2 sequence trace generator (Multiset/List)",
+    "E": "MX1 extended symbolic wrapper (B + Set/Finset ext/cases)"
+  },
+  "per_set": [
+    {
+      "set": "mx1_multiset_frontier",
+      "n_theorems_seen": 18,
+      "raw_wins": 3,
+      "production_wins": 4,
+      "extended_symbolic_wins": 4,
+      "extended_symbolic_origin_wins": 1,
+      "new_wins_beyond_production": 0,
+      "new_win_theorems": [],
+      "regressions_vs_production": 0,
+      "regression_theorems": [],
+      "symbolic_firings_E": 32,
+      "sequence_traces_D": 32
+    },
+    {
+      "set": "mx1_finset_symbolic_frontier",
+      "n_theorems_seen": 40,
+      "raw_wins": 10,
+      "production_wins": 10,
+      "extended_symbolic_wins": 10,
+      "extended_symbolic_origin_wins": 0,
+      "new_wins_beyond_production": 0,
+      "new_win_theorems": [],
+      "regressions_vs_production": 0,
+      "regression_theorems": [],
+      "symbolic_firings_E": 140,
+      "sequence_traces_D": 0
+    },
+    {
+      "set": "mx1_list_frontier",
+      "n_theorems_seen": 20,
+      "raw_wins": 5,
+      "production_wins": 5,
+      "extended_symbolic_wins": 5,
+      "extended_symbolic_origin_wins": 0,
+      "new_wins_beyond_production": 0,
+      "new_win_theorems": [],
+      "regressions_vs_production": 0,
+      "regression_theorems": [],
+      "symbolic_firings_E": 0,
+      "sequence_traces_D": 34
+    },
+    {
+      "set": "mx1_set_ext_frontier",
+      "n_theorems_seen": 40,
+      "raw_wins": 5,
+      "production_wins": 5,
+      "extended_symbolic_wins": 7,
+      "extended_symbolic_origin_wins": 2,
+      "new_wins_beyond_production": 2,
+      "new_win_theorems": [
+        "Set.Finite.toFinset_insert",
+        "Set.Finite.toFinset_offDiag"
+      ],
+      "regressions_vs_production": 0,
+      "regression_theorems": [],
+      "symbolic_firings_E": 71,
+      "sequence_traces_D": 0
+    },
+    {
+      "set": "mx1_mixed_symbolic_frontier",
+      "n_theorems_seen": 20,
+      "raw_wins": 10,
+      "production_wins": 10,
+      "extended_symbolic_wins": 10,
+      "extended_symbolic_origin_wins": 0,
+      "new_wins_beyond_production": 0,
+      "new_win_theorems": [],
+      "regressions_vs_production": 0,
+      "regression_theorems": [],
+      "symbolic_firings_E": 44,
+      "sequence_traces_D": 0
+    }
+  ],
+  "totals": {
+    "raw_wins": 33,
+    "production_wins": 34,
+    "extended_symbolic_wins": 36,
+    "extended_symbolic_origin_wins": 3,
+    "new_wins_beyond_production": 2,
+    "regressions_vs_production": 0,
+    "symbolic_firings_E": 287
+  },
+  "new_wins_beyond_production_total": 2,
+  "regressions_total": 0,
+  "new_win_records": [
+    {
+      "set": "mx1_set_ext_frontier",
+      "theorem": "Set.Finite.toFinset_insert",
+      "namespace": "Set",
+      "won_by_raw": false,
+      "won_by_production": false,
+      "winning_symbolic_tactic": "ext x <;> simp",
+      "winning_symbolic_family": "SET_EXT_SIMP[Set,simp]",
+      "symbolic_win": true
+    },
+    {
+      "set": "mx1_set_ext_frontier",
+      "theorem": "Set.Finite.toFinset_offDiag",
+      "namespace": "Set",
+      "won_by_raw": false,
+      "won_by_production": false,
+      "winning_symbolic_tactic": "ext x <;> simp",
+      "winning_symbolic_family": "SET_EXT_SIMP[Set,simp]",
+      "symbolic_win": true
+    }
+  ]
+}

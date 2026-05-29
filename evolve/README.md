@@ -561,6 +561,24 @@ subprocess logs, or checkpoint binaries.
   sequence-label learner), which needs a live-Lean mine to ≥40 labels first.
   NS9/router/WX3/AX4 artifacts unmodified. See
   `project/evolve/reports/sx1_symbolic_sequence_search_report.md`.
+- **MX1 (done — LIVE LeanDojo frontier mining; negative for new symbolic
+  capability)** — ran the live production stack (NS24 router + NS9 + WX3 oracle)
+  over **fresh** Finset/Set/List/Multiset frontiers (real `Dojo`, not offline
+  replay). Frontier audit: Multiset/List/Option are **exhausted** by prior arcs
+  (fresh ≈ 1/0/0); the only fresh symbolic surface is **Finset (606) / Set
+  (756)**, needing the new MX1 actions. Added `SET_EXT_SIMP`/`FINSET_EXT_SIMP`/
+  `FINSET_CASES_SIMP` additively (flow through the existing wrapper path, off by
+  default). Live mine of 138 theorems × variants A/B/E: **2 new wins beyond
+  production, 0 regressions** — but the new Finset actions **never close**
+  (0/140 firings; NS21 aesop already saturates Finset), and the 2 Set
+  `ext`-wins are **`aesop`-over-attributed** under strict live relabel ⇒ **0
+  clean new symbolic labels**. Decision: do NOT train / promote the new actions;
+  the symbolic-action layer is **namespace-saturated** (it pays only where the
+  base policy is weak, i.e. the Multiset quotient). One cheap follow-up: add
+  `aesop` to the Set route battery (a fallback tweak, like NS21) to capture the
+  2 `Set.Finite.toFinset_*` misses. NS9/router/WX3/AX4/SX1 unmodified;
+  no checkpoints. See
+  `project/evolve/reports/mx1_live_symbolic_frontier_mining_report.md`.
 
 ### Project state
 
@@ -605,6 +623,15 @@ subprocess logs, or checkpoint binaries.
   **(3) learned single-action selector** (AX3/AX4, promotion-eligible, off by
   default) → **(4) symbolic sequence search** (SX1, depth-2, experimental).
   The open lever across (3)–(4) is *selectivity*, which is still label-gated.
+  **MX1 then closed the loop with live frontier mining: offline sequence search
+  did not beat the production wrapper (SX1), and live mining of the fresh
+  Finset/Set frontier yielded 0 clean new symbolic labels** — the new ext/cases
+  actions never close (Finset) or are `aesop`-over-attributed (Set), because the
+  routed generative policies already saturate those surfaces. The
+  symbolic-action layer is **namespace-saturated**: it pays only where the base
+  policy is weak (the Multiset quotient, WX3). The remaining cheap lever is
+  battery/fallback additions (e.g. `aesop` for Set, as NS21 did for Finset),
+  not new symbolic labels or training.
 - **Mining protocol:** always run NS23-style minimal-tactic relabeling
   before declaring a training gate met. It distinguishes short-token
   (SFT-ready) from state-aware compound (wrapper-ready) families and has

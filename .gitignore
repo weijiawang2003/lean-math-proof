@@ -265,3 +265,12 @@ project/models/ax4_multiset_symbolic_clf/
 # no checkpoints); any future live-Lean sequence eval runs/logs are local-only.
 project/evolve/eval_runs/sx1_*.log
 project/evolve/eval_runs/sx1_*/
+
+# MX1 live-Lean symbolic frontier mining. Scripts, theorem-set config
+# (project/evolve/routing/mx1_theorem_sets.json), experiment configs
+# (project/evolve/experiments/mx1/*.json), metadata JSONs, and reports ARE
+# committed. MX1 is signal-acquisition only (no training/checkpoints); the live
+# eval-run trace dirs, logs, and driver logs are local-only (also covered by the
+# blanket eval_runs/ ignore above).
+project/evolve/eval_runs/mx1_*.log
+project/evolve/eval_runs/mx1_*/

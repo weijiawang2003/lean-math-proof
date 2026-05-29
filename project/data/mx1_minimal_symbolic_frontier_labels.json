@@ -1,0 +1,35 @@
+{
+  "description": "MX1 Stage 5 — LIVE strict minimal relabel of new wins beyond the production wrapper.",
+  "n_new_wins": 2,
+  "by_classification": {
+    "over_attributed_raw": 2
+  },
+  "labels": [
+    {
+      "set": "mx1_set_ext_frontier",
+      "theorem": "Set.Finite.toFinset_insert",
+      "namespace": "Set",
+      "won_by_raw": false,
+      "won_by_production": false,
+      "winning_symbolic_tactic": "ext x <;> simp",
+      "winning_symbolic_family": "SET_EXT_SIMP[Set,simp]",
+      "symbolic_win": true,
+      "classification": "over_attributed_raw",
+      "minimal_closer": "aesop",
+      "action_id": null
+    },
+    {
+      "set": "mx1_set_ext_frontier",
+      "theorem": "Set.Finite.toFinset_offDiag",
+      "namespace": "Set",
+      "won_by_raw": false,
+      "won_by_production": false,
+      "winning_symbolic_tactic": "ext x <;> simp",
+      "winning_symbolic_family": "SET_EXT_SIMP[Set,simp]",
+      "symbolic_win": true,
+      "classification": "over_attributed_raw",
+      "minimal_closer": "aesop",
+      "action_id": null
+    }
+  ]
+}
