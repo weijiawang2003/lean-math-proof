@@ -579,6 +579,20 @@ subprocess logs, or checkpoint binaries.
   2 `Set.Finite.toFinset_*` misses. NS9/router/WX3/AX4/SX1 unmodified;
   no checkpoints. See
   `project/evolve/reports/mx1_live_symbolic_frontier_mining_report.md`.
+- **MX2 (done — Set `aesop` fallback; narrow patch promoted-eligible)** — acted
+  on MX1's cheap follow-up: a Set-gated `aesop` fallback (NS9 genome deep-copy +
+  `aesop` in priority_templates + `theorem_name_tactic_gates {aesop:[Set.]}`,
+  mirroring NS19's Finset/aesop; on-disk genome unchanged). Live eval over Set
+  frontier + controls: **+3 new wins beyond production, 0 regressions, 0 non-Set
+  aesop emissions**; strict live relabel → **2 clean-aesop** (`Set.Finite.toFinset_insert/offDiag`,
+  the MX1 misses) + 1 `assumption`-closable. The BROAD `Set.` gate adds no wins
+  beyond the NARROW `Set.Finite`/`toFinset` gate yet overfires (aesop 12× on the
+  negative control, 0 closes) → **Gate B: adopt the narrow `mx2_set_finite_aesop_safe`
+  config** (off by default), not broad. Confirms the Set misses were best
+  addressed by an ordinary aesop fallback (as NS21 did for Finset), not symbolic
+  learning; no larger aesop headroom on the fresh Set surface. NS9/router/WX3/
+  AX4/SX1/MX1 unmodified; no checkpoints. See
+  `project/evolve/reports/mx2_set_aesop_fallback_report.md`.
 
 ### Project state
 
@@ -631,7 +645,14 @@ subprocess logs, or checkpoint binaries.
   symbolic-action layer is **namespace-saturated**: it pays only where the base
   policy is weak (the Multiset quotient, WX3). The remaining cheap lever is
   battery/fallback additions (e.g. `aesop` for Set, as NS21 did for Finset),
-  not new symbolic labels or training.
+  not new symbolic labels or training. **MX2 took that lever**: a narrowly-gated
+  `Set.Finite`/`toFinset` aesop fallback captures the 2 MX1 Set misses (clean
+  aesop) with 0 regressions and 0 non-Set emissions — confirming the misses were
+  ordinary-fallback headroom, not symbolic. The broad `Set.` gate added no extra
+  wins (overfiring only), so the narrow patch is the right scope. Net lesson:
+  post-NS9 headroom on strong-base-policy namespaces (Finset/Set) is captured by
+  cheap namespace-gated battery tactics, while symbolic constructor/ext actions
+  are reserved for weak-base-policy structural surfaces (Multiset quotient).
 - **Mining protocol:** always run NS23-style minimal-tactic relabeling
   before declaring a training gate met. It distinguishes short-token
   (SFT-ready) from state-aware compound (wrapper-ready) families and has

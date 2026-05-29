@@ -1,0 +1,34 @@
+{
+  "description": "MX2 Stage 5 — LIVE minimal relabel of MX2-only Set wins.",
+  "n_targets": 3,
+  "by_classification": {
+    "clean_aesop": 2,
+    "simpler_raw": 1
+  },
+  "labels": [
+    {
+      "set": "mx2_set_aesop_known",
+      "theorem": "Set.Finite.toFinset_insert",
+      "config": "broad",
+      "closed_by_aesop": true,
+      "classification": "clean_aesop",
+      "minimal_closer": "aesop"
+    },
+    {
+      "set": "mx2_set_aesop_known",
+      "theorem": "Set.Finite.toFinset_offDiag",
+      "config": "broad",
+      "closed_by_aesop": true,
+      "classification": "clean_aesop",
+      "minimal_closer": "aesop"
+    },
+    {
+      "set": "mx2_set_finite_frontier",
+      "theorem": "Set.Finite.to_subtype",
+      "config": "broad",
+      "closed_by_aesop": true,
+      "classification": "simpler_raw",
+      "minimal_closer": "assumption"
+    }
+  ]
+}

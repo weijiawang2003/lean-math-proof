@@ -274,3 +274,12 @@ project/evolve/eval_runs/sx1_*/
 # blanket eval_runs/ ignore above).
 project/evolve/eval_runs/mx1_*.log
 project/evolve/eval_runs/mx1_*/
+
+# MX2 Set-aesop fallback experiment. Scripts, theorem-set config
+# (project/evolve/routing/mx2_theorem_sets.json), experiment configs
+# (project/evolve/experiments/mx2/*.json), metadata JSONs, and reports ARE
+# committed. MX2 is a wrapper/fallback probe (no training/checkpoints); live
+# eval-run trace dirs and logs are local-only (also covered by the blanket
+# eval_runs/ ignore above).
+project/evolve/eval_runs/mx2_*.log
+project/evolve/eval_runs/mx2_*/

@@ -1,0 +1,635 @@
+{
+  "description": "MX2 Stage 1 — Set theorems an `aesop` fallback could capture (the MX1 aesop-misses + similar names). No Lean run here; availability confirmed at eval time.",
+  "known_aesop_wins": [
+    "Set.Finite.toFinset_insert",
+    "Set.Finite.toFinset_offDiag"
+  ],
+  "mx1_new_set_wins_beyond_production": [
+    "Set.Finite.toFinset_insert",
+    "Set.Finite.toFinset_offDiag"
+  ],
+  "buckets": {
+    "Set.image": {
+      "count": 21,
+      "theorems": [
+        {
+          "full_name": "Set.image_restrict",
+          "file_path": "Mathlib/Data/Set/Function.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image_restrictPreimage",
+          "file_path": "Mathlib/Data/Set/Function.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.imageFactorization_injective_iff",
+          "file_path": "Mathlib/Data/Set/Function.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image_eq_iff_surjOn_mapsTo",
+          "file_path": "Mathlib/Data/Set/Function.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.image_preimage",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image_projection_prod",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.image_iInter_subset",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image_iInter",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image_sInter_subset",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image_iUnion",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image_eq_iUnion",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image_sUnion",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.image2_eq_iUnion",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image2_iUnion_left",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image2_iUnion_right",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image2_iUnion",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image2_iInter_subset_left",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image2_iInter_subset_right",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image2_iInter",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image_seq",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.image2_eq_seq",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    "Set.preimage": {
+      "count": 7,
+      "theorems": [
+        {
+          "full_name": "Set.preimage_invFun_of_mem",
+          "file_path": "Mathlib/Data/Set/Function.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.preimage_invFun_of_not_mem",
+          "file_path": "Mathlib/Data/Set/Function.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.preimage_kernImage",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.preimage_iUnion",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.preimage_sUnion",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.preimage_iInter",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.preimage_sInter",
+          "file_path": "Mathlib/Data/Set/Lattice.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    "Set.Finite.": {
+      "count": 65,
+      "theorems": [
+        {
+          "full_name": "Set.Finite.ofFinset",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.to_subtype",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.exists_finset",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.exists_finset_coe",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.of_subsingleton",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.subset",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.union",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.finite_of_compl",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.sup",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.sep",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.inter_of_left",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.inter_of_right",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.inf_of_left",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.inf_of_right",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.diff",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.of_diff",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.biUnion'",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.Finite.biUnion",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.sUnion",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.sInter",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.iUnion",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.Finite.bind",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.insert",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.image",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.of_surjOn",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "easy"
+        },
+        {
+          "full_name": "Set.Finite.dependent_image",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.map",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.of_finite_image",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.of_preimage",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.preimage",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.preimage_embedding",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.surjOn_iff_bijOn_of_mapsTo",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.injOn_iff_bijOn_of_mapsTo",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.prod",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.of_prod_left",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.of_prod_right",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.offDiag",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.image2",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.seq",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.seq'",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.finite_subsets",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.Finite.powerset",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "easy"
+        },
+        {
+          "full_name": "Set.Finite.pi",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.Finite.fin_embedding",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.fin_param",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.induction_on",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.Finite.induction_on'",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.Finite.dinduction_on",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.Finite.induction_to",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.Finite.card_toFinset",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.exists_not_mem",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.infinite_compl",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.exists_lt_map_eq_of_forall_mem",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.iSup_biInf_of_monotone",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.Finite.iSup_biInf_of_antitone",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.iInf_biSup_of_monotone",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.iInf_biSup_of_antitone",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.exists_maximal_wrt",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "hard"
+        },
+        {
+          "full_name": "Set.Finite.exists_maximal_wrt'",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.exists_minimal_wrt",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "easy"
+        },
+        {
+          "full_name": "Set.Finite.exists_minimal_wrt'",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "easy"
+        },
+        {
+          "full_name": "Set.Finite.bddAbove",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.bddAbove_biUnion",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.bddBelow",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.bddBelow_biUnion",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    "Set.Finite.toFinset": {
+      "count": 6,
+      "theorems": [
+        {
+          "full_name": "Set.Finite.toFinset_eq_toFinset",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.toFinset_singleton",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.toFinset_insert",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.toFinset_insert'",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": false,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.toFinset_prod",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        },
+        {
+          "full_name": "Set.Finite.toFinset_offDiag",
+          "file_path": "Mathlib/Data/Set/Finite.lean",
+          "already_mined_mx1": true,
+          "difficulty": "medium"
+        }
+      ]
+    }
+  },
+  "bucket_counts": {
+    "Set.image": 21,
+    "Set.preimage": 7,
+    "Set.Finite.": 65,
+    "Set.Finite.toFinset": 6
+  },
+  "total_candidates": 99,
+  "note": "The Set route (gen_v5_ns12_balanced) has no aesop fallback, unlike Finset (NS21). MX2 adds a Set-gated aesop fallback mirroring NS19's finset_aesop_only and tests whether it captures these without regressions."
+}
