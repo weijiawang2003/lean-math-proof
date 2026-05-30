@@ -20,6 +20,40 @@ LeanEvolve  : don't search for one proof script;
 Lean is the evaluator — the same strict, no-partial-credit supervisor the rest
 of the project is built around.
 
+## ⭐ Recommended config (RC1 production wrapper)
+
+**`project/evolve/experiments/rc1/rc1_production_wrapper.json`** — the consolidated
+release-candidate deterministic wrapper: NS9 base ⊕ WX3 Multiset induction oracle
+⊕ MX2 narrow `Set.Finite`/`toFinset` aesop fallback. **+15 proofs beyond NS9, 0
+regressions, 0 off-gate emissions** (floors preserved: demo 11/15, medium 37/38,
+large 49/65). NS9 genome and NS24 router unchanged.
+
+### Current recommended command
+
+```bash
+python3 eval_rollout_all.py --theorem-set <set> \
+  --policy-type hybrid_evolved \
+  --route-config project/evolve/routing/ns24_router.json \
+  --strategy-config project/evolve/experiments/rc1/rc1_production_wrapper.json \
+  --top-k 8 --max-steps 8 --out-dir <run-dir>
+# Re-derive benchmark/ablation/preservation (no new sweep):
+#   python3 scripts/rc1_compose_benchmark.py
+#   python3 scripts/rc1_preservation_check.py
+```
+
+### Result status
+
+- **Production:** RC1 deterministic wrapper (above). Use this by default.
+- **Experimental (off by default):** AX4 learned symbolic-action predictor
+  (`symbolic_predictor.enabled=false`), SX1 depth-2 sequence search
+  (`symbolic_sequence_search.enabled=false`). Enable only when experimenting.
+- **Not promoted:** broad `Set.` aesop gate (overfires, no extra wins), MX1
+  Set/Finset symbolic ext/cases actions (never close / base policy saturates),
+  the SX1 sequence-search production flag (subsumed by best-first search).
+
+See `project/evolve/reports/rel1_executive_summary.md` for the one-page summary
+and `rc1_final_project_report.md` for the full arc.
+
 ## Main result — wrapper (NS9) + Learn track (NS15)
 
 Two complementary results sit on top of the same `gen_v5`
