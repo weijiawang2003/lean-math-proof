@@ -188,3 +188,52 @@ The crosscut constraint across all phases: Lean stays in the loop. No synthetic 
 - `TASK_ROADMAP.md` / `HARDENING_PLAN.md` / `TAKEOVER_NOTES.md` — operational notes.
 - `BENCHMARK_WORKFLOW.md` — how the curriculum and eval harness are wired up.
 - `lean_supervised_progress.pptx` — slide deck summarizing current state and plan.
+
+## Recommended production stack: RC2
+
+**RC2 = RC1 ⊕ SET_ITE_SIMP** is the recommended production stack. It adds exactly one
+narrowly gated action (`simp [Set.ite]`) on top of RC1, composed non-destructively —
+RC1, the NS24 router, and the NS9 genome are unchanged.
+
+- RC2 production config: `project/evolve/experiments/rc2_release/rc2_production_wrapper.json`
+- Router (unchanged): `project/evolve/routing/ns24_router.json`
+
+```
+python3 eval_rollout_all.py --theorem-set <set> \
+  --policy-type hybrid_evolved \
+  --route-config project/evolve/routing/ns24_router.json \
+  --strategy-config project/evolve/experiments/rc2_release/rc2_production_wrapper.json \
+  --top-k 8 --max-steps 8 --out-dir <run-dir>
+```
+
+- **RC2 official credited delta: +5 over RC1** from `SET_ITE_SIMP` (single-shot
+  `simp [Set.ite]` wins: `Set.ite_empty_right`, `Set.ite_right`, `Set.ite_empty`,
+  `Set.ite_empty_left`, `Set.ite_left`; minimal-relabel 5/5 TRUE).
+- **Safety:** 0 regressions, 0 off-gate emissions, canonical floors preserved
+  (demo_v1 11/15, nat_defs_medium 37/38, nat_defs_large_v5 49/65), deterministic.
+- **Caveat:** the deployable wrapper also deterministically closes 4 additional
+  depth-2 `Set.ite` sequence theorems via `simp [Set.ite] <;> aesop`; these are
+  **deferred to SX3 and excluded from the official delta** (the headline is +5, not
+  the raw surface-summed figure). SX3 is not production.
+- **RC1 remains preserved** as the previous release baseline at
+  `project/evolve/experiments/rc1/rc1_production_wrapper.json`.
+
+See `project/evolve/reports/rc2_release_freeze_report.md`,
+`project/evolve/reports/rc2_executive_summary.md`, and
+`project/evolve/reports/rc2_attribution_notes.md`.
+
+## Next research direction: SF1 Scalable Frontier Miner
+
+RC1 (commit `f3b3100`) is the consolidated, deterministic stack that RC2 builds on;
+it is preserved unchanged as the previous release baseline (RC2 above is now the
+recommended production wrapper). The next research direction moves beyond
+hand-guided namespace mining toward an AlphaEvolve-style discovery loop:
+
+```
+Mathlib theorem frontier → candidate action family → live LeanDojo evaluation
+→ minimal-sufficient relabeling → family pool update → safe promotion/training decision
+```
+
+See the design report: [`project/evolve/reports/sf1_design.md`](project/evolve/reports/sf1_design.md).
+SF1 is infrastructure/scaffold only; it does not modify the RC1 production
+wrapper, the NS9 genome, the NS24 router, or the REL1 release reports.

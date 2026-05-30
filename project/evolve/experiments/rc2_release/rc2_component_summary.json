@@ -1,0 +1,61 @@
+{
+  "rc2_id": "rc2_production_release_v1",
+  "composition": "RC2 = NS9 base wrapper ⊕ WX3 Multiset induction oracle ⊕ MX2 narrow Set.Finite/toFinset aesop fallback ⊕ SET_ITE_SIMP narrow Set.ite simplification gate",
+  "base": "RC1 production wrapper (commit f3b3100)",
+  "added_components": [
+    "SET_ITE_SIMP"
+  ],
+  "added_component_detail": {
+    "tactic": "simp [Set.ite]",
+    "emit_slot": "priority_templates['any'] (prepended)",
+    "gate": {
+      "theorem_name_tactic_gates": {
+        "simp [Set.ite]": [
+          "Set.ite"
+        ]
+      }
+    },
+    "semantics": "emitted before base policy, denied unless theorem name starts with 'Set.ite'; base-model output never gated"
+  },
+  "disabled_speculative_gates": [
+    "SET_EXT_SIMP",
+    "SET_SUBSET_ANTISYMM",
+    "SET_IFF_CONSTRUCTOR",
+    "SET_EXT_BYCASES",
+    "SET_RW_BRIDGE",
+    "SOURCE_SPECIFIC",
+    "broad_set_aesop"
+  ],
+  "official_credited_delta": 5,
+  "credited_wins": [
+    "Set.ite_empty_right",
+    "Set.ite_right",
+    "Set.ite_empty",
+    "Set.ite_empty_left",
+    "Set.ite_left"
+  ],
+  "deferred_sx3_candidates": [
+    "Set.ite_inter",
+    "Set.ite_inter_self",
+    "Set.ite_compl",
+    "Set.ite_inter_compl_self"
+  ],
+  "sx3_included": false,
+  "untouched": {
+    "ns9_genome": true,
+    "rc1_wrapper": true,
+    "ns24_router": true,
+    "rel1_reports": true
+  },
+  "preservation": {
+    "demo_v1": "11/15",
+    "nat_defs_medium": "37/38",
+    "nat_defs_large_v5": "49/65"
+  },
+  "safety": {
+    "regressions": 0,
+    "off_gate_emissions": 0,
+    "deterministic": true
+  },
+  "release_status": "RC2 production candidate / release frozen (owner-approved prep; not committed)"
+}
