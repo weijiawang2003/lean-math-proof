@@ -45,6 +45,17 @@ ORIGIN_RETRIEVED = "retrieved_premise"
 # block runs per goal shape so each candidate carries its own shape-gate
 # in the genome rather than being broadcast against every state.
 ORIGIN_TERM_BUILDER = "term_builder"
+# WX1 (experimental): state-aware Option/Bool cases skeletons. Tagged on
+# `cases <var> <;> simp_all`-style entries whose variable was read from a
+# local-context binder of a gated type (Option/Bool). Off unless the genome
+# ships an `option_cases_skeletons` block with enabled=true.
+ORIGIN_OPTION_CASES = "wrapper_option_cases"
+# AX1 (experimental): symbolic-action origin. Tagged on tactics rendered
+# from a SymbolicAction (e.g. CASES_SIMP[List,simp_all]) instantiated
+# against the live proof state. Off unless the genome ships a
+# `symbolic_actions` block with enabled=true. The action id is carried in
+# the entry's template_source slot for trace attribution.
+ORIGIN_SYMBOLIC_ACTION = "wrapper_symbolic_action"
 
 # Default tactic forms used to wrap a retrieved lemma name. `{p}` is the
 # substitution placeholder. Override per-call via retrieval_tactic_forms.
@@ -240,6 +251,82 @@ def _extract_nat_vars(state_pp: str) -> list[str]:
         if used:
             return used
     return nat_vars
+
+
+# WX1: a local-context binder line, e.g. "a : Option α" or
+# "x y : Option α" or "x✝ : Option α". Names left of `:`, type to the
+# right. Inaccessible (daggered) names are filtered by the caller.
+_CTX_BINDER_LINE = re.compile(
+    r"^\s*([A-Za-z_][\w'✝]*(?:\s+[A-Za-z_][\w'✝]*)*)\s*:\s*(.+?)\s*$"
+)
+
+
+def _extract_cases_vars(
+    state_pp: str, type_keywords: list[str], max_vars: int
+) -> list[str]:
+    """Return accessible local-context variables whose type matches one of
+    ``type_keywords``, preferring those that occur in the goal.
+
+    Matching rule per keyword:
+      * an identifier keyword (alphanumeric, e.g. "Option", "Bool",
+        "List") matches when the binder type *starts with* it — so a
+        function into the type (``g : α → Option β``) is NOT selected; we
+        case on data, not on arrows.
+      * a notation keyword containing a non-identifier char (e.g. the sum
+        "⊕" or product "×") matches when the binder type *contains* it,
+        since those types are pretty-printed with infix notation rather
+        than a head symbol.
+
+    Inaccessible names (containing the ``✝`` dagger) are skipped because
+    they cannot be referenced by `cases`. Returns at most ``max_vars``.
+    """
+    kws = tuple(type_keywords)
+    if not kws:
+        return []
+
+    def _type_matches(type_str: str) -> bool:
+        for kw in kws:
+            if kw and kw[0].isalpha():
+                if type_str.startswith(kw):
+                    return True
+            elif kw and kw in type_str:
+                return True
+        return False
+
+    cand: list[str] = []
+    seen: set[str] = set()
+    goal_lines: list[str] = []
+    in_goal = False
+    for line in state_pp.splitlines():
+        s = line.lstrip()
+        if s.startswith("⊢"):
+            in_goal = True
+            goal_lines.append(s[1:])
+            continue
+        if in_goal:
+            goal_lines.append(line)
+            continue
+        m = _CTX_BINDER_LINE.match(line)
+        if not m:
+            continue
+        names_str, type_str = m.group(1), m.group(2).strip()
+        if not _type_matches(type_str):
+            continue
+        for tok in names_str.split():
+            if "✝" in tok or tok in seen:
+                continue
+            seen.add(tok)
+            cand.append(tok)
+    goal_text = "\n".join(goal_lines)
+    if goal_text and cand:
+        used = [
+            v for v in cand
+            if re.search(rf"(?<![\w']){re.escape(v)}(?![\w'])", goal_text)
+        ]
+        if used:
+            ordered = used + [v for v in cand if v not in used]
+            return ordered[:max_vars]
+    return cand[:max_vars]
 
 
 def _render_template(
@@ -520,6 +607,25 @@ class StrategyWrapperPolicy:
         # v3.6: number of (already-deduped) entries filtered by the deny-
         # list in the most recent rank_tactics call. Reset per call.
         self.last_denied_count: int = 0
+        # WX1 (experimental): state-aware Option/Bool cases skeletons.
+        # Set post-construction by eval_rollout_all from the genome's
+        # optional `option_cases_skeletons` block; None = disabled, so
+        # the wrapper's behaviour is byte-identical to NS9 unless a WX1
+        # config opts in. Schema:
+        #   {"enabled": bool, "namespace_gates": ["Option"],
+        #    "require_namespace_match": bool, "max_vars_per_state": int,
+        #    "per_type": {"Option": ["cases {var} <;> simp_all", ...]},
+        #    "family_source": "option_cases_simp"}
+        self.option_cases_skeletons: dict | None = None
+        self.last_option_cases_attempt_count: int = 0
+        # AX1 (experimental): symbolic-action block. Set post-construction
+        # by eval_rollout_all from the genome's optional `symbolic_actions`
+        # block; None = disabled (NS9-identical). Schema:
+        #   {"enabled": bool, "actions": [ {action_type, var_type,
+        #    simp_mode, namespace_gate, max_vars, priority, family_source} ]}
+        self.symbolic_actions: dict | None = None
+        self.last_symbolic_attempt_count: int = 0
+        self._symbolic_actions_parsed = None  # lazy-built list[SymbolicAction]
 
     def rank_tactics(
         self, state_pp: str, full_name: str = "", k: int = 5
@@ -978,9 +1084,94 @@ class StrategyWrapperPolicy:
         self.last_fallback_emitted = fallback_emitted
         self.last_tactic_template_emitted = tactic_template_emitted
 
+        # WX1 (experimental): state-aware Option/Bool cases skeletons.
+        # Disabled (None) unless the genome ships an `option_cases_skeletons`
+        # block — so NS9 behaviour is unchanged. When enabled and the
+        # theorem's namespace matches a gate, read accessible context
+        # variables whose type starts with a gated keyword and emit the
+        # per-type `cases {var} <;> ...` templates, deduped against `seen`.
+        # Tagged ORIGIN_OPTION_CASES with family_source for trace/metric
+        # attribution. Placed first among extra_entries (after base top-k,
+        # before generic fallbacks) per the WX1 design.
+        option_cases_entries: list[Entry] = []
+        oc = self.option_cases_skeletons
+        if oc and oc.get("enabled"):
+            ns_gates = [str(g) for g in (oc.get("namespace_gates") or [])]
+            require_ns = bool(oc.get("require_namespace_match", True))
+            # WX2: optional per-type namespace gates and family sources.
+            # `type_namespace_gates[label]` overrides the block-level gate
+            # for that type's tactics (e.g. List tactics fire only on
+            # `List.`); `family_source_by_type[label]` overrides the
+            # block-level family_source. Both fall back to the block-level
+            # values, so a WX1 Option-only config behaves unchanged.
+            type_ns_gates = oc.get("type_namespace_gates") or {}
+            fam_by_type = oc.get("family_source_by_type") or {}
+            type_match = oc.get("type_match") or {}
+            per_type = oc.get("per_type") or {}
+            max_vars = int(oc.get("max_vars_per_state", 2) or 2)
+            default_fam = str(oc.get("family_source", "option_cases_simp"))
+
+            def _ns_match(gates: list[str]) -> bool:
+                if not require_ns:
+                    return True
+                if not gates:
+                    return True
+                return bool(full_name) and any(
+                    full_name.startswith(g + ".") for g in gates
+                )
+
+            for type_kw, tac_templates in per_type.items():
+                gates_for_type = [
+                    str(g) for g in (type_ns_gates.get(type_kw) or ns_gates)
+                ]
+                if not _ns_match(gates_for_type):
+                    continue
+                # Type matcher: explicit override, else the label itself.
+                matchers = [str(m) for m in (type_match.get(type_kw)
+                                             or [type_kw])]
+                fam_src = str(fam_by_type.get(type_kw, default_fam))
+                cvars = _extract_cases_vars(state_pp, matchers, max_vars)
+                for var in cvars:
+                    for raw in (tac_templates or []):
+                        tac = raw.replace("{var}", var)
+                        if tac and tac not in seen:
+                            seen.add(tac)
+                            option_cases_entries.append(
+                                (tac, ORIGIN_OPTION_CASES, raw, fam_src,
+                                 None, None, None)
+                            )
+        self.last_option_cases_attempt_count = len(option_cases_entries)
+
+        # AX1 (experimental): symbolic-action emission. Disabled (None)
+        # unless the genome ships a `symbolic_actions` block. Each action
+        # is instantiated against the live state (variable read from the
+        # context, namespace-gated), emitted with ORIGIN_SYMBOLIC_ACTION,
+        # the action's family_source, and the action id in template_source.
+        symbolic_entries: list[Entry] = []
+        sa = self.symbolic_actions
+        if sa and sa.get("enabled"):
+            if self._symbolic_actions_parsed is None:
+                from project.evolve.symbolic_actions import load_actions
+                self._symbolic_actions_parsed = load_actions(
+                    sa.get("actions") or [])
+            from project.evolve.symbolic_actions import (
+                instantiate_symbolic_action,
+            )
+            for action in sorted(self._symbolic_actions_parsed,
+                                 key=lambda a: -a.priority):
+                for tac, fam, action_id in instantiate_symbolic_action(
+                        action, state_pp, full_name):
+                    if tac and tac not in seen:
+                        seen.add(tac)
+                        symbolic_entries.append(
+                            (tac, ORIGIN_SYMBOLIC_ACTION, action_id, fam,
+                             None, None, None)
+                        )
+        self.last_symbolic_attempt_count = len(symbolic_entries)
+
         extra_entries = (
-            family_entries + retrieved_entries + term_builder_entries
-            + generic_entries
+            symbolic_entries + option_cases_entries + family_entries
+            + retrieved_entries + term_builder_entries + generic_entries
         )
 
         # v3.6 per-theorem deny-list: filter entries whose tactic string
@@ -1063,6 +1254,13 @@ class StrategyWrapperPolicy:
         # term_builder_budget if set).
         if term_builder_entries and cap is not None:
             cap += len(term_builder_entries)
+        # WX1: reserve cap slots for option-cases entries so they aren't
+        # crowded out (they lead extra_entries, so this just protects the
+        # tail family/generic entries from being dropped on their account).
+        if option_cases_entries and cap is not None:
+            cap += len(option_cases_entries)
+        if symbolic_entries and cap is not None:
+            cap += len(symbolic_entries)
         if cap is not None:
             extra_entries = extra_entries[:cap]
 

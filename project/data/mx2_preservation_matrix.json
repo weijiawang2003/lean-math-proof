@@ -1,0 +1,93 @@
+{
+  "description": "MX2 Stage 6 — preservation matrix for the broad Set-aesop fallback (mx2_set_aesop_safe).",
+  "aesop_gate_prefixes": [
+    "Set."
+  ],
+  "config": "project/evolve/experiments/mx2/mx2_set_aesop_safe.json",
+  "per_set": [
+    {
+      "set": "demo_v1",
+      "n": 15,
+      "non_set_theorems": 4,
+      "non_set_aesop_admissible": 0,
+      "live_A_wins": null,
+      "live_E_wins": null,
+      "live_regressions": null,
+      "ns9_floor": "11/15"
+    },
+    {
+      "set": "nat_defs_medium",
+      "n": 38,
+      "non_set_theorems": 38,
+      "non_set_aesop_admissible": 0,
+      "live_A_wins": null,
+      "live_E_wins": null,
+      "live_regressions": null,
+      "ns9_floor": "37/38"
+    },
+    {
+      "set": "nat_defs_large_v5",
+      "n": 65,
+      "non_set_theorems": 65,
+      "non_set_aesop_admissible": 0,
+      "live_A_wins": null,
+      "live_E_wins": null,
+      "live_regressions": null,
+      "ns9_floor": "49/65"
+    },
+    {
+      "set": "ns17_set_extra",
+      "n": 30,
+      "non_set_theorems": 0,
+      "non_set_aesop_admissible": 0,
+      "live_A_wins": null,
+      "live_E_wins": null,
+      "live_regressions": null,
+      "ns9_floor": null
+    },
+    {
+      "set": "ns17_finset_extra",
+      "n": 30,
+      "non_set_theorems": 30,
+      "non_set_aesop_admissible": 0,
+      "live_A_wins": null,
+      "live_E_wins": null,
+      "live_regressions": null,
+      "ns9_floor": null
+    },
+    {
+      "set": "ns14_set_finset_extra",
+      "n": 20,
+      "non_set_theorems": 10,
+      "non_set_aesop_admissible": 0,
+      "live_A_wins": null,
+      "live_E_wins": null,
+      "live_regressions": null,
+      "ns9_floor": null
+    },
+    {
+      "set": "wx2_list_cases_easy",
+      "n": 40,
+      "non_set_theorems": 40,
+      "non_set_aesop_admissible": 0,
+      "live_A_wins": null,
+      "live_E_wins": null,
+      "live_regressions": null,
+      "ns9_floor": null
+    },
+    {
+      "set": "ax4_multiset_induction_heldout",
+      "n": 45,
+      "non_set_theorems": 45,
+      "non_set_aesop_admissible": 0,
+      "live_A_wins": null,
+      "live_E_wins": null,
+      "live_regressions": null,
+      "ns9_floor": null
+    }
+  ],
+  "total_non_set_aesop_admissible": 0,
+  "zero_off_set_aesop": true,
+  "live_regressions_total": 0,
+  "note": "The aesop name-gate forbids any aesop tactic on a non-Set theorem (static guarantee). aesop is additive to the ranked list, so it cannot remove a production win (0 live regressions)."
+}

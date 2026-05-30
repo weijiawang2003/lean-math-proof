@@ -1,0 +1,82 @@
+{
+  "model": "TfidfVectorizer(char_wb 3-5) + LogisticRegression (balanced, C=4)",
+  "readiness": "YELLOW (smoke training)",
+  "cross_validation_all_rows": {
+    "folds": 3,
+    "overall_top1": 0.9241,
+    "per_class": {
+      "MULTISET_INDUCTION_SIMP[Multiset,simp]": {
+        "n": 3,
+        "recall": 0.6667
+      },
+      "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": {
+        "n": 23,
+        "recall": 0.8261
+      },
+      "NULL": {
+        "n": 132,
+        "recall": 0.947
+      }
+    },
+    "positive_family_recall": 0.8462,
+    "null_false_positive_rate": 0.053
+  },
+  "model_path": "project/models/ax3_multiset_symbolic_clf/model.joblib",
+  "classes": [
+    "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+    "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+    "NULL"
+  ],
+  "n_train": 82,
+  "n_heldout": 76,
+  "train_metrics": {
+    "n": 82,
+    "top1": 1.0,
+    "top2": 1.0,
+    "gold_dist": {
+      "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 22,
+      "MULTISET_INDUCTION_SIMP[Multiset,simp]": 3,
+      "NULL": 57
+    },
+    "pred_dist": {
+      "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 22,
+      "MULTISET_INDUCTION_SIMP[Multiset,simp]": 3,
+      "NULL": 57
+    },
+    "confusions": {
+      "NULL=>NULL": 57,
+      "MULTISET_INDUCTION_SIMP[Multiset,simp_all]=>MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 22,
+      "MULTISET_INDUCTION_SIMP[Multiset,simp]=>MULTISET_INDUCTION_SIMP[Multiset,simp]": 3
+    }
+  },
+  "heldout_metrics": {
+    "n": 76,
+    "top1": 0.9474,
+    "top2": 1.0,
+    "gold_dist": {
+      "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 1,
+      "NULL": 75
+    },
+    "pred_dist": {
+      "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 4,
+      "NULL": 71,
+      "MULTISET_INDUCTION_SIMP[Multiset,simp]": 1
+    },
+    "confusions": {
+      "NULL=>NULL": 71,
+      "NULL=>MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 3,
+      "MULTISET_INDUCTION_SIMP[Multiset,simp_all]=>MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 1,
+      "NULL=>MULTISET_INDUCTION_SIMP[Multiset,simp]": 1
+    }
+  },
+  "false_positive_control": {
+    "n_control_null": 53,
+    "false_positives": 1,
+    "fp_rate": 0.0189
+  },
+  "false_positive_multiset_null_heldout": {
+    "n": 37,
+    "false_positives": 3,
+    "fp_rate": 0.0811
+  }
+}

@@ -20,6 +20,40 @@ LeanEvolve  : don't search for one proof script;
 Lean is the evaluator — the same strict, no-partial-credit supervisor the rest
 of the project is built around.
 
+## ⭐ Recommended config (RC1 production wrapper)
+
+**`project/evolve/experiments/rc1/rc1_production_wrapper.json`** — the consolidated
+release-candidate deterministic wrapper: NS9 base ⊕ WX3 Multiset induction oracle
+⊕ MX2 narrow `Set.Finite`/`toFinset` aesop fallback. **+15 proofs beyond NS9, 0
+regressions, 0 off-gate emissions** (floors preserved: demo 11/15, medium 37/38,
+large 49/65). NS9 genome and NS24 router unchanged.
+
+### Current recommended command
+
+```bash
+python3 eval_rollout_all.py --theorem-set <set> \
+  --policy-type hybrid_evolved \
+  --route-config project/evolve/routing/ns24_router.json \
+  --strategy-config project/evolve/experiments/rc1/rc1_production_wrapper.json \
+  --top-k 8 --max-steps 8 --out-dir <run-dir>
+# Re-derive benchmark/ablation/preservation (no new sweep):
+#   python3 scripts/rc1_compose_benchmark.py
+#   python3 scripts/rc1_preservation_check.py
+```
+
+### Result status
+
+- **Production:** RC1 deterministic wrapper (above). Use this by default.
+- **Experimental (off by default):** AX4 learned symbolic-action predictor
+  (`symbolic_predictor.enabled=false`), SX1 depth-2 sequence search
+  (`symbolic_sequence_search.enabled=false`). Enable only when experimenting.
+- **Not promoted:** broad `Set.` aesop gate (overfires, no extra wins), MX1
+  Set/Finset symbolic ext/cases actions (never close / base policy saturates),
+  the SX1 sequence-search production flag (subsumed by best-first search).
+
+See `project/evolve/reports/rel1_executive_summary.md` for the one-page summary
+and `rc1_final_project_report.md` for the full arc.
+
 ## Main result — wrapper (NS9) + Learn track (NS15)
 
 Two complementary results sit on top of the same `gen_v5`
@@ -408,34 +442,333 @@ subprocess logs, or checkpoint binaries.
   Nat/Set/Finset/demo and wrapper baselines preserved exactly
   (23/38, 35/65, 10/15; wrap 37/38, 49/65, 11/15). Promoted as a
   marginal best; the Int omega surface is saturated.
+- **CX3 (done — negative, mining only)** — Bool/Option short-tactic
+  mining. Audited the fresh surface (Bool/Basic was already exhausted
+  by CX1; 86 fresh candidates, ~92% Option), built five theorem sets,
+  and probed raw-routed vs NS9-wrapper. **Wrapper-only wins = 0:** the
+  default model and the wrapper solve an identical 43/83, so the
+  wrapper is a no-op on Bool/Option and there is nothing to distill.
+  The mandatory minimal-tactic relabel found the only count-meeting
+  headroom is a 13-theorem `cases_simp | Option` pool whose minimal
+  tactic is the compound, per-theorem-variable `intros <;> cases <v>
+  <;> simp_all` — the structured-tactic class NS22 showed won't
+  memorize at 60M (plain simp/aesop genuinely fail on all 13). **No
+  short-token training gate met.** The relabel did its job: it
+  prevented a likely-null NS25.
+- **WX1 (done — positive, wrapper expansion)** — state-aware Option
+  cases-wrapper. Rather than train on CX3's structured headroom, added a
+  namespace-gated, off-by-default `option_cases_skeletons` block to the
+  wrapper that reads the case variable from the proof state and emits
+  `cases <var> <;> simp_all`. **+19 new Option wins beyond NS9, zero
+  regressions** (option surfaces 42 → 61; Bool control + broader Bool
+  config add nothing). Minimal-tactic relabel: all wins are the
+  state-aware compound `cases <var> <;> simp` (17-theorem
+  `option_cases_simp` family) — **wrapper-ready, not short-token
+  SFT-ready**, exactly as CX3 predicted. Preservation is by construction
+  (gated; byte-identical ranked lists on Nat/Set/Finset, verified
+  empirically: nat_medium 37/38, set 18/30, finset 15/30, 0 emissions).
+  Stored as an experiment config under `project/evolve/experiments/wx1/`;
+  the NS9 genome is unmodified. Recommendation: promote as a wrapper
+  capability, do **not** fine-tune.
+- **WX2 (done — positive, wrapper generalization)** — consolidated WX1
+  into a promoted Option config and tested whether the state-aware cases
+  pattern generalizes. Extended the wrapper with per-type namespace
+  gates / family labels / notation matching (all backward-compatible).
+  **Preservation:** the promoted Option config retains the full +19
+  Option gain with 0 non-Option regressions and 0 emissions outside
+  Option (Nat 37/37, Set 18/18, Finset 15/15, demo 11/11 = NS9).
+  **Generalization:** the only large fresh cases surface is **List**
+  (Option/Bool exhausted, Sum absent, Prod tiny, Multiset a quotient —
+  not `cases`-able). On fresh List sets the generalized wrapper adds
+  **+10 List wins beyond NS9, zero regressions** (NS9 is a no-op on List
+  too); all are the state-aware `cases l <;> simp[_all]` family
+  (`list_cases_simp`, 6 unique gate-met) — **wrapper-ready, not
+  SFT-ready**. `induction`, Prod, and the Bool control add nothing.
+  Combined WX1+WX2 = **+29 wins beyond NS9** (Option +19, List +10), all
+  wrapper-ready. NS9 genome unmodified; configs under
+  `project/evolve/experiments/wx2/`.
+- **AX1 (done — prototype, symbolic action layer)** — abstraction layer
+  that factors the state-dependent variable out of the cases tactics so
+  the *label* becomes SFT-ready. Added `project/evolve/symbolic_actions.py`
+  (typed `SymbolicAction`: CASES_SIMP/INDUCTION_SIMP × Option/List/Bool ×
+  simp/simp_all/decide, stable id like `CASES_SIMP[List,simp_all]`) +
+  `project/evolve/state_vars.py` (coarse-typed state extractor), and an
+  off-by-default `symbolic_actions` wrapper block (origin
+  `wrapper_symbolic_action`). The AX1 symbolic config **reproduces WX2
+  exactly** (Δ=0 on all 6 sets, 0 regressions, 0 emissions outside gated
+  namespaces). A symbolic-label dataset prototype shows the 27 WX1+WX2
+  wins — all variable-dependent raw tactics — collapse to **4 stable
+  symbolic labels**. Recommendation: this validates **AX2 symbolic-action
+  training**. No training in AX1; NS9 genome unmodified.
+- **AX2 (done — negative for training, mining/readiness study)** — mined
+  the fresh Option/List surface under the AX1 symbolic wrapper to grow the
+  symbolic-label dataset, then ran the readiness gate. **Audit:**
+  Option/Bool/Sum/Prod are exhausted (0 fresh, even in the 3989-theorem
+  discovered scan); the only fresh surface is **List (76)**. **Probe** (3
+  disjoint fresh List sets, raw vs NS9 vs AX1-symbolic on `ns24_router`):
+  the symbolic wrapper adds **+3 wins beyond NS9, 0 regressions**, but
+  minimal relabeling shows all 3 are **multi-step** (`cases l <;> simp_all`
+  advances but does not close from init; 2 symbolic-assisted + 1 aesop) —
+  **0 clean single-shot symbolic labels added**. The dataset stays at 27;
+  readiness = **RED** (<40). The single-shot `cases <;> simp` pattern
+  monetizes only the easiest constructor-split lemmas, which WX2 already
+  consumed. **Decision: do NOT train AX3; recommend WX3** (Multiset
+  quotient-aware action, or multi-step symbolic sequences). The symbolic
+  layer stays a search-time wrapper capability. No checkpoints; NS9/AX1
+  unmodified. See
+  `project/evolve/reports/ax2_symbolic_dataset_expansion_report.md`.
+- **WX3 (done — wrapper-ready GREEN; symbolic-learning borderline)** — took
+  AX2's advice and opened the **Multiset** surface (**251 fresh available**,
+  the largest untapped namespace). Extended the AX1 symbolic layer
+  additively with a `Multiset` var-type and two new action types:
+  **`MULTISET_INDUCTION_SIMP`** (`induction {var} using Multiset.induction_on
+  <;> simp[_all]`) and **`EXT_SIMP`** (`ext x <;> simp[_all]`); AX1
+  Option/List rendering unchanged. Five disjoint sets (165 thms), raw vs NS9
+  vs ind/ext/comb on `ns24_router`: WX3 adds **+25 wins beyond NS9, 0
+  regressions, 0 leakage** — the workhorse is `Multiset.induction_on <;>
+  simp_all`. Minimal relabeling: **20 clean single-shot symbolic labels**
+  (vs AX2's 0), dominated by `MULTISET_INDUCTION_SIMP[Multiset,simp_all]`
+  (18; family aggregate 20). Preservation perfect (demo 11/11, medium 37/37,
+  Set 18/18, Finset 15/15; by construction, WX3 base == NS9 genome).
+  **Gate A (wrapper-ready) MET; Gate B (symbolic-learning) borderline-met by
+  the induction_on family aggregate (20 ≥ 20) with held-out surface.**
+  Decision: **promote the WX3 induction wrapper**; AX3 is plausible for the
+  first time — expand the held-out Multiset induction surface (~86 unused +
+  full induction-shape catalog) to ≥40 / ≥20-single-id, then train AX3. No
+  checkpoints; NS9/AX1/AX2 unmodified. See
+  `project/evolve/reports/wx3_multiset_quotient_wrapper_report.md`.
+- **AX3 (done — first symbolic-action learner, YELLOW/smoke)** — mined the 86
+  held-out fresh Multiset theorems under the WX3 induction wrapper and trained
+  the program's **first learned symbolic-action predictor** (not raw tactic
+  SFT). Held-out mining added **+7 WX3-only wins → 6 new clean single-shot
+  labels**; combined with WX3 → **26 clean symbolic labels** (23 `simp_all`, 3
+  `simp`). Readiness = **YELLOW** (25–39 total, dominant ≥20, held-out split
+  exists; < 40 Green). Learner = TF-IDF(char 3–5) + balanced logistic
+  regression over the proof state, classes = 2 Multiset action ids + NULL:
+  **3-fold CV positive recall 0.85, NULL FP 0.05, non-Multiset control FP 0.02
+  (0 effective after the namespace gate)**. Offline predictor-vs-oracle (the
+  action is additive+gated, so the predictor only suppresses NULL-scored
+  emissions): retains 1.0 of oracle held-out wins, **0 regressions**.
+  **Symbolic-action learning is empirically alive on Multiset**, but the pool
+  (26) is label-limited → **keep the WX3 oracle wrapper in production** and
+  mine to Green (≥40 / ≥20 held-out positives) before promoting the learner to
+  live wrapper integration. Classifier model + dataset JSONL git-ignored;
+  NS9/router/AX1/AX2/WX3 unmodified. See
+  `project/evolve/reports/ax3_multiset_symbolic_learning_report.md`.
+- **AX4 (done — expanded to GREEN; learner v2 clears the promotion bar)** —
+  took AX3's advice and mined the **broader discovered** Multiset catalog (573
+  discovered vs the 260 already-consumed available). Frontier = **313**
+  availability-unconfirmed candidates; **attrition was ~0** (every mined
+  frontier theorem loaded — the cx1 probe had just never sampled these files).
+  Mined 246 across 7 disjoint sets (incl. two reserved held-out): **+26
+  WX3-only wins, 22 symbolic, 0 regressions → 20 new clean single-shot labels**
+  (0 over-attributed). Dataset = **46 clean labels** (41 `simp_all`, 5 `simp`)
+  with **12 held-out positives** → **GREEN** (≥40 total, ≥30 simp_all, ≥10
+  held-out, controls). Learner **v2** (same TF-IDF+logreg) trained on Green:
+  CV top-1 0.90, positive recall 0.72, NULL-FP 0.08; ablation shows it keys on
+  the **proof state** (state-only recall 0.76 ≫ name-only 0.54). Held-out
+  theorem-level eval: **retains 53.8% of oracle wins, 0 regressions, 0 firing
+  on every non-Multiset control** (demo/nat/Set/Finset) → **promotion criterion
+  MET (first time)**. But for a single additive gated action the oracle still
+  dominates raw coverage (13/13 vs 7/13), so the v2 predictor stays
+  **off-by-default**; its selectivity pays only under multi-action search.
+  Model + dataset JSONL git-ignored; NS9/router/AX1/AX2/WX3/AX3 unmodified. See
+  `project/evolve/reports/ax4_multiset_symbolic_green_report.md`.
+- **SX1 (done — sequence-search prototype; Gate B dataset-generation)** — took
+  AX4's advice and prototyped **depth-2 symbolic-action sequences** (a symbolic
+  first action + a follow-up: base-model top-k or a fixed `simp/simp_all/aesop/
+  rfl[/omega/decide]` battery). Added `SymbolicActionSequence` (depth 2 only,
+  namespace-gated) to `symbolic_actions.py` and a flag-gated planner
+  `symbolic_sequence.py` (disabled ⇒ byte-identical to WX3; plans additive to
+  the NS9 ranked list). Offline trace replay over 70 candidate theorems found
+  the **decisive structural result**: the existing NS9/WX3 best-first search
+  *already* explores **~9 follow-ups per advanced symbolic state**, so a fixed-
+  battery depth-2 mode is **subsumed** by it — `sequence_only_beyond_oracle = 3`
+  (the Multiset `induction…simp_all ⇒ aesop` cases) but
+  **`sequence_only_beyond_full_wrapper = 0`** (production WX3 already wins all
+  3), **0 regressions**, **0 off-gate emissions**. Minimal relabel: all 5
+  multistep cases are `genuinely_sequence_needed`, but the label pool is tiny
+  (**5 labels, biggest family 3** ≪ the ≥40/≥5-per-family gate). Decision:
+  **do not flip the sequence flag in production** (0 net wins, added cost);
+  keep the schema/planner/configs as the off-by-default depth-2 capability and
+  clean-trace generator; the lever remains **selectivity** (a future AX5
+  sequence-label learner), which needs a live-Lean mine to ≥40 labels first.
+  NS9/router/WX3/AX4 artifacts unmodified. See
+  `project/evolve/reports/sx1_symbolic_sequence_search_report.md`.
+- **MX1 (done — LIVE LeanDojo frontier mining; negative for new symbolic
+  capability)** — ran the live production stack (NS24 router + NS9 + WX3 oracle)
+  over **fresh** Finset/Set/List/Multiset frontiers (real `Dojo`, not offline
+  replay). Frontier audit: Multiset/List/Option are **exhausted** by prior arcs
+  (fresh ≈ 1/0/0); the only fresh symbolic surface is **Finset (606) / Set
+  (756)**, needing the new MX1 actions. Added `SET_EXT_SIMP`/`FINSET_EXT_SIMP`/
+  `FINSET_CASES_SIMP` additively (flow through the existing wrapper path, off by
+  default). Live mine of 138 theorems × variants A/B/E: **2 new wins beyond
+  production, 0 regressions** — but the new Finset actions **never close**
+  (0/140 firings; NS21 aesop already saturates Finset), and the 2 Set
+  `ext`-wins are **`aesop`-over-attributed** under strict live relabel ⇒ **0
+  clean new symbolic labels**. Decision: do NOT train / promote the new actions;
+  the symbolic-action layer is **namespace-saturated** (it pays only where the
+  base policy is weak, i.e. the Multiset quotient). One cheap follow-up: add
+  `aesop` to the Set route battery (a fallback tweak, like NS21) to capture the
+  2 `Set.Finite.toFinset_*` misses. NS9/router/WX3/AX4/SX1 unmodified;
+  no checkpoints. See
+  `project/evolve/reports/mx1_live_symbolic_frontier_mining_report.md`.
+- **MX2 (done — Set `aesop` fallback; narrow patch promoted-eligible)** — acted
+  on MX1's cheap follow-up: a Set-gated `aesop` fallback (NS9 genome deep-copy +
+  `aesop` in priority_templates + `theorem_name_tactic_gates {aesop:[Set.]}`,
+  mirroring NS19's Finset/aesop; on-disk genome unchanged). Live eval over Set
+  frontier + controls: **+3 new wins beyond production, 0 regressions, 0 non-Set
+  aesop emissions**; strict live relabel → **2 clean-aesop** (`Set.Finite.toFinset_insert/offDiag`,
+  the MX1 misses) + 1 `assumption`-closable. The BROAD `Set.` gate adds no wins
+  beyond the NARROW `Set.Finite`/`toFinset` gate yet overfires (aesop 12× on the
+  negative control, 0 closes) → **Gate B: adopt the narrow `mx2_set_finite_aesop_safe`
+  config** (off by default), not broad. Confirms the Set misses were best
+  addressed by an ordinary aesop fallback (as NS21 did for Finset), not symbolic
+  learning; no larger aesop headroom on the fresh Set surface. NS9/router/WX3/
+  AX4/SX1/MX1 unmodified; no checkpoints. See
+  `project/evolve/reports/mx2_set_aesop_fallback_report.md`.
+- **RC1 (done — production stack consolidation + final benchmark)** — composed a
+  clean release-candidate wrapper from only the proven deterministic gains:
+  **NS9 base ⊕ WX3 Multiset induction oracle ⊕ MX2 narrow Set.Finite/toFinset
+  aesop fallback** (`project/evolve/experiments/rc1/rc1_production_wrapper.json`).
+  AX4 predictor and SX1 sequence search are **off by default**; broad Set aesop
+  and MX1 Set/Finset ext actions excluded. The two additions are namespace-
+  disjoint and additive, so RC1 ≡ WX3 on Multiset, ≡ MX2-narrow on Set.Finite,
+  and ≡ NS9 elsewhere. **Final benchmark: +15 wins beyond NS9** (WX3 +12 Multiset,
+  MX2 +3 Set.Finite), **0 regressions, 0 off-gate emissions**, floors preserved
+  (medium 37/38, large 49/65, demo 11/15); a live RC1 run confirmed the combined
+  config end-to-end. NS9 genome / NS24 router / all prior artifacts unmodified;
+  no checkpoints. See `project/evolve/reports/rc1_final_project_report.md`,
+  `rc1_component_ablation.md`, `rc1_preservation_report.md`.
+
+### Production recommendation (RC1)
+
+Use **`project/evolve/experiments/rc1/rc1_production_wrapper.json`** as the
+default deterministic evaluation wrapper. Keep the AX4 learned predictor and SX1
+sequence search **off** unless explicitly experimenting (they are disabled in the
+RC1 config). Reproduce the RC1 benchmark / components:
+
+```bash
+# RC1 on a Set.Finite set (aesop fallback fires)
+python3 eval_rollout_all.py --theorem-set mx2_set_aesop_known \
+  --policy-type hybrid_evolved \
+  --route-config project/evolve/routing/ns24_router.json \
+  --strategy-config project/evolve/experiments/rc1/rc1_production_wrapper.json \
+  --top-k 8 --max-steps 8 --out-dir <run-dir>
+
+# RC1 on a Multiset set (induction_on oracle fires); swap --theorem-set
+#   ax4_multiset_induction_heldout, etc.
+
+# Re-derive the composed benchmark + ablation + preservation from arc traces:
+python3 scripts/rc1_compose_benchmark.py
+python3 scripts/rc1_preservation_check.py
+```
+
+### Project state
+
+- **Learn track (fine-tunes):** NS15 (Nat) and NS22 (Int/omega) are the
+  positive distillations; NS24 confirmed the Int omega surface is
+  **saturated** (57→58, near-null). No short-token SFT family has
+  appeared since Int/omega.
+- **Wrapper track (NS9 + WX):** NS9 is the base genome; WX1/WX2 add a
+  state-aware `cases <var> <;> simp` capability (Option + List, +29
+  beyond NS9, 0 regressions, namespace-gated). This is the active
+  growth edge — state-dependent headroom is captured at search time.
+- **Symbolic bridge (AX):** AX1 shows the three regimes connect — **raw
+  tactic SFT** works for short stable tactics (`omega`/`aesop`:
+  NS15/NS22); the **state-aware wrapper** works for variable-dependent
+  tactics (`cases <var> <;> simp`: WX1/WX2); and **symbolic-action
+  training** is the bridge — it makes the variable-dependent family
+  SFT-ready *as a label* (`CASES_SIMP[List,simp_all]`) while the wrapper
+  instantiates the variable from the state. **AX2 then tested the data
+  side and came back RED:** the symbolic-label dataset was capped at ~27
+  single-shot examples (Option exhausted; fresh List wins are multi-step).
+  **WX3 then broke that cap from the wrapper side:** the new Multiset
+  `induction_on` action added **20 clean single-shot symbolic labels** in a
+  fresh namespace (+25 wins beyond NS9, 0 regressions). **AX3 then trained the
+  first symbolic-action learner** on the WX3+AX3 pool (26 clean labels): a
+  TF-IDF+logreg classifier over the proof state reaches **0.85 positive recall
+  / 0.05 NULL-FP** in CV and retains the oracle's held-out wins with 0
+  regressions — symbolic-action *learning* is empirically alive (YELLOW/smoke).
+  **AX4 then mined the broader discovered catalog to GREEN** (46 clean labels,
+  41 `simp_all`, 12 held-out positives, 0 regressions): learner v2 keys on the
+  proof state and **clears the held-out promotion bar** (retain 53.8%, 0 regr,
+  0 non-Multiset FP) — the first learned symbolic-action predictor to do so.
+  The label cap was namespace exhaustion, not method. Symbolic learning is
+  **promising but threshold-gated**: even promotable, the deterministic oracle
+  wrapper remains best for a single additive action (retains 100% vs 54% at
+  zero cost), so the learned predictor stays off-by-default until multi-action
+  symbolic search makes its selectivity pay. **SX1 then prototyped that multi-
+  action search (depth-2 sequences) and found the best-first wrapper already
+  performs the follow-up** — a fixed-battery sequence mode adds 0 net wins over
+  production (Gate B: dataset-generation, not a search gain). The four-layer
+  architecture is now explicit: **(1) raw-tactic SFT** (short stable tactics) →
+  **(2) single symbolic-action oracle** (WX1/WX2/WX3 deterministic wrapper) →
+  **(3) learned single-action selector** (AX3/AX4, promotion-eligible, off by
+  default) → **(4) symbolic sequence search** (SX1, depth-2, experimental).
+  The open lever across (3)–(4) is *selectivity*, which is still label-gated.
+  **MX1 then closed the loop with live frontier mining: offline sequence search
+  did not beat the production wrapper (SX1), and live mining of the fresh
+  Finset/Set frontier yielded 0 clean new symbolic labels** — the new ext/cases
+  actions never close (Finset) or are `aesop`-over-attributed (Set), because the
+  routed generative policies already saturate those surfaces. The
+  symbolic-action layer is **namespace-saturated**: it pays only where the base
+  policy is weak (the Multiset quotient, WX3). The remaining cheap lever is
+  battery/fallback additions (e.g. `aesop` for Set, as NS21 did for Finset),
+  not new symbolic labels or training. **MX2 took that lever**: a narrowly-gated
+  `Set.Finite`/`toFinset` aesop fallback captures the 2 MX1 Set misses (clean
+  aesop) with 0 regressions and 0 non-Set emissions — confirming the misses were
+  ordinary-fallback headroom, not symbolic. The broad `Set.` gate added no extra
+  wins (overfiring only), so the narrow patch is the right scope. Net lesson:
+  post-NS9 headroom on strong-base-policy namespaces (Finset/Set) is captured by
+  cheap namespace-gated battery tactics, while symbolic constructor/ext actions
+  are reserved for weak-base-policy structural surfaces (Multiset quotient).
+- **Mining protocol:** always run NS23-style minimal-tactic relabeling
+  before declaring a training gate met. It distinguishes short-token
+  (SFT-ready) from state-aware compound (wrapper-ready) families and has
+  twice (CX3, WX1/WX2) correctly routed headroom to the wrapper instead
+  of a null fine-tune.
 
 ### Recommended next directions
 
-The minimal-tactic principle (NS23/NS24) is now validated as an
-**attribution/gating** step — it correctly identifies which family to
-train and would have saved NS22's failed iff-pair runs — but it only
-adds *wins* on a family the base model has not already absorbed. The
-Int omega surface is saturated (NS22 ≈ NS24). In rough order of likely
-yield:
+The minimal-tactic principle (NS23/NS24) gates training; the Int omega
+surface is saturated; CX3 showed the fresh-namespace short-token thesis
+does not carry to Bool/Option; WX1/WX2 captured state-dependent headroom
+in a **wrapper**; and AX1 showed that headroom can be made SFT-ready *as
+a symbolic label*. In rough order of likely yield:
 
-1. **CX3 Bool/Option decide-family mining.** Bool (35) and Option
-   (47) remain mostly unprobed fresh namespaces with no base prior —
-   the setting where NS15/NS22-style absorption actually produced
-   broad transfer. Highest-yield next direction.
-2. **Mine fresh held-out Int.** The CX2 audit left ~50 sub-bitwise/
-   dvd Int order/arith candidates unprobed. Probing them measures
-   whether the 22-pool transfers to genuinely-unseen Int (vs the
-   saturated wrapper-only pool).
-3. **Keep minimal-tactic relabel as a pre-training gate.** Cheap; it
-   prevents wasted long-tactic imitation. Run it before declaring any
-   future training gate met.
-4. **DPO / ranker or reranker objective for long structured
-   tactics.** Still deferred — the minimal-label finding holds that
-   the transferable tactics are short and already learnable by
-   imitation; preference methods are only needed if a genuinely
-   long-tactic-only family appears.
+1. **WX4 / surface expansion, then AX3.** WX3 validated the Multiset
+   `induction_on` action — **+25 wins beyond NS9, 20 clean single-shot
+   symbolic labels** (the first surface to clear AX2's null result). The
+   `MULTISET_INDUCTION_SIMP[Multiset,simp_all]` family sits at 18–20, right
+   at the ≥20-in-one-family gate. Next: mine the **held-out Multiset
+   induction surface** (~86 fresh unused + the full induction-shape catalog)
+   under the WX3 induction wrapper to push clean labels to **≥40 total / ≥20
+   in the single `simp_all` action_id**, then train **AX3** on that label
+   with a held-out Multiset eval. Keep AX1 as the canonical cases wrapper;
+   promote `wx3_multiset_induction_safe` as the canonical Multiset wrapper.
+2. **Fold WX1+WX2/AX1 into the canonical wrapper** (genome + router
+   sign-off) — the AX1 symbolic config is equivalent to WX2 and more
+   general; re-baseline the full matrix.
+3. **Extend the symbolic action set to remaining inductive surface.**
+   Beyond List the cases-friendly catalog is thin; the largest untapped
+   surface is Multiset (251 fresh) but it is a quotient — would need a
+   `Multiset.induction_on`-aware action (quotient-specific).
+4. **Mine fresh held-out Int** (~50 sub-bitwise/dvd candidates unprobed);
+   short-token raw SFT stays gated on a genuinely short-token family.
 
-See `project/evolve/reports/ns24_int_minimal_omega_training_report.md`
+See `project/evolve/reports/ax1_symbolic_action_layer_report.md` for the
+AX1 symbolic action layer,
+`project/evolve/reports/wx2_state_aware_cases_generalization_report.md`
+for the WX2 cases-wrapper generalization arc,
+`project/evolve/reports/wx1_option_cases_wrapper_report.md` for the
+`project/evolve/reports/wx1_option_cases_wrapper_report.md` for the
+WX1 state-aware Option cases-wrapper arc,
+`project/evolve/reports/cx3_bool_option_decide_mining_report.md`
+for the CX3 mining arc and
+`project/evolve/reports/post_ns24_current_status.md` for the one-page
+current status,
+`project/evolve/reports/ns24_int_minimal_omega_training_report.md`
 for the NS24 arc,
 `project/evolve/reports/ns23_minimal_tactic_relabeling_report.md` for
 NS23, `project/evolve/reports/post_cx1_ns21_cx2_ns22_update.md`

@@ -1,0 +1,602 @@
+{
+  "arc": "AX4",
+  "router": "ns24_router",
+  "top_k": 8,
+  "max_steps": 8,
+  "configs": {
+    "raw": "routed_generative (no wrapper)",
+    "ns9": "project/evolve/best/ns9_best_genome.json",
+    "wx3ind": "project/evolve/experiments/wx3/wx3_multiset_induction_safe.json"
+  },
+  "data_sources": {
+    "ax4_multiset_induction_high_confidence": {
+      "raw": "metrics",
+      "ns9": "metrics",
+      "wx3ind": "metrics"
+    },
+    "ax4_multiset_cross_surface": {
+      "raw": "metrics",
+      "ns9": "metrics",
+      "wx3ind": "metrics"
+    },
+    "ax4_multiset_induction_heldout": {
+      "raw": "metrics",
+      "ns9": "metrics",
+      "wx3ind": "metrics"
+    },
+    "ax4_multiset_induction_medium_confidence": {
+      "raw": "metrics",
+      "ns9": "metrics",
+      "wx3ind": "metrics"
+    },
+    "ax4_multiset_induction_hard": {
+      "raw": "metrics",
+      "ns9": "metrics",
+      "wx3ind": "metrics"
+    },
+    "ax4_multiset_negative_control": {
+      "raw": "metrics",
+      "ns9": "metrics",
+      "wx3ind": "metrics"
+    },
+    "ax4_multiset_induction_heldout2": {
+      "raw": "metrics",
+      "ns9": "metrics",
+      "wx3ind": "metrics"
+    }
+  },
+  "per_set_summary": [
+    {
+      "set": "ax4_multiset_induction_high_confidence",
+      "raw_wins": 3,
+      "ns9_wins": 3,
+      "wx3ind_wins": 7,
+      "wx3_only_beyond_ns9": 4,
+      "symbolic_action_wins": 4,
+      "regressions_vs_ns9": 0,
+      "n_evaluated_wx3": 15,
+      "wx3_only_theorems": [
+        "Multiset.map_const'",
+        "Multiset.map_pmap",
+        "Multiset.pmap_congr",
+        "Multiset.pmap_eq_map"
+      ],
+      "symbolic_theorems": [
+        "Multiset.map_const'",
+        "Multiset.map_pmap",
+        "Multiset.pmap_congr",
+        "Multiset.pmap_eq_map"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "set": "ax4_multiset_cross_surface",
+      "raw_wins": 8,
+      "ns9_wins": 8,
+      "wx3ind_wins": 9,
+      "wx3_only_beyond_ns9": 1,
+      "symbolic_action_wins": 0,
+      "regressions_vs_ns9": 0,
+      "n_evaluated_wx3": 22,
+      "wx3_only_theorems": [
+        "Multiset.mem_sigma"
+      ],
+      "symbolic_theorems": [],
+      "regression_theorems": []
+    },
+    {
+      "set": "ax4_multiset_induction_heldout",
+      "raw_wins": 10,
+      "ns9_wins": 10,
+      "wx3ind_wins": 14,
+      "wx3_only_beyond_ns9": 4,
+      "symbolic_action_wins": 4,
+      "regressions_vs_ns9": 0,
+      "n_evaluated_wx3": 45,
+      "wx3_only_theorems": [
+        "Multiset.card_pmap",
+        "Multiset.foldr_add",
+        "Multiset.foldr_induction",
+        "Multiset.map_const"
+      ],
+      "symbolic_theorems": [
+        "Multiset.card_pmap",
+        "Multiset.foldr_add",
+        "Multiset.foldr_induction",
+        "Multiset.map_const"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "set": "ax4_multiset_induction_medium_confidence",
+      "raw_wins": 10,
+      "ns9_wins": 11,
+      "wx3ind_wins": 17,
+      "wx3_only_beyond_ns9": 6,
+      "symbolic_action_wins": 6,
+      "regressions_vs_ns9": 0,
+      "n_evaluated_wx3": 55,
+      "wx3_only_theorems": [
+        "Multiset.card_erase_add_one",
+        "Multiset.card_erase_lt_of_mem",
+        "Multiset.card_map",
+        "Multiset.card_pos_iff_exists_mem",
+        "Multiset.empty_or_exists_mem",
+        "Multiset.eq_zero_iff_forall_not_mem"
+      ],
+      "symbolic_theorems": [
+        "Multiset.card_erase_add_one",
+        "Multiset.card_erase_lt_of_mem",
+        "Multiset.card_map",
+        "Multiset.card_pos_iff_exists_mem",
+        "Multiset.empty_or_exists_mem",
+        "Multiset.eq_zero_iff_forall_not_mem"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "set": "ax4_multiset_induction_hard",
+      "raw_wins": 7,
+      "ns9_wins": 7,
+      "wx3ind_wins": 7,
+      "wx3_only_beyond_ns9": 0,
+      "symbolic_action_wins": 0,
+      "regressions_vs_ns9": 0,
+      "n_evaluated_wx3": 28,
+      "wx3_only_theorems": [],
+      "symbolic_theorems": [],
+      "regression_theorems": []
+    },
+    {
+      "set": "ax4_multiset_negative_control",
+      "raw_wins": 8,
+      "ns9_wins": 8,
+      "wx3ind_wins": 12,
+      "wx3_only_beyond_ns9": 4,
+      "symbolic_action_wins": 4,
+      "regressions_vs_ns9": 0,
+      "n_evaluated_wx3": 28,
+      "wx3_only_theorems": [
+        "Multiset.cons_subset_cons",
+        "Multiset.countP_False",
+        "Multiset.countP_True",
+        "Multiset.count_bind"
+      ],
+      "symbolic_theorems": [
+        "Multiset.cons_subset_cons",
+        "Multiset.countP_False",
+        "Multiset.countP_True",
+        "Multiset.count_bind"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "set": "ax4_multiset_induction_heldout2",
+      "raw_wins": 12,
+      "ns9_wins": 12,
+      "wx3ind_wins": 19,
+      "wx3_only_beyond_ns9": 7,
+      "symbolic_action_wins": 4,
+      "regressions_vs_ns9": 0,
+      "n_evaluated_wx3": 53,
+      "wx3_only_theorems": [
+        "Multiset.map_add",
+        "Multiset.map_id",
+        "Multiset.map_id'",
+        "Multiset.map_map",
+        "Multiset.mem_add",
+        "Multiset.mem_map",
+        "Multiset.mem_map_of_injective"
+      ],
+      "symbolic_theorems": [
+        "Multiset.map_add",
+        "Multiset.map_id",
+        "Multiset.map_id'",
+        "Multiset.map_map"
+      ],
+      "regression_theorems": []
+    }
+  ],
+  "totals": {
+    "wx3_only_beyond_ns9": 26,
+    "symbolic_action_wins": 22,
+    "regressions_vs_ns9": 0,
+    "family_counts": {
+      "multiset_induction_simp_all": 22,
+      "?": 4
+    }
+  },
+  "wx3_only_wins": [
+    {
+      "full_name": "Multiset.map_const'",
+      "set": "ax4_multiset_induction_high_confidence",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.map_pmap",
+      "set": "ax4_multiset_induction_high_confidence",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.pmap_congr",
+      "set": "ax4_multiset_induction_high_confidence",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.pmap_eq_map",
+      "set": "ax4_multiset_induction_high_confidence",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.mem_sigma",
+      "set": "ax4_multiset_cross_surface",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "winning_tactic": "aesop",
+      "winning_origin": "generative_topk",
+      "winning_family": null,
+      "variable": null
+    },
+    {
+      "full_name": "Multiset.card_pmap",
+      "set": "ax4_multiset_induction_heldout",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.foldr_add",
+      "set": "ax4_multiset_induction_heldout",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.foldr_induction",
+      "set": "ax4_multiset_induction_heldout",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.map_const",
+      "set": "ax4_multiset_induction_heldout",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.card_erase_add_one",
+      "set": "ax4_multiset_induction_medium_confidence",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.card_erase_lt_of_mem",
+      "set": "ax4_multiset_induction_medium_confidence",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.card_map",
+      "set": "ax4_multiset_induction_medium_confidence",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.card_pos_iff_exists_mem",
+      "set": "ax4_multiset_induction_medium_confidence",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.empty_or_exists_mem",
+      "set": "ax4_multiset_induction_medium_confidence",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.eq_zero_iff_forall_not_mem",
+      "set": "ax4_multiset_induction_medium_confidence",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.cons_subset_cons",
+      "set": "ax4_multiset_negative_control",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.countP_False",
+      "set": "ax4_multiset_negative_control",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.countP_True",
+      "set": "ax4_multiset_negative_control",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.count_bind",
+      "set": "ax4_multiset_negative_control",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "m"
+    },
+    {
+      "full_name": "Multiset.map_add",
+      "set": "ax4_multiset_induction_heldout2",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.map_id",
+      "set": "ax4_multiset_induction_heldout2",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.map_id'",
+      "set": "ax4_multiset_induction_heldout2",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.map_map",
+      "set": "ax4_multiset_induction_heldout2",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.mem_add",
+      "set": "ax4_multiset_induction_heldout2",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "aesop",
+      "winning_origin": "generative_topk",
+      "winning_family": null,
+      "variable": null
+    },
+    {
+      "full_name": "Multiset.mem_map",
+      "set": "ax4_multiset_induction_heldout2",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "aesop",
+      "winning_origin": "generative_topk",
+      "winning_family": null,
+      "variable": null
+    },
+    {
+      "full_name": "Multiset.mem_map_of_injective",
+      "set": "ax4_multiset_induction_heldout2",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "winning_tactic": "aesop",
+      "winning_origin": "generative_topk",
+      "winning_family": null,
+      "variable": null
+    }
+  ],
+  "symbolic_wins": [
+    {
+      "full_name": "Multiset.map_const'",
+      "set": "ax4_multiset_induction_high_confidence",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.map_pmap",
+      "set": "ax4_multiset_induction_high_confidence",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.pmap_congr",
+      "set": "ax4_multiset_induction_high_confidence",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.pmap_eq_map",
+      "set": "ax4_multiset_induction_high_confidence",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.card_pmap",
+      "set": "ax4_multiset_induction_heldout",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.foldr_add",
+      "set": "ax4_multiset_induction_heldout",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.foldr_induction",
+      "set": "ax4_multiset_induction_heldout",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.map_const",
+      "set": "ax4_multiset_induction_heldout",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.card_erase_add_one",
+      "set": "ax4_multiset_induction_medium_confidence",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.card_erase_lt_of_mem",
+      "set": "ax4_multiset_induction_medium_confidence",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.card_map",
+      "set": "ax4_multiset_induction_medium_confidence",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.card_pos_iff_exists_mem",
+      "set": "ax4_multiset_induction_medium_confidence",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.empty_or_exists_mem",
+      "set": "ax4_multiset_induction_medium_confidence",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.eq_zero_iff_forall_not_mem",
+      "set": "ax4_multiset_induction_medium_confidence",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.cons_subset_cons",
+      "set": "ax4_multiset_negative_control",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.countP_False",
+      "set": "ax4_multiset_negative_control",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.countP_True",
+      "set": "ax4_multiset_negative_control",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.count_bind",
+      "set": "ax4_multiset_negative_control",
+      "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "m"
+    },
+    {
+      "full_name": "Multiset.map_add",
+      "set": "ax4_multiset_induction_heldout2",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.map_id",
+      "set": "ax4_multiset_induction_heldout2",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.map_id'",
+      "set": "ax4_multiset_induction_heldout2",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    },
+    {
+      "full_name": "Multiset.map_map",
+      "set": "ax4_multiset_induction_heldout2",
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_family": "multiset_induction_simp_all",
+      "variable": "s"
+    }
+  ],
+  "regressions": []
+}

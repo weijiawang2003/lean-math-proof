@@ -1,0 +1,27 @@
+{
+  "clean_symbolic_labels_total": 26,
+  "simp_all_count": 23,
+  "train_positive_count": 25,
+  "heldout_positive_count": 1,
+  "has_heldout_split": true,
+  "thresholds": {
+    "green": ">=40 total AND >=20 simp_all AND held-out split",
+    "yellow": "25-39 total AND >=20 dominant (smoke only)",
+    "red": "<25 total or no held-out split"
+  },
+  "verdict": "YELLOW",
+  "train_recommended": true,
+  "training_mode": "smoke",
+  "label_distribution": {
+    "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 23,
+    "MULTISET_INDUCTION_SIMP[Multiset,simp]": 3,
+    "NULL": 132
+  },
+  "split_x_label": {
+    "heldout_eval|MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 1,
+    "heldout_eval|NULL": 75,
+    "train_candidate|MULTISET_INDUCTION_SIMP[Multiset,simp]": 3,
+    "train_candidate|MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 22,
+    "train_candidate|NULL": 57
+  }
+}

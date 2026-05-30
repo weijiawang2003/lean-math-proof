@@ -1,0 +1,1011 @@
+{
+  "cx3_bool_decide_easy": [
+    {
+      "file_path": "Mathlib/Data/Bool/Basic.lean",
+      "full_name": "Bool.exists_bool",
+      "namespace": "Bool",
+      "difficulty": "unknown",
+      "family_tags": [
+        "bool_decide"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_decide"
+    },
+    {
+      "file_path": "Mathlib/Data/Bool/Basic.lean",
+      "full_name": "Bool.false_lt_true",
+      "namespace": "Bool",
+      "difficulty": "unknown",
+      "family_tags": [
+        "bool_decide",
+        "bool_order"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_decide"
+    },
+    {
+      "file_path": "Mathlib/Data/Bool/Basic.lean",
+      "full_name": "Bool.forall_bool",
+      "namespace": "Bool",
+      "difficulty": "unknown",
+      "family_tags": [
+        "bool_decide",
+        "bool_logic"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_decide"
+    },
+    {
+      "file_path": "Mathlib/Data/Bool/Basic.lean",
+      "full_name": "Bool.ne_not",
+      "namespace": "Bool",
+      "difficulty": "unknown",
+      "family_tags": [
+        "bool_decide",
+        "bool_logic"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_decide"
+    },
+    {
+      "file_path": "Mathlib/Data/Bool/Basic.lean",
+      "full_name": "Bool.not_ne_id",
+      "namespace": "Bool",
+      "difficulty": "unknown",
+      "family_tags": [
+        "bool_decide",
+        "bool_logic"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_decide"
+    }
+  ],
+  "cx3_bool_simp_medium": [
+    {
+      "file_path": "Mathlib/Data/Bool/Set.lean",
+      "full_name": "Bool.range_eq",
+      "namespace": "Bool",
+      "difficulty": "unknown",
+      "family_tags": [
+        "bool_decide"
+      ],
+      "availability": "scan",
+      "expected_bucket": "likely_decide"
+    },
+    {
+      "file_path": "Mathlib/Data/Bool/Set.lean",
+      "full_name": "Bool.univ_eq",
+      "namespace": "Bool",
+      "difficulty": "unknown",
+      "family_tags": [
+        "bool_decide"
+      ],
+      "availability": "scan",
+      "expected_bucket": "likely_decide"
+    }
+  ],
+  "cx3_option_cases_medium": [
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.bind_congr'",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.bind_eq_bind'",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.bind_pmap",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.map_bind",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.map_bind'",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.map_pbind",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.none_bind'",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind",
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.pbind_eq_bind",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.pbind_map",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.pmap_bind",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.some_bind'",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind",
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    }
+  ],
+  "cx3_option_simp_easy": [
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.bnot_comp_isNone",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.bnot_comp_isSome",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.bnot_isNone",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.bnot_isSome",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.casesOn'_eq_elim",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.casesOn'_none_coe",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Defs.lean",
+      "full_name": "Option.elim'_eq_elim",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.elim_apply",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.elim_comp",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.elim_none_some",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.exists_mem_map",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind",
+        "option_mem"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.forall_mem_map",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind",
+        "option_mem"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.getD_default_eq_iget",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.get_map",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.guard_eq_some'",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.isNone_eq_false_iff",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "iff",
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.isSome_map",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.join_pmap_eq_pmap_join",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.map_comm",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.mem_map",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind",
+        "option_mem"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.mem_pmem",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind",
+        "option_mem"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Defs.lean",
+      "full_name": "Option.mem_some_iff",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "iff",
+        "option_simp",
+        "option_mem"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Defs.lean",
+      "full_name": "Option.mem_toList",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp",
+        "option_mem"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.none_orElse'",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.orElse_eq_none",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.orElse_eq_some",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.orElse_none'",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.pbind_eq_none",
+      "namespace": "Option",
+      "difficulty": "hard",
+      "family_tags": [
+        "option_map_bind",
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.pbind_eq_some",
+      "namespace": "Option",
+      "difficulty": "hard",
+      "family_tags": [
+        "option_map_bind",
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.pmap_eq_map",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.pmap_eq_none_iff",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "iff",
+        "option_map_bind",
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.pmap_eq_some_iff",
+      "namespace": "Option",
+      "difficulty": "hard",
+      "family_tags": [
+        "iff",
+        "option_map_bind",
+        "option_simp"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    }
+  ],
+  "cx3_bool_option_mixed": [
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.Mem.leftUnique",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_mem"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.casesOn'_coe",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.casesOn'_none",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.casesOn'_some",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.choice_eq_none",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.coe_def",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.coe_get",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Defs.lean",
+      "full_name": "Option.elim'_none",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Defs.lean",
+      "full_name": "Option.elim'_some",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp",
+        "option_cases"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.eq_none_or_eq_some",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.eq_of_mem_of_mem",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_mem"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.get",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "other"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.iget_mem",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp",
+        "option_mem"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.iget_of_mem",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp",
+        "option_mem"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Defs.lean",
+      "full_name": "Option.iget_some",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.joinM_eq_join",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.liftOrGet_choice",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "other"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/NAry.lean",
+      "full_name": "Option.map",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.map_coe",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.map_coe'",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.map_comp_some",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.map_eq_id",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.map_inj",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.map_injective",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.map_injective'",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/NAry.lean",
+      "full_name": "Option.map_map",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.map_pmap",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/NAry.lean",
+      "full_name": "Option.map_uncurry",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.orElse_eq_none'",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.orElse_eq_some'",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.pmap_map",
+      "namespace": "Option",
+      "difficulty": "medium",
+      "family_tags": [
+        "option_map_bind"
+      ],
+      "availability": "verified",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.pmap_none",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.pmap_some",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_map_bind",
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.seq_some",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.some_injective",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "full_name": "Option.some_orElse'",
+      "namespace": "Option",
+      "difficulty": "unknown",
+      "family_tags": [
+        "option_simp"
+      ],
+      "availability": "discovered",
+      "expected_bucket": "likely_simp"
+    }
+  ]
+}

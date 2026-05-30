@@ -1,0 +1,130 @@
+{
+  "training_gate_unique_required": 5,
+  "total_relabeled": 19,
+  "resolved": 18,
+  "unresolved": [
+    "Option.iget_mem"
+  ],
+  "sft_ready_families": [],
+  "wrapper_ready_families": [
+    "option_cases_simp|Option"
+  ],
+  "any_sft_gate_met": false,
+  "any_wrapper_gate_met": true,
+  "families": {
+    "option_cases_simp|Option": {
+      "minimal_family": "option_cases_simp",
+      "namespace": "Option",
+      "unique_count": 17,
+      "is_short_token_family": false,
+      "count_gate_met": true,
+      "sft_ready": false,
+      "wrapper_ready": true,
+      "recommended_oversample_factor": 2,
+      "theorems": {
+        "Option.bnot_isNone": {
+          "minimal_tactic": "cases a <;> simp",
+          "minimal_var": "a",
+          "short_token": false
+        },
+        "Option.bnot_isSome": {
+          "minimal_tactic": "cases a <;> simp",
+          "minimal_var": "a",
+          "short_token": false
+        },
+        "Option.casesOn'_eq_elim": {
+          "minimal_tactic": "cases a <;> simp",
+          "minimal_var": "a",
+          "short_token": false
+        },
+        "Option.casesOn'_none_coe": {
+          "minimal_tactic": "cases o <;> simp",
+          "minimal_var": "o",
+          "short_token": false
+        },
+        "Option.elim'_eq_elim": {
+          "minimal_tactic": "cases a <;> simp",
+          "minimal_var": "a",
+          "short_token": false
+        },
+        "Option.elim_apply": {
+          "minimal_tactic": "cases i <;> simp",
+          "minimal_var": "i",
+          "short_token": false
+        },
+        "Option.elim_comp": {
+          "minimal_tactic": "cases i <;> simp",
+          "minimal_var": "i",
+          "short_token": false
+        },
+        "Option.isSome_map": {
+          "minimal_tactic": "cases o <;> simp",
+          "minimal_var": "o",
+          "short_token": false
+        },
+        "Option.orElse_eq_none": {
+          "minimal_tactic": "cases o <;> simp",
+          "minimal_var": "o",
+          "short_token": false
+        },
+        "Option.orElse_eq_some": {
+          "minimal_tactic": "cases o <;> simp",
+          "minimal_var": "o",
+          "short_token": false
+        },
+        "Option.orElse_none'": {
+          "minimal_tactic": "cases x <;> simp",
+          "minimal_var": "x",
+          "short_token": false
+        },
+        "Option.map_bind": {
+          "minimal_tactic": "cases x <;> simp",
+          "minimal_var": "x",
+          "short_token": false
+        },
+        "Option.map_bind'": {
+          "minimal_tactic": "cases x <;> simp",
+          "minimal_var": "x",
+          "short_token": false
+        },
+        "Option.pmap_bind": {
+          "minimal_tactic": "cases x <;> simp",
+          "minimal_var": "x",
+          "short_token": false
+        },
+        "Option.eq_none_or_eq_some": {
+          "minimal_tactic": "cases a <;> simp",
+          "minimal_var": "a",
+          "short_token": false
+        },
+        "Option.orElse_eq_none'": {
+          "minimal_tactic": "cases o <;> simp",
+          "minimal_var": "o",
+          "short_token": false
+        },
+        "Option.orElse_eq_some'": {
+          "minimal_tactic": "cases o <;> simp",
+          "minimal_var": "o",
+          "short_token": false
+        }
+      }
+    },
+    "option_cases_simp_all|Option": {
+      "minimal_family": "option_cases_simp_all",
+      "namespace": "Option",
+      "unique_count": 1,
+      "is_short_token_family": false,
+      "count_gate_met": false,
+      "sft_ready": false,
+      "wrapper_ready": false,
+      "recommended_oversample_factor": 20,
+      "theorems": {
+        "Option.bind_congr'": {
+          "minimal_tactic": "cases y <;> simp_all",
+          "minimal_var": "y",
+          "short_token": false
+        }
+      }
+    }
+  }
+}

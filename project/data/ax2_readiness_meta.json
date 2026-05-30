@@ -1,0 +1,47 @@
+{
+  "minimal_relabel_applied": true,
+  "total_symbolic_examples": 27,
+  "unique_theorems": 27,
+  "examples_by_label": {
+    "CASES_SIMP[Option,simp]": 17,
+    "CASES_SIMP[List,simp]": 6,
+    "CASES_SIMP[List,simp_all]": 3,
+    "CASES_SIMP[Option,simp_all]": 1
+  },
+  "examples_by_namespace": {
+    "Option": 18,
+    "List": 9
+  },
+  "examples_by_arc": {
+    "WX1": 18,
+    "WX2": 9
+  },
+  "ax2_newly_mined_examples": 0,
+  "num_labels": 4,
+  "max_label_count": 17,
+  "dominant_label": "CASES_SIMP[Option,simp]",
+  "label_entropy_bits": 1.4308,
+  "label_balance_ratio": 0.7154,
+  "train_test_split_feasible": true,
+  "keepable_labels_ge2": {
+    "CASES_SIMP[Option,simp]": 17,
+    "CASES_SIMP[List,simp]": 6,
+    "CASES_SIMP[List,simp_all]": 3
+  },
+  "held_out_possible": true,
+  "thresholds": {
+    "green": {
+      "total": 80,
+      "one_label": 30,
+      "held_out": true
+    },
+    "yellow": {
+      "total_lo": 40,
+      "dominant_label": 20
+    }
+  },
+  "readiness": "RED",
+  "rationale": "27 examples (<40) / top label 17 -> do not train; mine more (WX3) or extend the wrapper.",
+  "minimal_pool_gate_met": false,
+  "recommendation": "WX3 more symbolic mining / wrapper extension"
+}

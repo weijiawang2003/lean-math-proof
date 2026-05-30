@@ -1,0 +1,37 @@
+{
+  "jsonl": "project/data/ax3_multiset_symbolic_dataset.jsonl",
+  "total_rows": 158,
+  "clean_symbolic_labels_total": 26,
+  "wx3_positives": 20,
+  "ax3_positives": 6,
+  "positives_by_arc": {
+    "WX3": 20,
+    "AX3": 6
+  },
+  "label_distribution": {
+    "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 23,
+    "MULTISET_INDUCTION_SIMP[Multiset,simp]": 3,
+    "NULL": 132
+  },
+  "by_action_id": {
+    "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 23,
+    "MULTISET_INDUCTION_SIMP[Multiset,simp]": 3
+  },
+  "split_distribution": {
+    "train_candidate": 82,
+    "heldout_eval": 76
+  },
+  "split_x_label": {
+    "heldout_eval|MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 1,
+    "heldout_eval|NULL": 75,
+    "train_candidate|MULTISET_INDUCTION_SIMP[Multiset,simp]": 3,
+    "train_candidate|MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 22,
+    "train_candidate|NULL": 57
+  },
+  "negatives": {
+    "multiset_null": 79,
+    "non_multiset_control_null": 53
+  },
+  "heldout_positive_count": 1,
+  "train_positive_count": 25
+}

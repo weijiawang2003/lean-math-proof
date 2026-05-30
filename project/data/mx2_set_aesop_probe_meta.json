@@ -1,0 +1,155 @@
+{
+  "description": "MX2 Stage 4 — live Set-aesop fallback probe.",
+  "variants": {
+    "A": "production wrapper (no Set aesop)",
+    "B": "broad Set-gated aesop (mx2_set_aesop_safe)",
+    "C": "narrow Set.Finite/toFinset aesop (mx2_set_finite_aesop_safe)"
+  },
+  "per_set": [
+    {
+      "set": "mx2_set_aesop_known",
+      "n": 2,
+      "narrow_ran": true,
+      "production_wins": 0,
+      "broad_wins": 2,
+      "narrow_wins": 2,
+      "broad_new_beyond_prod": 2,
+      "broad_new_theorems": [
+        "Set.Finite.toFinset_insert",
+        "Set.Finite.toFinset_offDiag"
+      ],
+      "narrow_new_beyond_prod": 2,
+      "narrow_new_theorems": [
+        "Set.Finite.toFinset_insert",
+        "Set.Finite.toFinset_offDiag"
+      ],
+      "broad_regressions": 0,
+      "broad_regr_theorems": [],
+      "narrow_regressions": 0,
+      "narrow_regr_theorems": [],
+      "broad_aesop_emissions": 2,
+      "broad_aesop_closes": 2,
+      "narrow_aesop_emissions": 2,
+      "narrow_aesop_closes": 2
+    },
+    {
+      "set": "mx2_set_finite_frontier",
+      "n": 10,
+      "narrow_ran": true,
+      "production_wins": 3,
+      "broad_wins": 4,
+      "narrow_wins": 4,
+      "broad_new_beyond_prod": 1,
+      "broad_new_theorems": [
+        "Set.Finite.to_subtype"
+      ],
+      "narrow_new_beyond_prod": 1,
+      "narrow_new_theorems": [
+        "Set.Finite.to_subtype"
+      ],
+      "broad_regressions": 0,
+      "broad_regr_theorems": [],
+      "narrow_regressions": 0,
+      "narrow_regr_theorems": [],
+      "broad_aesop_emissions": 10,
+      "broad_aesop_closes": 4,
+      "narrow_aesop_emissions": 10,
+      "narrow_aesop_closes": 4
+    },
+    {
+      "set": "mx2_set_aesop_frontier",
+      "n": 10,
+      "narrow_ran": false,
+      "production_wins": 4,
+      "broad_wins": 4,
+      "narrow_wins": 4,
+      "broad_new_beyond_prod": 0,
+      "broad_new_theorems": [],
+      "narrow_new_beyond_prod": 0,
+      "narrow_new_theorems": [],
+      "broad_regressions": 0,
+      "broad_regr_theorems": [],
+      "narrow_regressions": 0,
+      "narrow_regr_theorems": [],
+      "broad_aesop_emissions": 18,
+      "broad_aesop_closes": 4,
+      "narrow_aesop_emissions": 0,
+      "narrow_aesop_closes": 0
+    },
+    {
+      "set": "mx2_set_negative_control",
+      "n": 9,
+      "narrow_ran": false,
+      "production_wins": 0,
+      "broad_wins": 0,
+      "narrow_wins": 0,
+      "broad_new_beyond_prod": 0,
+      "broad_new_theorems": [],
+      "narrow_new_beyond_prod": 0,
+      "narrow_new_theorems": [],
+      "broad_regressions": 0,
+      "broad_regr_theorems": [],
+      "narrow_regressions": 0,
+      "narrow_regr_theorems": [],
+      "broad_aesop_emissions": 12,
+      "broad_aesop_closes": 0,
+      "narrow_aesop_emissions": 0,
+      "narrow_aesop_closes": 0
+    },
+    {
+      "set": "mx2_mixed_preservation_control",
+      "n": 8,
+      "narrow_ran": false,
+      "production_wins": 3,
+      "broad_wins": 3,
+      "narrow_wins": 3,
+      "broad_new_beyond_prod": 0,
+      "broad_new_theorems": [],
+      "narrow_new_beyond_prod": 0,
+      "narrow_new_theorems": [],
+      "broad_regressions": 0,
+      "broad_regr_theorems": [],
+      "narrow_regressions": 0,
+      "narrow_regr_theorems": [],
+      "broad_aesop_emissions": 10,
+      "broad_aesop_closes": 3,
+      "narrow_aesop_emissions": 0,
+      "narrow_aesop_closes": 0
+    }
+  ],
+  "totals": {
+    "production_wins": 10,
+    "broad_wins": 13,
+    "narrow_wins": 13,
+    "broad_new_beyond_prod": 3,
+    "narrow_new_beyond_prod": 3,
+    "broad_regressions": 0,
+    "narrow_regressions": 0,
+    "broad_aesop_emissions": 52,
+    "broad_aesop_closes": 13
+  },
+  "broad_new_beyond_prod_total": 3,
+  "narrow_new_beyond_prod_total": 3,
+  "broad_regressions_total": 0,
+  "narrow_regressions_total": 0,
+  "new_win_records": [
+    {
+      "set": "mx2_set_aesop_known",
+      "theorem": "Set.Finite.toFinset_insert",
+      "config": "broad",
+      "closed_by_aesop": true
+    },
+    {
+      "set": "mx2_set_aesop_known",
+      "theorem": "Set.Finite.toFinset_offDiag",
+      "config": "broad",
+      "closed_by_aesop": true
+    },
+    {
+      "set": "mx2_set_finite_frontier",
+      "theorem": "Set.Finite.to_subtype",
+      "config": "broad",
+      "closed_by_aesop": true
+    }
+  ]
+}

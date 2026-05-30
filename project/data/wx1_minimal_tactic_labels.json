@@ -1,0 +1,1099 @@
+{
+  "relabel_results": [
+    {
+      "full_name": "Option.bnot_isNone",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases a <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases a <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases a <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases a <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "a",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.bnot_isSome",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases a <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases a <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases a <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases a <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "a",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.casesOn'_eq_elim",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases a <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases a <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases a <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases a <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "a",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.casesOn'_none_coe",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases f <;> simp",
+          "family": "option_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases f <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "cases o <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases o <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases o <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "o",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.elim'_eq_elim",
+      "file_path": "Mathlib/Data/Option/Defs.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases a <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases a <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases a <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases a <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "a",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.elim_apply",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases i <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases i <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases i <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases i <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "i",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.elim_comp",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases i <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases i <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases i <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases i <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "i",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.isSome_map",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases o <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases o <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases o <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "o",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.orElse_eq_none",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases o <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases o <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "cases o' <;> simp",
+          "family": "option_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases o' <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "cases o <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "o",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.orElse_eq_some",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases o <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases o <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "cases o' <;> simp",
+          "family": "option_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases o' <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "cases o <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "o",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.orElse_none'",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases x <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases x <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases x <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases x <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "x",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.bind_congr'",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases x <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases x <;> simp",
+          "family": "option_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases x <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "cases y <;> simp",
+          "family": "option_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases y <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases y <;> simp_all",
+      "minimal_family": "option_cases_simp_all",
+      "minimal_var": "y",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.map_bind",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases x <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases x <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases x <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases x <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "x",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.map_bind'",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases x <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases x <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases x <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases x <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "x",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.pmap_bind",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "aesop",
+      "wx1_winning_origin": "generative_topk",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases x <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases x <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases x <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "x",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.eq_none_or_eq_some",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases a <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases a <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases a <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "cases a <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "a",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.iget_mem",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": null,
+      "minimal_family": null,
+      "minimal_var": null,
+      "minimal_is_short_token": null,
+      "state_aware_stable": null,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.orElse_eq_none'",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases o <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases o <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "cases o' <;> simp",
+          "family": "option_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases o' <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "cases o <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "o",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Option.orElse_eq_some'",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "wx1_winning_tactic": "cases o <;> simp_all",
+      "wx1_winning_origin": "wrapper_option_cases",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "finished": false
+        },
+        {
+          "tactic": "cases o <;> simp",
+          "family": "option_cases_simp",
+          "finished": true
+        },
+        {
+          "tactic": "cases o <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": true
+        },
+        {
+          "tactic": "cases o' <;> simp",
+          "family": "option_cases_simp",
+          "finished": false
+        },
+        {
+          "tactic": "cases o' <;> simp_all",
+          "family": "option_cases_simp_all",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "cases o <;> simp",
+      "minimal_family": "option_cases_simp",
+      "minimal_var": "o",
+      "minimal_is_short_token": false,
+      "state_aware_stable": true,
+      "dojo_status": "ok"
+    }
+  ]
+}

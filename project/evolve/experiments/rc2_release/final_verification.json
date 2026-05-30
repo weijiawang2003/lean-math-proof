@@ -1,0 +1,60 @@
+{
+  "json_validity": {
+    "rc2_production_wrapper.json": "valid",
+    "rc2_component_summary.json": "valid",
+    "rc2_reproduction_config.json": "valid"
+  },
+  "protected_diff": "(empty \u2014 RC1 & NS24 untouched)",
+  "protected_untouched": true,
+  "canonical_floors": {
+    "demo_v1": {
+      "rc2_solved": 12,
+      "floor": "11/15",
+      "source": "verify run1 (frozen RC2 wrapper, live)",
+      "pass": true
+    },
+    "nat_defs_medium": {
+      "rc2_solved": 37,
+      "floor": "37/38",
+      "source": "RC2==RC1 by construction (no Set.ite names)",
+      "pass": true
+    },
+    "nat_defs_large_v5": {
+      "rc2_solved": 49,
+      "floor": "49/65",
+      "source": "RC2==RC1 by construction (no Set.ite names)",
+      "pass": true
+    }
+  },
+  "canonical_floors_pass": true,
+  "set_ite_known_wins": {
+    "solved": 5,
+    "wins": [
+      "Set.ite_empty_right",
+      "Set.ite_right",
+      "Set.ite_empty",
+      "Set.ite_empty_left",
+      "Set.ite_left"
+    ],
+    "pass": true,
+    "source": "verify run1 (frozen RC2 production wrapper, live)"
+  },
+  "determinism_smoke": {
+    "run1_hash": "bbbd688b72d00c06",
+    "run2_hash": "bbbd688b72d00c06",
+    "deterministic": true,
+    "diffs": []
+  },
+  "reused_vs_rerun": {
+    "rerun_live_with_frozen_wrapper": [
+      "demo_v1",
+      "set_ite_known_wins (x2)"
+    ],
+    "reused_by_construction": [
+      "nat_defs_medium",
+      "nat_defs_large_v5 (RC2==RC1 on non-Set.ite; corroborated by full benchmark RC2 run)"
+    ]
+  },
+  "overall_pass": true,
+  "note": "Frozen rc2_production_wrapper.json verified live on demo_v1 + the 5 SET_ITE wins; Nat floors are RC2==RC1 by construction (gate denies action on non-Set.ite names) and match the RC1 baseline (37/38, 49/65). demo_v1 12/15 (>=11 floor; +1 vs RC1 baseline 11 is timing variance, not an RC2 effect \u2014 no Set.ite names on demo_v1)."
+}

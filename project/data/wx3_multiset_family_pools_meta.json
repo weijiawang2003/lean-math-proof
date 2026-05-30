@@ -1,0 +1,120 @@
+{
+  "gate_unique_required": 5,
+  "gate_one_family_required": 20,
+  "total_relabeled": 25,
+  "clean_single_shot_symbolic": 20,
+  "sft_ready_count": 20,
+  "wrapper_ready_count": 20,
+  "dropped_simpler_tactic_closes_single_shot": 1,
+  "multistep_symbolic_assisted": 2,
+  "multistep_nonsymbolic": 2,
+  "biggest_single_family": 18,
+  "any_unique_gate_met": true,
+  "one_family_gate_met": false,
+  "forty_label_gate_met": false,
+  "note": "clean_single_shot_symbolic = a single Multiset symbolic action (ext/cases/induction_on) closes from init and no name-free tactic does (the AX3-trainable class). multistep_symbolic_assisted = symbolic action used in a multi-step proof but no single tactic closes -> weak label, excluded from clean pools.",
+  "unresolved_no_single_shot": [
+    "Multiset.disjoint_map_map",
+    "Multiset.disjoint_union_right",
+    "Multiset.disjoint_cons_right",
+    "Multiset.eq_zero_of_forall_not_mem"
+  ],
+  "symbolic_label_pools": {
+    "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": {
+      "symbolic_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "unique_count": 18,
+      "count_gate_met": true,
+      "recommended_oversample_factor": 2,
+      "theorems": {
+        "Multiset.card_sigma": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "minimal_var": "s"
+        },
+        "Multiset.le_inf": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "minimal_var": "s"
+        },
+        "Multiset.bind_assoc": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "minimal_var": "s"
+        },
+        "Multiset.bind_bind": {
+          "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+          "minimal_var": "m"
+        },
+        "Multiset.bind_congr": {
+          "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+          "minimal_var": "m"
+        },
+        "Multiset.bind_map": {
+          "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+          "minimal_var": "m"
+        },
+        "Multiset.bind_map_comm": {
+          "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+          "minimal_var": "m"
+        },
+        "Multiset.bind_singleton": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "minimal_var": "s"
+        },
+        "Multiset.bind_zero": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "minimal_var": "s"
+        },
+        "Multiset.card_bind": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "minimal_var": "s"
+        },
+        "Multiset.card_join": {
+          "minimal_tactic": "induction S using Multiset.induction_on <;> simp_all",
+          "minimal_var": "S"
+        },
+        "Multiset.count_sum": {
+          "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+          "minimal_var": "m"
+        },
+        "Multiset.map_bind": {
+          "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+          "minimal_var": "m"
+        },
+        "Multiset.product_zero": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "minimal_var": "s"
+        },
+        "Multiset.add_inter_distrib": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "minimal_var": "s"
+        },
+        "Multiset.foldr_induction'": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "minimal_var": "s"
+        },
+        "Multiset.map_join": {
+          "minimal_tactic": "induction S using Multiset.induction_on <;> simp_all",
+          "minimal_var": "S"
+        },
+        "Multiset.sup_le": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "minimal_var": "s"
+        }
+      }
+    },
+    "MULTISET_INDUCTION_SIMP[Multiset,simp]": {
+      "symbolic_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+      "unique_count": 2,
+      "count_gate_met": false,
+      "recommended_oversample_factor": 15,
+      "theorems": {
+        "Multiset.map_eq_zero": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp",
+          "minimal_var": "s"
+        },
+        "Multiset.card_eq_zero": {
+          "minimal_tactic": "induction s using Multiset.induction_on <;> simp",
+          "minimal_var": "s"
+        }
+      }
+    }
+  }
+}

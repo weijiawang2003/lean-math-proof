@@ -1,0 +1,253 @@
+{
+  "description": "RC1 full benchmark — composed from arc traces (RC1 = NS9 ⊕ WX3-Multiset ⊕ MX2-narrow-Set, namespace-disjoint additive deltas) + live RC1 confirmation on the Set known set.",
+  "variants": {
+    "A": "raw NS24 router",
+    "B": "NS9 wrapper + NS24",
+    "C": "RC1 production wrapper + NS24"
+  },
+  "composition_note": "RC1 ≡ WX3 induction wrapper on Multiset (ax4_wx3ind/ax3_wx3ind), ≡ MX2 narrow config on Set.Finite/toFinset (mx2_C_narrow), ≡ NS9 elsewhere (gates inert; 0 off-gate emissions proven in WX3/MX2). Composition verified end-to-end by the live RC1 confirmation run.",
+  "per_surface": [
+    {
+      "surface": "multiset_induction_heldout (Multiset)",
+      "kind": "rc1_gain_multiset",
+      "A_raw": 10,
+      "B_ns9": 10,
+      "C_rc1": 14,
+      "delta_vs_ns9": 4,
+      "rc1_only_wins": [
+        "Multiset.card_pmap",
+        "Multiset.foldr_add",
+        "Multiset.foldr_induction",
+        "Multiset.map_const"
+      ],
+      "regressions_vs_ns9": 0,
+      "regression_theorems": [],
+      "sources": {
+        "A": "ax4_raw_ax4_multiset_induction_heldout",
+        "B": "ax4_ns9_ax4_multiset_induction_heldout",
+        "C": "ax4_wx3ind_ax4_multiset_induction_heldout"
+      }
+    },
+    {
+      "surface": "multiset_induction_heldout2 (Multiset)",
+      "kind": "rc1_gain_multiset",
+      "A_raw": 12,
+      "B_ns9": 12,
+      "C_rc1": 19,
+      "delta_vs_ns9": 7,
+      "rc1_only_wins": [
+        "Multiset.map_add",
+        "Multiset.map_id",
+        "Multiset.map_id'",
+        "Multiset.map_map",
+        "Multiset.mem_add",
+        "Multiset.mem_map",
+        "Multiset.mem_map_of_injective"
+      ],
+      "regressions_vs_ns9": 0,
+      "regression_theorems": [],
+      "sources": {
+        "A": "ax4_raw_ax4_multiset_induction_heldout2",
+        "B": "ax4_ns9_ax4_multiset_induction_heldout2",
+        "C": "ax4_wx3ind_ax4_multiset_induction_heldout2"
+      }
+    },
+    {
+      "surface": "ax3_multiset_induction_heldout (Multiset)",
+      "kind": "rc1_gain_multiset",
+      "A_raw": 0,
+      "B_ns9": 0,
+      "C_rc1": 1,
+      "delta_vs_ns9": 1,
+      "rc1_only_wins": [
+        "Multiset.prod_join"
+      ],
+      "regressions_vs_ns9": 0,
+      "regression_theorems": [],
+      "sources": {
+        "A": "ax3_raw_ax3_multiset_induction_heldout",
+        "B": "ax3_ns9_ax3_multiset_induction_heldout",
+        "C": "ax3_wx3ind_ax3_multiset_induction_heldout"
+      }
+    },
+    {
+      "surface": "set_aesop_known (Set.Finite)",
+      "kind": "rc1_gain_set",
+      "A_raw": 0,
+      "B_ns9": 0,
+      "C_rc1": 2,
+      "delta_vs_ns9": 2,
+      "rc1_only_wins": [
+        "Set.Finite.toFinset_insert",
+        "Set.Finite.toFinset_offDiag"
+      ],
+      "regressions_vs_ns9": 0,
+      "regression_theorems": [],
+      "sources": {
+        "A": "mx2_A_prod_mx2_set_aesop_known",
+        "B": "mx2_A_prod_mx2_set_aesop_known",
+        "C": "mx2_C_narrow_mx2_set_aesop_known"
+      }
+    },
+    {
+      "surface": "set_finite_frontier (Set.Finite)",
+      "kind": "rc1_gain_set",
+      "A_raw": 3,
+      "B_ns9": 3,
+      "C_rc1": 4,
+      "delta_vs_ns9": 1,
+      "rc1_only_wins": [
+        "Set.Finite.to_subtype"
+      ],
+      "regressions_vs_ns9": 0,
+      "regression_theorems": [],
+      "sources": {
+        "A": "mx2_A_prod_mx2_set_finite_frontier",
+        "B": "mx2_A_prod_mx2_set_finite_frontier",
+        "C": "mx2_C_narrow_mx2_set_finite_frontier"
+      }
+    },
+    {
+      "surface": "demo_v1 (floor)",
+      "kind": "floor",
+      "A_raw": null,
+      "B_ns9": 11,
+      "C_rc1": 11,
+      "delta_vs_ns9": 0,
+      "rc1_only_wins": [],
+      "regressions_vs_ns9": 0,
+      "regression_theorems": [],
+      "sources": {
+        "A": null,
+        "B": "wx3_ns9_demo_v1",
+        "C": "wx3_ns9_demo_v1"
+      }
+    },
+    {
+      "surface": "nat_defs_medium (floor)",
+      "kind": "floor",
+      "A_raw": null,
+      "B_ns9": 37,
+      "C_rc1": 37,
+      "delta_vs_ns9": 0,
+      "rc1_only_wins": [],
+      "regressions_vs_ns9": 0,
+      "regression_theorems": [],
+      "sources": {
+        "A": null,
+        "B": "wx3_ns9_nat_defs_medium",
+        "C": "wx3_ns9_nat_defs_medium"
+      }
+    },
+    {
+      "surface": "ns17_set_extra (Set control)",
+      "kind": "floor_set",
+      "A_raw": null,
+      "B_ns9": 18,
+      "C_rc1": 18,
+      "delta_vs_ns9": 0,
+      "rc1_only_wins": [],
+      "regressions_vs_ns9": 0,
+      "regression_theorems": [],
+      "sources": {
+        "A": null,
+        "B": "wx3_ns9_ns17_set_extra",
+        "C": "wx3_ns9_ns17_set_extra"
+      }
+    },
+    {
+      "surface": "ns17_finset_extra (Finset control)",
+      "kind": "floor",
+      "A_raw": null,
+      "B_ns9": 15,
+      "C_rc1": 15,
+      "delta_vs_ns9": 0,
+      "rc1_only_wins": [],
+      "regressions_vs_ns9": 0,
+      "regression_theorems": [],
+      "sources": {
+        "A": null,
+        "B": "wx3_ns9_ns17_finset_extra",
+        "C": "wx3_ns9_ns17_finset_extra"
+      }
+    }
+  ],
+  "totals_over_measured_surfaces": {
+    "B_ns9": 106,
+    "C_rc1": 121,
+    "delta": 15
+  },
+  "rc1_only_wins": [
+    {
+      "surface": "multiset_induction_heldout (Multiset)",
+      "theorem": "Multiset.card_pmap"
+    },
+    {
+      "surface": "multiset_induction_heldout (Multiset)",
+      "theorem": "Multiset.foldr_add"
+    },
+    {
+      "surface": "multiset_induction_heldout (Multiset)",
+      "theorem": "Multiset.foldr_induction"
+    },
+    {
+      "surface": "multiset_induction_heldout (Multiset)",
+      "theorem": "Multiset.map_const"
+    },
+    {
+      "surface": "multiset_induction_heldout2 (Multiset)",
+      "theorem": "Multiset.map_add"
+    },
+    {
+      "surface": "multiset_induction_heldout2 (Multiset)",
+      "theorem": "Multiset.map_id"
+    },
+    {
+      "surface": "multiset_induction_heldout2 (Multiset)",
+      "theorem": "Multiset.map_id'"
+    },
+    {
+      "surface": "multiset_induction_heldout2 (Multiset)",
+      "theorem": "Multiset.map_map"
+    },
+    {
+      "surface": "multiset_induction_heldout2 (Multiset)",
+      "theorem": "Multiset.mem_add"
+    },
+    {
+      "surface": "multiset_induction_heldout2 (Multiset)",
+      "theorem": "Multiset.mem_map"
+    },
+    {
+      "surface": "multiset_induction_heldout2 (Multiset)",
+      "theorem": "Multiset.mem_map_of_injective"
+    },
+    {
+      "surface": "ax3_multiset_induction_heldout (Multiset)",
+      "theorem": "Multiset.prod_join"
+    },
+    {
+      "surface": "set_aesop_known (Set.Finite)",
+      "theorem": "Set.Finite.toFinset_insert"
+    },
+    {
+      "surface": "set_aesop_known (Set.Finite)",
+      "theorem": "Set.Finite.toFinset_offDiag"
+    },
+    {
+      "surface": "set_finite_frontier (Set.Finite)",
+      "theorem": "Set.Finite.to_subtype"
+    }
+  ],
+  "live_rc1_confirmation": {
+    "set": "mx2_set_aesop_known",
+    "wins": [
+      "Set.Finite.toFinset_insert",
+      "Set.Finite.toFinset_offDiag"
+    ],
+    "closed_by_aesop": [
+      "Set.Finite.toFinset_insert",
+      "Set.Finite.toFinset_offDiag"
+    ]
+  }
+}

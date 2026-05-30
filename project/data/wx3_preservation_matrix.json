@@ -1,0 +1,72 @@
+{
+  "comparison": "NS9 (ns9_best_genome.json) vs WX3-comb",
+  "router": "ns24_router",
+  "by_construction_note": "WX3 base == ns9_best_genome.json byte-for-byte; the Multiset symbolic block is gated to `Multiset.`, so on non-Multiset theorems the ranked list is identical to NS9. Preservation is guaranteed by construction; the empirical rows confirm it.",
+  "empirical_rows": [
+    {
+      "set": "demo_v1",
+      "namespace_class": "mixed-Nat/Set/Finset",
+      "available": 15,
+      "ns9_wins": 11,
+      "wx3_comb_wins": 11,
+      "delta": 0,
+      "new_beyond_ns9": [],
+      "regressions": [],
+      "multiset_emissions": 0,
+      "floor": "11/15",
+      "missing": false
+    },
+    {
+      "set": "nat_defs_medium",
+      "namespace_class": "Nat",
+      "available": 38,
+      "ns9_wins": 37,
+      "wx3_comb_wins": 37,
+      "delta": 0,
+      "new_beyond_ns9": [],
+      "regressions": [],
+      "multiset_emissions": 0,
+      "floor": "37/38",
+      "missing": false
+    },
+    {
+      "set": "ns17_set_extra",
+      "namespace_class": "Set",
+      "available": 30,
+      "ns9_wins": 18,
+      "wx3_comb_wins": 18,
+      "delta": 0,
+      "new_beyond_ns9": [],
+      "regressions": [],
+      "multiset_emissions": 0,
+      "floor": null,
+      "missing": false
+    },
+    {
+      "set": "ns17_finset_extra",
+      "namespace_class": "Finset",
+      "available": 30,
+      "ns9_wins": 15,
+      "wx3_comb_wins": 15,
+      "delta": 0,
+      "new_beyond_ns9": [],
+      "regressions": [],
+      "multiset_emissions": 0,
+      "floor": null,
+      "missing": false
+    }
+  ],
+  "by_construction_sets": {
+    "nat_defs_large_v5": "Nat (49/65 floor)",
+    "ns14_set_finset_extra": "Set/Finset"
+  },
+  "documented_floors": {
+    "nat_defs_medium": "37/38",
+    "nat_defs_large_v5": "49/65",
+    "demo_v1": "11/15"
+  },
+  "summary": {
+    "total_regressions": 0,
+    "multiset_emissions_outside_multiset": 0
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "description": "RC1 static preservation check — gate-logic over standard theorem-set names (no Lean run).",
+  "config": "project/evolve/experiments/rc1/rc1_production_wrapper.json",
+  "ns9_genome_unchanged": true,
+  "multiset_symbolic_gate": "Multiset.",
+  "aesop_name_gate": [
+    "Set.Finite.",
+    "Set.toFinset"
+  ],
+  "ax4_predictor_enabled": false,
+  "sx1_sequence_enabled": false,
+  "per_set": [
+    {
+      "set": "demo_v1",
+      "n": 15,
+      "multiset_symbolic_admissible_on_gate": 0,
+      "multiset_symbolic_offgate_emissions": 0,
+      "aesop_admissible_on_gate": 0,
+      "aesop_offgate_emissions": 0
+    },
+    {
+      "set": "nat_defs_medium",
+      "n": 38,
+      "multiset_symbolic_admissible_on_gate": 0,
+      "multiset_symbolic_offgate_emissions": 0,
+      "aesop_admissible_on_gate": 0,
+      "aesop_offgate_emissions": 0
+    },
+    {
+      "set": "nat_defs_large_v5",
+      "n": 65,
+      "multiset_symbolic_admissible_on_gate": 0,
+      "multiset_symbolic_offgate_emissions": 0,
+      "aesop_admissible_on_gate": 0,
+      "aesop_offgate_emissions": 0
+    },
+    {
+      "set": "ns14_set_finset_extra",
+      "n": 20,
+      "multiset_symbolic_admissible_on_gate": 0,
+      "multiset_symbolic_offgate_emissions": 0,
+      "aesop_admissible_on_gate": 0,
+      "aesop_offgate_emissions": 0
+    },
+    {
+      "set": "ns17_set_extra",
+      "n": 30,
+      "multiset_symbolic_admissible_on_gate": 0,
+      "multiset_symbolic_offgate_emissions": 0,
+      "aesop_admissible_on_gate": 0,
+      "aesop_offgate_emissions": 0
+    },
+    {
+      "set": "ns17_finset_extra",
+      "n": 30,
+      "multiset_symbolic_admissible_on_gate": 0,
+      "multiset_symbolic_offgate_emissions": 0,
+      "aesop_admissible_on_gate": 0,
+      "aesop_offgate_emissions": 0
+    },
+    {
+      "set": "wx2_list_cases_easy",
+      "n": 40,
+      "multiset_symbolic_admissible_on_gate": 0,
+      "multiset_symbolic_offgate_emissions": 0,
+      "aesop_admissible_on_gate": 0,
+      "aesop_offgate_emissions": 0
+    },
+    {
+      "set": "wx2_list_cases_medium",
+      "n": 35,
+      "multiset_symbolic_admissible_on_gate": 0,
+      "multiset_symbolic_offgate_emissions": 0,
+      "aesop_admissible_on_gate": 0,
+      "aesop_offgate_emissions": 0
+    },
+    {
+      "set": "cx2_int_iff_omega_easy",
+      "n": 12,
+      "multiset_symbolic_admissible_on_gate": 0,
+      "multiset_symbolic_offgate_emissions": 0,
+      "aesop_admissible_on_gate": 0,
+      "aesop_offgate_emissions": 0
+    },
+    {
+      "set": "ax4_multiset_induction_heldout",
+      "n": 45,
+      "multiset_symbolic_admissible_on_gate": 45,
+      "multiset_symbolic_offgate_emissions": 0,
+      "aesop_admissible_on_gate": 0,
+      "aesop_offgate_emissions": 0
+    },
+    {
+      "set": "mx2_set_finite_frontier",
+      "n": 10,
+      "multiset_symbolic_admissible_on_gate": 0,
+      "multiset_symbolic_offgate_emissions": 0,
+      "aesop_admissible_on_gate": 10,
+      "aesop_offgate_emissions": 0
+    }
+  ],
+  "total_offgate_multiset_emissions": 0,
+  "total_offgate_aesop_emissions": 0,
+  "zero_offgate_emissions": true,
+  "regressions": 0,
+  "regressions_rationale": "All RC1 additions are additive to the NS9 ranked list (never reorder/replace) and namespace-gated; the benchmark shows ΔNS9=0 on every floor/control surface (demo 11, medium 37, set 18, finset 15) with 0 regressions, and WX3/MX2 live evals showed 0 regressions on Multiset/Set."
+}

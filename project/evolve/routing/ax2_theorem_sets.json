@@ -1,0 +1,542 @@
+{
+  "ax2_option_cases_fresh": [],
+  "ax2_option_simp_fresh": [],
+  "ax2_list_cases_fresh": [
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.getElem",
+      "namespace": "List",
+      "difficulty": "easy",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.getElem_attach",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.getElem_pmap",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.getElem_reverse_aux",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.getLast",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.getLast_append'",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.getLast_cons",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.getLast_pmap",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.getLast_reverse",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.get_reverse_aux",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.get_set_of_ne",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Dedup.lean",
+      "full_name": "List.headI_dedup",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.indexOf_append_of_mem",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.indexOf_append_of_not_mem",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.lookmap.go_append",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.map_erase",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.map_injective_iff",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.map_subset_iff",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.mem_attach",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Dedup.lean",
+      "full_name": "List.mem_dedup",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Range.lean",
+      "full_name": "List.mem_finRange",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.mem_getLast",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.mem_map_swap",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.mem_takeWhile_imp",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.modifyLast.go_append_one",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.modifyLast_append",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.modifyLast_append_one",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.monotone_filter_right",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.nthLe_cons",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.nthLe_tail",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.or_exists_of_exists_mem_cons",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Pairwise.lean",
+      "full_name": "List.pairwise_map'",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Pairwise.lean",
+      "full_name": "List.pairwise_of_forall_mem_list",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Pairwise.lean",
+      "full_name": "List.pairwise_pmap",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.pmap_append",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.pmap_congr",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.reverseRecOn_concat",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.sizeOf_dropSlice_lt",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.sizeOf_lt_sizeOf_of_mem",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.splitAt_eq_take_drop",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.splitOnP_cons",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.sublist_replicate_iff",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Dedup.lean",
+      "full_name": "List.tail_dedup",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.takeWhile_eq_nil_iff",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.takeWhile_eq_self_iff",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.takeWhile_takeWhile",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.zipLeft'_nil_right",
+      "namespace": "List",
+      "difficulty": "medium",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.zipLeft_nil_right",
+      "namespace": "List",
+      "difficulty": "medium",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.zipRight'_nil_left",
+      "namespace": "List",
+      "difficulty": "medium",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.zipRight_nil_left",
+      "namespace": "List",
+      "difficulty": "medium",
+      "expected_family": "list_cases_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.zipWith_nil",
+      "namespace": "List",
+      "difficulty": "medium",
+      "expected_family": "list_cases_simp"
+    }
+  ],
+  "ax2_list_induction_fresh": [
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.indexOf_eq_length",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_induction_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.indexOf_le_length",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_induction_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.length_eraseIdx_add_one",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_induction_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.length_injective_iff",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_induction_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.nthLe_succ_scanl",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_induction_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Range.lean",
+      "full_name": "List.ranges_disjoint",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_induction_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Range.lean",
+      "full_name": "List.ranges_length",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_induction_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.scanr_cons",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_induction_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Range.lean",
+      "full_name": "List.unzip_enumFrom_eq_prod",
+      "namespace": "List",
+      "difficulty": "medium",
+      "expected_family": "list_induction_simp"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Range.lean",
+      "full_name": "List.unzip_enum_eq_prod",
+      "namespace": "List",
+      "difficulty": "medium",
+      "expected_family": "list_induction_simp"
+    }
+  ],
+  "ax2_option_list_mixed_fresh": [
+    {
+      "file_path": "Mathlib/Data/List/Range.lean",
+      "full_name": "List.indexOf_finRange",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_hard_unknown"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.indexOf_inj",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_hard_unknown"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.intercalate_splitOn",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_hard_unknown"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.lookup_graph",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_hard_unknown"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Range.lean",
+      "full_name": "List.nodup_range",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_hard_unknown"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Range.lean",
+      "full_name": "List.nodup_range'",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_hard_unknown"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Range.lean",
+      "full_name": "List.pairwise_lt_range'",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_hard_unknown"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Pairwise.lean",
+      "full_name": "List.pairwise_of_reflexive_of_forall_ne",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_hard_unknown"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.splitOnP.go_acc",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_hard_unknown"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.splitOnP_eq_single",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_simp_only"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.splitOnP_first",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_hard_unknown"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.splitOnP_spec",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_hard_unknown"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.splitOn_intercalate",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_hard_unknown"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.zipLeft_eq_zipLeft'",
+      "namespace": "List",
+      "difficulty": "hard",
+      "expected_family": "list_simp_only"
+    },
+    {
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "full_name": "List.zipRight_eq_zipRight'",
+      "namespace": "List",
+      "difficulty": "medium",
+      "expected_family": "list_simp_only"
+    }
+  ]
+}

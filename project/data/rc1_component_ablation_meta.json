@@ -1,0 +1,21 @@
+{
+  "description": "RC1 component ablation — additive contributions on the gain surfaces (Multiset isolates WX3; Set.Finite isolates MX2).",
+  "configs": {
+    "1_ns9_only": "NS9 base (no Multiset symbolic, no Set aesop)",
+    "2_ns9_wx3": "NS9 + WX3 Multiset induction oracle",
+    "3_ns9_mx2": "NS9 + MX2 narrow Set.Finite aesop",
+    "4_rc1": "NS9 + WX3 + MX2 (= RC1)"
+  },
+  "multiset_surface": {
+    "ns9": 22,
+    "with_wx3": 34,
+    "wx3_contribution": 12
+  },
+  "set_finite_surface": {
+    "ns9": 3,
+    "with_mx2": 6,
+    "mx2_contribution": 3
+  },
+  "rc1_total_gain": 15,
+  "negative_interaction": "none — WX3 acts only on Multiset, MX2 only on Set.Finite; the deltas are on disjoint namespaces and additive. RC1 gain = WX3 gain + MX2 gain."
+}

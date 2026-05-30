@@ -1,0 +1,29 @@
+{
+  "description": "MX1 Stage 6 — merged symbolic-label pools across AX/WX/SX/MX arcs + training-threshold check.",
+  "single_shot_pools_merged": {
+    "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": 41,
+    "CASES_SIMP[Option,simp]": 17,
+    "CASES_SIMP[List,simp]": 6,
+    "MULTISET_INDUCTION_SIMP[Multiset,simp]": 5,
+    "CASES_SIMP[List,simp_all]": 3,
+    "CASES_SIMP[Option,simp_all]": 1
+  },
+  "mx1_new_single_shot_by_family": {},
+  "mx1_new_clean_labels_total": 0,
+  "sequence_pools_merged": {
+    "SEQ[Multiset:induction=>aesop]": 3,
+    "SEQ[List:cases=>cases]": 2
+  },
+  "mx1_new_sequence_by_family": {},
+  "totals": {
+    "single_shot_total": 73,
+    "biggest_single_family": 41,
+    "biggest_sequence_family": 3
+  },
+  "thresholds": {
+    "single_action_gate_met_globally": true,
+    "single_action_gate_note": "Met historically by the Multiset induction family (already at GREEN under AX4); the open question is a NEW trainable family.",
+    "new_mx1_family_reaches_gate": false,
+    "sequence_gate_met": false
+  }
+}

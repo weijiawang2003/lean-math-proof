@@ -1,0 +1,217 @@
+{
+  "source_pool": "cases_simp|Option (CX3 headroom)",
+  "total": 13,
+  "with_extractable_cases_var": 13,
+  "without_extractable_var": [],
+  "items": [
+    {
+      "full_name": "Option.bind_congr'",
+      "theorem_set": "cx3_option_cases_medium",
+      "raw_solved": false,
+      "wrapper_solved": false,
+      "wrapper_winning_tactic": null,
+      "cx3_minimal_tactic": "intros <;> cases y <;> simp_all",
+      "minimal_family": "cases_simp",
+      "goal": "⊢ x.bind f = y.bind g",
+      "option_vars": [
+        "x",
+        "y"
+      ],
+      "bool_vars": [],
+      "cases_simp_likely": true,
+      "state_snippet": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nδ : Type u_4\nf g : α → Option β\nx y : Option α\nhx : x = y\nhf : ∀ (a : α), a ∈ y → f a = g a\n⊢ x.bind f = y.bind g"
+    },
+    {
+      "full_name": "Option.bnot_isNone",
+      "theorem_set": "cx3_option_simp_easy",
+      "raw_solved": false,
+      "wrapper_solved": false,
+      "wrapper_winning_tactic": null,
+      "cx3_minimal_tactic": "intros <;> cases a <;> simp_all",
+      "minimal_family": "cases_simp",
+      "goal": "⊢ (!a.isNone) = a.isSome",
+      "option_vars": [
+        "a"
+      ],
+      "bool_vars": [],
+      "cases_simp_likely": true,
+      "state_snippet": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nδ : Type u_4\na : Option α\n⊢ (!a.isNone) = a.isSome"
+    },
+    {
+      "full_name": "Option.bnot_isSome",
+      "theorem_set": "cx3_option_simp_easy",
+      "raw_solved": false,
+      "wrapper_solved": false,
+      "wrapper_winning_tactic": null,
+      "cx3_minimal_tactic": "intros <;> cases a <;> simp_all",
+      "minimal_family": "cases_simp",
+      "goal": "⊢ (!a.isSome) = a.isNone",
+      "option_vars": [
+        "a"
+      ],
+      "bool_vars": [],
+      "cases_simp_likely": true,
+      "state_snippet": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nδ : Type u_4\na : Option α\n⊢ (!a.isSome) = a.isNone"
+    },
+    {
+      "full_name": "Option.casesOn'_eq_elim",
+      "theorem_set": "cx3_option_simp_easy",
+      "raw_solved": false,
+      "wrapper_solved": false,
+      "wrapper_winning_tactic": null,
+      "cx3_minimal_tactic": "intros <;> cases a <;> simp_all",
+      "minimal_family": "cases_simp",
+      "goal": "⊢ a.casesOn' b f = a.elim b f",
+      "option_vars": [
+        "a"
+      ],
+      "bool_vars": [],
+      "cases_simp_likely": true,
+      "state_snippet": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nδ : Type u_4\nb : β\nf : α → β\na : Option α\n⊢ a.casesOn' b f = a.elim b f"
+    },
+    {
+      "full_name": "Option.elim'_eq_elim",
+      "theorem_set": "cx3_option_simp_easy",
+      "raw_solved": false,
+      "wrapper_solved": false,
+      "wrapper_winning_tactic": null,
+      "cx3_minimal_tactic": "intros <;> cases a <;> simp_all",
+      "minimal_family": "cases_simp",
+      "goal": "⊢ Option.elim' b f a = a.elim b f",
+      "option_vars": [
+        "a"
+      ],
+      "bool_vars": [],
+      "cases_simp_likely": true,
+      "state_snippet": "α✝ : Type u_1\nβ✝ : Type u_2\nα : Type u_3\nβ : Type u_4\nb : β\nf : α → β\na : Option α\n⊢ Option.elim' b f a = a.elim b f"
+    },
+    {
+      "full_name": "Option.elim_apply",
+      "theorem_set": "cx3_option_simp_easy",
+      "raw_solved": false,
+      "wrapper_solved": false,
+      "wrapper_winning_tactic": null,
+      "cx3_minimal_tactic": "intros <;> cases i <;> simp_all",
+      "minimal_family": "cases_simp",
+      "goal": "⊢ i.elim x f y = i.elim (x y) fun j => f j y",
+      "option_vars": [
+        "i"
+      ],
+      "bool_vars": [],
+      "cases_simp_likely": true,
+      "state_snippet": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nδ : Type u_4\nf : γ → α → β\nx : α → β\ni : Option γ\ny : α\n⊢ i.elim x f y = i.elim (x y) fun j => f j y"
+    },
+    {
+      "full_name": "Option.elim_comp",
+      "theorem_set": "cx3_option_simp_easy",
+      "raw_solved": false,
+      "wrapper_solved": false,
+      "wrapper_winning_tactic": null,
+      "cx3_minimal_tactic": "intros <;> cases i <;> simp_all",
+      "minimal_family": "cases_simp",
+      "goal": "⊢ (i.elim (h x) fun j => h (f j)) = h (i.elim x f)",
+      "option_vars": [
+        "i"
+      ],
+      "bool_vars": [],
+      "cases_simp_likely": true,
+      "state_snippet": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nδ : Type u_4\nh : α → β\nf : γ → α\nx : α\ni : Option γ\n⊢ (i.elim (h x) fun j => h (f j)) = h (i.elim x f)"
+    },
+    {
+      "full_name": "Option.eq_none_or_eq_some",
+      "theorem_set": "cx3_bool_option_mixed",
+      "raw_solved": false,
+      "wrapper_solved": false,
+      "wrapper_winning_tactic": null,
+      "cx3_minimal_tactic": "intros <;> cases a <;> simp_all",
+      "minimal_family": "cases_simp",
+      "goal": "⊢ a = none ∨ ∃ x, a = some x",
+      "option_vars": [
+        "a"
+      ],
+      "bool_vars": [],
+      "cases_simp_likely": true,
+      "state_snippet": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nδ : Type u_4\na : Option α\n⊢ a = none ∨ ∃ x, a = some x"
+    },
+    {
+      "full_name": "Option.isSome_map",
+      "theorem_set": "cx3_option_simp_easy",
+      "raw_solved": false,
+      "wrapper_solved": false,
+      "wrapper_winning_tactic": null,
+      "cx3_minimal_tactic": "intros <;> cases o <;> simp_all",
+      "minimal_family": "cases_simp",
+      "goal": "⊢ (Option.map f o).isSome = o.isSome",
+      "option_vars": [
+        "o"
+      ],
+      "bool_vars": [],
+      "cases_simp_likely": true,
+      "state_snippet": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nδ : Type u_4\nf : α → β\no : Option α\n⊢ (Option.map f o).isSome = o.isSome"
+    },
+    {
+      "full_name": "Option.map_bind",
+      "theorem_set": "cx3_option_cases_medium",
+      "raw_solved": false,
+      "wrapper_solved": false,
+      "wrapper_winning_tactic": null,
+      "cx3_minimal_tactic": "intros <;> cases x <;> simp_all",
+      "minimal_family": "cases_simp",
+      "goal": "⊢ Option.map f (x >>= g) = do",
+      "option_vars": [
+        "x"
+      ],
+      "bool_vars": [],
+      "cases_simp_likely": true,
+      "state_snippet": "α✝ : Type u_1\nβ✝ : Type u_2\nγ✝ : Type u_3\nδ : Type u_4\np : α✝ → Prop\nf✝ : (a : α✝) → p a → β✝\nx✝ : Option α✝\nα β γ : Type u_5\nf : β → γ\nx : Option α\ng : α → Option β\n⊢ Option.map f (x >>= g) = do\n    let a ← x\n    Option.map f (g a)"
+    },
+    {
+      "full_name": "Option.map_bind'",
+      "theorem_set": "cx3_option_cases_medium",
+      "raw_solved": false,
+      "wrapper_solved": false,
+      "wrapper_winning_tactic": null,
+      "cx3_minimal_tactic": "intros <;> cases x <;> simp_all",
+      "minimal_family": "cases_simp",
+      "goal": "⊢ Option.map f (x.bind g) = x.bind fun a => Option.map f (g a)",
+      "option_vars": [
+        "x"
+      ],
+      "bool_vars": [],
+      "cases_simp_likely": true,
+      "state_snippet": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nδ : Type u_4\np : α → Prop\nf✝ : (a : α) → p a → β\nx✝ : Option α\nf : β → γ\nx : Option α\ng : α → Option β\n⊢ Option.map f (x.bind g) = x.bind fun a => Option.map f (g a)"
+    },
+    {
+      "full_name": "Option.orElse_none'",
+      "theorem_set": "cx3_option_simp_easy",
+      "raw_solved": false,
+      "wrapper_solved": false,
+      "wrapper_winning_tactic": null,
+      "cx3_minimal_tactic": "intros <;> cases x <;> simp_all",
+      "minimal_family": "cases_simp",
+      "goal": "⊢ (x.orElse fun x => none) = x",
+      "option_vars": [
+        "x"
+      ],
+      "bool_vars": [],
+      "cases_simp_likely": true,
+      "state_snippet": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nδ : Type u_4\nx : Option α\n⊢ (x.orElse fun x => none) = x"
+    },
+    {
+      "full_name": "Option.pmap_bind",
+      "theorem_set": "cx3_option_cases_medium",
+      "raw_solved": false,
+      "wrapper_solved": false,
+      "wrapper_winning_tactic": null,
+      "cx3_minimal_tactic": "intros <;> cases x <;> simp_all",
+      "minimal_family": "cases_simp",
+      "goal": "⊢ pmap f (x >>= g) H = do",
+      "option_vars": [
+        "x"
+      ],
+      "bool_vars": [],
+      "cases_simp_likely": true,
+      "state_snippet": "α✝ : Type u_1\nβ✝ : Type u_2\nγ✝ : Type u_3\nδ : Type u_4\np✝ : α✝ → Prop\nf✝ : (a : α✝) → p✝ a → β✝\nx✝ : Option α✝\nα β γ : Type u_5\nx : Option α\ng : α → Option β\np : β → Prop\nf : (b : β) → p b → γ\nH : ∀ (a : β), a ∈ x >>= g → p a\nH' : ∀ (a : α) (b : β), b ∈ g a → b ∈ x >>= g\n⊢ pmap f (x >>= g) H = do\n    let a ← x\n    pmap f (g a) ⋯"
+    }
+  ]
+}

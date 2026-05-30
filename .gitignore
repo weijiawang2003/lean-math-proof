@@ -196,3 +196,98 @@ project/models/gen_v5_ns24_*_training.log
 project/data/ns24_int_minimal_omega_*.jsonl
 project/evolve/eval_runs/ns24_*.log
 project/evolve/eval_runs/ns24_*/
+
+# CX3 Bool/Option mining artifacts. CX3 is mining-only: no checkpoints
+# or training datasets are produced. The catalog/probe/relabel metadata
+# JSONs and reports ARE committed; eval traces, logs, and run dirs are
+# regeneratable via scripts/cx3_run_eval.sh and are not.
+project/evolve/eval_runs/cx3_*.log
+project/evolve/eval_runs/cx3_*/
+
+# WX1 state-aware Option-cases wrapper probe. No training/checkpoints.
+# The experimental wrapper configs (project/evolve/experiments/wx1/*.json),
+# scripts, probe/relabel/inventory metadata JSONs, and reports ARE
+# committed; eval traces, logs, and run dirs are not.
+project/evolve/eval_runs/wx1_*.log
+project/evolve/eval_runs/wx1_*/
+
+# WX2 state-aware cases-wrapper generalization. No training/checkpoints.
+# Experimental wrapper configs (project/evolve/experiments/wx2/*.json),
+# scripts, theorem-set config, metadata JSONs, and reports ARE committed;
+# eval traces, logs, and run dirs are not. (WX2 eval runs reuse the
+# wx1_* eval-run prefix, already ignored above; this covers wx2_* too.)
+project/evolve/eval_runs/wx2_*.log
+project/evolve/eval_runs/wx2_*/
+
+# AX2 symbolic-action dataset expansion. Mining + dataset construction +
+# readiness study; the optional Stage-7 classifier is an in-memory smoke
+# test (no artifact). Scripts, theorem-set config, metadata JSONs, and
+# reports ARE committed; eval traces/logs/run dirs (also covered by the
+# blanket eval_runs/ ignore) and the per-row label JSONL are not. No
+# checkpoints or classifier model artifacts are produced.
+project/evolve/eval_runs/ax2_*.log
+project/evolve/eval_runs/ax2_*/
+project/data/ax2_symbolic_label_dataset.jsonl
+
+# WX3 Multiset quotient-aware wrapper probe. No training/checkpoints.
+# Experimental wrapper configs (project/evolve/experiments/wx3/*.json),
+# scripts, theorem-set config (project/evolve/routing/wx3_theorem_sets.json),
+# metadata/label JSONs, and reports ARE committed; eval traces, logs, run
+# dirs, and the parallel-matrix driver log are not (also covered by the
+# blanket eval_runs/ ignore above).
+project/evolve/eval_runs/wx3_*.log
+project/evolve/eval_runs/wx3_*/
+
+# AX3 Multiset symbolic-action learning. Scripts, theorem-set config
+# (project/evolve/routing/ax3_theorem_sets.json), experiment config
+# (project/evolve/experiments/ax3/*.json), metadata JSONs, and reports ARE
+# committed; eval traces/logs/run dirs, the dataset JSONL, and the trained
+# classifier artifacts are NOT.
+project/evolve/eval_runs/ax3_*.log
+project/evolve/eval_runs/ax3_*/
+project/data/ax3_multiset_symbolic_dataset.jsonl
+project/models/ax3_multiset_symbolic_clf/
+
+# AX4 Multiset symbolic-label expansion to Green. Scripts, theorem-set config
+# (project/evolve/routing/ax4_theorem_sets.json), experiment config
+# (project/evolve/experiments/ax4/*.json), metadata JSONs, and reports ARE
+# committed; eval traces/logs/run dirs, the dataset JSONL, and the trained
+# v2 classifier artifacts are NOT.
+project/evolve/eval_runs/ax4_*.log
+project/evolve/eval_runs/ax4_*/
+project/data/ax4_multiset_symbolic_dataset.jsonl
+project/models/ax4_multiset_symbolic_clf/
+
+# SX1 symbolic sequence-search prototype. Schema/planner code, experimental
+# configs (project/evolve/experiments/sx1/*.json), theorem-set config
+# (project/evolve/routing/sx1_theorem_sets.json), scripts, metadata JSONs, and
+# reports ARE committed. SX1 is an offline trace-replay prototype (no training,
+# no checkpoints); any future live-Lean sequence eval runs/logs are local-only.
+project/evolve/eval_runs/sx1_*.log
+project/evolve/eval_runs/sx1_*/
+
+# MX1 live-Lean symbolic frontier mining. Scripts, theorem-set config
+# (project/evolve/routing/mx1_theorem_sets.json), experiment configs
+# (project/evolve/experiments/mx1/*.json), metadata JSONs, and reports ARE
+# committed. MX1 is signal-acquisition only (no training/checkpoints); the live
+# eval-run trace dirs, logs, and driver logs are local-only (also covered by the
+# blanket eval_runs/ ignore above).
+project/evolve/eval_runs/mx1_*.log
+project/evolve/eval_runs/mx1_*/
+
+# MX2 Set-aesop fallback experiment. Scripts, theorem-set config
+# (project/evolve/routing/mx2_theorem_sets.json), experiment configs
+# (project/evolve/experiments/mx2/*.json), metadata JSONs, and reports ARE
+# committed. MX2 is a wrapper/fallback probe (no training/checkpoints); live
+# eval-run trace dirs and logs are local-only (also covered by the blanket
+# eval_runs/ ignore above).
+project/evolve/eval_runs/mx2_*.log
+project/evolve/eval_runs/mx2_*/
+
+# RC1 production-stack consolidation. RC1 configs
+# (project/evolve/experiments/rc1/*.json), benchmark/ablation/preservation
+# metadata JSONs, reports, and the README update ARE committed. RC1 is a
+# composed config + benchmark (no training/checkpoints); the live RC1
+# confirmation trace dir and logs are local-only (blanket eval_runs/ ignore).
+project/evolve/eval_runs/rc1_*.log
+project/evolve/eval_runs/rc1_*/

@@ -1,0 +1,171 @@
+{
+  "trained": true,
+  "model": "TfidfVectorizer(char_wb 3-5) + LogisticRegression (balanced, C=4)",
+  "readiness": "GREEN",
+  "model_path": "project/models/ax4_multiset_symbolic_clf/model.joblib",
+  "classes": [
+    "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+    "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+    "NULL"
+  ],
+  "n_train": 202,
+  "n_heldout": 202,
+  "feature_ablation_cv": [
+    {
+      "feature_source": "name+state",
+      "folds": 5,
+      "top1": 0.896,
+      "per_class": {
+        "MULTISET_INDUCTION_SIMP[Multiset,simp]": {
+          "n": 5,
+          "recall": 0.8
+        },
+        "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": {
+          "n": 41,
+          "recall": 0.7073
+        },
+        "NULL": {
+          "n": 358,
+          "recall": 0.919
+        }
+      },
+      "positive_family_recall": 0.7174,
+      "null_false_positive_rate": 0.081
+    },
+    {
+      "feature_source": "name-only",
+      "folds": 5,
+      "top1": 0.8837,
+      "per_class": {
+        "MULTISET_INDUCTION_SIMP[Multiset,simp]": {
+          "n": 5,
+          "recall": 0.4
+        },
+        "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": {
+          "n": 41,
+          "recall": 0.561
+        },
+        "NULL": {
+          "n": 358,
+          "recall": 0.9274
+        }
+      },
+      "positive_family_recall": 0.5435,
+      "null_false_positive_rate": 0.0726
+    },
+    {
+      "feature_source": "state-only",
+      "folds": 5,
+      "top1": 0.8738,
+      "per_class": {
+        "MULTISET_INDUCTION_SIMP[Multiset,simp]": {
+          "n": 5,
+          "recall": 0.8
+        },
+        "MULTISET_INDUCTION_SIMP[Multiset,simp_all]": {
+          "n": 41,
+          "recall": 0.7561
+        },
+        "NULL": {
+          "n": 358,
+          "recall": 0.8883
+        }
+      },
+      "positive_family_recall": 0.7609,
+      "null_false_positive_rate": 0.1117
+    }
+  ],
+  "threshold_sweep": [
+    {
+      "threshold": 0.3,
+      "heldout_positive": {
+        "n": 12,
+        "fired": 7,
+        "hits_true_positive": 7
+      },
+      "heldout_multiset_null": {
+        "n": 152,
+        "fired": 11,
+        "hits_true_positive": 0
+      },
+      "control_non_multiset": {
+        "n": 53,
+        "fired": 0,
+        "hits_true_positive": 0
+      }
+    },
+    {
+      "threshold": 0.4,
+      "heldout_positive": {
+        "n": 12,
+        "fired": 7,
+        "hits_true_positive": 7
+      },
+      "heldout_multiset_null": {
+        "n": 152,
+        "fired": 11,
+        "hits_true_positive": 0
+      },
+      "control_non_multiset": {
+        "n": 53,
+        "fired": 0,
+        "hits_true_positive": 0
+      }
+    },
+    {
+      "threshold": 0.5,
+      "heldout_positive": {
+        "n": 12,
+        "fired": 7,
+        "hits_true_positive": 7
+      },
+      "heldout_multiset_null": {
+        "n": 152,
+        "fired": 7,
+        "hits_true_positive": 0
+      },
+      "control_non_multiset": {
+        "n": 53,
+        "fired": 0,
+        "hits_true_positive": 0
+      }
+    },
+    {
+      "threshold": 0.6,
+      "heldout_positive": {
+        "n": 12,
+        "fired": 5,
+        "hits_true_positive": 5
+      },
+      "heldout_multiset_null": {
+        "n": 152,
+        "fired": 1,
+        "hits_true_positive": 0
+      },
+      "control_non_multiset": {
+        "n": 53,
+        "fired": 0,
+        "hits_true_positive": 0
+      }
+    },
+    {
+      "threshold": 0.7,
+      "heldout_positive": {
+        "n": 12,
+        "fired": 3,
+        "hits_true_positive": 3
+      },
+      "heldout_multiset_null": {
+        "n": 152,
+        "fired": 0,
+        "hits_true_positive": 0
+      },
+      "control_non_multiset": {
+        "n": 53,
+        "fired": 0,
+        "hits_true_positive": 0
+      }
+    }
+  ],
+  "note": "control firing is raw; the wrapper namespace-gates emission to Multiset so effective non-Multiset FP = 0."
+}

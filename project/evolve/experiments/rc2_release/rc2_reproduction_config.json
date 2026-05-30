@@ -1,0 +1,26 @@
+{
+  "rc2_production_wrapper": "project/evolve/experiments/rc2_release/rc2_production_wrapper.json",
+  "route_config": "project/evolve/routing/ns24_router.json",
+  "policy_type": "hybrid_evolved",
+  "top_k": 8,
+  "max_steps": 8,
+  "eval_entry": "eval_rollout_all.py (registered theorem sets) / scripts/sf1_run_eval.py (file theorem sets)",
+  "canonical_floors": {
+    "demo_v1": [
+      11,
+      15
+    ],
+    "nat_defs_medium": [
+      37,
+      38
+    ],
+    "nat_defs_large_v5": [
+      49,
+      65
+    ]
+  },
+  "set_ite_validation_sets": "project/evolve/experiments/rc2_candidates/set_ite_simp/theorem_sets/",
+  "benchmark_manifest": "project/evolve/experiments/rc2/rc2_benchmark_manifest.json",
+  "authoritative_solved_key": "per_theorem.finished",
+  "note": "RC1/NS24 untouched; RC2 differs from RC1 only on theorems whose name starts with 'Set.ite'."
+}

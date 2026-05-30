@@ -1,0 +1,103 @@
+{
+  "stage": "WX3 Stage 5 — Multiset wrapper syntax smoke test",
+  "config": "project/evolve/experiments/wx3/wx3_multiset_combined_safe.json",
+  "theorem_set": "wx3_multiset_smoke",
+  "router": "project/evolve/routing/ns24_router.json",
+  "n_theorems": 8,
+  "proved": 2,
+  "errored": 6,
+  "proved_by_origin": {
+    "generative_topk": 1,
+    "wrapper_symbolic_action": 1
+  },
+  "family_proved_counts": {
+    "multiset_induction_simp_all": 1
+  },
+  "crashes": 0,
+  "syntax_failures_observed": 0,
+  "outcome": "PASS — Multiset symbolic tactics syntactically accepted by Lean; no crashes; emissions correctly tagged wrapper_symbolic_action with multiset_* family_source; `induction {var} using Multiset.induction_on <;> simp_all` and `ext x <;> simp_all` parse and run; one win via multiset_induction_simp_all confirms the action can close goals.",
+  "emitted_tactic_forms_seen": [
+    "induction s using Multiset.induction_on <;> simp_all",
+    "induction x using Multiset.induction_on <;> simp_all",
+    "induction y using Multiset.induction_on <;> simp_all",
+    "induction z using Multiset.induction_on <;> simp_all"
+  ],
+  "per_theorem": [
+    {
+      "full_name": "Multiset.add_sigma",
+      "proved": false,
+      "winning_tactic": null,
+      "winning_origin": null,
+      "winning_family": null,
+      "multiset_tactics_emitted": [
+        "induction s using Multiset.induction_on <;> simp_all"
+      ]
+    },
+    {
+      "full_name": "Multiset.card_nsmul",
+      "proved": true,
+      "winning_tactic": "simp [Nat.mul_zero]",
+      "winning_origin": "generative_topk",
+      "winning_family": null,
+      "multiset_tactics_emitted": []
+    },
+    {
+      "full_name": "Multiset.add_bind",
+      "proved": false,
+      "winning_tactic": null,
+      "winning_origin": null,
+      "winning_family": null,
+      "multiset_tactics_emitted": [
+        "induction s using Multiset.induction_on <;> simp_all"
+      ]
+    },
+    {
+      "full_name": "Multiset.add_cons",
+      "proved": false,
+      "winning_tactic": null,
+      "winning_origin": null,
+      "winning_family": null,
+      "multiset_tactics_emitted": [
+        "induction s using Multiset.induction_on <;> simp_all"
+      ]
+    },
+    {
+      "full_name": "Multiset.add_eq_union_right_of_le",
+      "proved": false,
+      "winning_tactic": null,
+      "winning_origin": null,
+      "winning_family": null,
+      "multiset_tactics_emitted": [
+        "induction x using Multiset.induction_on <;> simp_all",
+        "induction y using Multiset.induction_on <;> simp_all",
+        "induction z using Multiset.induction_on <;> simp_all"
+      ]
+    },
+    {
+      "full_name": "Multiset.add_inter_distrib",
+      "proved": true,
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "winning_origin": "wrapper_symbolic_action",
+      "winning_family": "multiset_induction_simp_all",
+      "multiset_tactics_emitted": [
+        "induction s using Multiset.induction_on <;> simp_all"
+      ]
+    },
+    {
+      "full_name": "Multiset.strongDownwardInduction_eq",
+      "proved": false,
+      "winning_tactic": null,
+      "winning_origin": null,
+      "winning_family": null,
+      "multiset_tactics_emitted": []
+    },
+    {
+      "full_name": "Multiset.strongInductionOn_eq",
+      "proved": false,
+      "winning_tactic": null,
+      "winning_origin": null,
+      "winning_family": null,
+      "multiset_tactics_emitted": []
+    }
+  ]
+}

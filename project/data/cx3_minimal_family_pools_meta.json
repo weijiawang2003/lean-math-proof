@@ -1,0 +1,795 @@
+{
+  "training_gate_unique_required": 5,
+  "gate_basis": "wrapper-only wins == 0 on Bool/Option (raw routed model already solves everything the NS9 wrapper does), so the wrapper-only gate is empty. Headroom = currently-unsolved theorems closed by a short tactic from the initial state \u2014 the only set a NS25 specialist could newly capture.",
+  "total_relabeled": 83,
+  "resolved_by_battery": 59,
+  "unresolved_by_battery": [
+    "Bool.exists_bool",
+    "Bool.forall_bool",
+    "Bool.not_ne_id",
+    "Option.casesOn'_none_coe",
+    "Option.elim_none_some",
+    "Option.get_map",
+    "Option.guard_eq_some'",
+    "Option.map_comm",
+    "Option.mem_pmem",
+    "Option.mem_toList",
+    "Option.orElse_eq_none",
+    "Option.orElse_eq_some",
+    "Option.Mem.leftUnique",
+    "Option.choice_eq_none",
+    "Option.iget_mem",
+    "Option.liftOrGet_choice",
+    "Option.map_eq_id",
+    "Option.map_inj",
+    "Option.map_injective",
+    "Option.map_injective'",
+    "Option.map_uncurry",
+    "Option.orElse_eq_none'",
+    "Option.orElse_eq_some'",
+    "Option.some_injective"
+  ],
+  "headroom_total": 16,
+  "headroom_gate_met": true,
+  "headroom_gate_families": [
+    "cases_simp|Option"
+  ],
+  "headroom_pools": {
+    "cases_simp|Option": {
+      "minimal_family": "cases_simp",
+      "namespace": "Option",
+      "unique_count": 13,
+      "trainable": true,
+      "recommended_oversample_factor": 2,
+      "theorems": {
+        "Option.bnot_isNone": {
+          "minimal_tactic": "intros <;> cases a <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.bnot_isSome": {
+          "minimal_tactic": "intros <;> cases a <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.casesOn'_eq_elim": {
+          "minimal_tactic": "intros <;> cases a <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.elim'_eq_elim": {
+          "minimal_tactic": "intros <;> cases a <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.elim_apply": {
+          "minimal_tactic": "intros <;> cases i <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.elim_comp": {
+          "minimal_tactic": "intros <;> cases i <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.isSome_map": {
+          "minimal_tactic": "intros <;> cases o <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.orElse_none'": {
+          "minimal_tactic": "intros <;> cases x <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.bind_congr'": {
+          "minimal_tactic": "intros <;> cases y <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.map_bind": {
+          "minimal_tactic": "intros <;> cases x <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.map_bind'": {
+          "minimal_tactic": "intros <;> cases x <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.pmap_bind": {
+          "minimal_tactic": "intros <;> cases x <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.eq_none_or_eq_some": {
+          "minimal_tactic": "intros <;> cases a <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        }
+      }
+    },
+    "fallback_rfl|Option": {
+      "minimal_family": "fallback_rfl",
+      "namespace": "Option",
+      "unique_count": 2,
+      "trainable": false,
+      "recommended_oversample_factor": 15,
+      "theorems": {
+        "Option.elim'_none": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.elim'_some": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        }
+      }
+    },
+    "aesop|Bool": {
+      "minimal_family": "aesop",
+      "namespace": "Bool",
+      "unique_count": 1,
+      "trainable": false,
+      "recommended_oversample_factor": 20,
+      "theorems": {
+        "Bool.univ_eq": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        }
+      }
+    }
+  },
+  "already_solved_pools": {
+    "fallback_rfl|Option": {
+      "minimal_family": "fallback_rfl",
+      "namespace": "Option",
+      "unique_count": 18,
+      "trainable": true,
+      "recommended_oversample_factor": 2,
+      "theorems": {
+        "Option.getD_default_eq_iget": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.none_orElse'": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.bind_eq_bind'": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.none_bind'": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "simp [Nat.one_mul]"
+        },
+        "Option.some_bind'": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.casesOn'_coe": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.casesOn'_none": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.casesOn'_some": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.coe_def": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.iget_some": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "simp [List.length_cons]"
+        },
+        "Option.joinM_eq_join": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.map_coe": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "simp [Nat.mul_one]"
+        },
+        "Option.map_coe'": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "simp [Nat.mul_one]"
+        },
+        "Option.map_comp_some": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pmap_none": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pmap_some": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.seq_some": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.some_orElse'": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        }
+      }
+    },
+    "aesop|Option": {
+      "minimal_family": "aesop",
+      "namespace": "Option",
+      "unique_count": 14,
+      "trainable": true,
+      "recommended_oversample_factor": 2,
+      "theorems": {
+        "Option.bnot_comp_isNone": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.bnot_comp_isSome": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.join_pmap_eq_pmap_join": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pbind_eq_none": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pbind_eq_some": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pmap_eq_map": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pmap_eq_none_iff": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pmap_eq_some_iff": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.bind_pmap": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.map_pbind": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pbind_eq_bind": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pbind_map": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.map_pmap": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pmap_map": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        }
+      }
+    },
+    "simp_other|Option": {
+      "minimal_family": "simp_other",
+      "namespace": "Option",
+      "unique_count": 7,
+      "trainable": true,
+      "recommended_oversample_factor": 5,
+      "theorems": {
+        "Option.exists_mem_map": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.forall_mem_map": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.isNone_eq_false_iff": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.mem_map": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.mem_some_iff": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "simp [Nat.zero_mul]"
+        },
+        "Option.coe_get": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.iget_of_mem": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        }
+      }
+    },
+    "fallback_rfl|Bool": {
+      "minimal_family": "fallback_rfl",
+      "namespace": "Bool",
+      "unique_count": 1,
+      "trainable": false,
+      "recommended_oversample_factor": 20,
+      "theorems": {
+        "Bool.false_lt_true": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "trivial"
+        }
+      }
+    },
+    "simp_other|Bool": {
+      "minimal_family": "simp_other",
+      "namespace": "Bool",
+      "unique_count": 1,
+      "trainable": false,
+      "recommended_oversample_factor": 20,
+      "theorems": {
+        "Bool.ne_not": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "simp [List.map]"
+        }
+      }
+    },
+    "aesop|Bool": {
+      "minimal_family": "aesop",
+      "namespace": "Bool",
+      "unique_count": 1,
+      "trainable": false,
+      "recommended_oversample_factor": 20,
+      "theorems": {
+        "Bool.range_eq": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        }
+      }
+    },
+    "simp_all|Option": {
+      "minimal_family": "simp_all",
+      "namespace": "Option",
+      "unique_count": 1,
+      "trainable": false,
+      "recommended_oversample_factor": 20,
+      "theorems": {
+        "Option.eq_of_mem_of_mem": {
+          "minimal_tactic": "simp_all",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        }
+      }
+    }
+  },
+  "all_resolved_pools": {
+    "fallback_rfl|Option": {
+      "minimal_family": "fallback_rfl",
+      "namespace": "Option",
+      "unique_count": 20,
+      "trainable": true,
+      "recommended_oversample_factor": 2,
+      "theorems": {
+        "Option.getD_default_eq_iget": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.none_orElse'": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.bind_eq_bind'": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.none_bind'": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "simp [Nat.one_mul]"
+        },
+        "Option.some_bind'": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.casesOn'_coe": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.casesOn'_none": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.casesOn'_some": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.coe_def": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.elim'_none": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.elim'_some": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.iget_some": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "simp [List.length_cons]"
+        },
+        "Option.joinM_eq_join": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.map_coe": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "simp [Nat.mul_one]"
+        },
+        "Option.map_coe'": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "simp [Nat.mul_one]"
+        },
+        "Option.map_comp_some": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pmap_none": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pmap_some": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.seq_some": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.some_orElse'": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        }
+      }
+    },
+    "aesop|Option": {
+      "minimal_family": "aesop",
+      "namespace": "Option",
+      "unique_count": 14,
+      "trainable": true,
+      "recommended_oversample_factor": 2,
+      "theorems": {
+        "Option.bnot_comp_isNone": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.bnot_comp_isSome": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.join_pmap_eq_pmap_join": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pbind_eq_none": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pbind_eq_some": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pmap_eq_map": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pmap_eq_none_iff": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pmap_eq_some_iff": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.bind_pmap": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.map_pbind": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pbind_eq_bind": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pbind_map": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.map_pmap": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.pmap_map": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        }
+      }
+    },
+    "cases_simp|Option": {
+      "minimal_family": "cases_simp",
+      "namespace": "Option",
+      "unique_count": 13,
+      "trainable": true,
+      "recommended_oversample_factor": 2,
+      "theorems": {
+        "Option.bnot_isNone": {
+          "minimal_tactic": "intros <;> cases a <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.bnot_isSome": {
+          "minimal_tactic": "intros <;> cases a <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.casesOn'_eq_elim": {
+          "minimal_tactic": "intros <;> cases a <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.elim'_eq_elim": {
+          "minimal_tactic": "intros <;> cases a <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.elim_apply": {
+          "minimal_tactic": "intros <;> cases i <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.elim_comp": {
+          "minimal_tactic": "intros <;> cases i <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.isSome_map": {
+          "minimal_tactic": "intros <;> cases o <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.orElse_none'": {
+          "minimal_tactic": "intros <;> cases x <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.bind_congr'": {
+          "minimal_tactic": "intros <;> cases y <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.map_bind": {
+          "minimal_tactic": "intros <;> cases x <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.map_bind'": {
+          "minimal_tactic": "intros <;> cases x <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.pmap_bind": {
+          "minimal_tactic": "intros <;> cases x <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        },
+        "Option.eq_none_or_eq_some": {
+          "minimal_tactic": "intros <;> cases a <;> simp_all",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        }
+      }
+    },
+    "simp_other|Option": {
+      "minimal_family": "simp_other",
+      "namespace": "Option",
+      "unique_count": 7,
+      "trainable": true,
+      "recommended_oversample_factor": 5,
+      "theorems": {
+        "Option.exists_mem_map": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.forall_mem_map": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.isNone_eq_false_iff": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.mem_map": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.mem_some_iff": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "simp [Nat.zero_mul]"
+        },
+        "Option.coe_get": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Option.iget_of_mem": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        }
+      }
+    },
+    "aesop|Bool": {
+      "minimal_family": "aesop",
+      "namespace": "Bool",
+      "unique_count": 2,
+      "trainable": false,
+      "recommended_oversample_factor": 15,
+      "theorems": {
+        "Bool.range_eq": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        },
+        "Bool.univ_eq": {
+          "minimal_tactic": "aesop",
+          "currently_solved_raw": false,
+          "wrapper_tactic": ""
+        }
+      }
+    },
+    "fallback_rfl|Bool": {
+      "minimal_family": "fallback_rfl",
+      "namespace": "Bool",
+      "unique_count": 1,
+      "trainable": false,
+      "recommended_oversample_factor": 20,
+      "theorems": {
+        "Bool.false_lt_true": {
+          "minimal_tactic": "rfl",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "trivial"
+        }
+      }
+    },
+    "simp_other|Bool": {
+      "minimal_family": "simp_other",
+      "namespace": "Bool",
+      "unique_count": 1,
+      "trainable": false,
+      "recommended_oversample_factor": 20,
+      "theorems": {
+        "Bool.ne_not": {
+          "minimal_tactic": "simp",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "simp [List.map]"
+        }
+      }
+    },
+    "simp_all|Option": {
+      "minimal_family": "simp_all",
+      "namespace": "Option",
+      "unique_count": 1,
+      "trainable": false,
+      "recommended_oversample_factor": 20,
+      "theorems": {
+        "Option.eq_of_mem_of_mem": {
+          "minimal_tactic": "simp_all",
+          "currently_solved_raw": true,
+          "wrapper_tactic": "aesop"
+        }
+      }
+    }
+  }
+}

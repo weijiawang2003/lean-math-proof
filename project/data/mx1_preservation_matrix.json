@@ -1,0 +1,92 @@
+{
+  "description": "MX1 Stage 7 — preservation matrix for the extended Set/Finset/Multiset symbolic wrapper (combined config).",
+  "gated_namespaces": [
+    "Finset",
+    "Multiset",
+    "Set"
+  ],
+  "config": "project/evolve/experiments/mx1/mx1_combined_symbolic_frontier_safe.json",
+  "per_set": [
+    {
+      "set": "demo_v1",
+      "n_theorems": 15,
+      "static_emissions_gated_ns": 14,
+      "static_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": "11/15",
+      "live_E_wins": null,
+      "live_B_wins": null,
+      "live_regressions": null
+    },
+    {
+      "set": "nat_defs_medium",
+      "n_theorems": 38,
+      "static_emissions_gated_ns": 0,
+      "static_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": "37/38",
+      "live_E_wins": null,
+      "live_B_wins": null,
+      "live_regressions": null
+    },
+    {
+      "set": "nat_defs_large_v5",
+      "n_theorems": 64,
+      "static_emissions_gated_ns": 0,
+      "static_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": "49/65",
+      "live_E_wins": null,
+      "live_B_wins": null,
+      "live_regressions": null
+    },
+    {
+      "set": "ns17_set_extra",
+      "n_theorems": 30,
+      "static_emissions_gated_ns": 30,
+      "static_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": null,
+      "live_E_wins": 19,
+      "live_B_wins": 18,
+      "live_regressions": 0
+    },
+    {
+      "set": "ns17_finset_extra",
+      "n_theorems": 30,
+      "static_emissions_gated_ns": 29,
+      "static_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": null,
+      "live_E_wins": 15,
+      "live_B_wins": 15,
+      "live_regressions": 0
+    },
+    {
+      "set": "wx2_list_cases_easy",
+      "n_theorems": 38,
+      "static_emissions_gated_ns": 0,
+      "static_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": null,
+      "live_E_wins": null,
+      "live_B_wins": null,
+      "live_regressions": null
+    },
+    {
+      "set": "ax4_multiset_induction_heldout",
+      "n_theorems": 45,
+      "static_emissions_gated_ns": 34,
+      "static_emissions_offgate_ns": 0,
+      "offgate_examples": [],
+      "ns9_floor": null,
+      "live_E_wins": null,
+      "live_B_wins": null,
+      "live_regressions": null
+    }
+  ],
+  "total_offgate_emissions": 0,
+  "zero_offgate_emissions": true,
+  "live_regressions_total": 0,
+  "note": "Set/Finset/Multiset are now gated symbolic families, so static emissions on Set/Finset preservation sets are EXPECTED and additive; the preservation guarantees are (a) 0 emissions on off-gate namespaces (Nat/Int), and (b) 0 live regressions (symbolic actions are additive to the NS9 ranked list)."
+}

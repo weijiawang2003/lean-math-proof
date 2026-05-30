@@ -1,0 +1,3074 @@
+{
+  "config": "comb",
+  "relabel_results": [
+    {
+      "full_name": "Multiset.card_sigma",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_simp_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "s",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.finite_toSet_toFinset",
+      "file_path": "Mathlib/Data/Set/Finite.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_simp_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "aesop",
+      "wrapper_origin": "generative_topk",
+      "wrapper_family": null,
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": true
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "aesop",
+      "minimal_family": "aesop",
+      "minimal_var": null,
+      "minimal_action_id": null,
+      "minimal_is_name_free": true,
+      "symbolic_action_needed": false,
+      "single_shot_symbolic": false,
+      "multi_step_assisted": false,
+      "wrapper_ready": false,
+      "sft_ready": false,
+      "symbolic_in_winning_path": false,
+      "final_label": "NON_SYMBOLIC[aesop]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.le_inf",
+      "file_path": "Mathlib/Data/Multiset/Lattice.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_simp_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "s",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.map_eq_zero",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_simp_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp",
+      "minimal_family": "multiset_induction_simp",
+      "minimal_var": "s",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.bind_assoc",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "s",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.bind_bind",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases m <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases n <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases m <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases n <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction m using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction n using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction m using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction n using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "m",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.bind_congr",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases m <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases m <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction m using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction m using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "m",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.bind_map",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases m <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases m <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction m using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction m using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "m",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.bind_map_comm",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases m <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases n <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases m <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases n <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction m using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction n using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction m using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction n using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "m",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.bind_singleton",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "s",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.bind_zero",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "s",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.card_bind",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "s",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.card_join",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction S using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases S <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases S <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction S using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction S using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "induction S using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "S",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.count_sum",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases m <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases m <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction m using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction m using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "m",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.disjoint_map_map",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "aesop",
+      "wrapper_origin": "generative_topk",
+      "wrapper_family": null,
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "wrapper_original",
+          "kind": "raw_fallback",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": null,
+      "minimal_family": null,
+      "minimal_var": null,
+      "minimal_action_id": null,
+      "minimal_is_name_free": null,
+      "symbolic_action_needed": null,
+      "single_shot_symbolic": false,
+      "multi_step_assisted": false,
+      "wrapper_ready": false,
+      "sft_ready": false,
+      "symbolic_in_winning_path": false,
+      "final_label": "MULTISTEP_NONSYMBOLIC",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.disjoint_union_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "wrapper_original",
+          "kind": "raw_fallback",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": null,
+      "minimal_family": null,
+      "minimal_var": null,
+      "minimal_action_id": null,
+      "minimal_is_name_free": null,
+      "symbolic_action_needed": null,
+      "single_shot_symbolic": false,
+      "multi_step_assisted": true,
+      "wrapper_ready": false,
+      "sft_ready": false,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISTEP_SYMBOLIC[multiset_induction_simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.map_bind",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases m <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases m <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction m using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction m using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "m",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.product_zero",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_induction_easy",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "s",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.add_inter_distrib",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_ext_medium",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "s",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.foldr_induction'",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_quotient_medium",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "s",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.map_join",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_quotient_medium",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction S using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases S <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases S <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction S using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction S using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "induction S using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "S",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.card_eq_zero",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_mixed",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": true
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp",
+      "minimal_family": "multiset_induction_simp",
+      "minimal_var": "s",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_mixed",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "aesop",
+      "wrapper_origin": "generative_topk",
+      "wrapper_family": null,
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases t <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction t using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "wrapper_original",
+          "kind": "raw_fallback",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": null,
+      "minimal_family": null,
+      "minimal_var": null,
+      "minimal_action_id": null,
+      "minimal_is_name_free": null,
+      "symbolic_action_needed": null,
+      "single_shot_symbolic": false,
+      "multi_step_assisted": false,
+      "wrapper_ready": false,
+      "sft_ready": false,
+      "symbolic_in_winning_path": false,
+      "final_label": "MULTISTEP_NONSYMBOLIC",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.eq_zero_of_forall_not_mem",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_mixed",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "wrapper_original",
+          "kind": "raw_fallback",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": null,
+      "minimal_family": null,
+      "minimal_var": null,
+      "minimal_action_id": null,
+      "minimal_is_name_free": null,
+      "symbolic_action_needed": null,
+      "single_shot_symbolic": false,
+      "multi_step_assisted": true,
+      "wrapper_ready": false,
+      "sft_ready": false,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISTEP_SYMBOLIC[multiset_induction_simp_all]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "Multiset.sup_le",
+      "file_path": "Mathlib/Data/Multiset/Lattice.lean",
+      "namespace": "Multiset",
+      "set": "wx3_multiset_mixed",
+      "raw_solved": false,
+      "ns9_solved": false,
+      "wx3_solved": true,
+      "wrapper_winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "wrapper_family": "multiset_induction_simp_all",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "family": "multiset_ext_simp",
+          "action_id": "EXT_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "family": "multiset_ext_simp_all",
+          "action_id": "EXT_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp",
+          "family": "multiset_cases_simp",
+          "action_id": "CASES_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases s <;> simp_all",
+          "family": "multiset_cases_simp_all",
+          "action_id": "CASES_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp",
+          "family": "multiset_induction_simp",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction s using Multiset.induction_on <;> simp_all",
+          "family": "multiset_induction_simp_all",
+          "action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+          "kind": "symbolic",
+          "finished": true
+        }
+      ],
+      "minimal_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "minimal_family": "multiset_induction_simp_all",
+      "minimal_var": "s",
+      "minimal_action_id": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "minimal_is_name_free": false,
+      "symbolic_action_needed": true,
+      "single_shot_symbolic": true,
+      "multi_step_assisted": false,
+      "wrapper_ready": true,
+      "sft_ready": true,
+      "symbolic_in_winning_path": true,
+      "final_label": "MULTISET_INDUCTION_SIMP[Multiset,simp_all]",
+      "dojo_status": "ok"
+    }
+  ]
+}

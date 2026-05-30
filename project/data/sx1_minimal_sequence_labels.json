@@ -1,0 +1,59 @@
+{
+  "description": "SX1 Stage 7 — minimal relabeling of depth-2 sequence-assisted wins (offline, trace-replay).",
+  "n_cases": 5,
+  "by_classification": {
+    "genuinely_sequence_needed": 5
+  },
+  "labels": [
+    {
+      "theorem": "Multiset.mem_sigma",
+      "namespace": "Multiset",
+      "source_arc": "AX4",
+      "first_symbolic_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "closing_tactic": "aesop",
+      "closing_tactic_origin": "generative_topk",
+      "classification": "genuinely_sequence_needed",
+      "minimal_closer": "aesop"
+    },
+    {
+      "theorem": "Multiset.mem_add",
+      "namespace": "Multiset",
+      "source_arc": "AX4",
+      "first_symbolic_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "closing_tactic": "aesop",
+      "closing_tactic_origin": "generative_topk",
+      "classification": "genuinely_sequence_needed",
+      "minimal_closer": "aesop"
+    },
+    {
+      "theorem": "Multiset.mem_map",
+      "namespace": "Multiset",
+      "source_arc": "AX4",
+      "first_symbolic_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "closing_tactic": "aesop",
+      "closing_tactic_origin": "generative_topk",
+      "classification": "genuinely_sequence_needed",
+      "minimal_closer": "aesop"
+    },
+    {
+      "theorem": "List.headI_dedup",
+      "namespace": "List",
+      "source_arc": "AX2",
+      "first_symbolic_tactic": "cases l <;> simp_all",
+      "closing_tactic": "cases l <;> simp_all",
+      "closing_tactic_origin": "wrapper_symbolic_action",
+      "classification": "genuinely_sequence_needed",
+      "minimal_closer": "cases l <;> simp_all"
+    },
+    {
+      "theorem": "List.tail_dedup",
+      "namespace": "List",
+      "source_arc": "AX2",
+      "first_symbolic_tactic": "cases l <;> simp_all",
+      "closing_tactic": "cases l <;> simp_all",
+      "closing_tactic_origin": "wrapper_symbolic_action",
+      "classification": "genuinely_sequence_needed",
+      "minimal_closer": "cases l <;> simp_all"
+    }
+  ]
+}

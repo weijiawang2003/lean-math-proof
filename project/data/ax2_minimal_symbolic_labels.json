@@ -1,0 +1,302 @@
+{
+  "relabel_results": [
+    {
+      "full_name": "List.headI_dedup",
+      "file_path": "Mathlib/Data/List/Dedup.lean",
+      "namespace": "List",
+      "wrapper_winning_tactic": "cases l <;> simp_all",
+      "wrapper_action_id": "CASES_SIMP[List,simp_all]",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp",
+          "family": "symbolic_list_cases_simp",
+          "action_id": "CASES_SIMP[List,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp_all",
+          "family": "symbolic_list_cases_simp_all",
+          "action_id": "CASES_SIMP[List,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction l <;> simp",
+          "family": "symbolic_list_induction_simp",
+          "action_id": "INDUCTION_SIMP[List,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction l <;> simp_all",
+          "family": "symbolic_list_induction_simp_all",
+          "action_id": "INDUCTION_SIMP[List,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp_all",
+          "family": "wrapper_original",
+          "kind": "raw_fallback",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": null,
+      "minimal_family": null,
+      "minimal_var": null,
+      "minimal_is_short_token": null,
+      "minimal_symbolic_action_id": null,
+      "symbolic_action_needed": null,
+      "single_shot_closable": false,
+      "symbolic_in_winning_path": true,
+      "final_training_label": "MULTISTEP_SYMBOLIC[CASES_SIMP[List,simp_all]]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "List.tail_dedup",
+      "file_path": "Mathlib/Data/List/Dedup.lean",
+      "namespace": "List",
+      "wrapper_winning_tactic": "cases l <;> simp_all",
+      "wrapper_action_id": "CASES_SIMP[List,simp_all]",
+      "wrapper_origin": "wrapper_symbolic_action",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp",
+          "family": "symbolic_list_cases_simp",
+          "action_id": "CASES_SIMP[List,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp_all",
+          "family": "symbolic_list_cases_simp_all",
+          "action_id": "CASES_SIMP[List,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction l <;> simp",
+          "family": "symbolic_list_induction_simp",
+          "action_id": "INDUCTION_SIMP[List,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction l <;> simp_all",
+          "family": "symbolic_list_induction_simp_all",
+          "action_id": "INDUCTION_SIMP[List,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases l <;> simp_all",
+          "family": "wrapper_original",
+          "kind": "raw_fallback",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": null,
+      "minimal_family": null,
+      "minimal_var": null,
+      "minimal_is_short_token": null,
+      "minimal_symbolic_action_id": null,
+      "symbolic_action_needed": null,
+      "single_shot_closable": false,
+      "symbolic_in_winning_path": true,
+      "final_training_label": "MULTISTEP_SYMBOLIC[CASES_SIMP[List,simp_all]]",
+      "dojo_status": "ok"
+    },
+    {
+      "full_name": "List.zipLeft_nil_right",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "wrapper_winning_tactic": "aesop",
+      "wrapper_action_id": null,
+      "wrapper_origin": "generative_topk",
+      "battery_results": [
+        {
+          "tactic": "assumption",
+          "family": "assumption",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "rfl",
+          "family": "fallback_rfl",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "decide",
+          "family": "fallback_decide",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp",
+          "family": "simp_other",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "simp_all",
+          "family": "simp_all",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "aesop",
+          "kind": "name_free",
+          "finished": false
+        },
+        {
+          "tactic": "cases as <;> simp",
+          "family": "symbolic_list_cases_simp",
+          "action_id": "CASES_SIMP[List,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp",
+          "family": "symbolic_list_cases_simp",
+          "action_id": "CASES_SIMP[List,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases as <;> simp_all",
+          "family": "symbolic_list_cases_simp_all",
+          "action_id": "CASES_SIMP[List,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "cases l₁ <;> simp_all",
+          "family": "symbolic_list_cases_simp_all",
+          "action_id": "CASES_SIMP[List,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction as <;> simp",
+          "family": "symbolic_list_induction_simp",
+          "action_id": "INDUCTION_SIMP[List,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp",
+          "family": "symbolic_list_induction_simp",
+          "action_id": "INDUCTION_SIMP[List,simp]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction as <;> simp_all",
+          "family": "symbolic_list_induction_simp_all",
+          "action_id": "INDUCTION_SIMP[List,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "induction l₁ <;> simp_all",
+          "family": "symbolic_list_induction_simp_all",
+          "action_id": "INDUCTION_SIMP[List,simp_all]",
+          "kind": "symbolic",
+          "finished": false
+        },
+        {
+          "tactic": "aesop",
+          "family": "wrapper_original",
+          "kind": "raw_fallback",
+          "finished": false
+        }
+      ],
+      "minimal_tactic": null,
+      "minimal_family": null,
+      "minimal_var": null,
+      "minimal_is_short_token": null,
+      "minimal_symbolic_action_id": null,
+      "symbolic_action_needed": null,
+      "single_shot_closable": false,
+      "symbolic_in_winning_path": false,
+      "final_training_label": "MULTISTEP_NONSYMBOLIC",
+      "dojo_status": "ok"
+    }
+  ]
+}
