@@ -1,0 +1,57 @@
+{
+  "name": "sx3_canonical_smoke",
+  "description": "Small canonical regression-floor sample (non-Set).",
+  "provenance": "rc2_candidates set_ite_canonical_smoke",
+  "cases": [
+    {
+      "full_name": "Nat.add_zero",
+      "file_path": null,
+      "namespace": "Nat",
+      "source": "demo_v1",
+      "role": "canonical_smoke",
+      "shape": "non_set",
+      "known_rc2_status_finished": null,
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Nat.zero_add",
+      "file_path": null,
+      "namespace": "Nat",
+      "source": "demo_v1",
+      "role": "canonical_smoke",
+      "shape": "non_set",
+      "known_rc2_status_finished": null,
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Nat.succ_le_succ",
+      "file_path": null,
+      "namespace": "Nat",
+      "source": "nat_defs_medium",
+      "role": "canonical_smoke",
+      "shape": "non_set",
+      "known_rc2_status_finished": null,
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Bool.and_self",
+      "file_path": null,
+      "namespace": "Bool",
+      "source": "demo_v1",
+      "role": "canonical_smoke",
+      "shape": "non_set",
+      "known_rc2_status_finished": null,
+      "exclude_reason": null
+    },
+    {
+      "full_name": "List.append_nil",
+      "file_path": null,
+      "namespace": "List",
+      "source": "demo_v1",
+      "role": "canonical_smoke",
+      "shape": "non_set",
+      "known_rc2_status_finished": null,
+      "exclude_reason": null
+    }
+  ]
+}

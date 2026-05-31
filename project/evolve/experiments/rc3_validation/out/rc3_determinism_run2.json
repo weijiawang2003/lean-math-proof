@@ -1,0 +1,318 @@
+{
+  "policy": "rc3_det_run2",
+  "strategy_config": "project/evolve/experiments/rc3_validation/rc3_candidate_wrapper.json",
+  "route_config": "project/evolve/routing/ns24_router.json",
+  "policy_type": "hybrid_evolved",
+  "top_k": 8,
+  "max_steps": 8,
+  "theorem_sets": [
+    "project/evolve/experiments/rc3_validation/theorem_sets/sx3_known_deferred.json",
+    "project/evolve/experiments/rc3_validation/theorem_sets/sx3_fresh_win.json",
+    "project/evolve/experiments/rc3_validation/theorem_sets/sx3_set_ite_holdout.json"
+  ],
+  "num_theorems": 17,
+  "num_finished": 13,
+  "num_available": 17,
+  "return_code": 0,
+  "metrics_path": "project/evolve/experiments/rc3_validation/out/determinism_run2_runs/eval-32107c39/metrics.json",
+  "trace_path": "project/evolve/experiments/rc3_validation/out/determinism_run2_runs/eval-32107c39/traces.jsonl",
+  "run_dir": "project/evolve/experiments/rc3_validation/out/determinism_run2_runs/eval-32107c39",
+  "per_theorem": [
+    {
+      "full_name": "Set.ite_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "deferred_known",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "error_message": null,
+      "num_steps": 2,
+      "tactics_used": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "winning_tactic": "aesop",
+      "winning_tactic_origin": "generative_topk",
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "deferred_known",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "error_message": null,
+      "num_steps": 2,
+      "tactics_used": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "winning_tactic": "aesop",
+      "winning_tactic_origin": "generative_topk",
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.ite_compl",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "deferred_known",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "error_message": null,
+      "num_steps": 2,
+      "tactics_used": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "winning_tactic": "aesop",
+      "winning_tactic_origin": "generative_topk",
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.ite_inter_compl_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "deferred_known",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "error_message": null,
+      "num_steps": 2,
+      "tactics_used": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "winning_tactic": "aesop",
+      "winning_tactic_origin": "generative_topk",
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.ite_inter_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "fresh_win",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "error_message": null,
+      "num_steps": 2,
+      "tactics_used": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "winning_tactic": "aesop",
+      "winning_tactic_origin": "generative_topk",
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "fresh_holdout",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "error_message": "All top-13 tactics errored at step 2",
+      "num_steps": 2,
+      "tactics_used": [
+        "simp [Set.ite]"
+      ],
+      "winning_tactic": null,
+      "winning_tactic_origin": null,
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "fresh_holdout",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "error_message": "All top-13 tactics errored at step 2",
+      "num_steps": 2,
+      "tactics_used": [
+        "simp [Set.ite]"
+      ],
+      "winning_tactic": null,
+      "winning_tactic_origin": null,
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "fresh_holdout",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "error_message": "All top-13 tactics errored at step 3",
+      "num_steps": 3,
+      "tactics_used": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "winning_tactic": null,
+      "winning_tactic_origin": null,
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.ite_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "fresh_holdout",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "error_message": null,
+      "num_steps": 1,
+      "tactics_used": [
+        "simp [Set.ite]"
+      ],
+      "winning_tactic": "simp [Set.ite]",
+      "winning_tactic_origin": "tactic_template",
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.mem_dite",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "fresh_holdout",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "error_message": null,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "winning_tactic": "aesop",
+      "winning_tactic_origin": "generative_topk",
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.mem_dite_empty_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "fresh_holdout",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "error_message": null,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "winning_tactic": "aesop",
+      "winning_tactic_origin": "generative_topk",
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.mem_dite_empty_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "fresh_holdout",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "error_message": null,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "winning_tactic": "aesop",
+      "winning_tactic_origin": "generative_topk",
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.mem_dite_univ_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "fresh_holdout",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "error_message": null,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "winning_tactic": "aesop",
+      "winning_tactic_origin": "generative_topk",
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.mem_dite_univ_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "fresh_holdout",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "error_message": null,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "winning_tactic": "aesop",
+      "winning_tactic_origin": "generative_topk",
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.mem_ite_empty_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "fresh_holdout",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "error_message": null,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "winning_tactic": "aesop",
+      "winning_tactic_origin": "generative_topk",
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.mem_ite_empty_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "fresh_holdout",
+      "available": true,
+      "finished": true,
+      "has_error": false,
+      "error_message": null,
+      "num_steps": 1,
+      "tactics_used": [
+        "aesop"
+      ],
+      "winning_tactic": "aesop",
+      "winning_tactic_origin": "generative_topk",
+      "skip_reason": null,
+      "open_flake": false
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "role": "fresh_holdout",
+      "available": true,
+      "finished": false,
+      "has_error": true,
+      "error_message": "All top-11 tactics errored at step 3",
+      "num_steps": 3,
+      "tactics_used": [
+        "simp [Set.subset_def]",
+        "aesop"
+      ],
+      "winning_tactic": null,
+      "winning_tactic_origin": null,
+      "skip_reason": null,
+      "open_flake": false
+    }
+  ]
+}

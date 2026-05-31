@@ -1,0 +1,33 @@
+{
+  "generated_by": "scripts/tr4_ablation_study.py",
+  "results": {
+    "theorem_name_only": {
+      "num_cols": 1117,
+      "oof_pr_auc": 0.017
+    },
+    "goal_only": {
+      "num_cols": 495,
+      "oof_pr_auc": 0.0159
+    },
+    "lemma_name_only": {
+      "num_cols": 913,
+      "oof_pr_auc": 0.0153
+    },
+    "program_tactic_only": {
+      "num_cols": 2053,
+      "oof_pr_auc": 0.391
+    },
+    "symbolic_and_interactions_only": {
+      "num_cols": 247,
+      "oof_pr_auc": 0.2983
+    },
+    "all_features": {
+      "num_cols": 4825,
+      "oof_pr_auc": 0.5216
+    }
+  },
+  "all_features_pr_auc": 0.5216,
+  "best_single_block_pr_auc": 0.391,
+  "interaction_gain": 0.1306,
+  "interpretation": "all-features materially exceeds the best single block (+0.1306 PR-AUC) → the ranker uses retrieval/program INTERACTIONS, not a single memorized cue."
+}

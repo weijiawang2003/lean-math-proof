@@ -1,0 +1,41 @@
+{
+  "generated_by": "scripts/sf5_build_lemma_index.py",
+  "source_root": "/Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4",
+  "source_root_available": true,
+  "source_dirs_scanned": [
+    "Mathlib/Data/Set",
+    "Mathlib/Data/Finset",
+    "Mathlib/Order/Monotone",
+    "Mathlib/Order/SetNotation.lean",
+    "Mathlib/Data/Set/Basic.lean"
+  ],
+  "num_lemmas": 5994,
+  "num_with_statement_text": 5785,
+  "statement_coverage_pct": 96.5,
+  "by_source": {
+    "mathlib_source": 5785,
+    "discovered_theorems": 209
+  },
+  "top_namespaces": {
+    "Set": 2958,
+    "Finset": 2099,
+    "(root)": 240,
+    "Nat": 219,
+    "Function": 67,
+    "Multiset": 63,
+    "List": 37,
+    "Subtype": 25,
+    "Equiv": 23,
+    "SetSemiring": 23,
+    "StrictMono": 23,
+    "Monotone": 22,
+    "StrictAnti": 19,
+    "Antitone": 17,
+    "Subsingleton": 13
+  },
+  "limitations": [
+    "discovered_theorems has no statement text -> weak name/token/path features",
+    "source scan is restricted to focused directories relevant to the targets",
+    "signatures parsed lexically up to ':='; complex multi-line binders may truncate"
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "name": "rc3_validation_manifest",
+  "candidate_wrapper": "project/evolve/experiments/rc3_validation/rc3_candidate_wrapper.json",
+  "rc2_baseline_wrapper": "project/evolve/experiments/rc2_release/rc2_production_wrapper.json",
+  "route_config": "project/evolve/routing/ns24_router.json",
+  "policy_type": "hybrid_evolved",
+  "top_k": 8,
+  "max_steps": 8,
+  "timeout_per_theorem_s": 180,
+  "theorem_sets": [
+    {
+      "name": "sx3_known_deferred",
+      "file": "project/evolve/experiments/rc3_validation/theorem_sets/sx3_known_deferred.json",
+      "role": "deferred_known",
+      "size": 4,
+      "runnable_size": 4,
+      "description": "reproduction target: +4 RC2-deferred depth-2 candidates (NOT fresh delta)"
+    },
+    {
+      "name": "sx3_fresh_win",
+      "file": "project/evolve/experiments/rc3_validation/theorem_sets/sx3_fresh_win.json",
+      "role": "fresh_win",
+      "size": 1,
+      "runnable_size": 1,
+      "description": "SX3 fresh true depth-2 win (Set.ite_inter_inter); also present in holdout"
+    },
+    {
+      "name": "sx3_set_ite_holdout",
+      "file": "project/evolve/experiments/rc3_validation/theorem_sets/sx3_set_ite_holdout.json",
+      "role": "fresh_holdout",
+      "size": 13,
+      "runnable_size": 13,
+      "description": "ALL fresh Set.ite/dite holdout cases (wins + no-wins); the genuine fresh-delta surface"
+    },
+    {
+      "name": "sx3_negative_controls",
+      "file": "project/evolve/experiments/rc3_validation/theorem_sets/sx3_negative_controls.json",
+      "role": "negative_control",
+      "size": 6,
+      "runnable_size": 1,
+      "description": "non-Set; expect 0 SX3 emissions (off-gate guard)"
+    },
+    {
+      "name": "sx3_canonical_smoke",
+      "file": "project/evolve/experiments/rc3_validation/theorem_sets/sx3_canonical_smoke.json",
+      "role": "canonical_smoke",
+      "size": 5,
+      "runnable_size": 0,
+      "description": "non-Set canonical floor sample; expect 0 SX3 emissions"
+    },
+    {
+      "name": "sx3_set_cluster_cases",
+      "file": "project/evolve/experiments/rc3_validation/theorem_sets/sx3_set_cluster_cases.json",
+      "role": "set_cluster_failure",
+      "size": 12,
+      "runnable_size": 12,
+      "description": "general Set failures where broad ext/iff/subset families gave 0 true depth-2 wins"
+    }
+  ],
+  "live_comparison_surface": {
+    "description": "Sets run live through the production harness for the RC2-vs-RC3 delta. Deduped by full_name across sets.",
+    "sets": [
+      "sx3_known_deferred",
+      "sx3_fresh_win",
+      "sx3_set_ite_holdout",
+      "sx3_set_cluster_cases",
+      "sx3_negative_controls"
+    ],
+    "note": "sx3_fresh_win (Set.ite_inter_inter) is a 1-row subset of sx3_set_ite_holdout; runner dedupes by full_name."
+  },
+  "canonical_floors": {
+    "demo_v1": [
+      11,
+      15
+    ],
+    "nat_defs_medium": [
+      37,
+      38
+    ],
+    "nat_defs_large_v5": [
+      49,
+      65
+    ],
+    "note": "Run as REGISTERED theorem sets via eval_rollout_all.py --theorem-set. demo_v1 is a MIXED floor (includes Set.ite_univ); nat_defs_* are pure-Nat live non-Set off-gate evidence."
+  },
+  "sizes": {
+    "sx3_known_deferred": 4,
+    "sx3_fresh_win": 1,
+    "sx3_set_ite_holdout": 13,
+    "sx3_negative_controls": 6,
+    "sx3_canonical_smoke": 5,
+    "sx3_set_cluster_cases": 12
+  },
+  "runnable_sizes": {
+    "sx3_known_deferred": 4,
+    "sx3_fresh_win": 1,
+    "sx3_set_ite_holdout": 13,
+    "sx3_negative_controls": 1,
+    "sx3_canonical_smoke": 0,
+    "sx3_set_cluster_cases": 12
+  },
+  "source_artifacts": [
+    "project/evolve/experiments/sx3/cases/sx3_case_manifest.json",
+    "project/evolve/experiments/sx3/cases/sx3_deferred_set_ite_cases.json",
+    "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+    "project/evolve/experiments/sx3/cases/sx3_negative_controls.json",
+    "project/evolve/experiments/sx3/cases/sx3_canonical_smoke.json",
+    "project/evolve/experiments/sx3/cases/sx3_set_failure_cluster_cases.json",
+    "project/evolve/experiments/sx3/out/sx3_minimal_attribution.json"
+  ],
+  "known_wins": {
+    "deferred_reproduction": [
+      "Set.ite_inter",
+      "Set.ite_inter_self",
+      "Set.ite_compl",
+      "Set.ite_inter_compl_self"
+    ],
+    "fresh_true_win": [
+      "Set.ite_inter_inter"
+    ]
+  },
+  "known_no_wins": {
+    "holdout_no_win": [
+      "Set.ite_eq_of_subset_left",
+      "Set.ite_eq_of_subset_right",
+      "Set.ite_inter_of_inter_eq",
+      "Set.subset_ite"
+    ],
+    "holdout_baseline_duplicate_aesop": [
+      "Set.mem_dite",
+      "Set.mem_dite_empty_left",
+      "Set.mem_dite_empty_right",
+      "Set.mem_dite_univ_left",
+      "Set.mem_dite_univ_right",
+      "Set.mem_ite_empty_left",
+      "Set.mem_ite_empty_right"
+    ],
+    "holdout_single_step_duplicate_rc2": [
+      "Set.ite_univ"
+    ],
+    "cluster_no_true_depth2_win": "all 12 (NO_WIN or BASELINE_DUPLICATE)"
+  },
+  "negative_controls": {
+    "runnable": [
+      "Multiset.toFinset_eq_singleton_iff"
+    ],
+    "gate_structural_only": [
+      "Nat.add_comm",
+      "Nat.mul_succ",
+      "Int.add_mul",
+      "Multiset.cons_inj_left",
+      "List.append_nil"
+    ],
+    "note": "null-file_path rows cannot be opened live; the gate is name-substring 'Set.ite' so these can never emit SX3. Live non-Set off-gate is asserted by nat_defs_* floors + runnable Multiset control."
+  },
+  "leakage_notes": [
+    "Set.ite_univ (holdout): source proof is single-shot simp[Set.ite] -> expected SINGLE_STEP_DUPLICATE belonging to RC2, NOT a depth-2 win. Attribution must catch it.",
+    "Set.ite_inter_of_inter_eq (holdout): source uses an rw bridge -> source-specific risk; SX3 generic battery should NOT solve it (confirmed NO_WIN).",
+    "Set.ite_inter_inter is in both sx3_fresh_win and sx3_set_ite_holdout; deduped by full_name. Counted once as the fresh true win.",
+    "deferred4 are 'known' reproduction wins, reported separately and never counted toward the fresh-delta gate."
+  ]
+}

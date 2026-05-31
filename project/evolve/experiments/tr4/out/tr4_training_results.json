@@ -1,0 +1,105 @@
+{
+  "generated_by": "scripts/tr4_train_ranker.py",
+  "num_examples": 4737,
+  "num_pos_success": 23,
+  "num_pos_credit": 22,
+  "oof_classification": {
+    "heuristic": {
+      "pr_auc": 0.0169,
+      "roc_auc": 0.4392,
+      "precision@10": 0.1,
+      "recall@10": 0.0435,
+      "precision@20": 0.05,
+      "recall@20": 0.0435,
+      "precision@50": 0.02,
+      "recall@50": 0.0435,
+      "credit_pr_auc": 0.0174
+    },
+    "logistic": {
+      "pr_auc": 0.1038,
+      "roc_auc": 0.8128,
+      "precision@10": 0.1,
+      "recall@10": 0.0435,
+      "precision@20": 0.15,
+      "recall@20": 0.1304,
+      "precision@50": 0.16,
+      "recall@50": 0.3478,
+      "credit_pr_auc": 0.1075
+    },
+    "sgd": {
+      "pr_auc": 0.0141,
+      "roc_auc": 0.7449,
+      "precision@10": 0.0,
+      "recall@10": 0.0,
+      "precision@20": 0.0,
+      "recall@20": 0.0,
+      "precision@50": 0.0,
+      "recall@50": 0.0,
+      "credit_pr_auc": 0.0137
+    },
+    "hgb": {
+      "pr_auc": 0.5216,
+      "roc_auc": 0.7745,
+      "precision@10": 0.9,
+      "recall@10": 0.3913,
+      "precision@20": 0.6,
+      "recall@20": 0.5217,
+      "precision@50": 0.26,
+      "recall@50": 0.5652,
+      "credit_pr_auc": 0.5435
+    }
+  },
+  "grouped_generalization": {
+    "heuristic": {},
+    "logistic": {
+      "by_theorem": {
+        "pr_auc": 0.1038,
+        "roc_auc": 0.8128
+      },
+      "by_namespace": {
+        "pr_auc": 0.0175,
+        "roc_auc": 0.8046
+      },
+      "by_cluster": {
+        "pr_auc": 0.3364,
+        "roc_auc": 0.8236
+      }
+    },
+    "sgd": {
+      "by_theorem": {
+        "pr_auc": 0.0138,
+        "roc_auc": 0.7629
+      },
+      "by_namespace": {
+        "pr_auc": 0.0085,
+        "roc_auc": 0.6876
+      },
+      "by_cluster": {
+        "pr_auc": 0.0081,
+        "roc_auc": 0.6593
+      }
+    },
+    "hgb": {
+      "by_theorem": {
+        "pr_auc": 0.5216,
+        "roc_auc": 0.7745
+      },
+      "by_namespace": {
+        "pr_auc": 0.0079,
+        "roc_auc": 0.6279
+      },
+      "by_cluster": {
+        "pr_auc": 0.3357,
+        "roc_auc": 0.7502
+      }
+    }
+  },
+  "models_saved": [
+    "logistic",
+    "sgd",
+    "hgb",
+    "heuristic"
+  ],
+  "oof_scores_path": "oof_scores.npz",
+  "note": "OOF = GroupKFold-by-theorem (leakage-free). Grouped = PR/ROC-AUC under GroupKFold by theorem/namespace/cluster."
+}

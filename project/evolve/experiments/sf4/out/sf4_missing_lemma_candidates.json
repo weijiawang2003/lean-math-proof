@@ -1,0 +1,258 @@
+{
+  "num_clusters": 10,
+  "category_histogram": {
+    "POSSIBLE_MISSING_BRIDGE_LEMMA": 2,
+    "NEEDS_MORE_DATA": 7,
+    "PROOF_SEARCH_DEPTH_GAP": 1
+  },
+  "note": "Candidate directions only \u2014 no lemmas invented. Verify existence in Mathlib before any SF5 synthesis.",
+  "triage": [
+    {
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_shape": "iff",
+      "size": 16,
+      "members": [
+        "Set.antitoneOn_iff_antitone",
+        "Set.diff_singleton_subset_iff",
+        "Set.pair_eq_pair_iff",
+        "Set.ssubset_singleton_iff",
+        "Set.subset_insert_iff",
+        "Set.subset_singleton_iff_eq",
+        "Set.union_empty_iff",
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.monotoneOn_iff_monotone",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Set.ssubset_iff_insert",
+        "Set.ssubset_iff_sdiff_singleton",
+        "Set.strictAntiOn_iff_strictAnti",
+        "Set.strictMonoOn_iff_strictMono",
+        "Set.subset_pair_iff_eq"
+      ],
+      "category": "POSSIBLE_MISSING_BRIDGE_LEMMA",
+      "rationale": "repeated goal shape with NO generic tactic/sequence closing any member -> reusable bridge-lemma candidate (verify a Mathlib lemma does not already exist)",
+      "unresolved": [
+        "Set.antitoneOn_iff_antitone",
+        "Set.diff_singleton_subset_iff",
+        "Set.pair_eq_pair_iff",
+        "Set.ssubset_singleton_iff",
+        "Set.subset_insert_iff",
+        "Set.subset_singleton_iff_eq",
+        "Set.union_empty_iff",
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.monotoneOn_iff_monotone",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Set.ssubset_iff_insert",
+        "Set.ssubset_iff_sdiff_singleton",
+        "Set.strictAntiOn_iff_strictAnti",
+        "Set.strictMonoOn_iff_strictMono",
+        "Set.subset_pair_iff_eq"
+      ],
+      "depth_gap": [],
+      "parse_only": [],
+      "common_goal_features": [
+        "iff",
+        "inter/union/diff",
+        "nonempty",
+        "singleton",
+        "subset"
+      ],
+      "do_not_invent": true
+    },
+    {
+      "cluster_id": "Set__ite_if__subset",
+      "namespace": "Set",
+      "goal_shape": "subset",
+      "size": 3,
+      "members": [
+        "Set.ite_eq_of_subset_left",
+        "Set.ite_eq_of_subset_right",
+        "Set.subset_ite"
+      ],
+      "category": "POSSIBLE_MISSING_BRIDGE_LEMMA",
+      "rationale": "repeated goal shape with NO generic tactic/sequence closing any member -> reusable bridge-lemma candidate (verify a Mathlib lemma does not already exist)",
+      "unresolved": [
+        "Set.ite_eq_of_subset_left",
+        "Set.ite_eq_of_subset_right",
+        "Set.subset_ite"
+      ],
+      "depth_gap": [],
+      "parse_only": [],
+      "common_goal_features": [
+        "ite/if",
+        "subset"
+      ],
+      "do_not_invent": true
+    },
+    {
+      "cluster_id": "Multiset__iff__iff",
+      "namespace": "Multiset",
+      "goal_shape": "iff",
+      "size": 1,
+      "members": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "category": "NEEDS_MORE_DATA",
+      "rationale": "single unresolved theorem; insufficient repetition to infer a lemma",
+      "unresolved": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "depth_gap": [],
+      "parse_only": [],
+      "common_goal_features": [
+        "iff",
+        "singleton",
+        "toFinset"
+      ],
+      "do_not_invent": true
+    },
+    {
+      "cluster_id": "Set__ite_if__equality",
+      "namespace": "Set",
+      "goal_shape": "equality",
+      "size": 1,
+      "members": [
+        "Set.ite_inter_of_inter_eq"
+      ],
+      "category": "NEEDS_MORE_DATA",
+      "rationale": "single unresolved theorem; insufficient repetition to infer a lemma",
+      "unresolved": [
+        "Set.ite_inter_of_inter_eq"
+      ],
+      "depth_gap": [],
+      "parse_only": [],
+      "common_goal_features": [
+        "inter/union/diff",
+        "ite/if"
+      ],
+      "do_not_invent": true
+    },
+    {
+      "cluster_id": "Set__singleton__arithmetic",
+      "namespace": "Set",
+      "goal_shape": "arithmetic",
+      "size": 1,
+      "members": [
+        "Set.powerset_singleton"
+      ],
+      "category": "NEEDS_MORE_DATA",
+      "rationale": "single unresolved theorem; insufficient repetition to infer a lemma",
+      "unresolved": [
+        "Set.powerset_singleton"
+      ],
+      "depth_gap": [],
+      "parse_only": [],
+      "common_goal_features": [
+        "powerset",
+        "singleton"
+      ],
+      "do_not_invent": true
+    },
+    {
+      "cluster_id": "unknown__subset__subset",
+      "namespace": "unknown",
+      "goal_shape": "subset",
+      "size": 1,
+      "members": [
+        "Eq.subset"
+      ],
+      "category": "NEEDS_MORE_DATA",
+      "rationale": "single unresolved theorem; insufficient repetition to infer a lemma",
+      "unresolved": [
+        "Eq.subset"
+      ],
+      "depth_gap": [],
+      "parse_only": [],
+      "common_goal_features": [
+        "subset"
+      ],
+      "do_not_invent": true
+    },
+    {
+      "cluster_id": "unknown__iff__iff",
+      "namespace": "unknown",
+      "goal_shape": "iff",
+      "size": 1,
+      "members": [
+        "Function.Injective.nonempty_apply_iff"
+      ],
+      "category": "NEEDS_MORE_DATA",
+      "rationale": "single unresolved theorem; insufficient repetition to infer a lemma",
+      "unresolved": [
+        "Function.Injective.nonempty_apply_iff"
+      ],
+      "depth_gap": [],
+      "parse_only": [],
+      "common_goal_features": [
+        "iff",
+        "nonempty"
+      ],
+      "do_not_invent": true
+    },
+    {
+      "cluster_id": "unknown__compl__arithmetic",
+      "namespace": "unknown",
+      "goal_shape": "arithmetic",
+      "size": 1,
+      "members": [
+        "Prop.compl_singleton"
+      ],
+      "category": "PROOF_SEARCH_DEPTH_GAP",
+      "rationale": "every member is closed in isolation by a bare control/probe but literal RC2 search did not reach it \u2014 depth/ordering gap, not a missing lemma",
+      "unresolved": [],
+      "depth_gap": [
+        "Prop.compl_singleton"
+      ],
+      "parse_only": [],
+      "common_goal_features": [
+        "compl",
+        "singleton"
+      ],
+      "do_not_invent": true
+    },
+    {
+      "cluster_id": "Set__other__equality",
+      "namespace": "Set",
+      "goal_shape": "equality",
+      "size": 1,
+      "members": [
+        "Set.eq_of_inclusion_surjective"
+      ],
+      "category": "NEEDS_MORE_DATA",
+      "rationale": "single unresolved theorem; insufficient repetition to infer a lemma",
+      "unresolved": [
+        "Set.eq_of_inclusion_surjective"
+      ],
+      "depth_gap": [],
+      "parse_only": [],
+      "common_goal_features": [
+        "other"
+      ],
+      "do_not_invent": true
+    },
+    {
+      "cluster_id": "Set__map_filter__arithmetic",
+      "namespace": "Set",
+      "goal_shape": "arithmetic",
+      "size": 1,
+      "members": [
+        "Set.pairwiseDisjoint_filter"
+      ],
+      "category": "NEEDS_MORE_DATA",
+      "rationale": "single unresolved theorem; insufficient repetition to infer a lemma",
+      "unresolved": [
+        "Set.pairwiseDisjoint_filter"
+      ],
+      "depth_gap": [],
+      "parse_only": [],
+      "common_goal_features": [
+        "disjoint",
+        "map/filter",
+        "singleton"
+      ],
+      "do_not_invent": true
+    }
+  ]
+}

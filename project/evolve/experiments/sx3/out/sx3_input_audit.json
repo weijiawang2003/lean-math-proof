@@ -1,0 +1,90 @@
+{
+  "task": "SX3 Depth-2 Sequence Search — From SET_ITE_AESOP to General Sequence Mining",
+  "date": "2026-05-30",
+  "branch": "sx3-depth2-sequence-search",
+  "rc2_wrapper_path": "project/evolve/experiments/rc2_release/rc2_production_wrapper.json",
+  "rc2_credited_delta": 5,
+  "rc2_credited_wins": [
+    "Set.ite_empty",
+    "Set.ite_empty_left",
+    "Set.ite_empty_right",
+    "Set.ite_left",
+    "Set.ite_right"
+  ],
+  "deferred_sx3_candidates": [
+    "Set.ite_inter",
+    "Set.ite_inter_self",
+    "Set.ite_compl",
+    "Set.ite_inter_compl_self"
+  ],
+  "key_deferred_sequence": "simp [Set.ite] <;> aesop",
+  "deferred_file_path": "Mathlib/Data/Set/Basic.lean",
+  "deferred_verified_facts": {
+    "bare_aesop": "fails",
+    "simp_all": "fails",
+    "single_shot_simp_set_ite": "fails",
+    "simp_set_ite_then_aesop": "succeeds"
+  },
+  "protected_files": {
+    "project/evolve/experiments/rc1/rc1_production_wrapper.json": {"present": true, "diff_empty": true},
+    "project/evolve/experiments/rc2_release/rc2_production_wrapper.json": {"present": true, "diff_empty": true},
+    "project/evolve/routing/ns24_router.json": {"present": true, "diff_empty": true}
+  },
+  "artifacts_found": {
+    "rc2_release/rc2_production_wrapper.json": true,
+    "rc2_release/final_verification.json": true,
+    "rc2_hardening/out/perturbation_forensics.json": true,
+    "rc2_hardening/out/rc2_delta_ledger.json": true,
+    "rc2_hardening/out/variant_comparison.json": true,
+    "sf2/out/set_cluster_deep_dive/selected_cases.json": true,
+    "sf2/out/set_cluster_deep_dive/probe_results.json": true,
+    "sf2/out/set_cluster_deep_dive/cluster_analysis.json": true,
+    "sx2/out/set_sequence_templates.json": true,
+    "sx2/out/set2_holdout_eval_results.json": true,
+    "sx2/out/set2_minimal_relabel_results.json": true,
+    "sf1/out/real/frontier_with_paths.jsonl": true,
+    "sf1/out/real/classified_frontier.jsonl": true,
+    "sf1/out/real/catalog.jsonl": true,
+    "sf1/theorem_sets/": true
+  },
+  "artifacts_missing": [],
+  "available_failure_clusters": {
+    "rc2_deferred_set_ite": ["Set.ite_inter", "Set.ite_inter_self", "Set.ite_compl", "Set.ite_inter_compl_self"],
+    "sf2_set_cluster": "12 live-probed Set failures (automation gaps over existing lemmas, 0 missing lemmas); only simp[Set.ite] generalized (n=2)",
+    "set_ite_fresh_holdout_frontier": [
+      "Set.ite_eq_of_subset_left", "Set.ite_eq_of_subset_right", "Set.ite_inter_inter",
+      "Set.ite_inter_of_inter_eq", "Set.ite_univ", "Set.mem_dite", "Set.mem_dite_empty_left",
+      "Set.mem_dite_empty_right", "Set.mem_dite_univ_left", "Set.mem_dite_univ_right",
+      "Set.mem_ite_empty_left", "Set.mem_ite_empty_right", "Set.subset_ite"
+    ]
+  },
+  "leandojo_facts": {
+    "traced_cache_commit": "29dcec074de168ac2bf835a77ef68bbe069194c5",
+    "set_basic_path": "Mathlib/Data/Set/Basic.lean",
+    "api": "env.make_repo(); env.make_theorem(repo, TheoremConfig(file_path, full_name)); Dojo(thm) as (dojo,state0); env.run_transition(dojo, thm, state0, tac)",
+    "run_transition_constraints": "rejects bare semicolon chains and multi-line bullet (·) blocks; single-line grouped <;> tactics OK (deferred direct_probe used 'simp [Set.ite] <;> aesop' successfully)",
+    "no_macos_timeout": "use scripts/run_with_timeout.py",
+    "dojo_open_cost": "~6s open, ~2s/theorem; hard Set theorems ~80s"
+  },
+  "fresh_holdout_shapes": {
+    "Set.ite_eq_of_subset_left": "set_equality_with_subset_hyp",
+    "Set.ite_eq_of_subset_right": "set_equality_with_subset_hyp",
+    "Set.ite_inter_inter": "set_equality",
+    "Set.ite_inter_of_inter_eq": "set_equality_with_inter_hyp_rw_source",
+    "Set.ite_univ": "set_equality_source_simp_set_ite_SINGLE_SHOT",
+    "Set.mem_dite": "membership_iff",
+    "Set.mem_dite_empty_left": "membership_iff",
+    "Set.mem_dite_empty_right": "membership_iff",
+    "Set.mem_dite_univ_left": "membership_iff",
+    "Set.mem_dite_univ_right": "membership_iff",
+    "Set.mem_ite_empty_left": "membership_iff",
+    "Set.mem_ite_empty_right": "membership_iff",
+    "Set.subset_ite": "subset_iff"
+  },
+  "notes": [
+    "Set.ite_univ source proof is 'simp [Set.ite]' (single-shot) -> belongs to RC2 SET_ITE_SIMP attribution, NOT SX3 depth-2. Controls will catch this.",
+    "Set.ite_inter_of_inter_eq source proof uses an rw bridge -> source-specific risk for any sequence claim.",
+    "All Set.ite/dite fresh holdout theorems resolve to Mathlib/Data/Set/Basic.lean (confirmed in traced cache).",
+    "RC2 official delta is single-shot simp[Set.ite]; SX3 candidate delta is depth-2 simp[Set.ite] <;> aesop. Attributions kept strictly separate."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "num_examples": 57,
+  "label_distribution": {
+    "MISSING_BRIDGE_LEMMA_CANDIDATE": 19,
+    "BASELINE_DUPLICATE": 18,
+    "NO_CHEAP_ACTION": 7,
+    "SET_ITE_SIMP": 6,
+    "SX3_PRODUCTION_SUBSUMED": 5,
+    "PROOF_SEARCH_DEPTH_GAP": 1,
+    "WX3_MULTISET_INDUCTION": 1,
+    "MX2_TOFINSET_AESOP": 0,
+    "SOURCE_SPECIFIC_OR_REJECTED": 0
+  },
+  "label_type_distribution": {
+    "negative": 23,
+    "triage": 27,
+    "positive": 7
+  },
+  "confidence_distribution": {
+    "verified": 27,
+    "strong": 30
+  },
+  "low_support_labels": [
+    "PROOF_SEARCH_DEPTH_GAP",
+    "WX3_MULTISET_INDUCTION"
+  ],
+  "zero_support_labels": [
+    "MX2_TOFINSET_AESOP",
+    "SOURCE_SPECIFIC_OR_REJECTED"
+  ],
+  "num_with_goal_text": 31,
+  "namespaces": [
+    "",
+    "Eq",
+    "Function",
+    "Multiset",
+    "Prop",
+    "Set"
+  ],
+  "source_artifacts_used": [
+    "rc2_delta_ledger",
+    "rc2_delta_ledger_deferred",
+    "sf4_confirmation",
+    "sf4_missing_lemma_triage",
+    "sf4_probe_results",
+    "sf4_sx4_attribution",
+    "sx2_set2_relabel",
+    "sx4_reattribution"
+  ],
+  "verified_label_policy": "positives only from production deltas / minimal-relabel-confirmed / accepted RC components; SX3 proxy wins enter only as SX3_PRODUCTION_SUBSUMED (negative)."
+}

@@ -1,0 +1,428 @@
+{
+  "cases_file": "project/evolve/experiments/sx3/cases/sx3_deferred_set_ite_cases.json",
+  "registry": "project/evolve/experiments/sx3/sx3_sequence_registry.json",
+  "families": [
+    "SX3_SET_ITE_AESOP",
+    "SX3_SET_ITE_SIMPALL",
+    "SX3_SET_ITE_EXT"
+  ],
+  "num_theorems": 4,
+  "num_live": 4,
+  "classification_histogram": {
+    "new_depth2_win": 4
+  },
+  "new_depth2_wins": [
+    "Set.ite_compl",
+    "Set.ite_inter",
+    "Set.ite_inter_compl_self",
+    "Set.ite_inter_self"
+  ],
+  "results": [
+    {
+      "full_name": "Set.ite_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "role": "deferred_known",
+      "shape": "set_equality",
+      "rc2_baseline_finished": false,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ s : Set α\n⊢ t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s",
+      "gate_decisions": [
+        {
+          "family": "SX3_SET_ITE_AESOP",
+          "sequence": "simp [Set.ite] <;> aesop",
+          "emitted": true,
+          "gate_reason": "signal_ite"
+        },
+        {
+          "family": "SX3_SET_ITE_SIMPALL",
+          "sequence": "simp [Set.ite] <;> simp_all",
+          "emitted": true,
+          "gate_reason": "signal_ite"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT",
+          "sequence": "ext x <;> simp [Set.ite]",
+          "emitted": true,
+          "gate_reason": "signal_ite"
+        }
+      ],
+      "gated_sequences_tried": [
+        {
+          "tactic": "simp [Set.ite] <;> aesop",
+          "solved": true,
+          "outcome": "solved",
+          "dead": false,
+          "family": "SX3_SET_ITE_AESOP"
+        },
+        {
+          "tactic": "simp [Set.ite] <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "SX3_SET_ITE_SIMPALL"
+        },
+        {
+          "tactic": "ext x <;> simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "SX3_SET_ITE_EXT"
+        }
+      ],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  α : Type u\n  β : Type v\n  γ : Type w\n  ι : Sort x\n  a b : α\n  s✝ s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ s : Set α\n  ⊢ t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ "
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "tactic": "simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        }
+      ],
+      "wins": [
+        {
+          "kind": "sequence",
+          "family": "SX3_SET_ITE_AESOP",
+          "tactic": "simp [Set.ite] <;> aesop"
+        }
+      ],
+      "best_win": "simp [Set.ite] <;> aesop",
+      "classification": "new_depth2_win",
+      "notes": [],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "role": "deferred_known",
+      "shape": "set_equality",
+      "rc2_baseline_finished": false,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n⊢ t.ite s s' ∩ t = s ∩ t",
+      "gate_decisions": [
+        {
+          "family": "SX3_SET_ITE_AESOP",
+          "sequence": "simp [Set.ite] <;> aesop",
+          "emitted": true,
+          "gate_reason": "signal_ite"
+        },
+        {
+          "family": "SX3_SET_ITE_SIMPALL",
+          "sequence": "simp [Set.ite] <;> simp_all",
+          "emitted": true,
+          "gate_reason": "signal_ite"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT",
+          "sequence": "ext x <;> simp [Set.ite]",
+          "emitted": true,
+          "gate_reason": "signal_ite"
+        }
+      ],
+      "gated_sequences_tried": [
+        {
+          "tactic": "simp [Set.ite] <;> aesop",
+          "solved": true,
+          "outcome": "solved",
+          "dead": false,
+          "family": "SX3_SET_ITE_AESOP"
+        },
+        {
+          "tactic": "simp [Set.ite] <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "SX3_SET_ITE_SIMPALL"
+        },
+        {
+          "tactic": "ext x <;> simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "SX3_SET_ITE_EXT"
+        }
+      ],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  α : Type u\n  β : Type v\n  γ : Type w\n  ι : Sort x\n  a b : α\n  s✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n  ⊢ t.ite s s' ∩ t = s ∩ t"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "tactic": "simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        }
+      ],
+      "wins": [
+        {
+          "kind": "sequence",
+          "family": "SX3_SET_ITE_AESOP",
+          "tactic": "simp [Set.ite] <;> aesop"
+        }
+      ],
+      "best_win": "simp [Set.ite] <;> aesop",
+      "classification": "new_depth2_win",
+      "notes": [],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_compl",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "role": "deferred_known",
+      "shape": "set_equality",
+      "rc2_baseline_finished": false,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n⊢ tᶜ.ite s s' = t.ite s' s",
+      "gate_decisions": [
+        {
+          "family": "SX3_SET_ITE_AESOP",
+          "sequence": "simp [Set.ite] <;> aesop",
+          "emitted": true,
+          "gate_reason": "signal_ite"
+        },
+        {
+          "family": "SX3_SET_ITE_SIMPALL",
+          "sequence": "simp [Set.ite] <;> simp_all",
+          "emitted": true,
+          "gate_reason": "signal_ite"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT",
+          "sequence": "ext x <;> simp [Set.ite]",
+          "emitted": true,
+          "gate_reason": "signal_ite"
+        }
+      ],
+      "gated_sequences_tried": [
+        {
+          "tactic": "simp [Set.ite] <;> aesop",
+          "solved": true,
+          "outcome": "solved",
+          "dead": false,
+          "family": "SX3_SET_ITE_AESOP"
+        },
+        {
+          "tactic": "simp [Set.ite] <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "SX3_SET_ITE_SIMPALL"
+        },
+        {
+          "tactic": "ext x <;> simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "SX3_SET_ITE_EXT"
+        }
+      ],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  α : Type u\n  β : Type v\n  γ : Type w\n  ι : Sort x\n  a b : α\n  s✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n  ⊢ tᶜ.ite s s' = t.ite s' s"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "tactic": "simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        }
+      ],
+      "wins": [
+        {
+          "kind": "sequence",
+          "family": "SX3_SET_ITE_AESOP",
+          "tactic": "simp [Set.ite] <;> aesop"
+        }
+      ],
+      "best_win": "simp [Set.ite] <;> aesop",
+      "classification": "new_depth2_win",
+      "notes": [],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_inter_compl_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "role": "deferred_known",
+      "shape": "set_equality",
+      "rc2_baseline_finished": false,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n⊢ t.ite s s' ∩ tᶜ = s' ∩ tᶜ",
+      "gate_decisions": [
+        {
+          "family": "SX3_SET_ITE_AESOP",
+          "sequence": "simp [Set.ite] <;> aesop",
+          "emitted": true,
+          "gate_reason": "signal_ite"
+        },
+        {
+          "family": "SX3_SET_ITE_SIMPALL",
+          "sequence": "simp [Set.ite] <;> simp_all",
+          "emitted": true,
+          "gate_reason": "signal_ite"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT",
+          "sequence": "ext x <;> simp [Set.ite]",
+          "emitted": true,
+          "gate_reason": "signal_ite"
+        }
+      ],
+      "gated_sequences_tried": [
+        {
+          "tactic": "simp [Set.ite] <;> aesop",
+          "solved": true,
+          "outcome": "solved",
+          "dead": false,
+          "family": "SX3_SET_ITE_AESOP"
+        },
+        {
+          "tactic": "simp [Set.ite] <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "SX3_SET_ITE_SIMPALL"
+        },
+        {
+          "tactic": "ext x <;> simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "SX3_SET_ITE_EXT"
+        }
+      ],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  α : Type u\n  β : Type v\n  γ : Type w\n  ι : Sort x\n  a b : α\n  s✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n  ⊢ t.ite s s' ∩ tᶜ = s' ∩ tᶜ"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "tactic": "simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        }
+      ],
+      "wins": [
+        {
+          "kind": "sequence",
+          "family": "SX3_SET_ITE_AESOP",
+          "tactic": "simp [Set.ite] <;> aesop"
+        }
+      ],
+      "best_win": "simp [Set.ite] <;> aesop",
+      "classification": "new_depth2_win",
+      "notes": [],
+      "setup_error": null
+    }
+  ],
+  "result_hash": "c0144cd63fd5",
+  "note": "Live LeanDojo depth-2 sequences. No solve is a confirmed win; minimal-sufficient relabel + RC2-baseline comparison required before any promotion. RC1/RC2 production configs untouched."
+}

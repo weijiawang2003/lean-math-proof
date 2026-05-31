@@ -1,0 +1,118 @@
+{
+  "batch_manifest": "project/evolve/experiments/tr2/cases/tr2_batch_manifest.json",
+  "outcomes_input": "project/evolve/experiments/tr2/out/tr2_attributed_outcomes.json",
+  "per_strategy": {
+    "model": {
+      "selected": 15,
+      "scored": 15,
+      "confirmed_rc2_failures": 13,
+      "useful_labels": 14,
+      "true_delta": 0,
+      "missing_lemma_candidates": 9,
+      "depth_gap_cases": 2,
+      "no_cheap_action_confirmations": 1,
+      "baseline_duplicates": 2,
+      "open_flakes": 0,
+      "live_probes": 29,
+      "total_probes": 83,
+      "useful_per_live_probe": 0.4828,
+      "useful_per_total_probe": 0.1687,
+      "true_delta_per_live_probe": 0.0,
+      "namespace_diversity": 6,
+      "namespace_dist": {
+        "Eq": 1,
+        "Multiset": 1,
+        "Set": 10,
+        "GENERAL_FRONTIER": 1,
+        "Function": 1,
+        "Prop": 1
+      },
+      "cluster_diversity": 6,
+      "non_set_cases": 5,
+      "underrepresented_cases": 3,
+      "classification_histogram": {
+        "PROOF_SEARCH_DEPTH_GAP": 2,
+        "PRODUCTION_SUBSUMED": 1,
+        "MISSING_BRIDGE_LEMMA_CANDIDATE": 9,
+        "BASELINE_DUPLICATE": 2,
+        "NO_CHEAP_ACTION": 1
+      }
+    },
+    "rule": {
+      "selected": 15,
+      "scored": 15,
+      "confirmed_rc2_failures": 11,
+      "useful_labels": 14,
+      "true_delta": 0,
+      "missing_lemma_candidates": 11,
+      "depth_gap_cases": 0,
+      "no_cheap_action_confirmations": 0,
+      "baseline_duplicates": 3,
+      "open_flakes": 0,
+      "live_probes": 27,
+      "total_probes": 71,
+      "useful_per_live_probe": 0.5185,
+      "useful_per_total_probe": 0.1972,
+      "true_delta_per_live_probe": 0.0,
+      "namespace_diversity": 2,
+      "namespace_dist": {
+        "Multiset": 2,
+        "Set": 13
+      },
+      "cluster_diversity": 2,
+      "non_set_cases": 2,
+      "underrepresented_cases": 0,
+      "classification_histogram": {
+        "MISSING_BRIDGE_LEMMA_CANDIDATE": 11,
+        "BASELINE_DUPLICATE": 3,
+        "PRODUCTION_SUBSUMED": 1
+      }
+    },
+    "random": {
+      "selected": 15,
+      "scored": 15,
+      "confirmed_rc2_failures": 13,
+      "useful_labels": 14,
+      "true_delta": 0,
+      "missing_lemma_candidates": 8,
+      "depth_gap_cases": 2,
+      "no_cheap_action_confirmations": 3,
+      "baseline_duplicates": 1,
+      "open_flakes": 0,
+      "live_probes": 28,
+      "total_probes": 82,
+      "useful_per_live_probe": 0.5,
+      "useful_per_total_probe": 0.1707,
+      "true_delta_per_live_probe": 0.0,
+      "namespace_diversity": 3,
+      "namespace_dist": {
+        "Set": 13,
+        "Eq": 1,
+        "Function": 1
+      },
+      "cluster_diversity": 7,
+      "non_set_cases": 2,
+      "underrepresented_cases": 2,
+      "classification_histogram": {
+        "NO_CHEAP_ACTION": 3,
+        "MISSING_BRIDGE_LEMMA_CANDIDATE": 8,
+        "PROOF_SEARCH_DEPTH_GAP": 2,
+        "PRODUCTION_SUBSUMED": 1,
+        "BASELINE_DUPLICATE": 1
+      }
+    }
+  },
+  "totals": {
+    "true_delta_all_strategies": 0,
+    "pool_exhausted_all_in_tr1": true
+  },
+  "diversity_edge_model": true,
+  "useful_per_live_probe": {
+    "model": 0.4828,
+    "rule": 0.5185,
+    "random": 0.5
+  },
+  "decision": "INCONCLUSIVE_TOO_SMALL",
+  "rationale": "No strategy can yield a fresh TRUE_DELTA on an exhausted, fully pre-labelled pool; model selection shows a diversity/coverage edge (more namespaces & non-Set cases) but the sample is too small to call it a win on useful-labels-per-probe.",
+  "caveat": "Pool is ~40 fully pre-labelled theorems; figures are descriptive. Random overlaps model/rule on scarce failures by design (matched failure ratio), so per-probe comparisons control for difficulty but cannot reach significance at this n."
+}

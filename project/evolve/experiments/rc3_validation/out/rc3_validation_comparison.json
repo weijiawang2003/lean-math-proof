@@ -1,0 +1,100 @@
+{
+  "validation_surface": {
+    "total_theorems": 30,
+    "rc2_solved": 17,
+    "rc3_solved": 17,
+    "raw_delta": 0,
+    "rc2_solved_names": [
+      "Set.diff_union_inter",
+      "Set.insert_diff_eq_singleton",
+      "Set.insert_diff_of_mem",
+      "Set.ite_compl",
+      "Set.ite_inter",
+      "Set.ite_inter_compl_self",
+      "Set.ite_inter_inter",
+      "Set.ite_inter_self",
+      "Set.ite_univ",
+      "Set.mem_dite",
+      "Set.mem_dite_empty_left",
+      "Set.mem_dite_empty_right",
+      "Set.mem_dite_univ_left",
+      "Set.mem_dite_univ_right",
+      "Set.mem_ite_empty_left",
+      "Set.mem_ite_empty_right",
+      "Set.pair_diff_left"
+    ],
+    "rc3_solved_names": [
+      "Set.diff_union_inter",
+      "Set.insert_diff_eq_singleton",
+      "Set.insert_diff_of_mem",
+      "Set.ite_compl",
+      "Set.ite_inter",
+      "Set.ite_inter_compl_self",
+      "Set.ite_inter_inter",
+      "Set.ite_inter_self",
+      "Set.ite_univ",
+      "Set.mem_dite",
+      "Set.mem_dite_empty_left",
+      "Set.mem_dite_empty_right",
+      "Set.mem_dite_univ_left",
+      "Set.mem_dite_univ_right",
+      "Set.mem_ite_empty_left",
+      "Set.mem_ite_empty_right",
+      "Set.pair_diff_left"
+    ]
+  },
+  "new_wins_over_rc2": [],
+  "regressions_vs_rc2": [],
+  "minimal_attribution": {
+    "true_sx3_set_ite_aesop_wins": [],
+    "credited_delta": 0,
+    "reproduced_deferred": [],
+    "fresh_true_wins": [],
+    "histogram": {}
+  },
+  "preservation_offgate": {
+    "all_floors_pass": true,
+    "total_off_gate_emissions": 0,
+    "any_regression_vs_rc2_doc": false,
+    "floors": {
+      "demo_v1": {
+        "rc3_solved": 12,
+        "total": 15,
+        "floor_min": 11,
+        "pass": true
+      },
+      "nat_defs_medium": {
+        "rc3_solved": 37,
+        "total": 38,
+        "floor_min": 37,
+        "pass": true
+      },
+      "nat_defs_large_v5": {
+        "rc3_solved": 49,
+        "total": 65,
+        "floor_min": 49,
+        "pass": true
+      }
+    }
+  },
+  "determinism": {
+    "status": "deterministic",
+    "run1_hash": "5757bbb27215",
+    "run2_hash": "5757bbb27215",
+    "hash_match": true,
+    "num_open_flakes": 0
+  },
+  "criteria": {
+    "positive_credited_delta": false,
+    "at_least_one_fresh_true_win": false,
+    "zero_regressions": true,
+    "zero_off_gate": true,
+    "canonical_floors_pass": true,
+    "minimal_attribution_confirms": false,
+    "deterministic_or_env_flake_only": true
+  },
+  "credited_delta": 0,
+  "raw_delta": 0,
+  "fresh_true_wins": [],
+  "decision": "REJECT_NO_LITERAL_DELTA"
+}

@@ -1,0 +1,21 @@
+{
+  "generated_by": "scripts/sf5_export_training_examples.py",
+  "additive_only": true,
+  "does_not_modify": [
+    "project/evolve/experiments/tr1/data/tr1_examples.jsonl",
+    "project/evolve/experiments/tr2/data/tr1_plus_tr2_examples.jsonl"
+  ],
+  "num_examples": 20,
+  "label_histogram": {
+    "PROOF_DEPTH_GAP": 15,
+    "RETRIEVAL_ROUTING_GAP": 1,
+    "EXISTING_LEMMA_GAP": 4
+  },
+  "label_types": {
+    "PROOF_DEPTH_GAP": "negative",
+    "RETRIEVAL_ROUTING_GAP": "positive",
+    "EXISTING_LEMMA_GAP": "positive"
+  },
+  "skipped_guard_classes": {},
+  "tr3_usage": "Merge additively with tr1_examples.jsonl as a retrieval-aware label channel; positive labels (EXISTING_LEMMA_GAP / RETRIEVAL_ROUTING_GAP) train a router to fire library-search / lemma-retrieval actions; negatives keep verified-label discipline."
+}

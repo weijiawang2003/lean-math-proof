@@ -1,0 +1,534 @@
+{
+  "cases_file": "project/evolve/experiments/sx3/cases/sx3_negative_controls.json",
+  "registry": "project/evolve/experiments/sx3/sx3_sequence_registry.json",
+  "families": [
+    "SX3_SET_ITE_AESOP",
+    "SX3_SET_ITE_SIMPALL",
+    "SX3_SET_ITE_EXT",
+    "SX3_SET_ITE_EXT_AESOP",
+    "SX3_SET_EXT_AESOP",
+    "SX3_SET_EXT_SIMPALL",
+    "SX3_SET_IFF_CONSTRUCTOR_AESOP",
+    "SX3_SET_IFF_CONSTRUCTOR_SIMPALL",
+    "SX3_SET_SUBSET_ANTISYMM_AESOP",
+    "SX3_SET_SUBSET_ANTISYMM_SIMPALL"
+  ],
+  "num_theorems": 6,
+  "num_live": 1,
+  "classification_histogram": {
+    "unknown": 5,
+    "no_sequence_win": 1
+  },
+  "new_depth2_wins": [],
+  "results": [
+    {
+      "full_name": "Nat.add_comm",
+      "file_path": null,
+      "namespace": "Nat",
+      "role": "negative_control",
+      "shape": "unknown",
+      "rc2_baseline_finished": null,
+      "live": false,
+      "initial_goal": null,
+      "gate_decisions": [
+        {
+          "family": "SX3_SET_ITE_AESOP",
+          "sequence": "simp [Set.ite] <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_ITE_SIMPALL",
+          "sequence": "simp [Set.ite] <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT",
+          "sequence": "ext x <;> simp [Set.ite]",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT_AESOP",
+          "sequence": "ext x <;> simp [Set.ite] <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_EXT_AESOP",
+          "sequence": "ext x <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_EXT_SIMPALL",
+          "sequence": "ext x <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_IFF_CONSTRUCTOR_AESOP",
+          "sequence": "constructor <;> intro h <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_IFF_CONSTRUCTOR_SIMPALL",
+          "sequence": "constructor <;> intro h <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_SUBSET_ANTISYMM_AESOP",
+          "sequence": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_SUBSET_ANTISYMM_SIMPALL",
+          "sequence": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        }
+      ],
+      "gated_sequences_tried": [],
+      "controls": [],
+      "wins": [],
+      "best_win": null,
+      "classification": "unknown",
+      "notes": [],
+      "setup_error": "AttributeError: 'NoneType' object has no attribute 'suffix'\n^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 6, in __init__\n  File \"/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py\", line 844, in __post_init__\n    self.file_path.suffix == \".lean\"\n    ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'suffix'\n"
+    },
+    {
+      "full_name": "Nat.mul_succ",
+      "file_path": null,
+      "namespace": "Nat",
+      "role": "negative_control",
+      "shape": "unknown",
+      "rc2_baseline_finished": null,
+      "live": false,
+      "initial_goal": null,
+      "gate_decisions": [
+        {
+          "family": "SX3_SET_ITE_AESOP",
+          "sequence": "simp [Set.ite] <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_ITE_SIMPALL",
+          "sequence": "simp [Set.ite] <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT",
+          "sequence": "ext x <;> simp [Set.ite]",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT_AESOP",
+          "sequence": "ext x <;> simp [Set.ite] <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_EXT_AESOP",
+          "sequence": "ext x <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_EXT_SIMPALL",
+          "sequence": "ext x <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_IFF_CONSTRUCTOR_AESOP",
+          "sequence": "constructor <;> intro h <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_IFF_CONSTRUCTOR_SIMPALL",
+          "sequence": "constructor <;> intro h <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_SUBSET_ANTISYMM_AESOP",
+          "sequence": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        },
+        {
+          "family": "SX3_SET_SUBSET_ANTISYMM_SIMPALL",
+          "sequence": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Nat"
+        }
+      ],
+      "gated_sequences_tried": [],
+      "controls": [],
+      "wins": [],
+      "best_win": null,
+      "classification": "unknown",
+      "notes": [],
+      "setup_error": "AttributeError: 'NoneType' object has no attribute 'suffix'\n^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 6, in __init__\n  File \"/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py\", line 844, in __post_init__\n    self.file_path.suffix == \".lean\"\n    ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'suffix'\n"
+    },
+    {
+      "full_name": "Int.add_mul",
+      "file_path": null,
+      "namespace": "Int",
+      "role": "negative_control",
+      "shape": "unknown",
+      "rc2_baseline_finished": null,
+      "live": false,
+      "initial_goal": null,
+      "gate_decisions": [
+        {
+          "family": "SX3_SET_ITE_AESOP",
+          "sequence": "simp [Set.ite] <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Int"
+        },
+        {
+          "family": "SX3_SET_ITE_SIMPALL",
+          "sequence": "simp [Set.ite] <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Int"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT",
+          "sequence": "ext x <;> simp [Set.ite]",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Int"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT_AESOP",
+          "sequence": "ext x <;> simp [Set.ite] <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Int"
+        },
+        {
+          "family": "SX3_SET_EXT_AESOP",
+          "sequence": "ext x <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Int"
+        },
+        {
+          "family": "SX3_SET_EXT_SIMPALL",
+          "sequence": "ext x <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Int"
+        },
+        {
+          "family": "SX3_SET_IFF_CONSTRUCTOR_AESOP",
+          "sequence": "constructor <;> intro h <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Int"
+        },
+        {
+          "family": "SX3_SET_IFF_CONSTRUCTOR_SIMPALL",
+          "sequence": "constructor <;> intro h <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Int"
+        },
+        {
+          "family": "SX3_SET_SUBSET_ANTISYMM_AESOP",
+          "sequence": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Int"
+        },
+        {
+          "family": "SX3_SET_SUBSET_ANTISYMM_SIMPALL",
+          "sequence": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Int"
+        }
+      ],
+      "gated_sequences_tried": [],
+      "controls": [],
+      "wins": [],
+      "best_win": null,
+      "classification": "unknown",
+      "notes": [],
+      "setup_error": "AttributeError: 'NoneType' object has no attribute 'suffix'\n^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 6, in __init__\n  File \"/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py\", line 844, in __post_init__\n    self.file_path.suffix == \".lean\"\n    ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'suffix'\n"
+    },
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "role": "negative_control",
+      "shape": "unknown",
+      "rc2_baseline_finished": null,
+      "live": true,
+      "initial_goal": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝ : DecidableEq α\ns✝ t s : Multiset α\na : α\n⊢ s.toFinset = {a} ↔ card s ≠ 0 ∧ s = card s • {a}",
+      "gate_decisions": [
+        {
+          "family": "SX3_SET_ITE_AESOP",
+          "sequence": "simp [Set.ite] <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_ITE_SIMPALL",
+          "sequence": "simp [Set.ite] <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT",
+          "sequence": "ext x <;> simp [Set.ite]",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT_AESOP",
+          "sequence": "ext x <;> simp [Set.ite] <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_EXT_AESOP",
+          "sequence": "ext x <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_EXT_SIMPALL",
+          "sequence": "ext x <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_IFF_CONSTRUCTOR_AESOP",
+          "sequence": "constructor <;> intro h <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_IFF_CONSTRUCTOR_SIMPALL",
+          "sequence": "constructor <;> intro h <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_SUBSET_ANTISYMM_AESOP",
+          "sequence": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_SUBSET_ANTISYMM_SIMPALL",
+          "sequence": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        }
+      ],
+      "gated_sequences_tried": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "max_recursion",
+          "dead": false,
+          "error": "aesop: error in norm simp: tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get di"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "tactic": "simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        }
+      ],
+      "wins": [],
+      "best_win": null,
+      "classification": "no_sequence_win",
+      "notes": [],
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.cons_inj_left",
+      "file_path": null,
+      "namespace": "Multiset",
+      "role": "negative_control",
+      "shape": "unknown",
+      "rc2_baseline_finished": null,
+      "live": false,
+      "initial_goal": null,
+      "gate_decisions": [
+        {
+          "family": "SX3_SET_ITE_AESOP",
+          "sequence": "simp [Set.ite] <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_ITE_SIMPALL",
+          "sequence": "simp [Set.ite] <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT",
+          "sequence": "ext x <;> simp [Set.ite]",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT_AESOP",
+          "sequence": "ext x <;> simp [Set.ite] <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_EXT_AESOP",
+          "sequence": "ext x <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_EXT_SIMPALL",
+          "sequence": "ext x <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_IFF_CONSTRUCTOR_AESOP",
+          "sequence": "constructor <;> intro h <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_IFF_CONSTRUCTOR_SIMPALL",
+          "sequence": "constructor <;> intro h <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_SUBSET_ANTISYMM_AESOP",
+          "sequence": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        },
+        {
+          "family": "SX3_SET_SUBSET_ANTISYMM_SIMPALL",
+          "sequence": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "emitted": false,
+          "gate_reason": "forbidden_ns:Multiset"
+        }
+      ],
+      "gated_sequences_tried": [],
+      "controls": [],
+      "wins": [],
+      "best_win": null,
+      "classification": "unknown",
+      "notes": [],
+      "setup_error": "AttributeError: 'NoneType' object has no attribute 'suffix'\n^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 6, in __init__\n  File \"/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py\", line 844, in __post_init__\n    self.file_path.suffix == \".lean\"\n    ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'suffix'\n"
+    },
+    {
+      "full_name": "List.append_nil",
+      "file_path": null,
+      "namespace": "List",
+      "role": "negative_control",
+      "shape": "unknown",
+      "rc2_baseline_finished": null,
+      "live": false,
+      "initial_goal": null,
+      "gate_decisions": [
+        {
+          "family": "SX3_SET_ITE_AESOP",
+          "sequence": "simp [Set.ite] <;> aesop",
+          "emitted": false,
+          "gate_reason": "name_token_miss"
+        },
+        {
+          "family": "SX3_SET_ITE_SIMPALL",
+          "sequence": "simp [Set.ite] <;> simp_all",
+          "emitted": false,
+          "gate_reason": "name_token_miss"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT",
+          "sequence": "ext x <;> simp [Set.ite]",
+          "emitted": false,
+          "gate_reason": "name_token_miss"
+        },
+        {
+          "family": "SX3_SET_ITE_EXT_AESOP",
+          "sequence": "ext x <;> simp [Set.ite] <;> aesop",
+          "emitted": false,
+          "gate_reason": "name_token_miss"
+        },
+        {
+          "family": "SX3_SET_EXT_AESOP",
+          "sequence": "ext x <;> aesop",
+          "emitted": false,
+          "gate_reason": "name_token_miss"
+        },
+        {
+          "family": "SX3_SET_EXT_SIMPALL",
+          "sequence": "ext x <;> simp_all",
+          "emitted": false,
+          "gate_reason": "name_token_miss"
+        },
+        {
+          "family": "SX3_SET_IFF_CONSTRUCTOR_AESOP",
+          "sequence": "constructor <;> intro h <;> aesop",
+          "emitted": false,
+          "gate_reason": "name_token_miss"
+        },
+        {
+          "family": "SX3_SET_IFF_CONSTRUCTOR_SIMPALL",
+          "sequence": "constructor <;> intro h <;> simp_all",
+          "emitted": false,
+          "gate_reason": "name_token_miss"
+        },
+        {
+          "family": "SX3_SET_SUBSET_ANTISYMM_AESOP",
+          "sequence": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "emitted": false,
+          "gate_reason": "name_token_miss"
+        },
+        {
+          "family": "SX3_SET_SUBSET_ANTISYMM_SIMPALL",
+          "sequence": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "emitted": false,
+          "gate_reason": "name_token_miss"
+        }
+      ],
+      "gated_sequences_tried": [],
+      "controls": [],
+      "wins": [],
+      "best_win": null,
+      "classification": "unknown",
+      "notes": [],
+      "setup_error": "AttributeError: 'NoneType' object has no attribute 'suffix'\n^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 6, in __init__\n  File \"/opt/anaconda3/lib/python3.12/site-packages/lean_dojo/data_extraction/lean.py\", line 844, in __post_init__\n    self.file_path.suffix == \".lean\"\n    ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'suffix'\n"
+    }
+  ],
+  "result_hash": "754609f7e128",
+  "note": "Live LeanDojo depth-2 sequences. No solve is a confirmed win; minimal-sufficient relabel + RC2-baseline comparison required before any promotion. RC1/RC2 production configs untouched."
+}

@@ -1,0 +1,234 @@
+{
+  "tr1_examples": 57,
+  "tr2_label_candidates": 34,
+  "net_new_examples": 0,
+  "reconfirmations": 27,
+  "revision_candidates": 4,
+  "excluded": 3,
+  "combined_examples": 57,
+  "label_distribution_before": {
+    "BASELINE_DUPLICATE": 18,
+    "MISSING_BRIDGE_LEMMA_CANDIDATE": 19,
+    "NO_CHEAP_ACTION": 7,
+    "PROOF_SEARCH_DEPTH_GAP": 1,
+    "SET_ITE_SIMP": 6,
+    "SX3_PRODUCTION_SUBSUMED": 5,
+    "WX3_MULTISET_INDUCTION": 1
+  },
+  "label_distribution_after": {
+    "BASELINE_DUPLICATE": 18,
+    "MISSING_BRIDGE_LEMMA_CANDIDATE": 19,
+    "NO_CHEAP_ACTION": 7,
+    "PROOF_SEARCH_DEPTH_GAP": 1,
+    "SET_ITE_SIMP": 6,
+    "SX3_PRODUCTION_SUBSUMED": 5,
+    "WX3_MULTISET_INDUCTION": 1
+  },
+  "underrepresented_label_delta": {
+    "WX3_MULTISET_INDUCTION": {
+      "before": 1,
+      "after": 1
+    },
+    "MX2_TOFINSET_AESOP": {
+      "before": 0,
+      "after": 0
+    },
+    "PROOF_SEARCH_DEPTH_GAP": {
+      "before": 1,
+      "after": 1
+    }
+  },
+  "underrepresented_improved": false,
+  "new_positive_labels": [],
+  "new_negative_labels": [],
+  "revision_candidate_details": [
+    {
+      "full_name": "Eq.subset",
+      "prior_label": "NO_CHEAP_ACTION",
+      "new_label": "PROOF_SEARCH_DEPTH_GAP",
+      "confidence": "strong",
+      "reason": "bounded depth-2/3 battery + controls fail -> needs deeper search / lemma, not a cheap fix"
+    },
+    {
+      "full_name": "Set.pairwiseDisjoint_filter",
+      "prior_label": "NO_CHEAP_ACTION",
+      "new_label": "PROOF_SEARCH_DEPTH_GAP",
+      "confidence": "strong",
+      "reason": "bounded depth-2/3 battery + controls fail -> needs deeper search / lemma, not a cheap fix"
+    },
+    {
+      "full_name": "Prop.compl_singleton",
+      "prior_label": "PROOF_SEARCH_DEPTH_GAP",
+      "new_label": "BASELINE_DUPLICATE",
+      "confidence": "verified",
+      "reason": "confirmed RC2 failure but a bare control closes it (RC2 search missed): ['aesop']"
+    },
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "prior_label": "NO_CHEAP_ACTION",
+      "new_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong",
+      "reason": "controls + exact? retrieval fail -> likely-existing Mathlib bridge lemma (SF5 target)"
+    }
+  ],
+  "excluded_details": [
+    {
+      "full_name": "Multiset.disjoint_toFinset",
+      "reason": "RC2 solves it via multi-step search; no single cheap control -> not a new label",
+      "new_label": null
+    },
+    {
+      "full_name": "Set.diff_union_inter",
+      "reason": "RC2 solves it via multi-step search; no single cheap control -> not a new label",
+      "new_label": null
+    },
+    {
+      "full_name": "Set.inclusion_right",
+      "reason": "RC2 solves it via multi-step search; no single cheap control -> not a new label",
+      "new_label": null
+    }
+  ],
+  "reconfirmation_details": [
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "coe_notMemRangeEquiv_symm",
+      "label": "BASELINE_DUPLICATE",
+      "confidence": "verified"
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Function.Injective.nonempty_apply_iff",
+      "label": "NO_CHEAP_ACTION",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.ssubset_iff_insert",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.ssubset_iff_sdiff_singleton",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.subset_pair_iff_eq",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Multiset.toFinset_nsmul",
+      "label": "BASELINE_DUPLICATE",
+      "confidence": "verified"
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.insert_diff_eq_singleton",
+      "label": "BASELINE_DUPLICATE",
+      "confidence": "verified"
+    },
+    {
+      "full_name": "Set.insert_diff_of_mem",
+      "label": "BASELINE_DUPLICATE",
+      "confidence": "verified"
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "label": "NO_CHEAP_ACTION",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.eq_of_inclusion_surjective",
+      "label": "NO_CHEAP_ACTION",
+      "confidence": "strong"
+    },
+    {
+      "full_name": "Set.pair_diff_left",
+      "label": "BASELINE_DUPLICATE",
+      "confidence": "verified"
+    }
+  ],
+  "interpretation": "Fresh frontier exhausted: every probed case already exists in TR1, so TR2 adds 0 net-new rows. Its value here is corroboration (27 reconfirmations) and 4 label-revision candidates flagged for human review \u2014 NOT dataset growth. To move TR1 off PILOT_ONLY_NEEDS_MORE_DATA, a genuinely fresh multi-namespace frontier must be sourced.",
+  "files": {
+    "added": "project/evolve/experiments/tr2/data/tr2_added_examples.jsonl",
+    "combined": "project/evolve/experiments/tr2/data/tr1_plus_tr2_examples.jsonl"
+  },
+  "note": "TR1 dataset file is NOT modified."
+}

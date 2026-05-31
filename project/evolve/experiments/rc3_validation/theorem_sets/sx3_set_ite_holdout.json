@@ -1,0 +1,121 @@
+{
+  "sx3_set_ite_holdout": [
+    {
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "full_name": "Set.ite_eq_of_subset_left",
+      "namespace": "Set",
+      "role": "fresh_holdout",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "no_win",
+      "note": "source: ext+by_cases (depth>2); subset hyp"
+    },
+    {
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "full_name": "Set.ite_eq_of_subset_right",
+      "namespace": "Set",
+      "role": "fresh_holdout",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "no_win",
+      "note": "subset hyp"
+    },
+    {
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "full_name": "Set.ite_inter_inter",
+      "namespace": "Set",
+      "role": "fresh_holdout",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "true_depth2_win",
+      "note": "pure ite equality"
+    },
+    {
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "namespace": "Set",
+      "role": "fresh_holdout",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "no_win",
+      "note": "source: rw bridge (rw [<- ite_inter, <- h, ite_same]) -> source-specific risk"
+    },
+    {
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "full_name": "Set.ite_univ",
+      "namespace": "Set",
+      "role": "fresh_holdout",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "single_step_duplicate_rc2",
+      "note": "source: simp [Set.ite] SINGLE-SHOT -> expected RC2 single_step_duplicate"
+    },
+    {
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "full_name": "Set.mem_dite",
+      "namespace": "Set",
+      "role": "fresh_holdout",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "baseline_duplicate",
+      "note": "dite membership iff"
+    },
+    {
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "full_name": "Set.mem_dite_empty_left",
+      "namespace": "Set",
+      "role": "fresh_holdout",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "baseline_duplicate",
+      "note": "dite membership iff"
+    },
+    {
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "full_name": "Set.mem_dite_empty_right",
+      "namespace": "Set",
+      "role": "fresh_holdout",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "baseline_duplicate",
+      "note": "dite membership iff"
+    },
+    {
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "full_name": "Set.mem_dite_univ_left",
+      "namespace": "Set",
+      "role": "fresh_holdout",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "baseline_duplicate",
+      "note": "dite membership iff"
+    },
+    {
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "full_name": "Set.mem_dite_univ_right",
+      "namespace": "Set",
+      "role": "fresh_holdout",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "baseline_duplicate",
+      "note": "dite membership iff"
+    },
+    {
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "full_name": "Set.mem_ite_empty_left",
+      "namespace": "Set",
+      "role": "fresh_holdout",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "baseline_duplicate",
+      "note": "ite membership iff"
+    },
+    {
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "full_name": "Set.mem_ite_empty_right",
+      "namespace": "Set",
+      "role": "fresh_holdout",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "baseline_duplicate",
+      "note": "ite membership iff"
+    },
+    {
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "full_name": "Set.subset_ite",
+      "namespace": "Set",
+      "role": "fresh_holdout",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "no_win",
+      "note": "subset iff"
+    }
+  ]
+}

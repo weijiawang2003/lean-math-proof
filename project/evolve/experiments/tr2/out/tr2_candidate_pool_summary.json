@@ -1,0 +1,80 @@
+{
+  "num_candidates": 47,
+  "num_excluded": 4,
+  "excluded": [
+    {
+      "full_name": "Set.ite_compl",
+      "reason": "sx3_production_subsumed"
+    },
+    {
+      "full_name": "Set.ite_inter",
+      "reason": "sx3_production_subsumed"
+    },
+    {
+      "full_name": "Set.ite_inter_compl_self",
+      "reason": "sx3_production_subsumed"
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "reason": "sx3_production_subsumed"
+    }
+  ],
+  "overlap_with_tr1_training": {
+    "count": 47,
+    "fraction": 1.0,
+    "note": "All candidates already labelled in TR1 -> fresh frontier exhausted; kept as controls / re-probe targets per spec."
+  },
+  "router_loaded": true,
+  "by_known_rc2_status": {
+    "failed": 27,
+    "solved": 20
+  },
+  "by_namespace": {
+    "Eq": 1,
+    "Function": 1,
+    "Multiset": 3,
+    "Prop": 1,
+    "Set": 40,
+    "GENERAL_FRONTIER": 1
+  },
+  "by_predicted_label": {
+    "PROOF_SEARCH_DEPTH_GAP": 2,
+    "NO_CHEAP_ACTION": 6,
+    "WX3_MULTISET_INDUCTION": 1,
+    "MISSING_BRIDGE_LEMMA_CANDIDATE": 20,
+    "BASELINE_DUPLICATE": 10,
+    "SET_ITE_SIMP": 8
+  },
+  "by_sf4_cluster": {
+    "unknown__subset__subset": 1,
+    "unknown__iff__iff": 1,
+    "Multiset__iff__iff": 1,
+    "unknown__compl__arithmetic": 1,
+    "Set__iff__iff": 16,
+    "Set__other__equality": 1,
+    "Set__ite_if__subset": 3,
+    "Set__ite_if__equality": 1,
+    "Set__map_filter__arithmetic": 1,
+    "Set__singleton__arithmetic": 1
+  },
+  "sources": [
+    "sf1_frontier",
+    "sf4_confirmation",
+    "sf4_failure_pool",
+    "tr1_active_learning",
+    "tr1_next_work_queue",
+    "tr1_rc2_predictions"
+  ],
+  "inputs": {
+    "tr1_active_learning": "project/evolve/experiments/tr1/out/tr1_active_learning_cases.json",
+    "tr1_queue": "project/evolve/experiments/tr1/out/tr1_next_work_queue.json",
+    "tr1_pred": "project/evolve/experiments/tr1/out/tr1_rc2_failure_predictions.json",
+    "tr1_examples": "project/evolve/experiments/tr1/data/tr1_examples.jsonl",
+    "sf4_pool": "project/evolve/experiments/sf4/cases/rc2_failure_pool.jsonl",
+    "sf4_confirmation": "project/evolve/experiments/sf4/out/rc2_failure_confirmation.json",
+    "sf4_clusters": "project/evolve/experiments/sf4/out/rc2_failure_clusters.json",
+    "sf4_missing_lemma": "project/evolve/experiments/sf4/out/sf4_missing_lemma_candidates.json",
+    "frontier_paths": "project/evolve/experiments/sf1/out/real/frontier_with_paths.jsonl",
+    "frontier_classified": "project/evolve/experiments/sf1/out/real/classified_frontier.jsonl"
+  }
+}

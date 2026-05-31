@@ -1,0 +1,217 @@
+[sf4-confirm] running literal RC2 on 40 theorems ...
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : sf4_confirm (40 theorems)
+  Checkpoint  : clf_ckpt
+  Policy type : hybrid_evolved
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+RoutedGenerativePolicy: 4 routes, default=project/models/gen_v5_ns12_balanced
+  '^Nat\\.' -> project/models/gen_v5_ns15_nat_oversample
+  '^Int\\.' -> project/models/gen_v5_ns24_int_minimal_omega_10x
+  '^Finset\\.' -> project/models/gen_v5_ns21_finset_aesop_20x
+  '^Set\\.' -> project/models/gen_v5_ns12_balanced
+[1/40] Multiset.toFinset_eq_singleton_iff
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 14780.59it/s]
+Loaded generative policy from project/models/gen_v5_ns12_balanced (type=seq2seq)
+  Base model: project/models/gen_v5
+  Unique tactics in training: 104
+       FAILED at step 4 (All top-13 tactics errored at step 4)
+
+[2/40] Set.antitoneOn_iff_antitone
+       FAILED at step 1 (All top-14 tactics errored at step 1)
+
+[3/40] Set.diff_singleton_subset_iff
+       FAILED at step 5 (All top-11 tactics errored at step 5)
+
+[4/40] Set.ite_eq_of_subset_left
+       FAILED at step 2 (All top-13 tactics errored at step 2)
+
+[5/40] Set.ite_eq_of_subset_right
+       FAILED at step 2 (All top-13 tactics errored at step 2)
+
+[6/40] Set.ite_inter_of_inter_eq
+       FAILED at step 3 (All top-13 tactics errored at step 3)
+
+[7/40] Set.pair_eq_pair_iff
+       FAILED at step 2 (All top-11 tactics errored at step 2)
+
+[8/40] Set.powerset_singleton
+       FAILED at step 3 (All top-14 tactics errored at step 3)
+
+[9/40] Set.ssubset_singleton_iff
+       FAILED at step 3 (All top-11 tactics errored at step 3)
+
+[10/40] Set.subset_insert_iff
+       FAILED at step 3 (All top-11 tactics errored at step 3)
+
+[11/40] Set.subset_ite
+       FAILED at step 3 (All top-11 tactics errored at step 3)
+
+[12/40] Set.subset_singleton_iff_eq
+       FAILED at step 2 (All top-11 tactics errored at step 2)
+
+[13/40] Set.union_empty_iff
+       FAILED at step 4 (All top-11 tactics errored at step 4)
+
+[14/40] Eq.subset
+       FAILED at step 1 (All top-12 tactics errored at step 1)
+
+[15/40] Function.Injective.nonempty_apply_iff
+       FAILED at step 2 (All top-11 tactics errored at step 2)
+
+[16/40] coe_notMemRangeEquiv_symm
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[17/40] Multiset.disjoint_toFinset
+       PROVED in 3 step(s) (used 3 fallback(s))
+       Proof: aesop -> induction m1 using Multiset.induction_on <;> simp_all -> induction m1 using Multiset.induction_on <;> simp_all
+
+[18/40] Multiset.toFinset_nsmul
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[19/40] Prop.compl_singleton
+       FAILED at step 1 (All top-12 tactics errored at step 1)
+
+[20/40] Set.Nonempty.subset_pair_iff_eq
+       FAILED at step 2 (All top-11 tactics errored at step 2)
+
+[21/40] Set.eq_of_inclusion_surjective
+       FAILED at step 4 (All top-11 tactics errored at step 4)
+
+[22/40] Set.inclusion_inclusion
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[23/40] Set.inclusion_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: tauto
+
+[24/40] Set.inclusion_self
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[25/40] Set.insert_diff_of_not_mem
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[26/40] Set.insert_diff_self_of_not_mem
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp_all
+
+[27/40] Set.ite_empty
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+[28/40] Set.ite_empty_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+[29/40] Set.ite_empty_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+[30/40] Set.ite_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+[31/40] Set.ite_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+[32/40] Set.monotoneOn_iff_monotone
+       FAILED at step 2 (All top-12 tactics errored at step 2)
+
+[33/40] Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le
+       FAILED at step 2 (All top-11 tactics errored at step 2)
+
+[34/40] Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt
+       FAILED at step 2 (All top-11 tactics errored at step 2)
+
+[35/40] Set.pairwiseDisjoint_filter
+       FAILED at step 1 (All top-12 tactics errored at step 1)
+
+[36/40] Set.ssubset_iff_insert
+       FAILED at step 3 (All top-11 tactics errored at step 3)
+
+[37/40] Set.ssubset_iff_sdiff_singleton
+       FAILED at step 3 (All top-11 tactics errored at step 3)
+
+[38/40] Set.strictAntiOn_iff_strictAnti
+       FAILED at step 1 (All top-14 tactics errored at step 1)
+
+[39/40] Set.strictMonoOn_iff_strictMono
+       FAILED at step 1 (All top-14 tactics errored at step 1)
+
+[40/40] Set.subset_pair_iff_eq
+       FAILED at step 2 (All top-11 tactics errored at step 2)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Multiset.toFinset_eq_singleton_iff       ERROR        4      
+  Set.antitoneOn_iff_antitone              ERROR        1      
+  Set.diff_singleton_subset_iff            ERROR        5      
+  Set.ite_eq_of_subset_left                ERROR        2      
+  Set.ite_eq_of_subset_right               ERROR        2      
+  Set.ite_inter_of_inter_eq                ERROR        3      
+  Set.pair_eq_pair_iff                     ERROR        2      
+  Set.powerset_singleton                   ERROR        3      
+  Set.ssubset_singleton_iff                ERROR        3      
+  Set.subset_insert_iff                    ERROR        3      
+  Set.subset_ite                           ERROR        3      
+  Set.subset_singleton_iff_eq              ERROR        2      
+  Set.union_empty_iff                      ERROR        4      
+  Eq.subset                                ERROR        1      
+  Function.Injective.nonempty_apply_iff    ERROR        2      
+  coe_notMemRangeEquiv_symm                PROVED       1      aesop
+  Multiset.disjoint_toFinset               PROVED       3      induction m1 using Multiset.in
+  Multiset.toFinset_nsmul                  PROVED       1      aesop
+  Prop.compl_singleton                     ERROR        1      
+  Set.Nonempty.subset_pair_iff_eq          ERROR        2      
+  Set.eq_of_inclusion_surjective           ERROR        4      
+  Set.inclusion_inclusion                  PROVED       1      aesop
+  Set.inclusion_right                      PROVED       1      tauto
+  Set.inclusion_self                       PROVED       1      aesop
+  Set.insert_diff_of_not_mem               PROVED       1      aesop
+  Set.insert_diff_self_of_not_mem          PROVED       1      simp_all
+  Set.ite_empty                            PROVED       1      simp [Set.ite]
+  Set.ite_empty_left                       PROVED       1      simp [Set.ite]
+  Set.ite_empty_right                      PROVED       1      simp [Set.ite]
+  Set.ite_left                             PROVED       1      simp [Set.ite]
+  Set.ite_right                            PROVED       1      simp [Set.ite]
+  Set.monotoneOn_iff_monotone              ERROR        2      
+  Set.not_monotoneOn_not_antitoneOn_iff_e  ERROR        2      
+  Set.not_monotoneOn_not_antitoneOn_iff_e  ERROR        2      
+  Set.pairwiseDisjoint_filter              ERROR        1      
+  Set.ssubset_iff_insert                   ERROR        3      
+  Set.ssubset_iff_sdiff_singleton          ERROR        3      
+  Set.strictAntiOn_iff_strictAnti          ERROR        1      
+  Set.strictMonoOn_iff_strictMono          ERROR        1      
+  Set.subset_pair_iff_eq                   ERROR        2      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    40
+  Available:         40/40
+  Proved:            13/40  (32%)
+  Errored:           27/40
+  Exhausted:         0/40
+  Skipped:           0/40
+  Avg steps (proved): 1.2
+  Fallbacks used:     15
+  Proved by origin:   {'generative_topk': 7, 'wrapper_symbolic_action': 1, 'tactic_template': 5}
+  Family proofs:      {'multiset_induction_simp_all': 1, 'priority:any:specific': 5}
+  Denied tactics:     146 (per-theorem deny-list)
+================================================================
+
+Run artifacts: project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639
+[sf4-confirm] confirmed=27 hist={'CONFIRMED_RC2_FAILURE': 27, 'NOW_SOLVED_BY_RC2': 13}

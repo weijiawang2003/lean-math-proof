@@ -1,0 +1,299 @@
+{
+  "confirmed_input": "project/evolve/experiments/sf4/out/rc2_failure_confirmation.json",
+  "num_confirmed_failures": 27,
+  "num_clusters": 10,
+  "clusters": [
+    {
+      "cluster_id": "Set__iff__iff",
+      "size": 16,
+      "namespace": "Set",
+      "primary_name_feature": "iff",
+      "goal_shape": "iff",
+      "representatives": [
+        "Set.antitoneOn_iff_antitone",
+        "Set.diff_singleton_subset_iff",
+        "Set.pair_eq_pair_iff",
+        "Set.ssubset_singleton_iff",
+        "Set.subset_insert_iff"
+      ],
+      "members": [
+        "Set.antitoneOn_iff_antitone",
+        "Set.diff_singleton_subset_iff",
+        "Set.pair_eq_pair_iff",
+        "Set.ssubset_singleton_iff",
+        "Set.subset_insert_iff",
+        "Set.subset_singleton_iff_eq",
+        "Set.union_empty_iff",
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.monotoneOn_iff_monotone",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Set.ssubset_iff_insert",
+        "Set.ssubset_iff_sdiff_singleton",
+        "Set.strictAntiOn_iff_strictAnti",
+        "Set.strictMonoOn_iff_strictMono",
+        "Set.subset_pair_iff_eq"
+      ],
+      "common_goal_features": [
+        "iff",
+        "inter/union/diff",
+        "nonempty",
+        "singleton",
+        "subset"
+      ],
+      "symptoms": [
+        "aesop failed",
+        "missing bridge lemma likely",
+        "simp failed"
+      ],
+      "candidate_families": [
+        "set_ext_aesop",
+        "set_ext_simp",
+        "set_iff_constructor_aesop",
+        "set_subset_antisymm"
+      ],
+      "risk": "high",
+      "recommendation": "sequence_probe"
+    },
+    {
+      "cluster_id": "Set__ite_if__subset",
+      "size": 3,
+      "namespace": "Set",
+      "primary_name_feature": "ite/if",
+      "goal_shape": "subset",
+      "representatives": [
+        "Set.ite_eq_of_subset_left",
+        "Set.ite_eq_of_subset_right",
+        "Set.subset_ite"
+      ],
+      "members": [
+        "Set.ite_eq_of_subset_left",
+        "Set.ite_eq_of_subset_right",
+        "Set.subset_ite"
+      ],
+      "common_goal_features": [
+        "ite/if",
+        "subset"
+      ],
+      "symptoms": [
+        "aesop failed",
+        "simp failed"
+      ],
+      "candidate_families": [
+        "set_ite_simp_aesop",
+        "set_ite_ext",
+        "set_subset_antisymm"
+      ],
+      "risk": "high",
+      "recommendation": "sequence_probe"
+    },
+    {
+      "cluster_id": "Multiset__iff__iff",
+      "size": 1,
+      "namespace": "Multiset",
+      "primary_name_feature": "iff",
+      "goal_shape": "iff",
+      "representatives": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "members": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "common_goal_features": [
+        "iff",
+        "singleton",
+        "toFinset"
+      ],
+      "symptoms": [
+        "aesop failed",
+        "simp failed"
+      ],
+      "candidate_families": [
+        "multiset_tofinset_simp_aesop"
+      ],
+      "risk": "medium",
+      "recommendation": "sequence_probe"
+    },
+    {
+      "cluster_id": "Set__ite_if__equality",
+      "size": 1,
+      "namespace": "Set",
+      "primary_name_feature": "ite/if",
+      "goal_shape": "equality",
+      "representatives": [
+        "Set.ite_inter_of_inter_eq"
+      ],
+      "members": [
+        "Set.ite_inter_of_inter_eq"
+      ],
+      "common_goal_features": [
+        "inter/union/diff",
+        "ite/if"
+      ],
+      "symptoms": [
+        "aesop failed",
+        "simp failed"
+      ],
+      "candidate_families": [
+        "set_ite_simp_aesop",
+        "set_ite_ext",
+        "set_ext_aesop",
+        "set_ext_simp"
+      ],
+      "risk": "low",
+      "recommendation": "sequence_probe"
+    },
+    {
+      "cluster_id": "Set__singleton__arithmetic",
+      "size": 1,
+      "namespace": "Set",
+      "primary_name_feature": "singleton",
+      "goal_shape": "arithmetic",
+      "representatives": [
+        "Set.powerset_singleton"
+      ],
+      "members": [
+        "Set.powerset_singleton"
+      ],
+      "common_goal_features": [
+        "powerset",
+        "singleton"
+      ],
+      "symptoms": [
+        "aesop failed",
+        "simp failed"
+      ],
+      "candidate_families": [
+        "set_ext_aesop"
+      ],
+      "risk": "low",
+      "recommendation": "sequence_probe"
+    },
+    {
+      "cluster_id": "unknown__subset__subset",
+      "size": 1,
+      "namespace": "unknown",
+      "primary_name_feature": "subset",
+      "goal_shape": "subset",
+      "representatives": [
+        "Eq.subset"
+      ],
+      "members": [
+        "Eq.subset"
+      ],
+      "common_goal_features": [
+        "subset"
+      ],
+      "symptoms": [
+        "missing bridge lemma likely"
+      ],
+      "candidate_families": [
+        "generic_aesop_simpall"
+      ],
+      "risk": "high",
+      "recommendation": "sequence_probe"
+    },
+    {
+      "cluster_id": "unknown__iff__iff",
+      "size": 1,
+      "namespace": "unknown",
+      "primary_name_feature": "iff",
+      "goal_shape": "iff",
+      "representatives": [
+        "Function.Injective.nonempty_apply_iff"
+      ],
+      "members": [
+        "Function.Injective.nonempty_apply_iff"
+      ],
+      "common_goal_features": [
+        "iff",
+        "nonempty"
+      ],
+      "symptoms": [
+        "aesop failed"
+      ],
+      "candidate_families": [
+        "generic_aesop_simpall"
+      ],
+      "risk": "high",
+      "recommendation": "sequence_probe"
+    },
+    {
+      "cluster_id": "unknown__compl__arithmetic",
+      "size": 1,
+      "namespace": "unknown",
+      "primary_name_feature": "compl",
+      "goal_shape": "arithmetic",
+      "representatives": [
+        "Prop.compl_singleton"
+      ],
+      "members": [
+        "Prop.compl_singleton"
+      ],
+      "common_goal_features": [
+        "compl",
+        "singleton"
+      ],
+      "symptoms": [
+        "missing bridge lemma likely"
+      ],
+      "candidate_families": [
+        "generic_aesop_simpall"
+      ],
+      "risk": "high",
+      "recommendation": "sequence_probe"
+    },
+    {
+      "cluster_id": "Set__other__equality",
+      "size": 1,
+      "namespace": "Set",
+      "primary_name_feature": "other",
+      "goal_shape": "equality",
+      "representatives": [
+        "Set.eq_of_inclusion_surjective"
+      ],
+      "members": [
+        "Set.eq_of_inclusion_surjective"
+      ],
+      "common_goal_features": [
+        "other"
+      ],
+      "symptoms": [
+        "aesop failed",
+        "simp failed"
+      ],
+      "candidate_families": [
+        "set_ext_aesop",
+        "set_ext_simp"
+      ],
+      "risk": "low",
+      "recommendation": "sequence_probe"
+    },
+    {
+      "cluster_id": "Set__map_filter__arithmetic",
+      "size": 1,
+      "namespace": "Set",
+      "primary_name_feature": "map/filter",
+      "goal_shape": "arithmetic",
+      "representatives": [
+        "Set.pairwiseDisjoint_filter"
+      ],
+      "members": [
+        "Set.pairwiseDisjoint_filter"
+      ],
+      "common_goal_features": [
+        "disjoint",
+        "map/filter",
+        "singleton"
+      ],
+      "symptoms": [
+        "missing bridge lemma likely"
+      ],
+      "candidate_families": [
+        "set_ext_aesop"
+      ],
+      "risk": "low",
+      "recommendation": "sequence_probe"
+    }
+  ]
+}

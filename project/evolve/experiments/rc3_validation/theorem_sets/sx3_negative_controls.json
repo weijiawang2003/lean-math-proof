@@ -1,0 +1,58 @@
+{
+  "sx3_negative_controls": [
+    {
+      "file_path": null,
+      "full_name": "Nat.add_comm",
+      "namespace": "Nat",
+      "role": "negative_control",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "no_emission_expected",
+      "note": "non-Set; SX3 sequence MUST NOT be emitted (name lacks 'Set.ite')"
+    },
+    {
+      "file_path": null,
+      "full_name": "Nat.mul_succ",
+      "namespace": "Nat",
+      "role": "negative_control",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "no_emission_expected",
+      "note": "non-Set; SX3 sequence MUST NOT be emitted (name lacks 'Set.ite')"
+    },
+    {
+      "file_path": null,
+      "full_name": "Int.add_mul",
+      "namespace": "Int",
+      "role": "negative_control",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "no_emission_expected",
+      "note": "non-Set; SX3 sequence MUST NOT be emitted (name lacks 'Set.ite')"
+    },
+    {
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "namespace": "Multiset",
+      "role": "negative_control",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "no_emission_expected",
+      "note": "non-Set; SX3 sequence MUST NOT be emitted (name lacks 'Set.ite')"
+    },
+    {
+      "file_path": null,
+      "full_name": "Multiset.cons_inj_left",
+      "namespace": "Multiset",
+      "role": "negative_control",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "no_emission_expected",
+      "note": "non-Set; SX3 sequence MUST NOT be emitted (name lacks 'Set.ite')"
+    },
+    {
+      "file_path": null,
+      "full_name": "List.append_nil",
+      "namespace": "List",
+      "role": "negative_control",
+      "known_rc2_status": "unknown_rc2",
+      "known_sx3_status": "no_emission_expected",
+      "note": "non-Set; SX3 sequence MUST NOT be emitted (name lacks 'Set.ite')"
+    }
+  ]
+}

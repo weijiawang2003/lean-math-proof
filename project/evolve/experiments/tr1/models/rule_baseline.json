@@ -1,0 +1,19 @@
+{
+  "rules": [
+    "Set \u2227 ite -> SET_ITE_SIMP",
+    "Multiset \u2227 induction-signal -> WX3_MULTISET_INDUCTION",
+    "toFinset/Finite -> MX2_TOFINSET_AESOP",
+    "rc2_failed \u2227 (iff \u2228 subset) -> MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "rc2_failed (else) -> NO_CHEAP_ACTION",
+    "rc2_solved (else) -> BASELINE_DUPLICATE"
+  ],
+  "label_priority": [
+    "BASELINE_DUPLICATE",
+    "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "NO_CHEAP_ACTION",
+    "PROOF_SEARCH_DEPTH_GAP",
+    "SET_ITE_SIMP",
+    "SX3_PRODUCTION_SUBSUMED",
+    "WX3_MULTISET_INDUCTION"
+  ]
+}

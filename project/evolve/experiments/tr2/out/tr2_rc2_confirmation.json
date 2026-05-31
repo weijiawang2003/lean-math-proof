@@ -1,0 +1,649 @@
+{
+  "batch_manifest": "project/evolve/experiments/tr2/cases/tr2_batch_manifest.json",
+  "rc2_wrapper": "project/evolve/experiments/rc2_release/rc2_production_wrapper.json",
+  "route_config": "project/evolve/routing/ns24_router.json",
+  "policy_type": "hybrid_evolved",
+  "top_k": 8,
+  "max_steps": 8,
+  "num_cases": 34,
+  "num_live_runs": 0,
+  "live_metrics_path": null,
+  "classification_histogram": {
+    "CONFIRMED_RC2_FAILURE": 26,
+    "RC2_SOLVED": 8
+  },
+  "provenance_histogram": {
+    "sf4_reused": 30,
+    "tr1_reused": 4
+  },
+  "confirmed_rc2_failures": [
+    "Eq.subset",
+    "Function.Injective.nonempty_apply_iff",
+    "Multiset.toFinset_eq_singleton_iff",
+    "Prop.compl_singleton",
+    "Set.Nonempty.subset_pair_iff_eq",
+    "Set.antitoneOn_iff_antitone",
+    "Set.diff_singleton_subset_iff",
+    "Set.eq_of_inclusion_surjective",
+    "Set.ite_eq_of_subset_left",
+    "Set.ite_eq_of_subset_right",
+    "Set.ite_inter_of_inter_eq",
+    "Set.monotoneOn_iff_monotone",
+    "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+    "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+    "Set.pair_eq_pair_iff",
+    "Set.pairwiseDisjoint_filter",
+    "Set.ssubset_iff_insert",
+    "Set.ssubset_iff_sdiff_singleton",
+    "Set.ssubset_singleton_iff",
+    "Set.strictAntiOn_iff_strictAnti",
+    "Set.strictMonoOn_iff_strictMono",
+    "Set.subset_insert_iff",
+    "Set.subset_ite",
+    "Set.subset_pair_iff_eq",
+    "Set.subset_singleton_iff_eq",
+    "Set.union_empty_iff"
+  ],
+  "num_confirmed": 26,
+  "eligible_for_true_delta": [
+    "Eq.subset",
+    "Function.Injective.nonempty_apply_iff",
+    "Multiset.toFinset_eq_singleton_iff",
+    "Prop.compl_singleton",
+    "Set.Nonempty.subset_pair_iff_eq",
+    "Set.antitoneOn_iff_antitone",
+    "Set.diff_singleton_subset_iff",
+    "Set.eq_of_inclusion_surjective",
+    "Set.ite_eq_of_subset_left",
+    "Set.ite_eq_of_subset_right",
+    "Set.ite_inter_of_inter_eq",
+    "Set.monotoneOn_iff_monotone",
+    "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+    "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+    "Set.pair_eq_pair_iff",
+    "Set.pairwiseDisjoint_filter",
+    "Set.ssubset_iff_insert",
+    "Set.ssubset_iff_sdiff_singleton",
+    "Set.ssubset_singleton_iff",
+    "Set.strictAntiOn_iff_strictAnti",
+    "Set.strictMonoOn_iff_strictMono",
+    "Set.subset_insert_iff",
+    "Set.subset_ite",
+    "Set.subset_pair_iff_eq",
+    "Set.subset_singleton_iff_eq",
+    "Set.union_empty_iff"
+  ],
+  "reuse_note": "Identical-config literal-RC2 confirmation already exists for every selected case (SF4); reused as oracle. Live runs occur only for cases lacking a record.",
+  "results": [
+    {
+      "full_name": "Eq.subset",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Eq",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "tactics_used": [],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model",
+        "random"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_toFinset",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "classification": "RC2_SOLVED",
+      "rc2_finished": true,
+      "num_steps": 3,
+      "winning_tactic": "induction m1 using Multiset.induction_on <;> simp_all",
+      "tactics_used": [
+        "aesop",
+        "induction m1 using Multiset.induction_on <;> simp_all",
+        "induction m1 using Multiset.induction_on <;> simp_all"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model"
+      ]
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.ite]"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model"
+      ]
+    },
+    {
+      "full_name": "coe_notMemRangeEquiv_symm",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "GENERAL_FRONTIER",
+      "classification": "RC2_SOLVED",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "tactics_used": [
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model"
+      ]
+    },
+    {
+      "full_name": "Set.pairwiseDisjoint_filter",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "tactics_used": [],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model",
+        "random"
+      ]
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.ite]"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model"
+      ]
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "tactics_used": [],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model",
+        "random"
+      ]
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model"
+      ]
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model"
+      ]
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model",
+        "random"
+      ]
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model"
+      ]
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.subset_def]",
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model",
+        "random"
+      ]
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 4,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop",
+        "simp [Set.ext_iff]",
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model",
+        "random"
+      ]
+    },
+    {
+      "full_name": "Function.Injective.nonempty_apply_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Function",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model",
+        "random"
+      ]
+    },
+    {
+      "full_name": "Prop.compl_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Prop",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "tactics_used": [],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "model"
+      ]
+    },
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 4,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.univ_union]",
+        "induction s using Multiset.induction_on <;> simp_all",
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "rule"
+      ]
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "rule",
+        "random"
+      ]
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 5,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop",
+        "tauto",
+        "simp [Set.subset_def]",
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "rule"
+      ]
+    },
+    {
+      "full_name": "Set.ssubset_iff_insert",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.subset_def]",
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "rule",
+        "random"
+      ]
+    },
+    {
+      "full_name": "Set.ssubset_iff_sdiff_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.subset_def]",
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "rule",
+        "random"
+      ]
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.ext_iff]",
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "rule"
+      ]
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.subset_def]",
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "rule",
+        "random"
+      ]
+    },
+    {
+      "full_name": "Set.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "rule"
+      ]
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "rule"
+      ]
+    },
+    {
+      "full_name": "Multiset.toFinset_nsmul",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "classification": "RC2_SOLVED",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "tactics_used": [
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "rule"
+      ]
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "tactics_used": [],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "rule"
+      ]
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "tactics_used": [],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "rule"
+      ]
+    },
+    {
+      "full_name": "Set.diff_union_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "RC2_SOLVED",
+      "rc2_finished": true,
+      "provenance": "tr1_reused",
+      "in_batches": [
+        "rule"
+      ]
+    },
+    {
+      "full_name": "Set.insert_diff_eq_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "RC2_SOLVED",
+      "rc2_finished": true,
+      "provenance": "tr1_reused",
+      "in_batches": [
+        "rule"
+      ]
+    },
+    {
+      "full_name": "Set.insert_diff_of_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "RC2_SOLVED",
+      "rc2_finished": true,
+      "provenance": "tr1_reused",
+      "in_batches": [
+        "rule"
+      ]
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "random"
+      ]
+    },
+    {
+      "full_name": "Set.eq_of_inclusion_surjective",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "rc2_finished": false,
+      "num_steps": 4,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.ext_iff]",
+        "aesop",
+        "tauto"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "random"
+      ]
+    },
+    {
+      "full_name": "Set.inclusion_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "RC2_SOLVED",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "tauto",
+      "tactics_used": [
+        "tauto"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "sf4_reused",
+      "in_batches": [
+        "random"
+      ]
+    },
+    {
+      "full_name": "Set.pair_diff_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "RC2_SOLVED",
+      "rc2_finished": true,
+      "provenance": "tr1_reused",
+      "in_batches": [
+        "random"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "name": "sx3_negative_controls",
+  "description": "Non-Set cases; MUST produce 0 Set sequence emissions (gate test).",
+  "provenance": "rc2_candidates set_ite_negative_controls",
+  "cases": [
+    {
+      "full_name": "Nat.add_comm",
+      "file_path": null,
+      "namespace": "Nat",
+      "source": "negative_control",
+      "role": "negative_control",
+      "shape": "non_set",
+      "known_rc2_status_finished": null,
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Nat.mul_succ",
+      "file_path": null,
+      "namespace": "Nat",
+      "source": "negative_control",
+      "role": "negative_control",
+      "shape": "non_set",
+      "known_rc2_status_finished": null,
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Int.add_mul",
+      "file_path": null,
+      "namespace": "Int",
+      "source": "negative_control",
+      "role": "negative_control",
+      "shape": "non_set",
+      "known_rc2_status_finished": null,
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "source": "negative_control",
+      "role": "negative_control",
+      "shape": "non_set",
+      "known_rc2_status_finished": null,
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Multiset.cons_inj_left",
+      "file_path": null,
+      "namespace": "Multiset",
+      "source": "negative_control",
+      "role": "negative_control",
+      "shape": "non_set",
+      "known_rc2_status_finished": null,
+      "exclude_reason": null
+    },
+    {
+      "full_name": "List.append_nil",
+      "file_path": null,
+      "namespace": "List",
+      "source": "negative_control",
+      "role": "negative_control",
+      "shape": "non_set",
+      "known_rc2_status_finished": null,
+      "exclude_reason": null
+    }
+  ]
+}

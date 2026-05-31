@@ -1,0 +1,18 @@
+=== git diff --stat HEAD -- protected files (expect EMPTY) ===
+<empty above = protected files UNTOUCHED>
+
+=== README unmodified? ===
+no README changes
+
+=== git status --short (TR1 additions) ===
+?? project/evolve/experiments/tr1/
+?? project/evolve/reports/tr1/
+?? scripts/tr1_build_training_dataset.py
+?? scripts/tr1_error_analysis.py
+?? scripts/tr1_eval_router_on_rc2_failures.py
+?? scripts/tr1_featurize.py
+?? scripts/tr1_select_active_learning_cases.py
+?? scripts/tr1_train_router.py
+
+=== HEAD (no new commit by me) ===
+94bde0a Add SX4 sequence attribution harness

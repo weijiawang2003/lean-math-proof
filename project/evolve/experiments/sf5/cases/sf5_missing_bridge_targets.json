@@ -1,0 +1,948 @@
+[
+  {
+    "full_name": "Multiset.toFinset_eq_singleton_iff",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Multiset",
+    "cluster_id": "Multiset__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem toFinset_eq_singleton_iff (s : Multiset α) (a : α) : s.toFinset = {a} ↔ card s ≠ 0 ∧ s = card s • {a}",
+    "statement_text": "theorem toFinset_eq_singleton_iff (s : Multiset α) (a : α) : s.toFinset = {a} ↔ card s ≠ 0 ∧ s = card s • {a}",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 12,
+      "first_tactic": "refine ⟨fun H ↦ ⟨fun h ↦ ?_, ext' fun x ",
+      "is_term_proof": false,
+      "snippet": "by refine ⟨fun H ↦ ⟨fun h ↦ ?_, ext' fun x ↦ ?_⟩, fun H ↦ ?_⟩ · rw [card_eq_zero.1 h, toFinset_zero] at H exact Finset.singleton_ne_empty _ H.symm · rw [count_nsmul, count_singleton] by_cases hx : x ="
+    },
+    "last_goal": null,
+    "last_error": "All top-13 tactics errored at step 4",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": false,
+    "rc2_tactics_used": [
+      "simp [Set.univ_union]",
+      "induction s using Multiset.induction_on <;> simp_all",
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": true,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.Nonempty.subset_pair_iff_eq",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem subset_pair_iff_eq {x y : α} : s ⊆ {x, y} ↔ s = ∅ ∨ s = {x} ∨ s = {y} ∨ s = {x, y}",
+    "statement_text": "theorem subset_pair_iff_eq {x y : α} : s ⊆ {x, y} ↔ s = ∅ ∨ s = {x} ∨ s = {y} ∨ s = {x, y}",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 6,
+      "first_tactic": "refine ⟨?_, by rintro (rfl | rfl | rfl |",
+      "is_term_proof": false,
+      "snippet": "by refine ⟨?_, by rintro (rfl | rfl | rfl | rfl) <;> simp [pair_subset_iff]⟩ rw [subset_insert_iff, subset_singleton_iff_eq, subset_singleton_iff_eq, ← subset_empty_iff (s := s \\ {x}), diff_subset_iff"
+    },
+    "last_goal": null,
+    "last_error": "All top-11 tactics errored at step 2",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": true,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": true,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.antitoneOn_iff_antitone",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔ Antitone fun a : s => f a",
+    "statement_text": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔ Antitone fun a : s => f a",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 1,
+      "first_tactic": "simp [Antitone, AntitoneOn]",
+      "is_term_proof": false,
+      "snippet": "by simp [Antitone, AntitoneOn]"
+    },
+    "last_goal": null,
+    "last_error": "All top-14 tactics errored at step 1",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [],
+    "features": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": false
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": false,
+      "has_singleton": false,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.diff_singleton_subset_iff",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem diff_singleton_subset_iff {x : α} {s t : Set α} : s \\ {x} ⊆ t ↔ s ⊆ insert x t",
+    "statement_text": "theorem diff_singleton_subset_iff {x : α} {s t : Set α} : s \\ {x} ⊆ t ↔ s ⊆ insert x t",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 2,
+      "first_tactic": "rw [← union_singleton, union_comm]",
+      "is_term_proof": false,
+      "snippet": "by rw [← union_singleton, union_comm] apply diff_subset_iff"
+    },
+    "last_goal": null,
+    "last_error": "All top-11 tactics errored at step 5",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "aesop",
+      "tauto",
+      "simp [Set.subset_def]",
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": true,
+      "has_insert": true,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.ite_eq_of_subset_left",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__ite_if__subset",
+    "cluster_label": "subset",
+    "goal_text": "⊢ t.ite s₁ s₂ = s₁ ∪ s₂ \\ t",
+    "statement_text": "theorem ite_eq_of_subset_left (t : Set α) {s₁ s₂ : Set α} (h : s₁ ⊆ s₂) : t.ite s₁ s₂ = s₁ ∪ (s₂ \\ t)",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 3,
+      "first_tactic": "ext x",
+      "is_term_proof": false,
+      "snippet": "by ext x by_cases hx : x ∈ t <;> simp [*, Set.ite, or_iff_right_of_imp (@h x)]"
+    },
+    "last_goal": "⊢ t.ite s₁ s₂ = s₁ ∪ s₂ \\ t",
+    "last_error": "All top-13 tactics errored at step 2",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "simp [Set.ite]"
+    ],
+    "features": {
+      "has_iff": false,
+      "has_subset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": false,
+      "has_subset": false,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": false,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": true,
+      "has_union": true,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.ite_eq_of_subset_right",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__ite_if__subset",
+    "cluster_label": "subset",
+    "goal_text": "⊢ t.ite s₁ s₂ = s₁ ∩ t ∪ s₂",
+    "statement_text": "theorem ite_eq_of_subset_right (t : Set α) {s₁ s₂ : Set α} (h : s₂ ⊆ s₁) : t.ite s₁ s₂ = (s₁ ∩ t) ∪ s₂",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 3,
+      "first_tactic": "ext x",
+      "is_term_proof": false,
+      "snippet": "by ext x by_cases hx : x ∈ t <;> simp [*, Set.ite, or_iff_left_of_imp (@h x)]"
+    },
+    "last_goal": "⊢ t.ite s₁ s₂ = s₁ ∩ t ∪ s₂",
+    "last_error": "All top-13 tactics errored at step 2",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "simp [Set.ite]"
+    ],
+    "features": {
+      "has_iff": false,
+      "has_subset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": false,
+      "has_subset": false,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": false,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": true,
+      "has_union": true,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.monotoneOn_iff_monotone",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem monotoneOn_iff_monotone : MonotoneOn f s ↔ Monotone fun a : s => f a",
+    "statement_text": "theorem monotoneOn_iff_monotone : MonotoneOn f s ↔ Monotone fun a : s => f a",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 1,
+      "first_tactic": "simp [Monotone, MonotoneOn]",
+      "is_term_proof": false,
+      "snippet": "by simp [Monotone, MonotoneOn]"
+    },
+    "last_goal": null,
+    "last_error": "All top-12 tactics errored at step 2",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_monotone": true,
+      "has_strictmono": false,
+      "has_set": false
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_ssubset": false,
+      "has_monotone": true,
+      "has_strictmono": false,
+      "has_set": false,
+      "has_singleton": false,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_le_le : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a ≤ b ∧ b ≤ c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+    "statement_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_le_le : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a ≤ b ∧ b ≤ c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 2,
+      "first_tactic": "simp [monotoneOn_iff_monotone, antitoneO",
+      "is_term_proof": false,
+      "snippet": "by simp [monotoneOn_iff_monotone, antitoneOn_iff_antitone, and_assoc, exists_and_left, not_monotone_not_antitone_iff_exists_le_le, @and_left_comm (_ ∈ s)]"
+    },
+    "last_goal": null,
+    "last_error": "All top-11 tactics errored at step 2",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_monotone": true,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_ssubset": false,
+      "has_monotone": true,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": false,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_lt_lt : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a < b ∧ b < c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+    "statement_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_lt_lt : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a < b ∧ b < c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 2,
+      "first_tactic": "simp [monotoneOn_iff_monotone, antitoneO",
+      "is_term_proof": false,
+      "snippet": "by simp [monotoneOn_iff_monotone, antitoneOn_iff_antitone, and_assoc, exists_and_left, not_monotone_not_antitone_iff_exists_lt_lt, @and_left_comm (_ ∈ s)]"
+    },
+    "last_goal": null,
+    "last_error": "All top-11 tactics errored at step 2",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_monotone": true,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_ssubset": false,
+      "has_monotone": true,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": false,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.pair_eq_pair_iff",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem pair_eq_pair_iff {x y z w : α} : ({x, y} : Set α) = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z",
+    "statement_text": "theorem pair_eq_pair_iff {x y z w : α} : ({x, y} : Set α) = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 2,
+      "first_tactic": "simp [subset_antisymm_iff, insert_subset",
+      "is_term_proof": false,
+      "snippet": "by simp [subset_antisymm_iff, insert_subset_iff]; aesop"
+    },
+    "last_goal": null,
+    "last_error": "All top-11 tactics errored at step 2",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": true,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": true,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.ssubset_iff_insert",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem ssubset_iff_insert {s t : Set α} : s ⊂ t ↔ ∃ a ∉ s, insert a s ⊆ t",
+    "statement_text": "theorem ssubset_iff_insert {s t : Set α} : s ⊂ t ↔ ∃ a ∉ s, insert a s ⊆ t",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 2,
+      "first_tactic": "simp only [insert_subset_iff, exists_and",
+      "is_term_proof": false,
+      "snippet": "by simp only [insert_subset_iff, exists_and_right, ssubset_def, not_subset] aesop"
+    },
+    "last_goal": null,
+    "last_error": "All top-11 tactics errored at step 3",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "simp [Set.subset_def]",
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_ssubset": true,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": true,
+      "has_insert": true,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.ssubset_iff_sdiff_singleton",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "lemma ssubset_iff_sdiff_singleton : s ⊂ t ↔ ∃ a ∈ t, s ⊆ t \\ {a}",
+    "statement_text": "lemma ssubset_iff_sdiff_singleton : s ⊂ t ↔ ∃ a ∈ t, s ⊆ t \\ {a}",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 2,
+      "first_tactic": "simp [ssubset_iff_insert, subset_diff, i",
+      "is_term_proof": false,
+      "snippet": "by simp [ssubset_iff_insert, subset_diff, insert_subset_iff]; aesop"
+    },
+    "last_goal": null,
+    "last_error": "All top-11 tactics errored at step 3",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "simp [Set.subset_def]",
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_ssubset": true,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": true,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.ssubset_singleton_iff",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem ssubset_singleton_iff {s : Set α} {x : α} : s ⊂ {x} ↔ s = ∅",
+    "statement_text": "theorem ssubset_singleton_iff {s : Set α} {x : α} : s ⊂ {x} ↔ s = ∅",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 3,
+      "first_tactic": "rw [ssubset_iff_subset_ne, subset_single",
+      "is_term_proof": false,
+      "snippet": "by rw [ssubset_iff_subset_ne, subset_singleton_iff_eq, or_and_right, and_not_self_iff, or_false_iff, and_iff_left_iff_imp] exact fun h => h ▸ (singleton_ne_empty _).symm"
+    },
+    "last_goal": null,
+    "last_error": "All top-11 tactics errored at step 3",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "simp [Set.ext_iff]",
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_ssubset": true,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": true,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.strictAntiOn_iff_strictAnti",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem strictAntiOn_iff_strictAnti : StrictAntiOn f s ↔ StrictAnti fun a : s => f a",
+    "statement_text": "theorem strictAntiOn_iff_strictAnti : StrictAntiOn f s ↔ StrictAnti fun a : s => f a",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 1,
+      "first_tactic": "simp [StrictAnti, StrictAntiOn]",
+      "is_term_proof": false,
+      "snippet": "by simp [StrictAnti, StrictAntiOn]"
+    },
+    "last_goal": null,
+    "last_error": "All top-14 tactics errored at step 1",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [],
+    "features": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": false
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": false,
+      "has_singleton": false,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.strictMonoOn_iff_strictMono",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem strictMonoOn_iff_strictMono : StrictMonoOn f s ↔ StrictMono fun a : s => f a",
+    "statement_text": "theorem strictMonoOn_iff_strictMono : StrictMonoOn f s ↔ StrictMono fun a : s => f a",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 1,
+      "first_tactic": "simp [StrictMono, StrictMonoOn]",
+      "is_term_proof": false,
+      "snippet": "by simp [StrictMono, StrictMonoOn]"
+    },
+    "last_goal": null,
+    "last_error": "All top-14 tactics errored at step 1",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [],
+    "features": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_monotone": false,
+      "has_strictmono": true,
+      "has_set": false
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": true,
+      "has_set": false,
+      "has_singleton": false,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.subset_insert_iff",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem subset_insert_iff {s t : Set α} {x : α} : s ⊆ insert x t ↔ s ⊆ t ∨ (x ∈ s ∧ s \\ {x} ⊆ t)",
+    "statement_text": "theorem subset_insert_iff {s t : Set α} {x : α} : s ⊆ insert x t ↔ s ⊆ t ∨ (x ∈ s ∧ s \\ {x} ⊆ t)",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 4,
+      "first_tactic": "rw [← diff_singleton_subset_iff]",
+      "is_term_proof": false,
+      "snippet": "by rw [← diff_singleton_subset_iff] by_cases hx : x ∈ s · rw [and_iff_right hx, or_iff_right_of_imp diff_subset.trans] rw [diff_singleton_eq_self hx, or_iff_left_of_imp And.right]"
+    },
+    "last_goal": null,
+    "last_error": "All top-11 tactics errored at step 3",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "simp [Set.subset_def]",
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": true,
+      "has_insert": true,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.subset_ite",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__ite_if__subset",
+    "cluster_label": "subset",
+    "goal_text": "theorem subset_ite {t s s' u : Set α} : u ⊆ t.ite s s' ↔ u ∩ t ⊆ s ∧ u \\ t ⊆ s'",
+    "statement_text": "theorem subset_ite {t s s' u : Set α} : u ⊆ t.ite s s' ↔ u ∩ t ⊆ s ∧ u \\ t ⊆ s'",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 4,
+      "first_tactic": "simp only [subset_def, ← forall_and]",
+      "is_term_proof": false,
+      "snippet": "by simp only [subset_def, ← forall_and] refine forall_congr' fun x => ?_ by_cases hx : x ∈ t <;> simp [*, Set.ite]"
+    },
+    "last_goal": null,
+    "last_error": "All top-11 tactics errored at step 3",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "simp [Set.subset_def]",
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": true,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": true,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.subset_pair_iff_eq",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem subset_pair_iff_eq {x y : α} : s ⊆ {x, y} ↔ s = ∅ ∨ s = {x} ∨ s = {y} ∨ s = {x, y}",
+    "statement_text": "theorem subset_pair_iff_eq {x y : α} : s ⊆ {x, y} ↔ s = ∅ ∨ s = {x} ∨ s = {y} ∨ s = {x, y}",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 6,
+      "first_tactic": "refine ⟨?_, by rintro (rfl | rfl | rfl |",
+      "is_term_proof": false,
+      "snippet": "by refine ⟨?_, by rintro (rfl | rfl | rfl | rfl) <;> simp [pair_subset_iff]⟩ rw [subset_insert_iff, subset_singleton_iff_eq, subset_singleton_iff_eq, ← subset_empty_iff (s := s \\ {x}), diff_subset_iff"
+    },
+    "last_goal": null,
+    "last_error": "All top-11 tactics errored at step 2",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": true,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": true,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.subset_singleton_iff_eq",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem subset_singleton_iff_eq {s : Set α} {x : α} : s ⊆ {x} ↔ s = ∅ ∨ s = {x}",
+    "statement_text": "theorem subset_singleton_iff_eq {s : Set α} {x : α} : s ⊆ {x} ↔ s = ∅ ∨ s = {x}",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 3,
+      "first_tactic": "obtain rfl | hs := s.eq_empty_or_nonempt",
+      "is_term_proof": false,
+      "snippet": "by obtain rfl | hs := s.eq_empty_or_nonempty · exact ⟨fun _ => Or.inl rfl, fun _ => empty_subset _⟩ · simp [eq_singleton_iff_nonempty_unique_mem, hs, hs.ne_empty]"
+    },
+    "last_goal": null,
+    "last_error": "All top-11 tactics errored at step 2",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": true,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": true,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": false,
+      "has_empty": false
+    }
+  },
+  {
+    "full_name": "Set.union_empty_iff",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "cluster_id": "Set__iff__iff",
+    "cluster_label": "iff",
+    "goal_text": "theorem union_empty_iff {s t : Set α} : s ∪ t = ∅ ↔ s = ∅ ∧ t = ∅",
+    "statement_text": "theorem union_empty_iff {s t : Set α} : s ∪ t = ∅ ↔ s = ∅ ∧ t = ∅",
+    "source_proof": {
+      "has_source_proof": true,
+      "num_steps": 2,
+      "first_tactic": "simp only [← subset_empty_iff]",
+      "is_term_proof": false,
+      "snippet": "by simp only [← subset_empty_iff] exact union_subset_iff"
+    },
+    "last_goal": null,
+    "last_error": "All top-11 tactics errored at step 4",
+    "known_rc2_status": "failed",
+    "tr2_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "in_tr2_missing_bridge": true,
+    "in_sf4_missing_bridge_cluster": true,
+    "rc2_tactics_used": [
+      "aesop",
+      "simp [Set.ext_iff]",
+      "aesop"
+    ],
+    "features": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true
+    },
+    "features_extended": {
+      "has_iff": true,
+      "has_subset": false,
+      "has_ssubset": false,
+      "has_monotone": false,
+      "has_strictmono": false,
+      "has_set": true,
+      "has_singleton": true,
+      "has_insert": false,
+      "has_compl": false,
+      "has_pair": false,
+      "has_ite": false,
+      "has_union": true,
+      "has_empty": true
+    }
+  }
+]

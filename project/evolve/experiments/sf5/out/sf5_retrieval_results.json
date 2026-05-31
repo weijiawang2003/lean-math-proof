@@ -1,0 +1,4647 @@
+{
+  "generated_by": "scripts/sf5_retrieve_lemmas.py",
+  "index_size": 5994,
+  "top_k": 20,
+  "weights": {
+    "tfidf": 1.0,
+    "namespace": 0.35,
+    "path": 0.25,
+    "feature": 0.4
+  },
+  "num_targets": 20,
+  "results": [
+    {
+      "target": "Multiset.toFinset_eq_singleton_iff",
+      "cluster_id": "Multiset__iff__iff",
+      "namespace": "Multiset",
+      "goal_text": "theorem toFinset_eq_singleton_iff (s : Multiset α) (a : α) : s.toFinset = {a} ↔ card s ≠ 0 ∧ s = card s • {a}",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Multiset.toFinset_card_eq_card_iff_nodup",
+          "score": 1.2975,
+          "reason": "lexical=0.49; ns=1.00; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem Multiset.toFinset_card_eq_card_iff_nodup {m : Multiset α} : m.toFinset.card = card m ↔ m.Nodup",
+          "file_path": "Mathlib/Data/Finset/Card.lean"
+        },
+        {
+          "lemma": "Multiset.toFinset_singleton",
+          "score": 1.2683,
+          "reason": "lexical=0.46; ns=1.00; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem toFinset_singleton (a : α) : toFinset ({a} : Multiset α) = {a}",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Multiset.mem_toFinset",
+          "score": 1.248,
+          "reason": "lexical=0.44; ns=1.00; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_toFinset {a : α} {s : Multiset α} : a ∈ s.toFinset ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Multiset.toFinset_nsmul",
+          "score": 1.2045,
+          "reason": "lexical=0.37; ns=1.00; path=0.75; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem toFinset_nsmul (s : Multiset α) : ∀ n ≠ 0, (n • s).toFinset = s.toFinset | 0, h => by contradiction | n + 1, _ => by by_cases h : n = 0 · rw [h, zero_add, one_nsmul] · rw [add_nsmul, toFinset_add, one_nsmul, toFinset_nsmul s n h, Finset.union_idempotent] #align multiset.to_finset_nsmul Multiset.toFinset_nsmul theorem toFinset_eq_singleton_iff (s : Multiset α) (a : α) : s.toFinset = {a} ↔ card s ≠ 0 ∧ s = card s • {a}",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Multiset.toFinset_eq_empty",
+          "score": 1.1975,
+          "reason": "lexical=0.46; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem toFinset_eq_empty {m : Multiset α} : m.toFinset = ∅ ↔ m = 0",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Multiset.toFinset",
+          "score": 1.1607,
+          "reason": "lexical=0.49; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "def",
+          "statement_text": "def toFinset (s : Multiset α) : Finset α",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Multiset.toFinset_subset",
+          "score": 1.1556,
+          "reason": "lexical=0.42; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem toFinset_subset : s.toFinset ⊆ t.toFinset ↔ s ⊆ t",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Multiset.toFinset_nonempty",
+          "score": 1.1509,
+          "reason": "lexical=0.41; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem toFinset_nonempty : s.toFinset.Nonempty ↔ s ≠ 0",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Multiset.dedup_card_eq_card_iff_nodup",
+          "score": 1.1377,
+          "reason": "lexical=0.33; ns=1.00; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem Multiset.dedup_card_eq_card_iff_nodup {m : Multiset α} : card m.dedup = card m ↔ m.Nodup",
+          "file_path": "Mathlib/Data/Finset/Card.lean"
+        },
+        {
+          "lemma": "Multiset.toFinset_card_le",
+          "score": 1.1196,
+          "reason": "lexical=0.45; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem Multiset.toFinset_card_le : m.toFinset.card ≤ Multiset.card m",
+          "file_path": "Mathlib/Data/Finset/Card.lean"
+        },
+        {
+          "lemma": "Multiset.toFinset_ssubset",
+          "score": 1.0915,
+          "reason": "lexical=0.39; ns=1.00; path=0.75; feat=0.40",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem toFinset_ssubset : s.toFinset ⊂ t.toFinset ↔ s ⊂ t",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Multiset.card_toFinset",
+          "score": 1.0895,
+          "reason": "lexical=0.42; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem Multiset.card_toFinset : m.toFinset.card = Multiset.card m.dedup",
+          "file_path": "Mathlib/Data/Finset/Card.lean"
+        },
+        {
+          "lemma": "Multiset.toFinset_card_of_nodup",
+          "score": 1.0794,
+          "reason": "lexical=0.41; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem Multiset.toFinset_card_of_nodup {m : Multiset α} (h : m.Nodup) : m.toFinset.card = Multiset.card m",
+          "file_path": "Mathlib/Data/Finset/Card.lean"
+        },
+        {
+          "lemma": "Multiset.disjoint_toFinset",
+          "score": 1.0713,
+          "reason": "lexical=0.27; ns=1.00; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem disjoint_toFinset {m1 m2 : Multiset α} : _root_.Disjoint m1.toFinset m2.toFinset ↔ m1.Disjoint m2",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Multiset.toFinset_inter",
+          "score": 1.0453,
+          "reason": "lexical=0.37; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem toFinset_inter (s t : Multiset α) : toFinset (s ∩ t) = toFinset s ∩ toFinset t",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Multiset.mem_sup",
+          "score": 1.0371,
+          "reason": "lexical=0.23; ns=1.00; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_sup {α β} [DecidableEq β] {s : Finset α} {f : α → Multiset β} {x : β} : x ∈ s.sup f ↔ ∃ v ∈ s, x ∈ f v",
+          "file_path": "Mathlib/Data/Finset/Lattice.lean"
+        },
+        {
+          "lemma": "Multiset.toFinset_eq",
+          "score": 1.0287,
+          "reason": "lexical=0.36; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem toFinset_eq {s : Multiset α} (n : Nodup s) : Finset.mk s n = s.toFinset",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Multiset.toFinset_union",
+          "score": 1.0143,
+          "reason": "lexical=0.38; ns=1.00; path=0.75; feat=0.25",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem toFinset_union (s t : Multiset α) : (s ∪ t).toFinset = s.toFinset ∪ t.toFinset",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Multiset.isAtom_singleton",
+          "score": 1.0017,
+          "reason": "lexical=0.20; ns=1.00; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "@[simp] lemma isAtom_singleton (a : α) : IsAtom ({a} : Multiset α)",
+          "file_path": "Mathlib/Data/Finset/Grade.lean"
+        },
+        {
+          "lemma": "Multiset.toFinset_dedup",
+          "score": 0.9934,
+          "reason": "lexical=0.32; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem toFinset_dedup (m : Multiset α) : m.dedup.toFinset = m.toFinset",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        }
+      ],
+      "goal_defs": [
+        "Multiset.toFinset",
+        "Finset.card",
+        "List.toFinset",
+        "Option.toFinset",
+        "Part.toFinset",
+        "Set.Finite.toFinset"
+      ],
+      "retrieved_defs": [
+        {
+          "lemma": "Multiset.toFinset",
+          "score": 1.1607,
+          "decl_kind": "def",
+          "reason": "lexical=0.49; ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Multiset.noncommProd",
+          "score": 0.781,
+          "decl_kind": "def",
+          "reason": "lexical=0.14; ns=1.00; path=0.75; feat=0.25"
+        },
+        {
+          "lemma": "Multiset.noncommFoldr",
+          "score": 0.7748,
+          "decl_kind": "def",
+          "reason": "lexical=0.14; ns=1.00; path=0.75; feat=0.25"
+        },
+        {
+          "lemma": "Multiset.noncommFold",
+          "score": 0.7697,
+          "decl_kind": "def",
+          "reason": "lexical=0.13; ns=1.00; path=0.75; feat=0.25"
+        },
+        {
+          "lemma": "List.toFinset",
+          "score": 0.5703,
+          "decl_kind": "def",
+          "reason": "lexical=0.25; path=0.75; feat=0.33"
+        }
+      ]
+    },
+    {
+      "target": "Set.Nonempty.subset_pair_iff_eq",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem subset_pair_iff_eq {x y : α} : s ⊆ {x, y} ↔ s = ∅ ∨ s = {x} ∨ s = {y} ∨ s = {x, y}",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.subset_pair_iff_eq",
+          "score": 1.8048,
+          "reason": "lexical=0.94; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_pair_iff_eq {x y : α} : s ⊆ {x, y} ↔ s = ∅ ∨ s = {x} ∨ s = {y} ∨ s = {x, y}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_pair_iff",
+          "score": 1.4947,
+          "reason": "lexical=0.57; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_pair_iff : s ⊆ {a, b} ↔ ∀ x ∈ s, x = a ∨ x = b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.pair_eq_pair_iff",
+          "score": 1.392,
+          "reason": "lexical=0.55; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_eq_pair_iff {x y z w : α} : ({x, y} : Set α) = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_singleton_iff_eq",
+          "score": 1.3137,
+          "reason": "lexical=0.45; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_singleton_iff_eq {s : Set α} {x : α} : s ⊆ {x} ↔ s = ∅ ∨ s = {x}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.pair_subset_iff",
+          "score": 1.3105,
+          "reason": "lexical=0.39; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_subset_iff : {a, b} ⊆ s ↔ a ∈ s ∧ b ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "score": 1.2213,
+          "reason": "lexical=0.36; ns=1.00; path=0.75; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem nontrivial_iff_pair_subset : s.Nontrivial ↔ ∃ x y, x ≠ y ∧ {x, y} ⊆ s",
+          "file_path": "Mathlib/Data/Set/Subsingleton.lean"
+        },
+        {
+          "lemma": "Set.pair_eq_singleton",
+          "score": 1.194,
+          "reason": "lexical=0.35; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_eq_singleton (a : α) : ({a, a} : Set α) = {a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.pair_subset",
+          "score": 1.1541,
+          "reason": "lexical=0.31; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_subset (ha : a ∈ s) (hb : b ∈ s) : {a, b} ⊆ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_one_iff_eq",
+          "score": 1.1484,
+          "reason": "lexical=0.45; ns=1.00; path=0.60; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_one_iff_eq : s ⊆ 1 ↔ s = ∅ ∨ s = 1",
+          "file_path": "Mathlib/Data/Set/Pointwise/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_insert_iff",
+          "score": 1.1233,
+          "reason": "lexical=0.32; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_insert_iff {s t : Set α} {x : α} : s ⊆ insert x t ↔ s ⊆ t ∨ (x ∈ s ∧ s \\ {x} ⊆ t)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.pi_subset_pi_iff",
+          "score": 1.1153,
+          "reason": "lexical=0.38; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pi_subset_pi_iff : pi s t₁ ⊆ pi s t₂ ↔ (∀ i ∈ s, t₁ i ⊆ t₂ i) ∨ pi s t₁ = ∅",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        },
+        {
+          "lemma": "Set.prod_subset_prod_iff",
+          "score": 1.1117,
+          "reason": "lexical=0.37; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem prod_subset_prod_iff : s ×ˢ t ⊆ s₁ ×ˢ t₁ ↔ s ⊆ s₁ ∧ t ⊆ t₁ ∨ s = ∅ ∨ t = ∅",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        },
+        {
+          "lemma": "Set.range_pair_subset",
+          "score": 1.1102,
+          "reason": "lexical=0.33; ns=1.00; path=0.75; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem range_pair_subset (f : α → β) (g : α → γ) : (range fun x => (f x, g x)) ⊆ range f ×ˢ range g",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        },
+        {
+          "lemma": "Set.univ_pi_subset_univ_pi_iff",
+          "score": 1.1026,
+          "reason": "lexical=0.37; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem univ_pi_subset_univ_pi_iff : pi univ t₁ ⊆ pi univ t₂ ↔ (∀ i, t₁ i ⊆ t₂ i) ∨ ∃ i, t₁ i = ∅",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        },
+        {
+          "lemma": "Set.singleton_subset_singleton",
+          "score": 1.0862,
+          "reason": "lexical=0.17; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_singleton : ({a} : Set α) ⊆ {b} ↔ a = b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.singleton_subset_iff",
+          "score": 1.0817,
+          "reason": "lexical=0.16; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_iff {a : α} {s : Set α} : {a} ⊆ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_singleton_iff",
+          "score": 1.0731,
+          "reason": "lexical=0.15; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_singleton_iff {α : Type*} {s : Set α} {x : α} : s ⊆ {x} ↔ ∀ y ∈ s, y = x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.eq_empty_or_nonempty",
+          "score": 1.0725,
+          "reason": "lexical=0.41; ns=1.00; path=1.00; feat=0.17",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem eq_empty_or_nonempty (s : Set α) : s = ∅ ∨ s.Nonempty",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.sups_eq_empty",
+          "score": 1.058,
+          "reason": "lexical=0.39; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem sups_eq_empty : s ⊻ t = ∅ ↔ s = ∅ ∨ t = ∅",
+          "file_path": "Mathlib/Data/Set/Sups.lean"
+        },
+        {
+          "lemma": "Set.pair_diff_left",
+          "score": 1.0577,
+          "reason": "lexical=0.22; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_diff_left (hne : a ≠ b) : ({a, b} : Set α) \\ {a} = {b}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        }
+      ],
+      "goal_defs": [],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.8731,
+          "decl_kind": "def",
+          "reason": "lexical=0.11; ns=1.00; path=1.00; feat=0.40"
+        },
+        {
+          "lemma": "Set.fintypeSubset",
+          "score": 0.7711,
+          "decl_kind": "def",
+          "reason": "lexical=0.07; ns=1.00; path=0.75; feat=0.40"
+        },
+        {
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "score": 0.7285,
+          "decl_kind": "def",
+          "reason": "lexical=0.06; ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Set.iUnionLift",
+          "score": 0.7205,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Set.Subsingleton",
+          "score": 0.7114,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75; feat=0.40"
+        }
+      ]
+    },
+    {
+      "target": "Set.antitoneOn_iff_antitone",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔ Antitone fun a : s => f a",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "score": 1.1489,
+          "reason": "lexical=0.42; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_le_le : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a ≤ b ∧ b ≤ c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "score": 1.1461,
+          "reason": "lexical=0.41; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_lt_lt : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a < b ∧ b < c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.EqOn.congr_antitoneOn",
+          "score": 1.059,
+          "reason": "lexical=0.50; ns=0.50; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem EqOn.congr_antitoneOn (h : s.EqOn f₁ f₂) : AntitoneOn f₁ s ↔ AntitoneOn f₂ s",
+          "file_path": "Mathlib/Data/Set/Function.lean"
+        },
+        {
+          "lemma": "Set.antitoneOn_singleton",
+          "score": 1.0528,
+          "reason": "lexical=0.52; ns=1.00; path=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem antitoneOn_singleton : AntitoneOn f {a}",
+          "file_path": "Mathlib/Data/Set/Subsingleton.lean"
+        },
+        {
+          "lemma": "Set.Subsingleton.antitoneOn",
+          "score": 0.9747,
+          "reason": "lexical=0.61; ns=0.50; path=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "protected theorem Subsingleton.antitoneOn (h : s.Subsingleton) : AntitoneOn f s",
+          "file_path": "Mathlib/Data/Set/Subsingleton.lean"
+        },
+        {
+          "lemma": "antitoneOn_dual_iff",
+          "score": 0.9082,
+          "reason": "lexical=0.45; path=0.25; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem antitoneOn_dual_iff : AntitoneOn (toDual ∘ f ∘ ofDual : αᵒᵈ → βᵒᵈ) s ↔ AntitoneOn f s",
+          "file_path": "Mathlib/Order/Monotone/Basic.lean"
+        },
+        {
+          "lemma": "Set.strictAntiOn_iff_strictAnti",
+          "score": 0.8885,
+          "reason": "lexical=0.09; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem strictAntiOn_iff_strictAnti : StrictAntiOn f s ↔ StrictAnti fun a : s => f a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_def",
+          "score": 0.8854,
+          "reason": "lexical=0.09; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_def {a : α} {s : Set α} : a ∈ s ↔ s a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_inter_iff",
+          "score": 0.8788,
+          "reason": "lexical=0.08; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_inter_iff (x : α) (a b : Set α) : x ∈ a ∩ b ↔ x ∈ a ∧ x ∈ b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ext_iff",
+          "score": 0.8783,
+          "reason": "lexical=0.08; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ext_iff {s t : Set α} : s = t ↔ ∀ x, x ∈ s ↔ x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_not_mem",
+          "score": 0.8757,
+          "reason": "lexical=0.08; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_not_mem : ¬a ∉ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.disjoint_left",
+          "score": 0.8749,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem disjoint_left : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ s → a ∉ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.disjoint_right",
+          "score": 0.8726,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem disjoint_right : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ t → a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.eq_univ_iff_forall",
+          "score": 0.8713,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem eq_univ_iff_forall {s : Set α} : s = univ ↔ ∀ x, x ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_sep_iff",
+          "score": 0.8706,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_sep_iff : x ∈ { x ∈ s | p x } ↔ x ∈ s ∧ p x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_setOf",
+          "score": 0.8686,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_setOf {a : α} {p : α → Prop} : a ∈ { x | p x } ↔ p a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_disjoint_iff",
+          "score": 0.8651,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma not_disjoint_iff : ¬Disjoint s t ↔ ∃ x, x ∈ s ∧ x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.sep_ext_iff",
+          "score": 0.864,
+          "reason": "lexical=0.06; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem sep_ext_iff : { x ∈ s | p x } = { x ∈ s | q x } ↔ ∀ x ∈ s, p x ↔ q x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "score": 0.8601,
+          "reason": "lexical=0.06; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ne_univ_iff_exists_not_mem {α : Type*} (s : Set α) : s ≠ univ ↔ ∃ a, a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.disjoint_iff_forall_ne",
+          "score": 0.8597,
+          "reason": "lexical=0.06; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma disjoint_iff_forall_ne : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ s → ∀ ⦃b⦄, b ∈ t → a ≠ b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        }
+      ],
+      "goal_defs": [
+        "Antitone",
+        "AntitoneOn"
+      ],
+      "retrieved_defs": [
+        {
+          "lemma": "AntitoneOn",
+          "score": 0.6896,
+          "decl_kind": "def",
+          "reason": "lexical=0.63; path=0.25"
+        },
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.6144,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=1.00"
+        },
+        {
+          "lemma": "Set.ite",
+          "score": 0.6124,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=1.00"
+        },
+        {
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "score": 0.5793,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75"
+        },
+        {
+          "lemma": "Set.prod",
+          "score": 0.558,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75"
+        }
+      ]
+    },
+    {
+      "target": "Set.diff_singleton_subset_iff",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem diff_singleton_subset_iff {x : α} {s t : Set α} : s \\ {x} ⊆ t ↔ s ⊆ insert x t",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.subset_insert_diff_singleton",
+          "score": 1.5458,
+          "reason": "lexical=0.55; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_insert_diff_singleton (x : α) (s : Set α) : s ⊆ insert x (s \\ {x})",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.insert_diff_singleton",
+          "score": 1.39,
+          "reason": "lexical=0.47; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem insert_diff_singleton {a : α} {s : Set α} : insert a (s \\ {a}) = insert a s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.insert_diff_eq_singleton",
+          "score": 1.3534,
+          "reason": "lexical=0.43; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem insert_diff_eq_singleton {a : α} {s : Set α} (h : a ∉ s) : insert a s \\ s = {a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_diff_singleton",
+          "score": 1.3483,
+          "reason": "lexical=0.43; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_diff_singleton {x : α} {s t : Set α} (h : s ⊆ t) (hx : x ∉ s) : s ⊆ t \\ {x}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_singleton_sSubset",
+          "score": 1.3344,
+          "reason": "lexical=0.47; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_singleton_sSubset {s : Set α} {a : α} : s \\ {a} ⊂ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.insert_diff_singleton_comm",
+          "score": 1.309,
+          "reason": "lexical=0.39; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem insert_diff_singleton_comm (hab : a ≠ b) (s : Set α) : insert a (s \\ {b}) = insert a s \\ {b}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_diff_singleton",
+          "score": 1.2804,
+          "reason": "lexical=0.44; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_diff_singleton {x y : α} {s : Set α} : x ∈ s \\ {y} ↔ x ∈ s ∧ x ≠ y",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.singleton_subset_singleton",
+          "score": 1.2783,
+          "reason": "lexical=0.36; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_singleton : ({a} : Set α) ⊆ {b} ↔ a = b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.singleton_subset_iff",
+          "score": 1.2686,
+          "reason": "lexical=0.35; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_iff {a : α} {s : Set α} : {a} ⊆ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_subset_comm",
+          "score": 1.2598,
+          "reason": "lexical=0.42; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_subset_comm {s t u : Set α} : s \\ t ⊆ u ↔ s \\ u ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_singleton_iff",
+          "score": 1.2501,
+          "reason": "lexical=0.33; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_singleton_iff {α : Type*} {s : Set α} {x : α} : s ⊆ {x} ↔ ∀ y ∈ s, y = x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_subset_iff",
+          "score": 1.24,
+          "reason": "lexical=0.44; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_subset_iff {s t u : Set α} : s \\ t ⊆ u ↔ s ⊆ t ∪ u",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_subset",
+          "score": 1.2368,
+          "reason": "lexical=0.40; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_subset {s t : Set α} : s \\ t ⊆ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_insert_iff",
+          "score": 1.2363,
+          "reason": "lexical=0.32; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_insert_iff {s t : Set α} {x : α} : s ⊆ insert x t ↔ s ⊆ t ∨ (x ∈ s ∧ s \\ {x} ⊆ t)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_subset_diff",
+          "score": 1.2299,
+          "reason": "lexical=0.39; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_subset_diff {s₁ s₂ t₁ t₂ : Set α} : s₁ ⊆ s₂ → t₂ ⊆ t₁ → s₁ \\ t₁ ⊆ s₂ \\ t₂",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_diff",
+          "score": 1.2296,
+          "reason": "lexical=0.39; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma subset_diff : s ⊆ t \\ u ↔ s ⊆ t ∧ Disjoint s u",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_eq_empty",
+          "score": 1.2211,
+          "reason": "lexical=0.42; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_eq_empty {s t : Set α} : s \\ t = ∅ ↔ s ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_subset_diff_left",
+          "score": 1.2165,
+          "reason": "lexical=0.38; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_subset_diff_left {s₁ s₂ t : Set α} (h : s₁ ⊆ s₂) : s₁ \\ t ⊆ s₂ \\ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_subset_diff_right",
+          "score": 1.2159,
+          "reason": "lexical=0.38; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_subset_diff_right {s t u : Set α} (h : t ⊆ u) : s \\ u ⊆ s \\ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "score": 1.214,
+          "reason": "lexical=0.35; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma ssubset_iff_sdiff_singleton : s ⊂ t ↔ ∃ a ∈ t, s ⊆ t \\ {a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        }
+      ],
+      "goal_defs": [],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.9188,
+          "decl_kind": "def",
+          "reason": "lexical=0.16; ns=1.00; path=1.00; feat=0.40"
+        },
+        {
+          "lemma": "Set.fintypeSubset",
+          "score": 0.8008,
+          "decl_kind": "def",
+          "reason": "lexical=0.10; ns=1.00; path=0.75; feat=0.40"
+        },
+        {
+          "lemma": "Set.fintypeInsertOfMem",
+          "score": 0.7917,
+          "decl_kind": "def",
+          "reason": "lexical=0.09; ns=1.00; path=0.75; feat=0.40"
+        },
+        {
+          "lemma": "Set.fintypeInsertOfNotMem",
+          "score": 0.7838,
+          "decl_kind": "def",
+          "reason": "lexical=0.09; ns=1.00; path=0.75; feat=0.40"
+        },
+        {
+          "lemma": "Set.singletonMonoidHom",
+          "score": 0.7774,
+          "decl_kind": "def",
+          "reason": "lexical=0.12; ns=1.00; path=0.60; feat=0.40"
+        }
+      ]
+    },
+    {
+      "target": "Set.ite_eq_of_subset_left",
+      "cluster_id": "Set__ite_if__subset",
+      "namespace": "Set",
+      "goal_text": "⊢ t.ite s₁ s₂ = s₁ ∪ s₂ \\ t",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.ite_left",
+          "score": 1.5335,
+          "reason": "lexical=0.53; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_left (s t : Set α) : s.ite s t = s ∪ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_eq_of_subset_right",
+          "score": 1.4466,
+          "reason": "lexical=0.55; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_eq_of_subset_right (t : Set α) {s₁ s₂ : Set α} (h : s₂ ⊆ s₁) : t.ite s₁ s₂ = (s₁ ∩ t) ∪ s₂",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_subset_union",
+          "score": 1.3605,
+          "reason": "lexical=0.46; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_subset_union (t s s' : Set α) : t.ite s s' ⊆ s ∪ s'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_inter_of_inter_eq",
+          "score": 1.3575,
+          "reason": "lexical=0.49; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_inter_of_inter_eq (t : Set α) {s₁ s₂ s : Set α} (h : s₁ ∩ s = s₂ ∩ s) : t.ite s₁ s₂ ∩ s = s₁ ∩ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_empty_left",
+          "score": 1.3446,
+          "reason": "lexical=0.54; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_empty_left (t s : Set α) : t.ite ∅ s = s \\ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite",
+          "score": 1.3139,
+          "reason": "lexical=0.45; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "def",
+          "statement_text": "protected def ite (t s s' : Set α) : Set α",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_inter",
+          "score": 1.2607,
+          "reason": "lexical=0.39; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_inter (t s₁ s₂ s : Set α) : t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_inter_inter",
+          "score": 1.2607,
+          "reason": "lexical=0.39; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_inter_inter (t s₁ s₂ s₁' s₂' : Set α) : t.ite (s₁ ∩ s₂) (s₁' ∩ s₂') = t.ite s₁ s₁' ∩ t.ite s₂ s₂'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.iUnion_ite",
+          "score": 1.2439,
+          "reason": "lexical=0.31; ns=1.00; path=0.75; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem iUnion_ite (f g : ι → Set α) : ⋃ i, (if p i then f i else g i) = (⋃ (i) (_ : p i), f i) ∪ ⋃ (i) (_ : ¬p i), g i",
+          "file_path": "Mathlib/Data/Set/Lattice.lean"
+        },
+        {
+          "lemma": "Set.ite_right",
+          "score": 1.2394,
+          "reason": "lexical=0.37; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_right (s t : Set α) : s.ite t s = t ∩ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_univ",
+          "score": 1.2107,
+          "reason": "lexical=0.34; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_univ (s s' : Set α) : Set.ite univ s s' = s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_ite",
+          "score": 1.2047,
+          "reason": "lexical=0.44; ns=1.00; path=1.00; feat=0.40",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_ite {t s s' u : Set α} : u ⊆ t.ite s s' ↔ u ∩ t ⊆ s ∧ u \\ t ⊆ s'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.inter_subset_ite",
+          "score": 1.2008,
+          "reason": "lexical=0.40; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem inter_subset_ite (t s s' : Set α) : s ∩ s' ⊆ t.ite s s'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_same",
+          "score": 1.1971,
+          "reason": "lexical=0.33; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_same (t s : Set α) : t.ite s s = s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_diff_self",
+          "score": 1.1966,
+          "reason": "lexical=0.40; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_diff_self (t s s' : Set α) : t.ite s s' \\ t = s' \\ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_inter_self",
+          "score": 1.1949,
+          "reason": "lexical=0.33; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_inter_self (t s s' : Set α) : t.ite s s' ∩ t = s ∩ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.preimage_ite",
+          "score": 1.1856,
+          "reason": "lexical=0.38; ns=1.00; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem preimage_ite (f : α → β) (s t₁ t₂ : Set β) : f ⁻¹' s.ite t₁ t₂ = (f ⁻¹' s).ite (f ⁻¹' t₁) (f ⁻¹' t₂)",
+          "file_path": "Mathlib/Data/Set/Image.lean"
+        },
+        {
+          "lemma": "Set.ite_mono",
+          "score": 1.1696,
+          "reason": "lexical=0.37; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_mono (t : Set α) {s₁ s₁' s₂ s₂' : Set α} (h : s₁ ⊆ s₂) (h' : s₁' ⊆ s₂') : t.ite s₁ s₁' ⊆ t.ite s₂ s₂'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_ite_univ_left",
+          "score": 1.1674,
+          "reason": "lexical=0.37; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_ite_univ_left (p : Prop) [Decidable p] (t : Set α) (x : α) : x ∈ ite p Set.univ t ↔ ¬p → x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.range_ite_subset",
+          "score": 1.1659,
+          "reason": "lexical=0.33; ns=1.00; path=0.75; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem range_ite_subset {p : α → Prop} [DecidablePred p] {f g : α → β} : (range fun x => if p x then f x else g x) ⊆ range f ∪ range g",
+          "file_path": "Mathlib/Data/Set/Image.lean"
+        }
+      ],
+      "goal_defs": [
+        "Set.ite"
+      ],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.ite",
+          "score": 1.3139,
+          "decl_kind": "def",
+          "reason": "lexical=0.45; ns=1.00; path=1.00; feat=0.67"
+        },
+        {
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "score": 0.8898,
+          "decl_kind": "def",
+          "reason": "lexical=0.15; ns=1.00; path=0.75; feat=0.50"
+        },
+        {
+          "lemma": "Set.sigmaToiUnion",
+          "score": 0.8723,
+          "decl_kind": "def",
+          "reason": "lexical=0.07; ns=1.00; path=0.75; feat=0.67"
+        },
+        {
+          "lemma": "Set.fintypeOfFiniteUniv",
+          "score": 0.8692,
+          "decl_kind": "def",
+          "reason": "lexical=0.07; ns=1.00; path=0.75; feat=0.67"
+        },
+        {
+          "lemma": "Set.fintypeBiUnion",
+          "score": 0.8678,
+          "decl_kind": "def",
+          "reason": "lexical=0.06; ns=1.00; path=0.75; feat=0.67"
+        }
+      ]
+    },
+    {
+      "target": "Set.ite_eq_of_subset_right",
+      "cluster_id": "Set__ite_if__subset",
+      "namespace": "Set",
+      "goal_text": "⊢ t.ite s₁ s₂ = s₁ ∩ t ∪ s₂",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.ite_eq_of_subset_left",
+          "score": 1.4477,
+          "reason": "lexical=0.55; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_eq_of_subset_left (t : Set α) {s₁ s₂ : Set α} (h : s₁ ⊆ s₂) : t.ite s₁ s₂ = s₁ ∪ (s₂ \\ t)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_left",
+          "score": 1.4442,
+          "reason": "lexical=0.44; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_left (s t : Set α) : s.ite s t = s ∪ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_inter_of_inter_eq",
+          "score": 1.4389,
+          "reason": "lexical=0.57; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_inter_of_inter_eq (t : Set α) {s₁ s₂ s : Set α} (h : s₁ ∩ s = s₂ ∩ s) : t.ite s₁ s₂ ∩ s = s₁ ∩ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_right",
+          "score": 1.4204,
+          "reason": "lexical=0.55; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_right (s t : Set α) : s.ite t s = t ∩ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_subset_union",
+          "score": 1.368,
+          "reason": "lexical=0.47; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_subset_union (t s s' : Set α) : t.ite s s' ⊆ s ∪ s'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_inter",
+          "score": 1.3458,
+          "reason": "lexical=0.48; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_inter (t s₁ s₂ s : Set α) : t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_inter_inter",
+          "score": 1.3458,
+          "reason": "lexical=0.48; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_inter_inter (t s₁ s₂ s₁' s₂' : Set α) : t.ite (s₁ ∩ s₂) (s₁' ∩ s₂') = t.ite s₁ s₁' ∩ t.ite s₂ s₂'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_empty_right",
+          "score": 1.3296,
+          "reason": "lexical=0.53; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_empty_right (t s : Set α) : t.ite s ∅ = s ∩ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite",
+          "score": 1.3212,
+          "reason": "lexical=0.45; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "def",
+          "statement_text": "protected def ite (t s s' : Set α) : Set α",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.inter_subset_ite",
+          "score": 1.2772,
+          "reason": "lexical=0.48; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem inter_subset_ite (t s s' : Set α) : s ∩ s' ⊆ t.ite s s'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_inter_self",
+          "score": 1.2658,
+          "reason": "lexical=0.40; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_inter_self (t s s' : Set α) : t.ite s s' ∩ t = s ∩ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.iUnion_ite",
+          "score": 1.2489,
+          "reason": "lexical=0.31; ns=1.00; path=0.75; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem iUnion_ite (f g : ι → Set α) : ⋃ i, (if p i then f i else g i) = (⋃ (i) (_ : p i), f i) ∪ ⋃ (i) (_ : ¬p i), g i",
+          "file_path": "Mathlib/Data/Set/Lattice.lean"
+        },
+        {
+          "lemma": "Set.ite_univ",
+          "score": 1.2163,
+          "reason": "lexical=0.35; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_univ (s s' : Set α) : Set.ite univ s s' = s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_same",
+          "score": 1.2025,
+          "reason": "lexical=0.34; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_same (t s : Set α) : t.ite s s = s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_ite_univ_right",
+          "score": 1.1928,
+          "reason": "lexical=0.39; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_ite_univ_right (p : Prop) [Decidable p] (t : Set α) (x : α) : x ∈ ite p t Set.univ ↔ p → x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.preimage_ite",
+          "score": 1.1919,
+          "reason": "lexical=0.39; ns=1.00; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem preimage_ite (f : α → β) (s t₁ t₂ : Set β) : f ⁻¹' s.ite t₁ t₂ = (f ⁻¹' s).ite (f ⁻¹' t₁) (f ⁻¹' t₂)",
+          "file_path": "Mathlib/Data/Set/Image.lean"
+        },
+        {
+          "lemma": "Set.subset_ite",
+          "score": 1.1806,
+          "reason": "lexical=0.42; ns=1.00; path=1.00; feat=0.40",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_ite {t s s' u : Set α} : u ⊆ t.ite s s' ↔ u ∩ t ⊆ s ∧ u \\ t ⊆ s'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_inter_compl_self",
+          "score": 1.1774,
+          "reason": "lexical=0.38; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_inter_compl_self (t s s' : Set α) : t.ite s s' ∩ tᶜ = s' ∩ tᶜ",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_mono",
+          "score": 1.1756,
+          "reason": "lexical=0.38; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_mono (t : Set α) {s₁ s₁' s₂ s₂' : Set α} (h : s₁ ⊆ s₂) (h' : s₁' ⊆ s₂') : t.ite s₁ s₁' ⊆ t.ite s₂ s₂'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.range_ite_subset",
+          "score": 1.1713,
+          "reason": "lexical=0.33; ns=1.00; path=0.75; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem range_ite_subset {p : α → Prop} [DecidablePred p] {f g : α → β} : (range fun x => if p x then f x else g x) ⊆ range f ∪ range g",
+          "file_path": "Mathlib/Data/Set/Image.lean"
+        }
+      ],
+      "goal_defs": [
+        "Set.ite"
+      ],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.ite",
+          "score": 1.3212,
+          "decl_kind": "def",
+          "reason": "lexical=0.45; ns=1.00; path=1.00; feat=0.67"
+        },
+        {
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "score": 0.8923,
+          "decl_kind": "def",
+          "reason": "lexical=0.15; ns=1.00; path=0.75; feat=0.50"
+        },
+        {
+          "lemma": "Set.sigmaToiUnion",
+          "score": 0.8734,
+          "decl_kind": "def",
+          "reason": "lexical=0.07; ns=1.00; path=0.75; feat=0.67"
+        },
+        {
+          "lemma": "Set.fintypeOfFiniteUniv",
+          "score": 0.8703,
+          "decl_kind": "def",
+          "reason": "lexical=0.07; ns=1.00; path=0.75; feat=0.67"
+        },
+        {
+          "lemma": "Set.fintypeBiUnion",
+          "score": 0.8688,
+          "decl_kind": "def",
+          "reason": "lexical=0.06; ns=1.00; path=0.75; feat=0.67"
+        }
+      ]
+    },
+    {
+      "target": "Set.monotoneOn_iff_monotone",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem monotoneOn_iff_monotone : MonotoneOn f s ↔ Monotone fun a : s => f a",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "score": 1.2619,
+          "reason": "lexical=0.40; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_le_le : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a ≤ b ∧ b ≤ c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "score": 1.2592,
+          "reason": "lexical=0.39; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_lt_lt : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a < b ∧ b < c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.monotoneOn_singleton",
+          "score": 1.1315,
+          "reason": "lexical=0.49; ns=1.00; path=0.75; feat=0.25",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem monotoneOn_singleton : MonotoneOn f {a}",
+          "file_path": "Mathlib/Data/Set/Subsingleton.lean"
+        },
+        {
+          "lemma": "Set.EqOn.congr_monotoneOn",
+          "score": 1.1073,
+          "reason": "lexical=0.48; ns=0.50; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem EqOn.congr_monotoneOn (h : s.EqOn f₁ f₂) : MonotoneOn f₁ s ↔ MonotoneOn f₂ s",
+          "file_path": "Mathlib/Data/Set/Function.lean"
+        },
+        {
+          "lemma": "Set.Subsingleton.monotoneOn",
+          "score": 1.0534,
+          "reason": "lexical=0.59; ns=0.50; path=0.75; feat=0.25",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "protected theorem Subsingleton.monotoneOn (h : s.Subsingleton) : MonotoneOn f s",
+          "file_path": "Mathlib/Data/Set/Subsingleton.lean"
+        },
+        {
+          "lemma": "Set.monotone_powerset",
+          "score": 0.9576,
+          "reason": "lexical=0.22; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem monotone_powerset : Monotone (powerset : Set α → Set (Set α))",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.monotone_setOf",
+          "score": 0.9356,
+          "reason": "lexical=0.20; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem monotone_setOf [Preorder α] {p : α → β → Prop} (hp : ∀ b, Monotone fun a => p a b) : Monotone fun a => { b | p a b }",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.monotone_preimage",
+          "score": 0.9158,
+          "reason": "lexical=0.24; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem monotone_preimage {f : α → β} : Monotone (preimage f)",
+          "file_path": "Mathlib/Data/Set/Lattice.lean"
+        },
+        {
+          "lemma": "Set._root_.MonotoneOn.monotone",
+          "score": 0.9116,
+          "reason": "lexical=0.47; ns=0.33; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "protected theorem _root_.MonotoneOn.monotone (h : MonotoneOn f s) : Monotone (f ∘ Subtype.val : s → β)",
+          "file_path": "Mathlib/Data/Set/Function.lean"
+        },
+        {
+          "lemma": "Set.monotone_image",
+          "score": 0.8982,
+          "reason": "lexical=0.23; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma monotone_image {f : α → β} : Monotone (image f)",
+          "file_path": "Mathlib/Data/Set/Image.lean"
+        },
+        {
+          "lemma": "monotoneOn_dual_iff",
+          "score": 0.8903,
+          "reason": "lexical=0.43; path=0.25; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem monotoneOn_dual_iff : MonotoneOn (toDual ∘ f ∘ ofDual : αᵒᵈ → βᵒᵈ) s ↔ MonotoneOn f s",
+          "file_path": "Mathlib/Order/Monotone/Basic.lean"
+        },
+        {
+          "lemma": "Set.encard_mono",
+          "score": 0.8691,
+          "reason": "lexical=0.20; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem encard_mono {α : Type*} : Monotone (encard : Set α → ℕ∞)",
+          "file_path": "Mathlib/Data/Set/Card.lean"
+        },
+        {
+          "lemma": "monotoneOn_comp_ofDual_iff",
+          "score": 0.8675,
+          "reason": "lexical=0.41; path=0.25; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem monotoneOn_comp_ofDual_iff : MonotoneOn (f ∘ ofDual) s ↔ AntitoneOn f s",
+          "file_path": "Mathlib/Order/Monotone/Basic.lean"
+        },
+        {
+          "lemma": "Set.monotone_accumulate",
+          "score": 0.8652,
+          "reason": "lexical=0.19; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem monotone_accumulate [Preorder α] : Monotone (Accumulate s)",
+          "file_path": "Mathlib/Data/Set/Accumulate.lean"
+        },
+        {
+          "lemma": "monotoneOn_toDual_comp_iff",
+          "score": 0.8643,
+          "reason": "lexical=0.40; path=0.25; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem monotoneOn_toDual_comp_iff : MonotoneOn (toDual ∘ f : α → βᵒᵈ) s ↔ AntitoneOn f s",
+          "file_path": "Mathlib/Order/Monotone/Basic.lean"
+        },
+        {
+          "lemma": "Set.offDiag_mono",
+          "score": 0.8459,
+          "reason": "lexical=0.18; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem offDiag_mono : Monotone (offDiag : Set α → Set (α × α))",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        },
+        {
+          "lemma": "Set.ncard_mono",
+          "score": 0.8425,
+          "reason": "lexical=0.21; ns=1.00; path=0.75; feat=0.25",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ncard_mono [Finite α] : @Monotone (Set α) _ _ _ ncard",
+          "file_path": "Mathlib/Data/Set/Card.lean"
+        },
+        {
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "score": 0.842,
+          "reason": "lexical=0.11; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔ Antitone fun a : s => f a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "monotoneOn_univ",
+          "score": 0.8362,
+          "reason": "lexical=0.51; path=0.25; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "@[simp] theorem monotoneOn_univ : MonotoneOn f Set.univ ↔ Monotone f",
+          "file_path": "Mathlib/Order/Monotone/Basic.lean"
+        },
+        {
+          "lemma": "Set.kernImage_mono",
+          "score": 0.8353,
+          "reason": "lexical=0.16; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma kernImage_mono : Monotone (kernImage f)",
+          "file_path": "Mathlib/Data/Set/Lattice.lean"
+        }
+      ],
+      "goal_defs": [
+        "Monotone",
+        "MonotoneOn"
+      ],
+      "retrieved_defs": [
+        {
+          "lemma": "MonotoneOn",
+          "score": 0.8015,
+          "decl_kind": "def",
+          "reason": "lexical=0.61; path=0.25; feat=0.33"
+        },
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.6149,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=1.00"
+        },
+        {
+          "lemma": "Set.ite",
+          "score": 0.6128,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=1.00"
+        },
+        {
+          "lemma": "Monotone",
+          "score": 0.5837,
+          "decl_kind": "def",
+          "reason": "lexical=0.32; path=0.25; feat=0.50"
+        },
+        {
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "score": 0.5806,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75"
+        }
+      ]
+    },
+    {
+      "target": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_le_le : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a ≤ b ∧ b ≤ c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "score": 1.6131,
+          "reason": "lexical=0.61; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_lt_lt : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a < b ∧ b < c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.monotoneOn_iff_monotone",
+          "score": 1.2328,
+          "reason": "lexical=0.23; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem monotoneOn_iff_monotone : MonotoneOn f s ↔ Monotone fun a : s => f a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_disjoint_iff",
+          "score": 1.2062,
+          "reason": "lexical=0.34; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma not_disjoint_iff : ¬Disjoint s t ↔ ∃ x, x ∈ s ∧ x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_subset_iff_exists_mem_not_mem",
+          "score": 1.1821,
+          "reason": "lexical=0.38; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_subset_iff_exists_mem_not_mem {α : Type*} {s t : Set α} : ¬s ⊆ t ↔ ∃ x, x ∈ s ∧ x ∉ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "score": 1.1422,
+          "reason": "lexical=0.28; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ne_univ_iff_exists_not_mem {α : Type*} (s : Set α) : s ≠ univ ↔ ∃ a, a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_not_mem",
+          "score": 1.1136,
+          "reason": "lexical=0.25; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_not_mem : ¬a ∉ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "score": 1.0989,
+          "reason": "lexical=0.23; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔ Antitone fun a : s => f a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_inter_iff",
+          "score": 1.0828,
+          "reason": "lexical=0.22; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_inter_iff (x : α) (a b : Set α) : x ∈ a ∩ b ↔ x ∈ a ∧ x ∈ b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.equitableOn_iff_exists_le_le_add_one",
+          "score": 1.0792,
+          "reason": "lexical=0.28; ns=1.00; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem equitableOn_iff_exists_le_le_add_one {s : Set α} {f : α → ℕ} : s.EquitableOn f ↔ ∃ b, ∀ a ∈ s, b ≤ f a ∧ f a ≤ b + 1",
+          "file_path": "Mathlib/Data/Set/Equitable.lean"
+        },
+        {
+          "lemma": "Set.mem_symmDiff",
+          "score": 1.0718,
+          "reason": "lexical=0.21; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_symmDiff : a ∈ s ∆ t ↔ a ∈ s ∧ a ∉ t ∨ a ∈ t ∧ a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_sep_iff",
+          "score": 1.0603,
+          "reason": "lexical=0.19; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_sep_iff : x ∈ { x ∈ s | p x } ↔ x ∈ s ∧ p x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_mem_of_mem_diff",
+          "score": 1.0477,
+          "reason": "lexical=0.18; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_mem_of_mem_diff {s t : Set α} {x : α} (h : x ∈ s \\ t) : x ∉ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_subset",
+          "score": 1.0459,
+          "reason": "lexical=0.25; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_subset : ¬s ⊆ t ↔ ∃ a ∈ s, a ∉ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_ite_empty_left",
+          "score": 1.0359,
+          "reason": "lexical=0.28; ns=1.00; path=1.00; feat=0.40",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_ite_empty_left (p : Prop) [Decidable p] (t : Set α) (x : α) : x ∈ ite p ∅ t ↔ ¬p ∧ x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_dite",
+          "score": 1.0327,
+          "reason": "lexical=0.23; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_dite (p : Prop) [Decidable p] (s : p → Set α) (t : ¬ p → Set α) (x : α) : (x ∈ if h : p then s h else t h) ↔ (∀ h : p, x ∈ s h) ∧ ∀ h : ¬p, x ∈ t h",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_mem_diff_of_mem",
+          "score": 1.0326,
+          "reason": "lexical=0.17; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_mem_diff_of_mem {s t : Set α} {x : α} (hx : x ∈ t) : x ∉ s \\ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_mem_compl_iff",
+          "score": 1.0291,
+          "reason": "lexical=0.23; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_mem_compl_iff {x : α} : x ∉ sᶜ ↔ x ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.exists_mem_insert",
+          "score": 1.0275,
+          "reason": "lexical=0.23; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem exists_mem_insert {P : α → Prop} {a : α} {s : Set α} : (∃ x ∈ insert a s, P x) ↔ (P a ∨ ∃ x ∈ s, P x)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.encard_eq_add_one_iff",
+          "score": 1.0177,
+          "reason": "lexical=0.28; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem encard_eq_add_one_iff {k : ℕ∞} : s.encard = k + 1 ↔ (∃ a t, ¬a ∈ t ∧ insert a t = s ∧ t.encard = k)",
+          "file_path": "Mathlib/Data/Set/Card.lean"
+        },
+        {
+          "lemma": "Set.nmem_setOf_iff",
+          "score": 1.0156,
+          "reason": "lexical=0.15; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem nmem_setOf_iff {a : α} {p : α → Prop} : a ∉ { x | p x } ↔ ¬p a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        }
+      ],
+      "goal_defs": [
+        "AntitoneOn",
+        "MonotoneOn"
+      ],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.Accumulate",
+          "score": 0.8167,
+          "decl_kind": "def",
+          "reason": "lexical=0.15; ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Set.fintypeInsertOfNotMem",
+          "score": 0.8082,
+          "decl_kind": "def",
+          "reason": "lexical=0.17; ns=1.00; path=0.75; feat=0.25"
+        },
+        {
+          "lemma": "Set.EquitableOn",
+          "score": 0.7665,
+          "decl_kind": "def",
+          "reason": "lexical=0.10; ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.7097,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=1.00; feat=0.25"
+        },
+        {
+          "lemma": "Set.codRestrict",
+          "score": 0.7092,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75; feat=0.33"
+        }
+      ]
+    },
+    {
+      "target": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_lt_lt : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a < b ∧ b < c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "score": 1.6086,
+          "reason": "lexical=0.61; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_le_le : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a ≤ b ∧ b ≤ c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.monotoneOn_iff_monotone",
+          "score": 1.2296,
+          "reason": "lexical=0.23; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem monotoneOn_iff_monotone : MonotoneOn f s ↔ Monotone fun a : s => f a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_disjoint_iff",
+          "score": 1.2014,
+          "reason": "lexical=0.33; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma not_disjoint_iff : ¬Disjoint s t ↔ ∃ x, x ∈ s ∧ x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_subset_iff_exists_mem_not_mem",
+          "score": 1.1768,
+          "reason": "lexical=0.38; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_subset_iff_exists_mem_not_mem {α : Type*} {s t : Set α} : ¬s ⊆ t ↔ ∃ x, x ∈ s ∧ x ∉ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "score": 1.1383,
+          "reason": "lexical=0.27; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ne_univ_iff_exists_not_mem {α : Type*} (s : Set α) : s ≠ univ ↔ ∃ a, a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_not_mem",
+          "score": 1.1101,
+          "reason": "lexical=0.24; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_not_mem : ¬a ∉ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.one_lt_encard_iff",
+          "score": 1.1023,
+          "reason": "lexical=0.30; ns=1.00; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem one_lt_encard_iff : 1 < s.encard ↔ ∃ a b, a ∈ s ∧ b ∈ s ∧ a ≠ b",
+          "file_path": "Mathlib/Data/Set/Card.lean"
+        },
+        {
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "score": 1.0956,
+          "reason": "lexical=0.23; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔ Antitone fun a : s => f a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_inter_iff",
+          "score": 1.0798,
+          "reason": "lexical=0.21; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_inter_iff (x : α) (a b : Set α) : x ∈ a ∩ b ↔ x ∈ a ∧ x ∈ b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.nontrivial_iff_exists_lt",
+          "score": 1.0699,
+          "reason": "lexical=0.27; ns=1.00; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem nontrivial_iff_exists_lt [LinearOrder α] : s.Nontrivial ↔ ∃ᵉ (x ∈ s) (y ∈ s), x < y",
+          "file_path": "Mathlib/Data/Set/Subsingleton.lean"
+        },
+        {
+          "lemma": "Set.mem_symmDiff",
+          "score": 1.069,
+          "reason": "lexical=0.20; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_symmDiff : a ∈ s ∆ t ↔ a ∈ s ∧ a ∉ t ∨ a ∈ t ∧ a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_sep_iff",
+          "score": 1.0576,
+          "reason": "lexical=0.19; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_sep_iff : x ∈ { x ∈ s | p x } ↔ x ∈ s ∧ p x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_mem_of_mem_diff",
+          "score": 1.0451,
+          "reason": "lexical=0.18; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_mem_of_mem_diff {s t : Set α} {x : α} (h : x ∈ s \\ t) : x ∉ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_subset",
+          "score": 1.0424,
+          "reason": "lexical=0.24; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_subset : ¬s ⊆ t ↔ ∃ a ∈ s, a ∉ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_ite_empty_left",
+          "score": 1.032,
+          "reason": "lexical=0.27; ns=1.00; path=1.00; feat=0.40",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_ite_empty_left (p : Prop) [Decidable p] (t : Set α) (x : α) : x ∈ ite p ∅ t ↔ ¬p ∧ x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_mem_diff_of_mem",
+          "score": 1.0303,
+          "reason": "lexical=0.16; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_mem_diff_of_mem {s t : Set α} {x : α} (hx : x ∈ t) : x ∉ s \\ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_dite",
+          "score": 1.0294,
+          "reason": "lexical=0.23; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_dite (p : Prop) [Decidable p] (s : p → Set α) (t : ¬ p → Set α) (x : α) : (x ∈ if h : p then s h else t h) ↔ (∀ h : p, x ∈ s h) ∧ ∀ h : ¬p, x ∈ t h",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_mem_compl_iff",
+          "score": 1.0259,
+          "reason": "lexical=0.23; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_mem_compl_iff {x : α} : x ∉ sᶜ ↔ x ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.exists_mem_insert",
+          "score": 1.0243,
+          "reason": "lexical=0.22; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem exists_mem_insert {P : α → Prop} {a : α} {s : Set α} : (∃ x ∈ insert a s, P x) ↔ (P a ∨ ∃ x ∈ s, P x)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.encard_eq_add_one_iff",
+          "score": 1.0138,
+          "reason": "lexical=0.28; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem encard_eq_add_one_iff {k : ℕ∞} : s.encard = k + 1 ↔ (∃ a t, ¬a ∈ t ∧ insert a t = s ∧ t.encard = k)",
+          "file_path": "Mathlib/Data/Set/Card.lean"
+        }
+      ],
+      "goal_defs": [
+        "AntitoneOn",
+        "MonotoneOn"
+      ],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.fintypeInsertOfNotMem",
+          "score": 0.8058,
+          "decl_kind": "def",
+          "reason": "lexical=0.17; ns=1.00; path=0.75; feat=0.25"
+        },
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.7096,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=1.00; feat=0.25"
+        },
+        {
+          "lemma": "Set.codRestrict",
+          "score": 0.7087,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Set.ite",
+          "score": 0.7083,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=1.00; feat=0.25"
+        },
+        {
+          "lemma": "Set.fintypeBind",
+          "score": 0.705,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75; feat=0.33"
+        }
+      ]
+    },
+    {
+      "target": "Set.pair_eq_pair_iff",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem pair_eq_pair_iff {x y z w : α} : ({x, y} : Set α) = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.pair_subset_iff",
+          "score": 1.3655,
+          "reason": "lexical=0.53; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_subset_iff : {a, b} ⊆ s ↔ a ∈ s ∧ b ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.pair_eq_singleton",
+          "score": 1.3598,
+          "reason": "lexical=0.46; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_eq_singleton (a : α) : ({a, a} : Set α) = {a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_pair_iff_eq",
+          "score": 1.3461,
+          "reason": "lexical=0.55; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_pair_iff_eq {x y : α} : s ⊆ {x, y} ↔ s = ∅ ∨ s = {x} ∨ s = {y} ∨ s = {x, y}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_pair_iff",
+          "score": 1.3422,
+          "reason": "lexical=0.50; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_pair_iff : s ⊆ {a, b} ↔ ∀ x ∈ s, x = a ∨ x = b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.pairwise_pair",
+          "score": 1.3003,
+          "reason": "lexical=0.50; ns=1.00; path=0.60; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pairwise_pair : Set.Pairwise {a, b} r ↔ a ≠ b → r a b ∧ r b a",
+          "file_path": "Mathlib/Data/Set/Pairwise/Basic.lean"
+        },
+        {
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "score": 1.2672,
+          "reason": "lexical=0.49; ns=1.00; path=0.75; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem nontrivial_iff_pair_subset : s.Nontrivial ↔ ∃ x y, x ≠ y ∧ {x, y} ⊆ s",
+          "file_path": "Mathlib/Data/Set/Subsingleton.lean"
+        },
+        {
+          "lemma": "Set.pair_diff_left",
+          "score": 1.1992,
+          "reason": "lexical=0.30; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_diff_left (hne : a ≠ b) : ({a, b} : Set α) \\ {a} = {b}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.pair_diff_right",
+          "score": 1.1989,
+          "reason": "lexical=0.30; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_diff_right (hne : a ≠ b) : ({a, b} : Set α) \\ {b} = {a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.pair_comm",
+          "score": 1.1962,
+          "reason": "lexical=0.40; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_comm (a b : α) : ({a, b} : Set α) = {b, a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.injOn_pair",
+          "score": 1.1884,
+          "reason": "lexical=0.35; ns=1.00; path=0.75; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "@[simp] lemma injOn_pair {b : α} : InjOn f {a, b} ↔ f a = f b → a = b",
+          "file_path": "Mathlib/Data/Set/Function.lean"
+        },
+        {
+          "lemma": "Set.Nonempty.subset_pair_iff_eq",
+          "score": 1.1541,
+          "reason": "lexical=0.53; ns=0.50; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem Nonempty.subset_pair_iff_eq (hs : s.Nonempty) : s ⊆ {a, b} ↔ s = {a} ∨ s = {b} ∨ s = {a, b}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.image_pair",
+          "score": 1.1357,
+          "reason": "lexical=0.40; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem image_pair (f : α → β) (a b : α) : f '' {a, b} = {f a, f b}",
+          "file_path": "Mathlib/Data/Set/Image.lean"
+        },
+        {
+          "lemma": "Set.eq_singleton_iff_unique_mem",
+          "score": 1.1248,
+          "reason": "lexical=0.22; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem eq_singleton_iff_unique_mem : s = {a} ↔ a ∈ s ∧ ∀ x ∈ s, x = a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.pairwise_pair_of_symmetric",
+          "score": 1.1225,
+          "reason": "lexical=0.32; ns=1.00; path=0.60; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pairwise_pair_of_symmetric (hr : Symmetric r) : Set.Pairwise {a, b} r ↔ a ≠ b → r a b",
+          "file_path": "Mathlib/Data/Set/Pairwise/Basic.lean"
+        },
+        {
+          "lemma": "Set.pair_subset",
+          "score": 1.1056,
+          "reason": "lexical=0.35; ns=1.00; path=1.00; feat=0.40",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_subset (ha : a ∈ s) (hb : b ∈ s) : {a, b} ⊆ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ncard_pair",
+          "score": 1.0982,
+          "reason": "lexical=0.36; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "@[simp] theorem ncard_pair {a b : α} (h : a ≠ b) : ({a, b} : Set α).ncard = 2",
+          "file_path": "Mathlib/Data/Set/Card.lean"
+        },
+        {
+          "lemma": "Set.sInter_pair",
+          "score": 1.0729,
+          "reason": "lexical=0.34; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem sInter_pair (s t : Set α) : ⋂₀ {s, t} = s ∩ t",
+          "file_path": "Mathlib/Data/Set/Lattice.lean"
+        },
+        {
+          "lemma": "Set.mem_diff_singleton",
+          "score": 1.0727,
+          "reason": "lexical=0.17; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_diff_singleton {x y : α} {s : Set α} : x ∈ s \\ {y} ↔ x ∈ s ∧ x ≠ y",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.biInter_pair",
+          "score": 1.065,
+          "reason": "lexical=0.33; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem biInter_pair (a b : α) (s : α → Set β) : ⋂ x ∈ ({a, b} : Set α), s x = s a ∩ s b",
+          "file_path": "Mathlib/Data/Set/Lattice.lean"
+        },
+        {
+          "lemma": "Set.range_pair_subset",
+          "score": 1.0635,
+          "reason": "lexical=0.37; ns=1.00; path=0.75; feat=0.40",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem range_pair_subset (f : α → β) (g : α → γ) : (range fun x => (f x, g x)) ⊆ range f ×ˢ range g",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        }
+      ],
+      "goal_defs": [],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.Subsingleton",
+          "score": 0.7605,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75; feat=0.50"
+        },
+        {
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "score": 0.7589,
+          "decl_kind": "def",
+          "reason": "lexical=0.06; ns=1.00; path=0.75; feat=0.40"
+        },
+        {
+          "lemma": "Set.EqOn",
+          "score": 0.737,
+          "decl_kind": "def",
+          "reason": "lexical=0.10; ns=1.00; path=0.75; feat=0.25"
+        },
+        {
+          "lemma": "Set.biUnionEqSigmaOfDisjoint",
+          "score": 0.719,
+          "decl_kind": "def",
+          "reason": "lexical=0.06; ns=1.00; path=0.60; feat=0.40"
+        },
+        {
+          "lemma": "Set.PairwiseDisjoint",
+          "score": 0.7189,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.60; feat=0.50"
+        }
+      ]
+    },
+    {
+      "target": "Set.ssubset_iff_insert",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem ssubset_iff_insert {s t : Set α} : s ⊂ t ↔ ∃ a ∉ s, insert a s ⊆ t",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.ssubset_insert",
+          "score": 1.4047,
+          "reason": "lexical=0.54; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_insert {s : Set α} {a : α} (h : a ∉ s) : s ⊂ insert a s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_iff_of_subset",
+          "score": 1.3243,
+          "reason": "lexical=0.46; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_iff_of_subset {s t : Set α} (h : s ⊆ t) : s ⊂ t ↔ ∃ x ∈ t, x ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "score": 1.284,
+          "reason": "lexical=0.35; ns=1.00; path=1.00; feat=0.83",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma ssubset_iff_sdiff_singleton : s ⊂ t ↔ ∃ a ∈ t, s ⊆ t \\ {a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_singleton_sSubset",
+          "score": 1.2566,
+          "reason": "lexical=0.32; ns=1.00; path=1.00; feat=0.83",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_singleton_sSubset {s : Set α} {a : α} : s \\ {a} ⊂ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_singleton_iff",
+          "score": 1.2454,
+          "reason": "lexical=0.36; ns=1.00; path=1.00; feat=0.71",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_singleton_iff {s : Set α} {x : α} : s ⊂ {x} ↔ s = ∅",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.lt_iff_ssubset",
+          "score": 1.2361,
+          "reason": "lexical=0.37; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem lt_iff_ssubset : s < t ↔ s ⊂ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_univ_iff",
+          "score": 1.231,
+          "reason": "lexical=0.36; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_univ_iff : s ⊂ univ ↔ s ≠ univ",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_iff_subset_ne",
+          "score": 1.2198,
+          "reason": "lexical=0.35; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "protected theorem ssubset_iff_subset_ne {s t : Set α} : s ⊂ t ↔ s ⊆ t ∧ s ≠ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.insert_subset_insert_iff",
+          "score": 1.2018,
+          "reason": "lexical=0.34; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "@[simp] theorem insert_subset_insert_iff (ha : a ∉ s) : insert a s ⊆ insert a t ↔ s ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_singleton_subset_iff",
+          "score": 1.1927,
+          "reason": "lexical=0.26; ns=1.00; path=1.00; feat=0.83",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_singleton_subset_iff {x : α} {s t : Set α} : s \\ {x} ⊆ t ↔ s ⊆ insert x t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.empty_ssubset",
+          "score": 1.1927,
+          "reason": "lexical=0.36; ns=1.00; path=1.00; feat=0.57",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem empty_ssubset : ∅ ⊂ s ↔ s.Nonempty",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_insert_iff_of_not_mem",
+          "score": 1.187,
+          "reason": "lexical=0.32; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_insert_iff_of_not_mem (ha : a ∉ s) : s ⊆ insert a t ↔ s ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.insert_subset_iff",
+          "score": 1.1623,
+          "reason": "lexical=0.30; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem insert_subset_iff : insert a s ⊆ t ↔ a ∈ t ∧ s ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.exists_of_ssubset",
+          "score": 1.155,
+          "reason": "lexical=0.36; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem exists_of_ssubset {s t : Set α} (h : s ⊂ t) : ∃ x ∈ t, x ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.prod_self_ssubset_prod_self",
+          "score": 1.1409,
+          "reason": "lexical=0.34; ns=1.00; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem prod_self_ssubset_prod_self : s₁ ×ˢ s₁ ⊂ s₂ ×ˢ s₂ ↔ s₁ ⊂ s₂",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        },
+        {
+          "lemma": "Set.subset_insert_diff_singleton",
+          "score": 1.1394,
+          "reason": "lexical=0.21; ns=1.00; path=1.00; feat=0.83",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_insert_diff_singleton (x : α) (s : Set α) : s ⊆ insert x (s \\ {x})",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.empty_ssubset_singleton",
+          "score": 1.1325,
+          "reason": "lexical=0.30; ns=1.00; path=1.00; feat=0.57",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem empty_ssubset_singleton : (∅ : Set α) ⊂ {a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_insert_iff",
+          "score": 1.1246,
+          "reason": "lexical=0.26; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_insert_iff {s t : Set α} {x : α} : s ⊆ insert x t ↔ s ⊆ t ∨ (x ∈ s ∧ s \\ {x} ⊆ t)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_of_ssubset_of_subset",
+          "score": 1.1214,
+          "reason": "lexical=0.32; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "protected theorem ssubset_of_ssubset_of_subset {s₁ s₂ s₃ : Set α} (hs₁s₂ : s₁ ⊂ s₂) (hs₂s₃ : s₂ ⊆ s₃) : s₁ ⊂ s₃",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_of_subset_of_ssubset",
+          "score": 1.1214,
+          "reason": "lexical=0.32; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "protected theorem ssubset_of_subset_of_ssubset {s₁ s₂ s₃ : Set α} (hs₁s₂ : s₁ ⊆ s₂) (hs₂s₃ : s₂ ⊂ s₃) : s₁ ⊂ s₃",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        }
+      ],
+      "goal_defs": [],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.fintypeInsertOfNotMem",
+          "score": 0.8936,
+          "decl_kind": "def",
+          "reason": "lexical=0.22; ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Set.fintypeInsertOfMem",
+          "score": 0.8378,
+          "decl_kind": "def",
+          "reason": "lexical=0.17; ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.8117,
+          "decl_kind": "def",
+          "reason": "lexical=0.08; ns=1.00; path=1.00; feat=0.33"
+        },
+        {
+          "lemma": "Set.fintypeSubset",
+          "score": 0.7218,
+          "decl_kind": "def",
+          "reason": "lexical=0.05; ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Set.Subsingleton",
+          "score": 0.6967,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75; feat=0.33"
+        }
+      ]
+    },
+    {
+      "target": "Set.ssubset_iff_sdiff_singleton",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "lemma ssubset_iff_sdiff_singleton : s ⊂ t ↔ ∃ a ∈ t, s ⊆ t \\ {a}",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.diff_singleton_sSubset",
+          "score": 1.5322,
+          "reason": "lexical=0.53; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_singleton_sSubset {s : Set α} {a : α} : s \\ {a} ⊂ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_singleton_iff",
+          "score": 1.3729,
+          "reason": "lexical=0.44; ns=1.00; path=1.00; feat=0.83",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_singleton_iff {s : Set α} {x : α} : s ⊂ {x} ↔ s = ∅",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_iff_of_subset",
+          "score": 1.2928,
+          "reason": "lexical=0.37; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_iff_of_subset {s t : Set α} (h : s ⊆ t) : s ⊂ t ↔ ∃ x ∈ t, x ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.lt_iff_ssubset",
+          "score": 1.2568,
+          "reason": "lexical=0.34; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem lt_iff_ssubset : s < t ↔ s ⊂ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.empty_ssubset_singleton",
+          "score": 1.2557,
+          "reason": "lexical=0.39; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem empty_ssubset_singleton : (∅ : Set α) ⊂ {a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_univ_iff",
+          "score": 1.2521,
+          "reason": "lexical=0.33; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_univ_iff : s ⊂ univ ↔ s ≠ univ",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_iff_subset_ne",
+          "score": 1.2432,
+          "reason": "lexical=0.32; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "protected theorem ssubset_iff_subset_ne {s t : Set α} : s ⊂ t ↔ s ⊆ t ∧ s ≠ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.eq_empty_of_ssubset_singleton",
+          "score": 1.2163,
+          "reason": "lexical=0.35; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem eq_empty_of_ssubset_singleton {s : Set α} {x : α} (hs : s ⊂ {x}) : s = ∅",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_iff_insert",
+          "score": 1.2056,
+          "reason": "lexical=0.34; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_iff_insert {s t : Set α} : s ⊂ t ↔ ∃ a ∉ s, insert a s ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_singleton_subset_iff",
+          "score": 1.2036,
+          "reason": "lexical=0.34; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_singleton_subset_iff {x : α} {s t : Set α} : s \\ {x} ⊆ t ↔ s ⊆ insert x t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.empty_ssubset",
+          "score": 1.1986,
+          "reason": "lexical=0.33; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem empty_ssubset : ∅ ⊂ s ↔ s.Nonempty",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.singleton_subset_iff",
+          "score": 1.1918,
+          "reason": "lexical=0.27; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_iff {a : α} {s : Set α} : {a} ⊆ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.nonempty_of_ssubset",
+          "score": 1.1825,
+          "reason": "lexical=0.38; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem nonempty_of_ssubset (ht : s ⊂ t) : (t \\ s).Nonempty",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_diff_singleton",
+          "score": 1.1818,
+          "reason": "lexical=0.26; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_diff_singleton {x : α} {s t : Set α} (h : s ⊆ t) (hx : x ∉ s) : s ⊆ t \\ {x}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_singleton_iff",
+          "score": 1.1774,
+          "reason": "lexical=0.26; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_singleton_iff {α : Type*} {s : Set α} {x : α} : s ⊆ {x} ↔ ∀ y ∈ s, y = x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_diff_singleton",
+          "score": 1.1711,
+          "reason": "lexical=0.33; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_diff_singleton {x y : α} {s : Set α} : x ∈ s \\ {y} ↔ x ∈ s ∧ x ≠ y",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.singleton_subset_singleton",
+          "score": 1.1694,
+          "reason": "lexical=0.25; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_singleton : ({a} : Set α) ⊆ {b} ↔ a = b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.prod_self_ssubset_prod_self",
+          "score": 1.1645,
+          "reason": "lexical=0.31; ns=1.00; path=0.75; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem prod_self_ssubset_prod_self : s₁ ×ˢ s₁ ⊂ s₂ ×ˢ s₂ ↔ s₁ ⊂ s₂",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        },
+        {
+          "lemma": "Set.subset_insert_diff_singleton",
+          "score": 1.1549,
+          "reason": "lexical=0.29; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_insert_diff_singleton (x : α) (s : Set α) : s ⊆ insert x (s \\ {x})",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_of_ssubset_of_subset",
+          "score": 1.1321,
+          "reason": "lexical=0.29; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "protected theorem ssubset_of_ssubset_of_subset {s₁ s₂ s₃ : Set α} (hs₁s₂ : s₁ ⊂ s₂) (hs₂s₃ : s₂ ⊆ s₃) : s₁ ⊂ s₃",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        }
+      ],
+      "goal_defs": [],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.8241,
+          "decl_kind": "def",
+          "reason": "lexical=0.06; ns=1.00; path=1.00; feat=0.40"
+        },
+        {
+          "lemma": "Set.fintypeSubset",
+          "score": 0.7627,
+          "decl_kind": "def",
+          "reason": "lexical=0.07; ns=1.00; path=0.75; feat=0.40"
+        },
+        {
+          "lemma": "Set.singletonMonoidHom",
+          "score": 0.7593,
+          "decl_kind": "def",
+          "reason": "lexical=0.10; ns=1.00; path=0.60; feat=0.40"
+        },
+        {
+          "lemma": "Set.singletonMulHom",
+          "score": 0.7472,
+          "decl_kind": "def",
+          "reason": "lexical=0.09; ns=1.00; path=0.60; feat=0.40"
+        },
+        {
+          "lemma": "Set.singletonOneHom",
+          "score": 0.7376,
+          "decl_kind": "def",
+          "reason": "lexical=0.08; ns=1.00; path=0.60; feat=0.40"
+        }
+      ]
+    },
+    {
+      "target": "Set.ssubset_singleton_iff",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem ssubset_singleton_iff {s : Set α} {x : α} : s ⊂ {x} ↔ s = ∅",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "score": 1.4567,
+          "reason": "lexical=0.46; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma ssubset_iff_sdiff_singleton : s ⊂ t ↔ ∃ a ∈ t, s ⊆ t \\ {a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_singleton_sSubset",
+          "score": 1.4199,
+          "reason": "lexical=0.42; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_singleton_sSubset {s : Set α} {a : α} : s \\ {a} ⊂ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.empty_ssubset_singleton",
+          "score": 1.3924,
+          "reason": "lexical=0.53; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem empty_ssubset_singleton : (∅ : Set α) ⊂ {a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Finset.ssubset_singleton_iff",
+          "score": 1.3762,
+          "reason": "lexical=0.92; path=0.50; feat=0.83",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_singleton_iff {s : Finset α} {a : α} : s ⊂ {a} ↔ s = ∅",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Set.eq_empty_of_ssubset_singleton",
+          "score": 1.3391,
+          "reason": "lexical=0.47; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem eq_empty_of_ssubset_singleton {s : Set α} {x : α} (hs : s ⊂ {x}) : s = ∅",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.empty_ssubset",
+          "score": 1.3264,
+          "reason": "lexical=0.46; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem empty_ssubset : ∅ ⊂ s ↔ s.Nonempty",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.lt_iff_ssubset",
+          "score": 1.3193,
+          "reason": "lexical=0.40; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem lt_iff_ssubset : s < t ↔ s ⊂ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_univ_iff",
+          "score": 1.3137,
+          "reason": "lexical=0.39; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_univ_iff : s ⊂ univ ↔ s ≠ univ",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_iff_of_subset",
+          "score": 1.292,
+          "reason": "lexical=0.37; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_iff_of_subset {s t : Set α} (h : s ⊆ t) : s ⊂ t ↔ ∃ x ∈ t, x ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_iff_subset_ne",
+          "score": 1.2657,
+          "reason": "lexical=0.35; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "protected theorem ssubset_iff_subset_ne {s t : Set α} : s ⊂ t ↔ s ⊆ t ∧ s ≠ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_iff_insert",
+          "score": 1.2291,
+          "reason": "lexical=0.36; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_iff_insert {s t : Set α} : s ⊂ t ↔ ∃ a ∉ s, insert a s ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.prod_self_ssubset_prod_self",
+          "score": 1.2214,
+          "reason": "lexical=0.36; ns=1.00; path=0.75; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem prod_self_ssubset_prod_self : s₁ ×ˢ s₁ ⊂ s₂ ×ˢ s₂ ↔ s₁ ⊂ s₂",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        },
+        {
+          "lemma": "Set.singleton_subset_singleton",
+          "score": 1.1754,
+          "reason": "lexical=0.26; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_singleton : ({a} : Set α) ⊆ {b} ↔ a = b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.singleton_subset_iff",
+          "score": 1.1685,
+          "reason": "lexical=0.25; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_iff {a : α} {s : Set α} : {a} ⊆ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_singleton_iff",
+          "score": 1.1553,
+          "reason": "lexical=0.24; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_singleton_iff {α : Type*} {s : Set α} {x : α} : s ⊆ {x} ↔ ∀ y ∈ s, y = x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_of_ssubset_of_subset",
+          "score": 1.1484,
+          "reason": "lexical=0.31; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "protected theorem ssubset_of_ssubset_of_subset {s₁ s₂ s₃ : Set α} (hs₁s₂ : s₁ ⊂ s₂) (hs₂s₃ : s₂ ⊆ s₃) : s₁ ⊂ s₃",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_of_subset_of_ssubset",
+          "score": 1.1484,
+          "reason": "lexical=0.31; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "protected theorem ssubset_of_subset_of_ssubset {s₁ s₂ s₃ : Set α} (hs₁s₂ : s₁ ⊆ s₂) (hs₂s₃ : s₂ ⊂ s₃) : s₁ ⊂ s₃",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.exists_of_ssubset",
+          "score": 1.1413,
+          "reason": "lexical=0.30; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem exists_of_ssubset {s t : Set α} (h : s ⊂ t) : ∃ x ∈ t, x ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.lt_eq_ssubset",
+          "score": 1.1368,
+          "reason": "lexical=0.30; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem lt_eq_ssubset : ((· < ·) : Set α → Set α → Prop) = (· ⊂ ·)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_singleton_iff_eq",
+          "score": 1.1359,
+          "reason": "lexical=0.27; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_singleton_iff_eq {s : Set α} {x : α} : s ⊆ {x} ↔ s = ∅ ∨ s = {x}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        }
+      ],
+      "goal_defs": [],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.7888,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=1.00; feat=0.40"
+        },
+        {
+          "lemma": "Set.singletonMonoidHom",
+          "score": 0.7799,
+          "decl_kind": "def",
+          "reason": "lexical=0.12; ns=1.00; path=0.60; feat=0.40"
+        },
+        {
+          "lemma": "Set.singletonMulHom",
+          "score": 0.7653,
+          "decl_kind": "def",
+          "reason": "lexical=0.11; ns=1.00; path=0.60; feat=0.40"
+        },
+        {
+          "lemma": "Set.singletonOneHom",
+          "score": 0.7537,
+          "decl_kind": "def",
+          "reason": "lexical=0.09; ns=1.00; path=0.60; feat=0.40"
+        },
+        {
+          "lemma": "Set.Subsingleton",
+          "score": 0.7255,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75; feat=0.40"
+        }
+      ]
+    },
+    {
+      "target": "Set.strictAntiOn_iff_strictAnti",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem strictAntiOn_iff_strictAnti : StrictAntiOn f s ↔ StrictAnti fun a : s => f a",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "score": 0.9006,
+          "reason": "lexical=0.10; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔ Antitone fun a : s => f a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_def",
+          "score": 0.8817,
+          "reason": "lexical=0.08; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_def {a : α} {s : Set α} : a ∈ s ↔ s a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_inter_iff",
+          "score": 0.8754,
+          "reason": "lexical=0.08; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_inter_iff (x : α) (a b : Set α) : x ∈ a ∩ b ↔ x ∈ a ∧ x ∈ b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ext_iff",
+          "score": 0.8749,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ext_iff {s t : Set α} : s = t ↔ ∀ x, x ∈ s ↔ x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_not_mem",
+          "score": 0.8723,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_not_mem : ¬a ∉ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.disjoint_left",
+          "score": 0.8716,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem disjoint_left : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ s → a ∉ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.disjoint_right",
+          "score": 0.8694,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem disjoint_right : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ t → a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.eq_univ_iff_forall",
+          "score": 0.8682,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem eq_univ_iff_forall {s : Set α} : s = univ ↔ ∀ x, x ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_sep_iff",
+          "score": 0.8675,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_sep_iff : x ∈ { x ∈ s | p x } ↔ x ∈ s ∧ p x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_setOf",
+          "score": 0.8656,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_setOf {a : α} {p : α → Prop} : a ∈ { x | p x } ↔ p a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_disjoint_iff",
+          "score": 0.8622,
+          "reason": "lexical=0.06; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma not_disjoint_iff : ¬Disjoint s t ↔ ∃ x, x ∈ s ∧ x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.sep_ext_iff",
+          "score": 0.8612,
+          "reason": "lexical=0.06; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem sep_ext_iff : { x ∈ s | p x } = { x ∈ s | q x } ↔ ∀ x ∈ s, p x ↔ q x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "score": 0.8575,
+          "reason": "lexical=0.06; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ne_univ_iff_exists_not_mem {α : Type*} (s : Set α) : s ≠ univ ↔ ∃ a, a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.disjoint_iff_forall_ne",
+          "score": 0.8571,
+          "reason": "lexical=0.06; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma disjoint_iff_forall_ne : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ s → ∀ ⦃b⦄, b ∈ t → a ≠ b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.sep_eq_self_iff_mem_true",
+          "score": 0.8567,
+          "reason": "lexical=0.06; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem sep_eq_self_iff_mem_true : { x ∈ s | p x } = s ↔ ∀ x ∈ s, p x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.setOf_app_iff",
+          "score": 0.8558,
+          "reason": "lexical=0.06; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem setOf_app_iff {p : α → Prop} {x : α} : { x | p x } x ↔ p x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_symmDiff",
+          "score": 0.8535,
+          "reason": "lexical=0.05; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_symmDiff : a ∈ s ∆ t ↔ a ∈ s ∧ a ∉ t ∨ a ∈ t ∧ a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.nmem_setOf_iff",
+          "score": 0.8512,
+          "reason": "lexical=0.05; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem nmem_setOf_iff {a : α} {p : α → Prop} : a ∉ { x | p x } ↔ ¬p a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.forall_in_swap",
+          "score": 0.8511,
+          "reason": "lexical=0.05; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem forall_in_swap {p : α → β → Prop} : (∀ a ∈ s, ∀ (b), p a b) ↔ ∀ (b), ∀ a ∈ s, p a b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.EqOn.congr_strictAntiOn",
+          "score": 0.8431,
+          "reason": "lexical=0.28; ns=0.50; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem EqOn.congr_strictAntiOn (h : s.EqOn f₁ f₂) : StrictAntiOn f₁ s ↔ StrictAntiOn f₂ s",
+          "file_path": "Mathlib/Data/Set/Function.lean"
+        }
+      ],
+      "goal_defs": [
+        "StrictAnti",
+        "StrictAntiOn"
+      ],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.6138,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=1.00"
+        },
+        {
+          "lemma": "Set.ite",
+          "score": 0.6119,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=1.00"
+        },
+        {
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "score": 0.5774,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75"
+        },
+        {
+          "lemma": "Set.prod",
+          "score": 0.5571,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75"
+        },
+        {
+          "lemma": "Set.preimage",
+          "score": 0.5567,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75"
+        }
+      ]
+    },
+    {
+      "target": "Set.strictMonoOn_iff_strictMono",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem strictMonoOn_iff_strictMono : StrictMonoOn f s ↔ StrictMono fun a : s => f a",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "strictMono_restrict",
+          "score": 0.9237,
+          "reason": "lexical=0.47; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem strictMono_restrict [Preorder α] [Preorder β] {f : α → β} {s : Set α} : StrictMono (s.restrict f) ↔ StrictMonoOn f s",
+          "file_path": "Mathlib/Data/Set/Function.lean"
+        },
+        {
+          "lemma": "Set.EqOn.congr_strictMonoOn",
+          "score": 0.9218,
+          "reason": "lexical=0.29; ns=0.50; path=0.75; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem EqOn.congr_strictMonoOn (h : s.EqOn f₁ f₂) : StrictMonoOn f₁ s ↔ StrictMonoOn f₂ s",
+          "file_path": "Mathlib/Data/Set/Function.lean"
+        },
+        {
+          "lemma": "Set.strictMonoOn_singleton",
+          "score": 0.9198,
+          "reason": "lexical=0.28; ns=1.00; path=0.75; feat=0.25",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem strictMonoOn_singleton : StrictMonoOn f {a}",
+          "file_path": "Mathlib/Data/Set/Subsingleton.lean"
+        },
+        {
+          "lemma": "Set._root_.StrictMonoOn.strictMono",
+          "score": 0.8911,
+          "reason": "lexical=0.45; ns=0.33; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "protected theorem _root_.StrictMonoOn.strictMono (h : StrictMonoOn f s) : StrictMono (f ∘ Subtype.val : s → β)",
+          "file_path": "Mathlib/Data/Set/Function.lean"
+        },
+        {
+          "lemma": "Set.ncard_strictMono",
+          "score": 0.8676,
+          "reason": "lexical=0.23; ns=1.00; path=0.75; feat=0.25",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ncard_strictMono [Finite α] : @StrictMono (Set α) _ _ _ ncard",
+          "file_path": "Mathlib/Data/Set/Card.lean"
+        },
+        {
+          "lemma": "Set.encard_strictMono",
+          "score": 0.8639,
+          "reason": "lexical=0.23; ns=1.00; path=0.75; feat=0.25",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem encard_strictMono [Finite α] : StrictMono (encard : Set α → ℕ∞)",
+          "file_path": "Mathlib/Data/Set/Card.lean"
+        },
+        {
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "score": 0.8366,
+          "reason": "lexical=0.10; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔ Antitone fun a : s => f a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.strictAntiOn_iff_strictAnti",
+          "score": 0.8202,
+          "reason": "lexical=0.09; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem strictAntiOn_iff_strictAnti : StrictAntiOn f s ↔ StrictAnti fun a : s => f a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_def",
+          "score": 0.8172,
+          "reason": "lexical=0.08; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_def {a : α} {s : Set α} : a ∈ s ↔ s a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "strictMonoOn_univ",
+          "score": 0.8119,
+          "reason": "lexical=0.48; path=0.25; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "@[simp] theorem strictMonoOn_univ : StrictMonoOn f Set.univ ↔ StrictMono f",
+          "file_path": "Mathlib/Order/Monotone/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_inter_iff",
+          "score": 0.8107,
+          "reason": "lexical=0.08; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_inter_iff (x : α) (a b : Set α) : x ∈ a ∩ b ↔ x ∈ a ∧ x ∈ b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ext_iff",
+          "score": 0.8102,
+          "reason": "lexical=0.08; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ext_iff {s t : Set α} : s = t ↔ ∀ x, x ∈ s ↔ x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_not_mem",
+          "score": 0.8076,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_not_mem : ¬a ∉ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.disjoint_left",
+          "score": 0.8068,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem disjoint_left : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ s → a ∉ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.monotoneOn_iff_monotone",
+          "score": 0.8049,
+          "reason": "lexical=0.10; ns=1.00; path=1.00; feat=0.25",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem monotoneOn_iff_monotone : MonotoneOn f s ↔ Monotone fun a : s => f a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.disjoint_right",
+          "score": 0.8045,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem disjoint_right : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ t → a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.eq_univ_iff_forall",
+          "score": 0.8033,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem eq_univ_iff_forall {s : Set α} : s = univ ↔ ∀ x, x ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_sep_iff",
+          "score": 0.8026,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_sep_iff : x ∈ { x ∈ s | p x } ↔ x ∈ s ∧ p x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_setOf",
+          "score": 0.8006,
+          "reason": "lexical=0.07; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_setOf {a : α} {p : α → Prop} : a ∈ { x | p x } ↔ p a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_disjoint_iff",
+          "score": 0.7972,
+          "reason": "lexical=0.06; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma not_disjoint_iff : ¬Disjoint s t ↔ ∃ x, x ∈ s ∧ x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        }
+      ],
+      "goal_defs": [
+        "StrictMono",
+        "StrictMonoOn"
+      ],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.6141,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=1.00"
+        },
+        {
+          "lemma": "Set.ite",
+          "score": 0.6122,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=1.00"
+        },
+        {
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "score": 0.5785,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75"
+        },
+        {
+          "lemma": "Set.prod",
+          "score": 0.5576,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75"
+        },
+        {
+          "lemma": "Set.preimage",
+          "score": 0.5572,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75"
+        }
+      ]
+    },
+    {
+      "target": "Set.subset_insert_iff",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem subset_insert_iff {s t : Set α} {x : α} : s ⊆ insert x t ↔ s ⊆ t ∨ (x ∈ s ∧ s \\ {x} ⊆ t)",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.insert_subset_iff",
+          "score": 1.4111,
+          "reason": "lexical=0.49; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem insert_subset_iff : insert a s ⊆ t ↔ a ∈ t ∧ s ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_singleton_subset_iff",
+          "score": 1.4076,
+          "reason": "lexical=0.41; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_singleton_subset_iff {x : α} {s t : Set α} : s \\ {x} ⊆ t ↔ s ⊆ insert x t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_insert_diff_singleton",
+          "score": 1.3537,
+          "reason": "lexical=0.35; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_insert_diff_singleton (x : α) (s : Set α) : s ⊆ insert x (s \\ {x})",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_insert_iff_of_not_mem",
+          "score": 1.2664,
+          "reason": "lexical=0.35; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_insert_iff_of_not_mem (ha : a ∉ s) : s ⊆ insert a t ↔ s ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.insert_subset_insert_iff",
+          "score": 1.2556,
+          "reason": "lexical=0.34; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "@[simp] theorem insert_subset_insert_iff (ha : a ∉ s) : insert a s ⊆ insert a t ↔ s ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_insert_iff",
+          "score": 1.2541,
+          "reason": "lexical=0.41; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_insert_iff {x a : α} {s : Set α} : x ∈ insert a s ↔ x = a ∨ x ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.exists_mem_insert",
+          "score": 1.2105,
+          "reason": "lexical=0.37; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem exists_mem_insert {P : α → Prop} {a : α} {s : Set α} : (∃ x ∈ insert a s, P x) ↔ (P a ∨ ∃ x ∈ s, P x)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_iff_insert",
+          "score": 1.2085,
+          "reason": "lexical=0.34; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_iff_insert {s t : Set α} : s ⊂ t ↔ ∃ a ∉ s, insert a s ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_insert",
+          "score": 1.2006,
+          "reason": "lexical=0.36; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_insert (x : α) (s : Set α) : s ⊆ insert x s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.insert_subset_insert",
+          "score": 1.1919,
+          "reason": "lexical=0.35; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem insert_subset_insert (h : s ⊆ t) : insert a s ⊆ insert a t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.insert_diff_singleton",
+          "score": 1.184,
+          "reason": "lexical=0.26; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem insert_diff_singleton {a : α} {s : Set α} : insert a (s \\ {a}) = insert a s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.forall_mem_insert",
+          "score": 1.1757,
+          "reason": "lexical=0.34; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem forall_mem_insert {P : α → Prop} {a : α} {s : Set α} : (∀ x ∈ insert a s, P x) ↔ P a ∧ ∀ x ∈ s, P x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.singleton_subset_iff",
+          "score": 1.1732,
+          "reason": "lexical=0.25; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_iff {a : α} {s : Set α} : {a} ⊆ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.insert_subset",
+          "score": 1.1663,
+          "reason": "lexical=0.33; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem insert_subset (ha : a ∈ t) (hs : s ⊆ t) : insert a s ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.insert_diff_eq_singleton",
+          "score": 1.1635,
+          "reason": "lexical=0.24; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem insert_diff_eq_singleton {a : α} {s : Set α} (h : a ∉ s) : insert a s \\ s = {a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Finset.subset_insert_iff",
+          "score": 1.1618,
+          "reason": "lexical=0.72; path=0.50; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_insert_iff {a : α} {s t : Finset α} : s ⊆ insert a t ↔ erase s a ⊆ t",
+          "file_path": "Mathlib/Data/Finset/Basic1th4x_l3.lean"
+        },
+        {
+          "lemma": "Set.subset_singleton_iff_eq",
+          "score": 1.1616,
+          "reason": "lexical=0.29; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_singleton_iff_eq {s : Set α} {x : α} : s ⊆ {x} ↔ s = ∅ ∨ s = {x}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_singleton_iff",
+          "score": 1.1598,
+          "reason": "lexical=0.24; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_singleton_iff {α : Type*} {s : Set α} {x : α} : s ⊆ {x} ↔ ∀ y ∈ s, y = x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_diff",
+          "score": 1.1475,
+          "reason": "lexical=0.31; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma subset_diff : s ⊆ t \\ u ↔ s ⊆ t ∧ Disjoint s u",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.singleton_subset_singleton",
+          "score": 1.1468,
+          "reason": "lexical=0.23; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_singleton : ({a} : Set α) ⊆ {b} ↔ a = b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        }
+      ],
+      "goal_defs": [],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.9316,
+          "decl_kind": "def",
+          "reason": "lexical=0.17; ns=1.00; path=1.00; feat=0.40"
+        },
+        {
+          "lemma": "Set.fintypeInsertOfMem",
+          "score": 0.9023,
+          "decl_kind": "def",
+          "reason": "lexical=0.20; ns=1.00; path=0.75; feat=0.40"
+        },
+        {
+          "lemma": "Set.fintypeInsertOfNotMem",
+          "score": 0.8851,
+          "decl_kind": "def",
+          "reason": "lexical=0.19; ns=1.00; path=0.75; feat=0.40"
+        },
+        {
+          "lemma": "Set.fintypeSubset",
+          "score": 0.8354,
+          "decl_kind": "def",
+          "reason": "lexical=0.14; ns=1.00; path=0.75; feat=0.40"
+        },
+        {
+          "lemma": "Set.iUnionLift",
+          "score": 0.7638,
+          "decl_kind": "def",
+          "reason": "lexical=0.09; ns=1.00; path=0.75; feat=0.33"
+        }
+      ]
+    },
+    {
+      "target": "Set.subset_ite",
+      "cluster_id": "Set__ite_if__subset",
+      "namespace": "Set",
+      "goal_text": "theorem subset_ite {t s s' u : Set α} : u ⊆ t.ite s s' ↔ u ∩ t ⊆ s ∧ u \\ t ⊆ s'",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.inter_subset_ite",
+          "score": 1.4656,
+          "reason": "lexical=0.63; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem inter_subset_ite (t s s' : Set α) : s ∩ s' ⊆ t.ite s s'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite",
+          "score": 1.4037,
+          "reason": "lexical=0.64; ns=1.00; path=1.00; feat=0.40",
+          "source": "mathlib_source",
+          "decl_kind": "def",
+          "statement_text": "protected def ite (t s s' : Set α) : Set α",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_subset_union",
+          "score": 1.3892,
+          "reason": "lexical=0.59; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_subset_union (t s s' : Set α) : t.ite s s' ⊆ s ∪ s'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_diff_self",
+          "score": 1.3374,
+          "reason": "lexical=0.50; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_diff_self (t s s' : Set α) : t.ite s s' \\ t = s' \\ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_inter_self",
+          "score": 1.2747,
+          "reason": "lexical=0.51; ns=1.00; path=1.00; feat=0.40",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_inter_self (t s s' : Set α) : t.ite s s' ∩ t = s ∩ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_univ",
+          "score": 1.2602,
+          "reason": "lexical=0.50; ns=1.00; path=1.00; feat=0.40",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_univ (s s' : Set α) : Set.ite univ s s' = s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_empty",
+          "score": 1.2406,
+          "reason": "lexical=0.51; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_empty (s s' : Set α) : Set.ite ∅ s s' = s'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_compl",
+          "score": 1.228,
+          "reason": "lexical=0.49; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_compl (t s s' : Set α) : tᶜ.ite s s' = t.ite s' s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_inter_compl_self",
+          "score": 1.2201,
+          "reason": "lexical=0.49; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_inter_compl_self (t s s' : Set α) : t.ite s s' ∩ tᶜ = s' ∩ tᶜ",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_eq_of_subset_left",
+          "score": 1.1726,
+          "reason": "lexical=0.37; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_eq_of_subset_left (t : Set α) {s₁ s₂ : Set α} (h : s₁ ⊆ s₂) : t.ite s₁ s₂ = s₁ ∪ (s₂ \\ t)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_eq_of_subset_right",
+          "score": 1.1586,
+          "reason": "lexical=0.36; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_eq_of_subset_right (t : Set α) {s₁ s₂ : Set α} (h : s₂ ⊆ s₁) : t.ite s₁ s₂ = (s₁ ∩ t) ∪ s₂",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_mono",
+          "score": 1.1512,
+          "reason": "lexical=0.31; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_mono (t : Set α) {s₁ s₁' s₂ s₂' : Set α} (h : s₁ ⊆ s₂) (h' : s₁' ⊆ s₂') : t.ite s₁ s₁' ⊆ t.ite s₂ s₂'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_inter",
+          "score": 1.0983,
+          "reason": "lexical=0.34; ns=1.00; path=1.00; feat=0.40",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_inter (t s₁ s₂ s : Set α) : t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_inter_inter",
+          "score": 1.0983,
+          "reason": "lexical=0.34; ns=1.00; path=1.00; feat=0.40",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_inter_inter (t s₁ s₂ s₁' s₂' : Set α) : t.ite (s₁ ∩ s₂) (s₁' ∩ s₂') = t.ite s₁ s₁' ∩ t.ite s₂ s₂'",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_inter_iff",
+          "score": 1.0937,
+          "reason": "lexical=0.25; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_inter_iff {s t r : Set α} : r ⊆ s ∩ t ↔ r ⊆ s ∧ r ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_ite_empty_right",
+          "score": 1.0935,
+          "reason": "lexical=0.29; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_ite_empty_right (p : Prop) [Decidable p] (t : Set α) (x : α) : x ∈ ite p t ∅ ↔ p ∧ x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_ite_univ_right",
+          "score": 1.088,
+          "reason": "lexical=0.25; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_ite_univ_right (p : Prop) [Decidable p] (t : Set α) (x : α) : x ∈ ite p t Set.univ ↔ p → x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_ite_empty_left",
+          "score": 1.0813,
+          "reason": "lexical=0.28; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_ite_empty_left (p : Prop) [Decidable p] (t : Set α) (x : α) : x ∈ ite p ∅ t ↔ ¬p ∧ x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ite_right",
+          "score": 1.08,
+          "reason": "lexical=0.32; ns=1.00; path=1.00; feat=0.40",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ite_right (s t : Set α) : s.ite t s = t ∩ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_ite_univ_left",
+          "score": 1.0774,
+          "reason": "lexical=0.24; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_ite_univ_left (p : Prop) [Decidable p] (t : Set α) (x : α) : x ∈ ite p Set.univ t ↔ ¬p → x ∈ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        }
+      ],
+      "goal_defs": [
+        "Set.ite"
+      ],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.ite",
+          "score": 1.4037,
+          "decl_kind": "def",
+          "reason": "lexical=0.64; ns=1.00; path=1.00; feat=0.40"
+        },
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.8962,
+          "decl_kind": "def",
+          "reason": "lexical=0.14; ns=1.00; path=1.00; feat=0.40"
+        },
+        {
+          "lemma": "Set.fintypeSubset",
+          "score": 0.7861,
+          "decl_kind": "def",
+          "reason": "lexical=0.09; ns=1.00; path=0.75; feat=0.40"
+        },
+        {
+          "lemma": "Set.iUnionLift",
+          "score": 0.7306,
+          "decl_kind": "def",
+          "reason": "lexical=0.06; ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Set.Finite",
+          "score": 0.7211,
+          "decl_kind": "def",
+          "reason": "ns=1.00; path=0.75; feat=0.40"
+        }
+      ]
+    },
+    {
+      "target": "Set.subset_pair_iff_eq",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem subset_pair_iff_eq {x y : α} : s ⊆ {x, y} ↔ s = ∅ ∨ s = {x} ∨ s = {y} ∨ s = {x, y}",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.Nonempty.subset_pair_iff_eq",
+          "score": 1.5658,
+          "reason": "lexical=0.87; ns=0.50; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem Nonempty.subset_pair_iff_eq (hs : s.Nonempty) : s ⊆ {a, b} ↔ s = {a} ∨ s = {b} ∨ s = {a, b}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_pair_iff",
+          "score": 1.5031,
+          "reason": "lexical=0.58; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_pair_iff : s ⊆ {a, b} ↔ ∀ x ∈ s, x = a ∨ x = b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.pair_eq_pair_iff",
+          "score": 1.4001,
+          "reason": "lexical=0.56; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_eq_pair_iff {x y z w : α} : ({x, y} : Set α) = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_singleton_iff_eq",
+          "score": 1.3203,
+          "reason": "lexical=0.45; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_singleton_iff_eq {s : Set α} {x : α} : s ⊆ {x} ↔ s = ∅ ∨ s = {x}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.pair_subset_iff",
+          "score": 1.3162,
+          "reason": "lexical=0.40; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_subset_iff : {a, b} ⊆ s ↔ a ∈ s ∧ b ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "score": 1.2267,
+          "reason": "lexical=0.37; ns=1.00; path=0.75; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem nontrivial_iff_pair_subset : s.Nontrivial ↔ ∃ x y, x ≠ y ∧ {x, y} ⊆ s",
+          "file_path": "Mathlib/Data/Set/Subsingleton.lean"
+        },
+        {
+          "lemma": "Set.pair_eq_singleton",
+          "score": 1.1992,
+          "reason": "lexical=0.36; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_eq_singleton (a : α) : ({a, a} : Set α) = {a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.pair_subset",
+          "score": 1.1587,
+          "reason": "lexical=0.32; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pair_subset (ha : a ∈ s) (hb : b ∈ s) : {a, b} ⊆ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_one_iff_eq",
+          "score": 1.1549,
+          "reason": "lexical=0.45; ns=1.00; path=0.60; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_one_iff_eq : s ⊆ 1 ↔ s = ∅ ∨ s = 1",
+          "file_path": "Mathlib/Data/Set/Pointwise/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_insert_iff",
+          "score": 1.128,
+          "reason": "lexical=0.33; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_insert_iff {s t : Set α} {x : α} : s ⊆ insert x t ↔ s ⊆ t ∨ (x ∈ s ∧ s \\ {x} ⊆ t)",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.pi_subset_pi_iff",
+          "score": 1.1209,
+          "reason": "lexical=0.38; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem pi_subset_pi_iff : pi s t₁ ⊆ pi s t₂ ↔ (∀ i ∈ s, t₁ i ⊆ t₂ i) ∨ pi s t₁ = ∅",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        },
+        {
+          "lemma": "Set.prod_subset_prod_iff",
+          "score": 1.1172,
+          "reason": "lexical=0.38; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem prod_subset_prod_iff : s ×ˢ t ⊆ s₁ ×ˢ t₁ ↔ s ⊆ s₁ ∧ t ⊆ t₁ ∨ s = ∅ ∨ t = ∅",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        },
+        {
+          "lemma": "Set.range_pair_subset",
+          "score": 1.115,
+          "reason": "lexical=0.34; ns=1.00; path=0.75; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem range_pair_subset (f : α → β) (g : α → γ) : (range fun x => (f x, g x)) ⊆ range f ×ˢ range g",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        },
+        {
+          "lemma": "Set.univ_pi_subset_univ_pi_iff",
+          "score": 1.108,
+          "reason": "lexical=0.37; ns=1.00; path=0.75; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem univ_pi_subset_univ_pi_iff : pi univ t₁ ⊆ pi univ t₂ ↔ (∀ i, t₁ i ⊆ t₂ i) ∨ ∃ i, t₁ i = ∅",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        },
+        {
+          "lemma": "Set.singleton_subset_singleton",
+          "score": 1.0887,
+          "reason": "lexical=0.17; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_singleton : ({a} : Set α) ⊆ {b} ↔ a = b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.singleton_subset_iff",
+          "score": 1.0841,
+          "reason": "lexical=0.16; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_iff {a : α} {s : Set α} : {a} ⊆ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_singleton_iff",
+          "score": 1.0754,
+          "reason": "lexical=0.16; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_singleton_iff {α : Type*} {s : Set α} {x : α} : s ⊆ {x} ↔ ∀ y ∈ s, y = x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.sups_eq_empty",
+          "score": 1.0637,
+          "reason": "lexical=0.39; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem sups_eq_empty : s ⊻ t = ∅ ↔ s = ∅ ∨ t = ∅",
+          "file_path": "Mathlib/Data/Set/Sups.lean"
+        },
+        {
+          "lemma": "Set.prod_eq_empty_iff",
+          "score": 1.0633,
+          "reason": "lexical=0.39; ns=1.00; path=0.75; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem prod_eq_empty_iff : s ×ˢ t = ∅ ↔ s = ∅ ∨ t = ∅",
+          "file_path": "Mathlib/Data/Set/Prod.lean"
+        },
+        {
+          "lemma": "Set.eq_or_ssubset_of_subset",
+          "score": 1.0621,
+          "reason": "lexical=0.33; ns=1.00; path=1.00; feat=0.33",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "protected theorem eq_or_ssubset_of_subset (h : s ⊆ t) : s = t ∨ s ⊂ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        }
+      ],
+      "goal_defs": [],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.8748,
+          "decl_kind": "def",
+          "reason": "lexical=0.11; ns=1.00; path=1.00; feat=0.40"
+        },
+        {
+          "lemma": "Set.fintypeSubset",
+          "score": 0.7722,
+          "decl_kind": "def",
+          "reason": "lexical=0.07; ns=1.00; path=0.75; feat=0.40"
+        },
+        {
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "score": 0.7293,
+          "decl_kind": "def",
+          "reason": "lexical=0.06; ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Set.iUnionLift",
+          "score": 0.7212,
+          "decl_kind": "def",
+          "reason": "lexical=0.05; ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Set.EqOn",
+          "score": 0.7123,
+          "decl_kind": "def",
+          "reason": "lexical=0.09; ns=1.00; path=0.75; feat=0.20"
+        }
+      ]
+    },
+    {
+      "target": "Set.subset_singleton_iff_eq",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem subset_singleton_iff_eq {s : Set α} {x : α} : s ⊆ {x} ↔ s = ∅ ∨ s = {x}",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.singleton_subset_singleton",
+          "score": 1.3722,
+          "reason": "lexical=0.37; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_singleton : ({a} : Set α) ⊆ {b} ↔ a = b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.singleton_subset_iff",
+          "score": 1.3622,
+          "reason": "lexical=0.36; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_subset_iff {a : α} {s : Set α} : {a} ⊆ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_singleton_iff",
+          "score": 1.3429,
+          "reason": "lexical=0.34; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_singleton_iff {α : Type*} {s : Set α} {x : α} : s ⊆ {x} ↔ ∀ y ∈ s, y = x",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.singleton_eq_singleton_iff",
+          "score": 1.2517,
+          "reason": "lexical=0.35; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_eq_singleton_iff {x y : α} : {x} = ({y} : Set α) ↔ x = y",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.range_subset_singleton",
+          "score": 1.2442,
+          "reason": "lexical=0.31; ns=1.00; path=0.75; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem range_subset_singleton {f : ι → α} {x : α} : range f ⊆ {x} ↔ f = const ι x",
+          "file_path": "Mathlib/Data/Set/Image.lean"
+        },
+        {
+          "lemma": "Set.subset_compl_singleton_iff",
+          "score": 1.2308,
+          "reason": "lexical=0.31; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_compl_singleton_iff {a : α} {s : Set α} : s ⊆ {a}ᶜ ↔ a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_pair_iff_eq",
+          "score": 1.2183,
+          "reason": "lexical=0.42; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_pair_iff_eq {x y : α} : s ⊆ {x, y} ↔ s = ∅ ∨ s = {x} ∨ s = {y} ∨ s = {x, y}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_singleton_subset_iff",
+          "score": 1.2158,
+          "reason": "lexical=0.30; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_singleton_subset_iff {x : α} {s t : Set α} : s \\ {x} ⊆ t ↔ s ⊆ insert x t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_diff_singleton",
+          "score": 1.2135,
+          "reason": "lexical=0.21; ns=1.00; path=1.00; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_diff_singleton {x : α} {s t : Set α} (h : s ⊆ t) (hx : x ∉ s) : s ⊆ t \\ {x}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.inter_singleton_eq_empty",
+          "score": 1.2063,
+          "reason": "lexical=0.37; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem inter_singleton_eq_empty : s ∩ {a} = ∅ ↔ a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.singleton_inter_eq_empty",
+          "score": 1.2063,
+          "reason": "lexical=0.37; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_inter_eq_empty : {a} ∩ s = ∅ ↔ a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "score": 1.2051,
+          "reason": "lexical=0.29; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma ssubset_iff_sdiff_singleton : s ⊂ t ↔ ∃ a ∈ t, s ⊆ t \\ {a}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_singleton_sSubset",
+          "score": 1.1846,
+          "reason": "lexical=0.26; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_singleton_sSubset {s : Set α} {a : α} : s \\ {a} ⊂ s ↔ a ∈ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.eq_singleton_iff_unique_mem",
+          "score": 1.1833,
+          "reason": "lexical=0.28; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem eq_singleton_iff_unique_mem : s = {a} ↔ a ∈ s ∧ ∀ x ∈ s, x = a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_one_iff_eq",
+          "score": 1.1801,
+          "reason": "lexical=0.44; ns=1.00; path=0.60; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_one_iff_eq : s ⊆ 1 ↔ s = ∅ ∨ s = 1",
+          "file_path": "Mathlib/Data/Set/Pointwise/Basic.lean"
+        },
+        {
+          "lemma": "Set.mem_singleton_iff",
+          "score": 1.1723,
+          "reason": "lexical=0.27; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_singleton_iff {a b : α} : a ∈ ({b} : Set α) ↔ a = b",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.inter_eq_inter_iff_left",
+          "score": 1.172,
+          "reason": "lexical=0.27; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem inter_eq_inter_iff_left : s ∩ t = s ∩ u ↔ s ∩ u ⊆ t ∧ s ∩ t ⊆ u",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.inter_eq_inter_iff_right",
+          "score": 1.1715,
+          "reason": "lexical=0.27; ns=1.00; path=1.00; feat=0.75",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem inter_eq_inter_iff_right : s ∩ u = t ∩ u ↔ t ∩ u ⊆ s ∧ s ∩ u ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_singleton_iff",
+          "score": 1.1711,
+          "reason": "lexical=0.30; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_singleton_iff {s : Set α} {x : α} : s ⊂ {x} ↔ s = ∅",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.diff_eq_empty",
+          "score": 1.1613,
+          "reason": "lexical=0.32; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem diff_eq_empty {s t : Set α} : s \\ t = ∅ ↔ s ⊆ t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        }
+      ],
+      "goal_defs": [],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.inclusion",
+          "score": 0.9542,
+          "decl_kind": "def",
+          "reason": "lexical=0.15; ns=1.00; path=1.00; feat=0.50"
+        },
+        {
+          "lemma": "Set.fintypeSubset",
+          "score": 0.8378,
+          "decl_kind": "def",
+          "reason": "lexical=0.10; ns=1.00; path=0.75; feat=0.50"
+        },
+        {
+          "lemma": "Set.singletonMonoidHom",
+          "score": 0.8265,
+          "decl_kind": "def",
+          "reason": "lexical=0.13; ns=1.00; path=0.60; feat=0.50"
+        },
+        {
+          "lemma": "Set.singletonMulHom",
+          "score": 0.8111,
+          "decl_kind": "def",
+          "reason": "lexical=0.11; ns=1.00; path=0.60; feat=0.50"
+        },
+        {
+          "lemma": "Set.singletonOneHom",
+          "score": 0.7989,
+          "decl_kind": "def",
+          "reason": "lexical=0.10; ns=1.00; path=0.60; feat=0.50"
+        }
+      ]
+    },
+    {
+      "target": "Set.union_empty_iff",
+      "cluster_id": "Set__iff__iff",
+      "namespace": "Set",
+      "goal_text": "theorem union_empty_iff {s t : Set α} : s ∪ t = ∅ ↔ s = ∅ ∧ t = ∅",
+      "num_retrieved": 20,
+      "retrieved": [
+        {
+          "lemma": "Set.mem_diff_singleton_empty",
+          "score": 1.2306,
+          "reason": "lexical=0.31; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem mem_diff_singleton_empty {t : Set (Set α)} : s ∈ t \\ {∅} ↔ s ∈ t ∧ s.Nonempty",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.iUnion_eq_empty",
+          "score": 1.2154,
+          "reason": "lexical=0.36; ns=1.00; path=0.75; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem iUnion_eq_empty : ⋃ i, s i = ∅ ↔ ∀ i, s i = ∅",
+          "file_path": "Mathlib/Data/Set/Lattice.lean"
+        },
+        {
+          "lemma": "Set.empty_union",
+          "score": 1.2068,
+          "reason": "lexical=0.37; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem empty_union (a : Set α) : ∅ ∪ a = a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.union_empty",
+          "score": 1.2068,
+          "reason": "lexical=0.37; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem union_empty (a : Set α) : a ∪ ∅ = a",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.sUnion_eq_empty",
+          "score": 1.1895,
+          "reason": "lexical=0.33; ns=1.00; path=0.75; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem sUnion_eq_empty {S : Set (Set α)} : ⋃₀S = ∅ ↔ ∀ s ∈ S, s = ∅",
+          "file_path": "Mathlib/Data/Set/Lattice.lean"
+        },
+        {
+          "lemma": "Set.sUnion_diff_singleton_empty",
+          "score": 1.1864,
+          "reason": "lexical=0.25; ns=1.00; path=0.75; feat=1.00",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem sUnion_diff_singleton_empty (s : Set (Set α)) : ⋃₀(s \\ {∅}) = ⋃₀s",
+          "file_path": "Mathlib/Data/Set/Lattice.lean"
+        },
+        {
+          "lemma": "Set.inter_singleton_eq_empty",
+          "score": 1.1846,
+          "reason": "lexical=0.26; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem inter_singleton_eq_empty : s ∩ {a} = ∅ ↔ a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.singleton_inter_eq_empty",
+          "score": 1.1846,
+          "reason": "lexical=0.26; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem singleton_inter_eq_empty : {a} ∩ s = ∅ ↔ a ∉ s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.nmem_singleton_empty",
+          "score": 1.1429,
+          "reason": "lexical=0.22; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem nmem_singleton_empty {s : Set α} : s ∉ ({∅} : Set (Set α)) ↔ s.Nonempty",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_singleton_iff_eq",
+          "score": 1.1282,
+          "reason": "lexical=0.26; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_singleton_iff_eq {s : Set α} {x : α} : s ⊆ {x} ↔ s = ∅ ∨ s = {x}",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.nonempty_iff_ne_empty",
+          "score": 1.1264,
+          "reason": "lexical=0.29; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem nonempty_iff_ne_empty : s.Nonempty ↔ s ≠ ∅",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.disjoint_iff_inter_eq_empty",
+          "score": 1.1243,
+          "reason": "lexical=0.28; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem disjoint_iff_inter_eq_empty : Disjoint s t ↔ s ∩ t = ∅",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.union_nonempty",
+          "score": 1.1241,
+          "reason": "lexical=0.20; ns=1.00; path=1.00; feat=0.80",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem union_nonempty : (s ∪ t).Nonempty ↔ s.Nonempty ∨ t.Nonempty",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.not_nonempty_iff_eq_empty",
+          "score": 1.1226,
+          "reason": "lexical=0.28; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem not_nonempty_iff_eq_empty {s : Set α} : ¬s.Nonempty ↔ s = ∅",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.subset_empty_iff",
+          "score": 1.1135,
+          "reason": "lexical=0.31; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem subset_empty_iff {s : Set α} : s ⊆ ∅ ↔ s = ∅",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.union_diff_cancel_left",
+          "score": 1.1127,
+          "reason": "lexical=0.25; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem union_diff_cancel_left {s t : Set α} (h : s ∩ t ⊆ ∅) : (s ∪ t) \\ s = t",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.union_diff_cancel_right",
+          "score": 1.1124,
+          "reason": "lexical=0.25; ns=1.00; path=1.00; feat=0.67",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem union_diff_cancel_right {s t : Set α} (h : s ∩ t ⊆ ∅) : (s ∪ t) \\ t = s",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.union_subset_iff",
+          "score": 1.1108,
+          "reason": "lexical=0.31; ns=1.00; path=1.00; feat=0.50",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem union_subset_iff {s t u : Set α} : s ∪ t ⊆ u ↔ s ⊆ u ∧ t ⊆ u",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.ssubset_singleton_iff",
+          "score": 1.1088,
+          "reason": "lexical=0.28; ns=1.00; path=1.00; feat=0.57",
+          "source": "mathlib_source",
+          "decl_kind": "theorem",
+          "statement_text": "theorem ssubset_singleton_iff {s : Set α} {x : α} : s ⊂ {x} ↔ s = ∅",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        },
+        {
+          "lemma": "Set.disjoint_union_left",
+          "score": 1.1062,
+          "reason": "lexical=0.27; ns=1.00; path=1.00; feat=0.60",
+          "source": "mathlib_source",
+          "decl_kind": "lemma",
+          "statement_text": "lemma disjoint_union_left : Disjoint (s ∪ t) u ↔ Disjoint s u ∧ Disjoint t u",
+          "file_path": "Mathlib/Data/Set/Basic.lean"
+        }
+      ],
+      "goal_defs": [],
+      "retrieved_defs": [
+        {
+          "lemma": "Set.sigmaToiUnion",
+          "score": 0.8046,
+          "decl_kind": "def",
+          "reason": "lexical=0.11; ns=1.00; path=0.75; feat=0.40"
+        },
+        {
+          "lemma": "Set.fintypeBiUnion",
+          "score": 0.7975,
+          "decl_kind": "def",
+          "reason": "lexical=0.10; ns=1.00; path=0.75; feat=0.40"
+        },
+        {
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "score": 0.7622,
+          "decl_kind": "def",
+          "reason": "lexical=0.09; ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Set.sUnion_powerset_gi",
+          "score": 0.7471,
+          "decl_kind": "def",
+          "reason": "lexical=0.08; ns=1.00; path=0.75; feat=0.33"
+        },
+        {
+          "lemma": "Set.iUnionLift",
+          "score": 0.7447,
+          "decl_kind": "def",
+          "reason": "lexical=0.07; ns=1.00; path=0.75; feat=0.33"
+        }
+      ]
+    }
+  ],
+  "cluster_shared_lemmas": {
+    "Multiset__iff__iff": {
+      "size": 1,
+      "members": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "shared_retrieved_lemmas": []
+    },
+    "Set__iff__iff": {
+      "size": 16,
+      "members": [
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.antitoneOn_iff_antitone",
+        "Set.diff_singleton_subset_iff",
+        "Set.monotoneOn_iff_monotone",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Set.pair_eq_pair_iff",
+        "Set.ssubset_iff_insert",
+        "Set.ssubset_iff_sdiff_singleton",
+        "Set.ssubset_singleton_iff",
+        "Set.strictAntiOn_iff_strictAnti",
+        "Set.strictMonoOn_iff_strictMono",
+        "Set.subset_insert_iff",
+        "Set.subset_pair_iff_eq",
+        "Set.subset_singleton_iff_eq",
+        "Set.union_empty_iff"
+      ],
+      "shared_retrieved_lemmas": [
+        {
+          "lemma": "Set.singleton_subset_singleton",
+          "appears_in_targets": 7
+        },
+        {
+          "lemma": "Set.subset_singleton_iff",
+          "appears_in_targets": 7
+        },
+        {
+          "lemma": "Set.singleton_subset_iff",
+          "appears_in_targets": 7
+        },
+        {
+          "lemma": "Set.subset_singleton_iff_eq",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.mem_sep_iff",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.mem_inter_iff",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.not_not_mem",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.not_disjoint_iff",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.diff_singleton_sSubset",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.subset_insert_iff",
+          "appears_in_targets": 4
+        },
+        {
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "appears_in_targets": 4
+        },
+        {
+          "lemma": "Set.subset_insert_diff_singleton",
+          "appears_in_targets": 4
+        },
+        {
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "appears_in_targets": 4
+        },
+        {
+          "lemma": "Set.diff_singleton_subset_iff",
+          "appears_in_targets": 4
+        }
+      ]
+    },
+    "Set__ite_if__subset": {
+      "size": 3,
+      "members": [
+        "Set.ite_eq_of_subset_left",
+        "Set.ite_eq_of_subset_right",
+        "Set.subset_ite"
+      ],
+      "shared_retrieved_lemmas": [
+        {
+          "lemma": "Set.inter_subset_ite",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_inter",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_univ",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_mono",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_right",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_subset_union",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_inter_self",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_inter_inter",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_eq_of_subset_right",
+          "appears_in_targets": 2
+        },
+        {
+          "lemma": "Set.ite_inter_of_inter_eq",
+          "appears_in_targets": 2
+        },
+        {
+          "lemma": "Set.preimage_ite",
+          "appears_in_targets": 2
+        },
+        {
+          "lemma": "Set.subset_ite",
+          "appears_in_targets": 2
+        },
+        {
+          "lemma": "Set.ite_same",
+          "appears_in_targets": 2
+        },
+        {
+          "lemma": "Set.iUnion_ite",
+          "appears_in_targets": 2
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,2013 @@
+{
+  "confirmation_input": "project/evolve/experiments/tr2/out/tr2_rc2_confirmation.json",
+  "num_theorems": 34,
+  "probe_family_histogram": {
+    "depth_gap_bounded": 2,
+    "controls": 8,
+    "retrieval": 20,
+    "minimal_controls": 4
+  },
+  "for_sf5_retrieval": [
+    "Set.ite_eq_of_subset_left",
+    "Set.ite_eq_of_subset_right",
+    "Set.antitoneOn_iff_antitone",
+    "Set.monotoneOn_iff_monotone",
+    "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+    "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+    "Set.pair_eq_pair_iff",
+    "Set.subset_ite",
+    "Set.union_empty_iff",
+    "Multiset.toFinset_eq_singleton_iff",
+    "Set.Nonempty.subset_pair_iff_eq",
+    "Set.diff_singleton_subset_iff",
+    "Set.ssubset_iff_insert",
+    "Set.ssubset_iff_sdiff_singleton",
+    "Set.ssubset_singleton_iff",
+    "Set.subset_insert_iff",
+    "Set.subset_pair_iff_eq",
+    "Set.subset_singleton_iff_eq",
+    "Set.strictAntiOn_iff_strictAnti",
+    "Set.strictMonoOn_iff_strictMono"
+  ],
+  "num_for_sf5_retrieval": 20,
+  "mapping": {
+    "MISSING_BRIDGE_LEMMA_CANDIDATE": "retrieval (exact?) + SF5 flag \u2014 no blind spam",
+    "PROOF_SEARCH_DEPTH_GAP": "bounded depth-2/3 battery (<=15)",
+    "NO_CHEAP_ACTION": "minimal controls; negative if all fail",
+    "BASELINE_DUPLICATE": "controls (simp/simp_all/aesop/classical;aesop)",
+    "SET_ITE_SIMP": "sanity negative \u2014 RC2 owns it -> PRODUCTION_SUBSUMED",
+    "WX3_MULTISET_INDUCTION": "Multiset.induction_on <;> simp_all (gated)",
+    "MX2_TOFINSET_AESOP": "narrow toFinset/Finite aesop (gated)"
+  },
+  "budget_policy": "max 8 probes/theorem; 15 for depth-gap; controls reused from SF4 where present",
+  "theorems": [
+    {
+      "full_name": "Eq.subset",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Eq",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "PROOF_SEARCH_DEPTH_GAP",
+      "probe_family": "depth_gap_bounded",
+      "expected_outcome": "PROOF_SEARCH_DEPTH_GAP_or_TRUE_DELTA",
+      "for_sf5_retrieval": false,
+      "probe_budget": 15,
+      "num_probes": 9,
+      "controls_for_attribution": [
+        "simp",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "simp_all <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "constructor <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "intro h <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "ext x <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "ext x <;> simp_all",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "simp_all <;> omega",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "rintro \u27e8_, _\u27e9 <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_toFinset",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "WX3_MULTISET_INDUCTION",
+      "probe_family": "controls",
+      "expected_outcome": "BASELINE_DUPLICATE",
+      "for_sf5_retrieval": false,
+      "probe_budget": 8,
+      "num_probes": 4,
+      "controls_for_attribution": [],
+      "probes": [
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [
+              "Multiset"
+            ],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "WX3_MULTISET_INDUCTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [
+              "Multiset"
+            ],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "WX3_MULTISET_INDUCTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [
+              "Multiset"
+            ],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "WX3_MULTISET_INDUCTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "classical <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [
+              "Multiset"
+            ],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "WX3_MULTISET_INDUCTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "coe_notMemRangeEquiv_symm",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "GENERAL_FRONTIER",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "BASELINE_DUPLICATE",
+      "probe_family": "controls",
+      "expected_outcome": "BASELINE_DUPLICATE",
+      "for_sf5_retrieval": false,
+      "probe_budget": 8,
+      "num_probes": 4,
+      "controls_for_attribution": [],
+      "probes": [
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "classical <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.pairwiseDisjoint_filter",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "PROOF_SEARCH_DEPTH_GAP",
+      "probe_family": "depth_gap_bounded",
+      "expected_outcome": "PROOF_SEARCH_DEPTH_GAP_or_TRUE_DELTA",
+      "for_sf5_retrieval": false,
+      "probe_budget": 15,
+      "num_probes": 9,
+      "controls_for_attribution": [
+        "simp",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "simp_all <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "constructor <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "intro h <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "ext x <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "ext x <;> simp_all",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "simp_all <;> omega",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "depth_gap_bounded",
+          "tactic_or_sequence": "rintro \u27e8_, _\u27e9 <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "medium",
+          "from_prediction": "PROOF_SEARCH_DEPTH_GAP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Function.Injective.nonempty_apply_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Function",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "NO_CHEAP_ACTION",
+      "probe_family": "minimal_controls",
+      "expected_outcome": "NO_CHEAP_ACTION_confirmed",
+      "for_sf5_retrieval": false,
+      "probe_budget": 8,
+      "num_probes": 3,
+      "controls_for_attribution": [
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "minimal_controls",
+          "tactic_or_sequence": "simp",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "minimal_controls",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "minimal_controls",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Prop.compl_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Prop",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "NO_CHEAP_ACTION",
+      "probe_family": "minimal_controls",
+      "expected_outcome": "NO_CHEAP_ACTION_confirmed",
+      "for_sf5_retrieval": false,
+      "probe_budget": 8,
+      "num_probes": 3,
+      "controls_for_attribution": [
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "minimal_controls",
+          "tactic_or_sequence": "simp",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "minimal_controls",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "minimal_controls",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ssubset_iff_insert",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ssubset_iff_sdiff_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Multiset.toFinset_nsmul",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "NO_CHEAP_ACTION",
+      "probe_family": "controls",
+      "expected_outcome": "BASELINE_DUPLICATE",
+      "for_sf5_retrieval": false,
+      "probe_budget": 8,
+      "num_probes": 4,
+      "controls_for_attribution": [],
+      "probes": [
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "classical <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "expected_outcome": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "for_sf5_retrieval": true,
+      "probe_budget": 8,
+      "num_probes": 1,
+      "controls_for_attribution": [
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "retrieval",
+          "tactic_or_sequence": "exact?",
+          "is_sequence": false,
+          "retrieval": true,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.diff_union_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "BASELINE_DUPLICATE",
+      "probe_family": "controls",
+      "expected_outcome": "BASELINE_DUPLICATE",
+      "for_sf5_retrieval": false,
+      "probe_budget": 8,
+      "num_probes": 4,
+      "controls_for_attribution": [],
+      "probes": [
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "classical <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.insert_diff_eq_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "BASELINE_DUPLICATE",
+      "probe_family": "controls",
+      "expected_outcome": "BASELINE_DUPLICATE",
+      "for_sf5_retrieval": false,
+      "probe_budget": 8,
+      "num_probes": 4,
+      "controls_for_attribution": [],
+      "probes": [
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "classical <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.insert_diff_of_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "BASELINE_DUPLICATE",
+      "probe_family": "controls",
+      "expected_outcome": "BASELINE_DUPLICATE",
+      "for_sf5_retrieval": false,
+      "probe_budget": 8,
+      "num_probes": 4,
+      "controls_for_attribution": [],
+      "probes": [
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "classical <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "NO_CHEAP_ACTION",
+      "probe_family": "minimal_controls",
+      "expected_outcome": "NO_CHEAP_ACTION_confirmed",
+      "for_sf5_retrieval": false,
+      "probe_budget": 8,
+      "num_probes": 3,
+      "controls_for_attribution": [
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "minimal_controls",
+          "tactic_or_sequence": "simp",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "minimal_controls",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "minimal_controls",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.eq_of_inclusion_surjective",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "NO_CHEAP_ACTION",
+      "probe_family": "minimal_controls",
+      "expected_outcome": "NO_CHEAP_ACTION_confirmed",
+      "for_sf5_retrieval": false,
+      "probe_budget": 8,
+      "num_probes": 3,
+      "controls_for_attribution": [
+        "classical <;> aesop"
+      ],
+      "probes": [
+        {
+          "family": "minimal_controls",
+          "tactic_or_sequence": "simp",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "minimal_controls",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "minimal_controls",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "NO_CHEAP_ACTION",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.inclusion_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "BASELINE_DUPLICATE",
+      "probe_family": "controls",
+      "expected_outcome": "BASELINE_DUPLICATE",
+      "for_sf5_retrieval": false,
+      "probe_budget": 8,
+      "num_probes": 4,
+      "controls_for_attribution": [],
+      "probes": [
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "classical <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [],
+            "name_features": [],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "BASELINE_DUPLICATE",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.pair_diff_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "SET_ITE_SIMP",
+      "probe_family": "controls",
+      "expected_outcome": "BASELINE_DUPLICATE",
+      "for_sf5_retrieval": false,
+      "probe_budget": 8,
+      "num_probes": 4,
+      "controls_for_attribution": [],
+      "probes": [
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [
+              "Set"
+            ],
+            "name_features": [
+              "ite",
+              "dite",
+              ".if"
+            ],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "SET_ITE_SIMP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "simp_all",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [
+              "Set"
+            ],
+            "name_features": [
+              "ite",
+              "dite",
+              ".if"
+            ],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "SET_ITE_SIMP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "aesop",
+          "is_sequence": false,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [
+              "Set"
+            ],
+            "name_features": [
+              "ite",
+              "dite",
+              ".if"
+            ],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "SET_ITE_SIMP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        },
+        {
+          "family": "controls",
+          "tactic_or_sequence": "classical <;> aesop",
+          "is_sequence": true,
+          "retrieval": false,
+          "gate": {
+            "namespaces": [
+              "Set"
+            ],
+            "name_features": [
+              "ite",
+              "dite",
+              ".if"
+            ],
+            "max_emissions_per_theorem": 1
+          },
+          "risk": "low",
+          "from_prediction": "SET_ITE_SIMP",
+          "source": "router_prediction",
+          "source_specific": false,
+          "promotion_allowed": false
+        }
+      ]
+    }
+  ]
+}

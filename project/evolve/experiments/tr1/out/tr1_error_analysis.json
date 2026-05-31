@@ -1,0 +1,47 @@
+{
+  "best_model": "sgd",
+  "within_distribution_accuracy_LOO": 0.877,
+  "grouped_leave_one_namespace_out_accuracy": 0.386,
+  "leakage_generalization_gap": 0.491,
+  "low_support_labels": [
+    "PROOF_SEARCH_DEPTH_GAP",
+    "WX3_MULTISET_INDUCTION"
+  ],
+  "zero_support_labels": [],
+  "missing_lemma_vs_no_cheap_confusions": [
+    {
+      "theorem": "Multiset.toFinset_eq_singleton_iff",
+      "true": "NO_CHEAP_ACTION",
+      "pred": "MISSING_BRIDGE_LEMMA_CANDIDATE"
+    }
+  ],
+  "set_ite_false_positives": [],
+  "name_cue_dominance_fraction": {
+    "SET_ITE_SIMP": 1.0,
+    "MISSING_BRIDGE_LEMMA_CANDIDATE": 0.842,
+    "BASELINE_DUPLICATE": 0.0
+  },
+  "examples_with_goal_text": 31,
+  "examples_total": 57,
+  "usable_signal": [
+    "BASELINE_DUPLICATE",
+    "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "NO_CHEAP_ACTION",
+    "SET_ITE_SIMP",
+    "SX3_PRODUCTION_SUBSUMED"
+  ],
+  "unreliable_labels": [
+    "PROOF_SEARCH_DEPTH_GAP",
+    "WX3_MULTISET_INDUCTION"
+  ],
+  "data_collection_targets": [
+    "WX3_MULTISET_INDUCTION and MX2_TOFINSET_AESOP positives (current support 1 and 0) \u2014 mine more verified Multiset-induction / Set.Finite-aesop wins",
+    "PROOF_SEARCH_DEPTH_GAP examples (support 1) \u2014 collect more bare-control-closes-but-RC2-missed cases",
+    "non-Set namespaces \u2014 grouped generalization is weak; corpus is Set-dominated",
+    "goal-text coverage \u2014 only 31/57 have goal text; capture initial goals for all live failures"
+  ],
+  "interpretation": {
+    "within_vs_grouped": "High within-distribution OOF accuracy but a large drop under leave-one-namespace-out indicates the model leans on namespace/name-surface cues rather than transferable structure \u2014 expected for a 57-example, Set-dominated corpus. Treat as a PILOT signal, not a deployable router.",
+    "name_vs_goal": "SET_ITE / bridge labels are strongly predictable from the theorem NAME alone (see name_cue_dominance_fraction); goal text adds little at this size."
+  }
+}

@@ -1,0 +1,685 @@
+{
+  "best_model": "sgd",
+  "num_failures": 27,
+  "num_held_out": 27,
+  "num_correct_held_out": 23,
+  "held_out_accuracy": 0.852,
+  "num_abstained": 0,
+  "predictions": [
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "cluster": "Multiset__iff__iff",
+      "true_triage": "NO_CHEAP_ACTION",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 0.967
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.018
+        },
+        {
+          "label": "WX3_MULTISET_INDUCTION",
+          "score": 0.015
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": false
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__ite_if__subset",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 0.55
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.45
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__ite_if__subset",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 0.997
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.003
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__ite_if__equality",
+      "true_triage": "NO_CHEAP_ACTION",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.985
+        },
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 0.015
+        },
+        {
+          "label": "SX3_PRODUCTION_SUBSUMED",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "NO_CHEAP_ACTION",
+      "recommended_next_step": "send to lemma retrieval / deeper search",
+      "correct": true
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.powerset_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__singleton__arithmetic",
+      "true_triage": "NO_CHEAP_ACTION",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 1.0
+        },
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 0.0
+        },
+        {
+          "label": "SET_ITE_SIMP",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "NO_CHEAP_ACTION",
+      "recommended_next_step": "send to lemma retrieval / deeper search",
+      "correct": true
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__ite_if__subset",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        },
+        {
+          "label": "SET_ITE_SIMP",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "SET_ITE_SIMP",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Eq.subset",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "unknown__subset__subset",
+      "true_triage": "NO_CHEAP_ACTION",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "PROOF_SEARCH_DEPTH_GAP",
+          "score": 0.591
+        },
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 0.409
+        },
+        {
+          "label": "SET_ITE_SIMP",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "PROOF_SEARCH_DEPTH_GAP",
+      "recommended_next_step": "send to deeper bounded sequence search / widen aesop routing",
+      "correct": false
+    },
+    {
+      "full_name": "Function.Injective.nonempty_apply_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "unknown__iff__iff",
+      "true_triage": "NO_CHEAP_ACTION",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 1.0
+        },
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 0.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "NO_CHEAP_ACTION",
+      "recommended_next_step": "send to lemma retrieval / deeper search",
+      "correct": true
+    },
+    {
+      "full_name": "Prop.compl_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "unknown__compl__arithmetic",
+      "true_triage": "PROOF_SEARCH_DEPTH_GAP",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "NO_CHEAP_ACTION",
+      "recommended_next_step": "send to lemma retrieval / deeper search",
+      "correct": false
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.eq_of_inclusion_surjective",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__other__equality",
+      "true_triage": "NO_CHEAP_ACTION",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 1.0
+        },
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 0.0
+        },
+        {
+          "label": "SET_ITE_SIMP",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "NO_CHEAP_ACTION",
+      "recommended_next_step": "send to lemma retrieval / deeper search",
+      "correct": true
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.pairwiseDisjoint_filter",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "cluster": "Set__map_filter__arithmetic",
+      "true_triage": "NO_CHEAP_ACTION",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "PROOF_SEARCH_DEPTH_GAP",
+          "score": 1.0
+        },
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "PROOF_SEARCH_DEPTH_GAP",
+      "recommended_next_step": "send to deeper bounded sequence search / widen aesop routing",
+      "correct": false
+    },
+    {
+      "full_name": "Set.ssubset_iff_insert",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.ssubset_iff_sdiff_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    },
+    {
+      "full_name": "Set.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster": "Set__iff__iff",
+      "true_triage": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "held_out": true,
+      "top_predictions": [
+        {
+          "label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+          "score": 1.0
+        },
+        {
+          "label": "BASELINE_DUPLICATE",
+          "score": 0.0
+        },
+        {
+          "label": "NO_CHEAP_ACTION",
+          "score": 0.0
+        }
+      ],
+      "abstained": false,
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "recommended_next_step": "send to SF5 existing-lemma retrieval",
+      "correct": true
+    }
+  ]
+}

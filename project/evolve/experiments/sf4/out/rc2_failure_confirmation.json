@@ -1,0 +1,849 @@
+{
+  "rc2_wrapper": "project/evolve/experiments/rc2_release/rc2_production_wrapper.json",
+  "route_config": "project/evolve/routing/ns24_router.json",
+  "policy_type": "hybrid_evolved",
+  "top_k": 8,
+  "max_steps": 8,
+  "num_run": 40,
+  "classification_histogram": {
+    "CONFIRMED_RC2_FAILURE": 27,
+    "NOW_SOLVED_BY_RC2": 13
+  },
+  "confirmed_rc2_failures": [
+    "Eq.subset",
+    "Function.Injective.nonempty_apply_iff",
+    "Multiset.toFinset_eq_singleton_iff",
+    "Prop.compl_singleton",
+    "Set.Nonempty.subset_pair_iff_eq",
+    "Set.antitoneOn_iff_antitone",
+    "Set.diff_singleton_subset_iff",
+    "Set.eq_of_inclusion_surjective",
+    "Set.ite_eq_of_subset_left",
+    "Set.ite_eq_of_subset_right",
+    "Set.ite_inter_of_inter_eq",
+    "Set.monotoneOn_iff_monotone",
+    "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+    "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+    "Set.pair_eq_pair_iff",
+    "Set.pairwiseDisjoint_filter",
+    "Set.powerset_singleton",
+    "Set.ssubset_iff_insert",
+    "Set.ssubset_iff_sdiff_singleton",
+    "Set.ssubset_singleton_iff",
+    "Set.strictAntiOn_iff_strictAnti",
+    "Set.strictMonoOn_iff_strictMono",
+    "Set.subset_insert_iff",
+    "Set.subset_ite",
+    "Set.subset_pair_iff_eq",
+    "Set.subset_singleton_iff_eq",
+    "Set.union_empty_iff"
+  ],
+  "num_confirmed": 27,
+  "metrics_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/metrics.json",
+  "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+  "results": [
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 4,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.univ_union]",
+        "induction s using Multiset.induction_on <;> simp_all",
+        "aesop"
+      ],
+      "error_message": "All top-13 tactics errored at step 4",
+      "skip_reason": null,
+      "tags": [
+        "rc2_confirmed_failure",
+        "role:negative_control",
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "tactics_used": [],
+      "error_message": "All top-14 tactics errored at step 1",
+      "skip_reason": null,
+      "tags": [
+        "rc2_confirmed_failure",
+        "role:set_cluster_failure",
+        "frontier_unconfirmed",
+        "sx3_cluster"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 5,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop",
+        "tauto",
+        "simp [Set.subset_def]",
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 5",
+      "skip_reason": null,
+      "tags": [
+        "rc2_confirmed_failure",
+        "role:set_cluster_failure",
+        "frontier_unconfirmed",
+        "sx3_cluster"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.ite]"
+      ],
+      "error_message": "All top-13 tactics errored at step 2",
+      "skip_reason": null,
+      "tags": [
+        "rc2_confirmed_failure",
+        "role:fresh_holdout",
+        "frontier_unconfirmed",
+        "sx3_holdout"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.ite]"
+      ],
+      "error_message": "All top-13 tactics errored at step 2",
+      "skip_reason": null,
+      "tags": [
+        "rc2_confirmed_failure",
+        "role:fresh_holdout",
+        "frontier_unconfirmed",
+        "sx3_holdout"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "error_message": "All top-13 tactics errored at step 3",
+      "skip_reason": null,
+      "tags": [
+        "rc2_confirmed_failure",
+        "role:fresh_holdout",
+        "frontier_unconfirmed",
+        "sx3_holdout"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 2",
+      "skip_reason": null,
+      "tags": [
+        "rc2_confirmed_failure",
+        "role:set_cluster_failure",
+        "frontier_unconfirmed",
+        "sx3_cluster"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.powerset_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.ext_iff]",
+        "aesop"
+      ],
+      "error_message": "All top-14 tactics errored at step 3",
+      "skip_reason": null,
+      "tags": [
+        "rc2_confirmed_failure",
+        "role:set_cluster_failure",
+        "frontier_unconfirmed",
+        "sx3_cluster"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.ext_iff]",
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 3",
+      "skip_reason": null,
+      "tags": [
+        "rc2_confirmed_failure",
+        "role:set_cluster_failure",
+        "frontier_unconfirmed",
+        "sx3_cluster"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.subset_def]",
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 3",
+      "skip_reason": null,
+      "tags": [
+        "rc2_confirmed_failure",
+        "role:set_cluster_failure",
+        "frontier_unconfirmed",
+        "sx3_cluster"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.subset_def]",
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 3",
+      "skip_reason": null,
+      "tags": [
+        "rc2_confirmed_failure",
+        "role:fresh_holdout",
+        "sx3_holdout"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 2",
+      "skip_reason": null,
+      "tags": [
+        "rc2_confirmed_failure",
+        "role:set_cluster_failure",
+        "frontier_unconfirmed",
+        "sx3_cluster"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 4,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop",
+        "simp [Set.ext_iff]",
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 4",
+      "skip_reason": null,
+      "tags": [
+        "rc2_confirmed_failure",
+        "role:set_cluster_failure",
+        "frontier_unconfirmed",
+        "sx3_cluster"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Eq.subset",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Eq",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "tactics_used": [],
+      "error_message": "All top-12 tactics errored at step 1",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Function.Injective.nonempty_apply_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Function",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 2",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "coe_notMemRangeEquiv_symm",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "GENERAL_FRONTIER",
+      "classification": "NOW_SOLVED_BY_RC2",
+      "available": true,
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_toFinset",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "classification": "NOW_SOLVED_BY_RC2",
+      "available": true,
+      "rc2_finished": true,
+      "num_steps": 3,
+      "winning_tactic": "induction m1 using Multiset.induction_on <;> simp_all",
+      "tactics_used": [
+        "aesop",
+        "induction m1 using Multiset.induction_on <;> simp_all",
+        "induction m1 using Multiset.induction_on <;> simp_all"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.toFinset_nsmul",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "classification": "NOW_SOLVED_BY_RC2",
+      "available": true,
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Prop.compl_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Prop",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "tactics_used": [],
+      "error_message": "All top-12 tactics errored at step 1",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 2",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.eq_of_inclusion_surjective",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 4,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.ext_iff]",
+        "aesop",
+        "tauto"
+      ],
+      "error_message": "All top-11 tactics errored at step 4",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.inclusion_inclusion",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "NOW_SOLVED_BY_RC2",
+      "available": true,
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.inclusion_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "NOW_SOLVED_BY_RC2",
+      "available": true,
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "tauto",
+      "tactics_used": [
+        "tauto"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.inclusion_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "NOW_SOLVED_BY_RC2",
+      "available": true,
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.insert_diff_of_not_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "NOW_SOLVED_BY_RC2",
+      "available": true,
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.insert_diff_self_of_not_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "NOW_SOLVED_BY_RC2",
+      "available": true,
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp_all",
+      "tactics_used": [
+        "simp_all"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.ite_empty",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "NOW_SOLVED_BY_RC2",
+      "available": true,
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp [Set.ite]",
+      "tactics_used": [
+        "simp [Set.ite]"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.ite_empty_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "NOW_SOLVED_BY_RC2",
+      "available": true,
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp [Set.ite]",
+      "tactics_used": [
+        "simp [Set.ite]"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.ite_empty_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "NOW_SOLVED_BY_RC2",
+      "available": true,
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp [Set.ite]",
+      "tactics_used": [
+        "simp [Set.ite]"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.ite_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "NOW_SOLVED_BY_RC2",
+      "available": true,
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp [Set.ite]",
+      "tactics_used": [
+        "simp [Set.ite]"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.ite_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "NOW_SOLVED_BY_RC2",
+      "available": true,
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp [Set.ite]",
+      "tactics_used": [
+        "simp [Set.ite]"
+      ],
+      "error_message": null,
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-12 tactics errored at step 2",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 2",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 2",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.pairwiseDisjoint_filter",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "tactics_used": [],
+      "error_message": "All top-12 tactics errored at step 1",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.ssubset_iff_insert",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.subset_def]",
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 3",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.ssubset_iff_sdiff_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "tactics_used": [
+        "simp [Set.subset_def]",
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 3",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "tactics_used": [],
+      "error_message": "All top-14 tactics errored at step 1",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "tactics_used": [],
+      "error_message": "All top-14 tactics errored at step 1",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Set.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "classification": "CONFIRMED_RC2_FAILURE",
+      "available": true,
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "tactics_used": [
+        "aesop"
+      ],
+      "error_message": "All top-11 tactics errored at step 2",
+      "skip_reason": null,
+      "tags": [
+        "frontier_unconfirmed"
+      ],
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    }
+  ]
+}
