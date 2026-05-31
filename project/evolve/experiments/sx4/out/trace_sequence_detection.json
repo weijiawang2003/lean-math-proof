@@ -1,0 +1,958 @@
+{
+  "baseline_results": "project/evolve/experiments/rc3_validation/out/literal_rc2_results.json",
+  "baseline_trace": "project/evolve/experiments/rc3_validation/out/literal_rc2_runs/eval-a334e4a0/traces.jsonl",
+  "patterns_supported": [
+    "simp_set_ite__aesop",
+    "simp_set_ite__simp_all",
+    "ext__aesop",
+    "constructor_intro__aesop"
+  ],
+  "num_theorems": 30,
+  "best_confidence_histogram": {
+    "insufficient": 12,
+    "weak": 13,
+    "exact": 5
+  },
+  "exact_subsumption_theorems": [
+    "Set.ite_compl",
+    "Set.ite_inter",
+    "Set.ite_inter_compl_self",
+    "Set.ite_inter_inter",
+    "Set.ite_inter_self"
+  ],
+  "caveat": "Heuristic. Do NOT make release decisions solely on weak/likely detection; authoritative credit = scripts/sx4_sequence_attribution.py.",
+  "detections": [
+    {
+      "theorem": "Multiset.toFinset_eq_singleton_iff",
+      "baseline_finished": false,
+      "best_confidence": "insufficient",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.antitoneOn_iff_antitone",
+      "baseline_finished": false,
+      "best_confidence": "insufficient",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.diff_singleton_subset_iff",
+      "baseline_finished": false,
+      "best_confidence": "insufficient",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.diff_union_inter",
+      "baseline_finished": true,
+      "best_confidence": "insufficient",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.insert_diff_eq_singleton",
+      "baseline_finished": true,
+      "best_confidence": "weak",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.insert_diff_of_mem",
+      "baseline_finished": true,
+      "best_confidence": "weak",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.ite_compl",
+      "baseline_finished": true,
+      "best_confidence": "exact",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "exact",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": [
+            2
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "weak",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            2
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            2
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.ite_eq_of_subset_left",
+      "baseline_finished": false,
+      "best_confidence": "weak",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "weak",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.ite_eq_of_subset_right",
+      "baseline_finished": false,
+      "best_confidence": "weak",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "weak",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.ite_inter",
+      "baseline_finished": true,
+      "best_confidence": "exact",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "exact",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": [
+            2
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "weak",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            2
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            2
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.ite_inter_compl_self",
+      "baseline_finished": true,
+      "best_confidence": "exact",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "exact",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": [
+            2
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "weak",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            2
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            2
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.ite_inter_inter",
+      "baseline_finished": true,
+      "best_confidence": "exact",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "exact",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": [
+            2
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "weak",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            2
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            2
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.ite_inter_of_inter_eq",
+      "baseline_finished": false,
+      "best_confidence": "weak",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "weak",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.ite_inter_self",
+      "baseline_finished": true,
+      "best_confidence": "exact",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "exact",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": [
+            2
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "weak",
+          "A_advance_steps": [
+            1
+          ],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            2
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            2
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.ite_univ",
+      "baseline_finished": true,
+      "best_confidence": "insufficient",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.mem_dite",
+      "baseline_finished": true,
+      "best_confidence": "weak",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.mem_dite_empty_left",
+      "baseline_finished": true,
+      "best_confidence": "weak",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.mem_dite_empty_right",
+      "baseline_finished": true,
+      "best_confidence": "weak",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.mem_dite_univ_left",
+      "baseline_finished": true,
+      "best_confidence": "weak",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.mem_dite_univ_right",
+      "baseline_finished": true,
+      "best_confidence": "weak",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.mem_ite_empty_left",
+      "baseline_finished": true,
+      "best_confidence": "weak",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.mem_ite_empty_right",
+      "baseline_finished": true,
+      "best_confidence": "weak",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.pair_diff_left",
+      "baseline_finished": true,
+      "best_confidence": "weak",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        },
+        "constructor_intro__aesop": {
+          "confidence": "weak",
+          "A_advance_steps": [],
+          "B_close_steps": [
+            1
+          ]
+        }
+      }
+    },
+    {
+      "theorem": "Set.pair_eq_pair_iff",
+      "baseline_finished": false,
+      "best_confidence": "insufficient",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.powerset_singleton",
+      "baseline_finished": false,
+      "best_confidence": "insufficient",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.ssubset_singleton_iff",
+      "baseline_finished": false,
+      "best_confidence": "insufficient",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.subset_insert_iff",
+      "baseline_finished": false,
+      "best_confidence": "insufficient",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.subset_ite",
+      "baseline_finished": false,
+      "best_confidence": "insufficient",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.subset_singleton_iff_eq",
+      "baseline_finished": false,
+      "best_confidence": "insufficient",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    },
+    {
+      "theorem": "Set.union_empty_iff",
+      "baseline_finished": false,
+      "best_confidence": "insufficient",
+      "patterns": {
+        "simp_set_ite__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "simp_set_ite__simp_all": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "ext__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        },
+        "constructor_intro__aesop": {
+          "confidence": "insufficient",
+          "A_advance_steps": [],
+          "B_close_steps": []
+        }
+      }
+    }
+  ]
+}
