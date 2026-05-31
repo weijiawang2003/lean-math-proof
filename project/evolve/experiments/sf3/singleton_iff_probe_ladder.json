@@ -1,0 +1,44 @@
+{
+  "target": "Multiset.toFinset_eq_singleton_iff",
+  "file_path_real": "Mathlib/Data/Finset/Dedup.lean",
+  "file_path_frontier_backfill": "Mathlib/Data/Finset/Basic.lean",
+  "primary_var": "s",
+  "do_not_promote": true,
+  "official_proof_deps": ["Multiset.toFinset_zero", "Finset.singleton_ne_empty", "Multiset.mem_toFinset", "Multiset.mem_singleton", "Multiset.toFinset_nsmul", "Multiset.toFinset_singleton"],
+  "notes": [
+    "Goal: s.toFinset = {a} ↔ s ≠ 0 ∧ s = card s • {a}. The `card s • {a}` nsmul-of-singleton is INTRINSIC to the RHS.",
+    "Official proof (Finset/Dedup.lean:117): refine iff-split; forward via rw[toFinset_zero]/singleton_ne_empty and ext+simp only[mem_toFinset,mem_singleton]; reverse via rw[toFinset_nsmul, toFinset_singleton]. NO induction, NO replicate.",
+    "Parser discipline for run_transition: bare `;` sequencing FAILS; use `<;>` chains or multi-line blocks (tested in F7).",
+    "ext must come AFTER the iff is split; ext on the raw `↔` errors ('applyExtTheorem only applies to equations')."
+  ],
+  "minimality_prefix_probes": ["simp", "simp_all", "aesop", "constructor <;> intro h <;> simp_all"],
+  "families": {
+    "F1_baselines": [
+      {"probe": "simp", "label": "trivial_existing_tactic"},
+      {"probe": "simp_all", "label": "trivial_existing_tactic"}
+    ],
+    "F2_iff_decomposition": [
+      {"probe": "constructor <;> intro h <;> simp_all", "label": "reusable_probe_candidate"},
+      {"probe": "refine ⟨fun H => ?_, fun H => ?_⟩ <;> simp_all", "label": "reusable_probe_candidate"}
+    ],
+    "F3_finset_singleton_rewrite": [
+      {"probe": "simp only [Finset.eq_singleton_iff_unique_mem, Multiset.mem_toFinset]", "label": "reusable_probe_candidate"},
+      {"probe": "constructor <;> intro h <;> simp_all [Finset.eq_singleton_iff_unique_mem, Multiset.mem_toFinset]", "label": "reusable_probe_candidate"}
+    ],
+    "F4_membership_bridge": [
+      {"probe": "simp only [Multiset.mem_toFinset, Multiset.mem_singleton]", "label": "reusable_probe_candidate"},
+      {"probe": "constructor <;> intro h <;> simp_all [Multiset.mem_toFinset, Multiset.mem_singleton]", "label": "reusable_probe_candidate"}
+    ],
+    "F5_official_dep_bridge_source_inspired": [
+      {"probe": "simp [Multiset.toFinset_nsmul, Multiset.toFinset_singleton, Multiset.toFinset_zero]", "label": "source_inspired"},
+      {"probe": "constructor <;> intro h <;> simp_all [Multiset.toFinset_nsmul, Multiset.toFinset_singleton, Multiset.toFinset_zero, Multiset.mem_toFinset, Multiset.mem_singleton]", "label": "source_inspired"},
+      {"probe": "constructor <;> intro h <;> simp_all [Multiset.toFinset_nsmul, Multiset.toFinset_singleton, Multiset.mem_toFinset]", "label": "source_inspired"}
+    ],
+    "F6_known_bad_induction_diagnostic": [
+      {"probe": "induction s using Multiset.induction_on <;> simp_all", "label": "theorem_specific_hack", "known_bad": true, "diagnostic": "this is the RC1 WX3 action; expected to make the goal worse (negative control)"}
+    ],
+    "F7_source_copy_multiline": [
+      {"probe": "refine ⟨fun H => ⟨fun h => ?_, ?_⟩, fun H => ?_⟩\n  · rw [h, toFinset_zero] at H\n    exact Finset.singleton_ne_empty _ H.symm\n  · ext x\n    simp only [mem_toFinset, H, mem_singleton]\n    rw [← H]\n    simp [Multiset.mem_toFinset]\n  · rw [H.2, toFinset_nsmul _ _ H.1, toFinset_singleton]", "label": "source_theorem_copy", "note": "the exact official proof; tests both run_transition multi-line capability AND that copying the official proof closes it"}
+    ]
+  }
+}

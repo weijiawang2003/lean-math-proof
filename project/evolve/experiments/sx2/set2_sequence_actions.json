@@ -1,0 +1,57 @@
+{
+  "actions_id": "set2_sequence_actions_v1",
+  "status": "experimental_off_by_default",
+  "note": "Symbolic short-sequence actions emitted by SET2 gates. Mirrors the WX3/MX2 action-descriptor style. Each action is a single-line tactic (run_transition rejects bare ';' sequencing and '·' bullet blocks; ';' is rewritten as '<;>').",
+  "actions": [
+    {
+      "action_id": "SET_ITE_SIMP[Set,simp]",
+      "gate_id": "SET_ITE_SIMP",
+      "tactic": "simp [Set.ite]",
+      "depth": 1,
+      "theorem_agnostic": true,
+      "mined_theorems": ["Set.ite_empty_right", "Set.ite_right"],
+      "enabled_in_experiment": true
+    },
+    {
+      "action_id": "SET_EXT_SIMP[Set,ext_simp]",
+      "gate_id": "SET_EXT_SIMP",
+      "tactic": "ext x <;> simp",
+      "depth": 2,
+      "theorem_agnostic": true,
+      "mined_theorems": [],
+      "enabled_in_experiment": true,
+      "speculative": true
+    },
+    {
+      "action_id": "SET_SUBSET_ANTISYMM[Set,antisymm_simp_all]",
+      "gate_id": "SET_SUBSET_ANTISYMM",
+      "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+      "depth": 3,
+      "theorem_agnostic": true,
+      "mined_theorems": [],
+      "enabled_in_experiment": true,
+      "speculative": true
+    },
+    {
+      "action_id": "SET_IFF_CONSTRUCTOR[Set,constructor_simp_all]",
+      "gate_id": "SET_IFF_CONSTRUCTOR",
+      "tactic": "constructor <;> intro h <;> simp_all",
+      "depth": 3,
+      "theorem_agnostic": true,
+      "mined_theorems": [],
+      "enabled_in_experiment": true,
+      "speculative": true
+    },
+    {
+      "action_id": "SET_EXT_BYCASES[Set,ext_bycases_simp_all]",
+      "gate_id": "SET_EXT_BYCASES",
+      "tactic": "by_cases h : <PROP> <;> simp_all [h]",
+      "depth": 3,
+      "theorem_agnostic": false,
+      "needs_binder_inference": true,
+      "mined_theorems": ["Set.ite_eq_of_subset_left"],
+      "enabled_in_experiment": false,
+      "disabled_reason": "proposition + local hypothesis (or_iff_right_of_imp (@h x)) not generically synthesizable"
+    }
+  ]
+}

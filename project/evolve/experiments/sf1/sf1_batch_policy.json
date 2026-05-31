@@ -1,0 +1,105 @@
+{
+  "policy_name": "sf1_batch_policy",
+  "version": 1,
+  "status": "scaffold",
+  "description": "Initial SF1 frontier batch policy. Balanced by namespace and by syntactic proof shape, excludes all consumed theorem sets, reserves holdout buckets for the two known-live surfaces (Multiset, Set.Finite) and a general frontier bucket. Deterministic.",
+  "production_safe": true,
+  "modifies_production_configs": false,
+  "deterministic_seed": 1729,
+  "batch_size": 240,
+  "balance": {
+    "by_namespace": {
+      "enabled": true,
+      "strategy": "round_robin_then_fill",
+      "max_share_per_namespace": 0.25,
+      "namespaces": [
+        "Multiset",
+        "Set",
+        "Finset",
+        "List",
+        "Option",
+        "Nat",
+        "Int",
+        "Finsupp",
+        "Polynomial",
+        "GENERAL_FRONTIER"
+      ]
+    },
+    "by_syntactic_shape": {
+      "enabled": true,
+      "strategy": "equalize",
+      "max_share_per_shape": 0.30,
+      "shapes": [
+        "eq",
+        "iff",
+        "forall_eq",
+        "membership",
+        "cases_like",
+        "induction_like",
+        "arith",
+        "other"
+      ]
+    }
+  },
+  "catalog_sources": {
+    "description": "Stage (a) --from-artifacts universe: the discovered Mathlib theorem catalog plus every theorem this project has evaluated. Entries may be directories (recursively scanned for *.json/*.jsonl/*.txt), glob patterns, or files. key_hints + dotted-decl-name dict-key/value harvesting (sf1_common) extract names; the dotted regex keeps tactic strings out. Missing paths are skipped, never an error. The per-theorem eval surfaces use the `full_name` key under a `per_theorem` list; discovered_theorems.json is a list of {file_path, full_name, ...}.",
+    "recursive": true,
+    "python_string_scan": false,
+    "key_hints": ["decl_name", "theorem_name", "theorem_full_name", "full_name", "thm_name", "thm", "theorem", "name"],
+    "python_sources": [],
+    "sets": [
+      "project/discovered_theorems.json",
+      "project/evolve/eval_runs/**/metrics.json",
+      "runs/**/metrics.json"
+    ]
+  },
+  "exclude_consumed_surfaces": {
+    "enabled": true,
+    "description": "Stage (b) consumed set: every theorem a prior experiment actually TARGETED. These live in the routing theorem-set files (project/evolve/routing/*_theorem_sets.json, keyed by full_name) and the win/label/pool artifacts under project/data, plus the curated theorem sets defined as string literals in tasks.py. Frontier = catalog - consumed = discovered/evaluated theorems not yet targeted by any experiment. The NS24 router config (ns24_router.json) is NOT matched by these globs and is never read. project/data is scanned recursively for json/jsonl/txt; missing paths are skipped (recorded in the ledger), never an error.",
+    "recursive": true,
+    "missing_ok": true,
+    "python_string_scan": true,
+    "key_hints": ["decl_name", "theorem_name", "theorem_full_name", "full_name", "thm_name", "thm", "theorem", "name"],
+    "consumed_sets": [
+      "project/evolve/routing/*_theorem_sets.json",
+      "project/evolve/routing/*_eval_sets.json",
+      "project/data"
+    ],
+    "eval_surface_sets": [],
+    "python_sources": ["tasks.py"]
+  },
+  "holdout_buckets": {
+    "description": "Reserved buckets so SF1 always re-measures the two known-live surfaces plus a general open frontier. Holdout theorems are drawn separately from the balanced body and are never excluded by consumed-surface filtering when flagged as holdout-regression checks.",
+    "buckets": [
+      {
+        "name": "multiset_holdout",
+        "namespace_filter": "Multiset",
+        "shape_filter": ["induction_like", "cases_like"],
+        "size": 30,
+        "purpose": "weak-base-policy structural surface; WX3 oracle regression guard"
+      },
+      {
+        "name": "set_finite_holdout",
+        "namespace_filter": "Set",
+        "name_substring_filter": ["Set.Finite", "toFinset"],
+        "shape_filter": ["membership", "eq", "other"],
+        "size": 30,
+        "purpose": "strong-base-policy surface; MX2 narrow aesop regression guard"
+      },
+      {
+        "name": "general_frontier",
+        "namespace_filter": "GENERAL_FRONTIER",
+        "shape_filter": ["eq", "iff", "forall_eq", "membership", "arith", "other"],
+        "size": 60,
+        "purpose": "unbiased open frontier; surfaces new candidate families"
+      }
+    ]
+  },
+  "eval_arms": ["raw", "ns9", "rc1", "experimental"],
+  "control_arm": "rc1",
+  "notes": [
+    "SF1 batches are the unit of comparison; deltas are always measured beyond the rc1 control arm, never beyond raw.",
+    "Seed 1729 fixes both the namespace round-robin order and the within-bucket sampling so the same traced cache reproduces an identical batch.",
+    "GENERAL_FRONTIER is a virtual namespace meaning 'any namespace not otherwise listed'."
+  ]
+}

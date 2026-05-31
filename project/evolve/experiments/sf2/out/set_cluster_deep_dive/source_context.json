@@ -1,0 +1,1669 @@
+{
+  "context_lines": 120,
+  "num_cases": 12,
+  "cases": [
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "located_at": "/Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4/Mathlib/Data/Set/Basic.lean",
+      "statement": "theorem diff_singleton_subset_iff {x : α} {s t : Set α} : s \\ {x} ⊆ t ↔ s ⊆ insert x t := by",
+      "official_proof": "theorem diff_singleton_subset_iff {x : α} {s t : Set α} : s \\ {x} ⊆ t ↔ s ⊆ insert x t := by\n  rw [← union_singleton, union_comm]\n  apply diff_subset_iff",
+      "proof_line": 1903,
+      "neighbor_decls": [
+        "diff_subset_compl",
+        "union_diff_cancel'",
+        "union_diff_cancel",
+        "union_diff_cancel_left",
+        "union_diff_cancel_right",
+        "union_diff_left",
+        "union_diff_right",
+        "union_diff_distrib",
+        "inter_diff_assoc",
+        "inter_diff_self",
+        "inter_union_diff",
+        "diff_union_inter",
+        "inter_union_compl",
+        "diff_subset_diff",
+        "diff_subset_diff_left",
+        "diff_subset_diff_right",
+        "compl_eq_univ_diff",
+        "empty_diff",
+        "diff_eq_empty",
+        "diff_empty",
+        "diff_univ",
+        "diff_diff",
+        "diff_diff_comm",
+        "diff_subset_iff",
+        "subset_diff_union",
+        "diff_union_of_subset",
+        "subset_diff_singleton",
+        "subset_insert_diff_singleton",
+        "diff_subset_comm",
+        "diff_inter",
+        "diff_inter_diff",
+        "diff_compl",
+        "diff_diff_right",
+        "insert_diff_of_mem",
+        "insert_diff_of_not_mem",
+        "insert_diff_self_of_not_mem",
+        "insert_diff_eq_singleton",
+        "inter_insert_of_mem",
+        "insert_inter_of_mem",
+        "inter_insert_of_not_mem",
+        "insert_inter_of_not_mem",
+        "union_diff_self",
+        "diff_union_self",
+        "diff_inter_self",
+        "diff_inter_self_eq_diff",
+        "diff_self_inter",
+        "diff_singleton_eq_self",
+        "diff_singleton_sSubset",
+        "insert_diff_singleton",
+        "insert_diff_singleton_comm"
+      ],
+      "imports": [
+        "import Mathlib.Init.ZeroOne",
+        "import Mathlib.Data.Set.Defs",
+        "import Mathlib.Order.Basic",
+        "import Mathlib.Order.SymmDiff",
+        "import Mathlib.Tactic.Tauto",
+        "import Mathlib.Tactic.ByContra",
+        "import Mathlib.Util.Delaborators"
+      ],
+      "nearby_lemmas": [],
+      "classification": {
+        "proof_style": "rw_bridge",
+        "uses_by_cases": false,
+        "uses_ext": false,
+        "uses_constructor": false,
+        "uses_subset_antisymm": false,
+        "uses_simp_set": false,
+        "uses_aesop": false,
+        "uses_rw": true,
+        "likely_reusable_probe": "rw-bridge (theorem-specific; see official proof)",
+        "likely_missing_lemma": false,
+        "notes": [
+          "rewrite-bridge proof: depends on specific named lemmas, not closed by generic simp/aesop"
+        ]
+      },
+      "context_window_lines": [
+        1783,
+        2025
+      ]
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "located_at": "/Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4/Mathlib/Data/Set/Basic.lean",
+      "statement": "theorem ite_eq_of_subset_left (t : Set α) {s₁ s₂ : Set α} (h : s₁ ⊆ s₂) :\n    t.ite s₁ s₂ = s₁ ∪ (s₂ \\ t) := by",
+      "official_proof": "theorem ite_eq_of_subset_left (t : Set α) {s₁ s₂ : Set α} (h : s₁ ⊆ s₂) :\n    t.ite s₁ s₂ = s₁ ∪ (s₂ \\ t) := by\n  ext x\n  by_cases hx : x ∈ t <;> simp [*, Set.ite, or_iff_right_of_imp (@h x)]",
+      "proof_line": 2344,
+      "neighbor_decls": [
+        "mem_dite_empty_right",
+        "mem_ite_empty_right",
+        "mem_dite_empty_left",
+        "mem_ite_empty_left",
+        "ite_inter_self",
+        "ite_compl",
+        "ite_inter_compl_self",
+        "ite_diff_self",
+        "ite_same",
+        "ite_left",
+        "ite_right",
+        "ite_empty",
+        "ite_univ",
+        "ite_empty_left",
+        "ite_empty_right",
+        "ite_mono",
+        "ite_subset_union",
+        "inter_subset_ite",
+        "ite_inter_inter",
+        "ite_inter",
+        "ite_inter_of_inter_eq",
+        "subset_ite",
+        "ite_eq_of_subset_right",
+        "monotoneOn_iff_monotone",
+        "antitoneOn_iff_antitone",
+        "strictMonoOn_iff_strictMono",
+        "strictAntiOn_iff_strictAnti",
+        "not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Injective.nonempty_apply_iff",
+        "inclusion",
+        "inclusion_self",
+        "inclusion_eq_id",
+        "inclusion_mk",
+        "inclusion_right",
+        "inclusion_inclusion"
+      ],
+      "imports": [
+        "import Mathlib.Init.ZeroOne",
+        "import Mathlib.Data.Set.Defs",
+        "import Mathlib.Order.Basic",
+        "import Mathlib.Order.SymmDiff",
+        "import Mathlib.Tactic.Tauto",
+        "import Mathlib.Tactic.ByContra",
+        "import Mathlib.Util.Delaborators"
+      ],
+      "nearby_lemmas": [
+        {
+          "line": 2228,
+          "decl": "theorem mem_dite_empty_right (p : Prop) [Decidable p] (t : p → Set α) (x : α) :"
+        },
+        {
+          "line": 2235,
+          "decl": "theorem mem_ite_empty_right (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2240,
+          "decl": "theorem mem_dite_empty_left (p : Prop) [Decidable p] (t : ¬p → Set α) (x : α) :"
+        },
+        {
+          "line": 2247,
+          "decl": "theorem mem_ite_empty_left (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2262,
+          "decl": "theorem ite_inter_self (t s s' : Set α) : t.ite s s' ∩ t = s ∩ t := by"
+        },
+        {
+          "line": 2267,
+          "decl": "theorem ite_compl (t s s' : Set α) : tᶜ.ite s s' = t.ite s' s := by"
+        },
+        {
+          "line": 2272,
+          "decl": "theorem ite_inter_compl_self (t s s' : Set α) : t.ite s s' ∩ tᶜ = s' ∩ tᶜ := by"
+        },
+        {
+          "line": 2277,
+          "decl": "theorem ite_diff_self (t s s' : Set α) : t.ite s s' \\ t = s' \\ t :="
+        },
+        {
+          "line": 2282,
+          "decl": "theorem ite_same (t s : Set α) : t.ite s s = s :="
+        },
+        {
+          "line": 2287,
+          "decl": "theorem ite_left (s t : Set α) : s.ite s t = s ∪ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2291,
+          "decl": "theorem ite_right (s t : Set α) : s.ite t s = t ∩ s := by simp [Set.ite]"
+        },
+        {
+          "line": 2295,
+          "decl": "theorem ite_empty (s s' : Set α) : Set.ite ∅ s s' = s' := by simp [Set.ite]"
+        },
+        {
+          "line": 2299,
+          "decl": "theorem ite_univ (s s' : Set α) : Set.ite univ s s' = s := by simp [Set.ite]"
+        },
+        {
+          "line": 2303,
+          "decl": "theorem ite_empty_left (t s : Set α) : t.ite ∅ s = s \\ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2307,
+          "decl": "theorem ite_empty_right (t s : Set α) : t.ite s ∅ = s ∩ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2310,
+          "decl": "theorem ite_mono (t : Set α) {s₁ s₁' s₂ s₂' : Set α} (h : s₁ ⊆ s₂) (h' : s₁' ⊆ s₂') :"
+        },
+        {
+          "line": 2315,
+          "decl": "theorem ite_subset_union (t s s' : Set α) : t.ite s s' ⊆ s ∪ s' :="
+        },
+        {
+          "line": 2319,
+          "decl": "theorem inter_subset_ite (t s s' : Set α) : s ∩ s' ⊆ t.ite s s' :="
+        },
+        {
+          "line": 2323,
+          "decl": "theorem ite_inter_inter (t s₁ s₂ s₁' s₂' : Set α) :"
+        },
+        {
+          "line": 2330,
+          "decl": "theorem ite_inter (t s₁ s₂ s : Set α) : t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s := by"
+        },
+        {
+          "line": 2334,
+          "decl": "theorem ite_inter_of_inter_eq (t : Set α) {s₁ s₂ s : Set α} (h : s₁ ∩ s = s₂ ∩ s) :"
+        },
+        {
+          "line": 2338,
+          "decl": "theorem subset_ite {t s s' u : Set α} : u ⊆ t.ite s s' ↔ u ∩ t ⊆ s ∧ u \\ t ⊆ s' := by"
+        },
+        {
+          "line": 2344,
+          "decl": "theorem ite_eq_of_subset_left (t : Set α) {s₁ s₂ : Set α} (h : s₁ ⊆ s₂) :"
+        },
+        {
+          "line": 2349,
+          "decl": "theorem ite_eq_of_subset_right (t : Set α) {s₁ s₂ : Set α} (h : s₂ ⊆ s₁) :"
+        }
+      ],
+      "classification": {
+        "proof_style": "by_cases_ite_split",
+        "uses_by_cases": true,
+        "uses_ext": true,
+        "uses_constructor": false,
+        "uses_subset_antisymm": false,
+        "uses_simp_set": true,
+        "uses_aesop": false,
+        "uses_rw": false,
+        "likely_reusable_probe": "simp [*, Set.ite, or_iff_right_of_imp (@h x)]",
+        "likely_missing_lemma": false,
+        "notes": [
+          "ext + by_cases on membership in t, then simp with hypotheses"
+        ]
+      },
+      "context_window_lines": [
+        2224,
+        2467
+      ]
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "located_at": "/Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4/Mathlib/Data/Set/Basic.lean",
+      "statement": "theorem pair_eq_pair_iff {x y z w : α} :\n    ({x, y} : Set α) = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z := by",
+      "official_proof": "theorem pair_eq_pair_iff {x y z w : α} :\n    ({x, y} : Set α) = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z := by\n  simp [subset_antisymm_iff, insert_subset_iff]; aesop",
+      "proof_line": 2073,
+      "neighbor_decls": [
+        "insert_diff_self_of_not_mem",
+        "insert_diff_eq_singleton",
+        "inter_insert_of_mem",
+        "insert_inter_of_mem",
+        "inter_insert_of_not_mem",
+        "insert_inter_of_not_mem",
+        "union_diff_self",
+        "diff_union_self",
+        "diff_inter_self",
+        "diff_inter_self_eq_diff",
+        "diff_self_inter",
+        "diff_singleton_eq_self",
+        "diff_singleton_sSubset",
+        "insert_diff_singleton",
+        "insert_diff_singleton_comm",
+        "diff_self",
+        "diff_diff_right_self",
+        "diff_diff_cancel_left",
+        "mem_diff_singleton",
+        "mem_diff_singleton_empty",
+        "subset_insert_iff",
+        "union_eq_diff_union_diff_union_inter",
+        "pair_eq_singleton",
+        "pair_comm",
+        "pair_diff_left",
+        "pair_diff_right",
+        "pair_subset_iff",
+        "pair_subset",
+        "subset_pair_iff",
+        "subset_pair_iff_eq",
+        "Nonempty.subset_pair_iff_eq",
+        "mem_symmDiff",
+        "symmDiff_subset_union",
+        "symmDiff_eq_empty",
+        "symmDiff_nonempty",
+        "inter_symmDiff_distrib_left",
+        "inter_symmDiff_distrib_right",
+        "subset_symmDiff_union_symmDiff_left",
+        "subset_symmDiff_union_symmDiff_right",
+        "mem_powerset",
+        "subset_of_mem_powerset",
+        "mem_powerset_iff",
+        "powerset_inter",
+        "powerset_mono",
+        "monotone_powerset",
+        "powerset_nonempty",
+        "powerset_empty",
+        "powerset_univ",
+        "powerset_singleton"
+      ],
+      "imports": [
+        "import Mathlib.Init.ZeroOne",
+        "import Mathlib.Data.Set.Defs",
+        "import Mathlib.Order.Basic",
+        "import Mathlib.Order.SymmDiff",
+        "import Mathlib.Tactic.Tauto",
+        "import Mathlib.Tactic.ByContra",
+        "import Mathlib.Util.Delaborators"
+      ],
+      "nearby_lemmas": [
+        {
+          "line": 2043,
+          "decl": "theorem mem_diff_singleton {x y : α} {s : Set α} : x ∈ s \\ {y} ↔ x ∈ s ∧ x ≠ y :="
+        },
+        {
+          "line": 2047,
+          "decl": "theorem mem_diff_singleton_empty {t : Set (Set α)} : s ∈ t \\ {∅} ↔ s ∈ t ∧ s.Nonempty :="
+        }
+      ],
+      "classification": {
+        "proof_style": "subset_antisymm",
+        "uses_by_cases": false,
+        "uses_ext": false,
+        "uses_constructor": false,
+        "uses_subset_antisymm": true,
+        "uses_simp_set": false,
+        "uses_aesop": true,
+        "uses_rw": false,
+        "likely_reusable_probe": "simp [subset_antisymm_iff, insert_subset_iff] <;> aesop",
+        "likely_missing_lemma": false,
+        "notes": [
+          "official proof itself ends in aesop"
+        ]
+      },
+      "context_window_lines": [
+        1953,
+        2195
+      ]
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "located_at": "/Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4/Mathlib/Data/Set/Basic.lean",
+      "statement": "theorem subset_insert_iff {s t : Set α} {x : α} :\n    s ⊆ insert x t ↔ s ⊆ t ∨ (x ∈ s ∧ s \\ {x} ⊆ t) := by",
+      "official_proof": "theorem subset_insert_iff {s t : Set α} {x : α} :\n    s ⊆ insert x t ↔ s ⊆ t ∨ (x ∈ s ∧ s \\ {x} ⊆ t) := by\n  rw [← diff_singleton_subset_iff]\n  by_cases hx : x ∈ s\n  · rw [and_iff_right hx, or_iff_right_of_imp diff_subset.trans]\n  rw [diff_singleton_eq_self hx, or_iff_left_of_imp And.right]",
+      "proof_line": 2051,
+      "neighbor_decls": [
+        "diff_diff_right",
+        "insert_diff_of_mem",
+        "insert_diff_of_not_mem",
+        "insert_diff_self_of_not_mem",
+        "insert_diff_eq_singleton",
+        "inter_insert_of_mem",
+        "insert_inter_of_mem",
+        "inter_insert_of_not_mem",
+        "insert_inter_of_not_mem",
+        "union_diff_self",
+        "diff_union_self",
+        "diff_inter_self",
+        "diff_inter_self_eq_diff",
+        "diff_self_inter",
+        "diff_singleton_eq_self",
+        "diff_singleton_sSubset",
+        "insert_diff_singleton",
+        "insert_diff_singleton_comm",
+        "diff_self",
+        "diff_diff_right_self",
+        "diff_diff_cancel_left",
+        "mem_diff_singleton",
+        "mem_diff_singleton_empty",
+        "union_eq_diff_union_diff_union_inter",
+        "pair_eq_singleton",
+        "pair_comm",
+        "pair_eq_pair_iff",
+        "pair_diff_left",
+        "pair_diff_right",
+        "pair_subset_iff",
+        "pair_subset",
+        "subset_pair_iff",
+        "subset_pair_iff_eq",
+        "Nonempty.subset_pair_iff_eq",
+        "mem_symmDiff",
+        "symmDiff_subset_union",
+        "symmDiff_eq_empty",
+        "symmDiff_nonempty",
+        "inter_symmDiff_distrib_left",
+        "inter_symmDiff_distrib_right",
+        "subset_symmDiff_union_symmDiff_left",
+        "subset_symmDiff_union_symmDiff_right",
+        "mem_powerset",
+        "subset_of_mem_powerset",
+        "mem_powerset_iff",
+        "powerset_inter",
+        "powerset_mono",
+        "monotone_powerset"
+      ],
+      "imports": [
+        "import Mathlib.Init.ZeroOne",
+        "import Mathlib.Data.Set.Defs",
+        "import Mathlib.Order.Basic",
+        "import Mathlib.Order.SymmDiff",
+        "import Mathlib.Tactic.Tauto",
+        "import Mathlib.Tactic.ByContra",
+        "import Mathlib.Util.Delaborators"
+      ],
+      "nearby_lemmas": [
+        {
+          "line": 2043,
+          "decl": "theorem mem_diff_singleton {x y : α} {s : Set α} : x ∈ s \\ {y} ↔ x ∈ s ∧ x ≠ y :="
+        },
+        {
+          "line": 2047,
+          "decl": "theorem mem_diff_singleton_empty {t : Set (Set α)} : s ∈ t \\ {∅} ↔ s ∈ t ∧ s.Nonempty :="
+        }
+      ],
+      "classification": {
+        "proof_style": "rw_bridge",
+        "uses_by_cases": true,
+        "uses_ext": false,
+        "uses_constructor": false,
+        "uses_subset_antisymm": false,
+        "uses_simp_set": false,
+        "uses_aesop": false,
+        "uses_rw": true,
+        "likely_reusable_probe": "rw-bridge (theorem-specific; see official proof)",
+        "likely_missing_lemma": false,
+        "notes": [
+          "rewrite-bridge proof: depends on specific named lemmas, not closed by generic simp/aesop"
+        ]
+      },
+      "context_window_lines": [
+        1931,
+        2176
+      ]
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "located_at": "/Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4/Mathlib/Data/Set/Basic.lean",
+      "statement": "theorem subset_singleton_iff_eq {s : Set α} {x : α} : s ⊆ {x} ↔ s = ∅ ∨ s = {x} := by",
+      "official_proof": "theorem subset_singleton_iff_eq {s : Set α} {x : α} : s ⊆ {x} ↔ s = ∅ ∨ s = {x} := by\n  obtain rfl | hs := s.eq_empty_or_nonempty\n  · exact ⟨fun _ => Or.inl rfl, fun _ => empty_subset _⟩\n  · simp [eq_singleton_iff_nonempty_unique_mem, hs, hs.ne_empty]",
+      "proof_line": 1446,
+      "neighbor_decls": [
+        "nmem_singleton_empty",
+        "uniqueSingleton",
+        "eq_singleton_iff_unique_mem",
+        "eq_singleton_iff_nonempty_unique_mem",
+        "default_coe_singleton",
+        "mem_sep",
+        "sep_mem_eq",
+        "mem_sep_iff",
+        "sep_ext_iff",
+        "sep_eq_of_subset",
+        "sep_subset",
+        "sep_eq_self_iff_mem_true",
+        "sep_eq_empty_iff_mem_false",
+        "sep_true",
+        "sep_false",
+        "sep_empty",
+        "sep_univ",
+        "sep_union",
+        "sep_inter",
+        "sep_and",
+        "sep_or",
+        "sep_setOf",
+        "subset_singleton_iff",
+        "Nonempty.subset_singleton_iff",
+        "ssubset_singleton_iff",
+        "eq_empty_of_ssubset_singleton",
+        "eq_of_nonempty_of_subsingleton",
+        "eq_of_nonempty_of_subsingleton'",
+        "Nonempty.eq_zero",
+        "Nonempty.eq_one",
+        "disjoint_iff_inter_eq_empty",
+        "_root_.Disjoint.inter_eq",
+        "disjoint_left",
+        "disjoint_right",
+        "not_disjoint_iff",
+        "not_disjoint_iff_nonempty_inter",
+        "disjoint_or_nonempty_inter",
+        "disjoint_iff_forall_ne",
+        "disjoint_of_subset_left",
+        "disjoint_of_subset_right",
+        "disjoint_of_subset",
+        "disjoint_union_left",
+        "disjoint_union_right",
+        "disjoint_sdiff_left",
+        "disjoint_sdiff_right",
+        "disjoint_sdiff_inter",
+        "diff_union_diff_cancel",
+        "diff_diff_eq_sdiff_union",
+        "disjoint_singleton_left"
+      ],
+      "imports": [
+        "import Mathlib.Init.ZeroOne",
+        "import Mathlib.Data.Set.Defs",
+        "import Mathlib.Order.Basic",
+        "import Mathlib.Order.SymmDiff",
+        "import Mathlib.Tactic.Tauto",
+        "import Mathlib.Tactic.ByContra",
+        "import Mathlib.Util.Delaborators"
+      ],
+      "nearby_lemmas": [
+        {
+          "line": 1569,
+          "decl": "lemma disjoint_singleton_left : Disjoint {a} s ↔ a ∉ s := by simp [Set.disjoint_iff, subset_def]"
+        }
+      ],
+      "classification": {
+        "proof_style": "simp_only",
+        "uses_by_cases": false,
+        "uses_ext": false,
+        "uses_constructor": true,
+        "uses_subset_antisymm": false,
+        "uses_simp_set": false,
+        "uses_aesop": false,
+        "uses_rw": false,
+        "likely_reusable_probe": "aesop",
+        "likely_missing_lemma": false,
+        "notes": []
+      },
+      "context_window_lines": [
+        1326,
+        1569
+      ]
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "located_at": "/Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4/Mathlib/Data/Set/Basic.lean",
+      "statement": "theorem union_empty_iff {s t : Set α} : s ∪ t = ∅ ↔ s = ∅ ∧ t = ∅ := by",
+      "official_proof": "theorem union_empty_iff {s t : Set α} : s ∪ t = ∅ ↔ s = ∅ ∧ t = ∅ := by\n  simp only [← subset_empty_iff]\n  exact union_subset_iff",
+      "proof_line": 853,
+      "neighbor_decls": [
+        "mem_union",
+        "union_self",
+        "union_empty",
+        "empty_union",
+        "union_comm",
+        "union_assoc",
+        "union_isAssoc",
+        "union_isComm",
+        "union_left_comm",
+        "union_right_comm",
+        "union_eq_left",
+        "union_eq_right",
+        "union_eq_self_of_subset_left",
+        "union_eq_self_of_subset_right",
+        "subset_union_left",
+        "subset_union_right",
+        "union_subset",
+        "union_subset_iff",
+        "union_subset_union",
+        "union_subset_union_left",
+        "union_subset_union_right",
+        "subset_union_of_subset_left",
+        "subset_union_of_subset_right",
+        "union_congr_left",
+        "union_congr_right",
+        "union_eq_union_iff_left",
+        "union_eq_union_iff_right",
+        "union_univ",
+        "univ_union",
+        "inter_def",
+        "mem_inter_iff",
+        "mem_inter",
+        "mem_of_mem_inter_left",
+        "mem_of_mem_inter_right",
+        "inter_self",
+        "inter_empty",
+        "empty_inter",
+        "inter_comm",
+        "inter_assoc",
+        "inter_isAssoc",
+        "inter_isComm",
+        "inter_left_comm",
+        "inter_right_comm",
+        "inter_subset_left",
+        "inter_subset_right",
+        "subset_inter",
+        "subset_inter_iff",
+        "inter_eq_self_of_subset_left",
+        "inter_eq_self_of_subset_right",
+        "inter_congr_left",
+        "inter_congr_right",
+        "inter_eq_inter_iff_left"
+      ],
+      "imports": [
+        "import Mathlib.Init.ZeroOne",
+        "import Mathlib.Data.Set.Defs",
+        "import Mathlib.Order.Basic",
+        "import Mathlib.Order.SymmDiff",
+        "import Mathlib.Tactic.Tauto",
+        "import Mathlib.Tactic.ByContra",
+        "import Mathlib.Util.Delaborators"
+      ],
+      "nearby_lemmas": [
+        {
+          "line": 734,
+          "decl": "theorem mem_union (x : α) (a b : Set α) : x ∈ a ∪ b ↔ x ∈ a ∨ x ∈ b :="
+        },
+        {
+          "line": 874,
+          "decl": "theorem mem_inter_iff (x : α) (a b : Set α) : x ∈ a ∩ b ↔ x ∈ a ∧ x ∈ b :="
+        }
+      ],
+      "classification": {
+        "proof_style": "simp_only",
+        "uses_by_cases": false,
+        "uses_ext": false,
+        "uses_constructor": false,
+        "uses_subset_antisymm": false,
+        "uses_simp_set": false,
+        "uses_aesop": false,
+        "uses_rw": false,
+        "likely_reusable_probe": "aesop",
+        "likely_missing_lemma": false,
+        "notes": []
+      },
+      "context_window_lines": [
+        733,
+        975
+      ]
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "located_at": "/Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4/Mathlib/Data/Set/Basic.lean",
+      "statement": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔\n    Antitone fun a : s => f a := by",
+      "official_proof": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔\n    Antitone fun a : s => f a := by\n  simp [Antitone, AntitoneOn]",
+      "proof_line": 2368,
+      "neighbor_decls": [
+        "ite_inter_self",
+        "ite_compl",
+        "ite_inter_compl_self",
+        "ite_diff_self",
+        "ite_same",
+        "ite_left",
+        "ite_right",
+        "ite_empty",
+        "ite_univ",
+        "ite_empty_left",
+        "ite_empty_right",
+        "ite_mono",
+        "ite_subset_union",
+        "inter_subset_ite",
+        "ite_inter_inter",
+        "ite_inter",
+        "ite_inter_of_inter_eq",
+        "subset_ite",
+        "ite_eq_of_subset_left",
+        "ite_eq_of_subset_right",
+        "monotoneOn_iff_monotone",
+        "strictMonoOn_iff_strictMono",
+        "strictAntiOn_iff_strictAnti",
+        "not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Injective.nonempty_apply_iff",
+        "inclusion",
+        "inclusion_self",
+        "inclusion_eq_id",
+        "inclusion_mk",
+        "inclusion_right",
+        "inclusion_inclusion",
+        "inclusion_comp_inclusion",
+        "coe_inclusion",
+        "val_comp_inclusion",
+        "inclusion_injective",
+        "inclusion_inj",
+        "eq_of_inclusion_surjective"
+      ],
+      "imports": [
+        "import Mathlib.Init.ZeroOne",
+        "import Mathlib.Data.Set.Defs",
+        "import Mathlib.Order.Basic",
+        "import Mathlib.Order.SymmDiff",
+        "import Mathlib.Tactic.Tauto",
+        "import Mathlib.Tactic.ByContra",
+        "import Mathlib.Util.Delaborators"
+      ],
+      "nearby_lemmas": [
+        {
+          "line": 2262,
+          "decl": "theorem ite_inter_self (t s s' : Set α) : t.ite s s' ∩ t = s ∩ t := by"
+        },
+        {
+          "line": 2267,
+          "decl": "theorem ite_compl (t s s' : Set α) : tᶜ.ite s s' = t.ite s' s := by"
+        },
+        {
+          "line": 2272,
+          "decl": "theorem ite_inter_compl_self (t s s' : Set α) : t.ite s s' ∩ tᶜ = s' ∩ tᶜ := by"
+        },
+        {
+          "line": 2277,
+          "decl": "theorem ite_diff_self (t s s' : Set α) : t.ite s s' \\ t = s' \\ t :="
+        },
+        {
+          "line": 2282,
+          "decl": "theorem ite_same (t s : Set α) : t.ite s s = s :="
+        },
+        {
+          "line": 2287,
+          "decl": "theorem ite_left (s t : Set α) : s.ite s t = s ∪ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2291,
+          "decl": "theorem ite_right (s t : Set α) : s.ite t s = t ∩ s := by simp [Set.ite]"
+        },
+        {
+          "line": 2295,
+          "decl": "theorem ite_empty (s s' : Set α) : Set.ite ∅ s s' = s' := by simp [Set.ite]"
+        },
+        {
+          "line": 2299,
+          "decl": "theorem ite_univ (s s' : Set α) : Set.ite univ s s' = s := by simp [Set.ite]"
+        },
+        {
+          "line": 2303,
+          "decl": "theorem ite_empty_left (t s : Set α) : t.ite ∅ s = s \\ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2307,
+          "decl": "theorem ite_empty_right (t s : Set α) : t.ite s ∅ = s ∩ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2310,
+          "decl": "theorem ite_mono (t : Set α) {s₁ s₁' s₂ s₂' : Set α} (h : s₁ ⊆ s₂) (h' : s₁' ⊆ s₂') :"
+        },
+        {
+          "line": 2315,
+          "decl": "theorem ite_subset_union (t s s' : Set α) : t.ite s s' ⊆ s ∪ s' :="
+        },
+        {
+          "line": 2319,
+          "decl": "theorem inter_subset_ite (t s s' : Set α) : s ∩ s' ⊆ t.ite s s' :="
+        },
+        {
+          "line": 2323,
+          "decl": "theorem ite_inter_inter (t s₁ s₂ s₁' s₂' : Set α) :"
+        },
+        {
+          "line": 2330,
+          "decl": "theorem ite_inter (t s₁ s₂ s : Set α) : t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s := by"
+        },
+        {
+          "line": 2334,
+          "decl": "theorem ite_inter_of_inter_eq (t : Set α) {s₁ s₂ s : Set α} (h : s₁ ∩ s = s₂ ∩ s) :"
+        },
+        {
+          "line": 2338,
+          "decl": "theorem subset_ite {t s s' u : Set α} : u ⊆ t.ite s s' ↔ u ∩ t ⊆ s ∧ u \\ t ⊆ s' := by"
+        },
+        {
+          "line": 2344,
+          "decl": "theorem ite_eq_of_subset_left (t : Set α) {s₁ s₂ : Set α} (h : s₁ ⊆ s₂) :"
+        },
+        {
+          "line": 2349,
+          "decl": "theorem ite_eq_of_subset_right (t : Set α) {s₁ s₂ : Set α} (h : s₂ ⊆ s₁) :"
+        }
+      ],
+      "classification": {
+        "proof_style": "simp_only",
+        "uses_by_cases": false,
+        "uses_ext": false,
+        "uses_constructor": false,
+        "uses_subset_antisymm": false,
+        "uses_simp_set": false,
+        "uses_aesop": false,
+        "uses_rw": false,
+        "likely_reusable_probe": "aesop",
+        "likely_missing_lemma": false,
+        "notes": []
+      },
+      "context_window_lines": [
+        2248,
+        2490
+      ]
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "located_at": "/Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4/Mathlib/Data/Set/Basic.lean",
+      "statement": "theorem ssubset_singleton_iff {s : Set α} {x : α} : s ⊂ {x} ↔ s = ∅ := by",
+      "official_proof": "theorem ssubset_singleton_iff {s : Set α} {x : α} : s ⊂ {x} ↔ s = ∅ := by\n  rw [ssubset_iff_subset_ne, subset_singleton_iff_eq, or_and_right, and_not_self_iff, or_false_iff,\n    and_iff_left_iff_imp]\n  exact fun h => h ▸ (singleton_ne_empty _).symm",
+      "proof_line": 1456,
+      "neighbor_decls": [
+        "eq_singleton_iff_unique_mem",
+        "eq_singleton_iff_nonempty_unique_mem",
+        "default_coe_singleton",
+        "mem_sep",
+        "sep_mem_eq",
+        "mem_sep_iff",
+        "sep_ext_iff",
+        "sep_eq_of_subset",
+        "sep_subset",
+        "sep_eq_self_iff_mem_true",
+        "sep_eq_empty_iff_mem_false",
+        "sep_true",
+        "sep_false",
+        "sep_empty",
+        "sep_univ",
+        "sep_union",
+        "sep_inter",
+        "sep_and",
+        "sep_or",
+        "sep_setOf",
+        "subset_singleton_iff",
+        "subset_singleton_iff_eq",
+        "Nonempty.subset_singleton_iff",
+        "eq_empty_of_ssubset_singleton",
+        "eq_of_nonempty_of_subsingleton",
+        "eq_of_nonempty_of_subsingleton'",
+        "Nonempty.eq_zero",
+        "Nonempty.eq_one",
+        "disjoint_iff_inter_eq_empty",
+        "_root_.Disjoint.inter_eq",
+        "disjoint_left",
+        "disjoint_right",
+        "not_disjoint_iff",
+        "not_disjoint_iff_nonempty_inter",
+        "disjoint_or_nonempty_inter",
+        "disjoint_iff_forall_ne",
+        "disjoint_of_subset_left",
+        "disjoint_of_subset_right",
+        "disjoint_of_subset",
+        "disjoint_union_left",
+        "disjoint_union_right",
+        "disjoint_sdiff_left",
+        "disjoint_sdiff_right",
+        "disjoint_sdiff_inter",
+        "diff_union_diff_cancel",
+        "diff_diff_eq_sdiff_union",
+        "disjoint_singleton_left",
+        "disjoint_singleton_right",
+        "disjoint_singleton"
+      ],
+      "imports": [
+        "import Mathlib.Init.ZeroOne",
+        "import Mathlib.Data.Set.Defs",
+        "import Mathlib.Order.Basic",
+        "import Mathlib.Order.SymmDiff",
+        "import Mathlib.Tactic.Tauto",
+        "import Mathlib.Tactic.ByContra",
+        "import Mathlib.Util.Delaborators"
+      ],
+      "nearby_lemmas": [
+        {
+          "line": 1569,
+          "decl": "lemma disjoint_singleton_left : Disjoint {a} s ↔ a ∉ s := by simp [Set.disjoint_iff, subset_def]"
+        }
+      ],
+      "classification": {
+        "proof_style": "rw_bridge",
+        "uses_by_cases": false,
+        "uses_ext": false,
+        "uses_constructor": false,
+        "uses_subset_antisymm": false,
+        "uses_simp_set": false,
+        "uses_aesop": false,
+        "uses_rw": true,
+        "likely_reusable_probe": "rw-bridge (theorem-specific; see official proof)",
+        "likely_missing_lemma": false,
+        "notes": [
+          "rewrite-bridge proof: depends on specific named lemmas, not closed by generic simp/aesop"
+        ]
+      },
+      "context_window_lines": [
+        1336,
+        1579
+      ]
+    },
+    {
+      "full_name": "Set.ite_empty_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "located_at": "/Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4/Mathlib/Data/Set/Basic.lean",
+      "statement": "theorem ite_empty_right (t s : Set α) : t.ite s ∅ = s ∩ t := by simp [Set.ite]",
+      "official_proof": "theorem ite_empty_right (t s : Set α) : t.ite s ∅ = s ∩ t := by simp [Set.ite]",
+      "proof_line": 2307,
+      "neighbor_decls": [
+        "powerset_univ",
+        "powerset_singleton",
+        "mem_dite",
+        "mem_dite_univ_right",
+        "mem_ite_univ_right",
+        "mem_dite_univ_left",
+        "mem_ite_univ_left",
+        "mem_dite_empty_right",
+        "mem_ite_empty_right",
+        "mem_dite_empty_left",
+        "mem_ite_empty_left",
+        "ite_inter_self",
+        "ite_compl",
+        "ite_inter_compl_self",
+        "ite_diff_self",
+        "ite_same",
+        "ite_left",
+        "ite_right",
+        "ite_empty",
+        "ite_univ",
+        "ite_empty_left",
+        "ite_mono",
+        "ite_subset_union",
+        "inter_subset_ite",
+        "ite_inter_inter",
+        "ite_inter",
+        "ite_inter_of_inter_eq",
+        "subset_ite",
+        "ite_eq_of_subset_left",
+        "ite_eq_of_subset_right",
+        "monotoneOn_iff_monotone",
+        "antitoneOn_iff_antitone",
+        "strictMonoOn_iff_strictMono",
+        "strictAntiOn_iff_strictAnti",
+        "not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Injective.nonempty_apply_iff"
+      ],
+      "imports": [
+        "import Mathlib.Init.ZeroOne",
+        "import Mathlib.Data.Set.Defs",
+        "import Mathlib.Order.Basic",
+        "import Mathlib.Order.SymmDiff",
+        "import Mathlib.Tactic.Tauto",
+        "import Mathlib.Tactic.ByContra",
+        "import Mathlib.Util.Delaborators"
+      ],
+      "nearby_lemmas": [
+        {
+          "line": 2200,
+          "decl": "theorem mem_dite (p : Prop) [Decidable p] (s : p → Set α) (t : ¬ p → Set α) (x : α) :"
+        },
+        {
+          "line": 2206,
+          "decl": "theorem mem_dite_univ_right (p : Prop) [Decidable p] (t : p → Set α) (x : α) :"
+        },
+        {
+          "line": 2212,
+          "decl": "theorem mem_ite_univ_right (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2217,
+          "decl": "theorem mem_dite_univ_left (p : Prop) [Decidable p] (t : ¬p → Set α) (x : α) :"
+        },
+        {
+          "line": 2223,
+          "decl": "theorem mem_ite_univ_left (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2228,
+          "decl": "theorem mem_dite_empty_right (p : Prop) [Decidable p] (t : p → Set α) (x : α) :"
+        },
+        {
+          "line": 2235,
+          "decl": "theorem mem_ite_empty_right (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2240,
+          "decl": "theorem mem_dite_empty_left (p : Prop) [Decidable p] (t : ¬p → Set α) (x : α) :"
+        },
+        {
+          "line": 2247,
+          "decl": "theorem mem_ite_empty_left (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2262,
+          "decl": "theorem ite_inter_self (t s s' : Set α) : t.ite s s' ∩ t = s ∩ t := by"
+        },
+        {
+          "line": 2267,
+          "decl": "theorem ite_compl (t s s' : Set α) : tᶜ.ite s s' = t.ite s' s := by"
+        },
+        {
+          "line": 2272,
+          "decl": "theorem ite_inter_compl_self (t s s' : Set α) : t.ite s s' ∩ tᶜ = s' ∩ tᶜ := by"
+        },
+        {
+          "line": 2277,
+          "decl": "theorem ite_diff_self (t s s' : Set α) : t.ite s s' \\ t = s' \\ t :="
+        },
+        {
+          "line": 2282,
+          "decl": "theorem ite_same (t s : Set α) : t.ite s s = s :="
+        },
+        {
+          "line": 2287,
+          "decl": "theorem ite_left (s t : Set α) : s.ite s t = s ∪ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2291,
+          "decl": "theorem ite_right (s t : Set α) : s.ite t s = t ∩ s := by simp [Set.ite]"
+        },
+        {
+          "line": 2295,
+          "decl": "theorem ite_empty (s s' : Set α) : Set.ite ∅ s s' = s' := by simp [Set.ite]"
+        },
+        {
+          "line": 2299,
+          "decl": "theorem ite_univ (s s' : Set α) : Set.ite univ s s' = s := by simp [Set.ite]"
+        },
+        {
+          "line": 2303,
+          "decl": "theorem ite_empty_left (t s : Set α) : t.ite ∅ s = s \\ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2307,
+          "decl": "theorem ite_empty_right (t s : Set α) : t.ite s ∅ = s ∩ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2310,
+          "decl": "theorem ite_mono (t : Set α) {s₁ s₁' s₂ s₂' : Set α} (h : s₁ ⊆ s₂) (h' : s₁' ⊆ s₂') :"
+        },
+        {
+          "line": 2315,
+          "decl": "theorem ite_subset_union (t s s' : Set α) : t.ite s s' ⊆ s ∪ s' :="
+        },
+        {
+          "line": 2319,
+          "decl": "theorem inter_subset_ite (t s s' : Set α) : s ∩ s' ⊆ t.ite s s' :="
+        },
+        {
+          "line": 2323,
+          "decl": "theorem ite_inter_inter (t s₁ s₂ s₁' s₂' : Set α) :"
+        },
+        {
+          "line": 2330,
+          "decl": "theorem ite_inter (t s₁ s₂ s : Set α) : t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s := by"
+        },
+        {
+          "line": 2334,
+          "decl": "theorem ite_inter_of_inter_eq (t : Set α) {s₁ s₂ s : Set α} (h : s₁ ∩ s = s₂ ∩ s) :"
+        },
+        {
+          "line": 2338,
+          "decl": "theorem subset_ite {t s s' u : Set α} : u ⊆ t.ite s s' ↔ u ∩ t ⊆ s ∧ u \\ t ⊆ s' := by"
+        },
+        {
+          "line": 2344,
+          "decl": "theorem ite_eq_of_subset_left (t : Set α) {s₁ s₂ : Set α} (h : s₁ ⊆ s₂) :"
+        },
+        {
+          "line": 2349,
+          "decl": "theorem ite_eq_of_subset_right (t : Set α) {s₁ s₂ : Set α} (h : s₂ ⊆ s₁) :"
+        }
+      ],
+      "classification": {
+        "proof_style": "simp_only",
+        "uses_by_cases": false,
+        "uses_ext": false,
+        "uses_constructor": false,
+        "uses_subset_antisymm": false,
+        "uses_simp_set": true,
+        "uses_aesop": false,
+        "uses_rw": false,
+        "likely_reusable_probe": "simp [Set.ite]",
+        "likely_missing_lemma": false,
+        "notes": [
+          "one-line `simp [Set.ite]`: RC1 simp does not unfold the irreducible Set.ite by default -> tactic gap"
+        ]
+      },
+      "context_window_lines": [
+        2187,
+        2427
+      ]
+    },
+    {
+      "full_name": "Set.ite_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "located_at": "/Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4/Mathlib/Data/Set/Basic.lean",
+      "statement": "theorem ite_inter (t s₁ s₂ s : Set α) : t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s := by",
+      "official_proof": "theorem ite_inter (t s₁ s₂ s : Set α) : t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s := by\n  rw [ite_inter_inter, ite_same]",
+      "proof_line": 2330,
+      "neighbor_decls": [
+        "mem_ite_univ_right",
+        "mem_dite_univ_left",
+        "mem_ite_univ_left",
+        "mem_dite_empty_right",
+        "mem_ite_empty_right",
+        "mem_dite_empty_left",
+        "mem_ite_empty_left",
+        "ite_inter_self",
+        "ite_compl",
+        "ite_inter_compl_self",
+        "ite_diff_self",
+        "ite_same",
+        "ite_left",
+        "ite_right",
+        "ite_empty",
+        "ite_univ",
+        "ite_empty_left",
+        "ite_empty_right",
+        "ite_mono",
+        "ite_subset_union",
+        "inter_subset_ite",
+        "ite_inter_inter",
+        "ite_inter_of_inter_eq",
+        "subset_ite",
+        "ite_eq_of_subset_left",
+        "ite_eq_of_subset_right",
+        "monotoneOn_iff_monotone",
+        "antitoneOn_iff_antitone",
+        "strictMonoOn_iff_strictMono",
+        "strictAntiOn_iff_strictAnti",
+        "not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Injective.nonempty_apply_iff",
+        "inclusion",
+        "inclusion_self",
+        "inclusion_eq_id"
+      ],
+      "imports": [
+        "import Mathlib.Init.ZeroOne",
+        "import Mathlib.Data.Set.Defs",
+        "import Mathlib.Order.Basic",
+        "import Mathlib.Order.SymmDiff",
+        "import Mathlib.Tactic.Tauto",
+        "import Mathlib.Tactic.ByContra",
+        "import Mathlib.Util.Delaborators"
+      ],
+      "nearby_lemmas": [
+        {
+          "line": 2212,
+          "decl": "theorem mem_ite_univ_right (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2217,
+          "decl": "theorem mem_dite_univ_left (p : Prop) [Decidable p] (t : ¬p → Set α) (x : α) :"
+        },
+        {
+          "line": 2223,
+          "decl": "theorem mem_ite_univ_left (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2228,
+          "decl": "theorem mem_dite_empty_right (p : Prop) [Decidable p] (t : p → Set α) (x : α) :"
+        },
+        {
+          "line": 2235,
+          "decl": "theorem mem_ite_empty_right (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2240,
+          "decl": "theorem mem_dite_empty_left (p : Prop) [Decidable p] (t : ¬p → Set α) (x : α) :"
+        },
+        {
+          "line": 2247,
+          "decl": "theorem mem_ite_empty_left (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2262,
+          "decl": "theorem ite_inter_self (t s s' : Set α) : t.ite s s' ∩ t = s ∩ t := by"
+        },
+        {
+          "line": 2267,
+          "decl": "theorem ite_compl (t s s' : Set α) : tᶜ.ite s s' = t.ite s' s := by"
+        },
+        {
+          "line": 2272,
+          "decl": "theorem ite_inter_compl_self (t s s' : Set α) : t.ite s s' ∩ tᶜ = s' ∩ tᶜ := by"
+        },
+        {
+          "line": 2277,
+          "decl": "theorem ite_diff_self (t s s' : Set α) : t.ite s s' \\ t = s' \\ t :="
+        },
+        {
+          "line": 2282,
+          "decl": "theorem ite_same (t s : Set α) : t.ite s s = s :="
+        },
+        {
+          "line": 2287,
+          "decl": "theorem ite_left (s t : Set α) : s.ite s t = s ∪ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2291,
+          "decl": "theorem ite_right (s t : Set α) : s.ite t s = t ∩ s := by simp [Set.ite]"
+        },
+        {
+          "line": 2295,
+          "decl": "theorem ite_empty (s s' : Set α) : Set.ite ∅ s s' = s' := by simp [Set.ite]"
+        },
+        {
+          "line": 2299,
+          "decl": "theorem ite_univ (s s' : Set α) : Set.ite univ s s' = s := by simp [Set.ite]"
+        },
+        {
+          "line": 2303,
+          "decl": "theorem ite_empty_left (t s : Set α) : t.ite ∅ s = s \\ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2307,
+          "decl": "theorem ite_empty_right (t s : Set α) : t.ite s ∅ = s ∩ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2310,
+          "decl": "theorem ite_mono (t : Set α) {s₁ s₁' s₂ s₂' : Set α} (h : s₁ ⊆ s₂) (h' : s₁' ⊆ s₂') :"
+        },
+        {
+          "line": 2315,
+          "decl": "theorem ite_subset_union (t s s' : Set α) : t.ite s s' ⊆ s ∪ s' :="
+        },
+        {
+          "line": 2319,
+          "decl": "theorem inter_subset_ite (t s s' : Set α) : s ∩ s' ⊆ t.ite s s' :="
+        },
+        {
+          "line": 2323,
+          "decl": "theorem ite_inter_inter (t s₁ s₂ s₁' s₂' : Set α) :"
+        },
+        {
+          "line": 2330,
+          "decl": "theorem ite_inter (t s₁ s₂ s : Set α) : t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s := by"
+        },
+        {
+          "line": 2334,
+          "decl": "theorem ite_inter_of_inter_eq (t : Set α) {s₁ s₂ s : Set α} (h : s₁ ∩ s = s₂ ∩ s) :"
+        },
+        {
+          "line": 2338,
+          "decl": "theorem subset_ite {t s s' u : Set α} : u ⊆ t.ite s s' ↔ u ∩ t ⊆ s ∧ u \\ t ⊆ s' := by"
+        },
+        {
+          "line": 2344,
+          "decl": "theorem ite_eq_of_subset_left (t : Set α) {s₁ s₂ : Set α} (h : s₁ ⊆ s₂) :"
+        },
+        {
+          "line": 2349,
+          "decl": "theorem ite_eq_of_subset_right (t : Set α) {s₁ s₂ : Set α} (h : s₂ ⊆ s₁) :"
+        }
+      ],
+      "classification": {
+        "proof_style": "rw_bridge",
+        "uses_by_cases": false,
+        "uses_ext": false,
+        "uses_constructor": false,
+        "uses_subset_antisymm": false,
+        "uses_simp_set": false,
+        "uses_aesop": false,
+        "uses_rw": true,
+        "likely_reusable_probe": "rw-bridge (theorem-specific; see official proof)",
+        "likely_missing_lemma": false,
+        "notes": [
+          "rewrite-bridge proof: depends on specific named lemmas, not closed by generic simp/aesop"
+        ]
+      },
+      "context_window_lines": [
+        2210,
+        2451
+      ]
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "located_at": "/Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4/Mathlib/Data/Set/Basic.lean",
+      "statement": "theorem ite_inter_self (t s s' : Set α) : t.ite s s' ∩ t = s ∩ t := by",
+      "official_proof": "theorem ite_inter_self (t s s' : Set α) : t.ite s s' ∩ t = s ∩ t := by\n  rw [Set.ite, union_inter_distrib_right, diff_inter_self, inter_assoc, inter_self, union_empty]",
+      "proof_line": 2262,
+      "neighbor_decls": [
+        "subset_symmDiff_union_symmDiff_right",
+        "mem_powerset",
+        "subset_of_mem_powerset",
+        "mem_powerset_iff",
+        "powerset_inter",
+        "powerset_mono",
+        "monotone_powerset",
+        "powerset_nonempty",
+        "powerset_empty",
+        "powerset_univ",
+        "powerset_singleton",
+        "mem_dite",
+        "mem_dite_univ_right",
+        "mem_ite_univ_right",
+        "mem_dite_univ_left",
+        "mem_ite_univ_left",
+        "mem_dite_empty_right",
+        "mem_ite_empty_right",
+        "mem_dite_empty_left",
+        "mem_ite_empty_left",
+        "ite_compl",
+        "ite_inter_compl_self",
+        "ite_diff_self",
+        "ite_same",
+        "ite_left",
+        "ite_right",
+        "ite_empty",
+        "ite_univ",
+        "ite_empty_left",
+        "ite_empty_right",
+        "ite_mono",
+        "ite_subset_union",
+        "inter_subset_ite",
+        "ite_inter_inter",
+        "ite_inter",
+        "ite_inter_of_inter_eq",
+        "subset_ite",
+        "ite_eq_of_subset_left",
+        "ite_eq_of_subset_right",
+        "monotoneOn_iff_monotone",
+        "antitoneOn_iff_antitone",
+        "strictMonoOn_iff_strictMono",
+        "strictAntiOn_iff_strictAnti"
+      ],
+      "imports": [
+        "import Mathlib.Init.ZeroOne",
+        "import Mathlib.Data.Set.Defs",
+        "import Mathlib.Order.Basic",
+        "import Mathlib.Order.SymmDiff",
+        "import Mathlib.Tactic.Tauto",
+        "import Mathlib.Tactic.ByContra",
+        "import Mathlib.Util.Delaborators"
+      ],
+      "nearby_lemmas": [
+        {
+          "line": 2200,
+          "decl": "theorem mem_dite (p : Prop) [Decidable p] (s : p → Set α) (t : ¬ p → Set α) (x : α) :"
+        },
+        {
+          "line": 2206,
+          "decl": "theorem mem_dite_univ_right (p : Prop) [Decidable p] (t : p → Set α) (x : α) :"
+        },
+        {
+          "line": 2212,
+          "decl": "theorem mem_ite_univ_right (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2217,
+          "decl": "theorem mem_dite_univ_left (p : Prop) [Decidable p] (t : ¬p → Set α) (x : α) :"
+        },
+        {
+          "line": 2223,
+          "decl": "theorem mem_ite_univ_left (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2228,
+          "decl": "theorem mem_dite_empty_right (p : Prop) [Decidable p] (t : p → Set α) (x : α) :"
+        },
+        {
+          "line": 2235,
+          "decl": "theorem mem_ite_empty_right (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2240,
+          "decl": "theorem mem_dite_empty_left (p : Prop) [Decidable p] (t : ¬p → Set α) (x : α) :"
+        },
+        {
+          "line": 2247,
+          "decl": "theorem mem_ite_empty_left (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2262,
+          "decl": "theorem ite_inter_self (t s s' : Set α) : t.ite s s' ∩ t = s ∩ t := by"
+        },
+        {
+          "line": 2267,
+          "decl": "theorem ite_compl (t s s' : Set α) : tᶜ.ite s s' = t.ite s' s := by"
+        },
+        {
+          "line": 2272,
+          "decl": "theorem ite_inter_compl_self (t s s' : Set α) : t.ite s s' ∩ tᶜ = s' ∩ tᶜ := by"
+        },
+        {
+          "line": 2277,
+          "decl": "theorem ite_diff_self (t s s' : Set α) : t.ite s s' \\ t = s' \\ t :="
+        },
+        {
+          "line": 2282,
+          "decl": "theorem ite_same (t s : Set α) : t.ite s s = s :="
+        },
+        {
+          "line": 2287,
+          "decl": "theorem ite_left (s t : Set α) : s.ite s t = s ∪ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2291,
+          "decl": "theorem ite_right (s t : Set α) : s.ite t s = t ∩ s := by simp [Set.ite]"
+        },
+        {
+          "line": 2295,
+          "decl": "theorem ite_empty (s s' : Set α) : Set.ite ∅ s s' = s' := by simp [Set.ite]"
+        },
+        {
+          "line": 2299,
+          "decl": "theorem ite_univ (s s' : Set α) : Set.ite univ s s' = s := by simp [Set.ite]"
+        },
+        {
+          "line": 2303,
+          "decl": "theorem ite_empty_left (t s : Set α) : t.ite ∅ s = s \\ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2307,
+          "decl": "theorem ite_empty_right (t s : Set α) : t.ite s ∅ = s ∩ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2310,
+          "decl": "theorem ite_mono (t : Set α) {s₁ s₁' s₂ s₂' : Set α} (h : s₁ ⊆ s₂) (h' : s₁' ⊆ s₂') :"
+        },
+        {
+          "line": 2315,
+          "decl": "theorem ite_subset_union (t s s' : Set α) : t.ite s s' ⊆ s ∪ s' :="
+        },
+        {
+          "line": 2319,
+          "decl": "theorem inter_subset_ite (t s s' : Set α) : s ∩ s' ⊆ t.ite s s' :="
+        },
+        {
+          "line": 2323,
+          "decl": "theorem ite_inter_inter (t s₁ s₂ s₁' s₂' : Set α) :"
+        },
+        {
+          "line": 2330,
+          "decl": "theorem ite_inter (t s₁ s₂ s : Set α) : t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s := by"
+        },
+        {
+          "line": 2334,
+          "decl": "theorem ite_inter_of_inter_eq (t : Set α) {s₁ s₂ s : Set α} (h : s₁ ∩ s = s₂ ∩ s) :"
+        },
+        {
+          "line": 2338,
+          "decl": "theorem subset_ite {t s s' u : Set α} : u ⊆ t.ite s s' ↔ u ∩ t ⊆ s ∧ u \\ t ⊆ s' := by"
+        },
+        {
+          "line": 2344,
+          "decl": "theorem ite_eq_of_subset_left (t : Set α) {s₁ s₂ : Set α} (h : s₁ ⊆ s₂) :"
+        },
+        {
+          "line": 2349,
+          "decl": "theorem ite_eq_of_subset_right (t : Set α) {s₁ s₂ : Set α} (h : s₂ ⊆ s₁) :"
+        }
+      ],
+      "classification": {
+        "proof_style": "rw_bridge",
+        "uses_by_cases": false,
+        "uses_ext": false,
+        "uses_constructor": false,
+        "uses_subset_antisymm": false,
+        "uses_simp_set": true,
+        "uses_aesop": false,
+        "uses_rw": true,
+        "likely_reusable_probe": "rw-bridge (theorem-specific; see official proof)",
+        "likely_missing_lemma": false,
+        "notes": [
+          "rewrite-bridge proof: depends on specific named lemmas, not closed by generic simp/aesop"
+        ]
+      },
+      "context_window_lines": [
+        2142,
+        2383
+      ]
+    },
+    {
+      "full_name": "Set.ite_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "located_at": "/Users/weijiawang/.cache/lean_dojo/leanprover-community-mathlib4-29dcec074de168ac2bf835a77ef68bbe069194c5/mathlib4/Mathlib/Data/Set/Basic.lean",
+      "statement": "theorem ite_right (s t : Set α) : s.ite t s = t ∩ s := by simp [Set.ite]",
+      "official_proof": "theorem ite_right (s t : Set α) : s.ite t s = t ∩ s := by simp [Set.ite]",
+      "proof_line": 2291,
+      "neighbor_decls": [
+        "monotone_powerset",
+        "powerset_nonempty",
+        "powerset_empty",
+        "powerset_univ",
+        "powerset_singleton",
+        "mem_dite",
+        "mem_dite_univ_right",
+        "mem_ite_univ_right",
+        "mem_dite_univ_left",
+        "mem_ite_univ_left",
+        "mem_dite_empty_right",
+        "mem_ite_empty_right",
+        "mem_dite_empty_left",
+        "mem_ite_empty_left",
+        "ite_inter_self",
+        "ite_compl",
+        "ite_inter_compl_self",
+        "ite_diff_self",
+        "ite_same",
+        "ite_left",
+        "ite_empty",
+        "ite_univ",
+        "ite_empty_left",
+        "ite_empty_right",
+        "ite_mono",
+        "ite_subset_union",
+        "inter_subset_ite",
+        "ite_inter_inter",
+        "ite_inter",
+        "ite_inter_of_inter_eq",
+        "subset_ite",
+        "ite_eq_of_subset_left",
+        "ite_eq_of_subset_right",
+        "monotoneOn_iff_monotone",
+        "antitoneOn_iff_antitone",
+        "strictMonoOn_iff_strictMono",
+        "strictAntiOn_iff_strictAnti",
+        "not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "not_monotoneOn_not_antitoneOn_iff_exists_lt_lt"
+      ],
+      "imports": [
+        "import Mathlib.Init.ZeroOne",
+        "import Mathlib.Data.Set.Defs",
+        "import Mathlib.Order.Basic",
+        "import Mathlib.Order.SymmDiff",
+        "import Mathlib.Tactic.Tauto",
+        "import Mathlib.Tactic.ByContra",
+        "import Mathlib.Util.Delaborators"
+      ],
+      "nearby_lemmas": [
+        {
+          "line": 2200,
+          "decl": "theorem mem_dite (p : Prop) [Decidable p] (s : p → Set α) (t : ¬ p → Set α) (x : α) :"
+        },
+        {
+          "line": 2206,
+          "decl": "theorem mem_dite_univ_right (p : Prop) [Decidable p] (t : p → Set α) (x : α) :"
+        },
+        {
+          "line": 2212,
+          "decl": "theorem mem_ite_univ_right (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2217,
+          "decl": "theorem mem_dite_univ_left (p : Prop) [Decidable p] (t : ¬p → Set α) (x : α) :"
+        },
+        {
+          "line": 2223,
+          "decl": "theorem mem_ite_univ_left (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2228,
+          "decl": "theorem mem_dite_empty_right (p : Prop) [Decidable p] (t : p → Set α) (x : α) :"
+        },
+        {
+          "line": 2235,
+          "decl": "theorem mem_ite_empty_right (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2240,
+          "decl": "theorem mem_dite_empty_left (p : Prop) [Decidable p] (t : ¬p → Set α) (x : α) :"
+        },
+        {
+          "line": 2247,
+          "decl": "theorem mem_ite_empty_left (p : Prop) [Decidable p] (t : Set α) (x : α) :"
+        },
+        {
+          "line": 2262,
+          "decl": "theorem ite_inter_self (t s s' : Set α) : t.ite s s' ∩ t = s ∩ t := by"
+        },
+        {
+          "line": 2267,
+          "decl": "theorem ite_compl (t s s' : Set α) : tᶜ.ite s s' = t.ite s' s := by"
+        },
+        {
+          "line": 2272,
+          "decl": "theorem ite_inter_compl_self (t s s' : Set α) : t.ite s s' ∩ tᶜ = s' ∩ tᶜ := by"
+        },
+        {
+          "line": 2277,
+          "decl": "theorem ite_diff_self (t s s' : Set α) : t.ite s s' \\ t = s' \\ t :="
+        },
+        {
+          "line": 2282,
+          "decl": "theorem ite_same (t s : Set α) : t.ite s s = s :="
+        },
+        {
+          "line": 2287,
+          "decl": "theorem ite_left (s t : Set α) : s.ite s t = s ∪ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2291,
+          "decl": "theorem ite_right (s t : Set α) : s.ite t s = t ∩ s := by simp [Set.ite]"
+        },
+        {
+          "line": 2295,
+          "decl": "theorem ite_empty (s s' : Set α) : Set.ite ∅ s s' = s' := by simp [Set.ite]"
+        },
+        {
+          "line": 2299,
+          "decl": "theorem ite_univ (s s' : Set α) : Set.ite univ s s' = s := by simp [Set.ite]"
+        },
+        {
+          "line": 2303,
+          "decl": "theorem ite_empty_left (t s : Set α) : t.ite ∅ s = s \\ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2307,
+          "decl": "theorem ite_empty_right (t s : Set α) : t.ite s ∅ = s ∩ t := by simp [Set.ite]"
+        },
+        {
+          "line": 2310,
+          "decl": "theorem ite_mono (t : Set α) {s₁ s₁' s₂ s₂' : Set α} (h : s₁ ⊆ s₂) (h' : s₁' ⊆ s₂') :"
+        },
+        {
+          "line": 2315,
+          "decl": "theorem ite_subset_union (t s s' : Set α) : t.ite s s' ⊆ s ∪ s' :="
+        },
+        {
+          "line": 2319,
+          "decl": "theorem inter_subset_ite (t s s' : Set α) : s ∩ s' ⊆ t.ite s s' :="
+        },
+        {
+          "line": 2323,
+          "decl": "theorem ite_inter_inter (t s₁ s₂ s₁' s₂' : Set α) :"
+        },
+        {
+          "line": 2330,
+          "decl": "theorem ite_inter (t s₁ s₂ s : Set α) : t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s := by"
+        },
+        {
+          "line": 2334,
+          "decl": "theorem ite_inter_of_inter_eq (t : Set α) {s₁ s₂ s : Set α} (h : s₁ ∩ s = s₂ ∩ s) :"
+        },
+        {
+          "line": 2338,
+          "decl": "theorem subset_ite {t s s' u : Set α} : u ⊆ t.ite s s' ↔ u ∩ t ⊆ s ∧ u \\ t ⊆ s' := by"
+        },
+        {
+          "line": 2344,
+          "decl": "theorem ite_eq_of_subset_left (t : Set α) {s₁ s₂ : Set α} (h : s₁ ⊆ s₂) :"
+        },
+        {
+          "line": 2349,
+          "decl": "theorem ite_eq_of_subset_right (t : Set α) {s₁ s₂ : Set α} (h : s₂ ⊆ s₁) :"
+        }
+      ],
+      "classification": {
+        "proof_style": "simp_only",
+        "uses_by_cases": false,
+        "uses_ext": false,
+        "uses_constructor": false,
+        "uses_subset_antisymm": false,
+        "uses_simp_set": true,
+        "uses_aesop": false,
+        "uses_rw": false,
+        "likely_reusable_probe": "simp [Set.ite]",
+        "likely_missing_lemma": false,
+        "notes": [
+          "one-line `simp [Set.ite]`: RC1 simp does not unfold the irreducible Set.ite by default -> tactic gap"
+        ]
+      },
+      "context_window_lines": [
+        2171,
+        2411
+      ]
+    }
+  ]
+}

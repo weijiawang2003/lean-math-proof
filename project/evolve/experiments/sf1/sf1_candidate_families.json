@@ -1,0 +1,94 @@
+{
+  "registry_name": "sf1_candidate_families",
+  "version": 1,
+  "status": "scaffold",
+  "description": "Candidate action-family registry for the SF1 Scalable Frontier Miner. Each family is an eval arm / proposal; SF1 never auto-flips a production flag. 'production_promoted' reflects the RC1 release as of commit f3b3100. Status proposals from SF1 land in notes only.",
+  "production_baseline": "rc1_production_stack",
+  "control_arm": "rc1_production_stack",
+  "modifies_production_configs": false,
+  "gate_types": {
+    "namespace_gated_battery": "cheap battery tactic fired only inside a narrow syntactic/namespace gate (strong-base-policy surfaces)",
+    "symbolic_structural_action": "constructor/ext/induction action for weak-base-policy structural surfaces",
+    "composite_stack": "deterministic composition of promoted families",
+    "learned_selector": "TF-IDF/logreg or similar learned action chooser (kept off the hot path)",
+    "search_mode": "multi-step / sequence search strategy"
+  },
+  "families": [
+    {
+      "id": "ns9_base_wrapper",
+      "status": "production_baseline_component",
+      "gate_type": "composite_stack",
+      "production_promoted": true,
+      "off_by_default": false,
+      "notes": "NS9 base wrapper / genome. The floor every SF1 delta is measured against; also exposed as the 'ns9' eval arm. Do not modify.",
+      "reason": null
+    },
+    {
+      "id": "rc1_production_stack",
+      "status": "production_active",
+      "gate_type": "composite_stack",
+      "production_promoted": true,
+      "off_by_default": false,
+      "notes": "RC1 = NS9 base + WX3 Multiset induction oracle + MX2 narrow Set.Finite aesop. +15 wins beyond NS9, 0 regressions, 0 off-gate, floors preserved. SF1 control arm. Config: project/evolve/experiments/rc1/rc1_production_wrapper.json. Do not modify.",
+      "reason": null
+    },
+    {
+      "id": "wx3_multiset_induction",
+      "status": "production_active",
+      "gate_type": "symbolic_structural_action",
+      "production_promoted": true,
+      "off_by_default": false,
+      "notes": "Multiset induction_on action (MULTISET_INDUCTION_SIMP[Multiset,simp_all]). +12 Multiset wins inside RC1; the canonical weak-base-policy structural surface. 20 clean single-shot symbolic labels at promotion.",
+      "reason": null
+    },
+    {
+      "id": "mx2_set_finite_tofinset_aesop",
+      "status": "production_active",
+      "gate_type": "namespace_gated_battery",
+      "production_promoted": true,
+      "off_by_default": false,
+      "notes": "Narrow Set.Finite/toFinset-gated aesop fallback (NS19 deep-copy pattern). +3 Set.Finite wins inside RC1, 0 non-Set aesop. Strict narrow gate adopted over broad Set. gate.",
+      "reason": null
+    },
+    {
+      "id": "ax4_learned_symbolic_selector_off_by_default",
+      "status": "off_by_default",
+      "gate_type": "learned_selector",
+      "production_promoted": false,
+      "off_by_default": true,
+      "notes": "TF-IDF + logreg symbolic-action predictor over proof state (46 labels at AX4). GREEN/promotion-eligible as a learner but the deterministic WX3 oracle still dominates a single additive Multiset action. Kept off the hot path.",
+      "reason": "Beats raw but not the deterministic oracle on mined surfaces; label-limited. MINE_MORE: reach a live-Lean mine of stronger/multi-action labels and beat the oracle before live integration (criterion 1 + 6)."
+    },
+    {
+      "id": "sx1_depth2_sequence_search_off_by_default",
+      "status": "off_by_default",
+      "gate_type": "search_mode",
+      "production_promoted": false,
+      "off_by_default": true,
+      "notes": "Depth-2 symbolic sequence mode (commit 63c2b78). seq-only-vs-oracle=3 but seq-only-vs-full-wrapper=0: the existing NS9/WX3 best-first search already explores ~9 follow-ups per advanced symbolic state, so a fixed-battery sequence mode is subsumed. 0 regr, 0 off-gate.",
+      "reason": "No search gain beyond the existing best-first wrapper (subsumed). The open lever is selectivity (an AX5 sequence-label learner), which needs a live-Lean mine to >=40 labels first."
+    },
+    {
+      "id": "broad_set_aesop_rejected",
+      "status": "rejected",
+      "gate_type": "namespace_gated_battery",
+      "production_promoted": false,
+      "off_by_default": true,
+      "notes": "Broad 'Set.' aesop gate. Adds NO wins beyond the narrow Set.Finite/toFinset gate but overfires (aesop 12x on negative control, 0 closes).",
+      "reason": "Fails promotion criterion 3 (off-gate emissions) and criterion 4 (strict syntactic gate) at equal wins. Superseded by mx2_set_finite_tofinset_aesop."
+    },
+    {
+      "id": "mx1_set_finset_symbolic_rejected",
+      "status": "rejected",
+      "gate_type": "symbolic_structural_action",
+      "production_promoted": false,
+      "off_by_default": true,
+      "notes": "Set/Finset symbolic ext/cases mine (SET_EXT_SIMP / FINSET_EXT_SIMP / FINSET_CASES_SIMP), commit 8ec8c99. 2 new Set-ext wins but both aesop-over-attributed -> 0 clean symbolic labels; Finset ext/cases fired 140x and closed 0 (NS21 aesop saturation).",
+      "reason": "Fails criterion 5 (minimal-sufficient attribution): wins are over-attributed to aesop. Symbolic actions do not pay on strong-base-policy Set/Finset surfaces; that headroom belongs to the cheap namespace-gated battery (MX2)."
+    }
+  ],
+  "notes": [
+    "Status proposals emitted by sf1_promotion_report.py are advisory and written to the SF1 report, not back into this file automatically.",
+    "production_promoted reflects the RC1 release (commit f3b3100); SF1 must never change it without a full RC2 re-freeze."
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "candidate": "RC2 = RC1 ⊕ SET_ITE_SIMP (simp [Set.ite])",
+  "rc2_wrapper": "project/evolve/experiments/rc2/rc2_candidate_wrapper.json",
+  "rc1_command": {
+    "policy_type": "hybrid_evolved",
+    "route_config": "project/evolve/routing/ns24_router.json",
+    "strategy_config": "project/evolve/experiments/rc1/rc1_production_wrapper.json",
+    "top_k": 8,
+    "max_steps": 8
+  },
+  "reuse_note": "literal RC1 for known_wins/selected_failures/fresh_holdout may be reused from project/evolve/experiments/rc2_candidates/set_ite_simp/out/literal_rc1_results.json (identical command, configs, sets, repaired finished-key).",
+  "by_construction_note": "RC2 differs from RC1 ONLY on theorems whose name starts with 'Set.ite'. Canonical floors contain none -> RC2==RC1 there; run both to confirm preservation empirically.",
+  "num_surfaces": 8,
+  "surfaces": [
+    {
+      "name": "demo_v1",
+      "role": "canonical_floor",
+      "kind": "registered",
+      "path_or_registered_name": "demo_v1",
+      "size": 15,
+      "contains_set_ite": false,
+      "expected_rc1": ">=11/15",
+      "expected_rc2_delta": "0 (no Set.ite names; RC2==RC1 by construction)"
+    },
+    {
+      "name": "nat_defs_medium",
+      "role": "canonical_floor",
+      "kind": "registered",
+      "path_or_registered_name": "nat_defs_medium",
+      "size": 38,
+      "contains_set_ite": false,
+      "expected_rc1": ">=37/38",
+      "expected_rc2_delta": "0 (no Set.ite names; RC2==RC1 by construction)"
+    },
+    {
+      "name": "nat_defs_large_v5",
+      "role": "canonical_floor",
+      "kind": "registered",
+      "path_or_registered_name": "nat_defs_large_v5",
+      "size": 65,
+      "contains_set_ite": false,
+      "expected_rc1": ">=49/65",
+      "expected_rc2_delta": "0 (no Set.ite names; RC2==RC1 by construction)"
+    },
+    {
+      "name": "set_ite_known_wins",
+      "role": "candidate_validation",
+      "kind": "file",
+      "path_or_registered_name": "project/evolve/experiments/rc2_candidates/set_ite_simp/theorem_sets/set_ite_known_wins.json",
+      "size": 5,
+      "contains_set_ite": true,
+      "num_set_ite": 5,
+      "expected_rc1": "0/5",
+      "expected_rc2_delta": "+5 (all SET_ITE wins)"
+    },
+    {
+      "name": "set_ite_selected_failures",
+      "role": "candidate_validation",
+      "kind": "file",
+      "path_or_registered_name": "project/evolve/experiments/rc2_candidates/set_ite_simp/theorem_sets/set_ite_selected_failures.json",
+      "size": 12,
+      "contains_set_ite": true,
+      "num_set_ite": 5,
+      "expected_rc1": "0/12",
+      "expected_rc2_delta": "+2 (ite_empty_right, ite_right)"
+    },
+    {
+      "name": "set_ite_fresh_holdout",
+      "role": "candidate_validation",
+      "kind": "file",
+      "path_or_registered_name": "project/evolve/experiments/rc2_candidates/set_ite_simp/theorem_sets/set_ite_fresh_holdout.json",
+      "size": 20,
+      "contains_set_ite": true,
+      "num_set_ite": 5,
+      "expected_rc1": "11/20",
+      "expected_rc2_delta": "+3 (ite_empty, ite_empty_left, ite_left)"
+    },
+    {
+      "name": "sf1_frontier_runnable_subset",
+      "role": "fresh_frontier",
+      "kind": "file",
+      "path_or_registered_name": "project/evolve/experiments/sf1/theorem_sets/sf1_frontier_runnable_subset.json",
+      "size": 20,
+      "contains_set_ite": true,
+      "num_set_ite": 7,
+      "expected_rc1": "unknown (live)",
+      "expected_rc2_delta": "Set.ite-shaped frontier wins if any"
+    },
+    {
+      "name": "set_ite_negative_controls",
+      "role": "negative_control",
+      "kind": "file",
+      "path_or_registered_name": "project/evolve/experiments/rc2_candidates/set_ite_simp/theorem_sets/set_ite_negative_controls.json",
+      "size": 5,
+      "live_runnable": 1,
+      "contains_set_ite": false,
+      "expected_rc1": "n/a",
+      "expected_rc2_delta": "0 (gate must NOT fire; off-gate=0)"
+    }
+  ]
+}

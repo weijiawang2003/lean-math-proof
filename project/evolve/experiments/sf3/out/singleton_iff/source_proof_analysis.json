@@ -1,0 +1,60 @@
+{
+  "full_name": "Multiset.toFinset_eq_singleton_iff",
+  "source_location": {
+    "file_resolved_for_dojo": "Mathlib/Data/Finset/Basic.lean",
+    "file_with_proof_text": "Mathlib/Data/Finset/Basic1th4x_l3.lean (line 2977)",
+    "proof_sha256_12": "72a8f7f5a033",
+    "note": "Verified against the LIVE LeanDojo cache (…mathlib4-29dcec074…). NOTE: this cache is a custom/sharded mathlib layout — the theorem's ast.json resolves under Finset/Basic.lean (that is the path LeanDojo accepts and where the live probe ran), while the proof TEXT is in the shard Finset/Basic1th4x_l3.lean:2977. The SF1 frontier backfill path (Finset/Basic.lean) is therefore CORRECT for this cache. An earlier draft that cited Multiset/Dedup.lean was wrong."
+  },
+  "statement": "s.toFinset = {a} ↔ card s ≠ 0 ∧ s = card s • {a}",
+  "live_initial_goal": "⊢ s.toFinset = {a} ↔ card s ≠ 0 ∧ s = card s • {a}  (confirmed live via Dojo)",
+  "official_proof_verbatim": "theorem toFinset_eq_singleton_iff (s : Multiset α) (a : α) :\n    s.toFinset = {a} ↔ card s ≠ 0 ∧ s = card s • {a} := by\n  refine ⟨fun H ↦ ⟨fun h ↦ ?_, ext' fun x ↦ ?_⟩, fun H ↦ ?_⟩\n  · rw [card_eq_zero.1 h, toFinset_zero] at H\n    exact Finset.singleton_ne_empty _ H.symm\n  · rw [count_nsmul, count_singleton]\n    by_cases hx : x = a\n    · simp_rw [hx, ite_true, mul_one, count_eq_card]\n      intro y hy\n      rw [← mem_toFinset, H, Finset.mem_singleton] at hy\n      exact hy.symm\n    have hx' : x ∉ s := fun h' ↦ hx <| by rwa [← mem_toFinset, H, Finset.mem_singleton] at h'\n    simp_rw [count_eq_zero_of_not_mem hx', hx, ite_false, Nat.mul_zero]\n  simpa only [toFinset_nsmul _ _ H.1, toFinset_singleton] using congr($(H.2).toFinset)",
+  "official_proof_tactic_token_map": {
+    "refine": 1,
+    "ext'": 1,
+    "by_cases": 1,
+    "simp_rw": 2,
+    "rw": 3,
+    "count_nsmul": 1,
+    "count_singleton": 1,
+    "count_eq_card": 1,
+    "count_eq_zero_of_not_mem": 1,
+    "mem_toFinset": 2,
+    "toFinset_nsmul": 1,
+    "toFinset_singleton": 1,
+    "card_eq_zero": 1,
+    "induction": 0,
+    "induction_on": 0,
+    "aesop": 0,
+    "simp_all": 0,
+    "replicate": 0
+  },
+  "proof_strategy": "Split the iff with `refine ⟨fun H ↦ ⟨fun h ↦ ?_, ext' fun x ↦ ?_⟩, fun H ↦ ?_⟩`. (1) card=0 branch: `rw [card_eq_zero.1 h, toFinset_zero] at H; exact Finset.singleton_ne_empty _ H.symm`. (2) count-extensionality branch (`ext'`): `rw [count_nsmul, count_singleton]; by_cases hx : x = a` then count reasoning (`count_eq_card`, `count_eq_zero_of_not_mem`). (3) reverse: `simpa only [toFinset_nsmul _ _ H.1, toFinset_singleton] using congr($(H.2).toFinset)`. It is a COUNT-LEVEL extensionality argument with a membership case split — NOT induction, NOT a blunt simp/aesop.",
+  "dependency_map": {
+    "lemmas_used_all_exist": [
+      "card_eq_zero",
+      "Multiset.toFinset_zero",
+      "Finset.singleton_ne_empty",
+      "Multiset.count_nsmul",
+      "Multiset.count_singleton",
+      "Multiset.count_eq_card",
+      "Multiset.count_eq_zero_of_not_mem",
+      "Multiset.mem_toFinset",
+      "Finset.mem_singleton",
+      "Multiset.toFinset_nsmul",
+      "Multiset.toFinset_singleton"
+    ],
+    "key_dependency": "Reverse direction uses `toFinset_nsmul` — itself holdout theorem #1 (RC1 proves it by aesop). No missing lemma.",
+    "orchestration_gap": "`ext'`/`ext` need an equation, so the `↔` must split first; the closure needs a `by_cases x = a` count argument. Blunt `simp_all [...]` cannot do the case split and LOOPS on `card s • {a}` (live: 'maximum recursion depth' on all 6 constructor<;>simp_all probes)."
+  },
+  "why_wx3_oracle_fails": "WX3 `induction s using Multiset.induction_on <;> simp_all` is mis-applied: the RHS has `card s • {a}`, so cons-induction yields a more tangled nsmul/insert iff (confirmed in the RC1 trace residual) that simp_all cannot close. The official proof never inducts; it splits the iff and does count-extensionality.",
+  "classification": {
+    "verdict": "reusable_probe (iff-split opener) + too_specialized (count-extensionality closure); NOT a missing lemma",
+    "copying_official_proof_would_solve": true,
+    "reusable_probe": "YES (opener only): `constructor`/`refine ⟨…⟩` to split the iff before any ext/membership step. Reusable across toFinset/Finset membership-iff goals.",
+    "missing_lemma": "NO. Every dependency exists in Mathlib (card_eq_zero, count_*, mem_toFinset, toFinset_nsmul, toFinset_singleton, singleton_ne_empty).",
+    "too_specialized_part": "The count-extensionality closure with `by_cases x = a` + `count_eq_card`/`count_eq_zero_of_not_mem` is specific to this theorem."
+  },
+  "live_probe_outcome": "Part-3 ladder (13 probes, single live Dojo) closed it 0/13: 6 proof_failed, 6 max_recursion (every constructor<;>intro<;>simp_all[...] variant, INCLUDING the source-inspired simp set with toFinset_nsmul/toFinset_singleton/mem_toFinset/mem_singleton), 1 parse_error (run_transition rejects multi-line ·-bullet blocks, so the verbatim official proof can't be sent as one tactic). Confirms: this failure is NOT reachable by a one-shot simp/aesop-class probe; it needs the structured count-extensionality proof or a multi-step search.",
+  "implication_for_sf3": "Do NOT invent a lemma. The honest SF3 levers are: (a) a SELECTIVITY/routing fix so the WX3 induction oracle does NOT fire on toFinset membership-iff goals (it strictly hurts here); (b) a MULTI-STEP search capability (the official proof is depth ~4 with a case split) rather than a single battery tactic — a one-shot probe cannot close it. No promotion: this remains an open genuine failure."
+}

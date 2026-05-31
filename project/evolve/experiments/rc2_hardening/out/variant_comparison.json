@@ -1,0 +1,133 @@
+{
+  "targets": [
+    "Set.ite_empty_right",
+    "Set.ite_right",
+    "Set.ite_empty",
+    "Set.ite_empty_left",
+    "Set.ite_left",
+    "Set.ite_inter",
+    "Set.ite_inter_self",
+    "Set.ite_compl",
+    "Set.ite_inter_compl_self"
+  ],
+  "probes": {
+    "Set.ite_empty_right": {
+      "simp [Set.ite]": true,
+      "simp [Set.ite] <;> aesop": true
+    },
+    "Set.ite_right": {
+      "simp [Set.ite]": true,
+      "simp [Set.ite] <;> aesop": true
+    },
+    "Set.ite_empty": {
+      "simp [Set.ite]": true,
+      "simp [Set.ite] <;> aesop": true
+    },
+    "Set.ite_empty_left": {
+      "simp [Set.ite]": true,
+      "simp [Set.ite] <;> aesop": true
+    },
+    "Set.ite_left": {
+      "simp [Set.ite]": true,
+      "simp [Set.ite] <;> aesop": true
+    },
+    "Set.ite_inter": {
+      "simp [Set.ite]": false,
+      "simp [Set.ite] <;> aesop": true
+    },
+    "Set.ite_inter_self": {
+      "simp [Set.ite]": false,
+      "simp [Set.ite] <;> aesop": true
+    },
+    "Set.ite_compl": {
+      "simp [Set.ite]": false,
+      "simp [Set.ite] <;> aesop": true
+    },
+    "Set.ite_inter_compl_self": {
+      "simp [Set.ite]": false,
+      "simp [Set.ite] <;> aesop": true
+    }
+  },
+  "variants": {
+    "A_priority_any": {
+      "variant": "A_priority_any",
+      "credited_recovered": 5,
+      "credited_theorems": [
+        "Set.ite_empty",
+        "Set.ite_empty_left",
+        "Set.ite_empty_right",
+        "Set.ite_left",
+        "Set.ite_right"
+      ],
+      "perturbation_or_extra_wins": 4,
+      "extra_theorems": [
+        "Set.ite_compl",
+        "Set.ite_inter",
+        "Set.ite_inter_compl_self",
+        "Set.ite_inter_self"
+      ],
+      "regressions": 0,
+      "off_gate": 0,
+      "search_perturbation": "YES (reorders base policy)",
+      "deterministic": true,
+      "deployable_wrapper": true,
+      "schema_native": true,
+      "note": "current deployable RC2; +5 credited + uncredited multi-step wins"
+    },
+    "D_additive_single_shot": {
+      "variant": "D_additive_single_shot",
+      "credited_recovered": 5,
+      "credited_theorems": [
+        "Set.ite_empty",
+        "Set.ite_empty_left",
+        "Set.ite_empty_right",
+        "Set.ite_left",
+        "Set.ite_right"
+      ],
+      "perturbation_or_extra_wins": 0,
+      "extra_theorems": [],
+      "regressions": 0,
+      "off_gate": 0,
+      "search_perturbation": "NONE",
+      "deterministic": true,
+      "deployable_wrapper": false,
+      "schema_native": false,
+      "note": "external additive eval; cleanest attribution; recovers exactly the single-shot wins"
+    },
+    "E_sequence_sx3": {
+      "variant": "E_sequence_sx3",
+      "credited_recovered": 5,
+      "credited_theorems": [
+        "Set.ite_empty",
+        "Set.ite_empty_left",
+        "Set.ite_empty_right",
+        "Set.ite_left",
+        "Set.ite_right"
+      ],
+      "perturbation_or_extra_wins": 4,
+      "extra_theorems": [
+        "Set.ite_compl",
+        "Set.ite_inter",
+        "Set.ite_inter_compl_self",
+        "Set.ite_inter_self"
+      ],
+      "regressions": 0,
+      "off_gate": 0,
+      "search_perturbation": "NONE",
+      "deterministic": true,
+      "deployable_wrapper": false,
+      "schema_native": false,
+      "note": "depth-2 sequence simp[Set.ite]<;>aesop; SX3 candidate, NOT RC2; would need separate validation"
+    }
+  },
+  "chosen_for_attribution": {
+    "variant": "D_additive_single_shot",
+    "reason": "recovers all 5 credited with ZERO search perturbation — cleanest attribution for the official delta"
+  },
+  "chosen_deployable_wrapper": {
+    "variant": "A_priority_any",
+    "reason": "the only schema-native deployable wrapper that recovers +5 (also yields harmless deterministic extra wins)"
+  },
+  "canonical_floors_note": "unaffected by placement; gate denies action on non-Set.ite names -> RC2==RC1 by construction.",
+  "note": "Variants B (late priority) and C (fallback cap-fix) were not run: B offers no attribution benefit over A (still full-wrapper perturbation) and C requires per-state-cap schema support absent here; D is the perturbation-free reference and A is the deployable artifact."
+}

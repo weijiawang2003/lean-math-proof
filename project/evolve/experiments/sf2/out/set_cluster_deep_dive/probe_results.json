@@ -1,0 +1,2219 @@
+{
+  "num_theorems": 12,
+  "num_live": 12,
+  "num_solved": 10,
+  "gap_histogram": {
+    "search_depth_gap": 5,
+    "tactic_gap": 5,
+    "needs_deeper_search": 2
+  },
+  "results": [
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": "Set|rc1_production_stack|equality|all_tactics_errored",
+      "primary_goal_shape": "equality",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u : Set α\nx : α\ns t : Set α\n⊢ s \\ {x} ⊆ t ↔ s ⊆ insert x t",
+      "num_probes": 24,
+      "outcomes": [
+        {
+          "family": "A_baselines",
+          "probe": "simp",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp_all [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp_all [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp only [Set.ite]",
+          "label": "ite_unfold_only",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u : Set α\nx : α\ns t : Set α\n⊢ s \\ {x} ⊆ t ↔ s ⊆ insert x t"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp_all",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u : Set α\nx : α\ns t : Set α\n⊢ s \\ {x} ⊆ t ↔ s ⊆ insert x t"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \\ {x} ⊆ t ↔ s ⊆ insert x t\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u : Set α\nx : α\ns t : Set α\n⊢ s \\ {x} ⊆ t ↔ s"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \\ {x} ⊆ t ↔ s ⊆ insert x t\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u : Set α\nx : α\ns t : Set α\n⊢ s \\ {x} ⊆ t ↔ s"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "classical <;> simp [Set.ite]",
+          "label": "classical_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "aesop",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp",
+          "label": "ext_membership",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s \\ {x} ⊆ t ↔ s ⊆ insert x t"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp_all",
+          "label": "ext_membership",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s \\ {x} ⊆ t ↔ s ⊆ insert x t"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp [Set.ite]",
+          "label": "ext_ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s \\ {x} ⊆ t ↔ s ⊆ insert x t"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp_all [Set.ite]",
+          "label": "ext_ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s \\ {x} ⊆ t ↔ s ⊆ insert x t"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "ext x <;> by_cases hx : x ∈ t <;> simp_all [Set.ite]",
+          "label": "ext_bycases_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s \\ {x} ⊆ t ↔ s ⊆ insert x t"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "ext x <;> by_cases hx : x ∈ t <;> simp [Set.ite]",
+          "label": "ext_bycases_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s \\ {x} ⊆ t ↔ s ⊆ insert x t"
+        },
+        {
+          "family": "F_source_inspired",
+          "probe": "rw [← union_singleton, union_comm] <;> apply diff_subset_iff",
+          "label": "official rw bridge + apply, single-line via <;>",
+          "source_inspired": true,
+          "risk": "high",
+          "solved": true,
+          "outcome": "solved"
+        }
+      ],
+      "solved_by_probe": true,
+      "winning_probe": "rw [← union_singleton, union_comm] <;> apply diff_subset_iff",
+      "winning_family": "F_source_inspired",
+      "minimal_sufficient_probe": "rw [← union_singleton, union_comm] <;> apply diff_subset_iff",
+      "minimality_status": "unconfirmed",
+      "minimality_results": [
+        {
+          "probe": "simp",
+          "solved": false
+        },
+        {
+          "probe": "simp_all",
+          "solved": false
+        },
+        {
+          "probe": "aesop",
+          "solved": false
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false
+        }
+      ],
+      "requires_ns23_relabel": true,
+      "classification": "search_depth_gap",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": "Set|broad_set_aesop_rejected|equality|all_tactics_errored",
+      "primary_goal_shape": "equality",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ : Set α\nh : s₁ ⊆ s₂\n⊢ t.ite s₁ s₂ = s₁ ∪ s₂ \\ t",
+      "num_probes": 24,
+      "outcomes": [
+        {
+          "family": "A_baselines",
+          "probe": "simp",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp_all [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp_all [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp only [Set.ite]",
+          "label": "ite_unfold_only",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ : Set α\nh : s₁ ⊆ s₂\n⊢ t.ite s₁ s₂ = s₁ ∪ s₂ \\ t"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp_all",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ : Set α\nh : s₁ ⊆ s₂\n⊢ t.ite s₁ s₂ = s₁ ∪ s₂ \\ t"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "classical <;> simp [Set.ite]",
+          "label": "classical_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "aesop",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  α : Type u\n  β : Type v\n  γ : Type w\n  ι : Sort x\n  a b : α\n  s s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ : Set α\n  h : s₁ ⊆ s₂\n  ⊢ t.ite s₁ s₂ = s₁ ∪ s₂ \\ t"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp",
+          "label": "ext_membership",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp_all",
+          "label": "ext_membership",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp [Set.ite]",
+          "label": "ext_ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp_all [Set.ite]",
+          "label": "ext_ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "ext x <;> by_cases hx : x ∈ t <;> simp_all [Set.ite]",
+          "label": "ext_bycases_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "ext x <;> by_cases hx : x ∈ t <;> simp [Set.ite]",
+          "label": "ext_bycases_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "F_source_inspired",
+          "probe": "ext x <;> by_cases hx : x ∈ t <;> simp [hx, Set.ite, or_iff_right_of_imp (@h x)]",
+          "label": "official proof; depends on hypothesis h",
+          "source_inspired": true,
+          "risk": "high",
+          "solved": true,
+          "outcome": "solved"
+        }
+      ],
+      "solved_by_probe": true,
+      "winning_probe": "ext x <;> by_cases hx : x ∈ t <;> simp [hx, Set.ite, or_iff_right_of_imp (@h x)]",
+      "winning_family": "F_source_inspired",
+      "minimal_sufficient_probe": "ext x <;> by_cases hx : x ∈ t <;> simp [hx, Set.ite, or_iff_right_of_imp (@h x)]",
+      "minimality_status": "unconfirmed",
+      "minimality_results": [
+        {
+          "probe": "simp",
+          "solved": false
+        },
+        {
+          "probe": "simp_all",
+          "solved": false
+        },
+        {
+          "probe": "aesop",
+          "solved": false
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false
+        }
+      ],
+      "requires_ns23_relabel": true,
+      "classification": "search_depth_gap",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|equality|all_tactics_errored",
+      "primary_goal_shape": "equality",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\nx y z w : α\n⊢ {x, y} = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z",
+      "num_probes": 24,
+      "outcomes": [
+        {
+          "family": "A_baselines",
+          "probe": "simp",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp_all [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp_all [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp only [Set.ite]",
+          "label": "ite_unfold_only",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\nx y z w : α\n⊢ {x, y} = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp_all",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\nx y z w : α\n⊢ {x, y} = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  {x, y} = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\nx y z w : α\n⊢ {x, "
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  {x, y} = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\nx y z w : α\n⊢ {x, "
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "classical <;> simp [Set.ite]",
+          "label": "classical_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "aesop",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp",
+          "label": "ext_membership",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  {x, y} = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp_all",
+          "label": "ext_membership",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  {x, y} = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp [Set.ite]",
+          "label": "ext_ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  {x, y} = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp_all [Set.ite]",
+          "label": "ext_ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  {x, y} = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "ext x <;> by_cases hx : x ∈ t <;> simp_all [Set.ite]",
+          "label": "ext_bycases_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  {x, y} = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "ext x <;> by_cases hx : x ∈ t <;> simp [Set.ite]",
+          "label": "ext_bycases_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  {x, y} = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "classical <;> aesop",
+          "label": "baseline_classical",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "family": "F_source_inspired",
+          "probe": "simp [subset_antisymm_iff, insert_subset_iff] <;> aesop",
+          "label": "official simp+aesop, ';' rewritten as '<;>'",
+          "source_inspired": true,
+          "risk": "medium",
+          "solved": true,
+          "outcome": "solved"
+        }
+      ],
+      "solved_by_probe": true,
+      "winning_probe": "simp [subset_antisymm_iff, insert_subset_iff] <;> aesop",
+      "winning_family": "F_source_inspired",
+      "minimal_sufficient_probe": "simp [subset_antisymm_iff, insert_subset_iff] <;> aesop",
+      "minimality_status": "unconfirmed",
+      "minimality_results": [
+        {
+          "probe": "simp",
+          "solved": false
+        },
+        {
+          "probe": "simp_all",
+          "solved": false
+        },
+        {
+          "probe": "aesop",
+          "solved": false
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false
+        }
+      ],
+      "requires_ns23_relabel": true,
+      "classification": "tactic_gap",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": "Set|rc1_production_stack|equality|all_tactics_errored",
+      "primary_goal_shape": "equality",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\nx : α\n⊢ s ⊆ insert x t ↔ s ⊆ t ∨ x ∈ s ∧ s \\ {x} ⊆ t",
+      "num_probes": 24,
+      "outcomes": [
+        {
+          "family": "A_baselines",
+          "probe": "simp",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp_all [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "unknown_ident",
+          "error": "unknown constant 'Set.ite'"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp_all [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "unknown_ident",
+          "error": "unknown constant 'Set.ite'"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp only [Set.ite]",
+          "label": "ite_unfold_only",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\nx : α\n⊢ s ⊆ insert x t ↔ s ⊆ t ∨ x ∈ s ∧ s \\ {x} ⊆ t"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp_all",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\nx : α\n⊢ s ⊆ insert x t ↔ s ⊆ t ∨ x ∈ s ∧ s \\ {x} ⊆ t"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s ⊆ insert x t ↔ s ⊆ t ∨ x ∈ s ∧ s \\ {x} ⊆ t\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\nx : α\n⊢ s ⊆ ins"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s ⊆ insert x t ↔ s ⊆ t ∨ x ∈ s ∧ s \\ {x} ⊆ t\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\nx : α\n⊢ s ⊆ ins"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "classical <;> simp [Set.ite]",
+          "label": "classical_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "aesop",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp",
+          "label": "ext_membership",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ insert x t ↔ s ⊆ t ∨ x ∈ s ∧ s \\ {x} ⊆ t"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp_all",
+          "label": "ext_membership",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ insert x t ↔ s ⊆ t ∨ x ∈ s ∧ s \\ {x} ⊆ t"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp [Set.ite]",
+          "label": "ext_ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ insert x t ↔ s ⊆ t ∨ x ∈ s ∧ s \\ {x} ⊆ t"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp_all [Set.ite]",
+          "label": "ext_ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ insert x t ↔ s ⊆ t ∨ x ∈ s ∧ s \\ {x} ⊆ t"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "ext x <;> by_cases hx : x ∈ t <;> simp_all [Set.ite]",
+          "label": "ext_bycases_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ insert x t ↔ s ⊆ t ∨ x ∈ s ∧ s \\ {x} ⊆ t"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "ext x <;> by_cases hx : x ∈ t <;> simp [Set.ite]",
+          "label": "ext_bycases_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ insert x t ↔ s ⊆ t ∨ x ∈ s ∧ s \\ {x} ⊆ t"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "classical <;> aesop",
+          "label": "baseline_classical",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> aesop",
+          "label": "ext_membership",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ insert x t ↔ s ⊆ t ∨ x ∈ s ∧ s \\ {x} ⊆ t"
+        },
+        {
+          "family": "F_source_inspired",
+          "probe": "rw [← diff_singleton_subset_iff] <;> aesop",
+          "label": "official starts with this rw then by_cases",
+          "source_inspired": true,
+          "risk": "high",
+          "solved": false,
+          "outcome": "proof_failed"
+        }
+      ],
+      "solved_by_probe": false,
+      "winning_probe": null,
+      "winning_family": null,
+      "minimal_sufficient_probe": null,
+      "minimality_status": "unconfirmed",
+      "minimality_results": null,
+      "requires_ns23_relabel": false,
+      "classification": "needs_deeper_search",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": "Set|broad_set_aesop_rejected|equality|all_tactics_errored",
+      "primary_goal_shape": "equality",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t t₁ t₂ u s : Set α\nx : α\n⊢ s ⊆ {x} ↔ s = ∅ ∨ s = {x}",
+      "num_probes": 25,
+      "outcomes": [
+        {
+          "family": "A_baselines",
+          "probe": "simp",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp_all [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "unknown_ident",
+          "error": "unknown constant 'Set.ite'"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp_all [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "unknown_ident",
+          "error": "unknown constant 'Set.ite'"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp only [Set.ite]",
+          "label": "ite_unfold_only",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t t₁ t₂ u s : Set α\nx : α\n⊢ s ⊆ {x} ↔ s = ∅ ∨ s = {x}"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp_all",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t t₁ t₂ u s : Set α\nx : α\n⊢ s ⊆ {x} ↔ s = ∅ ∨ s = {x}"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s ⊆ {x} ↔ s = ∅ ∨ s = {x}\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t t₁ t₂ u s : Set α\nx : α\n⊢ s ⊆ {x} ↔ s = ∅ ∨ s = {x}"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s ⊆ {x} ↔ s = ∅ ∨ s = {x}\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t t₁ t₂ u s : Set α\nx : α\n⊢ s ⊆ {x} ↔ s = ∅ ∨ s = {x}"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "classical <;> simp [Set.ite]",
+          "label": "classical_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "family": "F_source_inspired",
+          "probe": "constructor <;> intro h <;> simp_all",
+          "label": null,
+          "source_inspired": true,
+          "risk": "medium",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "aesop",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp",
+          "label": "ext_membership",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ {x} ↔ s = ∅ ∨ s = {x}"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp_all",
+          "label": "ext_membership",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ {x} ↔ s = ∅ ∨ s = {x}"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp [Set.ite]",
+          "label": "ext_ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ {x} ↔ s = ∅ ∨ s = {x}"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> simp_all [Set.ite]",
+          "label": "ext_ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ {x} ↔ s = ∅ ∨ s = {x}"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "ext x <;> by_cases hx : x ∈ t <;> simp_all [Set.ite]",
+          "label": "ext_bycases_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ {x} ↔ s = ∅ ∨ s = {x}"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "ext x <;> by_cases hx : x ∈ t <;> simp [Set.ite]",
+          "label": "ext_bycases_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ {x} ↔ s = ∅ ∨ s = {x}"
+        },
+        {
+          "family": "F_source_inspired",
+          "probe": "rcases s.eq_empty_or_nonempty with rfl | hs <;> simp [eq_singleton_iff_nonempty_unique_mem, hs]",
+          "label": "official obtain/simp, single-line",
+          "source_inspired": true,
+          "risk": "high",
+          "solved": false,
+          "outcome": "unknown_ident",
+          "error": "unknown identifier 'hs'"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "classical <;> aesop",
+          "label": "baseline_classical",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "family": "B_ext_equality",
+          "probe": "ext x <;> aesop",
+          "label": "ext_membership",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊆ {x} ↔ s = ∅ ∨ s = {x}"
+        }
+      ],
+      "solved_by_probe": false,
+      "winning_probe": null,
+      "winning_family": null,
+      "minimal_sufficient_probe": null,
+      "minimality_status": "unconfirmed",
+      "minimality_results": null,
+      "requires_ns23_relabel": false,
+      "classification": "needs_deeper_search",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": "Set|rc1_production_stack|equality|all_tactics_errored",
+      "primary_goal_shape": "equality",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\n⊢ s ∪ t = ∅ ↔ s = ∅ ∧ t = ∅",
+      "num_probes": 25,
+      "outcomes": [
+        {
+          "family": "A_baselines",
+          "probe": "simp",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp_all [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp_all [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp only [Set.ite]",
+          "label": "ite_unfold_only",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "F_source_inspired",
+          "probe": "simp only [← subset_empty_iff, union_subset_iff]",
+          "label": null,
+          "source_inspired": true,
+          "risk": "medium",
+          "solved": true,
+          "outcome": "solved"
+        }
+      ],
+      "solved_by_probe": true,
+      "winning_probe": "simp only [← subset_empty_iff, union_subset_iff]",
+      "winning_family": "F_source_inspired",
+      "minimal_sufficient_probe": "simp only [← subset_empty_iff, union_subset_iff]",
+      "minimality_status": "unconfirmed",
+      "minimality_results": [
+        {
+          "probe": "simp",
+          "solved": false
+        },
+        {
+          "probe": "simp_all",
+          "solved": false
+        },
+        {
+          "probe": "aesop",
+          "solved": false
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false
+        }
+      ],
+      "requires_ns23_relabel": true,
+      "classification": "tactic_gap",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|iff|all_tactics_errored",
+      "primary_goal_shape": "iff",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\ninst✝¹ : Preorder α\ninst✝ : Preorder β\nf : α → β\n⊢ AntitoneOn f s ↔ Antitone fun a => f ↑a",
+      "num_probes": 17,
+      "outcomes": [
+        {
+          "family": "A_baselines",
+          "probe": "simp",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp_all [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp only [Set.ite]",
+          "label": "ite_unfold_only",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "F_source_inspired",
+          "probe": "simp [Antitone, AntitoneOn]",
+          "label": "exact official proof",
+          "source_inspired": true,
+          "risk": "low",
+          "solved": true,
+          "outcome": "solved"
+        }
+      ],
+      "solved_by_probe": true,
+      "winning_probe": "simp [Antitone, AntitoneOn]",
+      "winning_family": "F_source_inspired",
+      "minimal_sufficient_probe": "simp [Antitone, AntitoneOn]",
+      "minimality_status": "unconfirmed",
+      "minimality_results": [
+        {
+          "probe": "simp",
+          "solved": false
+        },
+        {
+          "probe": "simp_all",
+          "solved": false
+        },
+        {
+          "probe": "aesop",
+          "solved": false
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false
+        }
+      ],
+      "requires_ns23_relabel": true,
+      "classification": "tactic_gap",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|iff|all_tactics_errored",
+      "primary_goal_shape": "iff",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t t₁ t₂ u s : Set α\nx : α\n⊢ s ⊂ {x} ↔ s = ∅",
+      "num_probes": 17,
+      "outcomes": [
+        {
+          "family": "A_baselines",
+          "probe": "simp",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp_all [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp only [Set.ite]",
+          "label": "ite_unfold_only",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "C_iff_decomp",
+          "probe": "constructor <;> intro h <;> simp_all",
+          "label": "iff_split",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "C_iff_decomp",
+          "probe": "constructor <;> intro h <;> try simp_all",
+          "label": "iff_split_try",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "C_iff_decomp",
+          "probe": "refine ⟨?_, ?_⟩ <;> intro h <;> simp_all",
+          "label": "iff_refine",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "classical <;> simp [Set.ite]",
+          "label": "classical_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "aesop",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "ext x <;> by_cases hx : x ∈ t <;> simp_all [Set.ite]",
+          "label": "ext_bycases_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊂ {x} ↔ s = ∅"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "ext x <;> by_cases hx : x ∈ t <;> simp [Set.ite]",
+          "label": "ext_bycases_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "ext_not_applicable",
+          "error": "applyExtTheorem only applies to equations, not\n  s ⊂ {x} ↔ s = ∅"
+        },
+        {
+          "family": "F_source_inspired",
+          "probe": "rw [ssubset_iff_subset_ne, subset_singleton_iff_eq, or_and_right, and_not_self_iff, or_false_iff, and_iff_left_iff_imp] <;> exact fun h => h ▸ (singleton_ne_empty _).symm",
+          "label": "official rw chain + closing exact via <;>",
+          "source_inspired": true,
+          "risk": "high",
+          "solved": true,
+          "outcome": "solved"
+        }
+      ],
+      "solved_by_probe": true,
+      "winning_probe": "rw [ssubset_iff_subset_ne, subset_singleton_iff_eq, or_and_right, and_not_self_iff, or_false_iff, and_iff_left_iff_imp] <;> exact fun h => h ▸ (singleton_ne_empty _).symm",
+      "winning_family": "F_source_inspired",
+      "minimal_sufficient_probe": "rw [ssubset_iff_subset_ne, subset_singleton_iff_eq, or_and_right, and_not_self_iff, or_false_iff, and_iff_left_iff_imp] <;> exact fun h => h ▸ (singleton_ne_empty _).symm",
+      "minimality_status": "unconfirmed",
+      "minimality_results": [
+        {
+          "probe": "simp",
+          "solved": false
+        },
+        {
+          "probe": "simp_all",
+          "solved": false
+        },
+        {
+          "probe": "aesop",
+          "solved": false
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false
+        }
+      ],
+      "requires_ns23_relabel": true,
+      "classification": "search_depth_gap",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_empty_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|membership|all_tactics_errored",
+      "primary_goal_shape": "membership",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s : Set α\n⊢ t.ite s ∅ = s ∩ t",
+      "num_probes": 23,
+      "outcomes": [
+        {
+          "family": "A_baselines",
+          "probe": "simp",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp_all [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": true,
+          "outcome": "solved"
+        }
+      ],
+      "solved_by_probe": true,
+      "winning_probe": "simp [Set.ite]",
+      "winning_family": "E_ite_bycases",
+      "minimal_sufficient_probe": "simp [Set.ite]",
+      "minimality_status": "unconfirmed",
+      "minimality_results": [
+        {
+          "probe": "simp",
+          "solved": false
+        },
+        {
+          "probe": "simp_all",
+          "solved": false
+        },
+        {
+          "probe": "aesop",
+          "solved": false
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false
+        }
+      ],
+      "requires_ns23_relabel": true,
+      "classification": "tactic_gap",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": "Set|rc1_production_stack|membership|all_tactics_errored",
+      "primary_goal_shape": "membership",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ s : Set α\n⊢ t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s",
+      "num_probes": 24,
+      "outcomes": [
+        {
+          "family": "A_baselines",
+          "probe": "simp",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp_all [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp_all [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp only [Set.ite]",
+          "label": "ite_unfold_only",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ s : Set α\n⊢ t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp_all",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ s : Set α\n⊢ t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "classical <;> simp [Set.ite]",
+          "label": "classical_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "family": "F_source_inspired",
+          "probe": "rw [ite_inter_inter, ite_same]",
+          "label": "official rw bridge",
+          "source_inspired": true,
+          "risk": "high",
+          "solved": true,
+          "outcome": "solved"
+        }
+      ],
+      "solved_by_probe": true,
+      "winning_probe": "rw [ite_inter_inter, ite_same]",
+      "winning_family": "F_source_inspired",
+      "minimal_sufficient_probe": "rw [ite_inter_inter, ite_same]",
+      "minimality_status": "unconfirmed",
+      "minimality_results": [
+        {
+          "probe": "simp",
+          "solved": false
+        },
+        {
+          "probe": "simp_all",
+          "solved": false
+        },
+        {
+          "probe": "aesop",
+          "solved": false
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false
+        }
+      ],
+      "requires_ns23_relabel": true,
+      "classification": "search_depth_gap",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": "Set|rc1_production_stack|membership|all_tactics_errored",
+      "primary_goal_shape": "membership",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n⊢ t.ite s s' ∩ t = s ∩ t",
+      "num_probes": 25,
+      "outcomes": [
+        {
+          "family": "A_baselines",
+          "probe": "simp",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp_all [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp_all [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp only [Set.ite]",
+          "label": "ite_unfold_only",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "F_source_inspired",
+          "probe": "simp [Set.ite, inter_assoc]",
+          "label": null,
+          "source_inspired": true,
+          "risk": "medium",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all [Set.ext_iff]",
+          "label": "baseline_ext_iff",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n⊢ t.ite s s' ∩ t = s ∩ t"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "intro x <;> simp_all",
+          "label": "subset_intro",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'introN' failed, insufficient number of binders\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n⊢ t.ite s s' ∩ t = s ∩ t"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "label": "antisymm",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "classical <;> simp [Set.ite]",
+          "label": "classical_ite",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        },
+        {
+          "family": "F_source_inspired",
+          "probe": "rw [Set.ite, union_inter_distrib_right, diff_inter_self, inter_assoc, inter_self, union_empty]",
+          "label": "official rw chain, single tactic",
+          "source_inspired": true,
+          "risk": "high",
+          "solved": true,
+          "outcome": "solved"
+        }
+      ],
+      "solved_by_probe": true,
+      "winning_probe": "rw [Set.ite, union_inter_distrib_right, diff_inter_self, inter_assoc, inter_self, union_empty]",
+      "winning_family": "F_source_inspired",
+      "minimal_sufficient_probe": "rw [Set.ite, union_inter_distrib_right, diff_inter_self, inter_assoc, inter_self, union_empty]",
+      "minimality_status": "unconfirmed",
+      "minimality_results": [
+        {
+          "probe": "simp",
+          "solved": false
+        },
+        {
+          "probe": "simp_all",
+          "solved": false
+        },
+        {
+          "probe": "aesop",
+          "solved": false
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false
+        }
+      ],
+      "requires_ns23_relabel": true,
+      "classification": "search_depth_gap",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|membership|all_tactics_errored",
+      "primary_goal_shape": "membership",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\n⊢ s.ite t s = t ∩ s",
+      "num_probes": 23,
+      "outcomes": [
+        {
+          "family": "A_baselines",
+          "probe": "simp",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "A_baselines",
+          "probe": "simp_all",
+          "label": "trivial_existing_tactic",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "family": "D_subset_diff_union",
+          "probe": "simp_all [Set.subset_def]",
+          "label": "subset_def",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "family": "E_ite_bycases",
+          "probe": "simp [Set.ite]",
+          "label": "ite_unfold",
+          "source_inspired": false,
+          "risk": "none",
+          "solved": true,
+          "outcome": "solved"
+        }
+      ],
+      "solved_by_probe": true,
+      "winning_probe": "simp [Set.ite]",
+      "winning_family": "E_ite_bycases",
+      "minimal_sufficient_probe": "simp [Set.ite]",
+      "minimality_status": "unconfirmed",
+      "minimality_results": [
+        {
+          "probe": "simp",
+          "solved": false
+        },
+        {
+          "probe": "simp_all",
+          "solved": false
+        },
+        {
+          "probe": "aesop",
+          "solved": false
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false
+        }
+      ],
+      "requires_ns23_relabel": true,
+      "classification": "tactic_gap",
+      "setup_error": null
+    }
+  ],
+  "note": "Live LeanDojo probes. No solve is a confirmed win; NS23 minimal-sufficient relabel + deterministic reproduction required before any promotion. RC1/production configs untouched.",
+  "ladders": "project/evolve/experiments/sf2/set_probe_ladders.json"
+}

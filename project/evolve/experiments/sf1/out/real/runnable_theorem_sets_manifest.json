@@ -1,0 +1,35 @@
+{
+  "theorem_sets_dir": "project/evolve/experiments/sf1/theorem_sets",
+  "sets": [
+    {
+      "name": "sf1_multiset_holdout_runnable",
+      "path": "project/evolve/experiments/sf1/theorem_sets/sf1_multiset_holdout_runnable.json",
+      "size": 3,
+      "source_batch": "sf1_multiset_holdout",
+      "dropped_missing_path": 0,
+      "schema": "{set_name: [{file_path, full_name, namespace}]}",
+      "registered": false,
+      "eval_name": "sf1_multiset_holdout_runnable"
+    },
+    {
+      "name": "sf1_balanced_mini_runnable",
+      "path": "project/evolve/experiments/sf1/theorem_sets/sf1_balanced_mini_runnable.json",
+      "size": 6,
+      "source_batch": "sf1_balanced_mini",
+      "dropped_missing_path": 2,
+      "schema": "{set_name: [{file_path, full_name, namespace}]}",
+      "registered": false,
+      "eval_name": "sf1_balanced_mini_runnable"
+    },
+    {
+      "name": "sf1_frontier_runnable_subset",
+      "path": "project/evolve/experiments/sf1/theorem_sets/sf1_frontier_runnable_subset.json",
+      "size": 20,
+      "source_batch": "sf1_frontier_all",
+      "dropped_missing_path": 2,
+      "schema": "{set_name: [{file_path, full_name, namespace}]}",
+      "registered": false,
+      "eval_name": "sf1_frontier_runnable_subset"
+    }
+  ]
+}

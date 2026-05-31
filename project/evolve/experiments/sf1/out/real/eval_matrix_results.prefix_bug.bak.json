@@ -1,0 +1,36 @@
+{
+  "run_real": true,
+  "results": [
+    {
+      "policy": "rc1",
+      "batch": "sf1_multiset_holdout",
+      "theorem_set": "sf1_multiset_holdout_runnable",
+      "ran": true,
+      "return_code": 0,
+      "run_dir": "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable",
+      "status": "ran",
+      "stdout_log": "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval.stdout.log",
+      "stderr_log": "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval.stderr.log",
+      "metrics_path": "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval-4e872b94/metrics.json",
+      "solved": 0,
+      "total": 3,
+      "per_theorem": [
+        {
+          "full_name": "Multiset.toFinset_nsmul",
+          "solved": false,
+          "winning_tactic": "aesop"
+        },
+        {
+          "full_name": "Multiset.toFinset_eq_singleton_iff",
+          "solved": false,
+          "winning_tactic": null
+        },
+        {
+          "full_name": "Multiset.disjoint_toFinset",
+          "solved": false,
+          "winning_tactic": "induction m1 using Multiset.induction_on <;> simp_all"
+        }
+      ]
+    }
+  ]
+}

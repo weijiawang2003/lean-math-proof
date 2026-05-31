@@ -1,0 +1,150 @@
+{
+  "targets": [
+    "Set.ite_inter",
+    "Set.ite_inter_self",
+    "Set.ite_compl",
+    "Set.ite_inter_compl_self"
+  ],
+  "probe_ladder": [
+    "simp [Set.ite]",
+    "simp [Set.ite] <;> aesop",
+    "simp [Set.ite] <;> simp_all",
+    "simp [Set.ite] <;> try aesop",
+    "aesop",
+    "simp_all",
+    "simp [Set.ext_iff]",
+    "simp [Set.ite, Set.ext_iff]",
+    "ext x <;> simp [Set.ite]"
+  ],
+  "credit_status_histogram": {
+    "sx3_sequence_candidate": 4
+  },
+  "sx3_sequence_candidates": [
+    "Set.ite_inter",
+    "Set.ite_inter_self",
+    "Set.ite_compl",
+    "Set.ite_inter_compl_self"
+  ],
+  "excluded": [],
+  "credited": [],
+  "results": [
+    {
+      "full_name": "Set.ite_inter",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ s : Set α\n⊢ t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s",
+      "rc1_finished": false,
+      "rc2_finished": true,
+      "set_ite_emitted": true,
+      "set_ite_directly_closed": false,
+      "rc2_finishing_step": [
+        2,
+        "aesop"
+      ],
+      "rc2_simp_set_ite_advances": true,
+      "rc1_trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc2/out/rc1_runs/sf1_frontier_runnable_subset/eval-286f379b/traces.jsonl",
+      "rc2_trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc2/out/rc2_candidate_runs/set_ite_selected_failures/eval-1d2ff254/traces.jsonl",
+      "direct_probes": {
+        "simp [Set.ite]": "proof_failed",
+        "simp [Set.ite] <;> aesop": "solved",
+        "simp [Set.ite] <;> simp_all": "proof_failed",
+        "simp [Set.ite] <;> try aesop": "solved",
+        "aesop": "proof_failed",
+        "simp_all": "proof_failed",
+        "simp [Set.ext_iff]": "proof_failed",
+        "simp [Set.ite, Set.ext_iff]": "proof_failed",
+        "ext x <;> simp [Set.ite]": "proof_failed"
+      },
+      "candidate_role": "enabling_step",
+      "credit_status": "sx3_sequence_candidate",
+      "reason": "simp [Set.ite] then aesop/simp_all closes it (depth-2 sequence), but bare baselines and single-shot simp[Set.ite] do NOT -> SX3 sequence candidate, not an RC2 single-shot credited win"
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n⊢ t.ite s s' ∩ t = s ∩ t",
+      "rc1_finished": false,
+      "rc2_finished": true,
+      "set_ite_emitted": true,
+      "set_ite_directly_closed": false,
+      "rc2_finishing_step": [
+        2,
+        "aesop"
+      ],
+      "rc2_simp_set_ite_advances": true,
+      "rc1_trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc2/out/rc1_runs/sf1_frontier_runnable_subset/eval-286f379b/traces.jsonl",
+      "rc2_trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc2/out/rc2_candidate_runs/set_ite_selected_failures/eval-1d2ff254/traces.jsonl",
+      "direct_probes": {
+        "simp [Set.ite]": "proof_failed",
+        "simp [Set.ite] <;> aesop": "solved",
+        "simp [Set.ite] <;> simp_all": "proof_failed",
+        "simp [Set.ite] <;> try aesop": "solved",
+        "aesop": "proof_failed",
+        "simp_all": "proof_failed",
+        "simp [Set.ext_iff]": "proof_failed",
+        "simp [Set.ite, Set.ext_iff]": "proof_failed",
+        "ext x <;> simp [Set.ite]": "proof_failed"
+      },
+      "candidate_role": "enabling_step",
+      "credit_status": "sx3_sequence_candidate",
+      "reason": "simp [Set.ite] then aesop/simp_all closes it (depth-2 sequence), but bare baselines and single-shot simp[Set.ite] do NOT -> SX3 sequence candidate, not an RC2 single-shot credited win"
+    },
+    {
+      "full_name": "Set.ite_compl",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n⊢ tᶜ.ite s s' = t.ite s' s",
+      "rc1_finished": false,
+      "rc2_finished": true,
+      "set_ite_emitted": true,
+      "set_ite_directly_closed": false,
+      "rc2_finishing_step": null,
+      "rc2_simp_set_ite_advances": true,
+      "rc1_trace_path": null,
+      "rc2_trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc2/out/rc2_candidate_runs/set_ite_fresh_holdout/eval-88b3ce93/traces.jsonl",
+      "direct_probes": {
+        "simp [Set.ite]": "proof_failed",
+        "simp [Set.ite] <;> aesop": "solved",
+        "simp [Set.ite] <;> simp_all": "proof_failed",
+        "simp [Set.ite] <;> try aesop": "solved",
+        "aesop": "proof_failed",
+        "simp_all": "proof_failed",
+        "simp [Set.ext_iff]": "proof_failed",
+        "simp [Set.ite, Set.ext_iff]": "proof_failed",
+        "ext x <;> simp [Set.ite]": "proof_failed"
+      },
+      "candidate_role": "enabling_step",
+      "credit_status": "sx3_sequence_candidate",
+      "reason": "simp [Set.ite] then aesop/simp_all closes it (depth-2 sequence), but bare baselines and single-shot simp[Set.ite] do NOT -> SX3 sequence candidate, not an RC2 single-shot credited win"
+    },
+    {
+      "full_name": "Set.ite_inter_compl_self",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n⊢ t.ite s s' ∩ tᶜ = s' ∩ tᶜ",
+      "rc1_finished": false,
+      "rc2_finished": true,
+      "set_ite_emitted": true,
+      "set_ite_directly_closed": false,
+      "rc2_finishing_step": [
+        2,
+        "aesop"
+      ],
+      "rc2_simp_set_ite_advances": true,
+      "rc1_trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc2/out/rc1_runs/sf1_frontier_runnable_subset/eval-286f379b/traces.jsonl",
+      "rc2_trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc2/out/rc2_candidate_runs/sf1_frontier_runnable_subset/eval-c83d10fe/traces.jsonl",
+      "direct_probes": {
+        "simp [Set.ite]": "proof_failed",
+        "simp [Set.ite] <;> aesop": "solved",
+        "simp [Set.ite] <;> simp_all": "proof_failed",
+        "simp [Set.ite] <;> try aesop": "solved",
+        "aesop": "proof_failed",
+        "simp_all": "proof_failed",
+        "simp [Set.ext_iff]": "proof_failed",
+        "simp [Set.ite, Set.ext_iff]": "proof_failed",
+        "ext x <;> simp [Set.ite]": "proof_failed"
+      },
+      "candidate_role": "enabling_step",
+      "credit_status": "sx3_sequence_candidate",
+      "reason": "simp [Set.ite] then aesop/simp_all closes it (depth-2 sequence), but bare baselines and single-shot simp[Set.ite] do NOT -> SX3 sequence candidate, not an RC2 single-shot credited win"
+    }
+  ],
+  "note": "Live direct probes are authoritative. None of the +4 are RC2 single-shot credited wins unless simp[Set.ite] closes them alone."
+}

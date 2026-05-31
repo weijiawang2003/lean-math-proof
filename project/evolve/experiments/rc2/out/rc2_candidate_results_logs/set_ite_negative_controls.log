@@ -1,0 +1,44 @@
+[sf1_run_eval] registered 'rc2bench_set_ite_negative_controls' with 1 theorems (dropped 4 without file_path)
+[sf1_run_eval] delegating: eval_rollout_all.py --theorem-set rc2bench_set_ite_negative_controls --policy-type hybrid_evolved --route-config project/evolve/routing/ns24_router.json --strategy-config project/evolve/experiments/rc2/rc2_candidate_wrapper.json --top-k 8 --max-steps 8 --out-dir project/evolve/experiments/rc2/out/rc2_candidate_runs/set_ite_negative_controls
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : rc2bench_set_ite_negative_controls (1 theorems)
+  Checkpoint  : clf_ckpt
+  Policy type : hybrid_evolved
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+RoutedGenerativePolicy: 4 routes, default=project/models/gen_v5_ns12_balanced
+  '^Nat\\.' -> project/models/gen_v5_ns15_nat_oversample
+  '^Int\\.' -> project/models/gen_v5_ns24_int_minimal_omega_10x
+  '^Finset\\.' -> project/models/gen_v5_ns21_finset_aesop_20x
+  '^Set\\.' -> project/models/gen_v5_ns12_balanced
+[1/1] Multiset.toFinset_eq_singleton_iff
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 61938.21it/s]
+Loaded generative policy from project/models/gen_v5_ns12_balanced (type=seq2seq)
+  Base model: project/models/gen_v5
+  Unique tactics in training: 104
+       FAILED at step 4 (All top-13 tactics errored at step 4)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Multiset.toFinset_eq_singleton_iff       ERROR        4      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    1
+  Available:         1/1
+  Proved:            0/1  (0%)
+  Errored:           1/1
+  Exhausted:         0/1
+  Skipped:           0/1
+  Denied tactics:     8 (per-theorem deny-list)
+================================================================
+
+Run artifacts: project/evolve/experiments/rc2/out/rc2_candidate_runs/set_ite_negative_controls/eval-460e9819

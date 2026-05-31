@@ -1,0 +1,68 @@
+{
+  "ladder_name": "sf2_multiset_probe_ladder",
+  "version": 1,
+  "status": "experimental",
+  "note": "Deterministic probe ladders for the 3 SF1 Multiset RC1 failures. More precise than the generic WX3 ladder. NO probe here is promoted to any production config; this is an experimental relabel/probe plan only. {var}/{var2} are filled per theorem.",
+  "do_not_promote": true,
+  "base_probes": [
+    "simp",
+    "simp_all",
+    "aesop",
+    "classical; aesop",
+    "ext x <;> simp",
+    "ext x <;> simp_all",
+    "induction {var} using Multiset.induction_on <;> simp_all",
+    "induction {var} using Multiset.induction_on <;> simp [Multiset.toFinset_cons]",
+    "induction {var} using Multiset.induction_on <;> aesop"
+  ],
+  "minimality_prefix_probes": [
+    "simp",
+    "simp_all",
+    "aesop",
+    "ext x <;> simp"
+  ],
+  "theorems": [
+    {
+      "full_name": "Multiset.disjoint_toFinset",
+      "primary_var": "m1",
+      "secondary_var": "m2",
+      "motifs": ["toFinset_membership_bridge", "disjoint_bridge", "multiset_finset_ext"],
+      "specific_probes": [
+        "simp [Multiset.disjoint_toFinset]",
+        "simp [Disjoint, Multiset.disjoint_left, Multiset.mem_toFinset]",
+        "simp only [Finset.disjoint_left, Multiset.mem_toFinset]",
+        "rw [Finset.disjoint_left]; simp [Multiset.mem_toFinset]",
+        "constructor <;> intro h <;> simp_all [Finset.disjoint_left, Multiset.mem_toFinset, Multiset.disjoint_left]",
+        "aesop (add simp [Multiset.mem_toFinset, Finset.disjoint_left, Multiset.disjoint_left])"
+      ]
+    },
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "primary_var": "s",
+      "secondary_var": "a",
+      "motifs": ["singleton_bridge", "multiset_finset_ext", "toFinset_membership_bridge"],
+      "specific_probes": [
+        "simp [Finset.eq_singleton_iff_unique_mem, Multiset.mem_toFinset]",
+        "rw [Finset.eq_singleton_iff_unique_mem]; simp [Multiset.mem_toFinset]",
+        "constructor <;> intro h <;> simp_all [Finset.ext_iff, Multiset.mem_toFinset]",
+        "ext x <;> simp [Multiset.mem_toFinset]",
+        "aesop (add simp [Multiset.mem_toFinset, Finset.eq_singleton_iff_unique_mem])"
+      ]
+    },
+    {
+      "full_name": "Multiset.toFinset_nsmul",
+      "primary_var": "s",
+      "secondary_var": "n",
+      "motifs": ["nsmul_toFinset_bridge", "toFinset_membership_bridge", "nat_induction"],
+      "specific_probes": [
+        "ext x <;> simp [Multiset.mem_toFinset, Multiset.mem_nsmul]",
+        "ext x <;> simp [Multiset.mem_nsmul]",
+        "induction n <;> simp_all [Multiset.toFinset_cons, Multiset.succ_nsmul]",
+        "induction s using Multiset.induction_on <;> simp_all [Multiset.mem_nsmul]",
+        "simp [Finset.ext_iff, Multiset.mem_toFinset, Multiset.mem_nsmul]",
+        "aesop (add simp [Multiset.mem_toFinset, Multiset.mem_nsmul])"
+      ],
+      "preconditions_note": "(n • s).toFinset = s.toFinset is expected to require n ≠ 0 (a 0-smul empties the multiset). The lemma statement likely carries that hypothesis; probes must respect it."
+    }
+  ]
+}

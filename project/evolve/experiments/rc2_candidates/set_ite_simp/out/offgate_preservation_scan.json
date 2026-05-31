@@ -1,0 +1,134 @@
+{
+  "mode": "dry_gate_only_scan",
+  "gate_policy": "project/evolve/experiments/rc2_candidates/set_ite_simp/set_ite_simp_gate_policy.json",
+  "scanned_theorem_count": 25,
+  "gate_emissions_total": 2,
+  "off_gate_emissions": 0,
+  "unexpected_set_ite_emissions": 0,
+  "set_positive_controls_fired": "2/2",
+  "expected": "0 emissions on Nat/Int/Multiset/canonical (off-gate=0); only Set+ite goals fire; positive Set controls fire.",
+  "sanity_ok": true,
+  "surface_reports": [
+    {
+      "surface": "nat_only",
+      "is_set_surface": false,
+      "count": 4,
+      "fired": 0,
+      "rows": [
+        {
+          "theorem": "Nat.add_comm",
+          "fired": false
+        },
+        {
+          "theorem": "Nat.mul_succ",
+          "fired": false
+        },
+        {
+          "theorem": "Nat.mod_self",
+          "fired": false
+        },
+        {
+          "theorem": "Nat.add_mod_eq_ite",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "surface": "int_only",
+      "is_set_surface": false,
+      "count": 2,
+      "fired": 0,
+      "rows": [
+        {
+          "theorem": "Int.add_mul",
+          "fired": false
+        },
+        {
+          "theorem": "Int.neg_neg",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "surface": "multiset",
+      "is_set_surface": false,
+      "count": 2,
+      "fired": 0,
+      "rows": [
+        {
+          "theorem": "Multiset.toFinset_eq_singleton_iff",
+          "fired": false
+        },
+        {
+          "theorem": "Multiset.cons_inj_left",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "surface": "demo_v1",
+      "is_set_surface": false,
+      "count": 3,
+      "fired": 0,
+      "rows": [
+        {
+          "theorem": "Nat.add_zero",
+          "fired": false
+        },
+        {
+          "theorem": "Bool.and_self",
+          "fired": false
+        },
+        {
+          "theorem": "List.append_nil",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "surface": "nat_defs_medium",
+      "is_set_surface": false,
+      "count": 2,
+      "fired": 0,
+      "rows": [
+        {
+          "theorem": "Nat.succ_le_succ",
+          "fired": false
+        },
+        {
+          "theorem": "Nat.pow_zero",
+          "fired": false
+        }
+      ]
+    },
+    {
+      "surface": "set_positive_control",
+      "is_set_surface": true,
+      "count": 2,
+      "fired": 2,
+      "rows": [
+        {
+          "theorem": "Set.ite_right",
+          "fired": true
+        },
+        {
+          "theorem": "Set.ite_empty_left",
+          "fired": true
+        }
+      ]
+    }
+  ],
+  "disk_set_name_only_scan": [
+    {
+      "set": "set_ite_negative_controls",
+      "count": 5,
+      "fired_name_only": 0
+    },
+    {
+      "set": "set_ite_canonical_smoke",
+      "count": 5,
+      "fired_name_only": 0
+    }
+  ],
+  "note": "Gate is a pure name+goal predicate; dry scan is deterministic and sufficient. Live eval on canonical surfaces unnecessary (gate cannot fire without 'Set' in the name). SET_ITE_SIMP is off-by-default in prod."
+}

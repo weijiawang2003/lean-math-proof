@@ -1,0 +1,726 @@
+{
+  "num_failures": 20,
+  "num_genuine_failures": 18,
+  "num_junk_or_unresolved": 2,
+  "num_clusters": 10,
+  "eval_results_used": [
+    "project/evolve/experiments/sf1/out/real/eval_matrix_results.json"
+  ],
+  "clusters": [
+    {
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|iff|all_tactics_errored",
+      "size": 4,
+      "namespace": "Set",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "primary_goal_shape": "iff",
+      "failure_type": "all_tactics_errored",
+      "representative_theorems": [
+        "Set.ssubset_singleton_iff",
+        "Set.ssubset_singleton_iff",
+        "Set.antitoneOn_iff_antitone",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le"
+      ],
+      "shared_features": [
+        "has_iff",
+        "likely_aesop"
+      ],
+      "has_full_trace": true,
+      "likely_missing_capability": "iff decomposition before simp/ext",
+      "candidate_probe_family": "split_iff_then_ext_membership",
+      "candidate_lemma_template": null,
+      "priority": "high",
+      "expected_utility": "multi",
+      "next_action": "probe"
+    },
+    {
+      "cluster_id": "Set|broad_set_aesop_rejected|equality|all_tactics_errored",
+      "size": 3,
+      "namespace": "Set",
+      "top_candidate_family": "broad_set_aesop_rejected",
+      "primary_goal_shape": "equality",
+      "failure_type": "all_tactics_errored",
+      "representative_theorems": [
+        "Set.ite_eq_of_subset_left",
+        "Set.subset_singleton_iff_eq",
+        "Set.ite_eq_of_subset_right"
+      ],
+      "shared_features": [
+        "has_eq",
+        "has_iff",
+        "has_subset",
+        "likely_aesop",
+        "likely_extensionality"
+      ],
+      "has_full_trace": true,
+      "likely_missing_capability": "needs source-proof inspection",
+      "candidate_probe_family": "simp/aesop baseline",
+      "candidate_lemma_template": null,
+      "priority": "high",
+      "expected_utility": "multi",
+      "next_action": "probe"
+    },
+    {
+      "cluster_id": "Set|rc1_production_stack|membership|all_tactics_errored",
+      "size": 3,
+      "namespace": "Set",
+      "top_candidate_family": "rc1_production_stack",
+      "primary_goal_shape": "membership",
+      "failure_type": "all_tactics_errored",
+      "representative_theorems": [
+        "Set.ite_inter_self",
+        "Set.ite_inter_compl_self",
+        "Set.ite_inter"
+      ],
+      "shared_features": [
+        "likely_aesop"
+      ],
+      "has_full_trace": true,
+      "likely_missing_capability": "needs source-proof inspection",
+      "candidate_probe_family": "simp/aesop baseline",
+      "candidate_lemma_template": null,
+      "priority": "high",
+      "expected_utility": "multi",
+      "next_action": "probe"
+    },
+    {
+      "cluster_id": "Set|rc1_production_stack|equality|all_tactics_errored",
+      "size": 3,
+      "namespace": "Set",
+      "top_candidate_family": "rc1_production_stack",
+      "primary_goal_shape": "equality",
+      "failure_type": "all_tactics_errored",
+      "representative_theorems": [
+        "Set.subset_insert_iff",
+        "Set.diff_singleton_subset_iff",
+        "Set.union_empty_iff"
+      ],
+      "shared_features": [
+        "has_iff",
+        "has_subset",
+        "likely_aesop"
+      ],
+      "has_full_trace": true,
+      "likely_missing_capability": "needs source-proof inspection",
+      "candidate_probe_family": "simp/aesop baseline",
+      "candidate_lemma_template": null,
+      "priority": "high",
+      "expected_utility": "multi",
+      "next_action": "probe"
+    },
+    {
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|membership|all_tactics_errored",
+      "size": 2,
+      "namespace": "Set",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "primary_goal_shape": "membership",
+      "failure_type": "all_tactics_errored",
+      "representative_theorems": [
+        "Set.ite_right",
+        "Set.ite_empty_right"
+      ],
+      "shared_features": [
+        "likely_aesop"
+      ],
+      "has_full_trace": true,
+      "likely_missing_capability": "needs source-proof inspection",
+      "candidate_probe_family": "simp/aesop baseline",
+      "candidate_lemma_template": null,
+      "priority": "high",
+      "expected_utility": "multi",
+      "next_action": "probe"
+    },
+    {
+      "cluster_id": "Multiset|wx3_multiset_induction|equality|all_tactics_errored",
+      "size": 1,
+      "namespace": "Multiset",
+      "top_candidate_family": "wx3_multiset_induction",
+      "primary_goal_shape": "equality",
+      "failure_type": "all_tactics_errored",
+      "representative_theorems": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "shared_features": [
+        "has_eq",
+        "has_iff",
+        "has_toFinset",
+        "likely_aesop",
+        "likely_multiset_induction"
+      ],
+      "has_full_trace": true,
+      "likely_missing_capability": "Multiset induction routing (avoid on membership/iff goals)",
+      "candidate_probe_family": "simp/aesop baseline",
+      "candidate_lemma_template": null,
+      "priority": "high",
+      "expected_utility": "single",
+      "next_action": "probe"
+    },
+    {
+      "cluster_id": "Prop|future_failure_driven_lemma_candidate|equality|unresolved_or_junk",
+      "size": 1,
+      "namespace": "Prop",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "primary_goal_shape": "equality",
+      "failure_type": "unresolved_or_junk",
+      "representative_theorems": [
+        "Prop.compl_singleton"
+      ],
+      "shared_features": [],
+      "has_full_trace": true,
+      "likely_missing_capability": "needs source-proof inspection",
+      "candidate_probe_family": "simp/aesop baseline",
+      "candidate_lemma_template": null,
+      "priority": "low",
+      "expected_utility": "single",
+      "next_action": "ignore"
+    },
+    {
+      "cluster_id": "Function|future_failure_driven_lemma_candidate|equality|all_tactics_errored",
+      "size": 1,
+      "namespace": "Function",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "primary_goal_shape": "equality",
+      "failure_type": "all_tactics_errored",
+      "representative_theorems": [
+        "Function.Injective.nonempty_apply_iff"
+      ],
+      "shared_features": [
+        "has_iff",
+        "likely_aesop"
+      ],
+      "has_full_trace": true,
+      "likely_missing_capability": "needs source-proof inspection",
+      "candidate_probe_family": "simp/aesop baseline",
+      "candidate_lemma_template": null,
+      "priority": "high",
+      "expected_utility": "single",
+      "next_action": "probe"
+    },
+    {
+      "cluster_id": "Eq|future_failure_driven_lemma_candidate|equality|unresolved_or_junk",
+      "size": 1,
+      "namespace": "Eq",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "primary_goal_shape": "equality",
+      "failure_type": "unresolved_or_junk",
+      "representative_theorems": [
+        "Eq.subset"
+      ],
+      "shared_features": [
+        "has_eq",
+        "has_subset",
+        "likely_aesop"
+      ],
+      "has_full_trace": true,
+      "likely_missing_capability": "needs source-proof inspection",
+      "candidate_probe_family": "simp/aesop baseline",
+      "candidate_lemma_template": null,
+      "priority": "low",
+      "expected_utility": "single",
+      "next_action": "ignore"
+    },
+    {
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|equality|all_tactics_errored",
+      "size": 1,
+      "namespace": "Set",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "primary_goal_shape": "equality",
+      "failure_type": "all_tactics_errored",
+      "representative_theorems": [
+        "Set.pair_eq_pair_iff"
+      ],
+      "shared_features": [
+        "has_eq",
+        "has_iff",
+        "likely_aesop",
+        "likely_extensionality"
+      ],
+      "has_full_trace": true,
+      "likely_missing_capability": "needs source-proof inspection",
+      "candidate_probe_family": "simp/aesop baseline",
+      "candidate_lemma_template": null,
+      "priority": "high",
+      "expected_utility": "single",
+      "next_action": "probe"
+    }
+  ],
+  "failures": [
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "namespace": "Multiset",
+      "policy": "rc1",
+      "theorem_set": "sf1_multiset_holdout_runnable",
+      "winning_tactic": null,
+      "error_message": "All top-13 tactics errored at step 4",
+      "num_steps": 4,
+      "final_goal": "case h\nα : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst : DecidableEq α\ns t : Multiset α\na : α\na_1 : ∅ = {a}\n⊢ False\n\ncase cons\nα : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝ : DecidableEq α\ns t : Multiset α\na a✝¹ : α\ns✝ : Multiset α\na✝ : s✝.toFinset = {a} ↔ ¬s✝ = 0 ∧ s✝ = card s✝ • {a}\n⊢ insert a✝¹ s✝.toFinset = {a} ↔ a✝¹ ::ₘ s✝ = (card s✝ + 1) • {a}",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "wx3_multiset_induction",
+      "tags": [
+        "has_iff",
+        "has_eq",
+        "has_toFinset",
+        "likely_aesop",
+        "likely_multiset_induction"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "equality",
+        "iff",
+        "nsmul",
+        "singleton",
+        "toFinset"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Prop.compl_singleton",
+      "namespace": "Prop",
+      "policy": "rc1",
+      "theorem_set": "sf1_balanced_mini_runnable",
+      "winning_tactic": null,
+      "error_message": "All top-12 tactics errored at step 1",
+      "num_steps": 1,
+      "final_goal": "α : Type u_1\nβ : Type u_2\ns t u : Set α\nf : α → β\np : Prop\n⊢ {p}ᶜ = {¬p}",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "tags": [],
+      "failure_type": "unresolved_or_junk",
+      "goal_shapes": [
+        "equality",
+        "singleton"
+      ],
+      "is_junk_or_unresolved": true,
+      "has_trace": true
+    },
+    {
+      "full_name": "Function.Injective.nonempty_apply_iff",
+      "namespace": "Function",
+      "policy": "rc1",
+      "theorem_set": "sf1_balanced_mini_runnable",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 2",
+      "num_steps": 2,
+      "final_goal": "case mp\nι : Sort u_1\nα : Type u_2\nβ : Type u_3\nf_1 : α → β\nf : Set α → Set β\nhf : Injective f\nh2 : f ∅ = ∅\ns : Set α\na : (f s).Nonempty\n⊢ s.Nonempty\n\ncase mpr\nι : Sort u_1\nα : Type u_2\nβ : Type u_3\nf_1 : α → β\nf : Set α → Set β\nhf : Injective f\nh2 : f ∅ = ∅\ns : Set α\na : s.Nonempty\n⊢ (f s).Nonempty",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "tags": [
+        "has_iff",
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "equality",
+        "iff"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_balanced_mini_runnable",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 3",
+      "num_steps": 3,
+      "final_goal": "case mp.h\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t t₁ t₂ u s : Set α\nx : α\na_1 : s ⊂ {x}\nx_1 : α\na_2 : x_1 ∈ s\n⊢ False\n\ncase mpr\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t t₁ t₂ u s : Set α\nx : α\na_1 : ∀ (x : α), x ∉ s\n⊢ s ⊂ {x}",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "tags": [
+        "has_iff",
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "iff",
+        "membership",
+        "singleton",
+        "subset"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Eq.subset",
+      "namespace": "Eq",
+      "policy": "rc1",
+      "theorem_set": "sf1_balanced_mini_runnable",
+      "winning_tactic": null,
+      "error_message": "All top-12 tactics errored at step 1",
+      "num_steps": 1,
+      "final_goal": "α : Type u_1\ns t : Set α\n⊢ s = t → s ⊆ t",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "tags": [
+        "has_eq",
+        "has_subset",
+        "likely_aesop"
+      ],
+      "failure_type": "unresolved_or_junk",
+      "goal_shapes": [
+        "equality",
+        "subset"
+      ],
+      "is_junk_or_unresolved": true,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 3",
+      "num_steps": 3,
+      "final_goal": "case mp.h\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t t₁ t₂ u s : Set α\nx : α\na_1 : s ⊂ {x}\nx_1 : α\na_2 : x_1 ∈ s\n⊢ False\n\ncase mpr\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t t₁ t₂ u s : Set α\nx : α\na_1 : ∀ (x : α), x ∉ s\n⊢ s ⊂ {x}",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "tags": [
+        "has_iff",
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "iff",
+        "membership",
+        "singleton",
+        "subset"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-12 tactics errored at step 1",
+      "num_steps": 1,
+      "final_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ : Set α\nh : s₁ ⊆ s₂\n⊢ t.ite s₁ s₂ = s₁ ∪ s₂ \\ t",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "broad_set_aesop_rejected",
+      "tags": [
+        "has_eq",
+        "has_subset",
+        "likely_extensionality",
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "equality",
+        "subset"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-14 tactics errored at step 1",
+      "num_steps": 1,
+      "final_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\ninst✝¹ : Preorder α\ninst✝ : Preorder β\nf : α → β\n⊢ AntitoneOn f s ↔ Antitone fun a => f ↑a",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "tags": [
+        "has_iff",
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "iff"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 3",
+      "num_steps": 3,
+      "final_goal": "case mp\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u t s s' : Set α\nx : α\na_1 : x ∈ t\na_2 : x ∈ t.ite s s'\n⊢ x ∈ s\n\ncase mpr\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u t s s' : Set α\nx : α\na_1 : x ∈ t\na_2 : x ∈ s\n⊢ x ∈ t.ite s s'",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "rc1_production_stack",
+      "tags": [
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "membership"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.ite_inter_compl_self",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 3",
+      "num_steps": 3,
+      "final_goal": "case mp\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u t s s' : Set α\nx : α\na_1 : x ∉ t\na_2 : x ∈ t.ite s s'\n⊢ x ∈ s'\n\ncase mpr\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u t s s' : Set α\nx : α\na_1 : x ∉ t\na_2 : x ∈ s'\n⊢ x ∈ t.ite s s'",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "rc1_production_stack",
+      "tags": [
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "membership"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 3",
+      "num_steps": 3,
+      "final_goal": "case mp\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u s t : Set α\nx : α\na_1 : ∀ x_1 ∈ s, x_1 = x ∨ x_1 ∈ t\n⊢ (∀ x ∈ s, x ∈ t) ∨ x ∈ s ∧ ∀ x_1 ∈ s, ¬x_1 = x → x_1 ∈ t\n\ncase mpr.inr\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u s t : Set α\nx x_1 : α\na_2 : x_1 ∈ s\nleft : x ∈ s\nright : ∀ x_2 ∈ s, ¬x_2 = x → x_2 ∈ t\n⊢ x_1 = x ∨ x_1 ∈ t",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "rc1_production_stack",
+      "tags": [
+        "has_iff",
+        "has_subset",
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "equality",
+        "iff",
+        "membership",
+        "subset"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.ite_right",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 3",
+      "num_steps": 3,
+      "final_goal": "case mp.left\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u s t : Set α\nx : α\na_1 : x ∈ s.ite t s\n⊢ x ∈ t\n\ncase mp.right\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u s t : Set α\nx : α\na_1 : x ∈ s.ite t s\n⊢ x ∈ s\n\ncase mpr\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u s t : Set α\nx : α\nleft : x ∈ t\nright : x ∈ s\n⊢ x ∈ s.ite t s",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "tags": [
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "membership"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 2",
+      "num_steps": 2,
+      "final_goal": "case mp\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t t₁ t₂ u s : Set α\nx : α\na_1 : ∀ y ∈ s, y = x\n⊢ s = ∅ ∨ s = {x}",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "broad_set_aesop_rejected",
+      "tags": [
+        "has_iff",
+        "has_eq",
+        "has_subset",
+        "likely_extensionality",
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "equality",
+        "iff",
+        "membership",
+        "singleton",
+        "subset"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 2",
+      "num_steps": 2,
+      "final_goal": "case mp\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\nx y z w : α\na_1 : {x, y} = {z, w}\n⊢ x = z ∧ y = w ∨ x = w ∧ y = z\n\ncase mpr.inr\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\nx y : α\n⊢ {x, y} = {y, x}",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "tags": [
+        "has_iff",
+        "has_eq",
+        "likely_extensionality",
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "equality",
+        "iff",
+        "singleton"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.ite_inter",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 3",
+      "num_steps": 3,
+      "final_goal": "case mp.left\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁_1 s₂_1 t_1 t₁ t₂ u t s₁ s₂ s : Set α\nx : α\na_1 : x ∈ t.ite (s₁ ∩ s) (s₂ ∩ s)\n⊢ x ∈ t.ite s₁ s₂\n\ncase mp.right\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁_1 s₂_1 t_1 t₁ t₂ u t s₁ s₂ s : Set α\nx : α\na_1 : x ∈ t.ite (s₁ ∩ s) (s₂ ∩ s)\n⊢ x ∈ s\n\ncase mpr\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁_1 s₂_1 t_1 t₁ t₂ u t s₁ s₂ s : Set α\nx : α\nleft : x ∈ t.ite s₁ s₂\nright : x ∈ s\n⊢ x ∈ t.ite (s₁ ∩ s) (s₂ ∩ s)",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "rc1_production_stack",
+      "tags": [
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "membership"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 2",
+      "num_steps": 2,
+      "final_goal": "case mp\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\ninst : LinearOrder α\ninst_1 : LinearOrder β\nf : α → β\nleft : ¬MonotoneOn f s\nright : ¬AntitoneOn f s\n⊢ ∃ a ∈ s, ∃ b ∈ s, ∃ c ∈ s, a ≤ b ∧ b ≤ c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)\n\ncase mpr.inl.left.h\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\ninst : LinearOrder α\ninst_1 : LinearOrder β\nf : α → β\nw : α\nleft : w ∈ s\nw_1 : α\nleft_1 : w_1 ∈ s\nw_2 : α\nleft_2 : w_2 ∈ s\nleft_3 : w ≤ w_1\nleft_4 : w_1 ≤ w_2\nleft_5 : f w < f w_1\nright : f w_2 < f w_1\na_1 : MonotoneOn f s\n⊢ False\n\ncase mpr.inl.right.h\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\ninst : LinearOrder α\ninst_1 : LinearOrder β\nf : α → β\nw : α\nleft : w ∈ s\nw_1 : α\nleft_1 : w_1 ∈ s\nw_2 : α\nleft_2 : w_2 ∈ s\nleft_3 : w ≤ w_1\nleft_4 : w_1 ≤ w_2\nleft_5 : f w < f w_1\nright : f w_2 < f w_1\na_1 : AntitoneOn f s\n⊢ False\n\ncase mpr.inr.left.h\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\ninst : LinearOrder α\ninst_1 : LinearOrder β\nf : α → β\nw : α\nleft : w ∈ s\nw_1 : α\nleft_1 : w_1 ∈ s\nw_2 : α\nleft_2 : w_2 ∈ s\nleft_3 : w ≤ w_1\nleft_4 : w_1 ≤ w_2\nleft_5 : f w_1 < f w\nright : f w_1 < f w_2\na_1 : MonotoneOn f s\n⊢ False\n\ncase mpr.inr.right.h\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\ninst : LinearOrder α\ninst_1 : LinearOrder β\nf : α → β\nw : α\nleft : w ∈ s\nw_1 : α\nleft_1 : w_1 ∈ s\nw_2 : α\nleft_2 : w_2 ∈ s\nleft_3 : w ≤ w_1\nleft_4 : w_1 ≤ w_2\nleft_5 : f w_1 < f w\nright : f w_1 < f w_2\na_1 : AntitoneOn f s\n⊢ False",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "tags": [
+        "has_iff",
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "iff",
+        "membership"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 5",
+      "num_steps": 5,
+      "final_goal": "case mpr\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u : Set α\nx : α\ns t : Set α\na_1 : s ⊆ insert x t\nx_1 : α\na_2 : x_1 ∈ s\na_3 : ¬x_1 = x\n⊢ x_1 ∈ t",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "rc1_production_stack",
+      "tags": [
+        "has_iff",
+        "has_subset",
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "equality",
+        "iff",
+        "membership",
+        "singleton",
+        "subset"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.ite_empty_right",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 3",
+      "num_steps": 3,
+      "final_goal": "case mp.left\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u t s : Set α\nx : α\na_1 : x ∈ t.ite s ∅\n⊢ x ∈ s\n\ncase mp.right\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u t s : Set α\nx : α\na_1 : x ∈ t.ite s ∅\n⊢ x ∈ t\n\ncase mpr\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u t s : Set α\nx : α\nleft : x ∈ s\nright : x ∈ t\n⊢ x ∈ t.ite s ∅",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "future_failure_driven_lemma_candidate",
+      "tags": [
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "membership"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-12 tactics errored at step 1",
+      "num_steps": 1,
+      "final_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ : Set α\nh : s₂ ⊆ s₁\n⊢ t.ite s₁ s₂ = s₁ ∩ t ∪ s₂",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "broad_set_aesop_rejected",
+      "tags": [
+        "has_eq",
+        "has_subset",
+        "likely_extensionality",
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "equality",
+        "subset"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "namespace": "Set",
+      "policy": "rc1",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "winning_tactic": null,
+      "error_message": "All top-11 tactics errored at step 4",
+      "num_steps": 4,
+      "final_goal": "case mp.left.h\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u s t : Set α\na_1 : s ∪ t = ∅\nx : α\na_2 : x ∈ s\n⊢ False\n\ncase mp.right\nα : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns_1 s₁ s₂ t_1 t₁ t₂ u s t : Set α\na_1 : s ∪ t = ∅\n⊢ t = ∅",
+      "source_results": "eval_matrix_results.json",
+      "top_candidate_family": "rc1_production_stack",
+      "tags": [
+        "has_iff",
+        "likely_aesop"
+      ],
+      "failure_type": "all_tactics_errored",
+      "goal_shapes": [
+        "equality",
+        "iff",
+        "membership"
+      ],
+      "is_junk_or_unresolved": false,
+      "has_trace": true
+    }
+  ]
+}

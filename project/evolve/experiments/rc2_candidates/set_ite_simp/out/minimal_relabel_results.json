@@ -1,0 +1,407 @@
+{
+  "attribution_histogram": {
+    "TRUE_SET_ITE_SIMP_WIN": 5,
+    "NEEDS_DEEPER_SEQUENCE": 16,
+    "RC1_ALREADY_SOLVED": 11
+  },
+  "true_set_ite_simp_win_count": 5,
+  "true_set_ite_simp_wins": [
+    "Set.ite_empty",
+    "Set.ite_empty_left",
+    "Set.ite_empty_right",
+    "Set.ite_left",
+    "Set.ite_right"
+  ],
+  "policy": "A candidate solve is TRUE_SET_ITE_SIMP_WIN only if literal RC1 AND all four baselines failed and non-baseline `simp [Set.ite]` closed it. RC1_ALREADY_SOLVED / BASELINE_DUPLICATE are not wins.",
+  "rows": [
+    {
+      "full_name": "Set.ite_empty_right",
+      "in_sets": [
+        "set_ite_known_wins",
+        "set_ite_selected_failures"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_finished": true,
+      "baseline_solved_by": null,
+      "attribution": "TRUE_SET_ITE_SIMP_WIN",
+      "reason": "literal RC1 failed, all baselines failed, non-baseline `simp [Set.ite]` closed it"
+    },
+    {
+      "full_name": "Set.ite_right",
+      "in_sets": [
+        "set_ite_known_wins",
+        "set_ite_selected_failures"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_finished": true,
+      "baseline_solved_by": null,
+      "attribution": "TRUE_SET_ITE_SIMP_WIN",
+      "reason": "literal RC1 failed, all baselines failed, non-baseline `simp [Set.ite]` closed it"
+    },
+    {
+      "full_name": "Set.ite_empty",
+      "in_sets": [
+        "set_ite_known_wins",
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_finished": true,
+      "baseline_solved_by": null,
+      "attribution": "TRUE_SET_ITE_SIMP_WIN",
+      "reason": "literal RC1 failed, all baselines failed, non-baseline `simp [Set.ite]` closed it"
+    },
+    {
+      "full_name": "Set.ite_empty_left",
+      "in_sets": [
+        "set_ite_known_wins",
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_finished": true,
+      "baseline_solved_by": null,
+      "attribution": "TRUE_SET_ITE_SIMP_WIN",
+      "reason": "literal RC1 failed, all baselines failed, non-baseline `simp [Set.ite]` closed it"
+    },
+    {
+      "full_name": "Set.ite_left",
+      "in_sets": [
+        "set_ite_known_wins",
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_finished": true,
+      "baseline_solved_by": null,
+      "attribution": "TRUE_SET_ITE_SIMP_WIN",
+      "reason": "literal RC1 failed, all baselines failed, non-baseline `simp [Set.ite]` closed it"
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate did not fire"
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate fired but simp [Set.ite] did not close it"
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate did not fire"
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate did not fire"
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate did not fire"
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate did not fire"
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate did not fire"
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate did not fire"
+    },
+    {
+      "full_name": "Set.ite_inter",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate fired but simp [Set.ite] did not close it"
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate fired but simp [Set.ite] did not close it"
+    },
+    {
+      "full_name": "Set.ite_compl",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate fired but simp [Set.ite] did not close it"
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate fired but simp [Set.ite] did not close it"
+    },
+    {
+      "full_name": "Set.mem_dite",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "RC1_ALREADY_SOLVED",
+      "reason": "literal RC1 solved it"
+    },
+    {
+      "full_name": "Set.mem_dite_empty_left",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "RC1_ALREADY_SOLVED",
+      "reason": "literal RC1 solved it"
+    },
+    {
+      "full_name": "Set.mem_dite_empty_right",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "RC1_ALREADY_SOLVED",
+      "reason": "literal RC1 solved it"
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate did not fire"
+    },
+    {
+      "full_name": "Set.diff_union_inter",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "RC1_ALREADY_SOLVED",
+      "reason": "literal RC1 solved it"
+    },
+    {
+      "full_name": "Set.eq_of_inclusion_surjective",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate did not fire"
+    },
+    {
+      "full_name": "Set.inclusion_inclusion",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "RC1_ALREADY_SOLVED",
+      "reason": "literal RC1 solved it"
+    },
+    {
+      "full_name": "Set.inclusion_right",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "RC1_ALREADY_SOLVED",
+      "reason": "literal RC1 solved it"
+    },
+    {
+      "full_name": "Set.inclusion_self",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "RC1_ALREADY_SOLVED",
+      "reason": "literal RC1 solved it"
+    },
+    {
+      "full_name": "Set.insert_diff_eq_singleton",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "RC1_ALREADY_SOLVED",
+      "reason": "literal RC1 solved it"
+    },
+    {
+      "full_name": "Set.insert_diff_of_mem",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "RC1_ALREADY_SOLVED",
+      "reason": "literal RC1 solved it"
+    },
+    {
+      "full_name": "Set.insert_diff_of_not_mem",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "RC1_ALREADY_SOLVED",
+      "reason": "literal RC1 solved it"
+    },
+    {
+      "full_name": "Set.insert_diff_self_of_not_mem",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "RC1_ALREADY_SOLVED",
+      "reason": "literal RC1 solved it"
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate did not fire"
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_finished": false,
+      "baseline_solved_by": null,
+      "attribution": "NEEDS_DEEPER_SEQUENCE",
+      "reason": "gate did not fire"
+    }
+  ]
+}

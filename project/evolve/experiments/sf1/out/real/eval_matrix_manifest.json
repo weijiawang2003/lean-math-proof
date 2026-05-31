@@ -1,0 +1,87 @@
+{
+  "eval_capabilities": {
+    "script_present": true,
+    "run_eval_wrapper_present": true,
+    "help_ok": true,
+    "flags": [
+      "--theorem-set",
+      "--policy-type",
+      "--route-config",
+      "--strategy-config",
+      "--ckpt-dir",
+      "--top-k",
+      "--max-steps",
+      "--out-dir"
+    ]
+  },
+  "ns9_config": "project/evolve/ns9_runs/baseline/strategy_config.json",
+  "path_map_size": 50,
+  "run_real": true,
+  "policies": [
+    "rc1"
+  ],
+  "runnable_sets": [
+    {
+      "name": "sf1_multiset_holdout_runnable",
+      "path": "project/evolve/experiments/sf1/theorem_sets/sf1_multiset_holdout_runnable.json",
+      "size": 3,
+      "source_batch": "sf1_multiset_holdout",
+      "dropped_missing_path": 0,
+      "schema": "{set_name: [{file_path, full_name, namespace}]}",
+      "registered": false,
+      "eval_name": "sf1_multiset_holdout_runnable"
+    },
+    {
+      "name": "sf1_balanced_mini_runnable",
+      "path": "project/evolve/experiments/sf1/theorem_sets/sf1_balanced_mini_runnable.json",
+      "size": 6,
+      "source_batch": "sf1_balanced_mini",
+      "dropped_missing_path": 2,
+      "schema": "{set_name: [{file_path, full_name, namespace}]}",
+      "registered": false,
+      "eval_name": "sf1_balanced_mini_runnable"
+    },
+    {
+      "name": "sf1_frontier_runnable_subset",
+      "path": "project/evolve/experiments/sf1/theorem_sets/sf1_frontier_runnable_subset.json",
+      "size": 20,
+      "source_batch": "sf1_frontier_all",
+      "dropped_missing_path": 2,
+      "schema": "{set_name: [{file_path, full_name, namespace}]}",
+      "registered": false,
+      "eval_name": "sf1_frontier_runnable_subset"
+    }
+  ],
+  "matrix": [
+    {
+      "policy": "rc1",
+      "batch": "sf1_multiset_holdout",
+      "theorem_set": "sf1_multiset_holdout_runnable",
+      "theorem_set_file": "project/evolve/experiments/sf1/theorem_sets/sf1_multiset_holdout_runnable.json",
+      "size": 3,
+      "supported": true,
+      "reason": "RC1 production stack via runtime-registered SF1 set",
+      "command": "/opt/anaconda3/bin/python3 scripts/sf1_run_eval.py --theorem-set-file project/evolve/experiments/sf1/theorem_sets/sf1_multiset_holdout_runnable.json --out-dir project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_multiset_holdout_runnable --top-k 8 --max-steps 8 --policy-type hybrid_evolved --route-config project/evolve/routing/ns24_router.json --strategy-config project/evolve/experiments/rc1/rc1_production_wrapper.json"
+    },
+    {
+      "policy": "rc1",
+      "batch": "sf1_balanced_mini",
+      "theorem_set": "sf1_balanced_mini_runnable",
+      "theorem_set_file": "project/evolve/experiments/sf1/theorem_sets/sf1_balanced_mini_runnable.json",
+      "size": 6,
+      "supported": true,
+      "reason": "RC1 production stack via runtime-registered SF1 set",
+      "command": "/opt/anaconda3/bin/python3 scripts/sf1_run_eval.py --theorem-set-file project/evolve/experiments/sf1/theorem_sets/sf1_balanced_mini_runnable.json --out-dir project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_balanced_mini_runnable --top-k 8 --max-steps 8 --policy-type hybrid_evolved --route-config project/evolve/routing/ns24_router.json --strategy-config project/evolve/experiments/rc1/rc1_production_wrapper.json"
+    },
+    {
+      "policy": "rc1",
+      "batch": "sf1_frontier_all",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "theorem_set_file": "project/evolve/experiments/sf1/theorem_sets/sf1_frontier_runnable_subset.json",
+      "size": 20,
+      "supported": true,
+      "reason": "RC1 production stack via runtime-registered SF1 set",
+      "command": "/opt/anaconda3/bin/python3 scripts/sf1_run_eval.py --theorem-set-file project/evolve/experiments/sf1/theorem_sets/sf1_frontier_runnable_subset.json --out-dir project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_frontier_runnable_subset --top-k 8 --max-steps 8 --policy-type hybrid_evolved --route-config project/evolve/routing/ns24_router.json --strategy-config project/evolve/experiments/rc1/rc1_production_wrapper.json"
+    }
+  ]
+}

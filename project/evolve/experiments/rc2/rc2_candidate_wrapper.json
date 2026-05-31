@@ -1,0 +1,121 @@
+{
+ "fallback_tactics": [
+  "omega"
+ ],
+ "tactic_templates": [],
+ "max_extra_tactics_per_state": 10,
+ "theorem_family_tactics": {
+  "mod": [
+   "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+   "simp [Nat.add_mod, Nat.mod_eq_of_lt]",
+   "omega"
+  ]
+ },
+ "family_budgets": {
+  "AM_GM": 8,
+  "div": 8,
+  "mod": 12
+ },
+ "theorem_tactic_denylist": {
+  "Nat.add_mod_eq_ite": [
+   "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]"
+  ]
+ },
+ "retrieval_enabled": true,
+ "retrieval_top_k": 8,
+ "retrieval_tactic_forms": [
+  "rw",
+  "simp",
+  "apply"
+ ],
+ "retrieval_filter_self": true,
+ "retrieval_filter_unavailable": true,
+ "retrieval_skip_bloating_apply": true,
+ "retrieval_shape_filter": true,
+ "term_builder_templates": {},
+ "term_builder_budget": 0,
+ "priority_templates": {
+  "iff": [
+   "exact ⟨fun h => Nat.div_mul_cancel h, fun h => by rw [← h]; exact Nat.dvd_mul_left _ _⟩",
+   "rw [Nat.div_lt_iff_lt_mul {hyp_pos}, Nat.one_mul]",
+   "exact ⟨fun h => Nat.eq_of_mul_eq_mul_left (Nat.pos_of_ne_zero {hyp_ne_zero}) (h.trans (Nat.mul_one _).symm), fun h => by simp [h]⟩",
+   "exact ⟨fun h => Nat.eq_of_mul_eq_mul_right (Nat.pos_of_ne_zero {hyp_ne_zero}) (h.trans (Nat.one_mul _).symm), fun h => by simp [h]⟩",
+   "rw [Nat.pos_iff_ne_zero, Nat.div_ne_zero_iff {hyp_ne_zero}]",
+   "simp only [← Nat.not_le, Nat.le_sqrt]",
+   "simp only [← Nat.not_le, Nat.pow_le_pow_iff_left {hyp_ne_zero}]",
+   "exact ⟨fun h => by omega, fun h => by omega⟩",
+   "aesop"
+  ],
+  "lt": [
+   "exact (Nat.le_div_iff_mul_le {hyp_pos}).mpr (by simpa using {hyp_le})",
+   "aesop"
+  ],
+  "any": [
+   "simp [Set.ite]",
+   "split_ifs <;> omega",
+   "cases k <;> [skip; (rw [Nat.add_mod]; split_ifs with h <;> first | (exact Nat.mod_eq_of_lt (Nat.lt_of_not_ge h)) | (rw [Nat.mod_eq_sub_mod h]; exact Nat.mod_eq_of_lt ((Nat.sub_lt_iff_lt_add h).mpr (Nat.add_lt_add (Nat.mod_lt _ (by omega)) (Nat.mod_lt _ (by omega))))))]",
+   "aesop"
+  ],
+  "eq": [
+   "exact Nat.eq_one_of_mul_eq_one_right (by rwa [Nat.mul_comm])",
+   "aesop"
+  ],
+  "le": [
+   "by_cases hc : c = 0 <;> [simp [hc]; exact (Nat.le_div_iff_mul_le' (Nat.pos_of_ne_zero hc)).2 (Nat.le_trans (Nat.div_mul_le_self _ _) {hyp_le})]",
+   "aesop"
+  ]
+ },
+ "priority_template_budget": 24,
+ "use_skeleton_bag": true,
+ "max_steps": 8,
+ "top_k": 8,
+ "timeout_per_theorem": 60,
+ "retrieval_requires_family": false,
+ "retrieval_family_gates": [
+  "div",
+  "mod",
+  "pow"
+ ],
+ "symbolic_actions": {
+  "enabled": true,
+  "actions": [
+   {
+    "action_type": "MULTISET_INDUCTION_SIMP",
+    "var_type": "Multiset",
+    "simp_mode": "simp_all",
+    "namespace_gate": "Multiset",
+    "max_vars": 1,
+    "priority": 40,
+    "family_source": "multiset_induction_simp_all"
+   },
+   {
+    "action_type": "MULTISET_INDUCTION_SIMP",
+    "var_type": "Multiset",
+    "simp_mode": "simp",
+    "namespace_gate": "Multiset",
+    "max_vars": 1,
+    "priority": 39,
+    "family_source": "multiset_induction_simp"
+   }
+  ]
+ },
+ "theorem_name_tactic_gates": {
+  "aesop": [
+   "Set.Finite.",
+   "Set.toFinset"
+  ],
+  "simp [Set.ite]": [
+   "Set.ite"
+  ]
+ },
+ "symbolic_predictor": {
+  "enabled": false,
+  "_rc1": "AX4 learned predictor OFF; deterministic WX3 oracle used."
+ },
+ "symbolic_sequence_search": {
+  "enabled": false,
+  "_rc1": "SX1 depth-2 sequence search OFF (subsumed by best-first search)."
+ },
+ "_rc1_note": "RC1 production-candidate wrapper: NS9 best genome (byte-identical base) + WX3 Multiset induction symbolic oracle (Multiset-gated, deterministic) + MX2 NARROW Set.Finite/toFinset aesop fallback. AX4 predictor, SX1 sequence search, broad Set aesop, and MX1 Set/Finset ext/cases actions EXCLUDED/disabled. On-disk NS9 genome and prior configs unchanged; separate composed config. Run: eval_rollout_all.py --policy-type hybrid_evolved --strategy-config <this> --route-config project/evolve/routing/ns24_router.json.",
+ "_rc2_note": "RC2 = RC1 ⊕ SET_ITE_SIMP. ONLY delta vs rc1_production_wrapper.json: 'simp [Set.ite]' added via priority_templates['any'] (emitted before base; gated early) and theorem_name_tactic_gates += {'simp [Set.ite]': ['Set.ite']}. Additive/off-by-default; base-model output ungated; identical to RC1 on every non-Set.ite theorem (the gate denies the added action on all non-'Set.ite' names). Candidate, not production. Speculative SX2 gates NOT included."
+}

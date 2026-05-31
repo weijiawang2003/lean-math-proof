@@ -1,0 +1,37 @@
+{
+  "candidate": "SET_ITE_SIMP (simp [Set.ite])",
+  "sets": {
+    "set_ite_known_wins": {
+      "size": 5,
+      "live_runnable": 5,
+      "role": "the 5 SX2 TRUE_SET2_WIN theorems"
+    },
+    "set_ite_selected_failures": {
+      "size": 12,
+      "live_runnable": 12,
+      "role": "12 SF2 deep-dive selected Set failures"
+    },
+    "set_ite_fresh_holdout": {
+      "size": 20,
+      "live_runnable": 20,
+      "role": "20 SX2 holdout Set theorems (paths)"
+    },
+    "set_ite_negative_controls": {
+      "size": 5,
+      "live_runnable": 1,
+      "role": "Nat/Int/Multiset; gate must NOT fire"
+    },
+    "set_ite_canonical_smoke": {
+      "size": 5,
+      "live_runnable": 0,
+      "role": "canonical non-Set preservation sample"
+    }
+  },
+  "data_leakage_notes": [
+    "known_wins (5) is a SUBSET of selected_failures (2: ite_empty_right, ite_right) ∪ fresh_holdout (3: ite_empty, ite_empty_left, ite_left).",
+    "fresh_holdout excludes the 12 selected failures and the 3 SF2 deferrals (SX2 construction); it DOES contain the 3 holdout known-wins (flagged is_known_win).",
+    "negative_controls / canonical_smoke are non-Set; the SET_ITE_SIMP gate cannot fire on them (requires 'Set' in name) — dry off-gate checks.",
+    "literal RC1 is the unmodified rc1_production_wrapper.json; the candidate is additive (simp [Set.ite] only on RC1-failed gate-fired theorems)."
+  ],
+  "theorem_sets_dir": "project/evolve/experiments/rc2_candidates/set_ite_simp/theorem_sets"
+}

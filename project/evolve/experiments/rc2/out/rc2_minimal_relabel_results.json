@@ -1,0 +1,108 @@
+{
+  "attribution_histogram": {
+    "TRUE_SET_ITE_SIMP_WIN": 5,
+    "UNEXPECTED_WIN_NEEDS_REVIEW": 4
+  },
+  "true_set_ite_simp_win_count": 5,
+  "true_set_ite_simp_wins": [
+    "Set.ite_empty",
+    "Set.ite_empty_left",
+    "Set.ite_empty_right",
+    "Set.ite_left",
+    "Set.ite_right"
+  ],
+  "credited_delta": 5,
+  "policy": "Promotion credits only TRUE_SET_ITE_SIMP_WIN. Any BASELINE_DUPLICATE / UNEXPECTED is excluded from the delta.",
+  "rows": [
+    {
+      "full_name": "Set.ite_empty_left",
+      "surface": "set_ite_known_wins",
+      "comparison_class": "fresh_SET_ITE_win",
+      "baseline_source": "prior_candidate_baselines",
+      "baseline_solved_by": null,
+      "all_baselines_failed": true,
+      "attribution": "TRUE_SET_ITE_SIMP_WIN",
+      "reason": "literal RC1 failed, all baselines failed, single-shot simp [Set.ite] solved"
+    },
+    {
+      "full_name": "Set.ite_empty_right",
+      "surface": "set_ite_known_wins",
+      "comparison_class": "expected_SET_ITE_win",
+      "baseline_source": "prior_candidate_baselines",
+      "baseline_solved_by": null,
+      "all_baselines_failed": true,
+      "attribution": "TRUE_SET_ITE_SIMP_WIN",
+      "reason": "literal RC1 failed, all baselines failed, single-shot simp [Set.ite] solved"
+    },
+    {
+      "full_name": "Set.ite_left",
+      "surface": "set_ite_known_wins",
+      "comparison_class": "fresh_SET_ITE_win",
+      "baseline_source": "prior_candidate_baselines",
+      "baseline_solved_by": null,
+      "all_baselines_failed": true,
+      "attribution": "TRUE_SET_ITE_SIMP_WIN",
+      "reason": "literal RC1 failed, all baselines failed, single-shot simp [Set.ite] solved"
+    },
+    {
+      "full_name": "Set.ite_empty",
+      "surface": "set_ite_known_wins",
+      "comparison_class": "fresh_SET_ITE_win",
+      "baseline_source": "prior_candidate_baselines",
+      "baseline_solved_by": null,
+      "all_baselines_failed": true,
+      "attribution": "TRUE_SET_ITE_SIMP_WIN",
+      "reason": "literal RC1 failed, all baselines failed, single-shot simp [Set.ite] solved"
+    },
+    {
+      "full_name": "Set.ite_right",
+      "surface": "set_ite_known_wins",
+      "comparison_class": "expected_SET_ITE_win",
+      "baseline_source": "prior_candidate_baselines",
+      "baseline_solved_by": null,
+      "all_baselines_failed": true,
+      "attribution": "TRUE_SET_ITE_SIMP_WIN",
+      "reason": "literal RC1 failed, all baselines failed, single-shot simp [Set.ite] solved"
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "surface": "set_ite_selected_failures",
+      "comparison_class": "search_perturbation_multistep_NOT_credited",
+      "baseline_source": "prior_candidate_baselines",
+      "baseline_solved_by": null,
+      "all_baselines_failed": true,
+      "attribution": "UNEXPECTED_WIN_NEEDS_REVIEW",
+      "reason": "multi-step/search-perturbation win (simp [Set.ite] alone does NOT close it); NOT credited to SET_ITE_SIMP"
+    },
+    {
+      "full_name": "Set.ite_inter",
+      "surface": "set_ite_selected_failures",
+      "comparison_class": "search_perturbation_multistep_NOT_credited",
+      "baseline_source": "prior_candidate_baselines",
+      "baseline_solved_by": null,
+      "all_baselines_failed": true,
+      "attribution": "UNEXPECTED_WIN_NEEDS_REVIEW",
+      "reason": "multi-step/search-perturbation win (simp [Set.ite] alone does NOT close it); NOT credited to SET_ITE_SIMP"
+    },
+    {
+      "full_name": "Set.ite_compl",
+      "surface": "set_ite_fresh_holdout",
+      "comparison_class": "search_perturbation_multistep_NOT_credited",
+      "baseline_source": "prior_candidate_baselines",
+      "baseline_solved_by": null,
+      "all_baselines_failed": true,
+      "attribution": "UNEXPECTED_WIN_NEEDS_REVIEW",
+      "reason": "multi-step/search-perturbation win (simp [Set.ite] alone does NOT close it); NOT credited to SET_ITE_SIMP"
+    },
+    {
+      "full_name": "Set.ite_inter_compl_self",
+      "surface": "sf1_frontier_runnable_subset",
+      "comparison_class": "search_perturbation_multistep_NOT_credited",
+      "baseline_source": "live",
+      "baseline_solved_by": null,
+      "all_baselines_failed": true,
+      "attribution": "UNEXPECTED_WIN_NEEDS_REVIEW",
+      "reason": "multi-step/search-perturbation win (simp [Set.ite] alone does NOT close it); NOT credited to SET_ITE_SIMP"
+    }
+  ]
+}

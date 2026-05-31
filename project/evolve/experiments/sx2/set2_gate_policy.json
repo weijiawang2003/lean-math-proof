@@ -1,0 +1,95 @@
+{
+  "policy_id": "set2_gate_policy_v1",
+  "status": "experimental_off_by_default",
+  "global_enabled": false,
+  "promotion_allowed": false,
+  "requires_ns23_relabel": true,
+  "description": "Narrow gates for experimental SET2 short-sequence emission, mined from the SF2 Set cluster deep dive. Off-by-default. Each gate is a (condition -> tactic) rule. Only SET_ITE_SIMP has >=2-theorem mined support; the others are speculative structural gates carried for measurement only. NEVER modifies RC1 / NS24.",
+  "match_semantics": {
+    "fields": "Gate conditions are evaluated over (theorem full_name, goal/state pretty-print). All conditions in a gate are ANDed.",
+    "predicates": {
+      "name_or_ns_has_set": "'Set' appears in the theorem full_name or namespace",
+      "goal_has_ite": "goal contains an `ite` / `.ite` / `if ` token",
+      "goal_has_set_relation": "goal contains a Set membership/equality/order token: one of = , ∈ , ⊆ , ⊂ , ∩ , ∪ , \\ , ∅",
+      "no_multiset_target": "'Multiset' does NOT appear in name or goal",
+      "goal_is_eq": "goal top-level connective is `=` (Set equality)",
+      "goal_is_iff": "goal contains `↔`",
+      "goal_has_subset_or_setop": "goal contains ⊆ or Set diff/union/inter (\\, ∪, ∩)",
+      "not_arithmetic_only": "goal does not look like a pure Nat/Int arithmetic goal (no Set/membership tokens present would fail name_or_ns_has_set anyway)"
+    }
+  },
+  "gates": [
+    {
+      "gate_id": "SET_ITE_SIMP",
+      "template_family": "SET_ITE_SIMP",
+      "tactic": "simp [Set.ite]",
+      "conditions": ["name_or_ns_has_set", "goal_has_ite", "goal_has_set_relation", "no_multiset_target"],
+      "status": "experimental_off_by_default",
+      "gate_strength": "narrow",
+      "promotion_allowed": false,
+      "requires_ns23_relabel": true,
+      "mined_support": {"num_theorems": 2, "theorems": ["Set.ite_empty_right", "Set.ite_right"], "all_baselines_failed": true},
+      "rationale": "Only mined template with >=2-theorem support and NO theorem-specific symbols. Pure tactic; unfolds Set.ite then closes by simp. Baselines (simp/simp_all/aesop/classical<;>aesop) all failed on both wins.",
+      "expected_safety": "high — requires both Set context AND an ite token; cannot fire on Nat/Multiset or non-ite Set goals.",
+      "known_risks": "On Set.ite goals that need more than definitional unfold (e.g. ite_inter, ite_inter_self) simp [Set.ite] makes no progress / fails — emission is cheap and harmless but not always sufficient."
+    },
+    {
+      "gate_id": "SET_EXT_SIMP",
+      "template_family": "SET_EXT_SIMP",
+      "tactic": "ext x <;> simp",
+      "conditions": ["name_or_ns_has_set", "goal_is_eq", "goal_has_set_relation", "no_multiset_target"],
+      "status": "experimental_off_by_default",
+      "gate_strength": "medium",
+      "promotion_allowed": false,
+      "requires_ns23_relabel": true,
+      "mined_support": {"num_theorems": 0, "theorems": [], "note": "no deep-dive win was the pure ext<;>simp form"},
+      "rationale": "Structural Set-equality extensionality. Speculative: carried to measure on holdout, NOT mined-supported.",
+      "expected_safety": "medium — fires on any Set equality; `ext x <;> simp` is close to a baseline so true non-baseline wins are unlikely (relabel will catch BASELINE_DUPLICATE).",
+      "known_risks": "Near-baseline; may produce BASELINE_DUPLICATE attributions rather than true SET2 wins."
+    },
+    {
+      "gate_id": "SET_SUBSET_ANTISYMM",
+      "template_family": "SET_SUBSET_ANTISYMM",
+      "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+      "conditions": ["name_or_ns_has_set", "goal_is_eq", "goal_has_subset_or_setop", "no_multiset_target"],
+      "status": "experimental_off_by_default",
+      "gate_strength": "medium",
+      "promotion_allowed": false,
+      "requires_ns23_relabel": true,
+      "mined_support": {"num_theorems": 0, "theorems": []},
+      "rationale": "Bidirectional-subset route for Set equality with diff/union/inter. Speculative structural gate.",
+      "expected_safety": "medium — only on Set equalities; `apply Set.Subset.antisymm` fails to unify on iff goals (self-gating).",
+      "known_risks": "Single-line `<;>` applies the closer to both branches and breaks per-branch hypotheses; may under-solve."
+    },
+    {
+      "gate_id": "SET_IFF_CONSTRUCTOR",
+      "template_family": "SET_IFF_CONSTRUCTOR",
+      "tactic": "constructor <;> intro h <;> simp_all",
+      "conditions": ["name_or_ns_has_set", "goal_is_iff", "no_multiset_target"],
+      "status": "experimental_off_by_default",
+      "gate_strength": "medium",
+      "promotion_allowed": false,
+      "requires_ns23_relabel": true,
+      "mined_support": {"num_theorems": 0, "theorems": [], "note": "the constructor<;>intro<;>simp_all probe FAILED on subset_singleton_iff_eq in SF2"},
+      "rationale": "Iff-splitting route for Set iff theorems. Speculative; the one deep-dive trial of this exact form failed.",
+      "expected_safety": "medium — gated to iff + Set.",
+      "known_risks": "Demonstrated insufficient on the deep-dive iff cases; expected low yield."
+    },
+    {
+      "gate_id": "SET_EXT_BYCASES",
+      "template_family": "SET_EXT_BYCASES",
+      "tactic": "by_cases h : <PROP> <;> simp_all [h]",
+      "conditions": ["name_or_ns_has_set", "goal_has_ite", "no_multiset_target", "binder_proposition_inferable"],
+      "status": "experimental_off_by_default_disabled",
+      "gate_strength": "too_broad_without_inference",
+      "promotion_allowed": false,
+      "requires_ns23_relabel": true,
+      "emit": false,
+      "needs_binder_inference": true,
+      "mined_support": {"num_theorems": 1, "theorems": ["Set.ite_eq_of_subset_left"], "note": "the one win used a LOCAL hypothesis (or_iff_right_of_imp (@h x)) — not synthesizable generically"},
+      "rationale": "Per-branch ite split. Requires synthesizing the by_cases proposition AND (in the mined win) a local hypothesis — NOT generically emittable. Hard-disabled: the wrapper will never emit this gate.",
+      "expected_safety": "n/a — disabled (cannot infer the binder proposition).",
+      "known_risks": "If ever enabled, would need binder/proposition inference and is theorem-specific (high overfit)."
+    }
+  ]
+}

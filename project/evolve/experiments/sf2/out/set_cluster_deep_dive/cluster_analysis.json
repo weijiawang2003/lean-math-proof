@@ -1,0 +1,254 @@
+{
+  "num_clusters": 6,
+  "gap_type_histogram": {
+    "mixed": 2,
+    "tactic_gap": 2,
+    "search_depth_gap": 2
+  },
+  "total_probe_successes": 10,
+  "clusters": [
+    {
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|iff|all_tactics_errored",
+      "cluster_label": "future_failure_driven_lemma_candidate",
+      "size": 4,
+      "selected_theorems": [
+        "Set.antitoneOn_iff_antitone",
+        "Set.ssubset_singleton_iff"
+      ],
+      "source_proof_styles": {
+        "simp_only": 1,
+        "rw_bridge": 1
+      },
+      "probe_successes": 2,
+      "probe_failures": 0,
+      "best_probe_family": "F_source_inspired",
+      "per_theorem_gaps": {
+        "Set.antitoneOn_iff_antitone": "tactic_gap",
+        "Set.ssubset_singleton_iff": "search_depth_gap"
+      },
+      "likely_gap_type": "mixed",
+      "evidence": [
+        {
+          "theorem": "Set.antitoneOn_iff_antitone",
+          "solved": true,
+          "winning_probe": "simp [Antitone, AntitoneOn]",
+          "gap": "tactic_gap",
+          "source_style": "simp_only",
+          "minimal_sufficient_probe": "simp [Antitone, AntitoneOn]"
+        },
+        {
+          "theorem": "Set.ssubset_singleton_iff",
+          "solved": true,
+          "winning_probe": "rw [ssubset_iff_subset_ne, subset_singleton_iff_eq, or_and_right, and_not_self_iff, or_false_iff, and_iff_left_iff_imp] <;> exact fun h => h ▸ (singleton_ne_empty _).symm",
+          "gap": "search_depth_gap",
+          "source_style": "rw_bridge",
+          "minimal_sufficient_probe": "rw [ssubset_iff_subset_ne, subset_singleton_iff_eq, or_and_right, and_not_self_iff, or_false_iff, and_iff_left_iff_imp] <;> exact fun h => h ▸ (singleton_ne_empty _).symm"
+        }
+      ],
+      "recommended_next_action": "new_probe_family",
+      "priority": "high"
+    },
+    {
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|membership|all_tactics_errored",
+      "cluster_label": "future_failure_driven_lemma_candidate",
+      "size": 2,
+      "selected_theorems": [
+        "Set.ite_empty_right",
+        "Set.ite_right"
+      ],
+      "source_proof_styles": {
+        "simp_only": 2
+      },
+      "probe_successes": 2,
+      "probe_failures": 0,
+      "best_probe_family": "E_ite_bycases",
+      "per_theorem_gaps": {
+        "Set.ite_empty_right": "tactic_gap",
+        "Set.ite_right": "tactic_gap"
+      },
+      "likely_gap_type": "tactic_gap",
+      "evidence": [
+        {
+          "theorem": "Set.ite_empty_right",
+          "solved": true,
+          "winning_probe": "simp [Set.ite]",
+          "gap": "tactic_gap",
+          "source_style": "simp_only",
+          "minimal_sufficient_probe": "simp [Set.ite]"
+        },
+        {
+          "theorem": "Set.ite_right",
+          "solved": true,
+          "winning_probe": "simp [Set.ite]",
+          "gap": "tactic_gap",
+          "source_style": "simp_only",
+          "minimal_sufficient_probe": "simp [Set.ite]"
+        }
+      ],
+      "recommended_next_action": "new_probe_family",
+      "priority": "high"
+    },
+    {
+      "cluster_id": "Set|rc1_production_stack|equality|all_tactics_errored",
+      "cluster_label": "rc1_production_stack",
+      "size": 3,
+      "selected_theorems": [
+        "Set.diff_singleton_subset_iff",
+        "Set.subset_insert_iff",
+        "Set.union_empty_iff"
+      ],
+      "source_proof_styles": {
+        "rw_bridge": 2,
+        "simp_only": 1
+      },
+      "probe_successes": 2,
+      "probe_failures": 1,
+      "best_probe_family": "F_source_inspired",
+      "per_theorem_gaps": {
+        "Set.diff_singleton_subset_iff": "search_depth_gap",
+        "Set.subset_insert_iff": "needs_deeper_search",
+        "Set.union_empty_iff": "tactic_gap"
+      },
+      "likely_gap_type": "mixed",
+      "evidence": [
+        {
+          "theorem": "Set.diff_singleton_subset_iff",
+          "solved": true,
+          "winning_probe": "rw [← union_singleton, union_comm] <;> apply diff_subset_iff",
+          "gap": "search_depth_gap",
+          "source_style": "rw_bridge",
+          "minimal_sufficient_probe": "rw [← union_singleton, union_comm] <;> apply diff_subset_iff"
+        },
+        {
+          "theorem": "Set.subset_insert_iff",
+          "solved": false,
+          "winning_probe": null,
+          "gap": "needs_deeper_search",
+          "source_style": "rw_bridge",
+          "minimal_sufficient_probe": null
+        },
+        {
+          "theorem": "Set.union_empty_iff",
+          "solved": true,
+          "winning_probe": "simp only [← subset_empty_iff, union_subset_iff]",
+          "gap": "tactic_gap",
+          "source_style": "simp_only",
+          "minimal_sufficient_probe": "simp only [← subset_empty_iff, union_subset_iff]"
+        }
+      ],
+      "recommended_next_action": "new_probe_family",
+      "priority": "high"
+    },
+    {
+      "cluster_id": "Set|rc1_production_stack|membership|all_tactics_errored",
+      "cluster_label": "rc1_production_stack",
+      "size": 3,
+      "selected_theorems": [
+        "Set.ite_inter",
+        "Set.ite_inter_self"
+      ],
+      "source_proof_styles": {
+        "rw_bridge": 2
+      },
+      "probe_successes": 2,
+      "probe_failures": 0,
+      "best_probe_family": "F_source_inspired",
+      "per_theorem_gaps": {
+        "Set.ite_inter": "search_depth_gap",
+        "Set.ite_inter_self": "search_depth_gap"
+      },
+      "likely_gap_type": "search_depth_gap",
+      "evidence": [
+        {
+          "theorem": "Set.ite_inter",
+          "solved": true,
+          "winning_probe": "rw [ite_inter_inter, ite_same]",
+          "gap": "search_depth_gap",
+          "source_style": "rw_bridge",
+          "minimal_sufficient_probe": "rw [ite_inter_inter, ite_same]"
+        },
+        {
+          "theorem": "Set.ite_inter_self",
+          "solved": true,
+          "winning_probe": "rw [Set.ite, union_inter_distrib_right, diff_inter_self, inter_assoc, inter_self, union_empty]",
+          "gap": "search_depth_gap",
+          "source_style": "rw_bridge",
+          "minimal_sufficient_probe": "rw [Set.ite, union_inter_distrib_right, diff_inter_self, inter_assoc, inter_self, union_empty]"
+        }
+      ],
+      "recommended_next_action": "new_probe_family",
+      "priority": "high"
+    },
+    {
+      "cluster_id": "Set|broad_set_aesop_rejected|equality|all_tactics_errored",
+      "cluster_label": "broad_set_aesop_rejected",
+      "size": 3,
+      "selected_theorems": [
+        "Set.ite_eq_of_subset_left",
+        "Set.subset_singleton_iff_eq"
+      ],
+      "source_proof_styles": {
+        "by_cases_ite_split": 1,
+        "simp_only": 1
+      },
+      "probe_successes": 1,
+      "probe_failures": 1,
+      "best_probe_family": "F_source_inspired",
+      "per_theorem_gaps": {
+        "Set.ite_eq_of_subset_left": "search_depth_gap",
+        "Set.subset_singleton_iff_eq": "needs_deeper_search"
+      },
+      "likely_gap_type": "search_depth_gap",
+      "evidence": [
+        {
+          "theorem": "Set.ite_eq_of_subset_left",
+          "solved": true,
+          "winning_probe": "ext x <;> by_cases hx : x ∈ t <;> simp [hx, Set.ite, or_iff_right_of_imp (@h x)]",
+          "gap": "search_depth_gap",
+          "source_style": "by_cases_ite_split",
+          "minimal_sufficient_probe": "ext x <;> by_cases hx : x ∈ t <;> simp [hx, Set.ite, or_iff_right_of_imp (@h x)]"
+        },
+        {
+          "theorem": "Set.subset_singleton_iff_eq",
+          "solved": false,
+          "winning_probe": null,
+          "gap": "needs_deeper_search",
+          "source_style": "simp_only",
+          "minimal_sufficient_probe": null
+        }
+      ],
+      "recommended_next_action": "new_probe_family",
+      "priority": "high"
+    },
+    {
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|equality|all_tactics_errored",
+      "cluster_label": "future_failure_driven_lemma_candidate",
+      "size": 1,
+      "selected_theorems": [
+        "Set.pair_eq_pair_iff"
+      ],
+      "source_proof_styles": {
+        "subset_antisymm": 1
+      },
+      "probe_successes": 1,
+      "probe_failures": 0,
+      "best_probe_family": "F_source_inspired",
+      "per_theorem_gaps": {
+        "Set.pair_eq_pair_iff": "tactic_gap"
+      },
+      "likely_gap_type": "tactic_gap",
+      "evidence": [
+        {
+          "theorem": "Set.pair_eq_pair_iff",
+          "solved": true,
+          "winning_probe": "simp [subset_antisymm_iff, insert_subset_iff] <;> aesop",
+          "gap": "tactic_gap",
+          "source_style": "subset_antisymm",
+          "minimal_sufficient_probe": "simp [subset_antisymm_iff, insert_subset_iff] <;> aesop"
+        }
+      ],
+      "recommended_next_action": "new_probe_family",
+      "priority": "high"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "seed": 1729,
+  "out_dir": "project/evolve/experiments/sf1/batches/real",
+  "batches": [
+    {
+      "batch_name": "sf1_frontier_all",
+      "path": "project/evolve/experiments/sf1/batches/real/sf1_frontier_all.jsonl",
+      "size": 52,
+      "sampling_policy": "deterministic_filter",
+      "dominant_namespaces": {
+        "Set": 43,
+        "Multiset": 3,
+        "Nat": 1,
+        "GENERAL_FRONTIER": 1,
+        "Prop": 1
+      },
+      "dominant_candidate_families": {
+        "future_failure_driven_lemma_candidate": 30,
+        "rc1_production_stack": 13,
+        "broad_set_aesop_rejected": 6,
+        "wx3_multiset_induction": 3
+      },
+      "intended_use": "full open frontier; baseline raw/ns9/rc1 sweep",
+      "seed": 1729
+    },
+    {
+      "batch_name": "sf1_set_frontier",
+      "path": "project/evolve/experiments/sf1/batches/real/sf1_set_frontier.jsonl",
+      "size": 43,
+      "sampling_policy": "deterministic_filter",
+      "dominant_namespaces": {
+        "Set": 43
+      },
+      "dominant_candidate_families": {
+        "future_failure_driven_lemma_candidate": 24,
+        "rc1_production_stack": 13,
+        "broad_set_aesop_rejected": 6
+      },
+      "intended_use": "Set-heavy surface; probe mx2 narrow Set.Finite aesop relevance",
+      "seed": 1729
+    },
+    {
+      "batch_name": "sf1_multiset_holdout",
+      "path": "project/evolve/experiments/sf1/batches/real/sf1_multiset_holdout.jsonl",
+      "size": 3,
+      "sampling_policy": "deterministic_filter",
+      "dominant_namespaces": {
+        "Multiset": 3
+      },
+      "dominant_candidate_families": {
+        "wx3_multiset_induction": 3
+      },
+      "intended_use": "Multiset holdout; WX3 induction regression/extension guard",
+      "seed": 1729
+    },
+    {
+      "batch_name": "sf1_mx2_candidate",
+      "path": "project/evolve/experiments/sf1/batches/real/sf1_mx2_candidate.jsonl",
+      "size": 0,
+      "sampling_policy": "deterministic_filter",
+      "dominant_namespaces": {},
+      "dominant_candidate_families": {},
+      "intended_use": "high mx2 score; targeted Set.Finite/toFinset aesop eval",
+      "seed": 1729
+    },
+    {
+      "batch_name": "sf1_wx3_candidate",
+      "path": "project/evolve/experiments/sf1/batches/real/sf1_wx3_candidate.jsonl",
+      "size": 3,
+      "sampling_policy": "deterministic_filter",
+      "dominant_namespaces": {
+        "Multiset": 3
+      },
+      "dominant_candidate_families": {
+        "wx3_multiset_induction": 3
+      },
+      "intended_use": "high wx3 score; targeted Multiset induction eval",
+      "seed": 1729
+    },
+    {
+      "batch_name": "sf1_balanced_mini",
+      "path": "project/evolve/experiments/sf1/batches/real/sf1_balanced_mini.jsonl",
+      "size": 8,
+      "sampling_policy": "balanced_round_robin_by_namespace",
+      "dominant_namespaces": {
+        "Nat": 1,
+        "Prop": 1,
+        "traces_from_search": 1,
+        "Function": 1,
+        "Set": 1
+      },
+      "dominant_candidate_families": {
+        "future_failure_driven_lemma_candidate": 7,
+        "wx3_multiset_induction": 1
+      },
+      "intended_use": "small deterministic cross-namespace smoke batch (cheap eval)",
+      "seed": 1729
+    },
+    {
+      "batch_name": "sf1_failure_driven_seed",
+      "path": "project/evolve/experiments/sf1/batches/real/sf1_failure_driven_seed.jsonl",
+      "size": 52,
+      "sampling_policy": "deterministic_filter",
+      "dominant_namespaces": {
+        "Set": 43,
+        "Multiset": 3,
+        "Nat": 1,
+        "GENERAL_FRONTIER": 1,
+        "Prop": 1
+      },
+      "dominant_candidate_families": {
+        "future_failure_driven_lemma_candidate": 30,
+        "rc1_production_stack": 13,
+        "broad_set_aesop_rejected": 6,
+        "wx3_multiset_induction": 3
+      },
+      "intended_use": "weak productive-family match / low confidence; SF2 lemma-discovery seed",
+      "seed": 1729
+    }
+  ]
+}

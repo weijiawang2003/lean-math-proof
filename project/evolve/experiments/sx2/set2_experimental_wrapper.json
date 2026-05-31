@@ -1,0 +1,30 @@
+{
+  "wrapper_id": "set2_experimental_wrapper_v1",
+  "kind": "external_candidate_policy",
+  "status": "experimental_off_by_default",
+  "enabled": false,
+  "promotion_allowed": false,
+  "base_stack": "RC1 (commit f3b3100): NS9 base + WX3 Multiset induction oracle + MX2 narrow Set.Finite aesop",
+  "relationship_to_rc1": "ADDITIVE and DISJOINT. SET2 is evaluated as an external candidate policy over Set theorem sets via sx2_run_set2_eval.py. It does NOT modify rc1_production_wrapper.json, ns24_router.json, NS9 genome/checkpoints, or any REL1/RC1 artifact. It is not wired into eval_rollout_all.",
+  "gate_policy": "project/evolve/experiments/sx2/set2_gate_policy.json",
+  "sequence_actions": "project/evolve/experiments/sx2/set2_sequence_actions.json",
+  "evaluator": "scripts/sx2_set2_wrapper.py",
+  "runner": "scripts/sx2_run_set2_eval.py",
+  "minimum_viable": {
+    "gate": "Set context + ite/if token + Set relation + no Multiset",
+    "tactic": "simp [Set.ite]",
+    "purpose": "test whether the n=2 generalizing lever (Set.ite_empty_right, Set.ite_right) survives a fresh Set holdout"
+  },
+  "emission_logging": {
+    "enabled": true,
+    "fields": ["theorem", "gate_id", "tactic", "conditions_met", "emitted", "off_gate", "goal_shape"],
+    "sink": "per-eval JSON (set2_*_eval_results.json) and emission_log array"
+  },
+  "promotion_gate_to_rc2": {
+    "positive_delta_over_rc1_on_fresh_frontier": "required",
+    "zero_regressions": "required",
+    "zero_off_gate_emissions": "required",
+    "minimal_sufficient_attribution": "required (NS23 relabel: TRUE_SET2_WIN only)",
+    "deterministic_reproduction": "required"
+  }
+}

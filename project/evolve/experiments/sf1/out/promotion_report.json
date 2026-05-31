@@ -1,0 +1,24 @@
+{
+  "seed": 1729,
+  "dry_run": true,
+  "experimental_family": "ax4_learned_symbolic_selector_off_by_default",
+  "gate_type": "learned_selector",
+  "control_arm": "rc1",
+  "rc1_wins": 5,
+  "experimental_wins": 7,
+  "delta_over_rc1_raw": 2,
+  "clean_new_labels": 1,
+  "over_attributed_new_wins": 1,
+  "regressions": [],
+  "off_gate_emissions": [],
+  "criteria": {
+    "positive_delta_over_rc1": true,
+    "zero_regressions": true,
+    "zero_off_gate": true,
+    "strict_syntactic_gate": false,
+    "minimal_sufficient_attribution": false,
+    "deterministic_reproducibility": false
+  },
+  "recommendation": "MINE_MORE",
+  "clean_label_threshold": 40
+}

@@ -1,0 +1,55 @@
+{
+  "note": "Conservative, machine-oriented bridge-lemma templates suggested by the 3 SF1 Multiset RC1 failures. These are NOT claimed novel; most are 'probably_existing' in Mathlib (e.g. Multiset.mem_toFinset, Multiset.mem_nsmul, Finset.disjoint_left, Finset.eq_singleton_iff_unique_mem). The dominant signal is that the *bridge lemmas already exist* but RC1's Multiset induction oracle does not deploy them — the real gap is an ext+membership-simp tactic family, not a new lemma. Templates are recorded so SF3 can test utility either way.",
+  "candidates": [
+    {
+      "lemma_template_name": "multiset_mem_toFinset_bridge",
+      "informal_description": "Membership in a multiset's toFinset coincides with membership in the multiset.",
+      "lean_statement_sketch": "theorem mem_toFinset {s : Multiset α} {a : α} : a ∈ s.toFinset ↔ a ∈ s",
+      "source_failure_theorems": ["Multiset.disjoint_toFinset", "Multiset.toFinset_eq_singleton_iff", "Multiset.toFinset_nsmul"],
+      "expected_utility": "multi_theorem",
+      "novelty_status": "probably_existing",
+      "proof_family_hint": "simp/decide on Multiset.toFinset definition; this is the universal simp bridge for all three failures",
+      "risk": "duplicate"
+    },
+    {
+      "lemma_template_name": "multiset_disjoint_toFinset_bridge",
+      "informal_description": "Two multisets' toFinsets are Finset-disjoint iff the multisets are Multiset-disjoint (share no element).",
+      "lean_statement_sketch": "theorem disjoint_toFinset {s t : Multiset α} : Disjoint s.toFinset t.toFinset ↔ Multiset.Disjoint s t",
+      "source_failure_theorems": ["Multiset.disjoint_toFinset"],
+      "expected_utility": "single_theorem",
+      "novelty_status": "probably_existing",
+      "proof_family_hint": "rw [Finset.disjoint_left]; simp [Multiset.mem_toFinset, Multiset.disjoint_left]; likely IS the failing theorem itself",
+      "risk": "duplicate"
+    },
+    {
+      "lemma_template_name": "multiset_toFinset_eq_singleton_bridge",
+      "informal_description": "A multiset's toFinset equals {a} iff a is in s and every member of s equals a.",
+      "lean_statement_sketch": "theorem toFinset_eq_singleton_iff {s : Multiset α} {a : α} : s.toFinset = {a} ↔ a ∈ s ∧ ∀ x ∈ s, x = a",
+      "source_failure_theorems": ["Multiset.toFinset_eq_singleton_iff"],
+      "expected_utility": "single_theorem",
+      "novelty_status": "probably_existing",
+      "proof_family_hint": "rw [Finset.eq_singleton_iff_unique_mem]; simp [Multiset.mem_toFinset]; likely IS the failing theorem itself",
+      "risk": "duplicate"
+    },
+    {
+      "lemma_template_name": "multiset_mem_nsmul_bridge",
+      "informal_description": "Membership in n • s holds iff n ≠ 0 and membership in s; the membership lemma behind toFinset_nsmul.",
+      "lean_statement_sketch": "theorem mem_nsmul {s : Multiset α} {a : α} {n : ℕ} (hn : n ≠ 0) : a ∈ n • s ↔ a ∈ s",
+      "source_failure_theorems": ["Multiset.toFinset_nsmul"],
+      "expected_utility": "single_theorem",
+      "novelty_status": "probably_existing",
+      "proof_family_hint": "ext x <;> simp [Multiset.mem_toFinset, Multiset.mem_nsmul]; toFinset_nsmul reduces to this membership bridge under n ≠ 0",
+      "risk": "duplicate"
+    },
+    {
+      "lemma_template_name": "multiset_toFinset_ext_tactic_family",
+      "informal_description": "NOT a lemma: the genuinely-missing reusable capability is a tactic family `ext x <;> simp [Multiset.mem_toFinset, <side lemma>]` (and the Finset-characterization rewrites) for Multiset.toFinset goals — the failures are membership/extensionality goals mis-served by the Multiset induction oracle.",
+      "lean_statement_sketch": "N/A (tactic family / probe, candidate SF3 action rather than a lemma)",
+      "source_failure_theorems": ["Multiset.disjoint_toFinset", "Multiset.toFinset_eq_singleton_iff", "Multiset.toFinset_nsmul"],
+      "expected_utility": "multi_theorem",
+      "novelty_status": "nearby_existing",
+      "proof_family_hint": "ext / Finset.ext_iff + Multiset.mem_toFinset; the SF2 probe ladder tests whether this family closes all three",
+      "risk": "promising"
+    }
+  ]
+}

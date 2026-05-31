@@ -1,0 +1,96 @@
+{
+  "source_run": "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable",
+  "rc1_solved_count": 2,
+  "rc1_failed_count": 1,
+  "sf1_metrics_discrepancies": [
+    {
+      "full_name": "Multiset.toFinset_nsmul",
+      "sf1_eval_matrix_solved": false,
+      "metrics_finished": true
+    },
+    {
+      "full_name": "Multiset.disjoint_toFinset",
+      "sf1_eval_matrix_solved": false,
+      "metrics_finished": true
+    }
+  ],
+  "cases": [
+    {
+      "full_name": "Multiset.toFinset_nsmul",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "rc1_solved": true,
+      "rc1_winning_tactic": "aesop",
+      "rc1_winning_tactic_origin": "generative_topk",
+      "wx3_fired": false,
+      "wx3_closed": false,
+      "last_tried_tactics": [
+        "aesop"
+      ],
+      "final_error": "tactic 'split_ifs' failed, no if-then-else conditions to split\nα : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝ : DecidableEq α\ns✝ t s : Multiset α\n⊢ ∀ (n : ℕ), n ≠ 0 → (n • s).toFinset = s.toFinset",
+      "final_goal": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝ : DecidableEq α\ns✝ t s : Multiset α\n⊢ ∀ (n : ℕ), n ≠ 0 → (n • s).toFinset = s.toFinset",
+      "trace_paths": [
+        "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval-4e872b94/traces.jsonl"
+      ],
+      "metrics_path": "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval-4e872b94/metrics.json",
+      "available_context_level": "full_trace",
+      "notes": [
+        "RC1 PROVED via `aesop` (origin=generative_topk)",
+        "NOTE: SF1 eval_matrix_results.json mislabels this as solved=False (parser bug: used 'proof_finished'/'solved' instead of metrics key 'finished'); metrics.json is authoritative"
+      ]
+    },
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "rc1_solved": false,
+      "rc1_winning_tactic": null,
+      "rc1_winning_tactic_origin": null,
+      "wx3_fired": true,
+      "wx3_closed": false,
+      "last_tried_tactics": [
+        "simp [Set.univ_union]",
+        "induction s using Multiset.induction_on <;> simp_all",
+        "aesop"
+      ],
+      "final_error": "All top-13 tactics errored at step 4",
+      "final_goal": "case h\nα : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst : DecidableEq α\ns t : Multiset α\na : α\na_1 : ∅ = {a}\n⊢ False\n\ncase cons\nα : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝ : DecidableEq α\ns t : Multiset α\na a✝¹ : α\ns✝ : Multiset α\na✝ : s✝.toFinset = {a} ↔ ¬s✝ = 0 ∧ s✝ = card s✝ • {a}\n⊢ insert a✝¹ s✝.toFinset = {a} ↔ a✝¹ ::ₘ s✝ = (card s✝ + 1) • {a}",
+      "trace_paths": [
+        "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval-4e872b94/traces.jsonl"
+      ],
+      "metrics_path": "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval-4e872b94/metrics.json",
+      "available_context_level": "full_trace",
+      "notes": [
+        "GENUINE RC1 failure (metrics.finished=false)",
+        "WX3 Multiset.induction_on fired but did NOT close -> real post-oracle failure"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_toFinset",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "rc1_solved": true,
+      "rc1_winning_tactic": "induction m1 using Multiset.induction_on <;> simp_all",
+      "rc1_winning_tactic_origin": "wrapper_symbolic_action",
+      "wx3_fired": true,
+      "wx3_closed": true,
+      "last_tried_tactics": [
+        "aesop",
+        "induction m1 using Multiset.induction_on <;> simp_all",
+        "induction m1 using Multiset.induction_on <;> simp_all"
+      ],
+      "final_error": "simp made no progress",
+      "final_goal": "case mpr\nα : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst : DecidableEq α\nm1 m2 : Multiset α\na : m1.Disjoint m2\n⊢ _root_.Disjoint m1.toFinset m2.toFinset",
+      "trace_paths": [
+        "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval-4e872b94/traces.jsonl"
+      ],
+      "metrics_path": "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval-4e872b94/metrics.json",
+      "available_context_level": "full_trace",
+      "notes": [
+        "RC1 PROVED via `induction m1 using Multiset.induction_on <;> simp_all` (origin=wrapper_symbolic_action, template=MULTISET_INDUCTION_SIMP[Multiset,simp_all])",
+        "closed by the WX3 Multiset induction oracle",
+        "NOTE: SF1 eval_matrix_results.json mislabels this as solved=False (parser bug: used 'proof_finished'/'solved' instead of metrics key 'finished'); metrics.json is authoritative"
+      ]
+    }
+  ]
+}
