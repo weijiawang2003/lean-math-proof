@@ -1,0 +1,56 @@
+{
+  "generated_by": "scripts/tr6_select_eval_batch.py",
+  "batch_size": 200,
+  "quotas": {
+    "Set": 30,
+    "Finset": 35,
+    "List": 35,
+    "Nat": 35,
+    "Multiset": 25,
+    "Order": 20,
+    "Other": 20
+  },
+  "by_stratum": {
+    "Set": 30,
+    "Finset": 35,
+    "List": 35,
+    "Nat": 35,
+    "Multiset": 25,
+    "Order": 20,
+    "Other": 20
+  },
+  "by_namespace": {
+    "Set": 30,
+    "Finset": 35,
+    "List": 35,
+    "Nat": 35,
+    "Multiset": 25,
+    "": 20,
+    "AntitoneOn": 2,
+    "MonotoneOn": 2,
+    "IsGLB": 1,
+    "IsLUB": 1,
+    "Option": 11,
+    "Exists": 1,
+    "PLift": 1,
+    "Equiv": 1
+  },
+  "feature_distribution": {
+    "has_iff": 183,
+    "has_eq": 75,
+    "has_subset": 46,
+    "has_mem": 83,
+    "has_disjoint": 48,
+    "has_card": 32,
+    "has_map_filter": 80,
+    "has_tofinset": 2,
+    "has_order": 52,
+    "has_nat_arith": 47,
+    "has_union_inter": 41
+  },
+  "rc4b_rc4c_candidate_count": 48,
+  "hard_negative_nat_count": 0,
+  "overlap_with_exclusion": [],
+  "overlap_is_zero": true,
+  "expected_runtime_note": "~200 theorems × (open ~6s + 8-step RC2 search); serialized overnight, hard theorems up to ~80s."
+}

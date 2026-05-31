@@ -1,0 +1,79 @@
+{
+  "generated_by": "scripts/tr6_retrain_ranker_with_fresh_data.py",
+  "exploratory": true,
+  "note": "TR4 model NOT replaced.",
+  "results": {
+    "tr4_only": {
+      "tag": "tr4_only",
+      "n": 4737,
+      "positives": 23,
+      "positive_namespaces": {
+        "Set": 18,
+        "Prop": 1,
+        "Finset": 2,
+        "List": 2
+      },
+      "oof_pr_auc_by_theorem": 0.5216,
+      "oof_pr_auc_by_namespace": 0.0079,
+      "oof_pr_auc_by_cluster": 0.4772,
+      "top5_recovery": 1.0,
+      "theorems_with_success": 13
+    },
+    "tr4_plus_tr5": {
+      "tag": "tr4_plus_tr5",
+      "n": 5542,
+      "positives": 36,
+      "positive_namespaces": {
+        "Set": 27,
+        "Prop": 2,
+        "Finset": 3,
+        "List": 4
+      },
+      "oof_pr_auc_by_theorem": 0.2995,
+      "oof_pr_auc_by_namespace": 0.0055,
+      "oof_pr_auc_by_cluster": 0.516,
+      "top5_recovery": 0.7692,
+      "theorems_with_success": 13
+    },
+    "tr4_plus_tr6": {
+      "tag": "tr4_plus_tr6",
+      "n": 7195,
+      "positives": 44,
+      "positive_namespaces": {
+        "Set": 23,
+        "Prop": 1,
+        "Finset": 4,
+        "List": 3,
+        "Multiset": 11,
+        "Nat": 1,
+        "": 1
+      },
+      "oof_pr_auc_by_theorem": 0.5189,
+      "oof_pr_auc_by_namespace": 0.0095,
+      "oof_pr_auc_by_cluster": 0.0139,
+      "top5_recovery": 0.8529,
+      "theorems_with_success": 34
+    },
+    "tr4_plus_tr5_tr6": {
+      "tag": "tr4_plus_tr5_tr6",
+      "n": 8000,
+      "positives": 57,
+      "positive_namespaces": {
+        "Set": 32,
+        "Prop": 2,
+        "Finset": 5,
+        "List": 5,
+        "Multiset": 11,
+        "Nat": 1,
+        "": 1
+      },
+      "oof_pr_auc_by_theorem": 0.3718,
+      "oof_pr_auc_by_namespace": 0.01,
+      "oof_pr_auc_by_cluster": 0.2814,
+      "top5_recovery": 0.9118,
+      "theorems_with_success": 34
+    }
+  },
+  "delta_by_theorem_tr6": -0.0027,
+  "delta_by_namespace_tr6": 0.0016
+}

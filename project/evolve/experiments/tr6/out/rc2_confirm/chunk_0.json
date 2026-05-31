@@ -1,0 +1,72 @@
+{
+  "Set.disjoint_iUnion_right": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-128b8e44/traces.jsonl"
+  },
+  "Set.disjoint_iUnion": {
+    "classification": "OPEN_FLAKE",
+    "rc2_finished": null
+  },
+  "Set._root_.Disjoint.image": {
+    "classification": "OPEN_FLAKE",
+    "rc2_finished": null
+  },
+  "Set.InjOn.mem_image_iff": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 2,
+    "tactics_used": [
+      "aesop"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-128b8e44/traces.jsonl"
+  },
+  "Set.sUnion_subset_iff": {
+    "classification": "RC2_SOLVED",
+    "rc2_finished": true,
+    "num_steps": 2,
+    "winning_tactic": "tauto",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-128b8e44/traces.jsonl"
+  },
+  "Set.subset_sInter_iff": {
+    "classification": "RC2_SOLVED",
+    "rc2_finished": true,
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-128b8e44/traces.jsonl"
+  },
+  "Set.mapsTo_sInter": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-128b8e44/traces.jsonl"
+  },
+  "Set.mapsTo_sUnion": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-128b8e44/traces.jsonl"
+  },
+  "Set.mapsTo'": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 2,
+    "tactics_used": [
+      "simp [Set.subset_def]"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-128b8e44/traces.jsonl"
+  },
+  "Set.kernImage_preimage_eq_iff": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 2,
+    "tactics_used": [
+      "aesop"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-128b8e44/traces.jsonl"
+  }
+}

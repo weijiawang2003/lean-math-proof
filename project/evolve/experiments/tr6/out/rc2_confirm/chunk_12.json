@@ -1,0 +1,90 @@
+{
+  "Nat.modEq_zero_iff_dvd": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 2,
+    "tactics_used": [
+      "aesop"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-e0b443e2/traces.jsonl"
+  },
+  "Nat.mul_eq_left": {
+    "classification": "RC2_SOLVED",
+    "rc2_finished": true,
+    "num_steps": 1,
+    "winning_tactic": "exact ⟨fun h => Nat.eq_of_mul_eq_mul_left (Nat.pos_of_ne_zero ha) (h.trans (Nat.mul_one _).symm), fun h => by simp [h]⟩",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-e0b443e2/traces.jsonl"
+  },
+  "Nat.mul_eq_right": {
+    "classification": "RC2_SOLVED",
+    "rc2_finished": true,
+    "num_steps": 1,
+    "winning_tactic": "exact ⟨fun h => Nat.eq_of_mul_eq_mul_right (Nat.pos_of_ne_zero hb) (h.trans (Nat.one_mul _).symm), fun h => by simp [h]⟩",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-e0b443e2/traces.jsonl"
+  },
+  "Nat.le_add_one_iff": {
+    "classification": "RC2_SOLVED",
+    "rc2_finished": true,
+    "num_steps": 1,
+    "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-e0b443e2/traces.jsonl"
+  },
+  "Nat.modEq_zero_iff": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 2,
+    "tactics_used": [
+      "aesop"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-e0b443e2/traces.jsonl"
+  },
+  "Nat.mod_eq_iff_lt": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 8,
+    "tactics_used": [
+      "simp only [← Nat.not_le, Nat.pow_le_pow_iff_left hn]",
+      "simp [List.length_cons]",
+      "simp only [← Nat.not_le, Nat.pow_le_pow_iff_left hn]",
+      "simp [List.length_cons]",
+      "simp only [← Nat.not_le, Nat.pow_le_pow_iff_left hn]",
+      "simp [List.length_cons]",
+      "simp only [← Nat.not_le, Nat.pow_le_pow_iff_left hn]",
+      "simp [List.length_cons]"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-e0b443e2/traces.jsonl"
+  },
+  "Nat.div_lt_one_iff": {
+    "classification": "RC2_SOLVED",
+    "rc2_finished": true,
+    "num_steps": 1,
+    "winning_tactic": "rw [Nat.div_lt_iff_lt_mul hb, Nat.one_mul]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-e0b443e2/traces.jsonl"
+  },
+  "Nat.mod_two_ne_one": {
+    "classification": "RC2_SOLVED",
+    "rc2_finished": true,
+    "num_steps": 1,
+    "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-e0b443e2/traces.jsonl"
+  },
+  "Nat.one_le_div_iff": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 3,
+    "tactics_used": [
+      "rw [Nat.div_eq_of_lt]",
+      "simp [Nat.one_mul]"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-e0b443e2/traces.jsonl"
+  },
+  "Nat.ModEq.comm": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 2,
+    "tactics_used": [
+      "aesop"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-e0b443e2/traces.jsonl"
+  }
+}

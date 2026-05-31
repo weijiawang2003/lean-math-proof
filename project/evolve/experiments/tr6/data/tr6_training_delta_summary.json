@@ -1,0 +1,48 @@
+{
+  "generated_by": "scripts/tr6_export_training_data.py",
+  "num_examples": 2458,
+  "success_positives": 21,
+  "credit_positives": 18,
+  "label_histogram": {
+    "NO_WIN_UNDER_BUDGET": 2437,
+    "FRESH_RC4C_EVIDENCE": 3,
+    "FRESH_RC4B_EVIDENCE": 8,
+    "FRESH_TRUE_DELTA": 6,
+    "BASELINE_DUPLICATE": 3,
+    "FRESH_RC4A_EVIDENCE": 1
+  },
+  "by_namespace": {
+    "AntitoneOn": 40,
+    "Equiv": 20,
+    "Finset": 570,
+    "IsGLB": 20,
+    "IsLUB": 20,
+    "List": 552,
+    "MonotoneOn": 30,
+    "Multiset": 328,
+    "Nat": 266,
+    "Option": 60,
+    "PLift": 20,
+    "Set": 340,
+    "": 192
+  },
+  "credit_positives_by_namespace": {
+    "Finset": 2,
+    "List": 1,
+    "Multiset": 9,
+    "Set": 5,
+    "Nat": 1
+  },
+  "nonset_credit_positives": {
+    "Finset": 2,
+    "List": 1,
+    "Multiset": 9,
+    "Nat": 1
+  },
+  "new_positive_namespaces_vs_tr4": [
+    "Multiset",
+    "Nat"
+  ],
+  "helps_by_namespace_generalization": true,
+  "note": "TR4/TR5 data NOT overwritten; TR6 augments. Fresh credit positives in previously-zero-positive namespaces directly address the by-namespace gap."
+}
