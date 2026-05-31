@@ -1,0 +1,66 @@
+[
+  {
+    "full_name": "Finset.mem_disjUnion",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem mem_disjUnion {α s t h a} : a ∈ @disjUnion α s t h ↔ a ∈ s ∨ a ∈ t",
+    "gate_should_fire": true,
+    "candidate_tactic": "simp [Finset.disjUnion]",
+    "matched_defs": [
+      "Finset.disjUnion"
+    ],
+    "expected_behavior": "gate fires; expected NEW WIN"
+  },
+  {
+    "full_name": "Set.antitoneOn_iff_antitone",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔ Antitone fun a : s => f a",
+    "gate_should_fire": true,
+    "candidate_tactic": "simp [Antitone, AntitoneOn]",
+    "matched_defs": [
+      "Antitone",
+      "AntitoneOn"
+    ],
+    "expected_behavior": "gate fires; expected NEW WIN"
+  },
+  {
+    "full_name": "Set.monotoneOn_iff_monotone",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem monotoneOn_iff_monotone : MonotoneOn f s ↔ Monotone fun a : s => f a",
+    "gate_should_fire": true,
+    "candidate_tactic": "simp [Monotone, MonotoneOn]",
+    "matched_defs": [
+      "Monotone",
+      "MonotoneOn"
+    ],
+    "expected_behavior": "gate fires; expected NEW WIN"
+  },
+  {
+    "full_name": "Set.strictAntiOn_iff_strictAnti",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem strictAntiOn_iff_strictAnti : StrictAntiOn f s ↔ StrictAnti fun a : s => f a",
+    "gate_should_fire": true,
+    "candidate_tactic": "simp [StrictAnti, StrictAntiOn]",
+    "matched_defs": [
+      "StrictAnti",
+      "StrictAntiOn"
+    ],
+    "expected_behavior": "gate fires; expected NEW WIN"
+  },
+  {
+    "full_name": "Set.strictMonoOn_iff_strictMono",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem strictMonoOn_iff_strictMono : StrictMonoOn f s ↔ StrictMono fun a : s => f a",
+    "gate_should_fire": true,
+    "candidate_tactic": "simp [StrictMono, StrictMonoOn]",
+    "matched_defs": [
+      "StrictMono",
+      "StrictMonoOn"
+    ],
+    "expected_behavior": "gate fires; expected NEW WIN"
+  }
+]

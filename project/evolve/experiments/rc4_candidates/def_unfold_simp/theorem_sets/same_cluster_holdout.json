@@ -1,0 +1,40 @@
+[
+  {
+    "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_le_le : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a ≤ b ∧ b ≤ c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+    "gate_should_fire": true,
+    "candidate_tactic": "simp [MonotoneOn, AntitoneOn]",
+    "matched_defs": [
+      "MonotoneOn",
+      "AntitoneOn"
+    ],
+    "expected_behavior": "gate fires; win NOT guaranteed (tests generalization)"
+  },
+  {
+    "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_lt_lt : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a < b ∧ b < c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+    "gate_should_fire": true,
+    "candidate_tactic": "simp [MonotoneOn, AntitoneOn]",
+    "matched_defs": [
+      "MonotoneOn",
+      "AntitoneOn"
+    ],
+    "expected_behavior": "gate fires; win NOT guaranteed (tests generalization)"
+  },
+  {
+    "full_name": "Finset.filter_cons",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem filter_cons {a : α} (s : Finset α) (ha : a ∉ s) : filter p (cons a s ha) = (if p a then {a} else ∅ : Finset α).disjUnion (filter p s) (by split_ifs · rw [disjoint_singleton_left] exact mem_filter.not.mpr <| mt And.left ha · exact disjoint_empty_left _)",
+    "gate_should_fire": true,
+    "candidate_tactic": "simp [Finset.disjUnion]",
+    "matched_defs": [
+      "Finset.disjUnion"
+    ],
+    "expected_behavior": "gate fires; RC2 already solved (additive no-op)"
+  }
+]

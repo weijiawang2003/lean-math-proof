@@ -1,0 +1,38 @@
+[
+  {
+    "full_name": "Finset.coe_disjUnion",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem coe_disjUnion {s t : Finset α} (h : Disjoint s t) : (disjUnion s t h : Set α) = (s : Set α) ∪ t",
+    "gate_should_fire": true,
+    "candidate_tactic": "simp [Finset.disjUnion]",
+    "matched_defs": [
+      "Finset.disjUnion"
+    ],
+    "expected_behavior": "fresh holdout; gate fires; RC2 status unknown"
+  },
+  {
+    "full_name": "Finset.disjUnion_singleton",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem disjUnion_singleton (s : Finset α) (a : α) (h : Disjoint s {a}) : disjUnion s {a} h = cons a s (disjoint_singleton_right.mp h)",
+    "gate_should_fire": true,
+    "candidate_tactic": "simp [Finset.disjUnion]",
+    "matched_defs": [
+      "Finset.disjUnion"
+    ],
+    "expected_behavior": "fresh holdout; gate fires; RC2 status unknown"
+  },
+  {
+    "full_name": "Finset.disjUnion_eq_union",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem disjUnion_eq_union (s t h) : @disjUnion α s t h = s ∪ t",
+    "gate_should_fire": true,
+    "candidate_tactic": "simp [Finset.disjUnion]",
+    "matched_defs": [
+      "Finset.disjUnion"
+    ],
+    "expected_behavior": "fresh holdout; gate fires; RC2 status unknown"
+  }
+]

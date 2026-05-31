@@ -1,0 +1,43 @@
+{
+  "family": "def_unfold_simp",
+  "status": "experimental_rc4_candidate",
+  "base": "RC2",
+  "promotion_allowed": false,
+  "description": "Goal-driven definitional unfold restricted to a validated allowlist. For a theorem, the gate matches the allowlisted definitions whose name appears in the goal/statement and emits a single `simp [<matched defs>]`. Fires ONLY when at least one allowlisted definition is present in the goal; otherwise no emission (so it cannot fire on Nat/arith/Multiset/List goals that name none of these defs).",
+  "validated_def_allowlist": [
+    "Monotone",
+    "MonotoneOn",
+    "Antitone",
+    "AntitoneOn",
+    "StrictMono",
+    "StrictMonoOn",
+    "StrictAnti",
+    "StrictAntiOn",
+    "Finset.disjUnion"
+  ],
+  "allowlist_source": "TR3 def_unfold_simp TRUE_RETRIEVAL_ONLY_DELTA wins (5 theorems)",
+  "actions": [
+    {
+      "name": "def_unfold_simp_allowlist",
+      "tactic": "simp [<allowlisted defs present in the goal>]",
+      "lemma_or_def": "dynamic: intersection(allowlist, defs named in goal)",
+      "gate": {
+        "requires_goal_contains_allowlisted_def": true,
+        "match_by": ["goal_text_identifier", "projection_notation", "theorem_name_token"],
+        "requires_namespace": null,
+        "forbids_emission_when_no_allowlisted_def_in_goal": true,
+        "forbidden_namespaces_note": "No explicit namespace forbid needed: the goal-presence gate already prevents firing on Nat / arithmetic / Multiset / List goals that name none of the allowlisted defs.",
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "low"
+    }
+  ],
+  "excluded_from_this_candidate": [
+    "d2_simp_aesop family (validated separately)",
+    "Set.disjoint_left bridge (RC4B, validated separately)",
+    "broad simp / arbitrary retrieved-lemma simp",
+    "global @[simp] additions"
+  ],
+  "evaluation_mode": "external_additive",
+  "evaluation_rule": "candidate_solved = literal_RC2_solved OR (gate fires AND `simp [matched defs]` closes the goal single-shot from the initial state)"
+}

@@ -1,0 +1,219 @@
+{
+  "Finset.coe_disjUnion": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Finset.disjUnion_singleton": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Finset.disjUnion_eq_union": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.mul_add_mod'": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Set.ite_univ": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.ite]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Set.union_comm": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Set.inter_comm": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Set.mem_union": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Set.mem_inter_iff": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "tauto",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Set.subset_univ": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.subset_def]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Set.empty_subset": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.subset_def]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Set.union_empty": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.ext_iff]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Set.empty_union": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.ext_iff]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Set.inter_univ": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.subset_def]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Set.univ_inter": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.subset_def]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Finset.disjoint_insert_right": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Finset.mem_insert": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Finset.mem_singleton": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.add_eq_left": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.add_eq_max_iff": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.add_eq_min_iff": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.add_eq_one_iff": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.add_eq_right": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.add_mod_eq_add_mod_left": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.add_mod_eq_add_mod_right": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.div_le_div_right": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "by_cases hc : c = 0 <;> [simp [hc]; exact (Nat.le_div_iff_mul_le' (Nat.pos_of_ne_zero hc)).2 (Nat.le_trans (Nat.div_mul_le_self _ _) h)]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.div_lt_iff_lt_mul'": {
+    "status": "solved",
+    "num_steps": 3,
+    "winning_tactic": "simp_all",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.div_lt_one_iff": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "rw [Nat.div_lt_iff_lt_mul hb, Nat.one_mul]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.half_le_of_sub_le_half": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "omega",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.le_and_le_add_one_iff": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+    "provenance": "rc4a_live"
+  },
+  "Nat.AM_GM": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+    "provenance": "rc4a_live"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "generated_by": "scripts/rc4a_build_validation_sets.py",
+  "policy": "project/evolve/experiments/rc4_candidates/def_unfold_simp/def_unfold_simp_policy.json",
+  "allowlist": [
+    "Monotone",
+    "MonotoneOn",
+    "Antitone",
+    "AntitoneOn",
+    "StrictMono",
+    "StrictMonoOn",
+    "StrictAnti",
+    "StrictAntiOn",
+    "Finset.disjUnion"
+  ],
+  "sizes": {
+    "known_wins": 5,
+    "same_cluster_holdout": 3,
+    "fresh_frontier_holdout": 3,
+    "negative_controls": 20,
+    "canonical_smoke": 45
+  },
+  "gate_fire_counts": {
+    "known_wins": 5,
+    "same_cluster_holdout": 3,
+    "fresh_frontier_holdout": 3,
+    "negative_controls": 0,
+    "canonical_smoke": 0
+  },
+  "overlap_with_tr3": {
+    "known_wins": 5,
+    "same_cluster_holdout": 3,
+    "fresh_frontier_holdout": 0,
+    "negative_controls": 20,
+    "canonical_smoke": 4
+  },
+  "leakage_notes": [
+    "known_wins are the 5 TR3 def_unfold_simp wins (in-sample by construction).",
+    "same_cluster_holdout are TR3 confirmed/solved cases that ALSO name an allowlisted def but were NOT credited wins — tests generalization, NOT in-sample wins.",
+    "fresh_frontier_holdout come from the SF1 frontier / discovered catalog (may overlap TR3 if the same theorem was confirmed there).",
+    "negative_controls and canonical_smoke must show 0 gate emissions / no regressions."
+  ],
+  "expected_behavior": {
+    "known_wins": "gate fires on all; expected to reproduce TR3 wins",
+    "same_cluster_holdout": "gate fires; wins NOT guaranteed",
+    "fresh_frontier_holdout": "gate fires; wins NOT guaranteed",
+    "negative_controls": "0 gate emissions",
+    "canonical_smoke": "≈0 gate emissions; floors preserved"
+  },
+  "set_files": {
+    "known_wins": "project/evolve/experiments/rc4_candidates/def_unfold_simp/theorem_sets/known_wins.json",
+    "same_cluster_holdout": "project/evolve/experiments/rc4_candidates/def_unfold_simp/theorem_sets/same_cluster_holdout.json",
+    "fresh_frontier_holdout": "project/evolve/experiments/rc4_candidates/def_unfold_simp/theorem_sets/fresh_frontier_holdout.json",
+    "negative_controls": "project/evolve/experiments/rc4_candidates/def_unfold_simp/theorem_sets/negative_controls.json",
+    "canonical_smoke": "project/evolve/experiments/rc4_candidates/def_unfold_simp/theorem_sets/canonical_smoke.json"
+  }
+}

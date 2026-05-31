@@ -1,0 +1,59 @@
+{
+  "generated_by": "scripts/rc4a_offgate_preservation.py",
+  "per_set_gate_emissions": {
+    "known_wins": {
+      "n": 5,
+      "gate_emissions": 5,
+      "must_not_fire": false
+    },
+    "same_cluster_holdout": {
+      "n": 3,
+      "gate_emissions": 3,
+      "must_not_fire": false
+    },
+    "fresh_frontier_holdout": {
+      "n": 3,
+      "gate_emissions": 3,
+      "must_not_fire": false
+    },
+    "negative_controls": {
+      "n": 20,
+      "gate_emissions": 0,
+      "must_not_fire": true
+    },
+    "canonical_smoke": {
+      "n": 45,
+      "gate_emissions": 0,
+      "must_not_fire": true
+    }
+  },
+  "off_gate_emissions": 0,
+  "unexpected_fired_cases": [],
+  "regressions": 0,
+  "regression_note": "additive evaluator (candidate ⊇ RC2) → regressions structurally impossible",
+  "canonical_floors": {
+    "canonical_smoke": {
+      "n": 45,
+      "rc2_solved": 40,
+      "rc2_failed": 5
+    }
+  },
+  "canonical_smoke_breakdown": {
+    "demo_v1": {
+      "n": 15,
+      "rc2_solved": 12,
+      "gate_fires": 0
+    },
+    "nat_defs_medium": {
+      "n": 15,
+      "rc2_solved": 14,
+      "gate_fires": 0
+    },
+    "nat_defs_large_v5": {
+      "n": 15,
+      "rc2_solved": 14,
+      "gate_fires": 0
+    }
+  },
+  "verdict": "OFFGATE_CLEAN"
+}
