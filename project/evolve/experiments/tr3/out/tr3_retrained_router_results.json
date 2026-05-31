@@ -1,0 +1,75 @@
+{
+  "generated_by": "scripts/tr3_retrain_retrieval_router.py",
+  "exploratory": true,
+  "not_production": true,
+  "component_sizes": {
+    "tr1": 57,
+    "sf5": 20,
+    "tr3": 92
+  },
+  "results": {
+    "TR1": {
+      "n": 57,
+      "num_labels": 7,
+      "labels": [
+        "BASELINE_DUPLICATE",
+        "MISSING_BRIDGE_LEMMA_CANDIDATE",
+        "NO_CHEAP_ACTION",
+        "PROOF_SEARCH_DEPTH_GAP",
+        "SET_ITE_SIMP",
+        "SX3_PRODUCTION_SUBSUMED",
+        "WX3_MULTISET_INDUCTION"
+      ],
+      "loo_macro_f1": 0.484,
+      "loo_acc": 0.702,
+      "loo_top3_acc": 0.912,
+      "grouped_lono_macro_f1": 0.137,
+      "num_namespaces": 6
+    },
+    "TR1+SF5": {
+      "n": 77,
+      "num_labels": 10,
+      "labels": [
+        "BASELINE_DUPLICATE",
+        "EXISTING_LEMMA_GAP",
+        "MISSING_BRIDGE_LEMMA_CANDIDATE",
+        "NO_CHEAP_ACTION",
+        "PROOF_DEPTH_GAP",
+        "PROOF_SEARCH_DEPTH_GAP",
+        "RETRIEVAL_ROUTING_GAP",
+        "SET_ITE_SIMP",
+        "SX3_PRODUCTION_SUBSUMED",
+        "WX3_MULTISET_INDUCTION"
+      ],
+      "loo_macro_f1": 0.463,
+      "loo_acc": 0.649,
+      "loo_top3_acc": 0.883,
+      "grouped_lono_macro_f1": 0.083,
+      "num_namespaces": 6
+    },
+    "TR1+SF5+TR3": {
+      "n": 169,
+      "num_labels": 12,
+      "labels": [
+        "BASELINE_DUPLICATE",
+        "EXISTING_LEMMA_GAP",
+        "MISSING_BRIDGE_LEMMA_CANDIDATE",
+        "NO_CHEAP_ACTION",
+        "PROOF_DEPTH_GAP",
+        "PROOF_SEARCH_DEPTH_GAP",
+        "RETRIEVAL_ROUTING_GAP",
+        "SET_ITE_SIMP",
+        "SX3_PRODUCTION_SUBSUMED",
+        "TRUE_RETRIEVAL_DEPTH_DELTA",
+        "TRUE_RETRIEVAL_ONLY_DELTA",
+        "WX3_MULTISET_INDUCTION"
+      ],
+      "loo_macro_f1": 0.567,
+      "loo_acc": 0.781,
+      "loo_top3_acc": 0.888,
+      "grouped_lono_macro_f1": 0.057,
+      "num_namespaces": 9
+    }
+  },
+  "error": null
+}

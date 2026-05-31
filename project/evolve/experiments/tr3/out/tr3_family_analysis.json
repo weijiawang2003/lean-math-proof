@@ -1,0 +1,592 @@
+{
+  "generated_by": "scripts/tr3_analyze_results.py",
+  "num_families": 24,
+  "families": [
+    {
+      "family": "def_unfold_simp",
+      "depth": 1,
+      "tried": 49,
+      "solves": 5,
+      "true_delta_wins": 5,
+      "true_delta_targets": [
+        "Finset.mem_disjUnion",
+        "Set.antitoneOn_iff_antitone",
+        "Set.monotoneOn_iff_monotone",
+        "Set.strictAntiOn_iff_strictAnti",
+        "Set.strictMonoOn_iff_strictMono"
+      ],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 13,
+      "namespaces": [
+        "Finset",
+        "List",
+        "Multiset",
+        "Nat",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "rc_candidate"
+    },
+    {
+      "family": "d1_simp_lemma",
+      "depth": 1,
+      "tried": 510,
+      "solves": 4,
+      "true_delta_wins": 4,
+      "true_delta_targets": [
+        "List.toFinset.ext_iff",
+        "List.toFinset_eq",
+        "Set.compl_union_self",
+        "Set.disjoint_singleton_left"
+      ],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 15,
+      "namespaces": [
+        "Eq",
+        "Finset",
+        "Function",
+        "List",
+        "Multiset",
+        "Nat",
+        "Prop",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "rc_candidate"
+    },
+    {
+      "family": "d2_simp_aesop",
+      "depth": 2,
+      "tried": 243,
+      "solves": 3,
+      "true_delta_wins": 3,
+      "true_delta_targets": [
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.disjoint_iff_forall_ne",
+        "Set.disjoint_right"
+      ],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 2,
+      "namespaces": [
+        "Eq",
+        "Finset",
+        "Function",
+        "List",
+        "Multiset",
+        "Nat",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "rc_candidate"
+    },
+    {
+      "family": "d1_exact",
+      "depth": 1,
+      "tried": 510,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 207,
+      "namespaces": [
+        "Eq",
+        "Finset",
+        "Function",
+        "List",
+        "Multiset",
+        "Nat",
+        "Prop",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d1_simpa_using",
+      "depth": 1,
+      "tried": 510,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 207,
+      "namespaces": [
+        "Eq",
+        "Finset",
+        "Function",
+        "List",
+        "Multiset",
+        "Nat",
+        "Prop",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d1_simpa_lemma",
+      "depth": 1,
+      "tried": 506,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "Eq",
+        "Finset",
+        "Function",
+        "List",
+        "Multiset",
+        "Nat",
+        "Prop",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d1_rw_lemma",
+      "depth": 1,
+      "tried": 358,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "Eq",
+        "Finset",
+        "Function",
+        "List",
+        "Multiset",
+        "Nat",
+        "Prop",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d2_simp_simpall",
+      "depth": 2,
+      "tried": 240,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 7,
+      "namespaces": [
+        "Eq",
+        "Finset",
+        "Function",
+        "List",
+        "Multiset",
+        "Nat",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d3_simp_try",
+      "depth": 3,
+      "tried": 158,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 1,
+      "namespaces": [
+        "Eq",
+        "Finset",
+        "Function",
+        "List",
+        "Multiset",
+        "Nat",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d2_rw_aesop",
+      "depth": 2,
+      "tried": 157,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "Eq",
+        "Finset",
+        "Function",
+        "List",
+        "Multiset",
+        "Nat",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d2_rw_simpall",
+      "depth": 2,
+      "tried": 157,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "Eq",
+        "Finset",
+        "Function",
+        "List",
+        "Multiset",
+        "Nat",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d2_constructor_simpa",
+      "depth": 2,
+      "tried": 93,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 41,
+      "namespaces": [
+        "Finset",
+        "List",
+        "Multiset",
+        "Nat",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d1_aesop",
+      "depth": 1,
+      "tried": 83,
+      "solves": 1,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "Eq",
+        "Finset",
+        "Function",
+        "List",
+        "Multiset",
+        "Nat",
+        "Prop",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d1_simp_all",
+      "depth": 1,
+      "tried": 82,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "Eq",
+        "Finset",
+        "Function",
+        "List",
+        "Multiset",
+        "Nat",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d1_tauto",
+      "depth": 1,
+      "tried": 82,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "Eq",
+        "Finset",
+        "Function",
+        "List",
+        "Multiset",
+        "Nat",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d3_constructor_aesop",
+      "depth": 3,
+      "tried": 33,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "Finset",
+        "List",
+        "Multiset",
+        "Nat",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d3_constructor_simp_all",
+      "depth": 3,
+      "tried": 33,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "Finset",
+        "List",
+        "Multiset",
+        "Nat",
+        "Set"
+      ],
+      "clusters": [
+        "Multiset__iff__iff",
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d1_omega",
+      "depth": 1,
+      "tried": 28,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "Nat"
+      ],
+      "clusters": [],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d1_nlinarith",
+      "depth": 1,
+      "tried": 28,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "Nat"
+      ],
+      "clusters": [],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d2_ext_simp",
+      "depth": 2,
+      "tried": 24,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 1,
+      "namespaces": [
+        "Finset",
+        "List",
+        "Set"
+      ],
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d3_ext_simp_aesop",
+      "depth": 3,
+      "tried": 16,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 1,
+      "namespaces": [
+        "Finset",
+        "List",
+        "Set"
+      ],
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d1_tofinset_simp",
+      "depth": 1,
+      "tried": 10,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "List",
+        "Multiset"
+      ],
+      "clusters": [
+        "Multiset__iff__iff"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d2_ext_aesop",
+      "depth": 2,
+      "tried": 8,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "Finset",
+        "List",
+        "Set"
+      ],
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    },
+    {
+      "family": "d3_antisymm_aesop",
+      "depth": 3,
+      "tried": 8,
+      "solves": 0,
+      "true_delta_wins": 0,
+      "true_delta_targets": [],
+      "parse_errors": 0,
+      "timeouts": 0,
+      "unknown_name": 0,
+      "namespaces": [
+        "Finset",
+        "List",
+        "Set"
+      ],
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "promotion_recommendation": "training_only"
+    }
+  ]
+}
