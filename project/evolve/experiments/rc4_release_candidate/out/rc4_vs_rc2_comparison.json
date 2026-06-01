@@ -1,0 +1,3690 @@
+{
+  "generated_by": "scripts/rc4r_compare_rc2_rc4.py",
+  "classification_histogram": {
+    "BOTH_FAILED": 159,
+    "BOTH_SOLVED": 78,
+    "FLAKE": 12,
+    "RC4_NEW_WIN": 22
+  },
+  "rc2_total_solved": 78,
+  "rc4_total_solved": 100,
+  "raw_delta": 22,
+  "new_wins": 22,
+  "regressions": 0,
+  "net_delta": 22,
+  "new_wins_by_component": {
+    "RC4A": 5,
+    "RC4C_residue": 2,
+    "RC4B": 15
+  },
+  "new_wins_by_namespace": {
+    "Finset": 1,
+    "List": 1,
+    "Multiset": 9,
+    "Set": 11
+  },
+  "new_wins_by_set": {
+    "rc4_known_wins": 22
+  },
+  "known_wins": [
+    "Finset.mem_disjUnion",
+    "List.Forall.imp",
+    "Multiset.disjoint_add_left",
+    "Multiset.disjoint_add_right",
+    "Multiset.disjoint_cons_left",
+    "Multiset.disjoint_iff_ne",
+    "Multiset.disjoint_right",
+    "Multiset.disjoint_singleton",
+    "Multiset.disjoint_union_left",
+    "Multiset.singleton_disjoint",
+    "Multiset.zero_disjoint",
+    "Set.Nonempty.subset_pair_iff_eq",
+    "Set.antitoneOn_iff_antitone",
+    "Set.disjoint_iUnion_left",
+    "Set.disjoint_iUnion_right",
+    "Set.disjoint_iff_forall_ne",
+    "Set.disjoint_right",
+    "Set.disjoint_sUnion_left",
+    "Set.disjoint_singleton_left",
+    "Set.monotoneOn_iff_monotone",
+    "Set.strictAntiOn_iff_strictAnti",
+    "Set.strictMonoOn_iff_strictMono"
+  ],
+  "fresh_wins": [],
+  "num_known_wins": 22,
+  "num_fresh_wins": 0,
+  "regression_targets": [],
+  "new_win_targets": [
+    "Finset.mem_disjUnion",
+    "List.Forall.imp",
+    "Multiset.disjoint_add_left",
+    "Multiset.disjoint_add_right",
+    "Multiset.disjoint_cons_left",
+    "Multiset.disjoint_iff_ne",
+    "Multiset.disjoint_right",
+    "Multiset.disjoint_singleton",
+    "Multiset.disjoint_union_left",
+    "Multiset.singleton_disjoint",
+    "Multiset.zero_disjoint",
+    "Set.Nonempty.subset_pair_iff_eq",
+    "Set.antitoneOn_iff_antitone",
+    "Set.disjoint_iUnion_left",
+    "Set.disjoint_iUnion_right",
+    "Set.disjoint_iff_forall_ne",
+    "Set.disjoint_right",
+    "Set.disjoint_sUnion_left",
+    "Set.disjoint_singleton_left",
+    "Set.monotoneOn_iff_monotone",
+    "Set.strictAntiOn_iff_strictAnti",
+    "Set.strictMonoOn_iff_strictMono"
+  ],
+  "rows": [
+    {
+      "full_name": "Antitone.image_lowerBounds_subset_upperBounds_image",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Antitone.image_upperBounds_subset_lowerBounds_image",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Antitone.map_bddAbove",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Antitone.map_bddBelow",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Antitone.map_isGreatest",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Antitone.map_isLeast",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Antitone.mem_lowerBounds_image",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "AntitoneOn.image_lowerBounds_subset_upperBounds_image",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "AntitoneOn.image_upperBounds_subset_lowerBounds_image",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "AntitoneOn.map_bddAbove",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "AntitoneOn.map_bddBelow",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "AntitoneOn.map_isGreatest",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "AntitoneOn.map_isLeast",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "AntitoneOn.mem_lowerBounds_image",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "BEx.elim",
+      "namespace": "BEx",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "BddAbove.bddAbove_image2_of_bddBelow",
+      "namespace": "BddAbove",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "BddAbove.range_comp",
+      "namespace": "BddAbove",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "BddBelow.bddAbove_image2_of_bddAbove",
+      "namespace": "BddBelow",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "BddBelow.range_comp",
+      "namespace": "BddBelow",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Bool.and_le_left",
+      "namespace": "Bool",
+      "sets": [
+        "fresh_out_of_sample_frontier",
+        "offgate_controls"
+      ],
+      "fresh": true,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "simp [*]",
+      "component": null
+    },
+    {
+      "full_name": "Decidable.and_forall_ne",
+      "namespace": "Decidable",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Eq.ge",
+      "namespace": "Eq",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "simp [*]",
+      "component": null
+    },
+    {
+      "full_name": "Equiv.bijOn",
+      "namespace": "Equiv",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Exists.fst",
+      "namespace": "Exists",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "simp_all",
+      "component": null
+    },
+    {
+      "full_name": "ExistsUnique.elim",
+      "namespace": "ExistsUnique",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "open_flake",
+      "rc4_status": "open_flake",
+      "classification": "FLAKE",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.Nonempty.biUnion",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset._root_.Monotone.map_finset_max'",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "open_flake",
+      "rc4_status": "open_flake",
+      "classification": "FLAKE",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset._root_.Monotone.map_finset_min'",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "open_flake",
+      "rc4_status": "open_flake",
+      "classification": "FLAKE",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.card_disjUnion",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.card_mono",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.card_strictMono",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.card_union_eq_card_add_card",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_left",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_right",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.comp_inf_eq_inf_comp_of_is_total",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.comp_sup_eq_sup_comp_of_is_total",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.disjiUnion_filter_eq",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "aesop",
+      "component": null
+    },
+    {
+      "full_name": "Finset.disjiUnion_filter_eq_of_maps_to",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "aesop",
+      "component": null
+    },
+    {
+      "full_name": "Finset.disjiUnion_map",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "aesop",
+      "component": null
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_left",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_right",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.disjoint_filter_filter'",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.disjoint_image",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.disjoint_insert_right",
+      "namespace": "Finset",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.disjoint_map",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.disjoint_sup_left",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.disjoint_sup_right",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.fin_mono",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.image_mono",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.map_disjUnion",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "aesop",
+      "component": null
+    },
+    {
+      "full_name": "Finset.max'_image",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.mem_disjUnion",
+      "namespace": "Finset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "simp [Finset.disjUnion]",
+      "component": "RC4A"
+    },
+    {
+      "full_name": "Finset.mem_fin",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.mem_insert",
+      "namespace": "Finset",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.mem_singleton",
+      "namespace": "Finset",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.min'_image",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.monotone_preimage",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.pairwise_cons'",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.powerset_card_disjiUnion",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Finset.subtype_mono",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Function.Semiconj.bijOn_image",
+      "namespace": "Function",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Function.antitoneOn_of_rightInvOn_of_mapsTo",
+      "namespace": "Function",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Function.monotoneOn_of_rightInvOn_of_mapsTo",
+      "namespace": "Function",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Iff.ne",
+      "namespace": "Iff",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Int.add_emod_eq_add_mod_right",
+      "namespace": "Int",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "IsGLB.exists_between",
+      "namespace": "IsGLB",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "IsGreatest.image2",
+      "namespace": "IsGreatest",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "IsLUB.exists_between",
+      "namespace": "IsLUB",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "IsLeast.image2",
+      "namespace": "IsLeast",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "LE.le.ge",
+      "namespace": "LE",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "simp [*]",
+      "component": null
+    },
+    {
+      "full_name": "LT.lt.false",
+      "namespace": "LT",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "simp [List.map]",
+      "component": null
+    },
+    {
+      "full_name": "LinearOrder.ext",
+      "namespace": "LinearOrder",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.Forall.imp",
+      "namespace": "List",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "aesop",
+      "component": "RC4C_residue"
+    },
+    {
+      "full_name": "List.Nodup.dedup",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.Pairwise.forall",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.Pairwise.forall_of_forall",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.disjoint_map",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.disjoint_pmap",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.forall_mem_of_forall_mem_cons",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "aesop",
+      "component": null
+    },
+    {
+      "full_name": "List.lookmap_congr",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.lookmap_of_forall_not",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.mem_pair",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "aesop",
+      "component": null
+    },
+    {
+      "full_name": "List.pairwise_of_forall_mem_list",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.pairwise_of_reflexive_of_forall_ne",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.perm_of_nodup_nodup_toFinset_eq",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.toFinset.ext_iff",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.toFinset_eq",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.toFinset_eq_empty_iff",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.toFinset_eq_iff_perm_dedup",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "List.toFinset_filter",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Monotone.codRestrict",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "aesop",
+      "component": null
+    },
+    {
+      "full_name": "Monotone.image_lowerBounds_subset_lowerBounds_image",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Monotone.image_upperBounds_subset_upperBounds_image",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Monotone.map_bddAbove",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Monotone.map_bddBelow",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Monotone.map_isGreatest",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Monotone.map_isLeast",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "MonotoneOn.image_lowerBounds_subset_lowerBounds_image",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "MonotoneOn.image_upperBounds_subset_upperBounds_image",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "MonotoneOn.map_bddAbove",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "MonotoneOn.map_bddBelow",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "MonotoneOn.map_isGreatest",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "MonotoneOn.map_isLeast",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "MonotoneOn.mem_lowerBounds_image",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Multiset.Nodup.le_dedup_iff_le",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Multiset.card_mono",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Multiset.card_strictMono",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Multiset.disjoint_add_left",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "aesop",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Multiset.disjoint_add_right",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "aesop",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_left",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "simp [Multiset.disjoint_left]",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Multiset.disjoint_iff_ne",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "aesop",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Multiset.disjoint_of_le_left",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Multiset.disjoint_of_le_right",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Multiset.disjoint_right",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "aesop",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Multiset.disjoint_singleton",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "aesop",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Multiset.disjoint_union_left",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "aesop",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Multiset.map_mono",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Multiset.map_strictMono",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Multiset.monotone_filter_left",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Multiset.singleton_disjoint",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "simp [Multiset.disjoint_left]",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Multiset.zero_disjoint",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "simp [Multiset.disjoint_left]",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Nat.AM_GM",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5",
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.Coprime.dvd_mul_left",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.Coprime.dvd_mul_right",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.Coprime.eq_of_mul_eq_zero",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "aesop",
+      "component": null
+    },
+    {
+      "full_name": "Nat.Coprime.lcm_eq_mul",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.ModEq.add_le_of_lt",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.ModEq.cancel_left_of_coprime",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.ModEq.cancel_right_of_coprime",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.ModEq.comm",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.ModEq.dvd_iff",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.ModEq.eq_of_abs_lt",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.ModEq.eq_of_lt_of_lt",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.ModEq.gcd_eq",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.ModEq.le_of_lt_add",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.ModEq.mul_left_cancel_iff'",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.ModEq.mul_right_cancel_iff'",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_def",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "simp [List.length_cons]",
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_div",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_div_eq_of_add_mod_lt",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_div_eq_of_le_mod_add_mod",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_div_le_add_div",
+      "namespace": "Nat",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_eq_left",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_eq_max_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_eq_min_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_eq_one_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_eq_right",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_eq_three_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_eq_two_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_eq_zero",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_mod_eq_add_mod_left",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_mod_eq_add_mod_right",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_mod_eq_ite",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.add_pos_iff_pos_or_pos",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.clog_antitone_left",
+      "namespace": "Nat",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.clog_monotone",
+      "namespace": "Nat",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.div_le_div_right",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.div_lt_iff_lt_mul'",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.div_lt_one_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.div_ne_zero_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.div_pos",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.div_pos_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.dvd_iff_div_mul_eq",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.dvd_left_iff_eq",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.dvd_right_iff_eq",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.eq_div_of_mul_eq_left",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.eq_mul_of_div_eq_left",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.eq_one_of_mul_eq_one_left",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.eq_zero_of_double_le",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.find_eq_zero",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.forall_lt_succ",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.half_le_of_sub_le_half",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.le_add_one_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.le_add_pred_of_pos",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.le_and_le_add_one_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.le_of_mul_le_mul_right",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.le_one_iff_eq_zero_or_eq_one",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.le_or_le_of_add_eq_add_pred",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.log_antitone_left",
+      "namespace": "Nat",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.log_monotone",
+      "namespace": "Nat",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.lt_iff_add_one_le",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.lt_one_add_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.lt_one_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.max_eq_zero_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.min_eq_zero_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.mod_eq_iff_lt",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.mod_mul_mod",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.mod_two_ne_one",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.mod_two_ne_zero",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.mul_add_mod'",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.mul_eq_left",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.mul_eq_right",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.one_add_le_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.one_le_div_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.one_le_pow",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.pow_le_pow_iff_left",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.pow_log_le_add_one",
+      "namespace": "Nat",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.pow_lt_pow_iff_left",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.pred_eq_of_eq_succ",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.pred_eq_self_iff",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.pred_one_add",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.self_add_sub_one",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.sqrt_lt",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.sqrt_lt'",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.sub_eq_of_eq_add'",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.sub_lt_iff_lt_add",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.sub_lt_iff_lt_add'",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.succ_add_sub_one",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.succ_succ_ne_one",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.two_mul_ne_two_mul_add_one",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.two_pow_succ",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Nat.zero_eq_mul",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Ne.dite_eq_left_iff",
+      "namespace": "Ne",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Option.Mem.leftUnique",
+      "namespace": "Option",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "OrderBot.bddBelow",
+      "namespace": "OrderBot",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "OrderDual.Preorder.dual_dual",
+      "namespace": "OrderDual",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "OrderTop.bddAbove",
+      "namespace": "OrderTop",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "PLift.down_inj",
+      "namespace": "PLift",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "PUnit.le",
+      "namespace": "PUnit",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "simp [Nat.mul_zero]",
+      "component": null
+    },
+    {
+      "full_name": "PartialOrder.ext",
+      "namespace": "PartialOrder",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Pi.compl_apply",
+      "namespace": "Pi",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Preorder.ext",
+      "namespace": "Preorder",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Prod.le_def",
+      "namespace": "Prod",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Prop.exists_iff",
+      "namespace": "Prop",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "ScottContinuous.monotone",
+      "namespace": "ScottContinuous",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.BijOn.bijective",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.EqOn.congr_antitoneOn",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.EqOn.congr_monotoneOn",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.EqOn.congr_strictAntiOn",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.EqOn.congr_strictMonoOn",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "aesop",
+      "component": "RC4C_residue"
+    },
+    {
+      "full_name": "Set._root_.Antitone.iInter_nat_add",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "open_flake",
+      "rc4_status": "open_flake",
+      "classification": "FLAKE",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set._root_.AntitoneOn.mono",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "open_flake",
+      "rc4_status": "open_flake",
+      "classification": "FLAKE",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set._root_.AntitoneOn.monotone",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "open_flake",
+      "rc4_status": "open_flake",
+      "classification": "FLAKE",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set._root_.Monotone.iUnion_nat_add",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "open_flake",
+      "rc4_status": "open_flake",
+      "classification": "FLAKE",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set._root_.MonotoneOn.congr",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "open_flake",
+      "rc4_status": "open_flake",
+      "classification": "FLAKE",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set._root_.MonotoneOn.mono",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "open_flake",
+      "rc4_status": "open_flake",
+      "classification": "FLAKE",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set._root_.MonotoneOn.monotone",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "open_flake",
+      "rc4_status": "open_flake",
+      "classification": "FLAKE",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set._root_.StrictAntiOn.mono",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "open_flake",
+      "rc4_status": "open_flake",
+      "classification": "FLAKE",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "simp [Antitone, AntitoneOn]",
+      "component": "RC4A"
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_left",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "aesop",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_right",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "aesop",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Set.disjoint_iff_forall_ne",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "aesop",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Set.disjoint_right",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "aesop",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_left",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "aesop",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.disjoint_singleton_left",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "simp [Set.disjoint_left]",
+      "component": "RC4B"
+    },
+    {
+      "full_name": "Set.empty_subset",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.empty_union",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.inter_comm",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.inter_univ",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.ite_univ",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.mem_inter_iff",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.mem_union",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "simp [Monotone, MonotoneOn]",
+      "component": "RC4A"
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "simp [StrictAnti, StrictAntiOn]",
+      "component": "RC4A"
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "fresh": false,
+      "rc2_status": "failed",
+      "rc4_status": "solved",
+      "classification": "RC4_NEW_WIN",
+      "rc4_winning_tactic": "simp [StrictMono, StrictMonoOn]",
+      "component": "RC4A"
+    },
+    {
+      "full_name": "Set.subset_univ",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.union_comm",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.union_empty",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Set.univ_inter",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "fresh": false,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Subtype.coe_le_coe",
+      "namespace": "Subtype",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "Sum.const_le_elim_iff",
+      "namespace": "Sum",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "ULift.down_inj",
+      "namespace": "ULift",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "and_forall_ne",
+      "namespace": "and_forall_ne",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "and_iff_not_or_not",
+      "namespace": "and_iff_not_or_not",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "simp_all",
+      "component": null
+    },
+    {
+      "full_name": "and_or_imp",
+      "namespace": "and_or_imp",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "solved",
+      "rc4_status": "solved",
+      "classification": "BOTH_SOLVED",
+      "rc4_winning_tactic": "simp [*]",
+      "component": null
+    },
+    {
+      "full_name": "and_symm_left",
+      "namespace": "and_symm_left",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "and_symm_right",
+      "namespace": "and_symm_right",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "apply_dite",
+      "namespace": "apply_dite",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "open_flake",
+      "rc4_status": "open_flake",
+      "classification": "FLAKE",
+      "rc4_winning_tactic": null,
+      "component": null
+    },
+    {
+      "full_name": "strictMono_restrict",
+      "namespace": "strictMono_restrict",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "fresh": true,
+      "rc2_status": "failed",
+      "rc4_status": "failed",
+      "classification": "BOTH_FAILED",
+      "rc4_winning_tactic": null,
+      "component": null
+    }
+  ]
+}

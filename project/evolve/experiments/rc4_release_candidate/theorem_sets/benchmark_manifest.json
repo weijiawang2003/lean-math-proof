@@ -1,0 +1,145 @@
+{
+  "generated_by": "scripts/rc4r_build_benchmark_sets.py",
+  "policy": "project/evolve/experiments/rc4_candidates/composition_rc4d/rc4d_composition_policy.json",
+  "rc4d_used_excluded": 130,
+  "set_files": {
+    "canonical_demo_v1": "project/evolve/experiments/rc4_release_candidate/theorem_sets/canonical_demo_v1.json",
+    "canonical_nat_defs_medium": "project/evolve/experiments/rc4_release_candidate/theorem_sets/canonical_nat_defs_medium.json",
+    "canonical_nat_defs_large_v5": "project/evolve/experiments/rc4_release_candidate/theorem_sets/canonical_nat_defs_large_v5.json",
+    "rc4_known_wins": "project/evolve/experiments/rc4_release_candidate/theorem_sets/rc4_known_wins.json",
+    "fresh_out_of_sample_frontier": "project/evolve/experiments/rc4_release_candidate/theorem_sets/fresh_out_of_sample_frontier.json",
+    "negative_controls": "project/evolve/experiments/rc4_release_candidate/theorem_sets/negative_controls.json",
+    "offgate_controls": "project/evolve/experiments/rc4_release_candidate/theorem_sets/offgate_controls.json"
+  },
+  "sizes": {
+    "canonical_demo_v1": 15,
+    "canonical_nat_defs_medium": 38,
+    "canonical_nat_defs_large_v5": 65,
+    "rc4_known_wins": 23,
+    "fresh_out_of_sample_frontier": 125,
+    "negative_controls": 44,
+    "offgate_controls": 45
+  },
+  "total": 355,
+  "unique_total": 271,
+  "gate_fire_counts": {
+    "canonical_demo_v1": 0,
+    "canonical_nat_defs_medium": 0,
+    "canonical_nat_defs_large_v5": 0,
+    "rc4_known_wins": 23,
+    "fresh_out_of_sample_frontier": 80,
+    "negative_controls": 0,
+    "offgate_controls": 0
+  },
+  "namespace_distribution": {
+    "canonical_demo_v1": {
+      "Nat": 1,
+      "Set": 11,
+      "Finset": 3
+    },
+    "canonical_nat_defs_medium": {
+      "Nat": 38
+    },
+    "canonical_nat_defs_large_v5": {
+      "Nat": 65
+    },
+    "rc4_known_wins": {
+      "Finset": 1,
+      "Set": 12,
+      "Multiset": 9,
+      "List": 1
+    },
+    "fresh_out_of_sample_frontier": {
+      "strictMono_restrict": 1,
+      "Antitone": 7,
+      "AntitoneOn": 7,
+      "BddAbove": 2,
+      "BddBelow": 2,
+      "Finset": 16,
+      "Function": 3,
+      "List": 8,
+      "Monotone": 7,
+      "MonotoneOn": 7,
+      "Multiset": 8,
+      "Nat": 6,
+      "ScottContinuous": 1,
+      "Set": 13,
+      "Int": 1,
+      "Option": 1,
+      "Bool": 1,
+      "Prod": 1,
+      "Ne": 1,
+      "Equiv": 1,
+      "IsGLB": 1,
+      "IsGreatest": 1,
+      "IsLUB": 1,
+      "IsLeast": 1,
+      "LE": 1,
+      "Decidable": 1,
+      "Pi": 1,
+      "Iff": 1,
+      "Eq": 1,
+      "Subtype": 1,
+      "BEx": 1,
+      "ExistsUnique": 1,
+      "LT": 1,
+      "OrderDual": 1,
+      "PUnit": 1,
+      "Sum": 1,
+      "Exists": 1,
+      "LinearOrder": 1,
+      "OrderBot": 1,
+      "OrderTop": 1,
+      "PLift": 1,
+      "PartialOrder": 1,
+      "Preorder": 1,
+      "Prop": 1,
+      "ULift": 1,
+      "and_forall_ne": 1,
+      "and_iff_not_or_not": 1,
+      "and_or_imp": 1,
+      "and_symm_left": 1,
+      "and_symm_right": 1,
+      "apply_dite": 1
+    },
+    "negative_controls": {
+      "Finset": 15,
+      "List": 9,
+      "Nat": 20
+    },
+    "offgate_controls": {
+      "Finset": 15,
+      "List": 9,
+      "Nat": 20,
+      "Bool": 1
+    }
+  },
+  "overlap_with_rc4d": {
+    "canonical_demo_v1": 15,
+    "canonical_nat_defs_medium": 15,
+    "canonical_nat_defs_large_v5": 15,
+    "rc4_known_wins": 23,
+    "fresh_out_of_sample_frontier": 0,
+    "negative_controls": 44,
+    "offgate_controls": 44
+  },
+  "fresh_counts": {
+    "canonical_demo_v1": 0,
+    "canonical_nat_defs_medium": 23,
+    "canonical_nat_defs_large_v5": 50,
+    "rc4_known_wins": 0,
+    "fresh_out_of_sample_frontier": 125,
+    "negative_controls": 0,
+    "offgate_controls": 1
+  },
+  "nofire_sets": [
+    "negative_controls",
+    "offgate_controls"
+  ],
+  "off_gate_emissions_in_nofire_sets": 0,
+  "fresh_frontier_component_split": {
+    "RC4A": 71,
+    "RC4C_residue": 9,
+    "RC4B": 2
+  }
+}

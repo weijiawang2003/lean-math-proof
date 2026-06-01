@@ -1,0 +1,438 @@
+[
+  {
+    "full_name": "Finset.mem_disjUnion",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem mem_disjUnion {α s t h a} : a ∈ @disjUnion α s t h ↔ a ∈ s ∨ a ∈ t",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Finset.disjUnion]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4A)",
+    "rc4d_credited_component": "RC4A"
+  },
+  {
+    "full_name": "Set.antitoneOn_iff_antitone",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔ Antitone fun a : s => f a",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Antitone, AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4A)",
+    "rc4d_credited_component": "RC4A"
+  },
+  {
+    "full_name": "Set.monotoneOn_iff_monotone",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem monotoneOn_iff_monotone : MonotoneOn f s ↔ Monotone fun a : s => f a",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone, MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4A)",
+    "rc4d_credited_component": "RC4A"
+  },
+  {
+    "full_name": "Set.strictAntiOn_iff_strictAnti",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem strictAntiOn_iff_strictAnti : StrictAntiOn f s ↔ StrictAnti fun a : s => f a",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [StrictAnti, StrictAntiOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4A)",
+    "rc4d_credited_component": "RC4A"
+  },
+  {
+    "full_name": "Set.strictMonoOn_iff_strictMono",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem strictMonoOn_iff_strictMono : StrictMonoOn f s ↔ StrictMono fun a : s => f a",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [StrictMono, StrictMonoOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4A)",
+    "rc4d_credited_component": "RC4A"
+  },
+  {
+    "full_name": "Multiset.disjoint_add_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_add_left {s t u : Multiset α} : Disjoint (s + t) u ↔ Disjoint s u ∧ Disjoint t u",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Multiset.disjoint_add_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_add_right {s t u : Multiset α} : Disjoint s (t + u) ↔ Disjoint s t ∧ Disjoint s u",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Multiset.disjoint_cons_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_cons_left {a : α} {s t : Multiset α} : Disjoint (a ::ₘ s) t ↔ a ∉ t ∧ Disjoint s t",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Multiset.disjoint_iff_ne",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_iff_ne {s t : Multiset α} : Disjoint s t ↔ ∀ a ∈ s, ∀ b ∈ t, a ≠ b",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Multiset.disjoint_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_right {s t : Multiset α} : Disjoint s t ↔ ∀ {a}, a ∈ t → a ∉ s",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Multiset.disjoint_singleton",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_singleton {l : Multiset α} {a : α} : Disjoint l {a} ↔ a ∉ l",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Multiset.disjoint_union_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_union_left [DecidableEq α] {s t u : Multiset α} : Disjoint (s ∪ t) u ↔ Disjoint s u ∧ Disjoint t u",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Multiset.singleton_disjoint",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem singleton_disjoint {l : Multiset α} {a : α} : Disjoint {a} l ↔ a ∉ l",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Multiset.zero_disjoint",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem zero_disjoint (l : Multiset α) : Disjoint 0 l | a => (not_mem_nil a).elim #align multiset.zero_disjoint Multiset.zero_disjoint @[simp] theorem singleton_disjoint {l : Multiset α} {a : α} : Disjoint {a} l ↔ a ∉ l",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Set.disjoint_iUnion_left",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "@[simp] theorem disjoint_iUnion_left {ι : Sort*} {s : ι → Set α} : Disjoint (⋃ i, s i) t ↔ ∀ i, Disjoint (s i) t",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B"
+    ],
+    "rc4_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Set.disjoint_iUnion_right",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "@[simp] theorem disjoint_iUnion_right {ι : Sort*} {s : ι → Set α} : Disjoint t (⋃ i, s i) ↔ ∀ i, Disjoint t (s i)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B"
+    ],
+    "rc4_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Set.disjoint_iff_forall_ne",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "lemma disjoint_iff_forall_ne : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ s → ∀ ⦃b⦄, b ∈ t → a ≠ b",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B"
+    ],
+    "rc4_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Set.disjoint_right",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem disjoint_right : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ t → a ∉ s",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B"
+    ],
+    "rc4_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Set.disjoint_sUnion_left",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "@[simp] theorem disjoint_sUnion_left {S : Set (Set α)} {t : Set α} : Disjoint (⋃₀S) t ↔ ∀ s ∈ S, Disjoint s t",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B"
+    ],
+    "rc4_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Set.disjoint_sUnion_right",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "@[simp] theorem disjoint_sUnion_right {s : Set α} {S : Set (Set α)} : Disjoint s (⋃₀S) ↔ ∀ t ∈ S, Disjoint s t",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B"
+    ],
+    "rc4_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "Set.disjoint_singleton_left",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "lemma disjoint_singleton_left : Disjoint {a} s ↔ a ∉ s",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B"
+    ],
+    "rc4_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4B)",
+    "rc4d_credited_component": "RC4B"
+  },
+  {
+    "full_name": "List.Forall.imp",
+    "file_path": "Mathlib/Data/List/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem Forall.imp (h : ∀ x, p x → q x) : ∀ {l : List α}, Forall p l → Forall q l | [] => id | x :: l => by simp only [forall_cons, and_imp] rw [← and_imp] exact And.imp (h x) (Forall.imp h) #align list.all₂.imp List.Forall.imp @[simp] theorem forall_map_iff {p : β → Prop} (f : α → β) : Forall p (l.map f) ↔ Forall (p ∘ f) l",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [List.forall_iff_forall_mem]",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "expected_credit_component": "RC4C_residue",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4C_residue)",
+    "rc4d_credited_component": "RC4C_residue"
+  },
+  {
+    "full_name": "Set.Nonempty.subset_pair_iff_eq",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem subset_pair_iff_eq {x y : α} : s ⊆ {x, y} ↔ s = ∅ ∨ s = {x} ∨ s = {y} ∨ s = {x, y}",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [Set.subset_pair_iff_eq]",
+      "simp [Set.subset_pair_iff_eq] <;> aesop"
+    ],
+    "expected_credit_component": "RC4C_residue",
+    "set_tag": "rc4_known_wins",
+    "expected_behavior": "RC4D credited win (component RC4C_residue)",
+    "rc4d_credited_component": "RC4C_residue"
+  }
+]

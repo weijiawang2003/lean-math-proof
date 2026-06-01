@@ -1,0 +1,79 @@
+{
+  "generated_by": "scripts/rc4r_offgate_audit.py",
+  "per_set_gate_emissions": {
+    "canonical_demo_v1": {
+      "n": 15,
+      "gate_emissions": 0,
+      "must_not_fire": false
+    },
+    "canonical_nat_defs_medium": {
+      "n": 38,
+      "gate_emissions": 0,
+      "must_not_fire": false
+    },
+    "canonical_nat_defs_large_v5": {
+      "n": 65,
+      "gate_emissions": 0,
+      "must_not_fire": false
+    },
+    "rc4_known_wins": {
+      "n": 23,
+      "gate_emissions": 23,
+      "must_not_fire": false
+    },
+    "fresh_out_of_sample_frontier": {
+      "n": 125,
+      "gate_emissions": 80,
+      "must_not_fire": false
+    },
+    "negative_controls": {
+      "n": 44,
+      "gate_emissions": 0,
+      "must_not_fire": true
+    },
+    "offgate_controls": {
+      "n": 45,
+      "gate_emissions": 0,
+      "must_not_fire": true
+    }
+  },
+  "emitted_actions_histogram": {
+    "def_unfold_simp_allowlist": 76,
+    "MULTISET_DISJOINT_LEFT_SIMP": 11,
+    "MULTISET_DISJOINT_LEFT_SIMP_AESOP": 11,
+    "MULTISET_DISJOINT_RIGHT_D2": 22,
+    "SET_DISJOINT_LEFT_SIMP": 7,
+    "SET_DISJOINT_LEFT_SIMP_AESOP": 7,
+    "LIST_FORALL_D2": 16,
+    "SET_SUBSET_PAIR_D2": 2
+  },
+  "component_emission_counts": {
+    "RC4A": 76,
+    "RC4B": 18,
+    "RC4C_residue": 20
+  },
+  "off_gate_emissions": 0,
+  "unexpected_fired_cases": [],
+  "emitted_and_failed_by_component": {
+    "RC4A": {
+      "fired": 76,
+      "failed": 69,
+      "rate": 0.908
+    },
+    "RC4B": {
+      "fired": 18,
+      "failed": 3,
+      "rate": 0.167
+    },
+    "RC4C_residue": {
+      "fired": 20,
+      "failed": 8,
+      "rate": 0.4
+    }
+  },
+  "broad_gate_warnings": [
+    "RC4A emitted-and-failed rate 0.908 (fired 76)"
+  ],
+  "requirement_0_offgate_met": true,
+  "verdict": "OFFGATE_CLEAN"
+}

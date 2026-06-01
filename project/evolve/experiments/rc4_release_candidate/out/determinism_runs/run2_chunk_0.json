@@ -1,0 +1,50 @@
+{
+  "Finset.mem_disjUnion": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Finset.disjUnion]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Set.antitoneOn_iff_antitone": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Antitone, AntitoneOn]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Set.monotoneOn_iff_monotone": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Monotone, MonotoneOn]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Set.strictAntiOn_iff_strictAnti": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [StrictAnti, StrictAntiOn]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Set.strictMonoOn_iff_strictMono": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [StrictMono, StrictMonoOn]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Multiset.disjoint_add_left": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Multiset.disjoint_add_right": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Multiset.disjoint_cons_left": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Multiset.disjoint_left]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  }
+}

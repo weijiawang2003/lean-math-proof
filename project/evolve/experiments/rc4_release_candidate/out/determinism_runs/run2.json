@@ -1,0 +1,374 @@
+{
+  "Finset.mem_disjUnion": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Finset.disjUnion]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Set.antitoneOn_iff_antitone": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Antitone, AntitoneOn]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Set.monotoneOn_iff_monotone": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Monotone, MonotoneOn]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Set.strictAntiOn_iff_strictAnti": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [StrictAnti, StrictAntiOn]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Set.strictMonoOn_iff_strictMono": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [StrictMono, StrictMonoOn]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Multiset.disjoint_add_left": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Multiset.disjoint_add_right": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Multiset.disjoint_cons_left": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Multiset.disjoint_left]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-250860e8/traces.jsonl"
+  },
+  "Multiset.disjoint_iff_ne": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-5032f6a0/traces.jsonl"
+  },
+  "Multiset.disjoint_right": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-5032f6a0/traces.jsonl"
+  },
+  "Multiset.disjoint_singleton": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-5032f6a0/traces.jsonl"
+  },
+  "Multiset.disjoint_union_left": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-5032f6a0/traces.jsonl"
+  },
+  "Multiset.singleton_disjoint": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Multiset.disjoint_left]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-5032f6a0/traces.jsonl"
+  },
+  "Multiset.zero_disjoint": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Multiset.disjoint_left]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-5032f6a0/traces.jsonl"
+  },
+  "Set.disjoint_iUnion_left": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-5032f6a0/traces.jsonl"
+  },
+  "Set.disjoint_iUnion_right": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-5032f6a0/traces.jsonl"
+  },
+  "Set.disjoint_iff_forall_ne": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "Set.disjoint_right": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "Set.disjoint_sUnion_left": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "Set.disjoint_sUnion_right": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "Set.disjoint_singleton_left": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.disjoint_left]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "List.Forall.imp": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "Set.Nonempty.subset_pair_iff_eq": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "Nat.mul_add_mod'": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "Set.ite_univ": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.ite]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a3300802/traces.jsonl"
+  },
+  "Set.union_comm": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a3300802/traces.jsonl"
+  },
+  "Set.inter_comm": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a3300802/traces.jsonl"
+  },
+  "Set.mem_union": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a3300802/traces.jsonl"
+  },
+  "Set.mem_inter_iff": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "tauto",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a3300802/traces.jsonl"
+  },
+  "Set.subset_univ": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.subset_def]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a3300802/traces.jsonl"
+  },
+  "Set.empty_subset": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.subset_def]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a3300802/traces.jsonl"
+  },
+  "Set.union_empty": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.ext_iff]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a3300802/traces.jsonl"
+  },
+  "Set.empty_union": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.ext_iff]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-d5cb23f5/traces.jsonl"
+  },
+  "Set.inter_univ": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.subset_def]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-d5cb23f5/traces.jsonl"
+  },
+  "Set.univ_inter": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.subset_def]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-d5cb23f5/traces.jsonl"
+  },
+  "Finset.disjoint_insert_right": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-d5cb23f5/traces.jsonl"
+  },
+  "Finset.mem_insert": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-d5cb23f5/traces.jsonl"
+  },
+  "Finset.mem_singleton": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-d5cb23f5/traces.jsonl"
+  },
+  "strictMono_restrict": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-d5cb23f5/traces.jsonl"
+  },
+  "Antitone.image_lowerBounds_subset_upperBounds_image": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-d5cb23f5/traces.jsonl"
+  },
+  "Antitone.image_upperBounds_subset_lowerBounds_image": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-ba4cb41e/traces.jsonl"
+  },
+  "Antitone.map_bddAbove": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-ba4cb41e/traces.jsonl"
+  },
+  "Antitone.map_bddBelow": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-ba4cb41e/traces.jsonl"
+  },
+  "Antitone.map_isGreatest": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-ba4cb41e/traces.jsonl"
+  },
+  "Antitone.map_isLeast": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-ba4cb41e/traces.jsonl"
+  },
+  "Antitone.mem_lowerBounds_image": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-ba4cb41e/traces.jsonl"
+  },
+  "AntitoneOn.image_lowerBounds_subset_upperBounds_image": {
+    "status": "failed",
+    "num_steps": 4,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-ba4cb41e/traces.jsonl"
+  },
+  "AntitoneOn.image_upperBounds_subset_lowerBounds_image": {
+    "status": "failed",
+    "num_steps": 4,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-ba4cb41e/traces.jsonl"
+  },
+  "AntitoneOn.map_bddAbove": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a6fa48bf/traces.jsonl"
+  },
+  "AntitoneOn.map_bddBelow": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a6fa48bf/traces.jsonl"
+  },
+  "AntitoneOn.map_isGreatest": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a6fa48bf/traces.jsonl"
+  },
+  "AntitoneOn.map_isLeast": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a6fa48bf/traces.jsonl"
+  },
+  "AntitoneOn.mem_lowerBounds_image": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a6fa48bf/traces.jsonl"
+  },
+  "BddAbove.range_comp": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a6fa48bf/traces.jsonl"
+  },
+  "BddBelow.range_comp": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-a6fa48bf/traces.jsonl"
+  },
+  "Finset._root_.Monotone.map_finset_max'": {
+    "status": "open_flake"
+  },
+  "Finset._root_.Monotone.map_finset_min'": {
+    "status": "open_flake"
+  },
+  "Finset.card_disjUnion": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-7706a564/traces.jsonl"
+  },
+  "Finset.card_mono": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-7706a564/traces.jsonl"
+  },
+  "Finset.card_strictMono": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-7706a564/traces.jsonl"
+  },
+  "Finset.comp_inf_eq_inf_comp_of_is_total": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-7706a564/traces.jsonl"
+  },
+  "Finset.comp_sup_eq_sup_comp_of_is_total": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-7706a564/traces.jsonl"
+  },
+  "Finset.fin_mono": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-7706a564/traces.jsonl"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "Set.disjoint_iff_forall_ne": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "Set.disjoint_right": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "Set.disjoint_sUnion_left": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "Set.disjoint_sUnion_right": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "Set.disjoint_singleton_left": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [Set.disjoint_left]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "List.Forall.imp": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "Set.Nonempty.subset_pair_iff_eq": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  },
+  "Nat.mul_add_mod'": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/determinism_runs/runs_run2/eval-f49cf560/traces.jsonl"
+  }
+}
