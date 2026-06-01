@@ -1,0 +1,56 @@
+{
+  "generated_by": "scripts/rc5s_build_benchmark_set.py",
+  "sizes": {
+    "true_winners": 3,
+    "prior_stall_cases": 84,
+    "off_policy_cases": 2,
+    "tr7_dynamic_tail": 0,
+    "hard_negatives": 12,
+    "eligible_no_win": 0,
+    "floor_smoke": 10
+  },
+  "total": 111,
+  "unique_total": 111,
+  "namespace_distribution": {
+    "true_winners": {
+      "Finset": 2,
+      "Multiset": 1
+    },
+    "prior_stall_cases": {
+      "Finset": 28,
+      "List": 13,
+      "Multiset": 18,
+      "Nat": 22,
+      "Set": 3
+    },
+    "off_policy_cases": {
+      "Finset": 2
+    },
+    "tr7_dynamic_tail": {},
+    "hard_negatives": {
+      "apply_ite": 1,
+      "associative_of_commutative_of_le": 1,
+      "bddAbove_iff_exists_ge": 1,
+      "bddAbove_insert": 1,
+      "bddAbove_pi": 1,
+      "bddAbove_preimage_ofDual": 1,
+      "bddAbove_preimage_toDual": 1,
+      "bddAbove_prod": 1,
+      "bddAbove_range_pi": 1,
+      "bddAbove_range_prod": 1,
+      "bddAbove_union": 1,
+      "bddBelow_iff_exists_le": 1
+    },
+    "eligible_no_win": {},
+    "floor_smoke": {
+      "Nat": 1,
+      "Set": 9
+    }
+  },
+  "winners_included": [
+    "Finset.biUnion_subset_iff_forall_subset",
+    "Finset.image_subset_iff",
+    "Multiset.add_bind"
+  ],
+  "dynamic_eligible_total": 89
+}

@@ -1,0 +1,87 @@
+{
+  "generated_by": "scripts/rc5s_build_strict_policy.py",
+  "rc5h_grammar": [
+    "exact L",
+    "simpa using L",
+    "simp [L]",
+    "rw [L]",
+    "simp [L] <;> aesop",
+    "simp [L] <;> simp_all",
+    "rw [L] <;> aesop",
+    "ext x <;> simp [L]",
+    "constructor <;> intro h <;> aesop"
+  ],
+  "strict_grammar": [
+    "exact L",
+    "simpa using L",
+    "simpa [L]",
+    "simp [L]",
+    "rw [L]",
+    "simp [L] <;> aesop",
+    "rw [L] <;> aesop",
+    "ext x <;> simp [L]",
+    "constructor <;> intro h <;> aesop"
+  ],
+  "removed_from_rc5h_grammar": [
+    "simp [L] <;> simp_all"
+  ],
+  "removed_tactic_families": [
+    "simp_all",
+    "depth3_try_chains",
+    "depth3_other",
+    "bare_tactics"
+  ],
+  "rc5h_plan_classification": {
+    "POLICY_ALLOWED": 1269,
+    "REMOVED_STALL_RISK": 366,
+    "REMOVED_OFF_POLICY": 73,
+    "REMOVED_NAMESPACE_DISABLED": 84
+  },
+  "would_remove_from_rc5h_plan": {
+    "REMOVED_STALL_RISK": 366,
+    "REMOVED_OFF_POLICY": 73,
+    "REMOVED_NAMESPACE_DISABLED": 84
+  },
+  "budgets": {
+    "rc5h": {
+      "B5": 5,
+      "B10": 10,
+      "B20": 20
+    },
+    "rc5s": {
+      "default": "B5",
+      "B10": "safe-families-only",
+      "B20": "DISABLED"
+    }
+  },
+  "timeout": {
+    "rc5h": {
+      "allowed_namespaces": [
+        "Set",
+        "Finset",
+        "List",
+        "Multiset",
+        "Nat"
+      ],
+      "order_family": "disabled_or_analysis_only",
+      "max_unknown_name_rate": 0.1,
+      "disable_if_no_retrieval_confidence": true,
+      "min_retrieval_best_score": 0.0
+    },
+    "rc5s": {
+      "per_theorem_wall_cap_seconds": 60,
+      "per_tactic_seconds": 8,
+      "process_group_kill_fallback": true,
+      "kill_method": "run_with_timeout.py: SIGTERM process group, then SIGKILL after 5s; exit 124 on timeout (works even when LeanDojo/aesop ignore SIGALRM)",
+      "checkpoint_each_theorem": true,
+      "deterministic_resume": true,
+      "rationale": "the outer wall cap is the hard guarantee; per-tactic SIGALRM is best-effort."
+    }
+  },
+  "aesop_namespace_gate_added": [
+    "Set",
+    "Finset",
+    "List",
+    "Multiset"
+  ]
+}

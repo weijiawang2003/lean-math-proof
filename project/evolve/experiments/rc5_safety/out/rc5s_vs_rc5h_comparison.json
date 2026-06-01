@@ -1,0 +1,44 @@
+{
+  "generated_by": "scripts/rc5s_compare_to_rc5h.py",
+  "comparison": {
+    "program_count": {
+      "rc5h": 1792,
+      "rc5s": 828
+    },
+    "off_policy_count": {
+      "rc5h": 74,
+      "rc5s": 0
+    },
+    "global_stalls": {
+      "rc5h": "pervasive at B10+ (22/88 hit 150s cap, manual kills)",
+      "rc5s": "none"
+    },
+    "timeout_handling": {
+      "rc5h": "SIGALRM-only (failed on simp_all/aesop); 150s outer cap added manually",
+      "rc5s": "process-group kill at 60s wall cap; 0 bounded kills recorded"
+    },
+    "true_wins": {
+      "rc5h": 3,
+      "rc5s_recovered": 3,
+      "rc5s_total": 3
+    },
+    "wins_preserved": "3/3",
+    "max_wall_seconds": {
+      "rc5s_b5": 12.3,
+      "rc5s_cap": 60
+    },
+    "total_wall_seconds_rc5s": 1388.0,
+    "probes_per_true_win_rc5s": 276.0,
+    "unknown_name_rc5s": 28,
+    "budget_behavior": {
+      "rc5h": "B5 stable, B10 pervasive stalls, B20 unrunnable",
+      "rc5s": "B5 stable+bounded; B10 safe-reserve B5_ONLY; B20 disabled"
+    },
+    "programs_removed_by_strict_filter": 523
+  },
+  "no_global_stalls": true,
+  "zero_off_policy": true,
+  "timeouts_bounded": true,
+  "wins_preserved": "3/3",
+  "verdict": "SAFETY_HARDENING_SUCCESS"
+}

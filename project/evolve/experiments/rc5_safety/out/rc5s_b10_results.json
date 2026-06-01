@@ -1,0 +1,3413 @@
+{
+  "generated_by": "scripts/rc5s_run_safe_b10.py",
+  "num_b10_eligible_theorems": 85,
+  "b5_unsolved": 86,
+  "new_wins_this_stage": 0,
+  "new_win_targets": [],
+  "killed_by_timeout": 0,
+  "total_wall_seconds": 854.9,
+  "no_global_stalls": true,
+  "marginal_yield_per_wall_minute": 0.0,
+  "recommendation": "B5_ONLY",
+  "results": [
+    {
+      "full_name": "Finset.Nonempty.inf_eq_bot_iff",
+      "started_at": 1780301396.92,
+      "ended_at": 1780301402.879,
+      "wall_seconds": 5.96,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 3,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.inf_eq_top_iff]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.sup_eq_bot_iff]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.Nonempty.sup_eq_top_iff]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.Nonempty.strong_induction",
+      "started_at": 1780301402.88,
+      "ended_at": 1780301406.867,
+      "wall_seconds": 3.99,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.Nonempty, Finset.Nontrivial, Cycle.Nontrivial, Set.Nontrivial]",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 7,
+          "tactic": "exact Finset.singleton_nonempty",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simpa using Finset.singleton_nonempty",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.singleton_nonempty]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa [Finset.singleton_nonempty]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.Nonempty.sup_eq_top_iff",
+      "started_at": 1780301406.868,
+      "ended_at": 1780301412.369,
+      "wall_seconds": 5.5,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.min_eq_top]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.inf_eq_bot_iff]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.Nonempty.inf_eq_bot_iff]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.eq_singleton_iff_nonempty_unique_mem]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.Nontrivial.erase_nonempty",
+      "started_at": 1780301412.369,
+      "ended_at": 1780301420.951,
+      "wall_seconds": 8.58,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.erase_nonempty]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa [Finset.erase_nonempty]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "rw [Finset.erase_nonempty]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "exact Finset.not_nontrivial_empty",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa using Finset.not_nontrivial_empty",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.card_mono",
+      "started_at": 1780301420.952,
+      "ended_at": 1780301423.176,
+      "wall_seconds": 2.22,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.card_map]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.card_range]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Finset.card_map",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa using Finset.card_map",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa [Finset.card_map]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.card_strictMono",
+      "started_at": 1780301423.177,
+      "ended_at": 1780301425.869,
+      "wall_seconds": 2.69,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.disj_sum_strictMono_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.strictMono_sym2]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.val_strictMono]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.strictMono_iff_forall_lt_cons]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact Finset.strictMono_sym2",
+          "outcome": "unknown_name"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.card_union_eq_card_add_card",
+      "started_at": 1780301425.87,
+      "ended_at": 1780301428.911,
+      "wall_seconds": 3.04,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 3,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.card_inter_add_card_union]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.card_union]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.card_union_add_card_inter]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_left",
+      "started_at": 1780301428.912,
+      "ended_at": 1780301434.226,
+      "wall_seconds": 5.31,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.sup'_inf_distrib_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.inf_sup_distrib_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.codisjoint_inf_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.inf_inf]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_right",
+      "started_at": 1780301434.227,
+      "ended_at": 1780301439.417,
+      "wall_seconds": 5.19,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.inf_product_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.inf_himp_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.sup'_inf_distrib_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.inf_sup_distrib_right]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.comp_inf_eq_inf_comp_of_is_total",
+      "started_at": 1780301439.418,
+      "ended_at": 1780301445.24,
+      "wall_seconds": 5.82,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.inf_of_mem]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.comp_inf_eq_inf_comp]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.comp_sup_eq_sup_comp_of_is_total]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.inf_set_eq_iInter]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.comp_sup_eq_sup_comp_of_is_total",
+      "started_at": 1780301445.241,
+      "ended_at": 1780301450.842,
+      "wall_seconds": 5.6,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.max_eq_sup_coe]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.comp_sup_eq_sup_comp]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.comp_inf_eq_inf_comp_of_is_total]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.sup_sup]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_left",
+      "started_at": 1780301450.843,
+      "ended_at": 1780301453.133,
+      "wall_seconds": 2.29,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 2,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.biUnion_image_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "rw [Finset.biUnion_image_sup_left]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_right",
+      "started_at": 1780301453.133,
+      "ended_at": 1780301455.475,
+      "wall_seconds": 2.34,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 3,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.biUnion_biUnion]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.biUnion_image_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Finset.biUnion_image_right",
+          "outcome": "unknown_name"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.disjoint_filter_filter'",
+      "started_at": 1780301455.476,
+      "ended_at": 1780301465.838,
+      "wall_seconds": 10.36,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.map_filter']",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa [Finset.map_filter']",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "rw [Finset.map_filter']",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "exact Finset.disjoint_filter_filter",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa using Finset.disjoint_filter_filter",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.disjoint_image",
+      "started_at": 1780301465.84,
+      "ended_at": 1780301469.359,
+      "wall_seconds": 3.52,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.map_eq_image]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.image_injective]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.mem_image_of_mem]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.disjoint_filter_filter]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.disjoint_insert_right",
+      "started_at": 1780301469.36,
+      "ended_at": 1780301476.563,
+      "wall_seconds": 7.2,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "exact Finset.disjoint_insert_left",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa using Finset.disjoint_insert_left",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.disjoint_insert_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa [Finset.disjoint_insert_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "rw [Finset.disjoint_insert_left]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.disjoint_map",
+      "started_at": 1780301476.564,
+      "ended_at": 1780301479.147,
+      "wall_seconds": 2.58,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "exact Finset.disjoint_map_inl_map_inr",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa using Finset.disjoint_map_inl_map_inr",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 8,
+          "tactic": "simpa [Finset.disjoint_map_inl_map_inr]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "exact Finset.disjoint_range_addLeftEmbedding",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa using Finset.disjoint_range_addLeftEmbedding",
+          "outcome": "unknown_name"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.disjoint_sup_left",
+      "started_at": 1780301479.148,
+      "ended_at": 1780301484.225,
+      "wall_seconds": 5.08,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.sup_sup]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.inf_sup_distrib_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.sup_inf_distrib_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.sup'_inf_distrib_left]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.disjoint_sup_right",
+      "started_at": 1780301484.226,
+      "ended_at": 1780301489.313,
+      "wall_seconds": 5.09,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.sup_product_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.inf_himp_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.inf_sup_distrib_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.sup_inf_distrib_right]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.fin_mono",
+      "started_at": 1780301489.314,
+      "ended_at": 1780301493.059,
+      "wall_seconds": 3.75,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.orderEmbOfFin_mem]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.range_orderEmbOfFin]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.card_attachFin]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "exact Finset.fin_map",
+          "outcome": "unknown_name"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.image_mono",
+      "started_at": 1780301493.06,
+      "ended_at": 1780301496.237,
+      "wall_seconds": 3.18,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.sup_mono_fun]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.inf_mono_fun]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.map_eq_image]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.image_image]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact Finset.sup_mono_fun",
+          "outcome": "unknown_name"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.max'_image",
+      "started_at": 1780301496.238,
+      "ended_at": 1780301505.099,
+      "wall_seconds": 8.86,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.le_max']",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "exact Finset.max'_mem",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simpa using Finset.max'_mem",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa [Finset.max'_mem]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact Finset.le_max'",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.mem_fin",
+      "started_at": 1780301505.1,
+      "ended_at": 1780301508.913,
+      "wall_seconds": 3.81,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 2,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.mem_map_of_mem]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "rw [Finset.range_orderEmbOfFin]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.mem_insert",
+      "started_at": 1780301508.914,
+      "ended_at": 1780301515.631,
+      "wall_seconds": 6.72,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.inter_insert_of_mem]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.mem_insert_self]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.insert_eq_of_mem]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.mem_insert_of_mem]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact Finset.mem_insert_self",
+          "outcome": "unknown_name"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.mem_singleton",
+      "started_at": 1780301515.633,
+      "ended_at": 1780301521.491,
+      "wall_seconds": 5.86,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.mem_singleton_self]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa [Finset.mem_singleton_self]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Finset.eq_of_mem_singleton",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa using Finset.eq_of_mem_singleton",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.eq_of_mem_singleton]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.min'_image",
+      "started_at": 1780301521.493,
+      "ended_at": 1780301530.349,
+      "wall_seconds": 8.86,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.le_min']",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "exact Finset.min'_mem",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simpa using Finset.min'_mem",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa [Finset.min'_mem]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact Finset.le_min'",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.monotone_preimage",
+      "started_at": 1780301530.35,
+      "ended_at": 1780301532.416,
+      "wall_seconds": 2.07,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.range_mono]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.fin_mono]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.monotone_sym2]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.card_mono]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact Finset.monotone_filter_left",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.pairwise_cons'",
+      "started_at": 1780301532.417,
+      "ended_at": 1780301544.186,
+      "wall_seconds": 11.77,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.pairwiseDisjoint_map_sigmaMk]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.noncommProd_lemma]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Finset.pairwise_disjoint_powersetCard",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa using Finset.pairwise_disjoint_powersetCard",
+          "outcome": "unknown_name"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.powerset_card_disjiUnion",
+      "started_at": 1780301544.187,
+      "ended_at": 1780301546.738,
+      "wall_seconds": 2.55,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.fold_disjiUnion]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.powerset_card_biUnion]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.disjiUnion_eq_biUnion]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.card_powerset]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Finset.subtype_mono",
+      "started_at": 1780301546.739,
+      "ended_at": 1780301550.483,
+      "wall_seconds": 3.74,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.subtype_map]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.subtype_map_of_mem]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Finset.subtype_map",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa using Finset.subtype_map",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa [Finset.subtype_map]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "List.Pairwise.pmap",
+      "started_at": 1780301550.487,
+      "ended_at": 1780301552.408,
+      "wall_seconds": 1.92,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.mem_pmap]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.pairwise_pmap]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.pairwise_of_forall_mem_list]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.length_pmap]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "List.Pairwise.set_pairwise",
+      "started_at": 1780301552.409,
+      "ended_at": 1780301554.249,
+      "wall_seconds": 1.84,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.pairwise_pmap]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.Pairwise.forall]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.pairwise_of_reflexive_of_forall_ne]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.pairwise_of_forall_mem_list]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.Pairwise]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "List.Sublist.antisymm",
+      "started_at": 1780301554.25,
+      "ended_at": 1780301561.091,
+      "wall_seconds": 6.84,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.sublist_singleton]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.Sublist.map]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.sublist_of_cons_sublist_cons]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.sublist_cons_of_sublist]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact List.Sublist.map",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "List.Sublist.map",
+      "started_at": 1780301561.093,
+      "ended_at": 1780301571.309,
+      "wall_seconds": 10.22,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.reverse_singleton]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.map_pure_sublist_sublists]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.map_ret_sublist_sublists]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.sublist_singleton]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Cycle.map, Finset.map, Multiset.map]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "List.Sublist.tail",
+      "started_at": 1780301571.31,
+      "ended_at": 1780301578.07,
+      "wall_seconds": 6.76,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.sublist_singleton]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.singleton_injective]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.getLast_singleton']",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.tail_append_singleton_of_ne_nil]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.Pi.cons, Finset.cons, Multiset.Pi.cons, Multiset.cons]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "List.append_cons_inj_of_not_mem",
+      "started_at": 1780301578.072,
+      "ended_at": 1780301586.397,
+      "wall_seconds": 8.33,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.subperm_singleton_iff]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.length_injective_iff]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.chain_append_singleton_iff_forall]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.singleton_inj]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "List.append_left_eq_self",
+      "started_at": 1780301586.398,
+      "ended_at": 1780301591.928,
+      "wall_seconds": 5.53,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.length_injective_iff]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.self_eq_append_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.chain_append_singleton_iff_forall]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.append_right_eq_self]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "List.append_right_eq_self",
+      "started_at": 1780301591.929,
+      "ended_at": 1780301597.383,
+      "wall_seconds": 5.45,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.self_eq_append_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.append_left_eq_self]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.length_injective_iff]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.chain_append_singleton_iff_forall]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "List.attach_eq_nil",
+      "started_at": 1780301597.384,
+      "ended_at": 1780301606.857,
+      "wall_seconds": 9.47,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.subperm_nil]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.nodup_attach]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.dedup_eq_nil]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.attach_nil]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "List.disjoint_map",
+      "started_at": 1780301606.859,
+      "ended_at": 1780301618.366,
+      "wall_seconds": 11.51,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 3,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.map_eq_map]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.comp_map]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "rw [List.map_eq_map]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "List.disjoint_pmap",
+      "started_at": 1780301618.367,
+      "ended_at": 1780301630.038,
+      "wall_seconds": 11.67,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.pmap_congr]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.length_pmap]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.mem_pmap]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.map_pmap]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "List.perm_of_nodup_nodup_toFinset_eq",
+      "started_at": 1780301630.04,
+      "ended_at": 1780301641.659,
+      "wall_seconds": 11.62,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "exact List.toFinset_eq_of_perm",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa using List.toFinset_eq_of_perm",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.toFinset_eq_of_perm]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa [List.toFinset_eq_of_perm]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "List.toFinset.ext_iff",
+      "started_at": 1780301641.66,
+      "ended_at": 1780301653.19,
+      "wall_seconds": 11.53,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 3,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.toFinset.ext]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.toFinset_eq_iff_perm_dedup]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "rw [List.ext_get_iff]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.Disjoint.symm",
+      "started_at": 1780301653.191,
+      "ended_at": 1780301664.457,
+      "wall_seconds": 11.27,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.foldl_swap]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.disjoint_of_nodup_add]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.disjoint_of_le_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.disjoint_of_le_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.toFinset, Multiset.mem_toFinset]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.Nodup.le_nsmul_iff_le",
+      "started_at": 1780301664.459,
+      "ended_at": 1780301666.607,
+      "wall_seconds": 2.15,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.nodup_iff_le]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.singleton_le]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.nodup_iff_count_le_one]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.le_dedup]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.Rel.countP_eq",
+      "started_at": 1780301666.608,
+      "ended_at": 1780301677.613,
+      "wall_seconds": 11.0,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.countP]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.countP_map]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.countP_filter]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.card_eq_card_of_rel]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.Rel.mono",
+      "started_at": 1780301677.615,
+      "ended_at": 1780301688.34,
+      "wall_seconds": 10.73,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.rel_bind]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.exists_mem_of_rel_of_mem]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.rel_join]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "exact Multiset.rel_bind",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa using Multiset.rel_bind",
+          "outcome": "unknown_name"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.Subset.refl",
+      "started_at": 1780301688.342,
+      "ended_at": 1780301693.615,
+      "wall_seconds": 5.27,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.filter_subset]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.subset_cons]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.map_subset_map]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.toFinset, Multiset.mem_toFinset]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.Subset.trans",
+      "started_at": 1780301693.617,
+      "ended_at": 1780301699.007,
+      "wall_seconds": 5.39,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.map_subset_map]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.cons_subset_cons]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.mem_of_subset]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.subset_of_le]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.replicate_subset_singleton]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.addHom_ext",
+      "started_at": 1780301699.009,
+      "ended_at": 1780301709.725,
+      "wall_seconds": 10.72,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "exact Multiset.ext",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa using Multiset.ext",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simpa [Multiset.ext]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "rw [Multiset.ext]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact Multiset.ext'",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.add_cons",
+      "started_at": 1780301709.726,
+      "ended_at": 1780301715.644,
+      "wall_seconds": 5.92,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.mem_cons_of_mem]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.cons_add]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.count_add]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.card_add]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.add_eq_union_right_of_le",
+      "started_at": 1780301715.646,
+      "ended_at": 1780301727.225,
+      "wall_seconds": 11.58,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.add_eq_union_left_of_le]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.union_le_add]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.le_union_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.union_le_union_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.toFinset, Multiset.mem_toFinset]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.add_product",
+      "started_at": 1780301727.227,
+      "ended_at": 1780301729.833,
+      "wall_seconds": 2.61,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.product_cons]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.coe_product]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.product_add]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.card_product]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.add_sigma",
+      "started_at": 1780301729.835,
+      "ended_at": 1780301732.656,
+      "wall_seconds": 2.82,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.cons_sigma]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.Nodup.sigma]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.sigma_add]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.zero_sigma]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.card_sigma]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.add_singleton_eq_iff",
+      "started_at": 1780301732.658,
+      "ended_at": 1780301739.231,
+      "wall_seconds": 6.57,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 3,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.toFinset, Multiset.mem_toFinset]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.toList_eq_singleton_iff]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.singleton_eq_cons_iff]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.add_union_distrib",
+      "started_at": 1780301739.233,
+      "ended_at": 1780301747.508,
+      "wall_seconds": 8.28,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.add_inter_distrib]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.union_add_distrib]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.cons_union_distrib]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.toFinset, Multiset.mem_toFinset]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.attach_bind_coe",
+      "started_at": 1780301747.519,
+      "ended_at": 1780301750.131,
+      "wall_seconds": 2.61,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.bind_bind]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.bind_map]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.map_bind]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.bind_zero]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.coe_bind]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.attach_cons",
+      "started_at": 1780301750.133,
+      "ended_at": 1780301757.84,
+      "wall_seconds": 7.71,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.erase_attach_map]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.pmap_cons]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.count_attach]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.mem_cons_self]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.mem_cons_of_mem]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.attach_map_val",
+      "started_at": 1780301757.842,
+      "ended_at": 1780301765.318,
+      "wall_seconds": 7.48,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 3,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.erase_attach_map]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.erase_attach_map_val]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.attach_map_val']",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.attach_map_val'",
+      "started_at": 1780301765.32,
+      "ended_at": 1780301772.799,
+      "wall_seconds": 7.48,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 3,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.erase_attach_map]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.attach_map_val]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.erase_attach_map_val]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Multiset.disjoint_comm",
+      "started_at": 1780301772.8,
+      "ended_at": 1780301783.931,
+      "wall_seconds": 11.13,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.disjoint_of_le_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.erase_comm]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.inter_comm]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.disjoint_of_le_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.toFinset, Multiset.mem_toFinset]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.add_div_of_dvd_left",
+      "started_at": 1780301783.933,
+      "ended_at": 1780301787.284,
+      "wall_seconds": 3.35,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "exact Nat.add_div_of_dvd_right",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa using Nat.add_div_of_dvd_right",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simpa [Nat.add_div_of_dvd_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "rw [Nat.add_div_of_dvd_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact Nat.dvd_add_left",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.add_div_of_dvd_right",
+      "started_at": 1780301787.285,
+      "ended_at": 1780301790.459,
+      "wall_seconds": 3.17,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simpa using Nat.add_div_of_dvd_left",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa [Nat.add_div_of_dvd_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "rw [Nat.add_div_of_dvd_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "exact Nat.dvd_add_right",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa using Nat.dvd_add_right",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.add_le_mul",
+      "started_at": 1780301790.46,
+      "ended_at": 1780301794.539,
+      "wall_seconds": 4.08,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simpa [Nat.add_sub_one_le_mul]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "exact Nat.div_mul_div_le",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 8,
+          "tactic": "simpa using Nat.div_mul_div_le",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Nat.div_mul_div_le]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa [Nat.div_mul_div_le]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.clog_anti_left",
+      "started_at": 1780301794.541,
+      "ended_at": 1780301796.739,
+      "wall_seconds": 2.2,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Nat.clog_of_left_le_one]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Nat.log_anti_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Nat.clog_one_left",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa using Nat.clog_one_left",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.clog_eq_one",
+      "started_at": 1780301796.741,
+      "ended_at": 1780301798.889,
+      "wall_seconds": 2.15,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Nat.clog_one_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Nat.clog_of_right_le_one]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Nat.clog_one_left",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa using Nat.clog_one_left",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa [Nat.clog_one_left]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.clog_mono_right",
+      "started_at": 1780301798.89,
+      "ended_at": 1780301801.137,
+      "wall_seconds": 2.25,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Nat.clog_zero_right]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Nat.clog_of_right_le_one]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Nat.clog_one_right",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa using Nat.clog_one_right",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa [Nat.clog_one_right]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.clog_of_left_le_one",
+      "started_at": 1780301801.139,
+      "ended_at": 1780301803.057,
+      "wall_seconds": 1.92,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 3,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Nat.clog_of_two_le]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Nat.clog_of_right_le_one]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Nat.clog_one_left",
+          "outcome": "unknown_name"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.div_ne_zero_iff",
+      "started_at": 1780301803.059,
+      "ended_at": 1780301807.98,
+      "wall_seconds": 4.92,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simpa using Nat.div_ne_zero_iff_of_dvd",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Nat.div_ne_zero_iff_of_dvd]",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 8,
+          "tactic": "simpa [Nat.div_ne_zero_iff_of_dvd]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "rw [Nat.div_ne_zero_iff_of_dvd]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact Nat.one_le_iff_ne_zero",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.dvd_left_iff_eq",
+      "started_at": 1780301807.982,
+      "ended_at": 1780301813.497,
+      "wall_seconds": 5.51,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simpa using Nat.mul_dvd_mul_iff_left",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa [Nat.mul_dvd_mul_iff_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "rw [Nat.mul_dvd_mul_iff_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "exact Nat.dvd_right_iff_eq",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa using Nat.dvd_right_iff_eq",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.dvd_right_iff_eq",
+      "started_at": 1780301813.499,
+      "ended_at": 1780301878.535,
+      "wall_seconds": 65.04,
+      "killed_by_timeout": false,
+      "exit_code": 1,
+      "live": false,
+      "setup_error": "worker_no_output",
+      "programs_attempted": 0,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.eq_div_of_mul_eq_left",
+      "started_at": 1780301878.538,
+      "ended_at": 1780301882.801,
+      "wall_seconds": 4.26,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 3,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simpa [Nat.eq_mul_of_div_eq_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "rw [Nat.eq_mul_of_div_eq_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Nat.eq_one_of_mul_eq_one_left",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.eq_mul_of_div_eq_left",
+      "started_at": 1780301882.803,
+      "ended_at": 1780301947.844,
+      "wall_seconds": 65.04,
+      "killed_by_timeout": false,
+      "exit_code": 1,
+      "live": false,
+      "setup_error": "worker_no_output",
+      "programs_attempted": 0,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.find_eq_zero",
+      "started_at": 1780301947.848,
+      "ended_at": 1780302012.895,
+      "wall_seconds": 65.05,
+      "killed_by_timeout": false,
+      "exit_code": 1,
+      "live": false,
+      "setup_error": "worker_no_output",
+      "programs_attempted": 0,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.forall_lt_succ",
+      "started_at": 1780302012.897,
+      "ended_at": 1780302077.935,
+      "wall_seconds": 65.04,
+      "killed_by_timeout": false,
+      "exit_code": 1,
+      "live": false,
+      "setup_error": "worker_no_output",
+      "programs_attempted": 0,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.le_of_mul_le_mul_right",
+      "started_at": 1780302077.939,
+      "ended_at": 1780302142.986,
+      "wall_seconds": 65.05,
+      "killed_by_timeout": false,
+      "exit_code": 1,
+      "live": false,
+      "setup_error": "worker_no_output",
+      "programs_attempted": 0,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.mod_eq_iff_lt",
+      "started_at": 1780302142.99,
+      "ended_at": 1780302208.071,
+      "wall_seconds": 65.08,
+      "killed_by_timeout": false,
+      "exit_code": 1,
+      "live": false,
+      "setup_error": "worker_no_output",
+      "programs_attempted": 0,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.mod_mul_mod",
+      "started_at": 1780302208.073,
+      "ended_at": 1780302213.316,
+      "wall_seconds": 5.24,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simpa [Nat.mul_mod_mod]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "rw [Nat.mul_mod_mod]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Nat.div_mod_eq_mod_mul_div",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa using Nat.div_mod_eq_mod_mul_div",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Nat.div_mod_eq_mod_mul_div]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.one_le_pow",
+      "started_at": 1780302213.318,
+      "ended_at": 1780302217.693,
+      "wall_seconds": 4.37,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Nat.choose_le_pow]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "exact Nat.one_le_pow'",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 8,
+          "tactic": "simpa using Nat.one_le_pow'",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa [Nat.one_le_pow']",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact Nat.one_lt_pow",
+          "outcome": "unknown_name"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.sqrt_lt'",
+      "started_at": 1780302217.695,
+      "ended_at": 1780302223.505,
+      "wall_seconds": 5.81,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simpa [Nat.prime_def_lt']",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "rw [Nat.prime_def_lt']",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Nat.lt_sub_iff_add_lt'",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa using Nat.lt_sub_iff_add_lt'",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa [Nat.lt_sub_iff_add_lt']",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.sqrt_pos",
+      "started_at": 1780302223.507,
+      "ended_at": 1780302229.475,
+      "wall_seconds": 5.97,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simpa [Nat.sqrt_eq]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "rw [Nat.sqrt_eq]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Nat.sqrt_le",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa using Nat.sqrt_le",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Nat.sqrt_le]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Nat.zero_eq_mul",
+      "started_at": 1780302229.477,
+      "ended_at": 1780302233.449,
+      "wall_seconds": 3.97,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "exact Nat.eq_zero_of_mul_le",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa using Nat.eq_zero_of_mul_le",
+          "outcome": "unknown_name"
+        },
+        {
+          "rank": 8,
+          "tactic": "simpa [Nat.eq_zero_of_mul_le]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "rw [Nat.eq_zero_of_mul_le]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact Nat.dist_eq_zero",
+          "outcome": "unknown_name"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Set.BijOn.congr",
+      "started_at": 1780302233.451,
+      "ended_at": 1780302238.569,
+      "wall_seconds": 5.12,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 4,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Set.BijOn, Set.EqOn]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Set.SurjOn.congr]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Set.BijOn.inter]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Set.BijOn.union]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "started_at": 1780302238.571,
+      "ended_at": 1780302248.229,
+      "wall_seconds": 9.66,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 3,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Set.disjoint_sUnion_left]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Set.image_sUnion]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Set.sUnion_union]",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    },
+    {
+      "full_name": "Set.mapsTo_singleton",
+      "started_at": 1780302248.232,
+      "ended_at": 1780302251.969,
+      "wall_seconds": 3.74,
+      "killed_by_timeout": false,
+      "exit_code": 0,
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "success": false,
+      "first_success_rank": null,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Set.mapsTo_of_subsingleton]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Set.MapsTo.union]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Set.mem_singleton]",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 9,
+          "tactic": "exact Set.MapsTo.inter",
+          "outcome": "proof_failed"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa using Set.MapsTo.inter",
+          "outcome": "proof_failed"
+        }
+      ],
+      "stderr_tail": null,
+      "budget": 10
+    }
+  ]
+}

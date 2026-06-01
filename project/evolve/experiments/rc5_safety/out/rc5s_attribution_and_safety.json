@@ -1,0 +1,915 @@
+{
+  "generated_by": "scripts/rc5s_attribution_and_safety.py",
+  "classification_histogram": {
+    "SAFE_TRUE_DYNAMIC_WIN": 3,
+    "NO_WIN_SAFE_BUDGET": 86
+  },
+  "recovered_prior_wins": [
+    "Finset.biUnion_subset_iff_forall_subset",
+    "Finset.image_subset_iff",
+    "Multiset.add_bind"
+  ],
+  "num_recovered": 3,
+  "lost_prior_wins": [],
+  "num_lost": 0,
+  "new_wins": [],
+  "num_new": 0,
+  "bounded_timeouts": [],
+  "num_bounded_timeouts": 0,
+  "off_policy_blocked_pre_execution": 73,
+  "unsafe_programs_quarantined": 366,
+  "rc5h_winners_total": 3,
+  "remaining_safety_issues": [],
+  "records": [
+    {
+      "full_name": "Finset.biUnion_subset_iff_forall_subset",
+      "namespace": "Finset",
+      "category": "true_winners",
+      "success": true,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.45,
+      "winning_program": "simp [Finset.biUnion_subset] <;> aesop",
+      "classification": "SAFE_TRUE_DYNAMIC_WIN"
+    },
+    {
+      "full_name": "Finset.image_subset_iff",
+      "namespace": "Finset",
+      "category": "true_winners",
+      "success": true,
+      "killed_by_timeout": false,
+      "wall_seconds": 3.57,
+      "winning_program": "simp [Finset.subset_iff]",
+      "classification": "SAFE_TRUE_DYNAMIC_WIN"
+    },
+    {
+      "full_name": "Multiset.add_bind",
+      "namespace": "Multiset",
+      "category": "true_winners",
+      "success": true,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.26,
+      "winning_program": "simp [Multiset.bind]",
+      "classification": "SAFE_TRUE_DYNAMIC_WIN"
+    },
+    {
+      "full_name": "Finset.Nonempty.inf_eq_bot_iff",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 6.68,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.Nonempty.strong_induction",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 4.41,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.Nonempty.sup_eq_top_iff",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 6.09,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.Nontrivial.erase_nonempty",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 8.66,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.card_mono",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.46,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.card_strictMono",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 3.05,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.card_union_eq_card_add_card",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 3.51,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_left",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.62,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_right",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.57,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.comp_inf_eq_inf_comp_of_is_total",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 6.17,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.comp_sup_eq_sup_comp_of_is_total",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.92,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_left",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.88,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_right",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.86,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.disjoint_filter_filter'",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 10.5,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.disjoint_image",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 4.0,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.disjoint_insert_right",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 7.4,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.disjoint_map",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.82,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.disjoint_sup_left",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.57,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.disjoint_sup_right",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.65,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.fin_mono",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 4.12,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.image_mono",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 3.48,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.max'_image",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 8.91,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.mem_fin",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 4.17,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.mem_insert",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 6.99,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.min'_image",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 9.01,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.monotone_preimage",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.43,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.powerset_card_disjiUnion",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 3.16,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.subtype_mono",
+      "namespace": "Finset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 4.02,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "List.Pairwise.pmap",
+      "namespace": "List",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.41,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "List.Pairwise.set_pairwise",
+      "namespace": "List",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.18,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "List.Sublist.antisymm",
+      "namespace": "List",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 7.19,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "List.Sublist.map",
+      "namespace": "List",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 10.44,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "List.Sublist.tail",
+      "namespace": "List",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 7.02,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "List.append_cons_inj_of_not_mem",
+      "namespace": "List",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 8.79,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "List.append_left_eq_self",
+      "namespace": "List",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.78,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "List.append_right_eq_self",
+      "namespace": "List",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.85,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "List.attach_eq_nil",
+      "namespace": "List",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 9.81,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "List.disjoint_map",
+      "namespace": "List",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 11.84,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "List.disjoint_pmap",
+      "namespace": "List",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 12.35,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "List.perm_of_nodup_nodup_toFinset_eq",
+      "namespace": "List",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 11.79,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "List.toFinset.ext_iff",
+      "namespace": "List",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 11.76,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.Disjoint.symm",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 11.42,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.Nodup.le_nsmul_iff_le",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.54,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.Rel.countP_eq",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 11.4,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.Rel.mono",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 10.99,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.Subset.refl",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.62,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.Subset.trans",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.62,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.addHom_ext",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 10.76,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.add_cons",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 6.29,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.add_eq_union_right_of_le",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 11.86,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.add_product",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 3.0,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.add_sigma",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 3.15,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.add_singleton_eq_iff",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 7.1,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.add_union_distrib",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 8.62,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.attach_bind_coe",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.79,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.attach_cons",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 7.99,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.attach_map_val",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 7.92,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.attach_map_val'",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 7.89,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Multiset.disjoint_comm",
+      "namespace": "Multiset",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 11.33,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.AM_GM",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.77,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.add_div_of_dvd_left",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 3.51,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.add_div_of_dvd_right",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 3.39,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.add_le_mul",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 4.4,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.clog_anti_left",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.78,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.clog_eq_one",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.66,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.clog_mono_right",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.78,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.clog_of_left_le_one",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 2.58,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.div_ne_zero_iff",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.21,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.dvd_left_iff_eq",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.83,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.dvd_right_iff_eq",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.61,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.eq_div_of_mul_eq_left",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 4.6,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.eq_mul_of_div_eq_left",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 4.4,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.find_eq_zero",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 6.18,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.forall_lt_succ",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 3.45,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.le_of_mul_le_mul_right",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 4.16,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.mod_eq_iff_lt",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.21,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.mod_mul_mod",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 5.24,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.one_le_pow",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 4.61,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.sqrt_lt'",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 6.03,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.sqrt_pos",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 6.11,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Nat.zero_eq_mul",
+      "namespace": "Nat",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 4.08,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Set.BijOn.congr",
+      "namespace": "Set",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 4.88,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "namespace": "Set",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 9.36,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Set.mapsTo_singleton",
+      "namespace": "Set",
+      "category": "prior_stall_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 4.13,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.mem_singleton",
+      "namespace": "Finset",
+      "category": "off_policy_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 6.05,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    },
+    {
+      "full_name": "Finset.pairwise_cons'",
+      "namespace": "Finset",
+      "category": "off_policy_cases",
+      "success": false,
+      "killed_by_timeout": false,
+      "wall_seconds": 12.15,
+      "winning_program": null,
+      "classification": "NO_WIN_SAFE_BUDGET"
+    }
+  ]
+}

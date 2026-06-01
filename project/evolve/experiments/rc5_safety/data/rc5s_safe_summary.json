@@ -1,0 +1,28 @@
+{
+  "generated_by": "scripts/rc5s_export_safe_examples.py",
+  "num_examples": 828,
+  "num_theorems": 89,
+  "policy_status_histogram": {
+    "POLICY_ALLOWED": 828
+  },
+  "pattern_histogram": {
+    "simp_L_aesop": 168,
+    "simp_L": 475,
+    "exact_L": 71,
+    "simpa_using_L": 51,
+    "rw_L_aesop": 4,
+    "simpa_L": 35,
+    "rw_L": 23,
+    "ext_simp_L": 1
+  },
+  "outcome_histogram": {
+    "solved": 3,
+    "not_reached_or_failed": 50,
+    "proof_failed": 710,
+    "unknown_name": 60,
+    "max_recursion": 5
+  },
+  "winning_programs": 3,
+  "off_policy_examples": 0,
+  "note": "safety/audit data — NOT ranker training (only 3 positives; RC5H showed retrain hurts)."
+}
