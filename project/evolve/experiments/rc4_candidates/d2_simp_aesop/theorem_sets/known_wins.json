@@ -1,0 +1,209 @@
+[
+  {
+    "full_name": "Finset.biUnion_subset_iff_forall_subset",
+    "file_path": "Mathlib/Data/Finset/Union.lean",
+    "namespace": "Finset",
+    "winning_tactic": "simp [Finset.biUnion_subset] <;> aesop",
+    "lemma": "Finset.biUnion_subset",
+    "source": "TR6",
+    "sources": [
+      "TR6"
+    ],
+    "fresh": true,
+    "classification": "FRESH_TRUE_DELTA",
+    "overlaps_rc4b": false,
+    "overlaps_rc4a": false,
+    "bucket": "A_pure_rc4c",
+    "rc2_status": "failed"
+  },
+  {
+    "full_name": "List.Forall.imp",
+    "file_path": "Mathlib/Data/List/Basic.lean",
+    "namespace": "List",
+    "winning_tactic": "simp [List.forall_iff_forall_mem] <;> aesop",
+    "lemma": "List.forall_iff_forall_mem",
+    "source": "TR6",
+    "sources": [
+      "TR6"
+    ],
+    "fresh": true,
+    "classification": "FRESH_TRUE_DELTA",
+    "overlaps_rc4b": false,
+    "overlaps_rc4a": false,
+    "bucket": "A_pure_rc4c",
+    "rc2_status": "failed"
+  },
+  {
+    "full_name": "Multiset.disjoint_add_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "winning_tactic": "simp [Multiset.disjoint_right] <;> aesop",
+    "lemma": "Multiset.disjoint_right",
+    "source": "TR6",
+    "sources": [
+      "TR6"
+    ],
+    "fresh": true,
+    "classification": "FRESH_TRUE_DELTA",
+    "overlaps_rc4b": false,
+    "overlaps_rc4a": false,
+    "bucket": "A_pure_rc4c",
+    "rc2_status": "failed"
+  },
+  {
+    "full_name": "Set.Nonempty.subset_pair_iff_eq",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "winning_tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+    "lemma": "Set.subset_pair_iff_eq",
+    "source": "TR3+TR5",
+    "sources": [
+      "TR3",
+      "TR5"
+    ],
+    "fresh": false,
+    "classification": "TRUE_DELTA",
+    "overlaps_rc4b": false,
+    "overlaps_rc4a": false,
+    "bucket": "A_pure_rc4c",
+    "rc2_status": "failed"
+  },
+  {
+    "full_name": "Multiset.disjoint_add_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+    "lemma": "Multiset.disjoint_left",
+    "source": "TR6",
+    "sources": [
+      "TR6"
+    ],
+    "fresh": true,
+    "classification": "FRESH_TRUE_DELTA",
+    "overlaps_rc4b": true,
+    "overlaps_rc4a": false,
+    "bucket": "B_overlap_rc4b",
+    "rc2_status": "failed"
+  },
+  {
+    "full_name": "Multiset.disjoint_cons_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+    "lemma": "Multiset.disjoint_left",
+    "source": "TR6",
+    "sources": [
+      "TR6"
+    ],
+    "fresh": true,
+    "classification": "FRESH_TRUE_DELTA",
+    "overlaps_rc4b": true,
+    "overlaps_rc4a": false,
+    "bucket": "B_overlap_rc4b",
+    "rc2_status": "failed"
+  },
+  {
+    "full_name": "Set.disjoint_iUnion_left",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+    "lemma": "Set.disjoint_left",
+    "source": "TR6",
+    "sources": [
+      "TR6"
+    ],
+    "fresh": true,
+    "classification": "FRESH_TRUE_DELTA",
+    "overlaps_rc4b": true,
+    "overlaps_rc4a": false,
+    "bucket": "B_overlap_rc4b",
+    "rc2_status": "failed"
+  },
+  {
+    "full_name": "Set.disjoint_iUnion_right",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+    "lemma": "Set.disjoint_left",
+    "source": "TR6",
+    "sources": [
+      "TR6"
+    ],
+    "fresh": true,
+    "classification": "FRESH_TRUE_DELTA",
+    "overlaps_rc4b": true,
+    "overlaps_rc4a": false,
+    "bucket": "B_overlap_rc4b",
+    "rc2_status": "failed"
+  },
+  {
+    "full_name": "Set.disjoint_iff_forall_ne",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+    "lemma": "Set.disjoint_left",
+    "source": "TR3+TR5",
+    "sources": [
+      "TR3",
+      "TR5"
+    ],
+    "fresh": false,
+    "classification": "TRUE_DELTA",
+    "overlaps_rc4b": true,
+    "overlaps_rc4a": false,
+    "bucket": "B_overlap_rc4b",
+    "rc2_status": "failed"
+  },
+  {
+    "full_name": "Set.disjoint_right",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+    "lemma": "Set.disjoint_left",
+    "source": "TR3+TR5",
+    "sources": [
+      "TR3",
+      "TR5"
+    ],
+    "fresh": false,
+    "classification": "TRUE_DELTA",
+    "overlaps_rc4b": true,
+    "overlaps_rc4a": false,
+    "bucket": "B_overlap_rc4b",
+    "rc2_status": "failed"
+  },
+  {
+    "full_name": "Set.disjoint_sUnion_left",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+    "lemma": "Set.disjoint_left",
+    "source": "TR6",
+    "sources": [
+      "TR6"
+    ],
+    "fresh": true,
+    "classification": "FRESH_TRUE_DELTA",
+    "overlaps_rc4b": true,
+    "overlaps_rc4a": false,
+    "bucket": "B_overlap_rc4b",
+    "rc2_status": "failed"
+  },
+  {
+    "full_name": "Set.disjoint_sUnion_right",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+    "lemma": "Set.disjoint_left",
+    "source": "TR6",
+    "sources": [
+      "TR6"
+    ],
+    "fresh": true,
+    "classification": "FRESH_TRUE_DELTA",
+    "overlaps_rc4b": true,
+    "overlaps_rc4a": false,
+    "bucket": "B_overlap_rc4b",
+    "rc2_status": "failed"
+  }
+]

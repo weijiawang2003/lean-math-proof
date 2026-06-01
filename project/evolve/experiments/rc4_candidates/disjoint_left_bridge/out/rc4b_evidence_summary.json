@@ -1,0 +1,56 @@
+{
+  "generated_by": "scripts/rc4b_extract_disjoint_left_evidence.py",
+  "num_known_wins": 11,
+  "by_namespace": {
+    "Multiset": 4,
+    "Set": 7
+  },
+  "by_bridge_lemma": {
+    "Multiset.disjoint_left": 4,
+    "Set.disjoint_left": 7
+  },
+  "fresh_wins": 8,
+  "reproduction_wins": 3,
+  "tr5_reproduction_evidence": {
+    "count": 3,
+    "targets": [
+      "Set.disjoint_iff_forall_ne",
+      "Set.disjoint_right",
+      "Set.disjoint_singleton_left"
+    ]
+  },
+  "tr6_fresh_evidence": {
+    "count": 8,
+    "targets": [
+      "Multiset.disjoint_add_left",
+      "Multiset.disjoint_cons_left",
+      "Multiset.singleton_disjoint",
+      "Multiset.zero_disjoint",
+      "Set.disjoint_iUnion_left",
+      "Set.disjoint_iUnion_right",
+      "Set.disjoint_sUnion_left",
+      "Set.disjoint_sUnion_right"
+    ]
+  },
+  "namespace_split": {
+    "Multiset": [
+      "Multiset.disjoint_add_left",
+      "Multiset.disjoint_cons_left",
+      "Multiset.singleton_disjoint",
+      "Multiset.zero_disjoint"
+    ],
+    "Set": [
+      "Set.disjoint_iUnion_left",
+      "Set.disjoint_iUnion_right",
+      "Set.disjoint_iff_forall_ne",
+      "Set.disjoint_right",
+      "Set.disjoint_sUnion_left",
+      "Set.disjoint_sUnion_right",
+      "Set.disjoint_singleton_left"
+    ]
+  },
+  "needs_review": [],
+  "mechanism": "simp [<NS>.disjoint_left]  (optionally  <;> aesop) ; namespace-parametric over {Set, Multiset}",
+  "homogeneous": true,
+  "homogeneity_note": "All wins share one mechanism — a single named-lemma rewrite with `<NS>.disjoint_left` that turns `Disjoint a b` into a membership goal closable by simp/aesop. The only axis of variation is the namespace (Set vs Multiset), which the gate keys on; so a single narrow candidate with two namespace variants covers them. NOT CANDIDATE_TOO_HETEROGENEOUS."
+}

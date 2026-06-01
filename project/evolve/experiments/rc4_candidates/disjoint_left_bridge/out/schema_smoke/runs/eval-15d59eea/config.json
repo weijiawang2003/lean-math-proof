@@ -1,0 +1,13 @@
+{
+  "method": "policy_rollout_topk",
+  "policy_type": "hybrid_evolved",
+  "theorem_set": "rc4b_schema_smoke",
+  "ckpt_dir": "clf_ckpt",
+  "route_config": "project/evolve/routing/ns24_router.json",
+  "max_steps": 8,
+  "top_k": 8,
+  "num_theorems": 12,
+  "decode_mode": "beam",
+  "temperature": 0.8,
+  "seed": null
+}

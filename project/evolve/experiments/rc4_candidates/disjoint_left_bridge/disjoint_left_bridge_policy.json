@@ -1,0 +1,72 @@
+{
+  "family": "disjoint_left_bridge",
+  "status": "experimental_rc4_candidate",
+  "base": "RC2",
+  "promotion_allowed": false,
+  "description": "Narrow namespace-parametric disjoint_left bridge. For a theorem whose namespace is Set or Multiset and whose name or goal mentions disjointness, the gate emits the matching `simp [<NS>.disjoint_left]` rewrite and its depth-2 `<;> aesop` form. Fires ONLY on Set/Multiset disjoint goals; cannot fire on Nat/List/Finset/Order goals (namespace mismatch) or on Set/Multiset goals that never mention disjointness.",
+  "bridge_lemmas": [
+    "Set.disjoint_left",
+    "Multiset.disjoint_left"
+  ],
+  "allowlist_source": "TR3 (3 Set wins) + TR5 (3 Set reproductions, rank 1) + TR6 (8 fresh wins: 4 Multiset + 4 Set)",
+  "actions": [
+    {
+      "name": "SET_DISJOINT_LEFT_SIMP",
+      "tactic": "simp [Set.disjoint_left]",
+      "lemma": "Set.disjoint_left",
+      "gate": {
+        "requires_namespace": "Set",
+        "requires_name_or_goal_contains": ["disjoint", "Disjoint"],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "low"
+    },
+    {
+      "name": "SET_DISJOINT_LEFT_SIMP_AESOP",
+      "tactic": "simp [Set.disjoint_left] <;> aesop",
+      "lemma": "Set.disjoint_left",
+      "gate": {
+        "requires_namespace": "Set",
+        "requires_name_or_goal_contains": ["disjoint", "Disjoint"],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "low"
+    },
+    {
+      "name": "MULTISET_DISJOINT_LEFT_SIMP",
+      "tactic": "simp [Multiset.disjoint_left]",
+      "lemma": "Multiset.disjoint_left",
+      "gate": {
+        "requires_namespace": "Multiset",
+        "requires_name_or_goal_contains": ["disjoint", "Disjoint"],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "low"
+    },
+    {
+      "name": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+      "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "lemma": "Multiset.disjoint_left",
+      "gate": {
+        "requires_namespace": "Multiset",
+        "requires_name_or_goal_contains": ["disjoint", "Disjoint"],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "low"
+    }
+  ],
+  "namespace_split": {
+    "RC4B_Set": ["SET_DISJOINT_LEFT_SIMP", "SET_DISJOINT_LEFT_SIMP_AESOP"],
+    "RC4B_Multiset": ["MULTISET_DISJOINT_LEFT_SIMP", "MULTISET_DISJOINT_LEFT_SIMP_AESOP"],
+    "note": "If Set and Multiset behave very differently under validation, report and (if needed) promote them as separate RC4B_Set / RC4B_Multiset candidates."
+  },
+  "excluded_from_this_candidate": [
+    "Finset.disjoint_left and all Finset disjoint lemmas (not independently evidenced; kept as negative control)",
+    "broad simp with all disjoint lemmas / simp [*, disjoint]",
+    "arbitrary d2_simp_aesop with any retrieved lemma (RC4C, validated separately)",
+    "def_unfold_simp allowlist (RC4A, validated separately)",
+    "global @[simp] additions"
+  ],
+  "evaluation_mode": "external_additive",
+  "evaluation_rule": "candidate_solved = literal_RC2_solved OR (gate fires AND at least one gated bridge tactic closes the goal single-shot from the initial state)"
+}

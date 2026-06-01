@@ -1,0 +1,494 @@
+{
+  "generated_by": "scripts/rc4b_determinism_check.py",
+  "num_targets": 74,
+  "num_gate_firing": 39,
+  "clean_run1_hash": "7574d704d3505a47",
+  "clean_run2_hash": "7574d704d3505a47",
+  "gate_decisions_stable": true,
+  "genuine_diffs": [],
+  "flake_diffs": [],
+  "open_flakes": [
+    "Set._root_.Disjoint.image",
+    "Set.biUnion_compl_eq_of_pairwise_disjoint_of_iUnion_eq_univ",
+    "Set.disjoint_iUnion",
+    "Multiset.coe_disjoint",
+    "Multiset.disjoint_of_subset_left"
+  ],
+  "num_open_flakes": 5,
+  "win_affecting_flakes": [],
+  "deterministic": true,
+  "determinism_note": "hash computed over cleanly-executed theorems; open flakes are Dojo hard-timeout / worker-kill infrastructure events on heavy-aesop / hard-Set goals, excluded from the hash. deterministic=True ⇔ identical gate decisions + identical solved outcomes on every cleanly-executed theorem.",
+  "run1": {
+    "Multiset.disjoint_add_left": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null,
+      "_repaired": "re-probed 2x clean after run1 worker-kill"
+    },
+    "Multiset.disjoint_cons_left": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.singleton_disjoint": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.zero_disjoint": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_iUnion_left": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_iUnion_right": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_iff_forall_ne": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_right": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_sUnion_left": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_sUnion_right": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_singleton_left": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set._root_.Disjoint.image": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": null,
+      "setup_error": "DojoInitError: Failed to locate the theorem with `Set._root_.Disjoint.image` as its fully qualified name.\nojo.py\", line 375, in _get_modified_proof\n    raise DojoInitError(\nlean_dojo.interaction.dojo.DojoInitError: Failed to locate the theorem with `Set._root_.Disjoint.image` as its fully qualified name.\n"
+    },
+    "Set.biUnion_compl_eq_of_pairwise_disjoint_of_iUnion_eq_univ": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": null,
+      "setup_error": "worker_output_unreadable"
+    },
+    "Set.disjoint_iUnion": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": null,
+      "setup_error": "DojoInitError: Failed to locate the theorem with `Set.disjoint_iUnion` as its fully qualified name.\ntion/dojo.py\", line 375, in _get_modified_proof\n    raise DojoInitError(\nlean_dojo.interaction.dojo.DojoInitError: Failed to locate the theorem with `Set.disjoint_iUnion` as its fully qualified name.\n"
+    },
+    "Set.disjoint_singleton": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.injOn_union": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Set.pairwiseDisjoint_filter": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Set.sigmaToiUnion_bijective": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Set.sigmaToiUnion_injective": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.Disjoint.symm": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.add_eq_union_iff_disjoint": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.add_eq_union_left_of_le": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.add_eq_union_right_of_le": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.coe_disjoint": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": null,
+      "setup_error": "worker_output_unreadable"
+    },
+    "Multiset.disjoint_add_right": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.disjoint_comm": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.disjoint_cons_right": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.disjoint_iff_ne": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.disjoint_left": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.disjoint_map_map": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.disjoint_of_subset_left": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": null,
+      "setup_error": "worker_output_unreadable"
+    },
+    "Multiset.disjoint_of_subset_right": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.disjoint_right": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.disjoint_singleton": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.disjoint_toFinset": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.disjoint_union_left": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.disjoint_union_right": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.inter_eq_zero_iff_disjoint": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.nodup_bind": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    }
+  },
+  "run2": {
+    "Multiset.disjoint_add_left": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.disjoint_cons_left": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.singleton_disjoint": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.zero_disjoint": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_iUnion_left": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_iUnion_right": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_iff_forall_ne": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_right": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_sUnion_left": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_sUnion_right": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.disjoint_singleton_left": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set._root_.Disjoint.image": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": null,
+      "setup_error": "DojoInitError: Failed to locate the theorem with `Set._root_.Disjoint.image` as its fully qualified name.\nojo.py\", line 375, in _get_modified_proof\n    raise DojoInitError(\nlean_dojo.interaction.dojo.DojoInitError: Failed to locate the theorem with `Set._root_.Disjoint.image` as its fully qualified name.\n"
+    },
+    "Set.biUnion_compl_eq_of_pairwise_disjoint_of_iUnion_eq_univ": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Set.disjoint_iUnion": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": null,
+      "setup_error": "DojoInitError: Failed to locate the theorem with `Set.disjoint_iUnion` as its fully qualified name.\ntion/dojo.py\", line 375, in _get_modified_proof\n    raise DojoInitError(\nlean_dojo.interaction.dojo.DojoInitError: Failed to locate the theorem with `Set.disjoint_iUnion` as its fully qualified name.\n"
+    },
+    "Set.disjoint_singleton": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.injOn_union": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Set.pairwiseDisjoint_filter": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Set.sigmaToiUnion_bijective": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Set.sigmaToiUnion_injective": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.Disjoint.symm": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.add_eq_union_iff_disjoint": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.add_eq_union_left_of_le": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.add_eq_union_right_of_le": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.coe_disjoint": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.disjoint_add_right": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.disjoint_comm": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.disjoint_cons_right": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.disjoint_iff_ne": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.disjoint_left": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.disjoint_map_map": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.disjoint_of_subset_left": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.disjoint_of_subset_right": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.disjoint_right": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.disjoint_singleton": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.disjoint_toFinset": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.disjoint_union_left": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.disjoint_union_right": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Multiset.inter_eq_zero_iff_disjoint": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Multiset.nodup_bind": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    }
+  }
+}

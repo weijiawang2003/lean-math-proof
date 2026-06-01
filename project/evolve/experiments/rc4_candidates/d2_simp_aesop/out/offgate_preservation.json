@@ -1,0 +1,104 @@
+{
+  "generated_by": "scripts/rc4c_offgate_preservation.py",
+  "per_set_gate_emissions": {
+    "known_wins_all": {
+      "n": 12,
+      "gate_emissions_all": 12,
+      "gate_emissions_nonoverlap": 6,
+      "must_not_fire": false
+    },
+    "known_wins_nonoverlap": {
+      "n": 4,
+      "gate_emissions_all": 4,
+      "gate_emissions_nonoverlap": 4,
+      "must_not_fire": false
+    },
+    "fresh_holdout_all": {
+      "n": 30,
+      "gate_emissions_all": 30,
+      "gate_emissions_nonoverlap": 29,
+      "must_not_fire": false
+    },
+    "fresh_holdout_nonoverlap": {
+      "n": 20,
+      "gate_emissions_all": 20,
+      "gate_emissions_nonoverlap": 20,
+      "must_not_fire": false
+    },
+    "negative_controls": {
+      "n": 18,
+      "gate_emissions_all": 0,
+      "gate_emissions_nonoverlap": 0,
+      "must_not_fire": true
+    },
+    "namespace_negative_controls": {
+      "n": 20,
+      "gate_emissions_all": 0,
+      "gate_emissions_nonoverlap": 0,
+      "must_not_fire": true
+    },
+    "canonical_smoke": {
+      "n": 45,
+      "gate_emissions_all": 0,
+      "gate_emissions_nonoverlap": 0,
+      "must_not_fire": true
+    }
+  },
+  "gate_emissions_namespace_split": {
+    "known_wins_all": {
+      "Finset": 1,
+      "List": 1,
+      "Multiset": 3,
+      "Set": 7
+    },
+    "known_wins_nonoverlap": {
+      "Finset": 1,
+      "List": 1,
+      "Multiset": 1,
+      "Set": 1
+    },
+    "fresh_holdout_all": {
+      "Finset": 3,
+      "List": 4,
+      "Multiset": 21,
+      "Set": 2
+    },
+    "fresh_holdout_nonoverlap": {
+      "Finset": 3,
+      "List": 4,
+      "Multiset": 13
+    },
+    "negative_controls": {},
+    "namespace_negative_controls": {},
+    "canonical_smoke": {}
+  },
+  "off_gate_emissions_all": 0,
+  "off_gate_emissions_nonoverlap": 0,
+  "unexpected_fired_cases": [],
+  "emitted_and_failed": {
+    "gate_fired": 42,
+    "failed": 19,
+    "rate": 0.452,
+    "note": "additive: emitted-and-failed are honest negatives, not regressions"
+  },
+  "regressions": 0,
+  "regression_note": "additive evaluator (candidate ⊇ RC2) → regressions structurally impossible",
+  "canonical_floors": {
+    "demo_v1": {
+      "n": 15,
+      "rc2_solved": 12,
+      "gate_fires": 0
+    },
+    "nat_defs_medium": {
+      "n": 15,
+      "rc2_solved": 14,
+      "gate_fires": 0
+    },
+    "nat_defs_large_v5": {
+      "n": 15,
+      "rc2_solved": 14,
+      "gate_fires": 0
+    }
+  },
+  "verdict": "OFFGATE_CLEAN"
+}

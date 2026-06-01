@@ -1,0 +1,382 @@
+[
+  {
+    "full_name": "Multiset.Disjoint.symm",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[symm] theorem Disjoint.symm {s t : Multiset α} (d : Disjoint s t) : Disjoint t s | _a, i₂, i₁ => d i₁ i₂ #align multiset.disjoint.symm Multiset.Disjoint.symm theorem disjoint_comm {s t : Multiset α} : Disjoint s t ↔ Disjoint t s",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.add_eq_union_iff_disjoint",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem add_eq_union_iff_disjoint [DecidableEq α] {s t : Multiset α} : s + t = s ∪ t ↔ Disjoint s t",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.add_eq_union_left_of_le",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "lemma add_eq_union_left_of_le [DecidableEq α] {s t u : Multiset α} (h : t ≤ s) : u + s = u ∪ t ↔ u.Disjoint s ∧ s = t",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.add_eq_union_right_of_le",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "lemma add_eq_union_right_of_le [DecidableEq α] {x y z : Multiset α} (h : z ≤ y) : x + y = x ∪ z ↔ y = z ∧ x.Disjoint y",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.coe_disjoint",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem coe_disjoint (l₁ l₂ : List α) : @Disjoint α l₁ l₂ ↔ l₁.Disjoint l₂",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.disjoint_add_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_add_right {s t u : Multiset α} : Disjoint s (t + u) ↔ Disjoint s t ∧ Disjoint s u",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.disjoint_comm",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_comm {s t : Multiset α} : Disjoint s t ↔ Disjoint t s",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.disjoint_cons_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_cons_right {a : α} {s t : Multiset α} : Disjoint s (a ::ₘ t) ↔ a ∉ s ∧ Disjoint s t",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "solved",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.disjoint_iff_ne",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_iff_ne {s t : Multiset α} : Disjoint s t ↔ ∀ a ∈ s, ∀ b ∈ t, a ≠ b",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.disjoint_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_left {s t : Multiset α} : Disjoint s t ↔ ∀ {a}, a ∈ s → a ∉ t",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.disjoint_map_map",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_map_map {f : α → γ} {g : β → γ} {s : Multiset α} {t : Multiset β} : Disjoint (s.map f) (t.map g) ↔ ∀ a ∈ s, ∀ b ∈ t, f a ≠ g b",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "solved",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.disjoint_of_subset_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_of_subset_left {s t u : Multiset α} (h : s ⊆ u) (d : Disjoint u t) : Disjoint s t | _x, m₁ => d (h m₁) #align multiset.disjoint_of_subset_left Multiset.disjoint_of_subset_left theorem disjoint_of_subset_right {s t u : Multiset α} (h : t ⊆ u) (d : Disjoint s u) : Disjoint s t | _x, m, m₁ => d m (h m₁) #align multiset.disjoint_of_subset_right Multiset.disjoint_of_subset_right theore",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.disjoint_of_subset_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_of_subset_right {s t u : Multiset α} (h : t ⊆ u) (d : Disjoint s u) : Disjoint s t | _x, m, m₁ => d m (h m₁) #align multiset.disjoint_of_subset_right Multiset.disjoint_of_subset_right theorem disjoint_of_le_left {s t u : Multiset α} (h : s ≤ u) : Disjoint u t → Disjoint s t",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.disjoint_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_right {s t : Multiset α} : Disjoint s t ↔ ∀ {a}, a ∈ t → a ∉ s",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.disjoint_singleton",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_singleton {l : Multiset α} {a : α} : Disjoint l {a} ↔ a ∉ l",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.disjoint_toFinset",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_toFinset {m1 m2 : Multiset α} : _root_.Disjoint m1.toFinset m2.toFinset ↔ m1.Disjoint m2",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "solved",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.disjoint_union_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_union_left [DecidableEq α] {s t u : Multiset α} : Disjoint (s ∪ t) u ↔ Disjoint s u ∧ Disjoint t u",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.disjoint_union_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_union_right [DecidableEq α] {s t u : Multiset α} : Disjoint s (t ∪ u) ↔ Disjoint s t ∧ Disjoint s u",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "solved",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.inter_eq_zero_iff_disjoint",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem inter_eq_zero_iff_disjoint [DecidableEq α] {s t : Multiset α} : s ∩ t = 0 ↔ Disjoint s t",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Multiset.nodup_bind",
+    "file_path": "Mathlib/Data/Multiset/Bind.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] lemma nodup_bind : Nodup (bind s f) ↔ (∀ a ∈ s, Nodup (f a)) ∧ s.Pairwise fun a b => Disjoint (f a) (f b)",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  }
+]
