@@ -1,0 +1,78 @@
+{
+  "family": "rc5_hybrid_static_plus_ranker",
+  "base_static_core": "RC4R",
+  "status": "experimental_prototype",
+  "promotion_allowed": false,
+  "source_recommendation": "RC5_HYBRID_STATIC_PLUS_RANKER",
+  "static_stage": {
+    "wrapper": "project/evolve/experiments/rc4_release_candidate/rc4_release_candidate_wrapper.json",
+    "route_config": "project/evolve/routing/ns24_router.json",
+    "policy_type": "hybrid_evolved",
+    "top_k": 8,
+    "max_steps": 8,
+    "note": "frozen RC4R, byte-identical; floors + known wins preserved by construction."
+  },
+  "dynamic_stage": {
+    "enabled_only_after_static_failure": true,
+    "ranker": "TR4_HGB",
+    "ranker_model": "project/evolve/experiments/tr4/models/hgb_program_ranker.joblib",
+    "ranker_vectorizers": "project/evolve/experiments/tr4/data/tr4_vectorizers.joblib",
+    "ranker_metadata": "project/evolve/experiments/tr4/data/tr4_feature_metadata.json",
+    "retrieval_index": [
+      "project/evolve/experiments/tr3/out/tr3_retrieval_index.jsonl",
+      "project/evolve/experiments/sf5/out/sf5_lemma_index.jsonl"
+    ],
+    "max_programs_per_theorem": {
+      "B5": 5,
+      "B10": 10,
+      "B20": 20
+    },
+    "default_budget": 10,
+    "retrieval_top_k": 20,
+    "program_grammar": [
+      "exact L",
+      "simpa using L",
+      "simp [L]",
+      "rw [L]",
+      "simp [L] <;> aesop",
+      "simp [L] <;> simp_all",
+      "rw [L] <;> aesop",
+      "ext x <;> simp [L]",
+      "constructor <;> intro h <;> aesop"
+    ],
+    "controls": [
+      "simp",
+      "simp_all",
+      "aesop",
+      "classical <;> aesop",
+      "exact L",
+      "simpa using L",
+      "simp [L]"
+    ],
+    "gates": {
+      "allowed_namespaces": [
+        "Set",
+        "Finset",
+        "List",
+        "Multiset",
+        "Nat"
+      ],
+      "order_family": "disabled_or_analysis_only",
+      "max_unknown_name_rate": 0.1,
+      "disable_if_no_retrieval_confidence": true,
+      "min_retrieval_best_score": 0.0
+    },
+    "stop_after_first_success": true,
+    "deterministic_ordering": true
+  },
+  "rc4a_gate_tightening": {
+    "status": "RECOMMENDATION_ONLY_NOT_IMPLEMENTED",
+    "from": "TR7 RC4A_TIGHTEN_MONO_GATE",
+    "precision": 0.092,
+    "note": "RC4A def-unfold gate is broad (precision ~0.09); TR7 recommends tightening to the iff-unfold shape. NOT applied to the RC5H static core — the static core remains exactly RC4R so the prototype measures the dynamic stage in isolation."
+  },
+  "evaluation": {
+    "true_hybrid_delta_rule": "RC2 failed AND RC4 static failed AND a dynamic program solved AND bare controls did not solve AND not source-specific",
+    "additive": "dynamic stage runs only on static failures -> regressions over RC4 structurally impossible."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "generated_by": "scripts/rc5h_dynamic_safety_audit.py",
+  "gate_firings": 90,
+  "namespace_violations": [],
+  "off_policy_programs": 74,
+  "attempts": 1285,
+  "emitted_and_failed": 1277,
+  "emitted_and_failed_rate": 0.994,
+  "unknown_name": 45,
+  "unknown_name_rate": 0.035,
+  "timeout": 0,
+  "timeout_rate": 0.0,
+  "open_flakes": 0,
+  "flake_rate": 0.0,
+  "source_specific_wins": 0,
+  "true_hybrid_deltas": 3,
+  "dynamic_wins_total": 3,
+  "probes_per_theorem": 14.28,
+  "hard_concerns": [
+    "74 off-policy programs"
+  ],
+  "verdict": "DYNAMIC_STAGE_SAFE_FOR_EXPERIMENT",
+  "note": "within policy gates, acceptable cost/stability for an experiment."
+}

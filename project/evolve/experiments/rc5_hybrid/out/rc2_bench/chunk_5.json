@@ -1,0 +1,50 @@
+{
+  "List._root_.Function.Injective.list_map": {
+    "status": "open_flake"
+  },
+  "List._root_.Function.Involutive.exists_mem_and_apply_eq_iff": {
+    "status": "open_flake"
+  },
+  "List._root_.Function.LeftInverse.list_map": {
+    "status": "open_flake"
+  },
+  "List._root_.Function.Surjective.list_map": {
+    "status": "open_flake"
+  },
+  "List.append_cons_inj_of_not_mem": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_hybrid/out/rc2_bench/runs/eval-48f4bf68/traces.jsonl"
+  },
+  "List.append_eq_has_append": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp [List.map]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_hybrid/out/rc2_bench/runs/eval-48f4bf68/traces.jsonl"
+  },
+  "List.append_left_eq_self": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_hybrid/out/rc2_bench/runs/eval-48f4bf68/traces.jsonl"
+  },
+  "List.append_right_eq_self": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_hybrid/out/rc2_bench/runs/eval-48f4bf68/traces.jsonl"
+  },
+  "List.append_subset_of_subset_of_subset": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_hybrid/out/rc2_bench/runs/eval-48f4bf68/traces.jsonl"
+  },
+  "List.attach_eq_nil": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_hybrid/out/rc2_bench/runs/eval-48f4bf68/traces.jsonl"
+  }
+}

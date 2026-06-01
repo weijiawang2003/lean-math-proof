@@ -1,0 +1,5112 @@
+{
+  "generated_by": "scripts/rc5h_run_dynamic_stage.py",
+  "budget": 10,
+  "previous_budget": 5,
+  "rank_window_this_stage": [
+    6,
+    10
+  ],
+  "program_plan": "project/evolve/experiments/rc5_hybrid/out/rc5h_dynamic_program_plan.json",
+  "num_theorems": 90,
+  "num_live": 86,
+  "num_success": 3,
+  "num_new_wins_this_stage": 1,
+  "new_wins_this_stage": [
+    "Finset.image_subset_iff"
+  ],
+  "first_success_rank_histogram": {
+    "1": 1,
+    "2": 1,
+    "8": 1
+  },
+  "partial_note": "B10 stopped early: 22/88 unsolved theorems hung on heavy depth-2/3 simp_all/aesop programs (150s/theorem cap); treated as no-win.",
+  "results": [
+    {
+      "full_name": "Finset.Nonempty.inf_eq_bot_iff",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.inf_eq_bot_iff] <;> try aesop <;> try simp_all",
+          "outcome": "proof_failed",
+          "family": "d3_simp_try"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.max_eq_bot]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.sup_eq_top_iff]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.inf_eq_top_iff]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.sup_eq_bot_iff]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.Nonempty.strong_induction",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.strongDownwardInduction_eq] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.Nonempty, Finset.Nontrivial, Cycle.Nontrivial, Set.Nontrivial]",
+          "outcome": "unknown_name",
+          "family": "def_unfold_simp"
+        },
+        {
+          "rank": 8,
+          "tactic": "exact Finset.singleton_nonempty",
+          "outcome": "proof_failed",
+          "family": "d1_exact"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa using Finset.singleton_nonempty",
+          "outcome": "proof_failed",
+          "family": "d1_simpa_using"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.singleton_nonempty]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.Nonempty.sup_eq_top_iff",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.Nonempty.inf_eq_bot_iff] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.inf_eq_bot_iff] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.inf_eq_top_iff]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.min_eq_top]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.inf_eq_bot_iff]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.Nontrivial.erase_nonempty",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "exact Finset.erase_nonempty",
+          "outcome": "unknown_name",
+          "family": "d1_exact"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa using Finset.erase_nonempty",
+          "outcome": "unknown_name",
+          "family": "d1_simpa_using"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.erase_nonempty]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa [Finset.erase_nonempty]",
+          "outcome": "proof_failed",
+          "family": "d1_simpa_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "rw [Finset.erase_nonempty]",
+          "outcome": "proof_failed",
+          "family": "d1_rw_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.biUnion_subset_iff_forall_subset",
+      "namespace": "Finset",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 1,
+      "first_success_rank": 1,
+      "success": true,
+      "winning_program": {
+        "rank": 1,
+        "tactic": "simp [Finset.biUnion_subset] <;> aesop",
+        "family": "d2_simp_aesop",
+        "depth": 2,
+        "used_lemmas": [
+          "Finset.biUnion_subset"
+        ],
+        "ranker_score": 0.000774,
+        "candidate_family_tags": [
+          "rc4c_d2_simp_aesop"
+        ]
+      },
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.card_mono",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.card_cons]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.card_map] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.card_range] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.card_map]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.card_range]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.card_strictMono",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.strictMono_sym2] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.val_strictMono] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.orderEmbOfFin_unique]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.disj_sum_strictMono_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.strictMono_sym2]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.card_union_eq_card_add_card",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.card_inter_add_card_union]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.card_union] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.card_inter_add_card_union] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.card_union]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.card_union] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_left",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.sup'_inf_distrib_left]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.codisjoint_inf_right] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.sup_inf_distrib_left] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.inf_sup_distrib_left] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.inf_sup_distrib_left]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_right",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.sup_inf_distrib_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.inf_product_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.inf_himp_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.sup_inf_distrib_right] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.inf_sup_distrib_right] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.comp_inf_eq_inf_comp_of_is_total",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.inf_le_of_le]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.inf_inf]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.inf_of_mem]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.comp_inf_eq_inf_comp]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.comp_sup_eq_sup_comp_of_is_total]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.comp_sup_eq_sup_comp_of_is_total",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.le_sup_of_le]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.sup_of_mem]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.max_eq_sup_coe]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.le_sup_of_le] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.comp_sup_eq_sup_comp]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_left",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.biUnion_image_left] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.biUnion_image_left]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.biUnion_image_sup_left] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.biUnion_image_left] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.biUnion_image_left] <;> try aesop <;> try simp_all",
+          "outcome": "proof_failed",
+          "family": "d3_simp_try"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_right",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.biUnion_image_sup_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.biUnion_image_inf_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.biUnion_biUnion]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.biUnion_image_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.biUnion_image_right] <;> try aesop <;> try simp_all",
+          "outcome": "proof_failed",
+          "family": "d3_simp_try"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.disjoint_filter_filter'",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "exact Finset.map_filter'",
+          "outcome": "unknown_name",
+          "family": "d1_exact"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa using Finset.map_filter'",
+          "outcome": "unknown_name",
+          "family": "d1_simpa_using"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.map_filter']",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simpa [Finset.map_filter']",
+          "outcome": "proof_failed",
+          "family": "d1_simpa_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "rw [Finset.map_filter']",
+          "outcome": "proof_failed",
+          "family": "d1_rw_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.disjoint_image",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.map_eq_image] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.image_image]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.image_id]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.map_eq_image]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.image_injective]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.disjoint_insert_right",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.disjoint_erase_insert]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "aesop",
+          "outcome": "proof_failed",
+          "family": "d1_aesop"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.disjoint_erase_insert] <;> try aesop <;> try simp_all",
+          "outcome": "proof_failed",
+          "family": "d3_simp_try"
+        },
+        {
+          "rank": 9,
+          "tactic": "exact Finset.disjoint_insert_left",
+          "outcome": "proof_failed",
+          "family": "d1_exact"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa using Finset.disjoint_insert_left",
+          "outcome": "proof_failed",
+          "family": "d1_simpa_using"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.disjoint_map",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.mem_map_of_mem]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.disjoint_map_inl_map_inr] <;> try aesop <;> try simp_all",
+          "outcome": "proof_failed",
+          "family": "d3_simp_try"
+        },
+        {
+          "rank": 8,
+          "tactic": "aesop",
+          "outcome": "proof_failed",
+          "family": "d1_aesop"
+        },
+        {
+          "rank": 9,
+          "tactic": "exact Finset.disjoint_map_inl_map_inr",
+          "outcome": "unknown_name",
+          "family": "d1_exact"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa using Finset.disjoint_map_inl_map_inr",
+          "outcome": "unknown_name",
+          "family": "d1_simpa_using"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.disjoint_sup_left",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.sup_inf_distrib_left] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.sup_product_left]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.inf'_sup_distrib_left]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.sup_sup]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.inf_sup_distrib_left]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.disjoint_sup_right",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.sup_inf_distrib_right] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.sup_sup]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.inf'_sup_distrib_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.sup_product_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.inf_himp_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.fin_mono",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.sup_mono_fun] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.inf_mono_fun] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.sup_mono_fun] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.inf_mono_fun] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.orderEmbOfFin_mem]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.image_mono",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.mem_image_of_mem] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.mem_image_of_mem] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.image_injective]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.sup_mono_fun]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.inf_mono_fun]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.image_subset_iff",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 3,
+      "first_success_rank": 8,
+      "success": true,
+      "winning_program": {
+        "rank": 8,
+        "tactic": "simp [Finset.subset_iff]",
+        "family": "d1_simp_lemma",
+        "depth": 1,
+        "used_lemmas": [
+          "Finset.subset_iff"
+        ],
+        "ranker_score": 3.4e-05,
+        "candidate_family_tags": []
+      },
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.image_subset_iff_subset_preimage] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.map_subset_map]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.max'_image",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.max'_le] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.max'_le]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.max'_mem]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.le_max']",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.max'_mem] <;> try aesop <;> try simp_all",
+          "outcome": "proof_failed",
+          "family": "d3_simp_try"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.mem_fin",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.fin_mono]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.fin_map]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.fin_map] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.card_attachFin] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.orderEmbOfFin_mem] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.mem_insert",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.mem_insert_of_mem] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.card_insert_of_mem]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.insert_inter_of_mem]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.inter_insert_of_mem]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.mem_insert_self]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.mem_singleton",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simpa using Finset.mem_singleton_self",
+          "outcome": "unknown_name",
+          "family": "d1_simpa_using"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.mem_singleton_self]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simpa [Finset.mem_singleton_self]",
+          "outcome": "proof_failed",
+          "family": "d1_simpa_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "exact Finset.eq_of_mem_singleton",
+          "outcome": "unknown_name",
+          "family": "d1_exact"
+        },
+        {
+          "rank": 10,
+          "tactic": "simpa using Finset.eq_of_mem_singleton",
+          "outcome": "unknown_name",
+          "family": "d1_simpa_using"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.min'_image",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.min'_le] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.min'_le]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.min'_mem]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.le_min']",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.min'_mem] <;> try aesop <;> try simp_all",
+          "outcome": "proof_failed",
+          "family": "d3_simp_try"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.monotone_preimage",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.card_mono] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.image_mono]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.range_mono]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.fin_mono]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.monotone_sym2]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.pairwise_cons'",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.pairwise_disjoint_powersetCard]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.pairwiseDisjoint_map_sigmaMk]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.noncommProd_lemma]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "rw [Finset.pairwiseDisjoint_fibers] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_rw_aesop"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact Finset.pairwise_disjoint_powersetCard",
+          "outcome": "unknown_name",
+          "family": "d1_exact"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.powerset_card_disjiUnion",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.powerset_card_biUnion] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.disjiUnion_val]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.fold_disjiUnion]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.card_powerset] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.powerset_card_biUnion]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Finset.subtype_mono",
+      "namespace": "Finset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Finset.card_subtype] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Finset.card_subtype]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Finset.attach_image_val]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Finset.subtype_map]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Finset.subtype_map_of_mem]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "List.Pairwise.pmap",
+      "namespace": "List",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.length_pmap] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.pmap_congr]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.pairwise_of_reflexive_of_forall_ne]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.mem_pmap]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [List.pairwise_pmap]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "List.Pairwise.set_pairwise",
+      "namespace": "List",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.Pairwise.pmap]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.pairwise_pmap]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.Pairwise.forall]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.pairwise_of_reflexive_of_forall_ne] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [List.pairwise_of_forall_mem_list] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "List.Sublist.antisymm",
+      "namespace": "List",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.Sublist.map] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.sublist_cons_of_sublist] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.eq_nil_of_sublist_nil]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.sublist_singleton]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [List.Sublist.map]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "List.Sublist.map",
+      "namespace": "List",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.length_injective]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.sublist_singleton] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.singleton_injective]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.reverse_singleton]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [List.map_pure_sublist_sublists]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "List.Sublist.tail",
+      "namespace": "List",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.tail_sublist]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.getLast_singleton'] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.tail_append_singleton_of_ne_nil] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.sublist_singleton]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [List.singleton_injective]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "List.append_cons_inj_of_not_mem",
+      "namespace": "List",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.indexOf_append_of_not_mem]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.subperm_singleton_iff]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.chain_append_singleton_iff_forall] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.length_injective_iff]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [List.singleton_inj] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "List.append_left_eq_self",
+      "namespace": "List",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.self_eq_append_right] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.prefix_iff_eq_append]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.length_injective_iff]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.append_right_eq_self] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [List.self_eq_append_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "List.append_right_eq_self",
+      "namespace": "List",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.self_eq_append_left]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.prefix_iff_eq_append]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.append_left_eq_self] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.self_eq_append_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [List.append_left_eq_self]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "List.attach_eq_nil",
+      "namespace": "List",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.dedup_eq_nil] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.takeWhile_eq_nil_iff]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.attach_nil] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.subperm_nil]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [List.nodup_attach]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "List.disjoint_map",
+      "namespace": "List",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.map_tail]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.comp_map] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.map_eq_map]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.comp_map]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "aesop",
+          "outcome": "proof_failed",
+          "family": "d1_aesop"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "List.disjoint_pmap",
+      "namespace": "List",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.pmap_congr]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.length_pmap] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.mem_pmap] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.map_pmap] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [List.length_pmap]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "List.perm_of_nodup_nodup_toFinset_eq",
+      "namespace": "List",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.toFinset_eq_of_perm] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "rw [List.toFinset_eq_of_perm] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_rw_aesop"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.toFinset_card_of_nodup] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.toFinset_eq] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 10,
+          "tactic": "exact List.toFinset_eq_of_perm",
+          "outcome": "proof_failed",
+          "family": "d1_exact"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "List.toFinset.ext_iff",
+      "namespace": "List",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [List.mem_toFinset]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [List.toFinset.ext] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [List.mem_toFinset] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [List.mem_toFinset] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [List.toFinset.ext]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.Disjoint.symm",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.foldl_swap]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.disjoint_of_le_left] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.disjoint_of_nodup_add]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.disjoint_of_nodup_add] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.disjoint_of_le_right] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.Nodup.le_nsmul_iff_le",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.nodup_iff_le] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.nodup_iff_count_le_one] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.le_dedup] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.nodup_iff_le]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.singleton_le]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.Rel.countP_eq",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.countP_eq_countP_filter_add]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.countP]",
+          "outcome": "proof_failed",
+          "family": "def_unfold_simp"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.countP_map]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.countP_filter]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.countP_map] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.Rel.mono",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.rel_join] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.map_mk_eq_map_mk_of_rel]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.card_eq_card_of_rel]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.rel_bind]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.exists_mem_of_rel_of_mem]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.Subset.refl",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.Subset]",
+          "outcome": "proof_failed",
+          "family": "def_unfold_simp"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Set.Subset.refl] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.filter_subset] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.filter_subset]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.subset_cons]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.Subset.trans",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.replicate_subset_singleton] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.map_subset_map]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.cons_subset_cons]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.mem_of_subset]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.map_subset_map] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.addHom_ext",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "aesop",
+          "outcome": "proof_failed",
+          "family": "d1_aesop"
+        },
+        {
+          "rank": 7,
+          "tactic": "ext x <;> simp [Multiset.ext]",
+          "outcome": "proof_failed",
+          "family": "d2_ext_simp"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.ext] <;> try aesop <;> try simp_all",
+          "outcome": "proof_failed",
+          "family": "d3_simp_try"
+        },
+        {
+          "rank": 9,
+          "tactic": "rw [Multiset.ext] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_rw_aesop"
+        },
+        {
+          "rank": 10,
+          "tactic": "ext x <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_ext_aesop"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.add_bind",
+      "namespace": "Multiset",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 2,
+      "first_success_rank": 2,
+      "success": true,
+      "winning_program": {
+        "rank": 2,
+        "tactic": "simp [Multiset.bind]",
+        "family": "def_unfold_simp",
+        "depth": 1,
+        "used_lemmas": [
+          "Multiset.bind"
+        ],
+        "ranker_score": 0.002967,
+        "candidate_family_tags": [
+          "rc4a_def_unfold"
+        ]
+      },
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u_1\n  \u03b2 : Type v\n  \u03b3 : Type u_2\n  \u03b4 : Type u_3\n  a : \u03b1\n  s t : Multiset \u03b1\n  f g : \u03b1 \u2192 Multiset \u03b2\n  \u22a2 (s + t).bind f = s.bind f + t.bind",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Multiset.bind_add] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.add_cons",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.map_add]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.mem_cons_of_mem]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.map_cons] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.map_add] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.cons_add]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.add_eq_union_right_of_le",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.le_union_right] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.eq_union_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.range_add_eq_union]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.add_eq_union_left_of_le]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.union_le_add]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.add_product",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.card_product] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.product_zero]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.zero_product]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.product_cons]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.coe_product]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.add_sigma",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.sigma_add] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.coe_sigma] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.coe_sigma]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.cons_sigma]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.Nodup.sigma]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.add_singleton_eq_iff",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "aesop",
+          "outcome": "proof_failed",
+          "family": "d1_aesop"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.singleton_eq_cons_iff] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.toFinset, Multiset.mem_toFinset]",
+          "outcome": "proof_failed",
+          "family": "d1_tofinset_simp"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.toList_eq_singleton_iff]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "constructor <;> intro h <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d3_constructor_aesop"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.add_union_distrib",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.cons_union_distrib] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.add_inter_distrib]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.union_add_distrib]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.union_le_add] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.union_add_distrib] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.attach_bind_coe",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": false,
+      "setup_error": "worker no output (rc=-9)",
+      "programs_attempted": 0,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.attach_cons",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": false,
+      "setup_error": "worker no output (rc=-9)",
+      "programs_attempted": 0,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.attach_map_val",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.attach, Multiset.map, Cycle.map, Finset.attach]",
+          "outcome": "unknown_name",
+          "family": "def_unfold_simp"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.erase_attach_map_val] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.attach_map_val'] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.erase_attach_map]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "ext x <;> simp [Multiset.erase_attach_map_val] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d3_ext_simp_aesop"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.attach_map_val'",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.erase_attach_map_val] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.erase_attach_map] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.pmap_eq_map_attach]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.erase_attach_map]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.attach_map_val]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Multiset.disjoint_comm",
+      "namespace": "Multiset",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Multiset.bind_map_comm]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Multiset.filter_comm]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Multiset.filter_comm] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 9,
+          "tactic": "simp [Multiset.disjoint_of_le_left]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 10,
+          "tactic": "simp [Multiset.erase_comm]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.AM_GM",
+      "namespace": "Nat",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "exact Nat.Upto",
+          "outcome": "unknown_name",
+          "family": "d1_exact"
+        },
+        {
+          "rank": 7,
+          "tactic": "simpa using Nat.Upto",
+          "outcome": "unknown_name",
+          "family": "d1_simpa_using"
+        },
+        {
+          "rank": 8,
+          "tactic": "simpa [Nat.Upto]",
+          "outcome": "proof_failed",
+          "family": "d1_simpa_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "omega",
+          "outcome": "proof_failed",
+          "family": "d1_omega"
+        },
+        {
+          "rank": 10,
+          "tactic": "nlinarith",
+          "outcome": "proof_failed",
+          "family": "d1_nlinarith"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.add_div_of_dvd_left",
+      "namespace": "Nat",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Nat.le_mod_add_mod_of_dvd_add_of_not_dvd]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Nat.dvd_add_left]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Nat.add_div_of_dvd_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "aesop",
+          "outcome": "proof_failed",
+          "family": "d1_aesop"
+        },
+        {
+          "rank": 10,
+          "tactic": "rw [Nat.dvd_add_left] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_rw_aesop"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.add_div_of_dvd_right",
+      "namespace": "Nat",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 6,
+          "tactic": "simp [Nat.le_mod_add_mod_of_dvd_add_of_not_dvd]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 7,
+          "tactic": "simp [Nat.dvd_add_right] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 8,
+          "tactic": "simp [Nat.dvd_add_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 9,
+          "tactic": "aesop",
+          "outcome": "proof_failed",
+          "family": "d1_aesop"
+        },
+        {
+          "rank": 10,
+          "tactic": "rw [Nat.add_div_of_dvd_left] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_rw_aesop"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.add_le_mul",
+      "namespace": "Nat",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": false,
+      "setup_error": "worker no output (rc=1)",
+      "programs_attempted": 0,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.clog_anti_left",
+      "namespace": "Nat",
+      "budget": 10,
+      "rank_window": [
+        6,
+        10
+      ],
+      "live": false,
+      "setup_error": "worker no output (rc=1)",
+      "programs_attempted": 0,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [],
+      "control_wins": [],
+      "failures": [],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.clog_eq_one",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  b n : \u2115\n  hn : 2 \u2264 n\n  h : n \u2264 b\n  \u22a2 Nat.clog b n = 1",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.clog_one_left] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.clog_of_left_le_one]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.clog_one_right] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.clog_of_right_le_one] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.clog_one_left] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.clog_mono_right",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  b n m : \u2115\n  h : n \u2264 m\n  \u22a2 Nat.clog b n \u2264 Nat.clog b m",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.clog_one_left]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.clog_one_right] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.clog_zero_right] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.clog_of_right_le_one] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.clog_monotone]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.clog_of_left_le_one",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  b : \u2115\n  hb : b \u2264 1\n  n : \u2115\n  \u22a2 Nat.clog b n = 0",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.clog_one_left] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.clog_of_two_le] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.clog_of_right_le_one] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.le_pow_clog]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.le_pow_iff_clog_le]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.div_ne_zero_iff",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.one_le_iff_ne_zero] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.forall_ne_zero_iff] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.one_le_iff_ne_zero] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.forall_ne_zero_iff] <;> simp_all",
+          "outcome": "unknown_name",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.le_iff_ne_zero_of_dvd]",
+          "outcome": "unknown_name",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.dvd_left_iff_eq",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.dvd_add_left] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.mul_dvd_mul_iff_left] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.dvd_add_left] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.dvd_add_self_left]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.mul_dvd_mul_iff_left] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.dvd_right_iff_eq",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.dvd_add_right] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.mul_dvd_mul_iff_right] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.dvd_add_right] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.mul_dvd_mul_iff_right] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.dvd_add_self_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.eq_div_of_mul_eq_left",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.eq_mul_of_div_eq_left] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.eq_one_of_mul_eq_one_left] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.eq_div_of_mul_eq_right] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.eq_mul_of_div_eq_left] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.eq_one_of_mul_eq_one_left] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.eq_mul_of_div_eq_left",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.eq_div_of_mul_eq_left] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.eq_one_of_mul_eq_one_left] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.eq_div_of_mul_eq_right] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.eq_div_of_mul_eq_left] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.eq_one_of_mul_eq_one_left] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.find_eq_zero",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.nth_zero_of_exists] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.find_add]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.nth_zero_of_exists] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.nth_zero_of_exists]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 5,
+          "tactic": "aesop",
+          "outcome": "proof_failed",
+          "family": "d1_aesop"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.forall_lt_succ",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.one_lt_succ_succ] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.count_lt_count_succ_iff] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.and_forall_succ] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.exists_lt_succ]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.and_forall_succ] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.le_of_mul_le_mul_right",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.eq_zero_of_mul_le] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.factorization_le_factorization_mul_right] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.mul_self_le_mul_self]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.eq_one_of_mul_eq_one_right]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.eq_zero_of_mul_le] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.mod_eq_iff_lt",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.mod_succ_eq_iff_lt] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.bit_mod_two_eq_one_iff] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.bit_mod_two_eq_zero_iff] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.bit_mod_two_eq_one_iff] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.bit_mod_two_eq_zero_iff] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.mod_mul_mod",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.ModEq.mul] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.mul_mod_mod] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.mul_add_mod_of_lt]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.mul_mod_mod] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.ModEq.mul] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.one_le_div_iff",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.one_le_bit0_iff]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.dvd_iff_le_div_mul] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "exact Nat.div_lt_one_iff",
+          "outcome": "unknown_name",
+          "family": "d1_exact"
+        },
+        {
+          "rank": 4,
+          "tactic": "simpa using Nat.div_lt_one_iff",
+          "outcome": "unknown_name",
+          "family": "d1_simpa_using"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.div_lt_one_iff]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.one_le_pow",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.one_lt_pow] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.choose_le_pow] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.one_le_pow'] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.pow_le_choose]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.le_pow_clog]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.sqrt_lt'",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.sqrt_eq] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.sqrt_eq] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.lt_sub_iff_add_lt'] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.prime_def_lt'] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.sqrt_eq]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.sqrt_pos",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.sqrt_eq] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.sqrt_eq] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.eq_sqrt]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.sqrt_eq]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.sqrt_lt]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Nat.zero_eq_mul",
+      "namespace": "Nat",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "<stdin>:1:1: unknown tactic",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Nat.dist_eq_zero] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Nat.size_eq_zero] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Nat.dist_eq_zero] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Nat.size_eq_zero] <;> simp_all",
+          "outcome": "proof_failed",
+          "family": "d2_simp_simpall"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Nat.eq_zero_of_mul_le] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Set.BijOn.congr",
+      "namespace": "Set",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u_1\n  \u03b2 : Type u_2\n  \u03b3 : Type u_3\n  \u03b9 : Sort u_4\n  \u03c0 : \u03b1 \u2192 Type u_5\n  s s\u2081 s\u2082 : Set \u03b1\n  t t\u2081 t\u2082 : Set \u03b2\n  p : Set \u03b3\n  f f\u2081 f\u2082 f\u2083 : \u03b1 \u2192 ",
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Set.InjOn.congr] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Set.InjOn.congr]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Set.MapsTo.congr]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Set.bijOn_empty]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Set.BijOn.inter] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "namespace": "Set",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Set.disjoint_sUnion_left] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Set.sUnion_inter_sUnion]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Set.sUnion_range]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Set.sUnion_image]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Set.image_sUnion] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    },
+    {
+      "full_name": "Set.mapsTo_singleton",
+      "namespace": "Set",
+      "budget": 5,
+      "rank_window": [
+        1,
+        5
+      ],
+      "live": true,
+      "setup_error": null,
+      "programs_attempted": 5,
+      "first_success_rank": null,
+      "success": false,
+      "winning_program": null,
+      "controls": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress",
+          "tactic": "simp"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "tactic": "aesop"
+        },
+        {
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic",
+          "tactic": "classical <;> aesop"
+        }
+      ],
+      "control_wins": [],
+      "failures": [
+        {
+          "rank": 1,
+          "tactic": "simp [Set.MapsTo.comp]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        },
+        {
+          "rank": 2,
+          "tactic": "simp [Set.MapsTo.inter] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 3,
+          "tactic": "simp [Set.mapsTo_of_subsingleton] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 4,
+          "tactic": "simp [Set.MapsTo.union] <;> aesop",
+          "outcome": "proof_failed",
+          "family": "d2_simp_aesop"
+        },
+        {
+          "rank": 5,
+          "tactic": "simp [Set.MapsTo.inter]",
+          "outcome": "proof_failed",
+          "family": "d1_simp_lemma"
+        }
+      ],
+      "open_flake": false,
+      "timeout": false
+    }
+  ]
+}
