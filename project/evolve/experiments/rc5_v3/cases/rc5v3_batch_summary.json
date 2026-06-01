@@ -1,0 +1,35 @@
+{
+  "generated_by": "scripts/rc5v3_select_eval_batch.py",
+  "batch_size": 600,
+  "meets_400_min": true,
+  "meets_600_target": true,
+  "namespace_distribution": {
+    "Finset": 140,
+    "List": 120,
+    "Multiset": 120,
+    "Set": 100,
+    "Nat": 80,
+    "Bool": 29,
+    "BddBelow": 9,
+    "BddAbove": 2
+  },
+  "feature_distribution": {
+    "has_subset": 45,
+    "has_iff": 97,
+    "has_mem": 178,
+    "has_disjoint": 2,
+    "has_singleton": 278,
+    "has_image": 0,
+    "has_map_filter": 178,
+    "has_bind": 0,
+    "has_forall_exists": 0,
+    "has_union_inter": 140,
+    "has_card": 125,
+    "has_tofinset": 3,
+    "has_nat_arith": 182
+  },
+  "strict_fresh": 600,
+  "with_dynamic_tail_features": 520,
+  "estimated_dynamic_eligible_allowed_ns": 560,
+  "estimated_dynamic_eligibility_rate": 0.933
+}
