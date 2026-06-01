@@ -1,0 +1,50 @@
+{
+  "Multiset.bind_map_comm": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl"
+  },
+  "Multiset.bind_singleton": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl"
+  },
+  "Multiset.card_bind": {
+    "status": "solved",
+    "num_steps": 2,
+    "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl"
+  },
+  "Multiset.coe_mapAddMonoidHom": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl"
+  },
+  "Multiset.countP_eq_countP_filter_add": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl"
+  },
+  "Multiset.countP_map": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl"
+  },
+  "Multiset.count_bind": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl"
+  },
+  "Multiset.count_map": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl"
+  }
+}
