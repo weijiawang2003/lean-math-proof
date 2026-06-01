@@ -1,0 +1,217 @@
+[
+  {
+    "full_name": "Multiset.disjoint_add_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_add_left {s t u : Multiset α} : Disjoint (s + t) u ↔ Disjoint s u ∧ Disjoint t u",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/known_wins.json",
+    "set_tag": "component_overlap_controls",
+    "expected_behavior": "RC4B+RC4C_residue both fire; RC4B must win (no double credit)"
+  },
+  {
+    "full_name": "Multiset.disjoint_add_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_add_right {s t u : Multiset α} : Disjoint s (t + u) ↔ Disjoint s t ∧ Disjoint s u",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "component_overlap_controls",
+    "expected_behavior": "RC4B+RC4C_residue both fire; RC4B must win (no double credit)"
+  },
+  {
+    "full_name": "Multiset.disjoint_iff_ne",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_iff_ne {s t : Multiset α} : Disjoint s t ↔ ∀ a ∈ s, ∀ b ∈ t, a ≠ b",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "component_overlap_controls",
+    "expected_behavior": "RC4B+RC4C_residue both fire; RC4B must win (no double credit)"
+  },
+  {
+    "full_name": "Multiset.disjoint_union_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_union_left [DecidableEq α] {s t u : Multiset α} : Disjoint (s ∪ t) u ↔ Disjoint s u ∧ Disjoint t u",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "component_overlap_controls",
+    "expected_behavior": "RC4B+RC4C_residue both fire; RC4B must win (no double credit)"
+  },
+  {
+    "full_name": "Multiset.singleton_disjoint",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem singleton_disjoint {l : Multiset α} {a : α} : Disjoint {a} l ↔ a ∉ l",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/known_wins.json",
+    "set_tag": "component_overlap_controls",
+    "expected_behavior": "RC4B+RC4C_residue both fire; RC4B must win (no double credit)"
+  }
+]

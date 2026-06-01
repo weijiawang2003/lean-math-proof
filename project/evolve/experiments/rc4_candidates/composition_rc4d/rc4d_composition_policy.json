@@ -1,0 +1,102 @@
+{
+  "family": "rc4d_composition",
+  "status": "experimental_rc4_composition_candidate",
+  "base": "RC2",
+  "promotion_allowed": false,
+  "description": "First composed RC4 candidate: RC2 ⊕ RC4A ⊕ RC4B ⊕ RC4C_residue. Each component action is traceable to an independently-validated RC4A/RC4B/RC4C win. Ordered union gate; the additive evaluator credits the first component (in ordering) whose tactic closes a goal, so RC4B handles disjoint goals before RC4C_residue's disjoint_right can double-count them.",
+  "ordering": ["RC4A", "RC4B", "RC4C_residue"],
+  "ordering_rationale": {
+    "RC4A": "narrowest, deterministic depth-1 def unfold — try first.",
+    "RC4B": "clean validated namespace-parametric disjoint bridge (16/16 TRUE wins).",
+    "RC4C_residue": "riskier depth-2 residue — try last so RC4B claims any disjoint overlap."
+  },
+  "components": {
+    "RC4A": {
+      "source": "project/evolve/experiments/rc4_candidates/def_unfold_simp/def_unfold_simp_policy.json",
+      "decision": "RC4A_CANDIDATE_CONFIRMED",
+      "allowlist": [
+        "Monotone", "MonotoneOn", "Antitone", "AntitoneOn",
+        "StrictMono", "StrictMonoOn", "StrictAnti", "StrictAntiOn",
+        "Finset.disjUnion"
+      ],
+      "emit": "simp [<allowlisted defs present in goal/name>]",
+      "max_emissions_per_theorem": 1
+    },
+    "RC4B": {
+      "source": "project/evolve/experiments/rc4_candidates/disjoint_left_bridge/disjoint_left_bridge_policy.json",
+      "decision": "RC4B_CANDIDATE_CONFIRMED",
+      "actions": [
+        {
+          "name": "SET_DISJOINT_LEFT_SIMP",
+          "tactic": "simp [Set.disjoint_left]",
+          "lemma": "Set.disjoint_left",
+          "gate": {"requires_namespace": "Set", "requires_name_or_goal_contains": ["disjoint", "Disjoint"], "max_emissions_per_theorem": 1}
+        },
+        {
+          "name": "SET_DISJOINT_LEFT_SIMP_AESOP",
+          "tactic": "simp [Set.disjoint_left] <;> aesop",
+          "lemma": "Set.disjoint_left",
+          "gate": {"requires_namespace": "Set", "requires_name_or_goal_contains": ["disjoint", "Disjoint"], "max_emissions_per_theorem": 1}
+        },
+        {
+          "name": "MULTISET_DISJOINT_LEFT_SIMP",
+          "tactic": "simp [Multiset.disjoint_left]",
+          "lemma": "Multiset.disjoint_left",
+          "gate": {"requires_namespace": "Multiset", "requires_name_or_goal_contains": ["disjoint", "Disjoint"], "max_emissions_per_theorem": 1}
+        },
+        {
+          "name": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+          "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+          "lemma": "Multiset.disjoint_left",
+          "gate": {"requires_namespace": "Multiset", "requires_name_or_goal_contains": ["disjoint", "Disjoint"], "max_emissions_per_theorem": 1}
+        }
+      ]
+    },
+    "RC4C_residue": {
+      "source": "project/evolve/experiments/rc4_candidates/d2_simp_aesop/d2_simp_aesop_policy.json",
+      "decision": "RC4C_CONFIRMED_WITH_RC4B_OVERLAP",
+      "residue_rule": "Keep only non-overlap allowlist lemmas credited as genuine depth-2 (simp[L] alone fails). Drop Set/Multiset.disjoint_left (overlap RC4B) and Finset.biUnion_subset (SIMP_ONLY_DUPLICATE / depth-1). Each kept lemma is deployed RC4B-style as BOTH `simp [L]` and `simp [L] <;> aesop` so the schema-native search can chain simp(advance)->aesop(close) — the lesson from RC4C's fused-combinator smoke failure.",
+      "actions": [
+        {
+          "name": "MULTISET_DISJOINT_RIGHT_D2",
+          "lemma": "Multiset.disjoint_right",
+          "deploy_form": "INCLUDE_AS_DEPTH2_SIMP_AESOP",
+          "tactics": ["simp [Multiset.disjoint_right]", "simp [Multiset.disjoint_right] <;> aesop"],
+          "gate": {"requires_namespace": "Multiset", "requires_name_or_goal_contains": ["disjoint", "Disjoint"], "forbids_name_or_goal_contains": [], "max_emissions_per_theorem": 1}
+        },
+        {
+          "name": "SET_SUBSET_PAIR_D2",
+          "lemma": "Set.subset_pair_iff_eq",
+          "deploy_form": "INCLUDE_AS_DEPTH2_SIMP_AESOP",
+          "tactics": ["simp [Set.subset_pair_iff_eq]", "simp [Set.subset_pair_iff_eq] <;> aesop"],
+          "gate": {"requires_namespace": "Set", "requires_name_or_goal_contains": ["subset_pair", "pair"], "forbids_name_or_goal_contains": [], "max_emissions_per_theorem": 1}
+        },
+        {
+          "name": "LIST_FORALL_D2",
+          "lemma": "List.forall_iff_forall_mem",
+          "deploy_form": "INCLUDE_AS_DEPTH2_SIMP_AESOP",
+          "tactics": ["simp [List.forall_iff_forall_mem]", "simp [List.forall_iff_forall_mem] <;> aesop"],
+          "gate": {"requires_namespace": "List", "requires_name_or_goal_contains": ["forall"], "forbids_name_or_goal_contains": [], "max_emissions_per_theorem": 1}
+        }
+      ]
+    }
+  },
+  "deduplication": {
+    "drop_rc4c_overlap_rc4b": true,
+    "drop_rc4c_overlap_rc4a": true,
+    "drop_simp_only_duplicate_depth2_credit": true,
+    "dropped_rc4c_overlap_rc4b_actions": ["SET_DISJOINT_LEFT_D2", "MULTISET_DISJOINT_LEFT_D2"],
+    "dropped_simp_only_duplicate_actions": ["FINSET_BIUNION_SUBSET_D2"],
+    "theorem_level_note": "Ordered attribution ([RC4A,RC4B,RC4C_residue]) ensures Multiset disjoint theorems solved by both RC4B (disjoint_left) and RC4C_residue (disjoint_right) are credited to RC4B; RC4C_residue earns credit only where no earlier component already wins."
+  },
+  "narrowness": {
+    "max_emissions_per_theorem_per_component": 1,
+    "no_arbitrary_retrieved_lemma_battery": true,
+    "no_global_broad_simp": true,
+    "no_generic_simp_aesop": true,
+    "every_action_traceable_to_validated_evidence": true,
+    "total_distinct_lemmas_or_defs": 14
+  },
+  "evaluation_mode": "external_additive_ordered",
+  "evaluation_rule": "candidate_solved = literal_RC2_solved OR (a gated component tactic closes the goal single-shot); winning_component = first component (in ordering) with a closing tactic."
+}

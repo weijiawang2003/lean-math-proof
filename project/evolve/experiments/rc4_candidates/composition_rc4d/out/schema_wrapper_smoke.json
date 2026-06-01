@@ -1,0 +1,1569 @@
+{
+  "generated_by": "scripts/rc4d_schema_wrapper_smoke.py",
+  "wrapper": "project/evolve/experiments/rc4_candidates/composition_rc4d/rc4d_candidate_wrapper.json",
+  "num_smoke": 96,
+  "known_wins_total": 23,
+  "known_wins_solved_by_wrapper": 22,
+  "wrapper_new_wins": 22,
+  "wrapper_new_wins_by_component": {
+    "RC4A": 5,
+    "RC4B": 4
+  },
+  "additive_wins_total": 23,
+  "additive_wins_missed_by_wrapper": [
+    "Set.disjoint_sUnion_right"
+  ],
+  "regressions": [],
+  "no_regression": true,
+  "verdict": "SCHEMA_REPRODUCES",
+  "note": "Smoke only; name-substring gates approximate the external gate. RC4C_residue deployed RC4B-style (bare simp + combinator).",
+  "results": [
+    {
+      "full_name": "Finset.card_union_eq_card_add_card",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "sets": [
+        "rc4a_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4A",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [StrictAnti, StrictAntiOn]",
+      "wrapper_component": "RC4A",
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "List.disjoint_map",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_left",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left]",
+      "wrapper_component": "RC4B",
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "List.toFinset_eq_empty_iff",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Finset.disjoint_insert_right",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.cancel_left_of_coprime",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.add_eq_one_iff",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.add_mod_eq_add_mod_left",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_left",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Nat.div_le_div_right",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "by_cases hc : c = 0 <;> [simp [hc]; exact (Nat.le_div_iff_mul_le' (Nat.pos_of_ne_zero hc)).2 (Nat.le_trans (Nat.div_mul_le_self _ _) h)]",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Finset.disjiUnion_map",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.le_or_le_of_add_eq_add_pred",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "omega",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Finset.mem_disjUnion",
+      "sets": [
+        "rc4a_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4A",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Finset.disjUnion]",
+      "wrapper_component": "RC4A",
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_right",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "List.mem_pair",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Finset.disjoint_sup_left",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_right",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "List.toFinset_eq",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.add_le_of_lt",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Multiset.disjoint_union_left",
+      "sets": [
+        "rc4b_known_wins",
+        "rc4c_residue_known_wins",
+        "component_overlap_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Set.subset_univ",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Set.subset_def]",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.add_div_eq_of_le_mod_add_mod",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.inter_comm",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "List.toFinset_eq_iff_perm_dedup",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_left",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Finset.disjiUnion_filter_eq_of_maps_to",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Finset.disjoint_filter_filter'",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Multiset.disjoint_right",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Finset.pairwise_cons'",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "sets": [
+        "rc4a_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4A",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Monotone, MonotoneOn]",
+      "wrapper_component": "RC4A",
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Nat.ModEq.eq_of_lt_of_lt",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Finset.disjoint_image",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.half_le_of_sub_le_half",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "omega",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Multiset.disjoint_iff_ne",
+      "sets": [
+        "rc4b_known_wins",
+        "rc4c_residue_known_wins",
+        "component_overlap_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Set.disjoint_iff_forall_ne",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Nat.div_lt_iff_lt_mul'",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp_all",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.Coprime.dvd_mul_left",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.AM_GM",
+      "sets": [
+        "namespace_negative_controls",
+        "canonical_smoke"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.add_eq_right",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "sets": [
+        "rc4a_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4A",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Antitone, AntitoneOn]",
+      "wrapper_component": "RC4A",
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_right",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.add_div",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.mem_inter_iff",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "tauto",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.Coprime.lcm_eq_mul",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.add_def",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [List.length_cons]",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.add_mod_eq_add_mod_right",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.inter_univ",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Set.subset_def]",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "sets": [
+        "rc4a_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4A",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [StrictMono, StrictMonoOn]",
+      "wrapper_component": "RC4A",
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Set.empty_subset",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Set.subset_def]",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.empty_union",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Set.ext_iff]",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Nat.ModEq.mul_left_cancel_iff'",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.le_of_lt_add",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.univ_inter",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Set.subset_def]",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.eq_of_abs_lt",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_left",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "List.perm_of_nodup_nodup_toFinset_eq",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.cancel_right_of_coprime",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_left",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.add_div_eq_of_add_mod_lt",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Finset.mem_singleton",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.union_empty",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Set.ext_iff]",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Multiset.singleton_disjoint",
+      "sets": [
+        "rc4b_known_wins",
+        "rc4c_residue_known_wins",
+        "component_overlap_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left]",
+      "wrapper_component": "RC4B",
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Nat.ModEq.comm",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.add_eq_max_iff",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.add_mod_eq_ite",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "split_ifs <;> omega",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.dvd_iff",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.union_comm",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "List.disjoint_pmap",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.le_and_le_add_one_iff",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "sets": [
+        "rc4c_residue_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4C_residue",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Finset.disjoint_map",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.add_eq_min_iff",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "List.Forall.imp",
+      "sets": [
+        "rc4c_residue_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4C_residue",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Nat.div_lt_one_iff",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "rw [Nat.div_lt_iff_lt_mul hb, Nat.one_mul]",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Multiset.disjoint_add_left",
+      "sets": [
+        "rc4b_known_wins",
+        "rc4c_residue_known_wins",
+        "component_overlap_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Nat.Coprime.eq_of_mul_eq_zero",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "List.toFinset_filter",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "List.toFinset.ext_iff",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Multiset.disjoint_singleton",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Finset.disjoint_sup_right",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.disjoint_singleton_left",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Set.disjoint_left]",
+      "wrapper_component": "RC4B",
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Nat.Coprime.dvd_mul_right",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.ite_univ",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Set.ite]",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Multiset.disjoint_add_right",
+      "sets": [
+        "rc4b_known_wins",
+        "rc4c_residue_known_wins",
+        "component_overlap_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Nat.ModEq.gcd_eq",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.add_eq_left",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.disjoint_right",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Nat.mul_add_mod'",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.mul_right_cancel_iff'",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Finset.powerset_card_disjiUnion",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Set.mem_union",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Multiset.zero_disjoint",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": true,
+      "additive_component": "RC4B",
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left]",
+      "wrapper_component": "RC4B",
+      "regression": false,
+      "new_win": true,
+      "is_known_win": true
+    },
+    {
+      "full_name": "Finset.disjiUnion_filter_eq",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": true,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    },
+    {
+      "full_name": "Finset.mem_insert",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_finished": false,
+      "additive_new_win": false,
+      "additive_component": null,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "wrapper_component": null,
+      "regression": false,
+      "new_win": false,
+      "is_known_win": false
+    }
+  ]
+}

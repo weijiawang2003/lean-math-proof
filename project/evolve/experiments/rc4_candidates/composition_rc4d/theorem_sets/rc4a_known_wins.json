@@ -1,0 +1,122 @@
+[
+  {
+    "full_name": "Finset.mem_disjUnion",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem mem_disjUnion {α s t h a} : a ∈ @disjUnion α s t h ↔ a ∈ s ∨ a ∈ t",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4A"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4A",
+        "action": "def_unfold_simp_allowlist",
+        "tactic": "simp [Finset.disjUnion]"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Finset.disjUnion]"
+    ],
+    "expected_credit_component": "RC4A",
+    "source_set": "def_unfold_simp/known_wins.json",
+    "set_tag": "rc4a_known_wins",
+    "expected_behavior": "RC4A def-unfold win; expect credit=RC4A"
+  },
+  {
+    "full_name": "Set.antitoneOn_iff_antitone",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔ Antitone fun a : s => f a",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4A"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4A",
+        "action": "def_unfold_simp_allowlist",
+        "tactic": "simp [Antitone, AntitoneOn]"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Antitone, AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "source_set": "def_unfold_simp/known_wins.json",
+    "set_tag": "rc4a_known_wins",
+    "expected_behavior": "RC4A def-unfold win; expect credit=RC4A"
+  },
+  {
+    "full_name": "Set.monotoneOn_iff_monotone",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem monotoneOn_iff_monotone : MonotoneOn f s ↔ Monotone fun a : s => f a",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4A"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4A",
+        "action": "def_unfold_simp_allowlist",
+        "tactic": "simp [Monotone, MonotoneOn]"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Monotone, MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "source_set": "def_unfold_simp/known_wins.json",
+    "set_tag": "rc4a_known_wins",
+    "expected_behavior": "RC4A def-unfold win; expect credit=RC4A"
+  },
+  {
+    "full_name": "Set.strictAntiOn_iff_strictAnti",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem strictAntiOn_iff_strictAnti : StrictAntiOn f s ↔ StrictAnti fun a : s => f a",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4A"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4A",
+        "action": "def_unfold_simp_allowlist",
+        "tactic": "simp [StrictAnti, StrictAntiOn]"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [StrictAnti, StrictAntiOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "source_set": "def_unfold_simp/known_wins.json",
+    "set_tag": "rc4a_known_wins",
+    "expected_behavior": "RC4A def-unfold win; expect credit=RC4A"
+  },
+  {
+    "full_name": "Set.strictMonoOn_iff_strictMono",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem strictMonoOn_iff_strictMono : StrictMonoOn f s ↔ StrictMono fun a : s => f a",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4A"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4A",
+        "action": "def_unfold_simp_allowlist",
+        "tactic": "simp [StrictMono, StrictMonoOn]"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [StrictMono, StrictMonoOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "source_set": "def_unfold_simp/known_wins.json",
+    "set_tag": "rc4a_known_wins",
+    "expected_behavior": "RC4A def-unfold win; expect credit=RC4A"
+  }
+]

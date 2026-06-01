@@ -1,0 +1,824 @@
+{
+  "generated_by": "scripts/rc4d_determinism_check.py",
+  "num_targets": 67,
+  "num_gate_firing": 23,
+  "clean_run1_hash": "f55cbc5543c75306",
+  "clean_run2_hash": "f55cbc5543c75306",
+  "gate_decisions_stable": true,
+  "component_decisions_stable": true,
+  "genuine_diffs": [],
+  "flake_diffs": [],
+  "open_flakes": [],
+  "num_open_flakes": 0,
+  "win_affecting_flakes": [],
+  "deterministic": true,
+  "determinism_note": "hash over cleanly-executed theorems; open flakes are Dojo hard-timeout / worker-kill on heavy `<;> aesop` goals, excluded.",
+  "run1": {
+    "Finset.mem_disjUnion": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4A",
+      "setup_error": null
+    },
+    "Set.antitoneOn_iff_antitone": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4A",
+      "setup_error": null
+    },
+    "Set.monotoneOn_iff_monotone": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4A",
+      "setup_error": null
+    },
+    "Set.strictAntiOn_iff_strictAnti": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4A",
+      "setup_error": null
+    },
+    "Set.strictMonoOn_iff_strictMono": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4A",
+      "setup_error": null
+    },
+    "Multiset.disjoint_add_left": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.disjoint_add_right": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.disjoint_cons_left": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.disjoint_iff_ne": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.disjoint_right": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.disjoint_singleton": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.disjoint_union_left": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.singleton_disjoint": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.zero_disjoint": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_iUnion_left": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_iUnion_right": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_iff_forall_ne": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_right": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_sUnion_left": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_sUnion_right": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_singleton_left": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "List.Forall.imp": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4C_residue",
+      "setup_error": null
+    },
+    "Set.Nonempty.subset_pair_iff_eq": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4C_residue",
+      "setup_error": null
+    },
+    "Finset.card_union_eq_card_add_card": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.codisjoint_inf_left": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.codisjoint_inf_right": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjiUnion_filter_eq": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjiUnion_filter_eq_of_maps_to": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjiUnion_map": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_filter_filter'": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_image": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_map": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_sup_left": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_sup_right": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.pairwise_cons'": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.powerset_card_disjiUnion": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.disjoint_map": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.disjoint_pmap": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.mem_pair": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_biUnion_left": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_biUnion_right": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.perm_of_nodup_nodup_toFinset_eq": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.toFinset.ext_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_eq": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_eq_empty_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_eq_iff_perm_dedup": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_filter": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.AM_GM": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.Coprime.dvd_mul_left": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.Coprime.dvd_mul_right": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.Coprime.eq_of_mul_eq_zero": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.Coprime.lcm_eq_mul": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.add_le_of_lt": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.cancel_left_of_coprime": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.cancel_right_of_coprime": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.comm": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.dvd_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.eq_of_abs_lt": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.eq_of_lt_of_lt": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.gcd_eq": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.le_of_lt_add": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.mul_left_cancel_iff'": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.mul_right_cancel_iff'": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.add_def": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.add_div": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.add_div_eq_of_add_mod_lt": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.add_div_eq_of_le_mod_add_mod": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    }
+  },
+  "run2": {
+    "Finset.mem_disjUnion": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4A",
+      "setup_error": null
+    },
+    "Set.antitoneOn_iff_antitone": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4A",
+      "setup_error": null
+    },
+    "Set.monotoneOn_iff_monotone": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4A",
+      "setup_error": null
+    },
+    "Set.strictAntiOn_iff_strictAnti": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4A",
+      "setup_error": null
+    },
+    "Set.strictMonoOn_iff_strictMono": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4A",
+      "setup_error": null
+    },
+    "Multiset.disjoint_add_left": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.disjoint_add_right": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.disjoint_cons_left": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.disjoint_iff_ne": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.disjoint_right": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.disjoint_singleton": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.disjoint_union_left": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.singleton_disjoint": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Multiset.zero_disjoint": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_iUnion_left": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_iUnion_right": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_iff_forall_ne": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_right": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_sUnion_left": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_sUnion_right": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "Set.disjoint_singleton_left": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4B",
+      "setup_error": null
+    },
+    "List.Forall.imp": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4C_residue",
+      "setup_error": null
+    },
+    "Set.Nonempty.subset_pair_iff_eq": {
+      "gate_fired": true,
+      "solved": true,
+      "winning_component": "RC4C_residue",
+      "setup_error": null
+    },
+    "Finset.card_union_eq_card_add_card": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.codisjoint_inf_left": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.codisjoint_inf_right": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjiUnion_filter_eq": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjiUnion_filter_eq_of_maps_to": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjiUnion_map": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_filter_filter'": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_image": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_map": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_sup_left": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_sup_right": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.pairwise_cons'": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.powerset_card_disjiUnion": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.disjoint_map": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.disjoint_pmap": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.mem_pair": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_biUnion_left": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Finset.disjoint_biUnion_right": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.perm_of_nodup_nodup_toFinset_eq": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.toFinset.ext_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_eq": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_eq_empty_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_eq_iff_perm_dedup": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_filter": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.AM_GM": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.Coprime.dvd_mul_left": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.Coprime.dvd_mul_right": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.Coprime.eq_of_mul_eq_zero": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.Coprime.lcm_eq_mul": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.add_le_of_lt": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.cancel_left_of_coprime": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.cancel_right_of_coprime": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.comm": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.dvd_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.eq_of_abs_lt": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.eq_of_lt_of_lt": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.gcd_eq": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.le_of_lt_add": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.mul_left_cancel_iff'": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.ModEq.mul_right_cancel_iff'": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.add_def": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.add_div": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.add_div_eq_of_add_mod_lt": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    },
+    "Nat.add_div_eq_of_le_mod_add_mod": {
+      "gate_fired": false,
+      "solved": false,
+      "winning_component": null,
+      "outcome": "no_emission"
+    }
+  }
+}

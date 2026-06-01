@@ -1,0 +1,1131 @@
+{
+  "Finset.mem_disjUnion": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Finset.disjUnion]",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Set.antitoneOn_iff_antitone": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Antitone, AntitoneOn]",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Set.monotoneOn_iff_monotone": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Monotone, MonotoneOn]",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Set.strictAntiOn_iff_strictAnti": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [StrictAnti, StrictAntiOn]",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Set.strictMonoOn_iff_strictMono": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [StrictMono, StrictMonoOn]",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.disjoint_add_left": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.disjoint_add_right": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.disjoint_cons_left": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.disjoint_iff_ne": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.disjoint_right": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "kernel type check failed: (kernel) declaration has free variables '[anonymous]'"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "kernel type check failed: (kernel) declaration has free variables '[anonymous]'"
+      }
+    ]
+  },
+  "Multiset.disjoint_singleton": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.disjoint_union_left": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.singleton_disjoint": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.zero_disjoint": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "List.Forall.imp": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [List.forall_iff_forall_mem]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [List.forall_iff_forall_mem] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Set.Nonempty.subset_pair_iff_eq": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Set.subset_pair_iff_eq]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.Disjoint.symm": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      }
+    ]
+  },
+  "Multiset.add_eq_union_iff_disjoint": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.add_eq_union_left_of_le": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.add_eq_union_right_of_le": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.coe_disjoint": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      }
+    ]
+  },
+  "Multiset.disjoint_comm": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      }
+    ]
+  },
+  "Multiset.disjoint_cons_right": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.disjoint_left": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "kernel type check failed: (kernel) declaration has free variables '[anonymous]'"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "kernel type check failed: (kernel) declaration has free variables '[anonymous]'"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      }
+    ]
+  },
+  "Multiset.disjoint_map_map": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.disjoint_of_subset_left": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "kernel type check failed: application type mismatch\n  s ⊆ u\nargument has type\n  Multiset α✝\nbut function has type\n  Multiset α → Prop"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "kernel type check failed: application type mismatch\n  s ⊆ u\nargument has type\n  Multiset α✝\nbut function has type\n  Multiset α → Prop"
+      }
+    ]
+  },
+  "Multiset.disjoint_of_subset_right": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "kernel type check failed: application type mismatch\n  t ⊆ u\nargument has type\n  Multiset α✝\nbut function has type\n  Multiset α → Prop"
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "kernel type check failed: application type mismatch\n  t ⊆ u\nargument has type\n  Multiset α✝\nbut function has type\n  Multiset α → Prop"
+      }
+    ]
+  },
+  "Multiset.disjoint_toFinset": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.disjoint_union_right": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.inter_eq_zero_iff_disjoint": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  },
+  "Multiset.nodup_bind": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Multiset.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  },
+  "Set._root_.Disjoint.image": {
+    "live": false,
+    "setup_error": "DojoInitError: Failed to locate the theorem with `Set._root_.Disjoint.image` as its fully qualified name.\nojo.py\", line 375, in _get_modified_proof\n    raise DojoInitError(\nlean_dojo.interaction.dojo.DojoInitError: Failed to locate the theorem with `Set._root_.Disjoint.image` as its fully qualified name.\n",
+    "ran": []
+  },
+  "Set.biUnion_compl_eq_of_pairwise_disjoint_of_iUnion_eq_univ": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Set.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Set.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  α : Type u_1\n  β : Type u_2\n  γ : Type u_3\n  ι✝ : Sort u_4\n  ι' : Sort u_5\n  ι₂ : Sort u_6\n  κ : ι✝ → Sort u_7\n  κ₁ : ι✝ → Sort u_8\n  κ₂ : ι✝ → "
+      },
+      {
+        "tactic": "simp [Set.subset_pair_iff_eq]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      },
+      {
+        "tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  α : Type u_1\n  β : Type u_2\n  γ : Type u_3\n  ι✝ : Sort u_4\n  ι' : Sort u_5\n  ι₂ : Sort u_6\n  κ : ι✝ → Sort u_7\n  κ₁ : ι✝ → Sort u_8\n  κ₂ : ι✝ → "
+      }
+    ]
+  },
+  "Set.disjoint_iUnion": {
+    "live": false,
+    "setup_error": "DojoInitError: Failed to locate the theorem with `Set.disjoint_iUnion` as its fully qualified name.\ntion/dojo.py\", line 375, in _get_modified_proof\n    raise DojoInitError(\nlean_dojo.interaction.dojo.DojoInitError: Failed to locate the theorem with `Set.disjoint_iUnion` as its fully qualified name.\n",
+    "ran": []
+  },
+  "Set.pairwiseDisjoint_filter": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Set.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Set.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Set.subset_pair_iff_eq]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      }
+    ]
+  },
+  "Set.sigmaToiUnion_bijective": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Set.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Set.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Set.subset_pair_iff_eq]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      }
+    ]
+  },
+  "Set.sigmaToiUnion_injective": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Set.disjoint_left]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Set.disjoint_left] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Set.subset_pair_iff_eq]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      }
+    ]
+  },
+  "List.filterMap_eq_map_iff_forall_eq_some": {
+    "live": false,
+    "setup_error": "DojoInitError: Cannot interact with theorems with the `where` keyword.\nte-packages/lean_dojo/interaction/dojo.py\", line 390, in _get_modified_proof\n    raise DojoInitError(\nlean_dojo.interaction.dojo.DojoInitError: Cannot interact with theorems with the `where` keyword.\n",
+    "ran": []
+  },
+  "List.forall_cons": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [List.forall_iff_forall_mem]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      },
+      {
+        "tactic": "simp [List.forall_iff_forall_mem] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "simp made no progress"
+      }
+    ]
+  },
+  "List.forall_iff_forall_mem": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [List.forall_iff_forall_mem]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "kernel type check failed: (kernel) declaration has free variables '[anonymous]'"
+      },
+      {
+        "tactic": "simp [List.forall_iff_forall_mem] <;> aesop",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false,
+        "error": "kernel type check failed: (kernel) declaration has free variables '[anonymous]'"
+      }
+    ]
+  },
+  "List.forall_map_iff": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [List.forall_iff_forall_mem]",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      },
+      {
+        "tactic": "simp [List.forall_iff_forall_mem] <;> aesop",
+        "solved": true,
+        "outcome": "success",
+        "dead": false
+      }
+    ]
+  },
+  "Finset.coe_disjUnion": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Finset.disjUnion]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  },
+  "Finset.disjUnion_singleton": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Finset.disjUnion]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  },
+  "Finset.disjUnion_eq_union": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Finset.disjUnion]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  },
+  "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [MonotoneOn, AntitoneOn]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  },
+  "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [MonotoneOn, AntitoneOn]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  },
+  "Finset.filter_cons": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Finset.disjUnion]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  },
+  "Finset.disjiUnion_cons": {
+    "live": true,
+    "setup_error": null,
+    "ran": [
+      {
+        "tactic": "simp [Finset.disjUnion]",
+        "solved": false,
+        "outcome": "proof_failed",
+        "dead": false
+      }
+    ]
+  }
+}

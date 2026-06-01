@@ -1,0 +1,105 @@
+{
+  "generated_by": "scripts/rc4d_offgate_preservation.py",
+  "per_set_gate_emissions": {
+    "rc4a_known_wins": {
+      "n": 5,
+      "gate_emissions": 5,
+      "must_not_fire": false
+    },
+    "rc4b_known_wins": {
+      "n": 16,
+      "gate_emissions": 16,
+      "must_not_fire": false
+    },
+    "rc4c_residue_known_wins": {
+      "n": 7,
+      "gate_emissions": 7,
+      "must_not_fire": false
+    },
+    "component_overlap_controls": {
+      "n": 5,
+      "gate_emissions": 5,
+      "must_not_fire": false
+    },
+    "composition_fresh_holdout": {
+      "n": 34,
+      "gate_emissions": 34,
+      "must_not_fire": false
+    },
+    "negative_controls": {
+      "n": 24,
+      "gate_emissions": 0,
+      "must_not_fire": true
+    },
+    "namespace_negative_controls": {
+      "n": 20,
+      "gate_emissions": 0,
+      "must_not_fire": true
+    },
+    "canonical_smoke": {
+      "n": 30,
+      "gate_emissions": 0,
+      "must_not_fire": true
+    }
+  },
+  "gate_emissions_component_split": {
+    "rc4a_known_wins": {
+      "RC4A": 5
+    },
+    "rc4b_known_wins": {
+      "RC4B": 16,
+      "RC4C_residue": 9
+    },
+    "rc4c_residue_known_wins": {
+      "RC4C_residue": 7,
+      "RC4B": 5
+    },
+    "component_overlap_controls": {
+      "RC4B": 5,
+      "RC4C_residue": 5
+    },
+    "composition_fresh_holdout": {
+      "RC4B": 23,
+      "RC4C_residue": 23,
+      "RC4A": 7
+    },
+    "negative_controls": {},
+    "namespace_negative_controls": {},
+    "canonical_smoke": {}
+  },
+  "off_gate_emissions": 0,
+  "rc4c_residue_offgate_emissions": 0,
+  "unexpected_fired_cases": [],
+  "emitted_and_failed_by_component": {
+    "RC4A": {
+      "fired": 12,
+      "failed": 2,
+      "rate": 0.167
+    },
+    "RC4B": {
+      "fired": 39,
+      "failed": 18,
+      "rate": 0.462
+    },
+    "RC4C_residue": {
+      "fired": 34,
+      "failed": 18,
+      "rate": 0.529
+    }
+  },
+  "regressions": 0,
+  "regression_note": "additive evaluator (candidate ⊇ RC2) → regressions structurally impossible",
+  "canonical_floors": {
+    "demo_v1": {
+      "n": 15,
+      "rc2_solved": 12,
+      "gate_fires": 0
+    },
+    "nat_defs_medium": {
+      "n": 15,
+      "rc2_solved": 14,
+      "gate_fires": 0
+    }
+  },
+  "verdict": "OFFGATE_CLEAN"
+}
