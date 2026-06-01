@@ -1,0 +1,36 @@
+{
+  "generated_by": "scripts/tr5_retrain_ranker_with_live_data.py",
+  "exploratory": true,
+  "note": "TR4 model NOT replaced globally.",
+  "tr4_only": {
+    "tag": "tr4_only",
+    "n": 4737,
+    "positives": 23,
+    "oof_pr_auc_by_theorem": 0.5216,
+    "oof_roc_by_theorem": 0.7745,
+    "oof_pr_auc_by_namespace": 0.0079,
+    "oof_pr_auc_by_cluster": 0.4772,
+    "top5_recovery": {
+      "theorems_with_success": 13,
+      "topk_recovered": 13,
+      "recovery_frac": 1.0,
+      "k": 5
+    }
+  },
+  "tr4_plus_tr5": {
+    "tag": "tr4_plus_tr5",
+    "n": 5542,
+    "positives": 36,
+    "oof_pr_auc_by_theorem": 0.2995,
+    "oof_roc_by_theorem": 0.7096,
+    "oof_pr_auc_by_namespace": 0.0055,
+    "oof_pr_auc_by_cluster": 0.516,
+    "top5_recovery": {
+      "theorems_with_success": 13,
+      "topk_recovered": 10,
+      "recovery_frac": 0.7692,
+      "k": 5
+    }
+  },
+  "delta_pr_auc_by_theorem": -0.2221
+}
