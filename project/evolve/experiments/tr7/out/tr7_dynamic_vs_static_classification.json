@@ -1,0 +1,144 @@
+{
+  "generated_by": "scripts/tr7_dynamic_vs_static_classification.py",
+  "num_wins": 18,
+  "classification_histogram": {
+    "STATIC_WRAPPER_COMPATIBLE_WITH_ALLOWLIST_EXPANSION": 3,
+    "STATIC_WRAPPER_COMPATIBLE_NOW": 10,
+    "DYNAMIC_RETRIEVAL_PREFERRED": 4,
+    "STATIC_WRAPPER_COMPATIBLE_WITH_SCHEMA_FIX": 1
+  },
+  "static_compatible_now": 10,
+  "static_compatible_with_work": 4,
+  "dynamic_only": 4,
+  "pct_static_compatible": 0.778,
+  "pct_dynamic_only": 0.222,
+  "recommended_rc5_direction": "hybrid RC5",
+  "records": [
+    {
+      "full_name": "Finset.biUnion_subset_iff_forall_subset",
+      "namespace": "Finset",
+      "static_coverage_class": "RC4C_RESIDUE_EXCLUDED",
+      "allowlist_recommendation": "NEED_MORE_EVIDENCE",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_WITH_ALLOWLIST_EXPANSION"
+    },
+    {
+      "full_name": "Finset.image_subset_iff",
+      "namespace": "Finset",
+      "static_coverage_class": "ALLOWLIST_MISS",
+      "allowlist_recommendation": "NEED_MORE_EVIDENCE",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_WITH_ALLOWLIST_EXPANSION"
+    },
+    {
+      "full_name": "List.Forall.imp",
+      "namespace": "List",
+      "static_coverage_class": "STATIC_COVERED_AND_SHOULD_SOLVE",
+      "allowlist_recommendation": "ALREADY_IN_ALLOWLIST",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_NOW"
+    },
+    {
+      "full_name": "Multiset.Disjoint.symm",
+      "namespace": "Multiset",
+      "static_coverage_class": "DYNAMIC_RETRIEVAL_REQUIRED",
+      "allowlist_recommendation": "KEEP_DYNAMIC_ONLY",
+      "dynamic_vs_static_class": "DYNAMIC_RETRIEVAL_PREFERRED"
+    },
+    {
+      "full_name": "Multiset.add_eq_union_right_of_le",
+      "namespace": "Multiset",
+      "static_coverage_class": "DYNAMIC_RETRIEVAL_REQUIRED",
+      "allowlist_recommendation": "KEEP_DYNAMIC_ONLY",
+      "dynamic_vs_static_class": "DYNAMIC_RETRIEVAL_PREFERRED"
+    },
+    {
+      "full_name": "Multiset.disjoint_add_left",
+      "namespace": "Multiset",
+      "static_coverage_class": "STATIC_COVERED_AND_SHOULD_SOLVE",
+      "allowlist_recommendation": "ALREADY_IN_ALLOWLIST",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_NOW"
+    },
+    {
+      "full_name": "Multiset.disjoint_add_right",
+      "namespace": "Multiset",
+      "static_coverage_class": "STATIC_COVERED_AND_SHOULD_SOLVE",
+      "allowlist_recommendation": "ALREADY_IN_ALLOWLIST",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_NOW"
+    },
+    {
+      "full_name": "Multiset.disjoint_comm",
+      "namespace": "Multiset",
+      "static_coverage_class": "DYNAMIC_RETRIEVAL_REQUIRED",
+      "allowlist_recommendation": "KEEP_DYNAMIC_ONLY",
+      "dynamic_vs_static_class": "DYNAMIC_RETRIEVAL_PREFERRED"
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_left",
+      "namespace": "Multiset",
+      "static_coverage_class": "STATIC_COVERED_AND_SHOULD_SOLVE",
+      "allowlist_recommendation": "ALREADY_IN_ALLOWLIST",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_NOW"
+    },
+    {
+      "full_name": "Multiset.disjoint_right",
+      "namespace": "Multiset",
+      "static_coverage_class": "STATIC_COVERED_AND_SHOULD_SOLVE",
+      "allowlist_recommendation": "KEEP_DYNAMIC_ONLY",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_NOW"
+    },
+    {
+      "full_name": "Multiset.singleton_disjoint",
+      "namespace": "Multiset",
+      "static_coverage_class": "STATIC_COVERED_AND_SHOULD_SOLVE",
+      "allowlist_recommendation": "ALREADY_IN_ALLOWLIST",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_NOW"
+    },
+    {
+      "full_name": "Multiset.zero_disjoint",
+      "namespace": "Multiset",
+      "static_coverage_class": "STATIC_COVERED_AND_SHOULD_SOLVE",
+      "allowlist_recommendation": "ALREADY_IN_ALLOWLIST",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_NOW"
+    },
+    {
+      "full_name": "Nat.sqrt_pos",
+      "namespace": "Nat",
+      "static_coverage_class": "ALLOWLIST_MISS",
+      "allowlist_recommendation": "KEEP_DYNAMIC_ONLY",
+      "dynamic_vs_static_class": "DYNAMIC_RETRIEVAL_PREFERRED"
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_left",
+      "namespace": "Set",
+      "static_coverage_class": "STATIC_COVERED_AND_SHOULD_SOLVE",
+      "allowlist_recommendation": "ALREADY_IN_ALLOWLIST",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_NOW"
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_right",
+      "namespace": "Set",
+      "static_coverage_class": "STATIC_COVERED_AND_SHOULD_SOLVE",
+      "allowlist_recommendation": "ALREADY_IN_ALLOWLIST",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_NOW"
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_left",
+      "namespace": "Set",
+      "static_coverage_class": "STATIC_COVERED_AND_SHOULD_SOLVE",
+      "allowlist_recommendation": "ALREADY_IN_ALLOWLIST",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_NOW"
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "namespace": "Set",
+      "static_coverage_class": "WRAPPER_REPRESENTATION_MISS",
+      "allowlist_recommendation": "ALREADY_IN_ALLOWLIST",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_WITH_SCHEMA_FIX"
+    },
+    {
+      "full_name": "Set.mapsTo_singleton",
+      "namespace": "Set",
+      "static_coverage_class": "ALLOWLIST_MISS",
+      "allowlist_recommendation": "NEED_MORE_EVIDENCE",
+      "dynamic_vs_static_class": "STATIC_WRAPPER_COMPATIBLE_WITH_ALLOWLIST_EXPANSION"
+    }
+  ]
+}

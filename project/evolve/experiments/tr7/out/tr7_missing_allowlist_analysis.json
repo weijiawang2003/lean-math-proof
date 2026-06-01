@@ -1,0 +1,281 @@
+{
+  "generated_by": "scripts/tr7_missing_allowlist_analysis.py",
+  "num_wins": 18,
+  "recommendation_histogram": {
+    "NEED_MORE_EVIDENCE": 3,
+    "ALREADY_IN_ALLOWLIST": 10,
+    "KEEP_DYNAMIC_ONLY": 5
+  },
+  "already_in_allowlist": 10,
+  "add_to_static_allowlist": [],
+  "keep_dynamic_only": [
+    {
+      "thm": "Multiset.Disjoint.symm",
+      "family": "d1_tauto"
+    },
+    {
+      "thm": "Multiset.add_eq_union_right_of_le",
+      "family": "d2_rw_aesop"
+    },
+    {
+      "thm": "Multiset.disjoint_comm",
+      "family": "d1_tauto"
+    },
+    {
+      "thm": "Multiset.disjoint_right",
+      "family": "d1_tauto"
+    },
+    {
+      "thm": "Nat.sqrt_pos",
+      "family": "d1_exact"
+    }
+  ],
+  "need_more_evidence": [
+    "Finset.biUnion_subset",
+    "Finset.subset_iff",
+    "Set.MapsTo"
+  ],
+  "missing_lemmas_by_family": {
+    "subset": 2,
+    "none_tauto": 3,
+    "add_eq_union": 1,
+    "other": 1,
+    "def_unfold": 1
+  },
+  "records": [
+    {
+      "full_name": "Finset.biUnion_subset_iff_forall_subset",
+      "namespace": "Finset",
+      "winning_lemma": "Finset.biUnion_subset",
+      "winning_family": "d2_simp_aesop",
+      "lemma_family": "subset",
+      "in_rc4_manifest": false,
+      "in_rc4_wrapper": false,
+      "win_occurrences": 1,
+      "plan_occurrences": 0,
+      "namespace_parametric": false,
+      "recommendation": "NEED_MORE_EVIDENCE"
+    },
+    {
+      "full_name": "Finset.image_subset_iff",
+      "namespace": "Finset",
+      "winning_lemma": "Finset.subset_iff",
+      "winning_family": "d1_simp_lemma",
+      "lemma_family": "subset",
+      "in_rc4_manifest": false,
+      "in_rc4_wrapper": false,
+      "win_occurrences": 1,
+      "plan_occurrences": 0,
+      "namespace_parametric": false,
+      "recommendation": "NEED_MORE_EVIDENCE"
+    },
+    {
+      "full_name": "List.Forall.imp",
+      "namespace": "List",
+      "winning_lemma": "List.forall_iff_forall_mem",
+      "winning_family": "d2_simp_aesop",
+      "lemma_family": "forall_mem",
+      "in_rc4_manifest": true,
+      "in_rc4_wrapper": true,
+      "win_occurrences": 1,
+      "plan_occurrences": 0,
+      "namespace_parametric": false,
+      "recommendation": "ALREADY_IN_ALLOWLIST"
+    },
+    {
+      "full_name": "Multiset.Disjoint.symm",
+      "namespace": "Multiset",
+      "winning_lemma": null,
+      "winning_family": "d1_tauto",
+      "lemma_family": "none_tauto",
+      "in_rc4_manifest": false,
+      "in_rc4_wrapper": false,
+      "win_occurrences": 3,
+      "plan_occurrences": 0,
+      "namespace_parametric": false,
+      "recommendation": "KEEP_DYNAMIC_ONLY"
+    },
+    {
+      "full_name": "Multiset.add_eq_union_right_of_le",
+      "namespace": "Multiset",
+      "winning_lemma": "Multiset.add_eq_union_left_of_le",
+      "winning_family": "d2_rw_aesop",
+      "lemma_family": "add_eq_union",
+      "in_rc4_manifest": false,
+      "in_rc4_wrapper": false,
+      "win_occurrences": 1,
+      "plan_occurrences": 0,
+      "namespace_parametric": false,
+      "recommendation": "KEEP_DYNAMIC_ONLY"
+    },
+    {
+      "full_name": "Multiset.disjoint_add_left",
+      "namespace": "Multiset",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_family": "d2_simp_aesop",
+      "lemma_family": "disjoint_left",
+      "in_rc4_manifest": true,
+      "in_rc4_wrapper": true,
+      "win_occurrences": 4,
+      "plan_occurrences": 0,
+      "namespace_parametric": true,
+      "recommendation": "ALREADY_IN_ALLOWLIST"
+    },
+    {
+      "full_name": "Multiset.disjoint_add_right",
+      "namespace": "Multiset",
+      "winning_lemma": "Multiset.disjoint_right",
+      "winning_family": "d2_simp_aesop",
+      "lemma_family": "disjoint_right",
+      "in_rc4_manifest": true,
+      "in_rc4_wrapper": true,
+      "win_occurrences": 1,
+      "plan_occurrences": 0,
+      "namespace_parametric": false,
+      "recommendation": "ALREADY_IN_ALLOWLIST"
+    },
+    {
+      "full_name": "Multiset.disjoint_comm",
+      "namespace": "Multiset",
+      "winning_lemma": null,
+      "winning_family": "d1_tauto",
+      "lemma_family": "none_tauto",
+      "in_rc4_manifest": false,
+      "in_rc4_wrapper": false,
+      "win_occurrences": 3,
+      "plan_occurrences": 0,
+      "namespace_parametric": false,
+      "recommendation": "KEEP_DYNAMIC_ONLY"
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_left",
+      "namespace": "Multiset",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_family": "d2_simp_aesop",
+      "lemma_family": "disjoint_left",
+      "in_rc4_manifest": true,
+      "in_rc4_wrapper": true,
+      "win_occurrences": 4,
+      "plan_occurrences": 0,
+      "namespace_parametric": true,
+      "recommendation": "ALREADY_IN_ALLOWLIST"
+    },
+    {
+      "full_name": "Multiset.disjoint_right",
+      "namespace": "Multiset",
+      "winning_lemma": null,
+      "winning_family": "d1_tauto",
+      "lemma_family": "none_tauto",
+      "in_rc4_manifest": false,
+      "in_rc4_wrapper": false,
+      "win_occurrences": 3,
+      "plan_occurrences": 0,
+      "namespace_parametric": false,
+      "recommendation": "KEEP_DYNAMIC_ONLY"
+    },
+    {
+      "full_name": "Multiset.singleton_disjoint",
+      "namespace": "Multiset",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_family": "d1_simp_lemma",
+      "lemma_family": "disjoint_left",
+      "in_rc4_manifest": true,
+      "in_rc4_wrapper": true,
+      "win_occurrences": 4,
+      "plan_occurrences": 0,
+      "namespace_parametric": true,
+      "recommendation": "ALREADY_IN_ALLOWLIST"
+    },
+    {
+      "full_name": "Multiset.zero_disjoint",
+      "namespace": "Multiset",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_family": "d1_simp_lemma",
+      "lemma_family": "disjoint_left",
+      "in_rc4_manifest": true,
+      "in_rc4_wrapper": true,
+      "win_occurrences": 4,
+      "plan_occurrences": 0,
+      "namespace_parametric": true,
+      "recommendation": "ALREADY_IN_ALLOWLIST"
+    },
+    {
+      "full_name": "Nat.sqrt_pos",
+      "namespace": "Nat",
+      "winning_lemma": "Nat.le_sqrt",
+      "winning_family": "d1_exact",
+      "lemma_family": "other",
+      "in_rc4_manifest": false,
+      "in_rc4_wrapper": false,
+      "win_occurrences": 1,
+      "plan_occurrences": 0,
+      "namespace_parametric": false,
+      "recommendation": "KEEP_DYNAMIC_ONLY"
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_left",
+      "namespace": "Set",
+      "winning_lemma": "Set.disjoint_left",
+      "winning_family": "d2_simp_aesop",
+      "lemma_family": "disjoint_left",
+      "in_rc4_manifest": true,
+      "in_rc4_wrapper": true,
+      "win_occurrences": 4,
+      "plan_occurrences": 0,
+      "namespace_parametric": true,
+      "recommendation": "ALREADY_IN_ALLOWLIST"
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_right",
+      "namespace": "Set",
+      "winning_lemma": "Set.disjoint_left",
+      "winning_family": "d2_simp_aesop",
+      "lemma_family": "disjoint_left",
+      "in_rc4_manifest": true,
+      "in_rc4_wrapper": true,
+      "win_occurrences": 4,
+      "plan_occurrences": 0,
+      "namespace_parametric": true,
+      "recommendation": "ALREADY_IN_ALLOWLIST"
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_left",
+      "namespace": "Set",
+      "winning_lemma": "Set.disjoint_left",
+      "winning_family": "d2_simp_aesop",
+      "lemma_family": "disjoint_left",
+      "in_rc4_manifest": true,
+      "in_rc4_wrapper": true,
+      "win_occurrences": 4,
+      "plan_occurrences": 0,
+      "namespace_parametric": true,
+      "recommendation": "ALREADY_IN_ALLOWLIST"
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "namespace": "Set",
+      "winning_lemma": "Set.disjoint_left",
+      "winning_family": "d2_simp_aesop",
+      "lemma_family": "disjoint_left",
+      "in_rc4_manifest": true,
+      "in_rc4_wrapper": true,
+      "win_occurrences": 4,
+      "plan_occurrences": 0,
+      "namespace_parametric": true,
+      "recommendation": "ALREADY_IN_ALLOWLIST"
+    },
+    {
+      "full_name": "Set.mapsTo_singleton",
+      "namespace": "Set",
+      "winning_lemma": "Set.MapsTo",
+      "winning_family": "def_unfold_simp",
+      "lemma_family": "def_unfold",
+      "in_rc4_manifest": false,
+      "in_rc4_wrapper": false,
+      "win_occurrences": 1,
+      "plan_occurrences": 0,
+      "namespace_parametric": false,
+      "recommendation": "NEED_MORE_EVIDENCE"
+    }
+  ]
+}
