@@ -1,0 +1,166 @@
+{
+  "num_candidates": 0,
+  "num_rejected": 12,
+  "policy": "conservative; a failure is a missing-lemma candidate only if unproven by all probes AND official proof is not an existing-lemma rw-bridge. Mirrors the Multiset-singleton negative result.",
+  "candidates": [],
+  "rejected": [
+    {
+      "candidate_id": "setlemma::Set.antitoneOn_iff_antitone",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|iff|all_tactics_errored",
+      "source_failures": [
+        "Set.antitoneOn_iff_antitone"
+      ],
+      "official_proof_style": "simp_only",
+      "probe_solved": true,
+      "probe_gap": "tactic_gap",
+      "verdict": "not_missing_lemma",
+      "reason": "probe solved it (tactic_gap): `simp [Antitone, AntitoneOn]`"
+    },
+    {
+      "candidate_id": "setlemma::Set.ssubset_singleton_iff",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|iff|all_tactics_errored",
+      "source_failures": [
+        "Set.ssubset_singleton_iff"
+      ],
+      "official_proof_style": "rw_bridge",
+      "probe_solved": true,
+      "probe_gap": "search_depth_gap",
+      "verdict": "not_missing_lemma",
+      "reason": "probe solved it (search_depth_gap): `rw [ssubset_iff_subset_ne, subset_singleton_iff_eq, or_and_right, and_not_self_iff, or_false_iff, and_iff_left_iff_imp] <;> exact fun h => h ▸ (singleton_ne_empty _).symm`"
+    },
+    {
+      "candidate_id": "setlemma::Set.ite_empty_right",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|membership|all_tactics_errored",
+      "source_failures": [
+        "Set.ite_empty_right"
+      ],
+      "official_proof_style": "simp_only",
+      "probe_solved": true,
+      "probe_gap": "tactic_gap",
+      "verdict": "not_missing_lemma",
+      "reason": "probe solved it (tactic_gap): `simp [Set.ite]`"
+    },
+    {
+      "candidate_id": "setlemma::Set.ite_right",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|membership|all_tactics_errored",
+      "source_failures": [
+        "Set.ite_right"
+      ],
+      "official_proof_style": "simp_only",
+      "probe_solved": true,
+      "probe_gap": "tactic_gap",
+      "verdict": "not_missing_lemma",
+      "reason": "probe solved it (tactic_gap): `simp [Set.ite]`"
+    },
+    {
+      "candidate_id": "setlemma::Set.diff_singleton_subset_iff",
+      "cluster_id": "Set|rc1_production_stack|equality|all_tactics_errored",
+      "source_failures": [
+        "Set.diff_singleton_subset_iff"
+      ],
+      "official_proof_style": "rw_bridge",
+      "probe_solved": true,
+      "probe_gap": "search_depth_gap",
+      "verdict": "not_missing_lemma",
+      "reason": "probe solved it (search_depth_gap): `rw [← union_singleton, union_comm] <;> apply diff_subset_iff`"
+    },
+    {
+      "candidate_id": "setlemma::Set.subset_insert_iff",
+      "cluster_id": "Set|rc1_production_stack|equality|all_tactics_errored",
+      "source_failures": [
+        "Set.subset_insert_iff"
+      ],
+      "official_proof_style": "rw_bridge",
+      "probe_solved": false,
+      "probe_gap": "needs_deeper_search",
+      "verdict": "not_missing_lemma",
+      "reason": "official proof is an rw-bridge over EXISTING named lemmas (search-depth gap, not missing): And.right, and_iff_right, by_cases, diff_singleton_eq_self, diff_singleton_subset_iff, diff_subset, diff_subset.trans, insert",
+      "nearby_existing_lemmas": [
+        "And.right",
+        "and_iff_right",
+        "by_cases",
+        "diff_singleton_eq_self",
+        "diff_singleton_subset_iff",
+        "diff_subset",
+        "diff_subset.trans",
+        "insert",
+        "or_iff_left_of_imp",
+        "or_iff_right_of_imp",
+        "right",
+        "subset_insert_iff"
+      ]
+    },
+    {
+      "candidate_id": "setlemma::Set.union_empty_iff",
+      "cluster_id": "Set|rc1_production_stack|equality|all_tactics_errored",
+      "source_failures": [
+        "Set.union_empty_iff"
+      ],
+      "official_proof_style": "simp_only",
+      "probe_solved": true,
+      "probe_gap": "tactic_gap",
+      "verdict": "not_missing_lemma",
+      "reason": "probe solved it (tactic_gap): `simp only [← subset_empty_iff, union_subset_iff]`"
+    },
+    {
+      "candidate_id": "setlemma::Set.ite_inter",
+      "cluster_id": "Set|rc1_production_stack|membership|all_tactics_errored",
+      "source_failures": [
+        "Set.ite_inter"
+      ],
+      "official_proof_style": "rw_bridge",
+      "probe_solved": true,
+      "probe_gap": "search_depth_gap",
+      "verdict": "not_missing_lemma",
+      "reason": "probe solved it (search_depth_gap): `rw [ite_inter_inter, ite_same]`"
+    },
+    {
+      "candidate_id": "setlemma::Set.ite_inter_self",
+      "cluster_id": "Set|rc1_production_stack|membership|all_tactics_errored",
+      "source_failures": [
+        "Set.ite_inter_self"
+      ],
+      "official_proof_style": "rw_bridge",
+      "probe_solved": true,
+      "probe_gap": "search_depth_gap",
+      "verdict": "not_missing_lemma",
+      "reason": "probe solved it (search_depth_gap): `rw [Set.ite, union_inter_distrib_right, diff_inter_self, inter_assoc, inter_self, union_empty]`"
+    },
+    {
+      "candidate_id": "setlemma::Set.ite_eq_of_subset_left",
+      "cluster_id": "Set|broad_set_aesop_rejected|equality|all_tactics_errored",
+      "source_failures": [
+        "Set.ite_eq_of_subset_left"
+      ],
+      "official_proof_style": "by_cases_ite_split",
+      "probe_solved": true,
+      "probe_gap": "search_depth_gap",
+      "verdict": "not_missing_lemma",
+      "reason": "probe solved it (search_depth_gap): `ext x <;> by_cases hx : x ∈ t <;> simp [hx, Set.ite, or_iff_right_of_imp (@h x)]`"
+    },
+    {
+      "candidate_id": "setlemma::Set.subset_singleton_iff_eq",
+      "cluster_id": "Set|broad_set_aesop_rejected|equality|all_tactics_errored",
+      "source_failures": [
+        "Set.subset_singleton_iff_eq"
+      ],
+      "official_proof_style": "simp_only",
+      "probe_solved": false,
+      "probe_gap": "needs_deeper_search",
+      "verdict": "not_missing_lemma",
+      "reason": "cluster gap is search_depth_gap, not a missing-lemma cluster"
+    },
+    {
+      "candidate_id": "setlemma::Set.pair_eq_pair_iff",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|equality|all_tactics_errored",
+      "source_failures": [
+        "Set.pair_eq_pair_iff"
+      ],
+      "official_proof_style": "subset_antisymm",
+      "probe_solved": true,
+      "probe_gap": "tactic_gap",
+      "verdict": "not_missing_lemma",
+      "reason": "probe solved it (tactic_gap): `simp [subset_antisymm_iff, insert_subset_iff] <;> aesop`"
+    }
+  ]
+}

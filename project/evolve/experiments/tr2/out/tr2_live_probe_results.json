@@ -1,0 +1,1922 @@
+{
+  "probe_plan_input": "project/evolve/experiments/tr2/out/tr2_probe_plan.json",
+  "sf4_probe_results_input": "project/evolve/experiments/sf4/out/sf4_probe_results.json",
+  "num_theorems": 34,
+  "num_live_theorems": 30,
+  "num_live_tactics": 64,
+  "num_reused_tactics": 106,
+  "win_histogram": {
+    "no_win": 34
+  },
+  "any_probe_win": [],
+  "results": [
+    {
+      "full_name": "Eq.subset",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Eq",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "PROOF_SEARCH_DEPTH_GAP",
+      "probe_family": "depth_gap_bounded",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 7,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        }
+      ],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "tactic": "simp_all <;> aesop",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "provenance": "tr2_live"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'constructor' failed, target is not an inductive datatype\n\u03b1 : Type u_1\ns t : Set \u03b1\n\u22a2 s = t \u2192 s \u2286 t",
+          "tactic": "constructor <;> aesop",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "provenance": "tr2_live"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "tactic": "intro h <;> aesop",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "provenance": "tr2_live"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s = t \u2192 s \u2286 t",
+          "tactic": "ext x <;> aesop",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "provenance": "tr2_live"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s = t \u2192 s \u2286 t",
+          "tactic": "ext x <;> simp_all",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "provenance": "tr2_live"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "omega could not prove the goal:\nNo usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication,",
+          "tactic": "simp_all <;> omega",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "provenance": "tr2_live"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case refl\n  \u03b1 : Type u_1\n  s : Set \u03b1\n  \u22a2 s \u2286 s",
+          "tactic": "rintro \u27e8_, _\u27e9 <;> aesop",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Multiset.disjoint_toFinset",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "WX3_MULTISET_INDUCTION",
+      "probe_family": "controls",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 0,
+      "num_live": 4,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "tr2_live",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081\u271d s\u2082\u271d t\u271d t\u2081 t\u2082 u t s\u2081 s\u2082 : Set \u03b1\n  h : s\u2081 \u2286 s\u2082\n  \u22a2 t.ite s\u2081 s\u2082 = s\u2081 \u222a s\u2082 \\ t"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "coe_notMemRangeEquiv_symm",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "GENERAL_FRONTIER",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "BASELINE_DUPLICATE",
+      "probe_family": "controls",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 0,
+      "num_live": 4,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": true,
+          "outcome": "success",
+          "provenance": "tr2_live"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "tr2_live",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.pairwiseDisjoint_filter",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "PROOF_SEARCH_DEPTH_GAP",
+      "probe_family": "depth_gap_bounded",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 6,
+      "num_live": 5,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u_1\n  \u03b2 : Type u_2\n  \u03b3 : Type u_3\n  p q : \u03b1 \u2192 Prop\n  inst\u271d\u00b2 : DecidablePred p\n  inst\u271d\u00b9 : DecidablePred q\n  s\u271d : Finset \u03b1\n  inst\u271d : Deci"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        }
+      ],
+      "probes_tried": [
+        {
+          "tactic": "ext x <;> aesop",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "applyExtTheorem only applies to equations, not\n  \u2200 \u2983x : \u03b2\u2984, x \u2208 s \u2192 \u2200 \u2983y : \u03b2\u2984, y \u2208 s \u2192 x \u2260 y \u2192 (Disjoint on fun x => Finset.filter (fun x_1 => f x_1 = x) t) x y",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "applyExtTheorem only applies to equations, not\n  \u2200 \u2983x : \u03b2\u2984, x \u2208 s \u2192 \u2200 \u2983y : \u03b2\u2984, y \u2208 s \u2192 x \u2260 y \u2192 (Disjoint on fun x => Finset.filter (fun x_1 => f x_1 = x) t) x y",
+          "provenance": "sf4_reused"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all <;> aesop",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "provenance": "tr2_live"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'constructor' failed, target is not an inductive datatype\n\u03b1 : Type u_1\n\u03b2 : Type u_2\n\u03b3 : Type u_3\np q : \u03b1 \u2192 Prop\ninst\u271d\u00b2 : DecidablePred p\ninst\u271d\u00b9 : DecidablePred q\ns\u271d : Finset \u03b1\ninst\u271d : Decidable",
+          "tactic": "constructor <;> aesop",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "provenance": "tr2_live"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "tactic": "intro h <;> aesop",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "provenance": "tr2_live"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "tactic": "simp_all <;> omega",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "provenance": "tr2_live"
+        },
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "rcases tactic failed: x\u271d : \u03b2 is not an inductive datatype",
+          "tactic": "rintro \u27e8_, _\u27e9 <;> aesop",
+          "kind": "probe",
+          "family": "depth_gap_bounded",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081\u271d s\u2082\u271d t\u271d t\u2081 t\u2082 u t s\u2081 s\u2082 : Set \u03b1\n  h : s\u2082 \u2286 s\u2081\n  \u22a2 t.ite s\u2081 s\u2082 = s\u2081 \u2229 t \u222a s\u2082"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Function.Injective.nonempty_apply_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Function",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "NO_CHEAP_ACTION",
+      "probe_family": "minimal_controls",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 0,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Prop.compl_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Prop",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "NO_CHEAP_ACTION",
+      "probe_family": "minimal_controls",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 0,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": true,
+          "outcome": "success",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "max_recursion",
+          "provenance": "sf4_reused",
+          "error": "aesop: error in norm simp: tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get di"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.ssubset_iff_insert",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.ssubset_iff_sdiff_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Multiset.toFinset_nsmul",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "NO_CHEAP_ACTION",
+      "probe_family": "controls",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 0,
+      "num_live": 4,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live"
+        },
+        {
+          "tactic": "aesop",
+          "solved": true,
+          "outcome": "success",
+          "provenance": "tr2_live"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "tr2_live",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+      "probe_family": "retrieval",
+      "for_sf5_retrieval": true,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 1,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [
+        {
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "`exact?` could not close the goal. Try `apply?` to see partial suggestions.",
+          "tactic": "exact?",
+          "kind": "probe",
+          "family": "retrieval",
+          "provenance": "tr2_live"
+        }
+      ],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.diff_union_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "BASELINE_DUPLICATE",
+      "probe_family": "controls",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 0,
+      "num_live": 4,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u s t : Set \u03b1\n  \u22a2 s \\ t \u222a s \u2229 t = s"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "tr2_live",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.insert_diff_eq_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "BASELINE_DUPLICATE",
+      "probe_family": "controls",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 0,
+      "num_live": 4,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": true,
+          "outcome": "success",
+          "provenance": "tr2_live"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "tr2_live",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.insert_diff_of_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "BASELINE_DUPLICATE",
+      "probe_family": "controls",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 0,
+      "num_live": 4,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": true,
+          "outcome": "success",
+          "provenance": "tr2_live"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "tr2_live",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "NO_CHEAP_ACTION",
+      "probe_family": "minimal_controls",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 0,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.eq_of_inclusion_surjective",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "CONFIRMED_RC2_FAILURE",
+      "predicted_label": "NO_CHEAP_ACTION",
+      "probe_family": "minimal_controls",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 4,
+      "num_live": 0,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "sf4_reused",
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u_1\n  s\u271d t\u271d u s t : Set \u03b1\n  h : s \u2286 t\n  h_surj : Function.Surjective (Set.inclusion h)\n  \u22a2 s = t"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "sf4_reused",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.inclusion_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "BASELINE_DUPLICATE",
+      "probe_family": "controls",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 0,
+      "num_live": 4,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "kernel type check failed: application type mismatch\n  Subset s\nargument has type\n  Set \u03b1\u271d\nbut function has type\n  Set \u03b1 \u2192 Set \u03b1 \u2192 Prop"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "kernel type check failed: application type mismatch\n  Subset s\nargument has type\n  Set \u03b1\u271d\nbut function has type\n  Set \u03b1 \u2192 Set \u03b1 \u2192 Prop"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live",
+          "error": "kernel type check failed: application type mismatch\n  Subset s\nargument has type\n  Set \u03b1\u271d\nbut function has type\n  Set \u03b1 \u2192 Set \u03b1 \u2192 Prop"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "tr2_live",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [],
+      "winning_probes": []
+    },
+    {
+      "full_name": "Set.pair_diff_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "rc2_classification": "RC2_SOLVED",
+      "predicted_label": "SET_ITE_SIMP",
+      "probe_family": "controls",
+      "for_sf5_retrieval": false,
+      "live": true,
+      "setup_error": null,
+      "num_reused": 0,
+      "num_live": 4,
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "provenance": "tr2_live"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": true,
+          "outcome": "success",
+          "provenance": "tr2_live"
+        },
+        {
+          "tactic": "aesop",
+          "solved": true,
+          "outcome": "success",
+          "provenance": "tr2_live"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "provenance": "tr2_live",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "probes_tried": [],
+      "winning_probes": []
+    }
+  ]
+}

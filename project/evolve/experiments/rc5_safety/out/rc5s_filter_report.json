@@ -1,0 +1,39 @@
+{
+  "generated_by": "scripts/rc5s_filter_existing_plan.py",
+  "original_program_count": 1792,
+  "filtered_program_count": 1269,
+  "removed_total": 523,
+  "classification_histogram": {
+    "POLICY_ALLOWED": 1269,
+    "REMOVED_STALL_RISK": 366,
+    "REMOVED_OFF_POLICY": 73,
+    "REMOVED_NAMESPACE_DISABLED": 84
+  },
+  "off_policy_removed": 73,
+  "stall_risk_removed": 366,
+  "namespace_disabled_removed": 84,
+  "rc5h_true_hybrid_winners": [
+    "Finset.biUnion_subset_iff_forall_subset",
+    "Multiset.add_bind",
+    "Finset.image_subset_iff"
+  ],
+  "winner_survival": {
+    "Finset.biUnion_subset_iff_forall_subset": {
+      "tactic": "simp [Finset.biUnion_subset] <;> aesop",
+      "class": "POLICY_ALLOWED",
+      "survives": true
+    },
+    "Finset.image_subset_iff": {
+      "tactic": "simp [Finset.subset_iff]",
+      "class": "POLICY_ALLOWED",
+      "survives": true
+    },
+    "Multiset.add_bind": {
+      "tactic": "simp [Multiset.bind]",
+      "class": "POLICY_ALLOWED",
+      "survives": true
+    }
+  },
+  "all_3_winners_survive": true,
+  "lost_winners": []
+}

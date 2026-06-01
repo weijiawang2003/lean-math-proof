@@ -1,0 +1,98 @@
+{
+  "description": "SF2 Set-cluster probe ladders. Families A-G. Parser-safe for run_transition: no bare ';' sequencing, no multi-line '·' blocks; sequential composition expressed via '<;>' chains (applied to the single goal that the prior tactic leaves) or via a single multi-rewrite 'rw [a, b, c]'. Source-inspired probes are derived from the official Mathlib proofs (studied, not promoted).",
+  "do_not_promote": true,
+  "minimality_prefix_probes": ["simp", "simp_all", "aesop", "classical <;> aesop"],
+  "shape_gating": {
+    "A_baselines": ["equality", "membership", "iff"],
+    "B_ext_equality": ["equality", "membership"],
+    "C_iff_decomp": ["iff"],
+    "D_subset_diff_union": ["equality", "membership"],
+    "E_ite_bycases": ["equality", "membership", "iff"]
+  },
+  "families": {
+    "A_baselines": [
+      {"probe": "simp", "label": "trivial_existing_tactic"},
+      {"probe": "simp_all", "label": "trivial_existing_tactic"},
+      {"probe": "aesop", "label": "trivial_existing_tactic"},
+      {"probe": "classical <;> aesop", "label": "baseline_classical"},
+      {"probe": "simp [Set.ext_iff]", "label": "baseline_ext_iff"},
+      {"probe": "simp_all [Set.ext_iff]", "label": "baseline_ext_iff"}
+    ],
+    "B_ext_equality": [
+      {"probe": "ext x <;> simp", "label": "ext_membership"},
+      {"probe": "ext x <;> simp_all", "label": "ext_membership"},
+      {"probe": "ext x <;> aesop", "label": "ext_membership"},
+      {"probe": "ext x <;> simp [Set.ite]", "label": "ext_ite_unfold"},
+      {"probe": "ext x <;> simp_all [Set.ite]", "label": "ext_ite_unfold"}
+    ],
+    "C_iff_decomp": [
+      {"probe": "constructor <;> intro h <;> simp_all", "label": "iff_split"},
+      {"probe": "constructor <;> intro h <;> aesop", "label": "iff_split"},
+      {"probe": "constructor <;> intro h <;> try simp_all", "label": "iff_split_try"},
+      {"probe": "refine ⟨?_, ?_⟩ <;> intro h <;> simp_all", "label": "iff_refine"}
+    ],
+    "D_subset_diff_union": [
+      {"probe": "intro x <;> simp", "label": "subset_intro"},
+      {"probe": "intro x <;> simp_all", "label": "subset_intro"},
+      {"probe": "apply Set.Subset.antisymm <;> intro x <;> simp", "label": "antisymm"},
+      {"probe": "apply Set.Subset.antisymm <;> intro x <;> simp_all", "label": "antisymm"},
+      {"probe": "simp [Set.subset_def]", "label": "subset_def"},
+      {"probe": "simp_all [Set.subset_def]", "label": "subset_def"}
+    ],
+    "E_ite_bycases": [
+      {"probe": "simp [Set.ite]", "label": "ite_unfold"},
+      {"probe": "simp_all [Set.ite]", "label": "ite_unfold"},
+      {"probe": "simp only [Set.ite]", "label": "ite_unfold_only"},
+      {"probe": "ext x <;> by_cases hx : x ∈ t <;> simp_all [Set.ite]", "label": "ext_bycases_ite"},
+      {"probe": "ext x <;> by_cases hx : x ∈ t <;> simp [Set.ite]", "label": "ext_bycases_ite"},
+      {"probe": "classical <;> simp [Set.ite]", "label": "classical_ite"}
+    ]
+  },
+  "source_inspired": {
+    "Set.ite_right": [
+      {"probe": "simp [Set.ite]", "theorem_specific_risk": "low", "note": "exact official proof"}
+    ],
+    "Set.ite_empty_right": [
+      {"probe": "simp [Set.ite]", "theorem_specific_risk": "low", "note": "exact official proof"}
+    ],
+    "Set.ite_inter_self": [
+      {"probe": "rw [Set.ite, union_inter_distrib_right, diff_inter_self, inter_assoc, inter_self, union_empty]", "theorem_specific_risk": "high", "note": "official rw chain, single tactic"},
+      {"probe": "simp [Set.ite, inter_assoc]", "theorem_specific_risk": "medium"}
+    ],
+    "Set.ite_inter": [
+      {"probe": "rw [ite_inter_inter, ite_same]", "theorem_specific_risk": "high", "note": "official rw bridge"},
+      {"probe": "simp [Set.ite]", "theorem_specific_risk": "medium"}
+    ],
+    "Set.antitoneOn_iff_antitone": [
+      {"probe": "simp [Antitone, AntitoneOn]", "theorem_specific_risk": "low", "note": "exact official proof"}
+    ],
+    "Set.ite_eq_of_subset_left": [
+      {"probe": "ext x <;> by_cases hx : x ∈ t <;> simp [hx, Set.ite, or_iff_right_of_imp (@h x)]", "theorem_specific_risk": "high", "note": "official proof; depends on hypothesis h"},
+      {"probe": "ext x <;> by_cases hx : x ∈ t <;> simp_all [Set.ite]", "theorem_specific_risk": "medium"}
+    ],
+    "Set.pair_eq_pair_iff": [
+      {"probe": "simp [subset_antisymm_iff, insert_subset_iff] <;> aesop", "theorem_specific_risk": "medium", "note": "official simp+aesop, ';' rewritten as '<;>'"}
+    ],
+    "Set.union_empty_iff": [
+      {"probe": "rw [← subset_empty_iff] <;> exact union_subset_iff", "theorem_specific_risk": "high", "note": "official: simp only[←subset_empty_iff]; exact union_subset_iff"},
+      {"probe": "simp only [← subset_empty_iff, union_subset_iff]", "theorem_specific_risk": "medium"}
+    ],
+    "Set.ssubset_singleton_iff": [
+      {"probe": "rw [ssubset_iff_subset_ne, subset_singleton_iff_eq, or_and_right, and_not_self_iff, or_false_iff, and_iff_left_iff_imp] <;> exact fun h => h ▸ (singleton_ne_empty _).symm", "theorem_specific_risk": "high", "note": "official rw chain + closing exact via <;>"}
+    ],
+    "Set.subset_singleton_iff_eq": [
+      {"probe": "rcases s.eq_empty_or_nonempty with rfl | hs <;> simp [eq_singleton_iff_nonempty_unique_mem, hs]", "theorem_specific_risk": "high", "note": "official obtain/simp, single-line"},
+      {"probe": "constructor <;> intro h <;> simp_all", "theorem_specific_risk": "medium"}
+    ],
+    "Set.subset_insert_iff": [
+      {"probe": "rw [← diff_singleton_subset_iff] <;> aesop", "theorem_specific_risk": "high", "note": "official starts with this rw then by_cases"}
+    ],
+    "Set.diff_singleton_subset_iff": [
+      {"probe": "rw [← union_singleton, union_comm] <;> apply diff_subset_iff", "theorem_specific_risk": "high", "note": "official rw bridge + apply, single-line via <;>"}
+    ]
+  },
+  "negative_controls": [
+    {"probe": "aesop (maxRuleApplications := 1000)", "label": "broad_aesop_diagnostic", "off_by_default": true},
+    {"probe": "ext x <;> aesop", "label": "broad_ext_aesop_diagnostic", "off_by_default": true}
+  ]
+}

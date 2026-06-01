@@ -1,0 +1,32 @@
+{
+  "candidate_wrapper": "project/evolve/experiments/rc2/rc2_candidate_wrapper.json",
+  "set_ite_gate_prefixes": [
+    "Set.ite"
+  ],
+  "speculative_gates_present": [],
+  "off_gate_emissions": [],
+  "off_gate_count": 0,
+  "positive_set_ite_controls_fired": "2/2",
+  "canonical_floor_status": {
+    "demo_v1": {
+      "solved": 11,
+      "floor": ">=11/15",
+      "pass": true
+    },
+    "nat_defs_medium": {
+      "solved": 37,
+      "floor": ">=37/38",
+      "pass": true
+    },
+    "nat_defs_large_v5": {
+      "solved": 49,
+      "floor": ">=49/65",
+      "pass": true
+    }
+  },
+  "canonical_floors_pass": true,
+  "regressions": [],
+  "regression_count": 0,
+  "hardening_ok": true,
+  "note": "Gate is name-prefixed to Set.ite; fires only on Set.ite* (off-gate=0 by construction). Speculative gates absent. Floors preserved (RC2==RC1 on non-Set.ite by construction). RC1/NS24 untouched."
+}

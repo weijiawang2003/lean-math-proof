@@ -1,0 +1,160 @@
+{
+  "pool_size": 47,
+  "requested_batch_size": 25,
+  "effective_batch_size": 15,
+  "seed": 20260530,
+  "informed_batches_disjoint": true,
+  "random_is_independent_stratified_control": true,
+  "overlaps": {
+    "model&random": [
+      "Eq.subset",
+      "Function.Injective.nonempty_apply_iff",
+      "Set.antitoneOn_iff_antitone",
+      "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "Set.pairwiseDisjoint_filter",
+      "Set.subset_ite",
+      "Set.union_empty_iff"
+    ],
+    "random&rule": [
+      "Set.Nonempty.subset_pair_iff_eq",
+      "Set.ssubset_iff_insert",
+      "Set.ssubset_iff_sdiff_singleton",
+      "Set.subset_insert_iff"
+    ]
+  },
+  "overlap_note": "model & rule are disjoint by the round-robin draft; the random baseline is an INDEPENDENT stratified sample matched to the model batch's failure ratio, so it may overlap model/rule on the scarce confirmed-failure cases (recorded above). This is the spec's permitted 'overlap unavoidable -> record it' case and is the correct control: it isolates selection quality from failure-ratio differences.",
+  "draft": "round-robin model<->rule (disjoint); random = stratified matched-ratio control",
+  "batches": {
+    "model": {
+      "size": 15,
+      "members": [
+        "Eq.subset",
+        "Multiset.disjoint_toFinset",
+        "Set.ite_eq_of_subset_left",
+        "coe_notMemRangeEquiv_symm",
+        "Set.pairwiseDisjoint_filter",
+        "Set.ite_eq_of_subset_right",
+        "Set.antitoneOn_iff_antitone",
+        "Set.monotoneOn_iff_monotone",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Set.pair_eq_pair_iff",
+        "Set.subset_ite",
+        "Set.union_empty_iff",
+        "Function.Injective.nonempty_apply_iff",
+        "Prop.compl_singleton"
+      ],
+      "known_rc2_failure_ratio": 0.867,
+      "namespace_dist": {
+        "Eq": 1,
+        "Multiset": 1,
+        "Set": 10,
+        "GENERAL_FRONTIER": 1,
+        "Function": 1,
+        "Prop": 1
+      },
+      "predicted_label_dist": {
+        "PROOF_SEARCH_DEPTH_GAP": 2,
+        "WX3_MULTISET_INDUCTION": 1,
+        "MISSING_BRIDGE_LEMMA_CANDIDATE": 9,
+        "BASELINE_DUPLICATE": 1,
+        "NO_CHEAP_ACTION": 2
+      },
+      "cluster_dist": {
+        "unknown__subset__subset": 1,
+        "Set__ite_if__subset": 3,
+        "Set__map_filter__arithmetic": 1,
+        "Set__iff__iff": 6,
+        "unknown__iff__iff": 1,
+        "unknown__compl__arithmetic": 1
+      }
+    },
+    "rule": {
+      "size": 15,
+      "members": [
+        "Multiset.toFinset_eq_singleton_iff",
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.diff_singleton_subset_iff",
+        "Set.ssubset_iff_insert",
+        "Set.ssubset_iff_sdiff_singleton",
+        "Set.ssubset_singleton_iff",
+        "Set.subset_insert_iff",
+        "Set.subset_pair_iff_eq",
+        "Set.subset_singleton_iff_eq",
+        "Multiset.toFinset_nsmul",
+        "Set.strictAntiOn_iff_strictAnti",
+        "Set.strictMonoOn_iff_strictMono",
+        "Set.diff_union_inter",
+        "Set.insert_diff_eq_singleton",
+        "Set.insert_diff_of_mem"
+      ],
+      "known_rc2_failure_ratio": 0.733,
+      "namespace_dist": {
+        "Multiset": 2,
+        "Set": 13
+      },
+      "predicted_label_dist": {
+        "MISSING_BRIDGE_LEMMA_CANDIDATE": 11,
+        "NO_CHEAP_ACTION": 1,
+        "BASELINE_DUPLICATE": 3
+      },
+      "cluster_dist": {
+        "Multiset__iff__iff": 1,
+        "Set__iff__iff": 10
+      }
+    },
+    "random": {
+      "size": 15,
+      "members": [
+        "Set.ite_inter_of_inter_eq",
+        "Set.eq_of_inclusion_surjective",
+        "Set.subset_insert_iff",
+        "Set.antitoneOn_iff_antitone",
+        "Set.subset_ite",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Set.ssubset_iff_insert",
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.ssubset_iff_sdiff_singleton",
+        "Set.union_empty_iff",
+        "Set.pairwiseDisjoint_filter",
+        "Eq.subset",
+        "Function.Injective.nonempty_apply_iff",
+        "Set.inclusion_right",
+        "Set.pair_diff_left"
+      ],
+      "known_rc2_failure_ratio": 0.867,
+      "namespace_dist": {
+        "Set": 13,
+        "Eq": 1,
+        "Function": 1
+      },
+      "predicted_label_dist": {
+        "NO_CHEAP_ACTION": 3,
+        "MISSING_BRIDGE_LEMMA_CANDIDATE": 8,
+        "PROOF_SEARCH_DEPTH_GAP": 2,
+        "BASELINE_DUPLICATE": 1,
+        "SET_ITE_SIMP": 1
+      },
+      "cluster_dist": {
+        "Set__ite_if__equality": 1,
+        "Set__other__equality": 1,
+        "Set__iff__iff": 7,
+        "Set__ite_if__subset": 1,
+        "Set__map_filter__arithmetic": 1,
+        "unknown__subset__subset": 1,
+        "unknown__iff__iff": 1
+      }
+    }
+  },
+  "strategy_definitions": {
+    "model": "router uncertainty + under-rep/depth-gap/missing-bridge + non-Set + failures-first",
+    "rule": "handcrafted: Set-iff cluster / toFinset-Finite / Multiset-induction / arithmetic / Set-ite",
+    "random": "seeded shuffle baseline"
+  },
+  "files": {
+    "model": "project/evolve/experiments/tr2/cases/tr2_model_selected_batch.json",
+    "rule": "project/evolve/experiments/tr2/cases/tr2_rule_selected_batch.json",
+    "random": "project/evolve/experiments/tr2/cases/tr2_random_baseline_batch.json"
+  },
+  "note": "All pool members are already TR1-labelled (fresh frontier exhausted); batches are re-probe / control targets used to compare SELECTION strategies, not to harvest novel theorems."
+}

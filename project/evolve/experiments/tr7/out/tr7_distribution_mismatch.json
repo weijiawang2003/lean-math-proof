@@ -1,0 +1,216 @@
+{
+  "generated_by": "scripts/tr7_distribution_mismatch.py",
+  "namespace_distribution": {
+    "tr6_batch": {
+      "Finset": 30,
+      "List": 29,
+      "Multiset": 22,
+      "Set": 21,
+      "Nat": 14,
+      "Option": 3,
+      "AntitoneOn": 2,
+      "MonotoneOn": 2,
+      "Equiv": 1,
+      "IsGLB": 1,
+      "IsLUB": 1,
+      "PLift": 1,
+      "bddAbove_def": 1,
+      "bddAbove_iff_subset_Iic": 1,
+      "bddBelow_bddAbove_iff_subset_Icc": 1,
+      "bddBelow_def": 1,
+      "bddBelow_iff_subset_Ici": 1,
+      "exists_mem_or": 1,
+      "exists_of_exists_mem": 1,
+      "isGreatest_union_iff": 1,
+      "isLeast_union_iff": 1,
+      "mem_lowerBounds_iff_subset_Ici": 1
+    },
+    "tr6_fresh_wins": {
+      "Multiset": 9,
+      "Set": 5,
+      "Finset": 2,
+      "List": 1,
+      "Nat": 1
+    },
+    "rc4r_fresh": {
+      "Finset": 16,
+      "Set": 13,
+      "List": 8,
+      "Multiset": 8,
+      "Antitone": 7,
+      "AntitoneOn": 7,
+      "Monotone": 7,
+      "MonotoneOn": 7,
+      "Nat": 6,
+      "Function": 3,
+      "BddAbove": 2,
+      "BddBelow": 2,
+      "BEx": 1,
+      "Bool": 1,
+      "Decidable": 1,
+      "Eq": 1,
+      "Equiv": 1,
+      "Exists": 1,
+      "ExistsUnique": 1,
+      "Iff": 1,
+      "Int": 1,
+      "IsGLB": 1,
+      "IsGreatest": 1,
+      "IsLUB": 1,
+      "IsLeast": 1,
+      "LE": 1,
+      "LT": 1,
+      "LinearOrder": 1,
+      "Ne": 1,
+      "Option": 1,
+      "OrderBot": 1,
+      "OrderDual": 1,
+      "OrderTop": 1,
+      "PLift": 1,
+      "PUnit": 1,
+      "PartialOrder": 1,
+      "Pi": 1,
+      "Preorder": 1,
+      "Prod": 1,
+      "Prop": 1,
+      "ScottContinuous": 1,
+      "Subtype": 1,
+      "Sum": 1,
+      "ULift": 1,
+      "and_forall_ne": 1,
+      "and_iff_not_or_not": 1,
+      "and_or_imp": 1,
+      "and_symm_left": 1,
+      "and_symm_right": 1,
+      "apply_dite": 1,
+      "strictMono_restrict": 1
+    }
+  },
+  "feature_profile": {
+    "tr6_batch": {
+      "has_disjoint": 0.285,
+      "has_subset": 0.277,
+      "has_iff": 0.92,
+      "has_mem": 0.401,
+      "has_singleton": 0.584,
+      "has_union_inter": 0.204,
+      "has_map_filter": 0.423,
+      "has_tofinset": 0.007,
+      "has_nat_arith": 0.219,
+      "has_order": 0.255,
+      "has_eq": 0.358,
+      "has_card": 0.182
+    },
+    "tr6_fresh_wins": {
+      "has_disjoint": 0.722,
+      "has_subset": 0.111,
+      "has_iff": 1.0,
+      "has_mem": 0.5,
+      "has_singleton": 0.889,
+      "has_union_inter": 0.333,
+      "has_map_filter": 0.167,
+      "has_tofinset": 0.0,
+      "has_nat_arith": 0.111,
+      "has_order": 0.056,
+      "has_eq": 0.222,
+      "has_card": 0.167
+    },
+    "rc4r_fresh": {
+      "has_disjoint": 0.016,
+      "has_subset": 0.088,
+      "has_iff": 0.184,
+      "has_mem": 0.152,
+      "has_singleton": 0.408,
+      "has_union_inter": 0.104,
+      "has_map_filter": 0.376,
+      "has_tofinset": 0.0,
+      "has_nat_arith": 0.2,
+      "has_order": 0.544,
+      "has_eq": 0.312,
+      "has_card": 0.096
+    }
+  },
+  "rc4_gate_firing_rate": {
+    "tr6_batch": 0.248,
+    "rc4r_fresh": 0.64
+  },
+  "rc4r_fresh_firing_component_split": {
+    "RC4A": 71,
+    "RC4C_residue": 7,
+    "RC4B": 2
+  },
+  "tr6_fresh_win_in_rc4r_fresh": 0,
+  "tr6_winning_pattern_representation": {
+    "represented_in_rc4r_fresh": [
+      {
+        "namespace": "Finset",
+        "family": "d2_simp_aesop",
+        "tr6_wins": 1,
+        "rc4r_fresh_same_ns": 16
+      },
+      {
+        "namespace": "Finset",
+        "family": "d1_simp_lemma",
+        "tr6_wins": 1,
+        "rc4r_fresh_same_ns": 16
+      },
+      {
+        "namespace": "List",
+        "family": "d2_simp_aesop",
+        "tr6_wins": 1,
+        "rc4r_fresh_same_ns": 8
+      },
+      {
+        "namespace": "Multiset",
+        "family": "d1_tauto",
+        "tr6_wins": 3,
+        "rc4r_fresh_same_ns": 8
+      },
+      {
+        "namespace": "Multiset",
+        "family": "d2_rw_aesop",
+        "tr6_wins": 1,
+        "rc4r_fresh_same_ns": 8
+      },
+      {
+        "namespace": "Multiset",
+        "family": "d2_simp_aesop",
+        "tr6_wins": 3,
+        "rc4r_fresh_same_ns": 8
+      },
+      {
+        "namespace": "Multiset",
+        "family": "d1_simp_lemma",
+        "tr6_wins": 2,
+        "rc4r_fresh_same_ns": 8
+      },
+      {
+        "namespace": "Nat",
+        "family": "d1_exact",
+        "tr6_wins": 1,
+        "rc4r_fresh_same_ns": 6
+      },
+      {
+        "namespace": "Set",
+        "family": "d2_simp_aesop",
+        "tr6_wins": 4,
+        "rc4r_fresh_same_ns": 13
+      },
+      {
+        "namespace": "Set",
+        "family": "def_unfold_simp",
+        "tr6_wins": 1,
+        "rc4r_fresh_same_ns": 13
+      }
+    ],
+    "missing_from_rc4r_fresh": [],
+    "pct_patterns_represented": 1.0
+  },
+  "oversampling_signal": {
+    "rc4r_fresh_RC4A_firing": 71,
+    "rc4r_fresh_RC4B+RC4C_firing": 9,
+    "tr6_fresh_wins_with_disjoint": 13,
+    "note": "RC4R fresh over-samples RC4A mono (broad gate); under-samples the Multiset/Set disjoint + subset-pair patterns TR6 won on."
+  },
+  "verdict": "PARTIAL_DISTRIBUTION_MISMATCH"
+}

@@ -1,0 +1,134 @@
+[sf1_run_eval] registered 'rc2_set_ite_fresh_holdout' with 20 theorems (dropped 0 without file_path)
+[sf1_run_eval] delegating: eval_rollout_all.py --theorem-set rc2_set_ite_fresh_holdout --policy-type hybrid_evolved --route-config project/evolve/routing/ns24_router.json --strategy-config project/evolve/experiments/rc1/rc1_production_wrapper.json --top-k 8 --max-steps 8 --out-dir project/evolve/experiments/rc2_candidates/set_ite_simp/out/literal_rc1/set_ite_fresh_holdout
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : rc2_set_ite_fresh_holdout (20 theorems)
+  Checkpoint  : clf_ckpt
+  Policy type : hybrid_evolved
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+RoutedGenerativePolicy: 4 routes, default=project/models/gen_v5_ns12_balanced
+  '^Nat\\.' -> project/models/gen_v5_ns15_nat_oversample
+  '^Int\\.' -> project/models/gen_v5_ns24_int_minimal_omega_10x
+  '^Finset\\.' -> project/models/gen_v5_ns21_finset_aesop_20x
+  '^Set\\.' -> project/models/gen_v5_ns12_balanced
+[1/20] Set.ite_compl
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 62197.63it/s]
+Loaded generative policy from project/models/gen_v5_ns12_balanced (type=seq2seq)
+  Base model: project/models/gen_v5
+  Unique tactics in training: 104
+       FAILED at step 3 (All top-11 tactics errored at step 3)
+
+[2/20] Set.ite_empty
+       FAILED at step 2 (All top-14 tactics errored at step 2)
+
+[3/20] Set.ite_empty_left
+       FAILED at step 4 (All top-11 tactics errored at step 4)
+
+[4/20] Set.ite_inter_of_inter_eq
+       FAILED at step 2 (All top-12 tactics errored at step 2)
+
+[5/20] Set.ite_left
+       FAILED at step 3 (All top-11 tactics errored at step 3)
+
+[6/20] Set.mem_dite
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[7/20] Set.mem_dite_empty_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[8/20] Set.mem_dite_empty_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[9/20] Set.Nonempty.subset_pair_iff_eq
+       FAILED at step 2 (All top-11 tactics errored at step 2)
+
+[10/20] Set.diff_union_inter
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: simp [Set.ext_iff] -> tauto
+
+[11/20] Set.eq_of_inclusion_surjective
+       FAILED at step 4 (All top-11 tactics errored at step 4)
+
+[12/20] Set.inclusion_inclusion
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[13/20] Set.inclusion_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: tauto
+
+[14/20] Set.inclusion_self
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[15/20] Set.insert_diff_eq_singleton
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[16/20] Set.insert_diff_of_mem
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[17/20] Set.insert_diff_of_not_mem
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[18/20] Set.insert_diff_self_of_not_mem
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp_all
+
+[19/20] Set.monotoneOn_iff_monotone
+       FAILED at step 2 (All top-12 tactics errored at step 2)
+
+[20/20] Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt
+       FAILED at step 2 (All top-11 tactics errored at step 2)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.ite_compl                            ERROR        3      
+  Set.ite_empty                            ERROR        2      
+  Set.ite_empty_left                       ERROR        4      
+  Set.ite_inter_of_inter_eq                ERROR        2      
+  Set.ite_left                             ERROR        3      
+  Set.mem_dite                             PROVED       1      aesop
+  Set.mem_dite_empty_left                  PROVED       1      aesop
+  Set.mem_dite_empty_right                 PROVED       1      aesop
+  Set.Nonempty.subset_pair_iff_eq          ERROR        2      
+  Set.diff_union_inter                     PROVED       2      tauto
+  Set.eq_of_inclusion_surjective           ERROR        4      
+  Set.inclusion_inclusion                  PROVED       1      aesop
+  Set.inclusion_right                      PROVED       1      tauto
+  Set.inclusion_self                       PROVED       1      aesop
+  Set.insert_diff_eq_singleton             PROVED       1      aesop
+  Set.insert_diff_of_mem                   PROVED       1      aesop
+  Set.insert_diff_of_not_mem               PROVED       1      aesop
+  Set.insert_diff_self_of_not_mem          PROVED       1      simp_all
+  Set.monotoneOn_iff_monotone              ERROR        2      
+  Set.not_monotoneOn_not_antitoneOn_iff_e  ERROR        2      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    20
+  Available:         20/20
+  Proved:            11/20  (55%)
+  Errored:           9/20
+  Exhausted:         0/20
+  Skipped:           0/20
+  Avg steps (proved): 1.1
+  Fallbacks used:     12
+  Proved by origin:   {'generative_topk': 11}
+  Denied tactics:     36 (per-theorem deny-list)
+================================================================
+
+Run artifacts: project/evolve/experiments/rc2_candidates/set_ite_simp/out/literal_rc1/set_ite_fresh_holdout/eval-75f614cf

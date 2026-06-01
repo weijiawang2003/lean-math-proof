@@ -1,0 +1,67 @@
+{
+  "policy": "rc1",
+  "sets": [
+    {
+      "set": "sf1_multiset_holdout_runnable",
+      "total": 3,
+      "solved": 2,
+      "env_not_found": 0,
+      "genuine_fail": 1,
+      "solved_names": [
+        "Multiset.toFinset_nsmul",
+        "Multiset.disjoint_toFinset"
+      ],
+      "genuine_fail_names": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ]
+    },
+    {
+      "set": "sf1_balanced_mini_runnable",
+      "total": 6,
+      "solved": 2,
+      "env_not_found": 0,
+      "genuine_fail": 4,
+      "solved_names": [
+        "coe_notMemRangeEquiv_symm",
+        "Multiset.toFinset_nsmul"
+      ],
+      "genuine_fail_names": [
+        "Prop.compl_singleton",
+        "Function.Injective.nonempty_apply_iff",
+        "Set.ssubset_singleton_iff",
+        "Eq.subset"
+      ]
+    },
+    {
+      "set": "sf1_frontier_runnable_subset",
+      "total": 20,
+      "solved": 5,
+      "env_not_found": 0,
+      "genuine_fail": 15,
+      "solved_names": [
+        "Set.mem_dite_empty_left",
+        "Set.inclusion_self",
+        "Set.inclusion_right",
+        "Set.pair_diff_left",
+        "Set.inclusion_inclusion"
+      ],
+      "genuine_fail_names": [
+        "Set.ssubset_singleton_iff",
+        "Set.ite_eq_of_subset_left",
+        "Set.antitoneOn_iff_antitone",
+        "Set.ite_inter_self",
+        "Set.ite_inter_compl_self",
+        "Set.subset_insert_iff",
+        "Set.ite_right",
+        "Set.subset_singleton_iff_eq",
+        "Set.pair_eq_pair_iff",
+        "Set.ite_inter",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.diff_singleton_subset_iff",
+        "Set.ite_empty_right",
+        "Set.ite_eq_of_subset_right",
+        "Set.union_empty_iff"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "generated_by": "scripts/tr7_replay_rc4_on_tr6_wins.py",
+  "num_wins": 18,
+  "classification_histogram": {
+    "RC4_MISSES_GATE": 4,
+    "RC4_REPRODUCES_TR6_WIN": 10,
+    "RC4_ACTION_FAILS_BUT_TR6_PROGRAM_WORKS": 4
+  },
+  "rc4_reproduces": 10,
+  "records": [
+    {
+      "full_name": "Finset.biUnion_subset_iff_forall_subset",
+      "namespace": "Finset",
+      "tr6_winning_program": "simp [Finset.biUnion_subset] <;> aesop",
+      "tr6_winning_lemma": "Finset.biUnion_subset",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "failed",
+      "rc4_gate_fired": false,
+      "rc4_static_tactics": [],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": null,
+      "classification": "RC4_MISSES_GATE"
+    },
+    {
+      "full_name": "Finset.image_subset_iff",
+      "namespace": "Finset",
+      "tr6_winning_program": "simp [Finset.subset_iff]",
+      "tr6_winning_lemma": "Finset.subset_iff",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "failed",
+      "rc4_gate_fired": false,
+      "rc4_static_tactics": [],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": null,
+      "classification": "RC4_MISSES_GATE"
+    },
+    {
+      "full_name": "List.Forall.imp",
+      "namespace": "List",
+      "tr6_winning_program": "simp [List.forall_iff_forall_mem] <;> aesop",
+      "tr6_winning_lemma": "List.forall_iff_forall_mem",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "solved",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [List.forall_iff_forall_mem]",
+        "simp [List.forall_iff_forall_mem] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": true,
+      "classification": "RC4_REPRODUCES_TR6_WIN"
+    },
+    {
+      "full_name": "Multiset.Disjoint.symm",
+      "namespace": "Multiset",
+      "tr6_winning_program": "tauto",
+      "tr6_winning_lemma": null,
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "failed",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [Multiset.disjoint_left]",
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right]",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": false,
+      "classification": "RC4_ACTION_FAILS_BUT_TR6_PROGRAM_WORKS"
+    },
+    {
+      "full_name": "Multiset.add_eq_union_right_of_le",
+      "namespace": "Multiset",
+      "tr6_winning_program": "rw [Multiset.add_eq_union_left_of_le] <;> aesop",
+      "tr6_winning_lemma": "Multiset.add_eq_union_left_of_le",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "failed",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [Multiset.disjoint_left]",
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right]",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": false,
+      "classification": "RC4_ACTION_FAILS_BUT_TR6_PROGRAM_WORKS"
+    },
+    {
+      "full_name": "Multiset.disjoint_add_left",
+      "namespace": "Multiset",
+      "tr6_winning_program": "simp [Multiset.disjoint_left] <;> aesop",
+      "tr6_winning_lemma": "Multiset.disjoint_left",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "solved",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [Multiset.disjoint_left]",
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right]",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": true,
+      "classification": "RC4_REPRODUCES_TR6_WIN"
+    },
+    {
+      "full_name": "Multiset.disjoint_add_right",
+      "namespace": "Multiset",
+      "tr6_winning_program": "simp [Multiset.disjoint_right] <;> aesop",
+      "tr6_winning_lemma": "Multiset.disjoint_right",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "solved",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [Multiset.disjoint_left]",
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right]",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": true,
+      "classification": "RC4_REPRODUCES_TR6_WIN"
+    },
+    {
+      "full_name": "Multiset.disjoint_comm",
+      "namespace": "Multiset",
+      "tr6_winning_program": "tauto",
+      "tr6_winning_lemma": null,
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "failed",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [Multiset.disjoint_left]",
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right]",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": false,
+      "classification": "RC4_ACTION_FAILS_BUT_TR6_PROGRAM_WORKS"
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_left",
+      "namespace": "Multiset",
+      "tr6_winning_program": "simp [Multiset.disjoint_left] <;> aesop",
+      "tr6_winning_lemma": "Multiset.disjoint_left",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "solved",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [Multiset.disjoint_left]",
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right]",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": true,
+      "classification": "RC4_REPRODUCES_TR6_WIN"
+    },
+    {
+      "full_name": "Multiset.disjoint_right",
+      "namespace": "Multiset",
+      "tr6_winning_program": "tauto",
+      "tr6_winning_lemma": null,
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "solved",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [Multiset.disjoint_left]",
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right]",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": true,
+      "classification": "RC4_REPRODUCES_TR6_WIN"
+    },
+    {
+      "full_name": "Multiset.singleton_disjoint",
+      "namespace": "Multiset",
+      "tr6_winning_program": "simp [Multiset.disjoint_left]",
+      "tr6_winning_lemma": "Multiset.disjoint_left",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "solved",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [Multiset.disjoint_left]",
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right]",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": true,
+      "classification": "RC4_REPRODUCES_TR6_WIN"
+    },
+    {
+      "full_name": "Multiset.zero_disjoint",
+      "namespace": "Multiset",
+      "tr6_winning_program": "simp [Multiset.disjoint_left]",
+      "tr6_winning_lemma": "Multiset.disjoint_left",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "solved",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [Multiset.disjoint_left]",
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right]",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": true,
+      "classification": "RC4_REPRODUCES_TR6_WIN"
+    },
+    {
+      "full_name": "Nat.sqrt_pos",
+      "namespace": "Nat",
+      "tr6_winning_program": "exact Nat.le_sqrt",
+      "tr6_winning_lemma": "Nat.le_sqrt",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "failed",
+      "rc4_gate_fired": false,
+      "rc4_static_tactics": [],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": null,
+      "classification": "RC4_MISSES_GATE"
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_left",
+      "namespace": "Set",
+      "tr6_winning_program": "simp [Set.disjoint_left] <;> aesop",
+      "tr6_winning_lemma": "Set.disjoint_left",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "solved",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [Set.disjoint_left]",
+        "simp [Set.disjoint_left] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": true,
+      "classification": "RC4_REPRODUCES_TR6_WIN"
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_right",
+      "namespace": "Set",
+      "tr6_winning_program": "simp [Set.disjoint_left] <;> aesop",
+      "tr6_winning_lemma": "Set.disjoint_left",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "solved",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [Set.disjoint_left]",
+        "simp [Set.disjoint_left] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": true,
+      "classification": "RC4_REPRODUCES_TR6_WIN"
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_left",
+      "namespace": "Set",
+      "tr6_winning_program": "simp [Set.disjoint_left] <;> aesop",
+      "tr6_winning_lemma": "Set.disjoint_left",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "solved",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [Set.disjoint_left]",
+        "simp [Set.disjoint_left] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": true,
+      "classification": "RC4_REPRODUCES_TR6_WIN"
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "namespace": "Set",
+      "tr6_winning_program": "simp [Set.disjoint_left] <;> aesop",
+      "tr6_winning_lemma": "Set.disjoint_left",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "failed",
+      "rc4_gate_fired": true,
+      "rc4_static_tactics": [
+        "simp [Set.disjoint_left]",
+        "simp [Set.disjoint_left] <;> aesop"
+      ],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": true,
+      "classification": "RC4_ACTION_FAILS_BUT_TR6_PROGRAM_WORKS"
+    },
+    {
+      "full_name": "Set.mapsTo_singleton",
+      "namespace": "Set",
+      "tr6_winning_program": "simp [Set.MapsTo]",
+      "tr6_winning_lemma": "Set.MapsTo",
+      "rc2_status": "failed",
+      "rc4_wrapper_status": "failed",
+      "rc4_gate_fired": false,
+      "rc4_static_tactics": [],
+      "tr6_program_reproduces": true,
+      "rc4_action_single_shot_solves": null,
+      "classification": "RC4_MISSES_GATE"
+    }
+  ]
+}

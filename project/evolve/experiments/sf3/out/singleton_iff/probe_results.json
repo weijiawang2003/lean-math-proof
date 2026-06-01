@@ -1,0 +1,146 @@
+{
+  "target": "Multiset.toFinset_eq_singleton_iff",
+  "num_probes": 13,
+  "num_solved": 0,
+  "solved_probe": null,
+  "initial_goal": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝ : DecidableEq α\ns✝ t s : Multiset α\na : α\n⊢ s.toFinset = {a} ↔ card s ≠ 0 ∧ s = card s • {a}",
+  "live": {
+    "available": true,
+    "file_path_used": "Mathlib/Data/Finset/Basic.lean",
+    "setup_error": null
+  },
+  "outcomes": [
+    {
+      "family": "F1_baselines",
+      "probe": "simp",
+      "label": "trivial_existing_tactic",
+      "known_bad": false,
+      "solved": false,
+      "outcome": "proof_failed",
+      "produced_induction_tangle": true
+    },
+    {
+      "family": "F1_baselines",
+      "probe": "simp_all",
+      "label": "trivial_existing_tactic",
+      "known_bad": false,
+      "solved": false,
+      "outcome": "proof_failed",
+      "produced_induction_tangle": true
+    },
+    {
+      "family": "F2_iff_decomposition",
+      "probe": "constructor <;> intro h <;> simp_all",
+      "label": "reusable_probe_candidate",
+      "known_bad": false,
+      "solved": false,
+      "outcome": "max_recursion",
+      "error": "tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information",
+      "produced_induction_tangle": true
+    },
+    {
+      "family": "F2_iff_decomposition",
+      "probe": "refine ⟨fun H => ?_, fun H => ?_⟩ <;> simp_all",
+      "label": "reusable_probe_candidate",
+      "known_bad": false,
+      "solved": false,
+      "outcome": "max_recursion",
+      "error": "tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information",
+      "produced_induction_tangle": true
+    },
+    {
+      "family": "F3_finset_singleton_rewrite",
+      "probe": "simp only [Finset.eq_singleton_iff_unique_mem, Multiset.mem_toFinset]",
+      "label": "reusable_probe_candidate",
+      "known_bad": false,
+      "solved": false,
+      "outcome": "proof_failed",
+      "produced_induction_tangle": true
+    },
+    {
+      "family": "F3_finset_singleton_rewrite",
+      "probe": "constructor <;> intro h <;> simp_all [Finset.eq_singleton_iff_unique_mem, Multiset.mem_toFinset]",
+      "label": "reusable_probe_candidate",
+      "known_bad": false,
+      "solved": false,
+      "outcome": "max_recursion",
+      "error": "tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information",
+      "produced_induction_tangle": true
+    },
+    {
+      "family": "F4_membership_bridge",
+      "probe": "simp only [Multiset.mem_toFinset, Multiset.mem_singleton]",
+      "label": "reusable_probe_candidate",
+      "known_bad": false,
+      "solved": false,
+      "outcome": "proof_failed",
+      "error": "simp made no progress",
+      "produced_induction_tangle": true
+    },
+    {
+      "family": "F4_membership_bridge",
+      "probe": "constructor <;> intro h <;> simp_all [Multiset.mem_toFinset, Multiset.mem_singleton]",
+      "label": "reusable_probe_candidate",
+      "known_bad": false,
+      "solved": false,
+      "outcome": "max_recursion",
+      "error": "tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information",
+      "produced_induction_tangle": true
+    },
+    {
+      "family": "F5_official_dep_bridge_source_inspired",
+      "probe": "simp [Multiset.toFinset_nsmul, Multiset.toFinset_singleton, Multiset.toFinset_zero]",
+      "label": "source_inspired",
+      "known_bad": false,
+      "solved": false,
+      "outcome": "proof_failed",
+      "produced_induction_tangle": true
+    },
+    {
+      "family": "F5_official_dep_bridge_source_inspired",
+      "probe": "constructor <;> intro h <;> simp_all [Multiset.toFinset_nsmul, Multiset.toFinset_singleton, Multiset.toFinset_zero, Multiset.mem_toFinset, Multiset.mem_singleton]",
+      "label": "source_inspired",
+      "known_bad": false,
+      "solved": false,
+      "outcome": "max_recursion",
+      "error": "tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information",
+      "produced_induction_tangle": true
+    },
+    {
+      "family": "F5_official_dep_bridge_source_inspired",
+      "probe": "constructor <;> intro h <;> simp_all [Multiset.toFinset_nsmul, Multiset.toFinset_singleton, Multiset.mem_toFinset]",
+      "label": "source_inspired",
+      "known_bad": false,
+      "solved": false,
+      "outcome": "max_recursion",
+      "error": "tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information",
+      "produced_induction_tangle": true
+    },
+    {
+      "family": "F6_known_bad_induction_diagnostic",
+      "probe": "induction s using Multiset.induction_on <;> simp_all",
+      "label": "theorem_specific_hack",
+      "known_bad": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "produced_induction_tangle": true
+    },
+    {
+      "family": "F7_source_copy_multiline",
+      "probe": "refine ⟨fun H => ⟨fun h => ?_, ?_⟩, fun H => ?_⟩\n  · rw [h, toFinset_zero] at H\n    exact Finset.singleton_ne_empty _ H.symm\n  · ext x\n    simp only [mem_toFinset, H, mem_singleton]\n    rw [← H]\n    simp [Multiset.mem_toFinset]\n  · rw [H.2, toFinset_nsmul _ _ H.1, toFinset_singleton]",
+      "label": "source_theorem_copy",
+      "known_bad": false,
+      "solved": false,
+      "outcome": "parse_error",
+      "error": "<stdin>:2:26: expected end of input",
+      "produced_induction_tangle": true
+    }
+  ],
+  "outcome_histogram": {
+    "proof_failed": 6,
+    "max_recursion": 6,
+    "parse_error": 1
+  },
+  "design": "single Dojo session; per-probe SIGALRM + checkpoint",
+  "note": "No solve is a confirmed win; NS23 minimal-sufficient relabel + deterministic reproduction required before promotion. RC1/production configs not modified."
+}

@@ -1,0 +1,11 @@
+{
+  "variant": "E_explicit_sequence_sx3",
+  "kind": "off_by_default_sequence_candidate",
+  "tactic": "simp [Set.ite] <;> aesop",
+  "gate": {
+    "name_prefix": [
+      "Set.ite"
+    ]
+  },
+  "status": "NOT RC2; separate SX3 depth-2 sequence candidate requiring its own validation (literal-RC1 + minimal relabel)."
+}

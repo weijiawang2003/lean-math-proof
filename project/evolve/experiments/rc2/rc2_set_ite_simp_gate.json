@@ -1,0 +1,29 @@
+{
+  "component": "SET_ITE_SIMP",
+  "tactic": "simp [Set.ite]",
+  "mechanism": "fallback_tactics + theorem_name_tactic_gates (schema-native)",
+  "name_prefix_gate": [
+    "Set.ite"
+  ],
+  "intended_gate": "Set + ite/if goal, not Nat/Int/Multiset, <=1 emission/theorem",
+  "note": "The name-prefix gate ('Set.ite') captures the 5 validated wins (all names start with Set.ite). Base-model output is never gated, so RC1 behavior is preserved everywhere else.",
+  "mined_support": {
+    "true_set_ite_simp_wins": 5,
+    "theorems": [
+      "Set.ite_empty_right",
+      "Set.ite_right",
+      "Set.ite_empty",
+      "Set.ite_empty_left",
+      "Set.ite_left"
+    ]
+  },
+  "disabled_speculative_gates": [
+    "SET_EXT_SIMP",
+    "SET_SUBSET_ANTISYMM",
+    "SET_IFF_CONSTRUCTOR",
+    "SET_EXT_BYCASES",
+    "SET_RW_BRIDGE",
+    "SOURCE_SPECIFIC",
+    "broad_set_aesop"
+  ]
+}

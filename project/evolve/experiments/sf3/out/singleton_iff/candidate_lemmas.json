@@ -1,0 +1,76 @@
+{
+  "source_failure": "Multiset.toFinset_eq_singleton_iff",
+  "honest_summary": "The official proof (Finset/Dedup.lean:117) uses ONLY pre-existing Mathlib lemmas (toFinset_zero, singleton_ne_empty, mem_toFinset, mem_singleton, toFinset_nsmul, toFinset_singleton). Therefore there is NO genuinely missing lemma — candidate lemmas 1-4 are duplicates/corollaries of existing results. The only non-duplicate, promising item is a TACTIC FAMILY (candidate 5), tested live in Part 3, not a new lemma.",
+  "candidates": [
+    {
+      "candidate_name": "multiset_toFinset_eq_singleton_membership_iff",
+      "lean_statement_sketch": "theorem (s : Multiset α) (a : α) : s.toFinset = {a} ↔ (∀ x, x ∈ s ↔ x = a) ∧ s ≠ 0",
+      "typecheck_status": "untested",
+      "proof_status": "untested",
+      "proof_attempts": [],
+      "duplicates_or_nearby_existing": [
+        "Multiset.toFinset_eq_singleton_iff (the target itself, different RHS form)",
+        "Finset.eq_singleton_iff_unique_mem",
+        "Multiset.mem_toFinset"
+      ],
+      "source_failure": "Multiset.toFinset_eq_singleton_iff",
+      "expected_downstream_utility": "membership characterization of toFinset=singleton; would let `ext`+simp close membership half",
+      "risk": "duplicate"
+    },
+    {
+      "candidate_name": "multiset_toFinset_singleton_bridge",
+      "lean_statement_sketch": "theorem (a : α) : ({a} : Multiset α).toFinset = {a}",
+      "typecheck_status": "untested",
+      "proof_status": "untested",
+      "proof_attempts": [],
+      "duplicates_or_nearby_existing": [
+        "Multiset.toFinset_singleton (EXISTS; used verbatim in official proof)"
+      ],
+      "source_failure": "Multiset.toFinset_eq_singleton_iff",
+      "expected_downstream_utility": "used in the reverse direction of the official proof",
+      "risk": "duplicate"
+    },
+    {
+      "candidate_name": "multiset_toFinset_nsmul_bridge",
+      "lean_statement_sketch": "theorem (n : ℕ) (s : Multiset α) (h : n ≠ 0) : (n • s).toFinset = s.toFinset",
+      "typecheck_status": "untested",
+      "proof_status": "untested",
+      "proof_attempts": [],
+      "duplicates_or_nearby_existing": [
+        "Multiset.toFinset_nsmul (EXISTS; this is literally holdout theorem #1, RC1-proved by aesop; used verbatim in official proof of the singleton theorem)"
+      ],
+      "source_failure": "Multiset.toFinset_eq_singleton_iff",
+      "expected_downstream_utility": "the reverse direction rewrites with exactly this; central dependency",
+      "risk": "duplicate"
+    },
+    {
+      "candidate_name": "multiset_card_smul_singleton_eq_iff",
+      "lean_statement_sketch": "theorem (s : Multiset α) (a : α) : s = card s • {a} ↔ (∀ x ∈ s, x = a)",
+      "typecheck_status": "untested",
+      "proof_status": "untested",
+      "proof_attempts": [],
+      "duplicates_or_nearby_existing": [
+        "Multiset.eq_replicate (card+forall form)",
+        "Multiset.eq_replicate_card"
+      ],
+      "source_failure": "Multiset.toFinset_eq_singleton_iff",
+      "expected_downstream_utility": "characterizes the `s = card s • {a}` RHS conjunct; likely already an eq_replicate corollary",
+      "risk": "duplicate"
+    },
+    {
+      "candidate_name": "split_iff_then_ext_membership_TACTIC_FAMILY",
+      "lean_statement_sketch": "(NOT A LEMMA) tactic family: `constructor <;> intro h <;> simp_all [<toFinset/membership lemmas>]`, or `refine ⟨…⟩` then per-branch `ext x; simp only [mem_toFinset, mem_singleton]`, gated to toFinset/Finset membership-iff goals; explicitly NOT routed through Multiset.induction_on.",
+      "typecheck_status": "n/a",
+      "proof_status": "tested_in_part3_probe_ladder",
+      "proof_attempts": [
+        "see probe_results.json"
+      ],
+      "duplicates_or_nearby_existing": [
+        "WX3 oracle (but that is induction-based and mis-fires here)"
+      ],
+      "source_failure": "Multiset.toFinset_eq_singleton_iff",
+      "expected_downstream_utility": "the REAL reusable capability suggested by this failure; reusable across toFinset membership-iff goals",
+      "risk": "promising"
+    }
+  ]
+}

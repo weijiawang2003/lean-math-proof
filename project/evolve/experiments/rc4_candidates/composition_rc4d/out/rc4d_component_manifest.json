@@ -1,0 +1,248 @@
+{
+  "generated_by": "scripts/rc4d_build_component_manifest.py",
+  "family": "rc4d_composition",
+  "base": "RC2",
+  "ordering": [
+    "RC4A",
+    "RC4B",
+    "RC4C_residue"
+  ],
+  "components": {
+    "RC4A": {
+      "decision": "RC4A_CANDIDATE_CONFIRMED",
+      "included_actions": [
+        {
+          "name": "def_unfold_simp_allowlist",
+          "emit": "simp [<allowlisted defs in goal>]",
+          "allowlist": [
+            "Monotone",
+            "MonotoneOn",
+            "Antitone",
+            "AntitoneOn",
+            "StrictMono",
+            "StrictMonoOn",
+            "StrictAnti",
+            "StrictAntiOn",
+            "Finset.disjUnion"
+          ]
+        }
+      ],
+      "known_wins": [
+        "Finset.mem_disjUnion",
+        "Set.antitoneOn_iff_antitone",
+        "Set.monotoneOn_iff_monotone",
+        "Set.strictAntiOn_iff_strictAnti",
+        "Set.strictMonoOn_iff_strictMono"
+      ],
+      "num_known_wins": 5
+    },
+    "RC4B": {
+      "decision": "RC4B_CANDIDATE_CONFIRMED",
+      "included_actions": [
+        {
+          "name": "SET_DISJOINT_LEFT_SIMP",
+          "tactic": "simp [Set.disjoint_left]",
+          "lemma": "Set.disjoint_left"
+        },
+        {
+          "name": "SET_DISJOINT_LEFT_SIMP_AESOP",
+          "tactic": "simp [Set.disjoint_left] <;> aesop",
+          "lemma": "Set.disjoint_left"
+        },
+        {
+          "name": "MULTISET_DISJOINT_LEFT_SIMP",
+          "tactic": "simp [Multiset.disjoint_left]",
+          "lemma": "Multiset.disjoint_left"
+        },
+        {
+          "name": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+          "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+          "lemma": "Multiset.disjoint_left"
+        }
+      ],
+      "bridge_lemmas": [
+        "Set.disjoint_left",
+        "Multiset.disjoint_left"
+      ],
+      "known_wins": [
+        "Multiset.disjoint_add_left",
+        "Multiset.disjoint_add_right",
+        "Multiset.disjoint_cons_left",
+        "Multiset.disjoint_iff_ne",
+        "Multiset.disjoint_right",
+        "Multiset.disjoint_singleton",
+        "Multiset.disjoint_union_left",
+        "Multiset.singleton_disjoint",
+        "Multiset.zero_disjoint",
+        "Set.disjoint_iUnion_left",
+        "Set.disjoint_iUnion_right",
+        "Set.disjoint_iff_forall_ne",
+        "Set.disjoint_right",
+        "Set.disjoint_sUnion_left",
+        "Set.disjoint_sUnion_right",
+        "Set.disjoint_singleton_left"
+      ],
+      "num_known_wins": 16,
+      "fresh_holdout_wins": [
+        "Multiset.disjoint_add_right",
+        "Multiset.disjoint_iff_ne",
+        "Multiset.disjoint_right",
+        "Multiset.disjoint_singleton",
+        "Multiset.disjoint_union_left"
+      ]
+    },
+    "RC4C_residue": {
+      "decision": "RC4C_CONFIRMED_WITH_RC4B_OVERLAP",
+      "residue_lemma_decisions": [
+        {
+          "lemma": "Multiset.disjoint_right",
+          "action": "MULTISET_DISJOINT_RIGHT_D2",
+          "decision": "INCLUDE_AS_DEPTH2_SIMP_AESOP",
+          "theorem_wins": [
+            "Multiset.disjoint_add_left",
+            "Multiset.disjoint_add_right",
+            "Multiset.disjoint_iff_ne",
+            "Multiset.disjoint_union_left",
+            "Multiset.singleton_disjoint"
+          ],
+          "fresh_wins": [
+            "Multiset.disjoint_iff_ne",
+            "Multiset.disjoint_union_left",
+            "Multiset.singleton_disjoint"
+          ],
+          "deploy_tactics": [
+            "simp [Multiset.disjoint_right]",
+            "simp [Multiset.disjoint_right] <;> aesop"
+          ]
+        },
+        {
+          "lemma": "Set.subset_pair_iff_eq",
+          "action": "SET_SUBSET_PAIR_D2",
+          "decision": "INCLUDE_AS_DEPTH2_SIMP_AESOP",
+          "theorem_wins": [
+            "Set.Nonempty.subset_pair_iff_eq"
+          ],
+          "fresh_wins": [],
+          "deploy_tactics": [
+            "simp [Set.subset_pair_iff_eq]",
+            "simp [Set.subset_pair_iff_eq] <;> aesop"
+          ]
+        },
+        {
+          "lemma": "List.forall_iff_forall_mem",
+          "action": "LIST_FORALL_D2",
+          "decision": "INCLUDE_AS_DEPTH2_SIMP_AESOP",
+          "theorem_wins": [
+            "List.Forall.imp"
+          ],
+          "fresh_wins": [],
+          "deploy_tactics": [
+            "simp [List.forall_iff_forall_mem]",
+            "simp [List.forall_iff_forall_mem] <;> aesop"
+          ]
+        }
+      ],
+      "included_actions": [
+        {
+          "name": "MULTISET_DISJOINT_RIGHT_D2",
+          "lemma": "Multiset.disjoint_right",
+          "decision": "INCLUDE_AS_DEPTH2_SIMP_AESOP",
+          "tactics": [
+            "simp [Multiset.disjoint_right]",
+            "simp [Multiset.disjoint_right] <;> aesop"
+          ]
+        },
+        {
+          "name": "SET_SUBSET_PAIR_D2",
+          "lemma": "Set.subset_pair_iff_eq",
+          "decision": "INCLUDE_AS_DEPTH2_SIMP_AESOP",
+          "tactics": [
+            "simp [Set.subset_pair_iff_eq]",
+            "simp [Set.subset_pair_iff_eq] <;> aesop"
+          ]
+        },
+        {
+          "name": "LIST_FORALL_D2",
+          "lemma": "List.forall_iff_forall_mem",
+          "decision": "INCLUDE_AS_DEPTH2_SIMP_AESOP",
+          "tactics": [
+            "simp [List.forall_iff_forall_mem]",
+            "simp [List.forall_iff_forall_mem] <;> aesop"
+          ]
+        }
+      ],
+      "excluded_overlap_rc4b": [
+        {
+          "action": "SET_DISJOINT_LEFT_D2",
+          "lemma": "Set.disjoint_left",
+          "reason": "EXCLUDE_OVERLAP",
+          "overlap_family": "RC4B"
+        },
+        {
+          "action": "MULTISET_DISJOINT_LEFT_D2",
+          "lemma": "Multiset.disjoint_left",
+          "reason": "EXCLUDE_OVERLAP",
+          "overlap_family": "RC4B"
+        }
+      ],
+      "excluded_simp_only_duplicate": [
+        {
+          "action": "FINSET_BIUNION_SUBSET_D2",
+          "lemma": "Finset.biUnion_subset",
+          "reason": "EXCLUDE_DUPLICATE",
+          "detail": "SIMP_ONLY_DUPLICATE: simp [Finset.biUnion_subset] closes Finset.biUnion_subset_iff_forall_subset alone (depth-1)."
+        }
+      ],
+      "excluded_schema_nonreproducible": [
+        {
+          "action": "RC4C fused `<;> aesop`-only deployment",
+          "lemma": "(all residue)",
+          "reason": "schema_nonreproducible_in_original_form",
+          "detail": "RC4C schema smoke solved 0/12 known via the fused combinator. RC4D re-deploys residue RC4B-style (bare simp + combinator)."
+        }
+      ],
+      "residue_theorem_wins": [
+        "List.Forall.imp",
+        "Multiset.disjoint_add_left",
+        "Multiset.disjoint_add_right",
+        "Multiset.disjoint_iff_ne",
+        "Multiset.disjoint_union_left",
+        "Multiset.singleton_disjoint",
+        "Set.Nonempty.subset_pair_iff_eq"
+      ],
+      "theorem_overlap_with_rc4b": [
+        "Multiset.disjoint_add_left",
+        "Multiset.disjoint_add_right",
+        "Multiset.disjoint_iff_ne",
+        "Multiset.disjoint_union_left",
+        "Multiset.singleton_disjoint"
+      ],
+      "theorem_additive_over_rc4b": [
+        "List.Forall.imp",
+        "Set.Nonempty.subset_pair_iff_eq"
+      ],
+      "note": "RC4C_residue Multiset.disjoint_right wins land on theorems RC4B already solves via disjoint_left -> credited to RC4B under ordering. Genuinely-additive theorem coverage = ['List.Forall.imp', 'Set.Nonempty.subset_pair_iff_eq']"
+    }
+  },
+  "expected_overlap": {
+    "rc4b_known_wins": 16,
+    "rc4c_residue_theorem_wins": 7,
+    "rc4b_rc4c_theorem_overlap": [
+      "Multiset.disjoint_add_left",
+      "Multiset.disjoint_add_right",
+      "Multiset.disjoint_iff_ne",
+      "Multiset.disjoint_union_left",
+      "Multiset.singleton_disjoint"
+    ],
+    "rc4c_residue_additive_over_rc4b": [
+      "List.Forall.imp",
+      "Set.Nonempty.subset_pair_iff_eq"
+    ],
+    "expected_credited_components": {
+      "RC4A": 5,
+      "RC4B": 16,
+      "RC4C_residue_additive": 2
+    }
+  },
+  "total_distinct_actions": 8
+}

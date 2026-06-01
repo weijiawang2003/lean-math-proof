@@ -1,0 +1,50 @@
+{
+  "Nat.add_eq_one_iff": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+  },
+  "Nat.add_eq_right": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+  },
+  "Nat.add_mod_eq_add_mod_left": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+  },
+  "Nat.add_mod_eq_add_mod_right": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+  },
+  "Nat.div_le_div_right": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "by_cases hc : c = 0 <;> [simp [hc]; exact (Nat.le_div_iff_mul_le' (Nat.pos_of_ne_zero hc)).2 (Nat.le_trans (Nat.div_mul_le_self _ _) h)]",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+  },
+  "Nat.div_lt_iff_lt_mul'": {
+    "status": "solved",
+    "num_steps": 3,
+    "winning_tactic": "simp_all",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+  },
+  "Nat.half_le_of_sub_le_half": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "omega",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+  },
+  "Nat.le_and_le_add_one_iff": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+  }
+}

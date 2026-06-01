@@ -1,0 +1,81 @@
+{
+  "generated_by": "scripts/rc4a_minimal_attribution.py",
+  "num_new_wins": 5,
+  "classification_histogram": {
+    "TRUE_DEF_UNFOLD_SIMP_WIN": 5
+  },
+  "num_true_def_unfold_wins": 5,
+  "true_def_unfold_win_targets": [
+    "Finset.mem_disjUnion",
+    "Set.antitoneOn_iff_antitone",
+    "Set.monotoneOn_iff_monotone",
+    "Set.strictAntiOn_iff_strictAnti",
+    "Set.strictMonoOn_iff_strictMono"
+  ],
+  "records": [
+    {
+      "full_name": "Finset.mem_disjUnion",
+      "candidate_tactic": "simp [Finset.disjUnion]",
+      "matched_defs": [
+        "Finset.disjUnion"
+      ],
+      "controls_solved": [],
+      "candidate_solved": true,
+      "classification": "TRUE_DEF_UNFOLD_SIMP_WIN",
+      "credited": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "candidate_tactic": "simp [Antitone, AntitoneOn]",
+      "matched_defs": [
+        "Antitone",
+        "AntitoneOn"
+      ],
+      "controls_solved": [],
+      "candidate_solved": true,
+      "classification": "TRUE_DEF_UNFOLD_SIMP_WIN",
+      "credited": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "candidate_tactic": "simp [Monotone, MonotoneOn]",
+      "matched_defs": [
+        "Monotone",
+        "MonotoneOn"
+      ],
+      "controls_solved": [],
+      "candidate_solved": true,
+      "classification": "TRUE_DEF_UNFOLD_SIMP_WIN",
+      "credited": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "candidate_tactic": "simp [StrictAnti, StrictAntiOn]",
+      "matched_defs": [
+        "StrictAnti",
+        "StrictAntiOn"
+      ],
+      "controls_solved": [],
+      "candidate_solved": true,
+      "classification": "TRUE_DEF_UNFOLD_SIMP_WIN",
+      "credited": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "candidate_tactic": "simp [StrictMono, StrictMonoOn]",
+      "matched_defs": [
+        "StrictMono",
+        "StrictMonoOn"
+      ],
+      "controls_solved": [],
+      "candidate_solved": true,
+      "classification": "TRUE_DEF_UNFOLD_SIMP_WIN",
+      "credited": true,
+      "setup_error": null
+    }
+  ]
+}

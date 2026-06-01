@@ -1,0 +1,96 @@
+[
+  {
+    "theorem": "Nat.mod_eq_iff_lt",
+    "num_steps": 8,
+    "advancing_tactics": [
+      {
+        "tactic": "simp only [← Nat.not_le, Nat.pow_le_pow_iff_left hn]",
+        "origin": "tactic_template",
+        "step": 1
+      },
+      {
+        "tactic": "simp [List.length_cons]",
+        "origin": "generative_topk",
+        "step": 2
+      },
+      {
+        "tactic": "simp only [← Nat.not_le, Nat.pow_le_pow_iff_left hn]",
+        "origin": "tactic_template",
+        "step": 3
+      },
+      {
+        "tactic": "simp [List.length_cons]",
+        "origin": "generative_topk",
+        "step": 4
+      },
+      {
+        "tactic": "simp only [← Nat.not_le, Nat.pow_le_pow_iff_left hn]",
+        "origin": "tactic_template",
+        "step": 5
+      },
+      {
+        "tactic": "simp [List.length_cons]",
+        "origin": "generative_topk",
+        "step": 6
+      },
+      {
+        "tactic": "simp only [← Nat.not_le, Nat.pow_le_pow_iff_left hn]",
+        "origin": "tactic_template",
+        "step": 7
+      },
+      {
+        "tactic": "simp [List.length_cons]",
+        "origin": "generative_topk",
+        "step": 8
+      }
+    ],
+    "any_template_advanced": true
+  },
+  {
+    "theorem": "Nat.sqrt_lt'",
+    "num_steps": 8,
+    "advancing_tactics": [
+      {
+        "tactic": "simp only [← Nat.not_le, Nat.le_sqrt]",
+        "origin": "tactic_template",
+        "step": 1
+      },
+      {
+        "tactic": "simp [Nat.mul_one]",
+        "origin": "generative_topk",
+        "step": 2
+      },
+      {
+        "tactic": "simp only [← Nat.not_le, Nat.le_sqrt]",
+        "origin": "tactic_template",
+        "step": 3
+      },
+      {
+        "tactic": "simp [Nat.mul_one]",
+        "origin": "generative_topk",
+        "step": 4
+      },
+      {
+        "tactic": "simp only [← Nat.not_le, Nat.le_sqrt]",
+        "origin": "tactic_template",
+        "step": 5
+      },
+      {
+        "tactic": "simp [Nat.mul_one]",
+        "origin": "generative_topk",
+        "step": 6
+      },
+      {
+        "tactic": "simp only [← Nat.not_le, Nat.le_sqrt]",
+        "origin": "tactic_template",
+        "step": 7
+      },
+      {
+        "tactic": "simp [Nat.mul_one]",
+        "origin": "generative_topk",
+        "step": 8
+      }
+    ],
+    "any_template_advanced": true
+  }
+]

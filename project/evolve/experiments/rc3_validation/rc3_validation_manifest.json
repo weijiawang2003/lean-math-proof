@@ -1,0 +1,20 @@
+{
+  "name": "rc3_validation_manifest",
+  "task": "RC3 Literal-Wrapper Validation \u2014 RC2 \u2295 SX3_SET_ITE_AESOP",
+  "candidate": {
+    "wrapper": "project/evolve/experiments/rc3_validation/rc3_candidate_wrapper.json",
+    "byte_identical_source": "project/evolve/experiments/rc3_candidates/set_ite_aesop/rc3_candidate_wrapper.json",
+    "definition": "RC2 release wrapper \u2295 SX3_SET_ITE_AESOP (one added component)",
+    "added_sequence": "simp [Set.ite] <;> aesop"
+  },
+  "untouched": {
+    "RC1": "project/evolve/experiments/rc1/rc1_production_wrapper.json",
+    "RC2_release": "project/evolve/experiments/rc2_release/rc2_production_wrapper.json",
+    "NS24_router": "project/evolve/routing/ns24_router.json"
+  },
+  "operational_manifest": "project/evolve/experiments/rc3_validation/validation_manifest.json",
+  "component_summary": "project/evolve/experiments/rc3_validation/rc3_component_summary.json",
+  "theorem_sets_dir": "project/evolve/experiments/rc3_validation/theorem_sets/",
+  "outputs_dir": "project/evolve/experiments/rc3_validation/out/",
+  "report": "project/evolve/reports/rc3/rc3_set_ite_aesop_validation_report.md"
+}

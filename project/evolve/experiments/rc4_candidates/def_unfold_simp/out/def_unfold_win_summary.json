@@ -1,0 +1,22 @@
+{
+  "generated_by": "scripts/rc4a_extract_def_unfold_wins.py",
+  "num_known_wins": 5,
+  "subfamily_histogram": {
+    "finset_def_unfold": 1,
+    "order_predicate_def_unfold": 4
+  },
+  "validated_def_allowlist": [
+    "Antitone",
+    "AntitoneOn",
+    "Finset.disjUnion",
+    "Monotone",
+    "MonotoneOn",
+    "StrictAnti",
+    "StrictAntiOn",
+    "StrictMono",
+    "StrictMonoOn"
+  ],
+  "mechanism": "simp [<definitions named in the goal, restricted to the allowlist>]",
+  "homogeneous": true,
+  "homogeneity_note": "All wins share one mechanism — definitional unfold via `simp [def]` where the def is named in the goal and is not @[simp]. Subfamilies differ only in WHICH defs (order predicates vs Finset.disjUnion), not in mechanism, so a single allowlist-gated action covers them; NOT CANDIDATE_TOO_HETEROGENEOUS."
+}

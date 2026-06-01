@@ -1,0 +1,300 @@
+{
+  "source_frontier": "project/evolve/experiments/sf1/out/real/frontier_with_paths.jsonl",
+  "excluded_count": 15,
+  "num_cases": 20,
+  "num_ite_shaped": 8,
+  "num_deferred_near_duplicates": 0,
+  "note": "Fresh Set holdout for SET2. ite-shaped theorems are the SET_ITE_SIMP generalization test. Goal shapes resolved live at eval time. deferred_near_duplicate rows are SF2 deferrals (kept, flagged for overfit transparency).",
+  "cases": [
+    {
+      "full_name": "Set.ite_compl",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": true,
+      "set2_gate_likely": "SET_ITE_SIMP",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.ite_empty",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": true,
+      "set2_gate_likely": "SET_ITE_SIMP",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.ite_empty_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": true,
+      "set2_gate_likely": "SET_ITE_SIMP",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": true,
+      "set2_gate_likely": "SET_ITE_SIMP",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.ite_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": true,
+      "set2_gate_likely": "SET_ITE_SIMP",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.mem_dite",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": true,
+      "set2_gate_likely": "SET_ITE_SIMP",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.mem_dite_empty_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": true,
+      "set2_gate_likely": "SET_ITE_SIMP",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.mem_dite_empty_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": true,
+      "set2_gate_likely": "SET_ITE_SIMP",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": false,
+      "set2_gate_likely": "SET_IFF_CONSTRUCTOR",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.diff_union_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": false,
+      "set2_gate_likely": "SET_IFF_CONSTRUCTOR",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.eq_of_inclusion_surjective",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": false,
+      "set2_gate_likely": "SET_EXT_SIMP/ANTISYMM",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.inclusion_inclusion",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": false,
+      "set2_gate_likely": "SET_EXT_SIMP/ANTISYMM",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.inclusion_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": false,
+      "set2_gate_likely": "SET_EXT_SIMP/ANTISYMM",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.inclusion_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": false,
+      "set2_gate_likely": "SET_EXT_SIMP/ANTISYMM",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.insert_diff_eq_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": false,
+      "set2_gate_likely": "SET_IFF_CONSTRUCTOR",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.insert_diff_of_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": false,
+      "set2_gate_likely": "SET_IFF_CONSTRUCTOR",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.insert_diff_of_not_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": false,
+      "set2_gate_likely": "SET_IFF_CONSTRUCTOR",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.insert_diff_self_of_not_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": false,
+      "set2_gate_likely": "SET_IFF_CONSTRUCTOR",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": false,
+      "set2_gate_likely": "SET_IFF_CONSTRUCTOR",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "primary_goal_shape": "unknown_pre_live",
+      "ite_shaped": false,
+      "set2_gate_likely": "SET_IFF_CONSTRUCTOR",
+      "deferred_near_duplicate": false,
+      "selection_reason": "fresh SF1 Set frontier theorem with resolved path, not among the 12 deep-dive cases"
+    }
+  ],
+  "skipped_sample": [
+    {
+      "name": "Eq.subset",
+      "why": "non-Set namespace (Eq)"
+    },
+    {
+      "name": "Function.Injective.nonempty_apply_iff",
+      "why": "non-Set namespace (Function)"
+    },
+    {
+      "name": "Multiset.disjoint_toFinset",
+      "why": "non-Set namespace (Multiset)"
+    },
+    {
+      "name": "Multiset.toFinset_eq_singleton_iff",
+      "why": "non-Set namespace (Multiset)"
+    },
+    {
+      "name": "Multiset.toFinset_nsmul",
+      "why": "non-Set namespace (Multiset)"
+    },
+    {
+      "name": "Prop.compl_singleton",
+      "why": "non-Set namespace (Prop)"
+    },
+    {
+      "name": "Set.antitoneOn_iff_antitone",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.diff_singleton_subset_iff",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.ite_empty_right",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.ite_eq_of_subset_left",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.ite_eq_of_subset_right",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.ite_inter",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.ite_inter_compl_self",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.ite_inter_self",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.ite_right",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.pair_eq_pair_iff",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.ssubset_singleton_iff",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.subset_insert_iff",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.subset_singleton_iff_eq",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "Set.union_empty_iff",
+      "why": "in deep-dive selected/deferred exclude set"
+    },
+    {
+      "name": "coe_notMemRangeEquiv_symm",
+      "why": "non-Set namespace (GENERAL_FRONTIER)"
+    }
+  ]
+}

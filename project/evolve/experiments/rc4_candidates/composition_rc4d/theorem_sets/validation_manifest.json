@@ -1,0 +1,91 @@
+{
+  "generated_by": "scripts/rc4d_build_validation_sets.py",
+  "policy": "project/evolve/experiments/rc4_candidates/composition_rc4d/rc4d_composition_policy.json",
+  "component_manifest": "project/evolve/experiments/rc4_candidates/composition_rc4d/out/rc4d_component_manifest.json",
+  "set_files": {
+    "rc4a_known_wins": "project/evolve/experiments/rc4_candidates/composition_rc4d/theorem_sets/rc4a_known_wins.json",
+    "rc4b_known_wins": "project/evolve/experiments/rc4_candidates/composition_rc4d/theorem_sets/rc4b_known_wins.json",
+    "rc4c_residue_known_wins": "project/evolve/experiments/rc4_candidates/composition_rc4d/theorem_sets/rc4c_residue_known_wins.json",
+    "component_overlap_controls": "project/evolve/experiments/rc4_candidates/composition_rc4d/theorem_sets/component_overlap_controls.json",
+    "composition_fresh_holdout": "project/evolve/experiments/rc4_candidates/composition_rc4d/theorem_sets/composition_fresh_holdout.json",
+    "negative_controls": "project/evolve/experiments/rc4_candidates/composition_rc4d/theorem_sets/negative_controls.json",
+    "namespace_negative_controls": "project/evolve/experiments/rc4_candidates/composition_rc4d/theorem_sets/namespace_negative_controls.json",
+    "canonical_smoke": "project/evolve/experiments/rc4_candidates/composition_rc4d/theorem_sets/canonical_smoke.json"
+  },
+  "sizes": {
+    "rc4a_known_wins": 5,
+    "rc4b_known_wins": 16,
+    "rc4c_residue_known_wins": 7,
+    "component_overlap_controls": 5,
+    "composition_fresh_holdout": 34,
+    "negative_controls": 24,
+    "namespace_negative_controls": 20,
+    "canonical_smoke": 30
+  },
+  "total": 141,
+  "unique_total": 130,
+  "gate_fire_counts": {
+    "rc4a_known_wins": 5,
+    "rc4b_known_wins": 16,
+    "rc4c_residue_known_wins": 7,
+    "component_overlap_controls": 5,
+    "composition_fresh_holdout": 34,
+    "negative_controls": 0,
+    "namespace_negative_controls": 0,
+    "canonical_smoke": 0
+  },
+  "namespace_distribution": {
+    "rc4a_known_wins": {
+      "Finset": 1,
+      "Set": 4
+    },
+    "rc4b_known_wins": {
+      "Multiset": 9,
+      "Set": 7
+    },
+    "rc4c_residue_known_wins": {
+      "List": 1,
+      "Multiset": 5,
+      "Set": 1
+    },
+    "component_overlap_controls": {
+      "Multiset": 5
+    },
+    "composition_fresh_holdout": {
+      "Multiset": 15,
+      "Set": 10,
+      "List": 4,
+      "Finset": 5
+    },
+    "negative_controls": {
+      "Finset": 15,
+      "List": 9
+    },
+    "namespace_negative_controls": {
+      "Nat": 20
+    },
+    "canonical_smoke": {
+      "Nat": 16,
+      "Set": 11,
+      "Finset": 3
+    }
+  },
+  "nofire_sets": [
+    "canonical_smoke",
+    "namespace_negative_controls",
+    "negative_controls"
+  ],
+  "off_gate_emissions_in_nofire_sets": 0,
+  "expected_credit_split": {
+    "RC4A": 5,
+    "RC4B": 16,
+    "RC4C_residue_additive": 2
+  },
+  "component_coverage": {
+    "rc4a_known": 5,
+    "rc4b_known": 16,
+    "rc4c_residue_known": 7,
+    "fresh": 34,
+    "overlap_controls": 5
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "wrapper_id": "set_ite_simp_rc2_candidate_wrapper_v1",
+  "kind": "additive_external_candidate",
+  "status": "experimental_rc2_candidate",
+  "enabled": true,
+  "promotion_allowed": false,
+  "base_stack": "RC1 production wrapper (commit f3b3100): NS9 base + WX3 Multiset induction + MX2 narrow Set.Finite aesop",
+  "candidate_delta": "ONE narrow gate: SET_ITE_SIMP -> `simp [Set.ite]` on Set+ite goals RC1 fails.",
+  "relationship_to_rc1": "ADDITIVE and DISJOINT. The candidate is evaluated as: literal RC1 first (via eval_rollout_all with the unmodified rc1_production_wrapper.json + ns24_router.json); only on RC1-FAILED theorems where the gate fires is `simp [Set.ite]` tried live. candidate_finished = literal_rc1_finished OR set_ite_finished. RC1 behavior is never altered -> regressions are impossible by construction.",
+  "gate_policy": "project/evolve/experiments/rc2_candidates/set_ite_simp/set_ite_simp_gate_policy.json",
+  "literal_rc1_command": {
+    "entry": "scripts/sf1_run_eval.py -> eval_rollout_all.py",
+    "policy_type": "hybrid_evolved",
+    "route_config": "project/evolve/routing/ns24_router.json",
+    "strategy_config": "project/evolve/experiments/rc1/rc1_production_wrapper.json",
+    "top_k": 8,
+    "max_steps": 8
+  },
+  "runner": "scripts/rc2_run_set_ite_candidate.py",
+  "promotion_gate_to_rc2": {
+    "positive_delta_over_literal_rc1": "required",
+    "zero_regressions": "required",
+    "zero_off_gate_emissions": "required",
+    "minimal_sufficient_attribution": "required (TRUE_SET_ITE_SIMP_WIN only)",
+    "deterministic_reproduction": "required",
+    "narrow_gate_only": "required"
+  }
+}

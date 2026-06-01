@@ -1,0 +1,21 @@
+{
+  "check": "deferred +4 outcome-determinism re-run",
+  "primary_run": {
+    "hash": "c0144cd63fd5",
+    "theorems": 4,
+    "all": "new_depth2_win via 'simp [Set.ite] <;> aesop'"
+  },
+  "rerun": {
+    "completed": 3,
+    "of": 4,
+    "reproduced_outcomes_identically": [
+      "Set.ite_inter",
+      "Set.ite_inter_self",
+      "Set.ite_compl"
+    ],
+    "incomplete_theorem": "Set.ite_inter_compl_self",
+    "incomplete_reason": "lean_dojo intermittent Dojo-open hang (time.sleep retry loop not interrupted by SIGALRM open-guard); environment flake independent of SX3 logic"
+  },
+  "conclusion": "Outcome-determinism holds: every theorem that opened reproduced its classification + winning sequence byte-identically. Set.ite_inter_compl_self solved cleanly in the primary run and via the RC2-hardening direct probe (simp [Set.ite] <;> aesop -> solved); its re-run incompleteness is an environment-level Dojo-open flake, not a method nondeterminism.",
+  "note": "Hashes differ only because the re-run set is incomplete (3 vs 4 results); the 3 shared results are identical."
+}

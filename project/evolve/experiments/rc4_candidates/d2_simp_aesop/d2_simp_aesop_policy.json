@@ -1,0 +1,117 @@
+{
+  "family": "d2_simp_aesop",
+  "status": "experimental_rc4_candidate",
+  "base": "RC2",
+  "promotion_allowed": false,
+  "description": "Narrow depth-2 retrieval candidate. For each allowlisted lemma L, when a theorem's namespace and name/goal match L's gate, the candidate emits the single depth-2 tactic `simp [L] <;> aesop`. The mechanism is the `simp [L]` enabling rewrite that advances the goal into a shape aesop can close; neither bare aesop nor (for a true RC4C member) `simp [L]` alone closes it. Off-by-default, additive over RC2.",
+  "allowlist_lemmas": [
+    "Set.disjoint_left",
+    "Multiset.disjoint_left",
+    "Multiset.disjoint_right",
+    "Set.subset_pair_iff_eq",
+    "Finset.biUnion_subset",
+    "List.forall_iff_forall_mem"
+  ],
+  "allowlist_source": "TR3 (3 Set d2 wins: subset_pair_iff_eq, disjoint_left x2) + TR5 (3 Set reproductions, rank 1) + TR6 (9 fresh d2 wins across Set/Multiset/Finset/List)",
+  "actions": [
+    {
+      "name": "SET_DISJOINT_LEFT_D2",
+      "tactic": "simp [Set.disjoint_left] <;> aesop",
+      "lemma": "Set.disjoint_left",
+      "gate": {
+        "requires_namespace": "Set",
+        "requires_name_or_goal_contains": ["disjoint", "Disjoint"],
+        "forbids_name_or_goal_contains": [],
+        "max_emissions_per_theorem": 1
+      },
+      "overlap_family": "RC4B",
+      "evidence": ["Set.disjoint_iff_forall_ne", "Set.disjoint_right", "Set.disjoint_iUnion_left", "Set.disjoint_iUnion_right", "Set.disjoint_sUnion_left", "Set.disjoint_sUnion_right"],
+      "risk": "low"
+    },
+    {
+      "name": "MULTISET_DISJOINT_LEFT_D2",
+      "tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "lemma": "Multiset.disjoint_left",
+      "gate": {
+        "requires_namespace": "Multiset",
+        "requires_name_or_goal_contains": ["disjoint", "Disjoint"],
+        "forbids_name_or_goal_contains": [],
+        "max_emissions_per_theorem": 1
+      },
+      "overlap_family": "RC4B",
+      "evidence": ["Multiset.disjoint_add_left", "Multiset.disjoint_cons_left"],
+      "risk": "low"
+    },
+    {
+      "name": "MULTISET_DISJOINT_RIGHT_D2",
+      "tactic": "simp [Multiset.disjoint_right] <;> aesop",
+      "lemma": "Multiset.disjoint_right",
+      "gate": {
+        "requires_namespace": "Multiset",
+        "requires_name_or_goal_contains": ["disjoint", "Disjoint"],
+        "forbids_name_or_goal_contains": [],
+        "max_emissions_per_theorem": 1
+      },
+      "overlap_family": "none",
+      "evidence": ["Multiset.disjoint_add_right"],
+      "risk": "low"
+    },
+    {
+      "name": "SET_SUBSET_PAIR_D2",
+      "tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+      "lemma": "Set.subset_pair_iff_eq",
+      "gate": {
+        "requires_namespace": "Set",
+        "requires_name_or_goal_contains": ["subset_pair", "pair"],
+        "forbids_name_or_goal_contains": [],
+        "max_emissions_per_theorem": 1
+      },
+      "overlap_family": "none",
+      "evidence": ["Set.Nonempty.subset_pair_iff_eq"],
+      "risk": "medium"
+    },
+    {
+      "name": "FINSET_BIUNION_SUBSET_D2",
+      "tactic": "simp [Finset.biUnion_subset] <;> aesop",
+      "lemma": "Finset.biUnion_subset",
+      "gate": {
+        "requires_namespace": "Finset",
+        "requires_name_or_goal_contains": ["biunion"],
+        "forbids_name_or_goal_contains": [],
+        "max_emissions_per_theorem": 1
+      },
+      "overlap_family": "none",
+      "evidence": ["Finset.biUnion_subset_iff_forall_subset"],
+      "risk": "medium"
+    },
+    {
+      "name": "LIST_FORALL_D2",
+      "tactic": "simp [List.forall_iff_forall_mem] <;> aesop",
+      "lemma": "List.forall_iff_forall_mem",
+      "gate": {
+        "requires_namespace": "List",
+        "requires_name_or_goal_contains": ["forall"],
+        "forbids_name_or_goal_contains": [],
+        "max_emissions_per_theorem": 1
+      },
+      "overlap_family": "none",
+      "evidence": ["List.Forall.imp"],
+      "risk": "medium"
+    }
+  ],
+  "overlap_policy": {
+    "RC4C_all": ["SET_DISJOINT_LEFT_D2", "MULTISET_DISJOINT_LEFT_D2", "MULTISET_DISJOINT_RIGHT_D2", "SET_SUBSET_PAIR_D2", "FINSET_BIUNION_SUBSET_D2", "LIST_FORALL_D2"],
+    "RC4C_nonoverlap": ["MULTISET_DISJOINT_RIGHT_D2", "SET_SUBSET_PAIR_D2", "FINSET_BIUNION_SUBSET_D2", "LIST_FORALL_D2"],
+    "overlap_rule": "An action whose lemma is Set.disjoint_left or Multiset.disjoint_left is the depth-2 form of an RC4B bridge action -> overlap_family=RC4B, excluded from RC4C_nonoverlap. Its wins may count for the eventual RC4 composition but NOT for pure RC4C credit.",
+    "note": "RC4B already validated `simp [<NS>.disjoint_left] <;> aesop`; counting those wins again as RC4C would double-count."
+  },
+  "excluded_from_this_candidate": [
+    "bare `simp <;> aesop` / `simp_all <;> aesop` (no named lemma; not evidenced)",
+    "arbitrary retrieved lemmas beyond the 6 allowlisted",
+    "broad depth-2 sequence search over the whole TR3 grammar",
+    "RC4A def_unfold_simp allowlist (validated separately)",
+    "the bare `simp [L]` depth-1 form (RC4A / d1 territory)"
+  ],
+  "evaluation_mode": "external_additive",
+  "evaluation_rule": "candidate_solved = literal_RC2_solved OR (gate fires AND at least one gated `simp [L] <;> aesop` closes the goal single-shot from the initial state)"
+}

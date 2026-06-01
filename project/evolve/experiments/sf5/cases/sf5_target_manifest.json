@@ -1,0 +1,52 @@
+{
+  "generated_by": "scripts/sf5_build_targets.py",
+  "rc2_wrapper": "project/evolve/experiments/rc2_release/rc2_production_wrapper.json",
+  "sources": {
+    "tr2_attributed_outcomes": "project/evolve/experiments/tr2/out/tr2_attributed_outcomes.json",
+    "tr2_live_probe_results": "project/evolve/experiments/tr2/out/tr2_live_probe_results.json",
+    "sf4_rc2_failure_confirmation": "project/evolve/experiments/sf4/out/rc2_failure_confirmation.json",
+    "sf4_rc2_failure_clusters": "project/evolve/experiments/sf4/out/rc2_failure_clusters.json",
+    "sf4_missing_lemma_candidates": "project/evolve/experiments/sf4/out/sf4_missing_lemma_candidates.json"
+  },
+  "num_confirmed_rc2_failures": 27,
+  "num_tr2_missing_bridge": 20,
+  "num_sf4_missing_bridge_cluster": 19,
+  "num_targets": 20,
+  "clusters": {
+    "Set__iff__iff": {
+      "size": 16,
+      "members": [
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.antitoneOn_iff_antitone",
+        "Set.diff_singleton_subset_iff",
+        "Set.monotoneOn_iff_monotone",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Set.pair_eq_pair_iff",
+        "Set.ssubset_iff_insert",
+        "Set.ssubset_iff_sdiff_singleton",
+        "Set.ssubset_singleton_iff",
+        "Set.strictAntiOn_iff_strictAnti",
+        "Set.strictMonoOn_iff_strictMono",
+        "Set.subset_insert_iff",
+        "Set.subset_pair_iff_eq",
+        "Set.subset_singleton_iff_eq",
+        "Set.union_empty_iff"
+      ]
+    },
+    "Set__ite_if__subset": {
+      "size": 3,
+      "members": [
+        "Set.ite_eq_of_subset_left",
+        "Set.ite_eq_of_subset_right",
+        "Set.subset_ite"
+      ]
+    },
+    "Multiset__iff__iff": {
+      "size": 1,
+      "members": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "generated_by": "scripts/tr5_export_training_data.py",
+  "num_examples": 805,
+  "success_positives": 13,
+  "credit_positives": 12,
+  "false_positives": 80,
+  "label_histogram": {
+    "RANKER_FALSE_POSITIVE": 80,
+    "NO_WIN_UNDER_BUDGET": 712,
+    "TRUE_RANKER_DELTA": 3,
+    "BASELINE_DUPLICATE": 1,
+    "TRUE_RC4C_EVIDENCE": 1,
+    "TRUE_RC4A_REPRODUCTION": 5,
+    "TRUE_RC4B_EVIDENCE": 3
+  },
+  "by_namespace": {
+    "Eq": 5,
+    "Finset": 178,
+    "Function": 10,
+    "List": 62,
+    "Multiset": 40,
+    "Nat": 280,
+    "Prop": 1,
+    "Set": 229
+  },
+  "by_family": {
+    "d1_simp_lemma": 166,
+    "d2_simp_aesop": 173,
+    "d2_simp_simpall": 47,
+    "def_unfold_simp": 44,
+    "d1_aesop": 51,
+    "d1_exact": 115,
+    "d1_simpa_using": 89,
+    "d2_rw_aesop": 12,
+    "d1_simpa_lemma": 63,
+    "d1_tofinset_simp": 6,
+    "d1_rw_lemma": 31,
+    "d2_ext_aesop": 1,
+    "null": 5,
+    "d3_constructor_aesop": 1,
+    "d2_ext_simp": 1
+  },
+  "success_by_family": {
+    "d1_simp_lemma": 4,
+    "d1_aesop": 1,
+    "d2_simp_aesop": 3,
+    "def_unfold_simp": 5
+  },
+  "examples_that_improve_tr4": 12,
+  "note": "TR4 data NOT overwritten; these augment it. Credit positives are the scarce class (TR4 had 22) — each live-verified credit broadens the ranker."
+}

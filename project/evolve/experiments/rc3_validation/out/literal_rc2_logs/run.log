@@ -1,0 +1,182 @@
+[rc3_run] policy=rc2 theorems=30 -> project/evolve/experiments/rc3_validation/out/literal_rc2_runs
+[rc3_run] sets: ['project/evolve/experiments/rc3_validation/theorem_sets/sx3_known_deferred.json', 'project/evolve/experiments/rc3_validation/theorem_sets/sx3_fresh_win.json', 'project/evolve/experiments/rc3_validation/theorem_sets/sx3_set_ite_holdout.json', 'project/evolve/experiments/rc3_validation/theorem_sets/sx3_negative_controls.json', 'project/evolve/experiments/rc3_validation/theorem_sets/sx3_set_cluster_cases.json']
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : rc3val_rc2 (30 theorems)
+  Checkpoint  : clf_ckpt
+  Policy type : hybrid_evolved
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+RoutedGenerativePolicy: 4 routes, default=project/models/gen_v5_ns12_balanced
+  '^Nat\\.' -> project/models/gen_v5_ns15_nat_oversample
+  '^Int\\.' -> project/models/gen_v5_ns24_int_minimal_omega_10x
+  '^Finset\\.' -> project/models/gen_v5_ns21_finset_aesop_20x
+  '^Set\\.' -> project/models/gen_v5_ns12_balanced
+[1/30] Set.ite_inter
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 13034.75it/s]
+Loaded generative policy from project/models/gen_v5_ns12_balanced (type=seq2seq)
+  Base model: project/models/gen_v5
+  Unique tactics in training: 104
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: simp [Set.ite] -> aesop
+
+[2/30] Set.ite_inter_self
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: simp [Set.ite] -> aesop
+
+[3/30] Set.ite_compl
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: simp [Set.ite] -> aesop
+
+[4/30] Set.ite_inter_compl_self
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: simp [Set.ite] -> aesop
+
+[5/30] Set.ite_inter_inter
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: simp [Set.ite] -> aesop
+
+[6/30] Set.ite_eq_of_subset_left
+       FAILED at step 2 (All top-13 tactics errored at step 2)
+
+[7/30] Set.ite_eq_of_subset_right
+       FAILED at step 2 (All top-13 tactics errored at step 2)
+
+[8/30] Set.ite_inter_of_inter_eq
+       FAILED at step 3 (All top-13 tactics errored at step 3)
+
+[9/30] Set.ite_univ
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+[10/30] Set.mem_dite
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[11/30] Set.mem_dite_empty_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[12/30] Set.mem_dite_empty_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[13/30] Set.mem_dite_univ_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[14/30] Set.mem_dite_univ_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[15/30] Set.mem_ite_empty_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[16/30] Set.mem_ite_empty_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[17/30] Set.subset_ite
+       FAILED at step 3 (All top-11 tactics errored at step 3)
+
+[18/30] Multiset.toFinset_eq_singleton_iff
+       FAILED at step 4 (All top-13 tactics errored at step 4)
+
+[19/30] Set.diff_singleton_subset_iff
+       FAILED at step 5 (All top-11 tactics errored at step 5)
+
+[20/30] Set.pair_eq_pair_iff
+       FAILED at step 2 (All top-11 tactics errored at step 2)
+
+[21/30] Set.subset_insert_iff
+       FAILED at step 3 (All top-11 tactics errored at step 3)
+
+[22/30] Set.subset_singleton_iff_eq
+       FAILED at step 2 (All top-11 tactics errored at step 2)
+
+[23/30] Set.union_empty_iff
+       FAILED at step 4 (All top-11 tactics errored at step 4)
+
+[24/30] Set.antitoneOn_iff_antitone
+       FAILED at step 1 (All top-14 tactics errored at step 1)
+
+[25/30] Set.ssubset_singleton_iff
+       FAILED at step 3 (All top-11 tactics errored at step 3)
+
+[26/30] Set.diff_union_inter
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: simp [Set.ext_iff] -> tauto
+
+[27/30] Set.insert_diff_of_mem
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[28/30] Set.insert_diff_eq_singleton
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[29/30] Set.pair_diff_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: aesop
+
+[30/30] Set.powerset_singleton
+       FAILED at step 3 (All top-14 tactics errored at step 3)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.ite_inter                            PROVED       2      aesop
+  Set.ite_inter_self                       PROVED       2      aesop
+  Set.ite_compl                            PROVED       2      aesop
+  Set.ite_inter_compl_self                 PROVED       2      aesop
+  Set.ite_inter_inter                      PROVED       2      aesop
+  Set.ite_eq_of_subset_left                ERROR        2      
+  Set.ite_eq_of_subset_right               ERROR        2      
+  Set.ite_inter_of_inter_eq                ERROR        3      
+  Set.ite_univ                             PROVED       1      simp [Set.ite]
+  Set.mem_dite                             PROVED       1      aesop
+  Set.mem_dite_empty_left                  PROVED       1      aesop
+  Set.mem_dite_empty_right                 PROVED       1      aesop
+  Set.mem_dite_univ_left                   PROVED       1      aesop
+  Set.mem_dite_univ_right                  PROVED       1      aesop
+  Set.mem_ite_empty_left                   PROVED       1      aesop
+  Set.mem_ite_empty_right                  PROVED       1      aesop
+  Set.subset_ite                           ERROR        3      
+  Multiset.toFinset_eq_singleton_iff       ERROR        4      
+  Set.diff_singleton_subset_iff            ERROR        5      
+  Set.pair_eq_pair_iff                     ERROR        2      
+  Set.subset_insert_iff                    ERROR        3      
+  Set.subset_singleton_iff_eq              ERROR        2      
+  Set.union_empty_iff                      ERROR        4      
+  Set.antitoneOn_iff_antitone              ERROR        1      
+  Set.ssubset_singleton_iff                ERROR        3      
+  Set.diff_union_inter                     PROVED       2      tauto
+  Set.insert_diff_of_mem                   PROVED       1      aesop
+  Set.insert_diff_eq_singleton             PROVED       1      aesop
+  Set.pair_diff_left                       PROVED       1      aesop
+  Set.powerset_singleton                   ERROR        3      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    30
+  Available:         30/30
+  Proved:            17/30  (57%)
+  Errored:           13/30
+  Exhausted:         0/30
+  Skipped:           0/30
+  Avg steps (proved): 1.4
+  Fallbacks used:     23
+  Proved by origin:   {'generative_topk': 16, 'tactic_template': 1}
+  Family proofs:      {'priority:any:specific': 1}
+  Denied tactics:     102 (per-theorem deny-list)
+================================================================
+
+Run artifacts: project/evolve/experiments/rc3_validation/out/literal_rc2_runs/eval-a334e4a0
+[rc3_run] wrote project/evolve/experiments/rc3_validation/out/literal_rc2_results.json: finished 17/30

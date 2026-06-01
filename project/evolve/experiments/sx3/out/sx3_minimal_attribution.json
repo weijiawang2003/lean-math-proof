@@ -1,0 +1,586 @@
+{
+  "inputs": [
+    "project/evolve/experiments/sx3/out/sx3_deferred_results.json",
+    "project/evolve/experiments/sx3/out/sx3_fresh_holdout_results.json",
+    "project/evolve/experiments/sx3/out/sx3_set_cluster_results.json",
+    "project/evolve/experiments/sx3/out/sx3_negative_control_results.json",
+    "project/evolve/experiments/sx3/out/sx3_canonical_smoke_results.json"
+  ],
+  "attribution_histogram": {
+    "TRUE_DEPTH2_SEQUENCE_WIN": 5,
+    "NO_WIN": 13,
+    "SINGLE_STEP_DUPLICATE": 1,
+    "BASELINE_DUPLICATE": 10,
+    "NEEDS_REVIEW": 11
+  },
+  "true_depth2_wins": [
+    "Set.ite_compl",
+    "Set.ite_inter",
+    "Set.ite_inter_compl_self",
+    "Set.ite_inter_inter",
+    "Set.ite_inter_self"
+  ],
+  "deferred_known_true_wins": [
+    "Set.ite_compl",
+    "Set.ite_inter",
+    "Set.ite_inter_compl_self",
+    "Set.ite_inter_self"
+  ],
+  "fresh_true_wins": [
+    "Set.ite_inter_inter"
+  ],
+  "num_off_gate_emissions": 0,
+  "off_gate_by_family": {},
+  "per_family": {
+    "SX3_SET_ITE_AESOP": {
+      "true_wins": [
+        "Set.ite_inter",
+        "Set.ite_inter_self",
+        "Set.ite_compl",
+        "Set.ite_inter_compl_self",
+        "Set.ite_inter_inter"
+      ],
+      "num_true_wins": 5,
+      "single_step_duplicates": [
+        "Set.ite_univ"
+      ],
+      "baseline_duplicates": [],
+      "source_specific": [],
+      "off_gate_emissions": 0
+    },
+    "SX3_SET_ITE_SIMPALL": {
+      "true_wins": [],
+      "num_true_wins": 0,
+      "single_step_duplicates": [],
+      "baseline_duplicates": [],
+      "source_specific": [],
+      "off_gate_emissions": 0
+    },
+    "SX3_SET_ITE_EXT": {
+      "true_wins": [],
+      "num_true_wins": 0,
+      "single_step_duplicates": [],
+      "baseline_duplicates": [],
+      "source_specific": [],
+      "off_gate_emissions": 0
+    },
+    "SX3_SET_ITE_EXT_AESOP": {
+      "true_wins": [],
+      "num_true_wins": 0,
+      "single_step_duplicates": [],
+      "baseline_duplicates": [],
+      "source_specific": [],
+      "off_gate_emissions": 0
+    },
+    "SX3_SET_EXT_AESOP": {
+      "true_wins": [],
+      "num_true_wins": 0,
+      "single_step_duplicates": [],
+      "baseline_duplicates": [
+        "Set.insert_diff_of_mem",
+        "Set.insert_diff_eq_singleton",
+        "Set.pair_diff_left"
+      ],
+      "source_specific": [],
+      "off_gate_emissions": 0
+    },
+    "SX3_SET_EXT_SIMPALL": {
+      "true_wins": [],
+      "num_true_wins": 0,
+      "single_step_duplicates": [],
+      "baseline_duplicates": [],
+      "source_specific": [],
+      "off_gate_emissions": 0
+    },
+    "SX3_SET_IFF_CONSTRUCTOR_AESOP": {
+      "true_wins": [],
+      "num_true_wins": 0,
+      "single_step_duplicates": [],
+      "baseline_duplicates": [],
+      "source_specific": [],
+      "off_gate_emissions": 0
+    },
+    "SX3_SET_IFF_CONSTRUCTOR_SIMPALL": {
+      "true_wins": [],
+      "num_true_wins": 0,
+      "single_step_duplicates": [],
+      "baseline_duplicates": [],
+      "source_specific": [],
+      "off_gate_emissions": 0
+    },
+    "SX3_SET_SUBSET_ANTISYMM_AESOP": {
+      "true_wins": [],
+      "num_true_wins": 0,
+      "single_step_duplicates": [],
+      "baseline_duplicates": [],
+      "source_specific": [],
+      "off_gate_emissions": 0
+    },
+    "SX3_SET_SUBSET_ANTISYMM_SIMPALL": {
+      "true_wins": [],
+      "num_true_wins": 0,
+      "single_step_duplicates": [],
+      "baseline_duplicates": [],
+      "source_specific": [],
+      "off_gate_emissions": 0
+    },
+    "SX3_SET_BYCASES_SIMPALL": {
+      "true_wins": [],
+      "num_true_wins": 0,
+      "single_step_duplicates": [],
+      "baseline_duplicates": [],
+      "source_specific": [],
+      "off_gate_emissions": 0
+    },
+    "SX3_MULTISET_TOFINSET_AESOP": {
+      "true_wins": [],
+      "num_true_wins": 0,
+      "single_step_duplicates": [],
+      "baseline_duplicates": [],
+      "source_specific": [],
+      "off_gate_emissions": 0
+    }
+  },
+  "per_theorem": [
+    {
+      "full_name": "Bool.and_self",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_canonical_smoke.json",
+      "role": "canonical_smoke",
+      "attribution": "NEEDS_REVIEW",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": false
+    },
+    {
+      "full_name": "List.append_nil",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_canonical_smoke.json",
+      "role": "canonical_smoke",
+      "attribution": "NEEDS_REVIEW",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": false
+    },
+    {
+      "full_name": "Nat.add_zero",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_canonical_smoke.json",
+      "role": "canonical_smoke",
+      "attribution": "NEEDS_REVIEW",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": false
+    },
+    {
+      "full_name": "Nat.succ_le_succ",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_canonical_smoke.json",
+      "role": "canonical_smoke",
+      "attribution": "NEEDS_REVIEW",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": false
+    },
+    {
+      "full_name": "Nat.zero_add",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_canonical_smoke.json",
+      "role": "canonical_smoke",
+      "attribution": "NEEDS_REVIEW",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": false
+    },
+    {
+      "full_name": "Set.ite_compl",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_deferred_set_ite_cases.json",
+      "role": "deferred_known",
+      "attribution": "TRUE_DEPTH2_SEQUENCE_WIN",
+      "winning_family": "SX3_SET_ITE_AESOP",
+      "winning_sequence": "simp [Set.ite] <;> aesop",
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.ite_inter",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_deferred_set_ite_cases.json",
+      "role": "deferred_known",
+      "attribution": "TRUE_DEPTH2_SEQUENCE_WIN",
+      "winning_family": "SX3_SET_ITE_AESOP",
+      "winning_sequence": "simp [Set.ite] <;> aesop",
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.ite_inter_compl_self",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_deferred_set_ite_cases.json",
+      "role": "deferred_known",
+      "attribution": "TRUE_DEPTH2_SEQUENCE_WIN",
+      "winning_family": "SX3_SET_ITE_AESOP",
+      "winning_sequence": "simp [Set.ite] <;> aesop",
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_deferred_set_ite_cases.json",
+      "role": "deferred_known",
+      "attribution": "TRUE_DEPTH2_SEQUENCE_WIN",
+      "winning_family": "SX3_SET_ITE_AESOP",
+      "winning_sequence": "simp [Set.ite] <;> aesop",
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Int.add_mul",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_negative_controls.json",
+      "role": "negative_control",
+      "attribution": "NEEDS_REVIEW",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": false
+    },
+    {
+      "full_name": "List.append_nil",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_negative_controls.json",
+      "role": "negative_control",
+      "attribution": "NEEDS_REVIEW",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": false
+    },
+    {
+      "full_name": "Multiset.cons_inj_left",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_negative_controls.json",
+      "role": "negative_control",
+      "attribution": "NEEDS_REVIEW",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": false
+    },
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_negative_controls.json",
+      "role": "negative_control",
+      "attribution": "NO_WIN",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Nat.add_comm",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_negative_controls.json",
+      "role": "negative_control",
+      "attribution": "NEEDS_REVIEW",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": false
+    },
+    {
+      "full_name": "Nat.mul_succ",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_negative_controls.json",
+      "role": "negative_control",
+      "attribution": "NEEDS_REVIEW",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": false
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_failure_cluster_cases.json",
+      "role": "set_cluster_failure",
+      "attribution": "NO_WIN",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_failure_cluster_cases.json",
+      "role": null,
+      "attribution": "NEEDS_REVIEW",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": false
+    },
+    {
+      "full_name": "Set.diff_union_inter",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_failure_cluster_cases.json",
+      "role": "set_cluster_failure",
+      "attribution": "NO_WIN",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.insert_diff_eq_singleton",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_failure_cluster_cases.json",
+      "role": "set_cluster_failure",
+      "attribution": "BASELINE_DUPLICATE",
+      "winning_family": "SX3_SET_EXT_AESOP",
+      "winning_sequence": "ext x <;> aesop",
+      "controls_solved": [
+        "aesop"
+      ],
+      "live": true
+    },
+    {
+      "full_name": "Set.insert_diff_of_mem",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_failure_cluster_cases.json",
+      "role": "set_cluster_failure",
+      "attribution": "BASELINE_DUPLICATE",
+      "winning_family": "SX3_SET_EXT_AESOP",
+      "winning_sequence": "ext x <;> aesop",
+      "controls_solved": [
+        "aesop"
+      ],
+      "live": true
+    },
+    {
+      "full_name": "Set.pair_diff_left",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_failure_cluster_cases.json",
+      "role": "set_cluster_failure",
+      "attribution": "BASELINE_DUPLICATE",
+      "winning_family": "SX3_SET_EXT_AESOP",
+      "winning_sequence": "ext x <;> aesop",
+      "controls_solved": [
+        "simp_all",
+        "aesop"
+      ],
+      "live": true
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_failure_cluster_cases.json",
+      "role": "set_cluster_failure",
+      "attribution": "NO_WIN",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.powerset_singleton",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_failure_cluster_cases.json",
+      "role": "set_cluster_failure",
+      "attribution": "NO_WIN",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_failure_cluster_cases.json",
+      "role": "set_cluster_failure",
+      "attribution": "NO_WIN",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_failure_cluster_cases.json",
+      "role": "set_cluster_failure",
+      "attribution": "NO_WIN",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_failure_cluster_cases.json",
+      "role": "set_cluster_failure",
+      "attribution": "NO_WIN",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_failure_cluster_cases.json",
+      "role": "set_cluster_failure",
+      "attribution": "NO_WIN",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+      "role": "fresh_holdout",
+      "attribution": "NO_WIN",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+      "role": "fresh_holdout",
+      "attribution": "NO_WIN",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.ite_inter_inter",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+      "role": "fresh_holdout",
+      "attribution": "TRUE_DEPTH2_SEQUENCE_WIN",
+      "winning_family": "SX3_SET_ITE_AESOP",
+      "winning_sequence": "simp [Set.ite] <;> aesop",
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+      "role": "fresh_holdout",
+      "attribution": "NO_WIN",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": true
+    },
+    {
+      "full_name": "Set.ite_univ",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+      "role": "fresh_holdout",
+      "attribution": "SINGLE_STEP_DUPLICATE",
+      "winning_family": "SX3_SET_ITE_AESOP",
+      "winning_sequence": "simp [Set.ite] <;> aesop",
+      "controls_solved": [
+        "simp [Set.ite]"
+      ],
+      "live": true
+    },
+    {
+      "full_name": "Set.mem_dite",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+      "role": "fresh_holdout",
+      "attribution": "BASELINE_DUPLICATE",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [
+        "aesop"
+      ],
+      "live": true
+    },
+    {
+      "full_name": "Set.mem_dite_empty_left",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+      "role": "fresh_holdout",
+      "attribution": "BASELINE_DUPLICATE",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [
+        "aesop"
+      ],
+      "live": true
+    },
+    {
+      "full_name": "Set.mem_dite_empty_right",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+      "role": "fresh_holdout",
+      "attribution": "BASELINE_DUPLICATE",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [
+        "aesop"
+      ],
+      "live": true
+    },
+    {
+      "full_name": "Set.mem_dite_univ_left",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+      "role": "fresh_holdout",
+      "attribution": "BASELINE_DUPLICATE",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [
+        "aesop"
+      ],
+      "live": true
+    },
+    {
+      "full_name": "Set.mem_dite_univ_right",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+      "role": "fresh_holdout",
+      "attribution": "BASELINE_DUPLICATE",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [
+        "aesop"
+      ],
+      "live": true
+    },
+    {
+      "full_name": "Set.mem_ite_empty_left",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+      "role": "fresh_holdout",
+      "attribution": "BASELINE_DUPLICATE",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [
+        "aesop"
+      ],
+      "live": true
+    },
+    {
+      "full_name": "Set.mem_ite_empty_right",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+      "role": "fresh_holdout",
+      "attribution": "BASELINE_DUPLICATE",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [
+        "aesop"
+      ],
+      "live": true
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "surface": "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json",
+      "role": "fresh_holdout",
+      "attribution": "NO_WIN",
+      "winning_family": null,
+      "winning_sequence": null,
+      "controls_solved": [],
+      "live": true
+    }
+  ],
+  "rc3_candidate_family": "SX3_SET_ITE_AESOP",
+  "rc3_candidate_assessment": {
+    "family": "SX3_SET_ITE_AESOP",
+    "reproduced_deferred4": true,
+    "deferred_true_wins": [
+      "Set.ite_inter",
+      "Set.ite_inter_self",
+      "Set.ite_compl",
+      "Set.ite_inter_compl_self"
+    ],
+    "fresh_true_wins": [
+      "Set.ite_inter_inter"
+    ],
+    "off_gate": 0,
+    "verdict": "RC3_CANDIDATE_CONFIRMED"
+  },
+  "note": "TRUE_DEPTH2_SEQUENCE_WIN = depth-2 sequence solved & ALL controls (incl single-shot simp[Set.ite] = RC2 credited mechanism) failed. SX3 families are generic batteries -> SOURCE_SPECIFIC structurally 0."
+}

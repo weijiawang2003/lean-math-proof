@@ -1,0 +1,78 @@
+{
+  "generated_by": "scripts/rc4c_extract_d2_simp_aesop_evidence.py",
+  "num_known_wins": 12,
+  "by_namespace": {
+    "Finset": 1,
+    "List": 1,
+    "Multiset": 3,
+    "Set": 7
+  },
+  "by_lemma": {
+    "Finset.biUnion_subset": 1,
+    "List.forall_iff_forall_mem": 1,
+    "Multiset.disjoint_right": 1,
+    "Set.subset_pair_iff_eq": 1,
+    "Multiset.disjoint_left": 2,
+    "Set.disjoint_left": 6
+  },
+  "pure_rc4c_nonoverlap": {
+    "count": 4,
+    "targets": [
+      "Finset.biUnion_subset_iff_forall_subset",
+      "List.Forall.imp",
+      "Multiset.disjoint_add_right",
+      "Set.Nonempty.subset_pair_iff_eq"
+    ]
+  },
+  "overlap_rc4b": {
+    "count": 8,
+    "targets": [
+      "Multiset.disjoint_add_left",
+      "Multiset.disjoint_cons_left",
+      "Set.disjoint_iUnion_left",
+      "Set.disjoint_iUnion_right",
+      "Set.disjoint_iff_forall_ne",
+      "Set.disjoint_right",
+      "Set.disjoint_sUnion_left",
+      "Set.disjoint_sUnion_right"
+    ]
+  },
+  "overlap_rc4a": {
+    "count": 0,
+    "targets": []
+  },
+  "fresh_wins": {
+    "count": 9,
+    "targets": [
+      "Finset.biUnion_subset_iff_forall_subset",
+      "List.Forall.imp",
+      "Multiset.disjoint_add_right",
+      "Multiset.disjoint_add_left",
+      "Multiset.disjoint_cons_left",
+      "Set.disjoint_iUnion_left",
+      "Set.disjoint_iUnion_right",
+      "Set.disjoint_sUnion_left",
+      "Set.disjoint_sUnion_right"
+    ]
+  },
+  "reproduction_wins": {
+    "count": 3,
+    "targets": [
+      "Set.Nonempty.subset_pair_iff_eq",
+      "Set.disjoint_iff_forall_ne",
+      "Set.disjoint_right"
+    ]
+  },
+  "overlap_dominates": true,
+  "overlap_note": "MOST RC4C evidence overlaps RC4B (the disjoint_left depth-2 form).",
+  "needs_review": [],
+  "mechanism": "simp [L] <;> aesop over a small allowlist of retrieved lemmas L (per-lemma narrow gate)",
+  "allowlist": [
+    "Finset.biUnion_subset",
+    "List.forall_iff_forall_mem",
+    "Multiset.disjoint_left",
+    "Multiset.disjoint_right",
+    "Set.disjoint_left",
+    "Set.subset_pair_iff_eq"
+  ]
+}

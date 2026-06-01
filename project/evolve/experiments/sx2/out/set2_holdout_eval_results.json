@@ -1,0 +1,1687 @@
+{
+  "cases_file": "project/evolve/experiments/sx2/out/set2_holdout_cases.json",
+  "gate_policy": "project/evolve/experiments/sx2/set2_gate_policy.json",
+  "production_default_emits": false,
+  "rc1_proxy_note": "rc1_solved == baseline battery closes goal; valid RC1 proxy for Set/Basic surfaces (WX3/MX2 do not apply). The 12 SF2 selected cases are known RC1-failed.",
+  "metrics": {
+    "total": 20,
+    "live": 20,
+    "rc1_solved": 9,
+    "set2_solved": 4,
+    "set2_new_wins_over_rc1": 4,
+    "set2_regressions": 0,
+    "regression_note": "0 by construction — SET2 is additive/off-by-default; it never alters RC1 behavior.",
+    "set2_emitted_but_failed_on_rc1_solved": 9,
+    "off_gate_emissions": 0,
+    "gate_precision": {
+      "emitted_and_solved": 4,
+      "emitted_and_failed": 16,
+      "not_emitted": 0
+    }
+  },
+  "results": [
+    {
+      "full_name": "Set.ite_compl",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n⊢ tᶜ.ite s s' = t.ite s' s",
+      "rc1_solved": false,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  α : Type u\n  β : Type v\n  γ : Type w\n  ι : Sort x\n  a b : α\n  s✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n  ⊢ tᶜ."
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": null,
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.ite_compl",
+          "gate_id": "SET_ITE_SIMP",
+          "tactic": "simp [Set.ite]",
+          "template_family": "SET_ITE_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_has_ite": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "narrow",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        },
+        {
+          "theorem": "Set.ite_compl",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp made no progress"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_empty",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t t₁ t₂ u s s' : Set α\n⊢ ∅.ite s s' = s'",
+      "rc1_solved": false,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  α : Type u\n  β : Type v\n  γ : Type w\n  ι : Sort x\n  a b : α\n  s✝ s₁ s₂ t t₁ t₂ u s s' : Set α\n  ⊢ ∅.ite "
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": null,
+      "set2_emitted": true,
+      "set2_gate": "SET_ITE_SIMP",
+      "set2_tactic": "simp [Set.ite]",
+      "set2_solved": true,
+      "set2_emissions": [
+        {
+          "theorem": "Set.ite_empty",
+          "gate_id": "SET_ITE_SIMP",
+          "tactic": "simp [Set.ite]",
+          "template_family": "SET_ITE_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_has_ite": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "narrow",
+          "production_default_emits": false,
+          "result": "solved"
+        },
+        {
+          "theorem": "Set.ite_empty",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": false,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_empty_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s : Set α\n⊢ t.ite ∅ s = s \\ t",
+      "rc1_solved": false,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  α : Type u\n  β : Type v\n  γ : Type w\n  ι : Sort x\n  a b : α\n  s✝ s₁ s₂ t✝ t₁ t₂ u t s : Set α\n  ⊢ t.ite "
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": null,
+      "set2_emitted": true,
+      "set2_gate": "SET_ITE_SIMP",
+      "set2_tactic": "simp [Set.ite]",
+      "set2_solved": true,
+      "set2_emissions": [
+        {
+          "theorem": "Set.ite_empty_left",
+          "gate_id": "SET_ITE_SIMP",
+          "tactic": "simp [Set.ite]",
+          "template_family": "SET_ITE_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_has_ite": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "narrow",
+          "production_default_emits": false,
+          "result": "solved"
+        },
+        {
+          "theorem": "Set.ite_empty_left",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false
+        },
+        {
+          "theorem": "Set.ite_empty_left",
+          "gate_id": "SET_SUBSET_ANTISYMM",
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "template_family": "SET_SUBSET_ANTISYMM",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_subset_or_setop": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": false,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ s : Set α\nh : s₁ ∩ s = s₂ ∩ s\n⊢ t.ite s₁ s₂ ∩ s = s₁ ∩ s",
+      "rc1_solved": false,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": null,
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.ite_inter_of_inter_eq",
+          "gate_id": "SET_ITE_SIMP",
+          "tactic": "simp [Set.ite]",
+          "template_family": "SET_ITE_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_has_ite": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "narrow",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        },
+        {
+          "theorem": "Set.ite_inter_of_inter_eq",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        },
+        {
+          "theorem": "Set.ite_inter_of_inter_eq",
+          "gate_id": "SET_SUBSET_ANTISYMM",
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "template_family": "SET_SUBSET_ANTISYMM",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_subset_or_setop": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\n⊢ s.ite s t = s ∪ t",
+      "rc1_solved": false,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  α : Type u\n  β : Type v\n  γ : Type w\n  ι : Sort x\n  a b : α\n  s✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\n  ⊢ s.ite "
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": null,
+      "set2_emitted": true,
+      "set2_gate": "SET_ITE_SIMP",
+      "set2_tactic": "simp [Set.ite]",
+      "set2_solved": true,
+      "set2_emissions": [
+        {
+          "theorem": "Set.ite_left",
+          "gate_id": "SET_ITE_SIMP",
+          "tactic": "simp [Set.ite]",
+          "template_family": "SET_ITE_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_has_ite": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "narrow",
+          "production_default_emits": false,
+          "result": "solved"
+        },
+        {
+          "theorem": "Set.ite_left",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false
+        },
+        {
+          "theorem": "Set.ite_left",
+          "gate_id": "SET_SUBSET_ANTISYMM",
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "template_family": "SET_SUBSET_ANTISYMM",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_subset_or_setop": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": false,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.mem_dite",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u : Set α\np : Prop\ninst✝ : Decidable p\ns : p → Set α\nt : ¬p → Set α\nx : α\n⊢ (x ∈ if h : p then s h else t h) ↔ (∀ (h : p), x ∈ s h) ∧ ∀ (h : ¬p), x ∈ t h",
+      "rc1_solved": true,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": true,
+          "outcome": "solved"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": "aesop",
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.mem_dite",
+          "gate_id": "SET_ITE_SIMP",
+          "tactic": "simp [Set.ite]",
+          "template_family": "SET_ITE_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_has_ite": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "narrow",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "theorem": "Set.mem_dite",
+          "gate_id": "SET_IFF_CONSTRUCTOR",
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "template_family": "SET_IFF_CONSTRUCTOR",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_iff": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp_all made no progress\nsimp_all made no progress"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.mem_dite_empty_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t✝ t₁ t₂ u : Set α\np : Prop\ninst✝ : Decidable p\nt : ¬p → Set α\nx : α\n⊢ (x ∈ if h : p then ∅ else t h) ↔ ∃ (h : ¬p), x ∈ t h",
+      "rc1_solved": true,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": true,
+          "outcome": "solved"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": "aesop",
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.mem_dite_empty_left",
+          "gate_id": "SET_ITE_SIMP",
+          "tactic": "simp [Set.ite]",
+          "template_family": "SET_ITE_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_has_ite": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "narrow",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "theorem": "Set.mem_dite_empty_left",
+          "gate_id": "SET_IFF_CONSTRUCTOR",
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "template_family": "SET_IFF_CONSTRUCTOR",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_iff": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp_all made no progress\nsimp_all made no progress"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.mem_dite_empty_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t✝ t₁ t₂ u : Set α\np : Prop\ninst✝ : Decidable p\nt : p → Set α\nx : α\n⊢ (x ∈ if h : p then t h else ∅) ↔ ∃ (h : p), x ∈ t h",
+      "rc1_solved": true,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": true,
+          "outcome": "solved"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": "aesop",
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.mem_dite_empty_right",
+          "gate_id": "SET_ITE_SIMP",
+          "tactic": "simp [Set.ite]",
+          "template_family": "SET_ITE_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_has_ite": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "narrow",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "theorem": "Set.mem_dite_empty_right",
+          "gate_id": "SET_IFF_CONSTRUCTOR",
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "template_family": "SET_IFF_CONSTRUCTOR",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_iff": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp_all made no progress\nsimp_all made no progress"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\nhs : s.Nonempty\n⊢ s ⊆ {a, b} ↔ s = {a} ∨ s = {b} ∨ s = {a, b}",
+      "rc1_solved": false,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": null,
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.Nonempty.subset_pair_iff_eq",
+          "gate_id": "SET_IFF_CONSTRUCTOR",
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "template_family": "SET_IFF_CONSTRUCTOR",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_iff": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp_all made no progress\nsimp_all made no progress"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.diff_union_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\n⊢ s \\ t ∪ s ∩ t = s",
+      "rc1_solved": false,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  α : Type u\n  β : Type v\n  γ : Type w\n  ι : Sort x\n  a b : α\n  s✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\n  ⊢ s \\ t "
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": null,
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.diff_union_inter",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        },
+        {
+          "theorem": "Set.diff_union_inter",
+          "gate_id": "SET_SUBSET_ANTISYMM",
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "template_family": "SET_SUBSET_ANTISYMM",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_subset_or_setop": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.eq_of_inclusion_surjective",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u_1\ns✝ t✝ u s t : Set α\nh : s ⊆ t\nh_surj : Surjective (inclusion h)\n⊢ s = t",
+      "rc1_solved": false,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  α : Type u_1\n  s✝ t✝ u s t : Set α\n  h : s ⊆ t\n  h_surj : Function.Surjective (Set.inclusion h)\n  ⊢ s = "
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": null,
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.eq_of_inclusion_surjective",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "theorem": "Set.eq_of_inclusion_surjective",
+          "gate_id": "SET_SUBSET_ANTISYMM",
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "template_family": "SET_SUBSET_ANTISYMM",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_subset_or_setop": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp_all made no progress\nsimp_all made no progress"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.inclusion_inclusion",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u_1\ns t u : Set α\nhst : s ⊆ t\nhtu : t ⊆ u\nx : ↑s\n⊢ inclusion htu (inclusion hst x) = inclusion ⋯ x",
+      "rc1_solved": true,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": true,
+          "outcome": "solved"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": "aesop",
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.inclusion_inclusion",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "theorem": "Set.inclusion_inclusion",
+          "gate_id": "SET_SUBSET_ANTISYMM",
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "template_family": "SET_SUBSET_ANTISYMM",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_subset_or_setop": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  Set.inclusion htu (Set.inclusion hst x) = Set.inclusion ⋯ x\nα : Type u_1\ns t u : Set α\nhst : s ⊆ t\nhtu :"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.inclusion_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u_1\ns t u : Set α\nh : s ⊆ t\nx : ↑t\nm : ↑x ∈ s\n⊢ inclusion h ⟨↑x, m⟩ = x",
+      "rc1_solved": false,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "kernel type check failed: application type mismatch\n  Subset s\nargument has type\n  Set α✝\nbut function has type\n  Set α → Set α → Prop"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "kernel type check failed: application type mismatch\n  Subset s\nargument has type\n  Set α✝\nbut function has type\n  Set α → Set α → Prop"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "kernel type check failed: application type mismatch\n  Subset s\nargument has type\n  Set α✝\nbut function has type\n  Set α → Set α → Prop"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": null,
+      "set2_emitted": true,
+      "set2_gate": "SET_EXT_SIMP",
+      "set2_tactic": "ext x <;> simp",
+      "set2_solved": true,
+      "set2_emissions": [
+        {
+          "theorem": "Set.inclusion_right",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "solved"
+        },
+        {
+          "theorem": "Set.inclusion_right",
+          "gate_id": "SET_SUBSET_ANTISYMM",
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "template_family": "SET_SUBSET_ANTISYMM",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_subset_or_setop": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": false,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.inclusion_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u_1\ns t u : Set α\nx : ↑s\n⊢ inclusion ⋯ x = x",
+      "rc1_solved": true,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": true,
+          "outcome": "solved"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": "aesop",
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.inclusion_self",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp made no progress"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.insert_diff_eq_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na✝ b : α\ns✝ s₁ s₂ t t₁ t₂ u : Set α\na : α\ns : Set α\nh : a ∉ s\n⊢ insert a s \\ s = {a}",
+      "rc1_solved": true,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": true,
+          "outcome": "solved"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": "aesop",
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.insert_diff_eq_singleton",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        },
+        {
+          "theorem": "Set.insert_diff_eq_singleton",
+          "gate_id": "SET_SUBSET_ANTISYMM",
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "template_family": "SET_SUBSET_ANTISYMM",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_subset_or_setop": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.insert_diff_of_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t t₁ t₂ u s : Set α\nh : a ∈ t\n⊢ insert a s \\ t = s \\ t",
+      "rc1_solved": true,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": true,
+          "outcome": "solved"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": "aesop",
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.insert_diff_of_mem",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        },
+        {
+          "theorem": "Set.insert_diff_of_mem",
+          "gate_id": "SET_SUBSET_ANTISYMM",
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "template_family": "SET_SUBSET_ANTISYMM",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_subset_or_setop": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.insert_diff_of_not_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t t₁ t₂ u s : Set α\nh : a ∉ t\n⊢ insert a s \\ t = insert a (s \\ t)",
+      "rc1_solved": true,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": true,
+          "outcome": "solved"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": "aesop",
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.insert_diff_of_not_mem",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        },
+        {
+          "theorem": "Set.insert_diff_of_not_mem",
+          "gate_id": "SET_SUBSET_ANTISYMM",
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "template_family": "SET_SUBSET_ANTISYMM",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_subset_or_setop": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.insert_diff_self_of_not_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na✝ b : α\ns✝ s₁ s₂ t t₁ t₂ u : Set α\na : α\ns : Set α\nh : a ∉ s\n⊢ insert a s \\ {a} = s",
+      "rc1_solved": true,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "simp_all",
+          "solved": true,
+          "outcome": "solved"
+        },
+        {
+          "probe": "aesop",
+          "solved": true,
+          "outcome": "solved"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": "simp_all",
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.insert_diff_self_of_not_mem",
+          "gate_id": "SET_EXT_SIMP",
+          "tactic": "ext x <;> simp",
+          "template_family": "SET_EXT_SIMP",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_set_relation": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        },
+        {
+          "theorem": "Set.insert_diff_self_of_not_mem",
+          "gate_id": "SET_SUBSET_ANTISYMM",
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "template_family": "SET_SUBSET_ANTISYMM",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_eq": true,
+            "goal_has_subset_or_setop": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\ninst✝¹ : Preorder α\ninst✝ : Preorder β\nf : α → β\n⊢ MonotoneOn f s ↔ Monotone fun a => f ↑a",
+      "rc1_solved": false,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": null,
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.monotoneOn_iff_monotone",
+          "gate_id": "SET_IFF_CONSTRUCTOR",
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "template_family": "SET_IFF_CONSTRUCTOR",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_iff": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp_all made no progress\nsimp_all made no progress"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "cluster_id": null,
+      "primary_goal_shape": "unknown_pre_live",
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\ninst✝¹ : LinearOrder α\ninst✝ : LinearOrder β\nf : α → β\n⊢ ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔\n    ∃ a ∈ s, ∃ b ∈ s, ∃ c ∈ s, a < b ∧ b < c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+      "rc1_solved": false,
+      "rc1_proxy": "baseline_battery",
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp made no progress"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "error": "simp_all made no progress"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "baseline_solved_by": null,
+      "set2_emitted": true,
+      "set2_gate": null,
+      "set2_tactic": null,
+      "set2_solved": false,
+      "set2_emissions": [
+        {
+          "theorem": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "gate_id": "SET_IFF_CONSTRUCTOR",
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "template_family": "SET_IFF_CONSTRUCTOR",
+          "conditions_met": {
+            "name_or_ns_has_set": true,
+            "goal_is_iff": true,
+            "no_multiset_target": true
+          },
+          "emitted": true,
+          "off_gate": false,
+          "gate_strength": "medium",
+          "production_default_emits": false,
+          "result": "proof_failed",
+          "error": "simp_all made no progress\nsimp_all made no progress"
+        }
+      ],
+      "parse_error": false,
+      "proof_failed": true,
+      "timeout": false,
+      "off_gate": false,
+      "notes": [
+        "SET2 emitted but did not close the goal"
+      ],
+      "setup_error": null
+    }
+  ],
+  "constraints": "No solve is promotion-confirmed; NS23 minimal relabel required. RC1/NS24/NS9 untouched. SET2 off-by-default."
+}

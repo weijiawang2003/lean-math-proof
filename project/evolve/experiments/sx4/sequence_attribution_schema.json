@@ -1,0 +1,52 @@
+{
+  "schema_id": "sx4_sequence_attribution",
+  "version": "1.0",
+  "description": "Per-theorem attribution record for a depth-k sequence candidate, crediting a sequence only when it produces a genuine new win over literal production search.",
+  "record_shape": {
+    "candidate_id": "string — e.g. SX3_SET_ITE_AESOP",
+    "sequence": ["string", "..."],
+    "full_sequence_tactic": "string — e.g. 'simp [Set.ite] <;> aesop'",
+    "theorem": "string — full_name",
+    "literal_baseline_policy": "string — e.g. RC2",
+    "candidate_policy": "string — e.g. RC3_candidate",
+    "baseline_finished": "bool",
+    "candidate_finished": "bool",
+    "sequence_runner_solved": "bool|null — did the custom (proxy) runner solve it",
+    "controls": {
+      "A_initial": "solved|failed|unknown — first sub-tactic alone on the initial goal",
+      "B_initial": "solved|failed|unknown — last sub-tactic alone on the initial goal",
+      "A_then_B": "solved|failed|unknown — the full grouped sequence",
+      "baseline_controls_solved": ["string — any depth-1 controls observed to solve (simp/simp_all/aesop/...)"]
+    },
+    "production_trace_analysis": {
+      "baseline_reaches_A_equivalent_state": "bool|null",
+      "baseline_applies_B_after_A_state": "bool|null",
+      "equivalent_sequence_observed": "bool|null",
+      "baseline_winning_path": ["string — baseline tactics_used path, if any"],
+      "trace_confidence": "full|partial|insufficient"
+    },
+    "classification": "TRUE_SEQUENCE_DELTA|PRODUCTION_SUBSUMED|DEPTH1_DUPLICATE|ROUTING_DUPLICATE|TRACE_INSUFFICIENT|FAILED_SEQUENCE|NEEDS_REVIEW",
+    "credit": "bool",
+    "notes": ["string"]
+  },
+  "classification_rules_ordered": [
+    {"if": "baseline_finished == true", "then": "PRODUCTION_SUBSUMED", "credit": false, "note": "literal production already solves it; check trace for equivalent A->B continuation to confirm subsumption mechanism"},
+    {"if": "candidate_finished == false AND sequence_runner_solved != true", "then": "FAILED_SEQUENCE", "credit": false},
+    {"if": "controls.A_initial == solved OR controls.B_initial == solved", "then": "DEPTH1_DUPLICATE", "credit": false},
+    {"if": "baseline_controls_solved intersects {simp,simp_all,aesop,classical <;> aesop}", "then": "ROUTING_DUPLICATE", "credit": false, "note": "only when baseline did not finish but an equivalent generic family closed it under a different path"},
+    {"if": "baseline_finished == false AND candidate_finished == true AND A_then_B == solved AND controls fail AND NOT equivalent_sequence_observed AND trace_confidence != insufficient", "then": "TRUE_SEQUENCE_DELTA", "credit": true},
+    {"if": "trace_confidence == insufficient", "then": "TRACE_INSUFFICIENT", "credit": false},
+    {"else": "NEEDS_REVIEW", "credit": false}
+  ],
+  "credit_policy": "Only TRUE_SEQUENCE_DELTA carries credit=true. Default-to-no-credit for TRACE_INSUFFICIENT and NEEDS_REVIEW.",
+  "summary_shape": {
+    "candidate_id": "string",
+    "full_sequence_tactic": "string",
+    "num_theorems": "int",
+    "classification_histogram": {"<class>": "int"},
+    "credited_true_sequence_deltas": ["string"],
+    "num_credited": "int",
+    "production_subsumed": ["string"],
+    "over_credit_caught": "bool — true if the proxy runner credited theorems that SX4 reclassifies to non-credit"
+  }
+}

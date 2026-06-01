@@ -1,0 +1,111 @@
+{
+  "generated_by": "scripts/rc4c_build_validation_sets.py",
+  "policy": "project/evolve/experiments/rc4_candidates/d2_simp_aesop/d2_simp_aesop_policy.json",
+  "allowlist_lemmas": [
+    "Set.disjoint_left",
+    "Multiset.disjoint_left",
+    "Multiset.disjoint_right",
+    "Set.subset_pair_iff_eq",
+    "Finset.biUnion_subset",
+    "List.forall_iff_forall_mem"
+  ],
+  "sizes": {
+    "known_wins_all": 12,
+    "known_wins_nonoverlap": 4,
+    "fresh_holdout_all": 30,
+    "fresh_holdout_nonoverlap": 20,
+    "negative_controls": 18,
+    "namespace_negative_controls": 20,
+    "canonical_smoke": 45
+  },
+  "total": 149,
+  "unique_total": 109,
+  "gate_fire_counts_all": {
+    "known_wins_all": 12,
+    "known_wins_nonoverlap": 4,
+    "fresh_holdout_all": 30,
+    "fresh_holdout_nonoverlap": 20,
+    "negative_controls": 0,
+    "namespace_negative_controls": 0,
+    "canonical_smoke": 0
+  },
+  "gate_fire_counts_nonoverlap": {
+    "known_wins_all": 6,
+    "known_wins_nonoverlap": 4,
+    "fresh_holdout_all": 29,
+    "fresh_holdout_nonoverlap": 20,
+    "negative_controls": 0,
+    "namespace_negative_controls": 0,
+    "canonical_smoke": 0
+  },
+  "namespace_distribution": {
+    "known_wins_all": {
+      "Finset": 1,
+      "List": 1,
+      "Multiset": 3,
+      "Set": 7
+    },
+    "known_wins_nonoverlap": {
+      "Finset": 1,
+      "List": 1,
+      "Multiset": 1,
+      "Set": 1
+    },
+    "fresh_holdout_all": {
+      "Finset": 3,
+      "List": 4,
+      "Multiset": 21,
+      "Set": 2
+    },
+    "fresh_holdout_nonoverlap": {
+      "Finset": 3,
+      "List": 4,
+      "Multiset": 13
+    },
+    "negative_controls": {
+      "Finset": 15,
+      "List": 3
+    },
+    "namespace_negative_controls": {
+      "Nat": 20
+    },
+    "canonical_smoke": {
+      "Nat": 31,
+      "Set": 11,
+      "Finset": 3
+    }
+  },
+  "overlap_with_evidence": {
+    "known_wins_all": 12,
+    "known_wins_nonoverlap": 4,
+    "fresh_holdout_all": 0,
+    "fresh_holdout_nonoverlap": 0,
+    "negative_controls": 0,
+    "namespace_negative_controls": 0,
+    "canonical_smoke": 0
+  },
+  "known_vs_fresh": {
+    "known_wins_all": 12,
+    "known_wins_nonoverlap": 4,
+    "fresh_holdout_all": 30,
+    "fresh_holdout_nonoverlap": 20
+  },
+  "expected_gate_emissions": {
+    "known_wins_all": "RC4C_all fires on all (reproduce)",
+    "known_wins_nonoverlap": "RC4C_nonoverlap fires on all 4 pure theorems",
+    "fresh_holdout_all": "RC4C_all fires on all; wins NOT guaranteed",
+    "fresh_holdout_nonoverlap": "RC4C_nonoverlap fires on all; wins NOT guaranteed",
+    "negative_controls": "0 emissions (out-of-scope namespace / forbidden context)",
+    "namespace_negative_controls": "0 emissions",
+    "canonical_smoke": "≈0 emissions; floors preserved"
+  },
+  "set_files": {
+    "known_wins_all": "project/evolve/experiments/rc4_candidates/d2_simp_aesop/theorem_sets/known_wins_all.json",
+    "known_wins_nonoverlap": "project/evolve/experiments/rc4_candidates/d2_simp_aesop/theorem_sets/known_wins_nonoverlap.json",
+    "fresh_holdout_all": "project/evolve/experiments/rc4_candidates/d2_simp_aesop/theorem_sets/fresh_holdout_all.json",
+    "fresh_holdout_nonoverlap": "project/evolve/experiments/rc4_candidates/d2_simp_aesop/theorem_sets/fresh_holdout_nonoverlap.json",
+    "negative_controls": "project/evolve/experiments/rc4_candidates/d2_simp_aesop/theorem_sets/negative_controls.json",
+    "namespace_negative_controls": "project/evolve/experiments/rc4_candidates/d2_simp_aesop/theorem_sets/namespace_negative_controls.json",
+    "canonical_smoke": "project/evolve/experiments/rc4_candidates/d2_simp_aesop/theorem_sets/canonical_smoke.json"
+  }
+}

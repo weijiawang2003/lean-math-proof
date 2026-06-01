@@ -1,0 +1,268 @@
+{
+  "inputs": [
+    "project/evolve/experiments/sx3/out/sx3_deferred_results.json",
+    "project/evolve/experiments/sx3/out/sx3_fresh_holdout_results.json",
+    "project/evolve/experiments/sx3/out/sx3_set_cluster_results.json",
+    "project/evolve/experiments/sx3/out/sx3_negative_control_results.json",
+    "project/evolve/experiments/sx3/out/sx3_canonical_smoke_results.json"
+  ],
+  "families": [
+    {
+      "family": "SX3_SET_ITE_AESOP",
+      "sequence": "simp [Set.ite] <;> aesop",
+      "cases_tried": 28,
+      "gate_emissions": 17,
+      "true_depth2_wins": [
+        "Set.ite_compl",
+        "Set.ite_inter",
+        "Set.ite_inter_compl_self",
+        "Set.ite_inter_inter",
+        "Set.ite_inter_self"
+      ],
+      "fresh_wins": [
+        "Set.ite_inter_inter"
+      ],
+      "known_deferred_wins": [
+        "Set.ite_compl",
+        "Set.ite_inter",
+        "Set.ite_inter_compl_self",
+        "Set.ite_inter_self"
+      ],
+      "duplicates": 1,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "surfaces_run": [
+        "deferred",
+        "fresh_holdout"
+      ],
+      "win_surfaces": [
+        "project/evolve/experiments/sx3/cases/sx3_deferred_set_ite_cases.json",
+        "project/evolve/experiments/sx3/cases/sx3_set_ite_fresh_holdout.json"
+      ],
+      "multi_cluster_support": true,
+      "generalization_score": 6,
+      "promotion_recommendation": "RC3_CANDIDATE"
+    },
+    {
+      "family": "SX3_SET_ITE_SIMPALL",
+      "sequence": "simp [Set.ite] <;> simp_all",
+      "cases_tried": 28,
+      "gate_emissions": 17,
+      "true_depth2_wins": [],
+      "fresh_wins": [],
+      "known_deferred_wins": [],
+      "duplicates": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "surfaces_run": [
+        "deferred",
+        "fresh_holdout"
+      ],
+      "win_surfaces": [],
+      "multi_cluster_support": false,
+      "generalization_score": 0,
+      "promotion_recommendation": "REJECT_NO_DELTA"
+    },
+    {
+      "family": "SX3_SET_ITE_EXT",
+      "sequence": "ext x <;> simp [Set.ite]",
+      "cases_tried": 28,
+      "gate_emissions": 17,
+      "true_depth2_wins": [],
+      "fresh_wins": [],
+      "known_deferred_wins": [],
+      "duplicates": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "surfaces_run": [
+        "deferred",
+        "fresh_holdout"
+      ],
+      "win_surfaces": [],
+      "multi_cluster_support": false,
+      "generalization_score": 0,
+      "promotion_recommendation": "REJECT_NO_DELTA"
+    },
+    {
+      "family": "SX3_SET_ITE_EXT_AESOP",
+      "sequence": "ext x <;> simp [Set.ite] <;> aesop",
+      "cases_tried": 24,
+      "gate_emissions": 13,
+      "true_depth2_wins": [],
+      "fresh_wins": [],
+      "known_deferred_wins": [],
+      "duplicates": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "surfaces_run": [
+        "fresh_holdout"
+      ],
+      "win_surfaces": [],
+      "multi_cluster_support": false,
+      "generalization_score": 0,
+      "promotion_recommendation": "REJECT_NO_DELTA"
+    },
+    {
+      "family": "SX3_SET_EXT_AESOP",
+      "sequence": "ext x <;> aesop",
+      "cases_tried": 22,
+      "gate_emissions": 5,
+      "true_depth2_wins": [],
+      "fresh_wins": [],
+      "known_deferred_wins": [],
+      "duplicates": 3,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "surfaces_run": [
+        "set_cluster"
+      ],
+      "win_surfaces": [],
+      "multi_cluster_support": false,
+      "generalization_score": -6,
+      "promotion_recommendation": "REJECT_NO_DELTA"
+    },
+    {
+      "family": "SX3_SET_EXT_SIMPALL",
+      "sequence": "ext x <;> simp_all",
+      "cases_tried": 22,
+      "gate_emissions": 5,
+      "true_depth2_wins": [],
+      "fresh_wins": [],
+      "known_deferred_wins": [],
+      "duplicates": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "surfaces_run": [
+        "set_cluster"
+      ],
+      "win_surfaces": [],
+      "multi_cluster_support": false,
+      "generalization_score": 0,
+      "promotion_recommendation": "REJECT_NO_DELTA"
+    },
+    {
+      "family": "SX3_SET_IFF_CONSTRUCTOR_AESOP",
+      "sequence": "constructor <;> intro h <;> aesop",
+      "cases_tried": 22,
+      "gate_emissions": 6,
+      "true_depth2_wins": [],
+      "fresh_wins": [],
+      "known_deferred_wins": [],
+      "duplicates": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "surfaces_run": [
+        "set_cluster"
+      ],
+      "win_surfaces": [],
+      "multi_cluster_support": false,
+      "generalization_score": 0,
+      "promotion_recommendation": "REJECT_NO_DELTA"
+    },
+    {
+      "family": "SX3_SET_IFF_CONSTRUCTOR_SIMPALL",
+      "sequence": "constructor <;> intro h <;> simp_all",
+      "cases_tried": 22,
+      "gate_emissions": 6,
+      "true_depth2_wins": [],
+      "fresh_wins": [],
+      "known_deferred_wins": [],
+      "duplicates": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "surfaces_run": [
+        "set_cluster"
+      ],
+      "win_surfaces": [],
+      "multi_cluster_support": false,
+      "generalization_score": 0,
+      "promotion_recommendation": "REJECT_NO_DELTA"
+    },
+    {
+      "family": "SX3_SET_SUBSET_ANTISYMM_AESOP",
+      "sequence": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+      "cases_tried": 22,
+      "gate_emissions": 5,
+      "true_depth2_wins": [],
+      "fresh_wins": [],
+      "known_deferred_wins": [],
+      "duplicates": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "surfaces_run": [
+        "set_cluster"
+      ],
+      "win_surfaces": [],
+      "multi_cluster_support": false,
+      "generalization_score": 0,
+      "promotion_recommendation": "REJECT_NO_DELTA"
+    },
+    {
+      "family": "SX3_SET_SUBSET_ANTISYMM_SIMPALL",
+      "sequence": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+      "cases_tried": 22,
+      "gate_emissions": 5,
+      "true_depth2_wins": [],
+      "fresh_wins": [],
+      "known_deferred_wins": [],
+      "duplicates": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "surfaces_run": [
+        "set_cluster"
+      ],
+      "win_surfaces": [],
+      "multi_cluster_support": false,
+      "generalization_score": 0,
+      "promotion_recommendation": "REJECT_NO_DELTA"
+    },
+    {
+      "family": "SX3_SET_BYCASES_SIMPALL",
+      "sequence": "by_cases h : ?p <;> simp_all [h]",
+      "cases_tried": 0,
+      "gate_emissions": 0,
+      "true_depth2_wins": [],
+      "fresh_wins": [],
+      "known_deferred_wins": [],
+      "duplicates": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "surfaces_run": [],
+      "win_surfaces": [],
+      "multi_cluster_support": false,
+      "generalization_score": 0,
+      "promotion_recommendation": "REJECT_NO_DELTA"
+    },
+    {
+      "family": "SX3_MULTISET_TOFINSET_AESOP",
+      "sequence": "simp [Multiset.mem_toFinset] <;> aesop",
+      "cases_tried": 0,
+      "gate_emissions": 0,
+      "true_depth2_wins": [],
+      "fresh_wins": [],
+      "known_deferred_wins": [],
+      "duplicates": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "surfaces_run": [],
+      "win_surfaces": [],
+      "multi_cluster_support": false,
+      "generalization_score": 0,
+      "promotion_recommendation": "REJECT_NO_DELTA"
+    }
+  ],
+  "best_family": "SX3_SET_ITE_AESOP",
+  "note": "Generalization score is a heuristic; see raw evidence per family. Only SX3_SET_ITE_AESOP is an RC3 candidate; other families are exploratory."
+}

@@ -1,0 +1,22 @@
+{
+  "Nat.half_le_of_sub_le_half": {
+    "status": "solved",
+    "winning_tactic": "omega",
+    "num_steps": 1
+  },
+  "Nat.le_and_le_add_one_iff": {
+    "status": "solved",
+    "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+    "num_steps": 1
+  },
+  "Nat.le_or_le_of_add_eq_add_pred": {
+    "status": "solved",
+    "winning_tactic": "omega",
+    "num_steps": 1
+  },
+  "Nat.add_mod_eq_ite": {
+    "status": "solved",
+    "winning_tactic": "split_ifs <;> omega",
+    "num_steps": 2
+  }
+}

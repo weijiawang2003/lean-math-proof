@@ -1,0 +1,350 @@
+{
+  "run_real": true,
+  "results": [
+    {
+      "policy": "rc1",
+      "batch": "sf1_multiset_holdout",
+      "theorem_set": "sf1_multiset_holdout_runnable",
+      "ran": true,
+      "return_code": 0,
+      "run_dir": "project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_multiset_holdout_runnable",
+      "status": "ran",
+      "stdout_log": "project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval.stdout.log",
+      "stderr_log": "project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval.stderr.log",
+      "metrics_path": "project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval-ef8a1855/metrics.json",
+      "solved": 2,
+      "total": 3,
+      "aggregate_solved": 2,
+      "parse_warnings": [],
+      "per_theorem": [
+        {
+          "full_name": "Multiset.toFinset_nsmul",
+          "file_path": "Mathlib/Data/Finset/Basic.lean",
+          "solved": true,
+          "finished": true,
+          "num_steps": 1,
+          "winning_tactic": "aesop",
+          "winning_tactic_origin": "generative_topk",
+          "error_message": null
+        },
+        {
+          "full_name": "Multiset.toFinset_eq_singleton_iff",
+          "file_path": "Mathlib/Data/Finset/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 4,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-13 tactics errored at step 4"
+        },
+        {
+          "full_name": "Multiset.disjoint_toFinset",
+          "file_path": "Mathlib/Data/Finset/Basic.lean",
+          "solved": true,
+          "finished": true,
+          "num_steps": 3,
+          "winning_tactic": "induction m1 using Multiset.induction_on <;> simp_all",
+          "winning_tactic_origin": "wrapper_symbolic_action",
+          "error_message": null
+        }
+      ]
+    },
+    {
+      "policy": "rc1",
+      "batch": "sf1_balanced_mini",
+      "theorem_set": "sf1_balanced_mini_runnable",
+      "ran": true,
+      "return_code": 0,
+      "run_dir": "project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_balanced_mini_runnable",
+      "status": "ran",
+      "stdout_log": "project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_balanced_mini_runnable/eval.stdout.log",
+      "stderr_log": "project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_balanced_mini_runnable/eval.stderr.log",
+      "metrics_path": "project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_balanced_mini_runnable/eval-03c2967c/metrics.json",
+      "solved": 2,
+      "total": 6,
+      "aggregate_solved": 2,
+      "parse_warnings": [],
+      "per_theorem": [
+        {
+          "full_name": "Prop.compl_singleton",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 1,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-12 tactics errored at step 1"
+        },
+        {
+          "full_name": "Function.Injective.nonempty_apply_iff",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 2,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 2"
+        },
+        {
+          "full_name": "Set.ssubset_singleton_iff",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 3,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 3"
+        },
+        {
+          "full_name": "coe_notMemRangeEquiv_symm",
+          "file_path": "Mathlib/Data/Finset/Basic.lean",
+          "solved": true,
+          "finished": true,
+          "num_steps": 1,
+          "winning_tactic": "aesop",
+          "winning_tactic_origin": "generative_topk",
+          "error_message": null
+        },
+        {
+          "full_name": "Multiset.toFinset_nsmul",
+          "file_path": "Mathlib/Data/Finset/Basic.lean",
+          "solved": true,
+          "finished": true,
+          "num_steps": 1,
+          "winning_tactic": "aesop",
+          "winning_tactic_origin": "generative_topk",
+          "error_message": null
+        },
+        {
+          "full_name": "Eq.subset",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 1,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-12 tactics errored at step 1"
+        }
+      ]
+    },
+    {
+      "policy": "rc1",
+      "batch": "sf1_frontier_all",
+      "theorem_set": "sf1_frontier_runnable_subset",
+      "ran": true,
+      "return_code": 0,
+      "run_dir": "project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_frontier_runnable_subset",
+      "status": "ran",
+      "stdout_log": "project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_frontier_runnable_subset/eval.stdout.log",
+      "stderr_log": "project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_frontier_runnable_subset/eval.stderr.log",
+      "metrics_path": "project/evolve/experiments/sf2/out/frontier_expansion/eval/rc1_smoke_sf1_frontier_runnable_subset/eval-c6564fd3/metrics.json",
+      "solved": 5,
+      "total": 20,
+      "aggregate_solved": 5,
+      "parse_warnings": [],
+      "per_theorem": [
+        {
+          "full_name": "Set.ssubset_singleton_iff",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 3,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 3"
+        },
+        {
+          "full_name": "Set.mem_dite_empty_left",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": true,
+          "finished": true,
+          "num_steps": 1,
+          "winning_tactic": "aesop",
+          "winning_tactic_origin": "generative_topk",
+          "error_message": null
+        },
+        {
+          "full_name": "Set.ite_eq_of_subset_left",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 1,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-12 tactics errored at step 1"
+        },
+        {
+          "full_name": "Set.antitoneOn_iff_antitone",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 1,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-14 tactics errored at step 1"
+        },
+        {
+          "full_name": "Set.inclusion_self",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": true,
+          "finished": true,
+          "num_steps": 1,
+          "winning_tactic": "aesop",
+          "winning_tactic_origin": "generative_topk",
+          "error_message": null
+        },
+        {
+          "full_name": "Set.ite_inter_self",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 3,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 3"
+        },
+        {
+          "full_name": "Set.ite_inter_compl_self",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 3,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 3"
+        },
+        {
+          "full_name": "Set.subset_insert_iff",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 3,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 3"
+        },
+        {
+          "full_name": "Set.inclusion_right",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": true,
+          "finished": true,
+          "num_steps": 1,
+          "winning_tactic": "tauto",
+          "winning_tactic_origin": "generative_topk",
+          "error_message": null
+        },
+        {
+          "full_name": "Set.ite_right",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 3,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 3"
+        },
+        {
+          "full_name": "Set.pair_diff_left",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": true,
+          "finished": true,
+          "num_steps": 1,
+          "winning_tactic": "aesop",
+          "winning_tactic_origin": "generative_topk",
+          "error_message": null
+        },
+        {
+          "full_name": "Set.subset_singleton_iff_eq",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 2,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 2"
+        },
+        {
+          "full_name": "Set.pair_eq_pair_iff",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 2,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 2"
+        },
+        {
+          "full_name": "Set.ite_inter",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 3,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 3"
+        },
+        {
+          "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 2,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 2"
+        },
+        {
+          "full_name": "Set.diff_singleton_subset_iff",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 5,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 5"
+        },
+        {
+          "full_name": "Set.ite_empty_right",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 3,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 3"
+        },
+        {
+          "full_name": "Set.ite_eq_of_subset_right",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 1,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-12 tactics errored at step 1"
+        },
+        {
+          "full_name": "Set.union_empty_iff",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 4,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-11 tactics errored at step 4"
+        },
+        {
+          "full_name": "Set.inclusion_inclusion",
+          "file_path": "Mathlib/Data/Set/Basic.lean",
+          "solved": true,
+          "finished": true,
+          "num_steps": 1,
+          "winning_tactic": "aesop",
+          "winning_tactic_origin": "generative_topk",
+          "error_message": null
+        }
+      ]
+    }
+  ],
+  "note_dedup": "results deduped to one entry per (theorem_set,policy); the eval emitted redundant identical copies."
+}

@@ -1,0 +1,32 @@
+{
+  "base": "RC1",
+  "base_wrapper": "project/evolve/experiments/rc1/rc1_production_wrapper.json",
+  "added_components": [
+    "SET_ITE_SIMP"
+  ],
+  "emit_slot": "priority_any",
+  "emit_slot_desc": "priority_templates['any'] (emitted before base; gated early)",
+  "added_delta": {
+    "emit_slot": "priority_any",
+    "tactic": "simp [Set.ite]",
+    "theorem_name_tactic_gates_added": {
+      "simp [Set.ite]": [
+        "Set.ite"
+      ]
+    }
+  },
+  "disabled_components": [
+    "SET_EXT_SIMP",
+    "SET_SUBSET_ANTISYMM",
+    "SET_IFF_CONSTRUCTOR",
+    "SET_EXT_BYCASES",
+    "SET_RW_BRIDGE",
+    "SOURCE_SPECIFIC",
+    "broad_set_aesop"
+  ],
+  "production_status": "candidate",
+  "requires_owner_approval": true,
+  "preserves_rc1_on_non_set_ite": true,
+  "preservation_argument": "theorem_name_tactic_gates only filters wrapper-added entries; base-model output is never gated; the new fallback is denied on all non-'Set.ite' names; the literal 'simp [Set.ite]' substring matches no other RC1 tactic -> RC2 candidate set == RC1 on every non-Set.ite theorem.",
+  "composed_wrapper": "project/evolve/experiments/rc2/rc2_candidate_wrapper.json"
+}

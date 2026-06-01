@@ -1,0 +1,90 @@
+{
+  "List.dropWhile_eq_nil_iff": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 2,
+    "tactics_used": [
+      "aesop"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-61b7a110/traces.jsonl"
+  },
+  "List.takeWhile_eq_self_iff": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 2,
+    "tactics_used": [
+      "aesop"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-61b7a110/traces.jsonl"
+  },
+  "List.indexOf_lt_length": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 3,
+    "tactics_used": [
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "aesop"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-61b7a110/traces.jsonl"
+  },
+  "List.indexOf_eq_length": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 2,
+    "tactics_used": [
+      "aesop"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-61b7a110/traces.jsonl"
+  },
+  "List.mem_mem_ranges_iff_lt_natSum": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 8,
+    "tactics_used": [
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "simp_all",
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "simp_all",
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "simp_all",
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "simp_all"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-61b7a110/traces.jsonl"
+  },
+  "List.exists_mem_cons_iff": {
+    "classification": "RC2_SOLVED",
+    "rc2_finished": true,
+    "num_steps": 1,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-61b7a110/traces.jsonl"
+  },
+  "Nat.le_of_pred_lt": {
+    "classification": "RC2_SOLVED",
+    "rc2_finished": true,
+    "num_steps": 2,
+    "winning_tactic": "omega",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-61b7a110/traces.jsonl"
+  },
+  "Nat.le_mul_self": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-61b7a110/traces.jsonl"
+  },
+  "Nat.two_le_iff": {
+    "classification": "RC2_SOLVED",
+    "rc2_finished": true,
+    "num_steps": 1,
+    "winning_tactic": "omega",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-61b7a110/traces.jsonl"
+  },
+  "Nat.lt_mul_self_iff": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-61b7a110/traces.jsonl"
+  }
+}

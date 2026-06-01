@@ -1,0 +1,154 @@
+[
+  {
+    "full_name": "Set._root_.Disjoint.image",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "theorem _root_.Disjoint.image {s t u : Set α} {f : α → β} (h : Disjoint s t) (hf : u.InjOn f) (hs : s ⊆ u) (ht : t ⊆ u) : Disjoint (f '' s) (f '' t)",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "open_flake",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Set.biUnion_compl_eq_of_pairwise_disjoint_of_iUnion_eq_univ",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "lemma biUnion_compl_eq_of_pairwise_disjoint_of_iUnion_eq_univ {ι : Type*} {Es : ι → Set α} (Es_union : ⋃ i, Es i = univ) (Es_disj : Pairwise fun i j ↦ Disjoint (Es i) (Es j)) (I : Set ι) : (⋃ i ∈ I, Es i)ᶜ = ⋃ i ∈ Iᶜ, Es i",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Set.disjoint_iUnion",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "theorem disjoint_iUnion₂_left {s : ∀ i, κ i → Set α} {t : Set α} : Disjoint (⋃ (i) (j), s i j) t ↔ ∀ i j, Disjoint (s i j) t",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "open_flake",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Set.disjoint_singleton",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "lemma disjoint_singleton : Disjoint ({a} : Set α) {b} ↔ a ≠ b",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "solved",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Set.injOn_union",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "theorem injOn_union (h : Disjoint s₁ s₂) : InjOn f (s₁ ∪ s₂) ↔ InjOn f s₁ ∧ InjOn f s₂ ∧ ∀ x ∈ s₁, ∀ y ∈ s₂, f x ≠ f y",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Set.pairwiseDisjoint_filter",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Set",
+    "goal_text": null,
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Set.sigmaToiUnion_bijective",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "theorem sigmaToiUnion_bijective (h : Pairwise fun i j => Disjoint (t i) (t j)) : Bijective (sigmaToiUnion t)",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": null,
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  },
+  {
+    "full_name": "Set.sigmaToiUnion_injective",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "theorem sigmaToiUnion_injective (h : Pairwise fun i j => Disjoint (t i) (t j)) : Injective (sigmaToiUnion t) | ⟨a₁, b₁, h₁⟩, ⟨a₂, b₂, h₂⟩, eq => have b_eq : b₁ = b₂",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": null,
+    "expected_behavior": "fresh holdout; gate fires; win NOT guaranteed"
+  }
+]

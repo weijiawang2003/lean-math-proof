@@ -1,0 +1,421 @@
+{
+  "source": "project/evolve/experiments/sf2/out/set_cluster_deep_dive/probe_results.json",
+  "num_winning_probes": 10,
+  "num_template_families": 4,
+  "num_interesting": 1,
+  "promotion_note": "A template is gate-worthy only if it solves >=2 theorems or is a pure tactic reusable by goal shape with NO theorem-specific symbols. Mined evidence: only SET_ITE_SIMP qualifies (n=2, simp [Set.ite]); all rw-bridges / simp-sets are single-theorem and theorem-specific.",
+  "templates": [
+    {
+      "template_family": "SET_RW_BRIDGE",
+      "normalized_template": "rw [<bridge lemmas>] (+ closer)",
+      "num_theorems_solved": 4,
+      "theorems": [
+        "Set.diff_singleton_subset_iff",
+        "Set.ite_inter",
+        "Set.ite_inter_self",
+        "Set.ssubset_singleton_iff"
+      ],
+      "clusters_covered": [
+        "Set|future_failure_driven_lemma_candidate|iff|all_tactics_errored",
+        "Set|rc1_production_stack|equality|all_tactics_errored",
+        "Set|rc1_production_stack|membership|all_tactics_errored"
+      ],
+      "unique_tactic_strings": [
+        "rw [Set.ite, union_inter_distrib_right, diff_inter_self, inter_assoc, inter_self, union_empty]",
+        "rw [ite_inter_inter, ite_same]",
+        "rw [ssubset_iff_subset_ne, subset_singleton_iff_eq, or_and_right, and_not_self_iff, or_false_iff, and_iff_left_iff_imp] <;> exact fun h => h ▸ (singleton_ne_empty _).symm",
+        "rw [← union_singleton, union_comm] <;> apply diff_subset_iff"
+      ],
+      "all_baselines_failed": true,
+      "uses_named_lemmas": true,
+      "uses_local_hyp": false,
+      "goal_shapes": [
+        "equality",
+        "iff",
+        "membership"
+      ],
+      "source_copy_risk": "high",
+      "generalization_risk": "high",
+      "theorem_agnostic": false,
+      "single_reusable_tactic": false,
+      "interesting": false,
+      "interesting_reason": "family solves 4 but each member is theorem-specific (named lemmas=True, local-hyp=False) — NO single reusable tactic, NOT gate-worthy"
+    },
+    {
+      "template_family": "SOURCE_SPECIFIC",
+      "normalized_template": "simp only [← subset_empty_iff, union_subset_iff]",
+      "num_theorems_solved": 3,
+      "theorems": [
+        "Set.antitoneOn_iff_antitone",
+        "Set.pair_eq_pair_iff",
+        "Set.union_empty_iff"
+      ],
+      "clusters_covered": [
+        "Set|future_failure_driven_lemma_candidate|equality|all_tactics_errored",
+        "Set|future_failure_driven_lemma_candidate|iff|all_tactics_errored",
+        "Set|rc1_production_stack|equality|all_tactics_errored"
+      ],
+      "unique_tactic_strings": [
+        "simp [Antitone, AntitoneOn]",
+        "simp [subset_antisymm_iff, insert_subset_iff] <;> aesop",
+        "simp only [← subset_empty_iff, union_subset_iff]"
+      ],
+      "all_baselines_failed": true,
+      "uses_named_lemmas": true,
+      "uses_local_hyp": false,
+      "goal_shapes": [
+        "equality",
+        "iff"
+      ],
+      "source_copy_risk": "high",
+      "generalization_risk": "high",
+      "theorem_agnostic": false,
+      "single_reusable_tactic": false,
+      "interesting": false,
+      "interesting_reason": "family solves 3 but each member is theorem-specific (named lemmas=True, local-hyp=False) — NO single reusable tactic, NOT gate-worthy"
+    },
+    {
+      "template_family": "SET_ITE_SIMP",
+      "normalized_template": "simp [Set.ite]",
+      "num_theorems_solved": 2,
+      "theorems": [
+        "Set.ite_empty_right",
+        "Set.ite_right"
+      ],
+      "clusters_covered": [
+        "Set|future_failure_driven_lemma_candidate|membership|all_tactics_errored"
+      ],
+      "unique_tactic_strings": [
+        "simp [Set.ite]"
+      ],
+      "all_baselines_failed": true,
+      "uses_named_lemmas": false,
+      "uses_local_hyp": false,
+      "goal_shapes": [
+        "membership"
+      ],
+      "source_copy_risk": "low",
+      "generalization_risk": "low",
+      "theorem_agnostic": true,
+      "single_reusable_tactic": true,
+      "interesting": true,
+      "interesting_reason": "theorem-agnostic tactic solves 2 theorems"
+    },
+    {
+      "template_family": "SET_EXT_BYCASES",
+      "normalized_template": "ext x <;> by_cases <VAR> <;> simp_all [...]",
+      "num_theorems_solved": 1,
+      "theorems": [
+        "Set.ite_eq_of_subset_left"
+      ],
+      "clusters_covered": [
+        "Set|broad_set_aesop_rejected|equality|all_tactics_errored"
+      ],
+      "unique_tactic_strings": [
+        "ext x <;> by_cases hx : x ∈ t <;> simp [hx, Set.ite, or_iff_right_of_imp (@h x)]"
+      ],
+      "all_baselines_failed": true,
+      "uses_named_lemmas": true,
+      "uses_local_hyp": true,
+      "goal_shapes": [
+        "equality"
+      ],
+      "source_copy_risk": "high",
+      "generalization_risk": "high",
+      "theorem_agnostic": false,
+      "single_reusable_tactic": false,
+      "interesting": false,
+      "interesting_reason": "family solves 1 but each member is theorem-specific (named lemmas=True, local-hyp=True) — NO single reusable tactic, NOT gate-worthy"
+    }
+  ],
+  "mined_probes": [
+    {
+      "theorem": "Set.diff_singleton_subset_iff",
+      "cluster_id": "Set|rc1_production_stack|equality|all_tactics_errored",
+      "winning_tactic": "rw [← union_singleton, union_comm] <;> apply diff_subset_iff",
+      "winning_family": "F_source_inspired",
+      "source_inspired": true,
+      "baseline_failures": [
+        "aesop",
+        "classical <;> aesop",
+        "simp",
+        "simp_all"
+      ],
+      "normalized_template": "rw [<bridge lemmas>] (+ closer)",
+      "template_family": "SET_RW_BRIDGE",
+      "required_symbols": [
+        "union_comm",
+        "union_singleton"
+      ],
+      "goal_shape": "equality",
+      "local_hypotheses_used": [],
+      "parser_constraints": [
+        "single_line_only",
+        "';'->'<;>' rewrite",
+        "no '·' bullet blocks"
+      ],
+      "generalization_risk": "high",
+      "theorem_specific_risk": "high",
+      "gap_classification": "search_depth_gap"
+    },
+    {
+      "theorem": "Set.ite_eq_of_subset_left",
+      "cluster_id": "Set|broad_set_aesop_rejected|equality|all_tactics_errored",
+      "winning_tactic": "ext x <;> by_cases hx : x ∈ t <;> simp [hx, Set.ite, or_iff_right_of_imp (@h x)]",
+      "winning_family": "F_source_inspired",
+      "source_inspired": true,
+      "baseline_failures": [
+        "aesop",
+        "classical <;> aesop",
+        "simp",
+        "simp_all"
+      ],
+      "normalized_template": "ext x <;> by_cases <VAR> <;> simp_all [...]",
+      "template_family": "SET_EXT_BYCASES",
+      "required_symbols": [
+        "Set.ite",
+        "hx",
+        "or_iff_right_of_imp"
+      ],
+      "goal_shape": "equality",
+      "local_hypotheses_used": [
+        "@h",
+        "hx"
+      ],
+      "parser_constraints": [
+        "single_line_only",
+        "';'->'<;>' rewrite",
+        "no '·' bullet blocks"
+      ],
+      "generalization_risk": "high",
+      "theorem_specific_risk": "high",
+      "gap_classification": "search_depth_gap"
+    },
+    {
+      "theorem": "Set.pair_eq_pair_iff",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|equality|all_tactics_errored",
+      "winning_tactic": "simp [subset_antisymm_iff, insert_subset_iff] <;> aesop",
+      "winning_family": "F_source_inspired",
+      "source_inspired": true,
+      "baseline_failures": [
+        "aesop",
+        "classical <;> aesop",
+        "simp",
+        "simp_all"
+      ],
+      "normalized_template": "simp [subset_antisymm_iff, insert_subset_iff] <;> aesop",
+      "template_family": "SOURCE_SPECIFIC",
+      "required_symbols": [
+        "insert_subset_iff",
+        "subset_antisymm_iff"
+      ],
+      "goal_shape": "equality",
+      "local_hypotheses_used": [],
+      "parser_constraints": [
+        "single_line_only",
+        "';'->'<;>' rewrite",
+        "no '·' bullet blocks"
+      ],
+      "generalization_risk": "high",
+      "theorem_specific_risk": "high",
+      "gap_classification": "tactic_gap"
+    },
+    {
+      "theorem": "Set.union_empty_iff",
+      "cluster_id": "Set|rc1_production_stack|equality|all_tactics_errored",
+      "winning_tactic": "simp only [← subset_empty_iff, union_subset_iff]",
+      "winning_family": "F_source_inspired",
+      "source_inspired": true,
+      "baseline_failures": [
+        "aesop",
+        "classical <;> aesop",
+        "simp",
+        "simp_all"
+      ],
+      "normalized_template": "simp only [← subset_empty_iff, union_subset_iff]",
+      "template_family": "SOURCE_SPECIFIC",
+      "required_symbols": [
+        "subset_empty_iff",
+        "union_subset_iff"
+      ],
+      "goal_shape": "equality",
+      "local_hypotheses_used": [],
+      "parser_constraints": [
+        "single_line_only"
+      ],
+      "generalization_risk": "high",
+      "theorem_specific_risk": "high",
+      "gap_classification": "tactic_gap"
+    },
+    {
+      "theorem": "Set.antitoneOn_iff_antitone",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|iff|all_tactics_errored",
+      "winning_tactic": "simp [Antitone, AntitoneOn]",
+      "winning_family": "F_source_inspired",
+      "source_inspired": true,
+      "baseline_failures": [
+        "aesop",
+        "classical <;> aesop",
+        "simp",
+        "simp_all"
+      ],
+      "normalized_template": "simp [Antitone, AntitoneOn]",
+      "template_family": "SOURCE_SPECIFIC",
+      "required_symbols": [
+        "Antitone",
+        "AntitoneOn"
+      ],
+      "goal_shape": "iff",
+      "local_hypotheses_used": [],
+      "parser_constraints": [
+        "single_line_only"
+      ],
+      "generalization_risk": "high",
+      "theorem_specific_risk": "high",
+      "gap_classification": "tactic_gap"
+    },
+    {
+      "theorem": "Set.ssubset_singleton_iff",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|iff|all_tactics_errored",
+      "winning_tactic": "rw [ssubset_iff_subset_ne, subset_singleton_iff_eq, or_and_right, and_not_self_iff, or_false_iff, and_iff_left_iff_imp] <;> exact fun h => h ▸ (singleton_ne_empty _).symm",
+      "winning_family": "F_source_inspired",
+      "source_inspired": true,
+      "baseline_failures": [
+        "aesop",
+        "classical <;> aesop",
+        "simp",
+        "simp_all"
+      ],
+      "normalized_template": "rw [<bridge lemmas>] (+ closer)",
+      "template_family": "SET_RW_BRIDGE",
+      "required_symbols": [
+        "and_iff_left_iff_imp",
+        "and_not_self_iff",
+        "or_and_right",
+        "or_false_iff",
+        "ssubset_iff_subset_ne",
+        "subset_singleton_iff_eq"
+      ],
+      "goal_shape": "iff",
+      "local_hypotheses_used": [],
+      "parser_constraints": [
+        "single_line_only",
+        "';'->'<;>' rewrite",
+        "no '·' bullet blocks"
+      ],
+      "generalization_risk": "high",
+      "theorem_specific_risk": "high",
+      "gap_classification": "search_depth_gap"
+    },
+    {
+      "theorem": "Set.ite_empty_right",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|membership|all_tactics_errored",
+      "winning_tactic": "simp [Set.ite]",
+      "winning_family": "E_ite_bycases",
+      "source_inspired": false,
+      "baseline_failures": [
+        "aesop",
+        "classical <;> aesop",
+        "simp",
+        "simp_all"
+      ],
+      "normalized_template": "simp [Set.ite]",
+      "template_family": "SET_ITE_SIMP",
+      "required_symbols": [
+        "Set.ite"
+      ],
+      "goal_shape": "membership",
+      "local_hypotheses_used": [],
+      "parser_constraints": [
+        "single_line_only"
+      ],
+      "generalization_risk": "low",
+      "theorem_specific_risk": "low",
+      "gap_classification": "tactic_gap"
+    },
+    {
+      "theorem": "Set.ite_inter",
+      "cluster_id": "Set|rc1_production_stack|membership|all_tactics_errored",
+      "winning_tactic": "rw [ite_inter_inter, ite_same]",
+      "winning_family": "F_source_inspired",
+      "source_inspired": true,
+      "baseline_failures": [
+        "aesop",
+        "classical <;> aesop",
+        "simp",
+        "simp_all"
+      ],
+      "normalized_template": "rw [<bridge lemmas>] (+ closer)",
+      "template_family": "SET_RW_BRIDGE",
+      "required_symbols": [
+        "ite_inter_inter",
+        "ite_same"
+      ],
+      "goal_shape": "membership",
+      "local_hypotheses_used": [],
+      "parser_constraints": [
+        "single_line_only"
+      ],
+      "generalization_risk": "high",
+      "theorem_specific_risk": "high",
+      "gap_classification": "search_depth_gap"
+    },
+    {
+      "theorem": "Set.ite_inter_self",
+      "cluster_id": "Set|rc1_production_stack|membership|all_tactics_errored",
+      "winning_tactic": "rw [Set.ite, union_inter_distrib_right, diff_inter_self, inter_assoc, inter_self, union_empty]",
+      "winning_family": "F_source_inspired",
+      "source_inspired": true,
+      "baseline_failures": [
+        "aesop",
+        "classical <;> aesop",
+        "simp",
+        "simp_all"
+      ],
+      "normalized_template": "rw [<bridge lemmas>] (+ closer)",
+      "template_family": "SET_RW_BRIDGE",
+      "required_symbols": [
+        "Set.ite",
+        "diff_inter_self",
+        "inter_assoc",
+        "inter_self",
+        "union_empty",
+        "union_inter_distrib_right"
+      ],
+      "goal_shape": "membership",
+      "local_hypotheses_used": [],
+      "parser_constraints": [
+        "single_line_only"
+      ],
+      "generalization_risk": "high",
+      "theorem_specific_risk": "high",
+      "gap_classification": "search_depth_gap"
+    },
+    {
+      "theorem": "Set.ite_right",
+      "cluster_id": "Set|future_failure_driven_lemma_candidate|membership|all_tactics_errored",
+      "winning_tactic": "simp [Set.ite]",
+      "winning_family": "E_ite_bycases",
+      "source_inspired": false,
+      "baseline_failures": [
+        "aesop",
+        "classical <;> aesop",
+        "simp",
+        "simp_all"
+      ],
+      "normalized_template": "simp [Set.ite]",
+      "template_family": "SET_ITE_SIMP",
+      "required_symbols": [
+        "Set.ite"
+      ],
+      "goal_shape": "membership",
+      "local_hypotheses_used": [],
+      "parser_constraints": [
+        "single_line_only"
+      ],
+      "generalization_risk": "low",
+      "theorem_specific_risk": "low",
+      "gap_classification": "tactic_gap"
+    }
+  ]
+}

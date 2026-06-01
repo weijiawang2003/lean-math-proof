@@ -1,0 +1,362 @@
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : nat_defs_large_v5 (65 theorems)
+  Checkpoint  : clf_ckpt
+  Policy type : hybrid_evolved
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+RoutedGenerativePolicy: 4 routes, default=project/models/gen_v5_ns12_balanced
+  '^Nat\\.' -> project/models/gen_v5_ns15_nat_oversample
+  '^Int\\.' -> project/models/gen_v5_ns24_int_minimal_omega_10x
+  '^Finset\\.' -> project/models/gen_v5_ns21_finset_aesop_20x
+  '^Set\\.' -> project/models/gen_v5_ns12_balanced
+[1/65] Nat.add_eq_left
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 53061.69it/s]
+Loaded generative policy from project/models/gen_v5_ns15_nat_oversample (type=seq2seq)
+  Base model: project/models/gen_v5
+  Unique tactics in training: 104
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[2/65] Nat.add_eq_max_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[3/65] Nat.add_eq_min_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[4/65] Nat.add_eq_one_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[5/65] Nat.add_eq_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[6/65] Nat.add_mod_eq_add_mod_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp_all [Nat.add_mod, Nat.mod_eq_of_lt]
+
+[7/65] Nat.add_mod_eq_add_mod_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp_all [Nat.add_mod, Nat.mod_eq_of_lt]
+
+[8/65] Nat.div_le_div_right
+       PROVED in 1 step(s)
+       Proof: by_cases hc : c = 0 <;> [simp [hc]; exact (Nat.le_div_iff_mul_le' (Nat.pos_of_ne_zero hc)).2 (Nat.le_trans (Nat.div_mul_le_self _ _) h)]
+
+[9/65] Nat.div_lt_iff_lt_mul'
+       PROVED in 3 step(s) (used 3 fallback(s))
+       Proof: simp_arith -> apply Nat.div_lt_iff_lt_mul -> simp_all
+
+[10/65] Nat.div_lt_one_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: rw [Nat.div_lt_iff_lt_mul hb, Nat.one_mul]
+
+[11/65] Nat.half_le_of_sub_le_half
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[12/65] Nat.le_and_le_add_one_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[13/65] Nat.AM_GM
+       FAILED at step 1 (All top-10 tactics errored at step 1)
+
+[14/65] Nat.le_or_le_of_add_eq_add_pred
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[15/65] Nat.add_mod_eq_ite
+       PROVED in 2 step(s) (used 1 fallback(s))
+       Proof: cases k <;> [skip; (rw [Nat.add_mod]; split_ifs with h <;> first | (exact Nat.mod_eq_of_lt (Nat.lt_of_not_ge h)) | (rw [Nat.mod_eq_sub_mod h]; exact Nat.mod_eq_of_lt ((Nat.sub_lt_iff_lt_add h).mpr (Nat.add_lt_add (Nat.mod_lt _ (by omega)) (Nat.mod_lt _ (by omega))))))] -> split_ifs <;> omega
+
+[16/65] Nat.add_eq_zero
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[17/65] Nat.add_pos_iff_pos_or_pos
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[18/65] Nat.mul_eq_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => Nat.eq_of_mul_eq_mul_left (Nat.pos_of_ne_zero ha) (h.trans (Nat.mul_one _).symm), fun h => by simp [h]⟩
+
+[19/65] Nat.mul_eq_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => Nat.eq_of_mul_eq_mul_right (Nat.pos_of_ne_zero hb) (h.trans (Nat.one_mul _).symm), fun h => by simp [h]⟩
+
+[20/65] Nat.lt_iff_add_one_le
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[21/65] Nat.lt_one_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[22/65] Nat.le_one_iff_eq_zero_or_eq_one
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[23/65] Nat.le_add_one_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[24/65] Nat.one_add_le_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[25/65] Nat.eq_one_of_mul_eq_one_left
+       PROVED in 1 step(s)
+       Proof: exact Nat.eq_one_of_mul_eq_one_right (by rwa [Nat.mul_comm])
+
+[26/65] Nat.eq_zero_of_double_le
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[27/65] Nat.sub_lt_iff_lt_add
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[28/65] Nat.sub_lt_iff_lt_add'
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[29/65] Nat.mod_two_ne_one
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[30/65] Nat.mod_two_ne_zero
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[31/65] Nat.div_pos
+       PROVED in 1 step(s)
+       Proof: exact (Nat.le_div_iff_mul_le hb).mpr (by simpa using hba)
+
+[32/65] Nat.div_pos_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: rw [Nat.pos_iff_ne_zero, Nat.div_ne_zero_iff hb]
+
+[33/65] Nat.succ_succ_ne_one
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[34/65] Nat.pred_eq_of_eq_succ
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp_all
+
+[35/65] Nat.sqrt_lt
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp only [← Nat.not_le, Nat.le_sqrt]
+
+[36/65] Nat.pow_lt_pow_iff_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp only [← Nat.not_le, Nat.pow_le_pow_iff_left hn]
+
+[37/65] Nat.dvd_iff_div_mul_eq
+       PROVED in 1 step(s)
+       Proof: exact ⟨fun h => Nat.div_mul_cancel h, fun h => by rw [← h]; exact Nat.dvd_mul_left _ _⟩
+
+[38/65] Nat.two_mul_ne_two_mul_add_one
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[39/65] Nat.add_eq_two_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[40/65] Nat.add_eq_three_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[41/65] Nat.div_ne_zero_iff
+       FAILED at step 5 (All top-29 tactics errored at step 5)
+
+[42/65] Nat.dvd_right_iff_eq
+       FAILED at step 1 (All top-13 tactics errored at step 1)
+
+[43/65] Nat.dvd_left_iff_eq
+       FAILED at step 1 (All top-13 tactics errored at step 1)
+
+[44/65] Nat.eq_div_of_mul_eq_left
+       FAILED at step 3 (All top-32 tactics errored at step 3)
+
+[45/65] Nat.eq_mul_of_div_eq_left
+       FAILED at step 1 (All top-32 tactics errored at step 1)
+
+[46/65] Nat.find_eq_zero
+       FAILED at step 1 (All top-13 tactics errored at step 1)
+
+[47/65] Nat.forall_lt_succ
+       FAILED at step 1 (All top-13 tactics errored at step 1)
+
+[48/65] Nat.le_add_pred_of_pos
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[49/65] Nat.le_of_mul_le_mul_right
+       FAILED at step 1 (All top-11 tactics errored at step 1)
+
+[50/65] Nat.lt_one_add_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[51/65] Nat.max_eq_zero_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[52/65] Nat.min_eq_zero_iff
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: exact ⟨fun h => by omega, fun h => by omega⟩
+
+[53/65] Nat.mod_mul_mod
+       FAILED at step 1 (All top-13 tactics errored at step 1)
+
+[54/65] Nat.mod_eq_iff_lt
+       EXHAUSTED after 8 steps (no proof found)
+
+[55/65] Nat.one_le_div_iff
+       FAILED at step 3 (All top-29 tactics errored at step 3)
+
+[56/65] Nat.one_le_pow
+       FAILED at step 1 (All top-10 tactics errored at step 1)
+
+[57/65] Nat.pow_le_pow_iff_left
+       SKIP  (unavailable: Cannot interact with theorems with the `where` keyword.)
+
+[58/65] Nat.pred_eq_self_iff
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: simp [List.length_cons] -> exact ⟨fun h => by omega, fun h => by omega⟩
+
+[59/65] Nat.pred_one_add
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: simp [List.length_cons] -> omega
+
+[60/65] Nat.self_add_sub_one
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[61/65] Nat.sqrt_lt'
+       EXHAUSTED after 8 steps (no proof found)
+
+[62/65] Nat.sub_eq_of_eq_add'
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[63/65] Nat.succ_add_sub_one
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[64/65] Nat.two_pow_succ
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: omega
+
+[65/65] Nat.zero_eq_mul
+       FAILED at step 1 (All top-13 tactics errored at step 1)
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Nat.add_eq_left                          PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.add_eq_max_iff                       PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.add_eq_min_iff                       PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.add_eq_one_iff                       PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.add_eq_right                         PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.add_mod_eq_add_mod_left              PROVED       1      simp_all [Nat.add_mod, Nat.mod
+  Nat.add_mod_eq_add_mod_right             PROVED       1      simp_all [Nat.add_mod, Nat.mod
+  Nat.div_le_div_right                     PROVED       1      by_cases hc : c = 0 <;> [simp 
+  Nat.div_lt_iff_lt_mul'                   PROVED       3      simp_all
+  Nat.div_lt_one_iff                       PROVED       1      rw [Nat.div_lt_iff_lt_mul hb, 
+  Nat.half_le_of_sub_le_half               PROVED       1      omega
+  Nat.le_and_le_add_one_iff                PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.AM_GM                                ERROR        1      
+  Nat.le_or_le_of_add_eq_add_pred          PROVED       1      omega
+  Nat.add_mod_eq_ite                       PROVED       2      split_ifs <;> omega
+  Nat.add_eq_zero                          PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.add_pos_iff_pos_or_pos               PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.mul_eq_left                          PROVED       1      exact ⟨fun h => Nat.eq_of_mul_
+  Nat.mul_eq_right                         PROVED       1      exact ⟨fun h => Nat.eq_of_mul_
+  Nat.lt_iff_add_one_le                    PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.lt_one_iff                           PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.le_one_iff_eq_zero_or_eq_one         PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.le_add_one_iff                       PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.one_add_le_iff                       PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.eq_one_of_mul_eq_one_left            PROVED       1      exact Nat.eq_one_of_mul_eq_one
+  Nat.eq_zero_of_double_le                 PROVED       1      omega
+  Nat.sub_lt_iff_lt_add                    PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.sub_lt_iff_lt_add'                   PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.mod_two_ne_one                       PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.mod_two_ne_zero                      PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.div_pos                              PROVED       1      exact (Nat.le_div_iff_mul_le h
+  Nat.div_pos_iff                          PROVED       1      rw [Nat.pos_iff_ne_zero, Nat.d
+  Nat.succ_succ_ne_one                     PROVED       1      omega
+  Nat.pred_eq_of_eq_succ                   PROVED       1      simp_all
+  Nat.sqrt_lt                              PROVED       1      simp only [← Nat.not_le, Nat.l
+  Nat.pow_lt_pow_iff_left                  PROVED       1      simp only [← Nat.not_le, Nat.p
+  Nat.dvd_iff_div_mul_eq                   PROVED       1      exact ⟨fun h => Nat.div_mul_ca
+  Nat.two_mul_ne_two_mul_add_one           PROVED       1      omega
+  Nat.add_eq_two_iff                       PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.add_eq_three_iff                     PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.div_ne_zero_iff                      ERROR        5      
+  Nat.dvd_right_iff_eq                     ERROR        1      
+  Nat.dvd_left_iff_eq                      ERROR        1      
+  Nat.eq_div_of_mul_eq_left                ERROR        3      
+  Nat.eq_mul_of_div_eq_left                ERROR        1      
+  Nat.find_eq_zero                         ERROR        1      
+  Nat.forall_lt_succ                       ERROR        1      
+  Nat.le_add_pred_of_pos                   PROVED       1      omega
+  Nat.le_of_mul_le_mul_right               ERROR        1      
+  Nat.lt_one_add_iff                       PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.max_eq_zero_iff                      PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.min_eq_zero_iff                      PROVED       1      exact ⟨fun h => by omega, fun 
+  Nat.mod_mul_mod                          ERROR        1      
+  Nat.mod_eq_iff_lt                        EXHAUSTED    8      
+  Nat.one_le_div_iff                       ERROR        3      
+  Nat.one_le_pow                           ERROR        1      
+  Nat.pow_le_pow_iff_left                  SKIP         —      
+  Nat.pred_eq_self_iff                     PROVED       2      exact ⟨fun h => by omega, fun 
+  Nat.pred_one_add                         PROVED       2      omega
+  Nat.self_add_sub_one                     PROVED       1      omega
+  Nat.sqrt_lt'                             EXHAUSTED    8      
+  Nat.sub_eq_of_eq_add'                    PROVED       1      omega
+  Nat.succ_add_sub_one                     PROVED       1      omega
+  Nat.two_pow_succ                         PROVED       1      omega
+  Nat.zero_eq_mul                          ERROR        1      
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    65
+  Available:         64/65
+  Proved:            49/64  (77%)
+  Errored:           13/64
+  Exhausted:         2/64
+  Skipped:           1/65
+  Avg steps (proved): 1.1
+  Fallbacks used:     49
+  Proved by origin:   {'tactic_template': 34, 'family_tactic': 2, 'generative_topk': 13}
+  Loop transitions:   13
+  Skipped repeats:    0
+  Unseen progress:    16
+  Family activations: {'mod': 7}
+  Family proofs:      {'priority:iff:generic': 23, 'mod': 2, 'priority:le:specific': 1, 'priority:iff:specific': 7, 'priority:any:generic': 1, 'priority:eq:specific': 1, 'priority:lt:specific': 1}
+  Denied tactics:     93 (per-theorem deny-list)
+  Retrieval:          activated on 10 theorems, 98 tactics attempted, 4 advanced, 0 won
+  Retrieval filters:  filtered_self=8, filtered_unavailable=135
+  Retrieval forms:    {'rw': 40, 'simp': 37, 'apply': 21}
+  Retrieval form ok:  {'apply': 1, 'rw': 3}
+  Apply goal-shape:   inc=2, dec=0, same=1, skipped_bloating=0
+  Bloating lemmas:    {'Nat.lt_of_lt_of_le': 2}
+  Shape attempts:     {'iff': 31, 'eq': 39, 'lt': 16, 'unknown': 12}  success={'iff': 1, 'eq': 3}  mismatch_filtered=98
+================================================================
+
+Run artifacts: project/evolve/experiments/rc2/out/rc1_runs/nat_defs_large_v5/eval-62d8b5c5

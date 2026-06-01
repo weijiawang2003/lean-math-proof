@@ -1,0 +1,155 @@
+{
+  "generated_by": "scripts/rc4r_build_release_wrapper.py",
+  "rc2_wrapper": "project/evolve/experiments/rc2_release/rc2_production_wrapper.json",
+  "rc4_wrapper": "project/evolve/experiments/rc4_release_candidate/rc4_release_candidate_wrapper.json",
+  "added_tactics": [
+    "simp [Finset.disjUnion]",
+    "simp [Monotone, MonotoneOn]",
+    "simp [Antitone, AntitoneOn]",
+    "simp [StrictMono, StrictMonoOn]",
+    "simp [StrictAnti, StrictAntiOn]",
+    "simp [Set.disjoint_left]",
+    "simp [Set.disjoint_left] <;> aesop",
+    "simp [Multiset.disjoint_left]",
+    "simp [Multiset.disjoint_left] <;> aesop",
+    "simp [Multiset.disjoint_right]",
+    "simp [Multiset.disjoint_right] <;> aesop",
+    "simp [Set.subset_pair_iff_eq]",
+    "simp [Set.subset_pair_iff_eq] <;> aesop",
+    "simp [List.forall_iff_forall_mem]",
+    "simp [List.forall_iff_forall_mem] <;> aesop"
+  ],
+  "num_added_tactics": 15,
+  "added_gates": {
+    "simp [Finset.disjUnion]": [
+      "Finset.mem_disjUnion",
+      "Finset.disjUnion",
+      "Finset.coe_disjUnion",
+      "Finset.disjiUnion"
+    ],
+    "simp [Monotone, MonotoneOn]": [
+      "Set.monotoneOn",
+      "Set.not_monotoneOn"
+    ],
+    "simp [Antitone, AntitoneOn]": [
+      "Set.antitoneOn",
+      "Set.not_antitoneOn"
+    ],
+    "simp [StrictMono, StrictMonoOn]": [
+      "Set.strictMonoOn"
+    ],
+    "simp [StrictAnti, StrictAntiOn]": [
+      "Set.strictAntiOn"
+    ],
+    "simp [Set.disjoint_left]": [
+      "Set.disjoint",
+      "Set._root_.Disjoint"
+    ],
+    "simp [Set.disjoint_left] <;> aesop": [
+      "Set.disjoint",
+      "Set._root_.Disjoint"
+    ],
+    "simp [Multiset.disjoint_left]": [
+      "Multiset.disjoint",
+      "Multiset.singleton_disjoint",
+      "Multiset.zero_disjoint"
+    ],
+    "simp [Multiset.disjoint_left] <;> aesop": [
+      "Multiset.disjoint",
+      "Multiset.singleton_disjoint",
+      "Multiset.zero_disjoint"
+    ],
+    "simp [Multiset.disjoint_right]": [
+      "Multiset.disjoint",
+      "Multiset.singleton_disjoint",
+      "Multiset.zero_disjoint"
+    ],
+    "simp [Multiset.disjoint_right] <;> aesop": [
+      "Multiset.disjoint",
+      "Multiset.singleton_disjoint",
+      "Multiset.zero_disjoint"
+    ],
+    "simp [Set.subset_pair_iff_eq]": [
+      "subset_pair",
+      "Set.Nonempty.subset_pair"
+    ],
+    "simp [Set.subset_pair_iff_eq] <;> aesop": [
+      "subset_pair",
+      "Set.Nonempty.subset_pair"
+    ],
+    "simp [List.forall_iff_forall_mem]": [
+      "List.Forall",
+      "List.forall"
+    ],
+    "simp [List.forall_iff_forall_mem] <;> aesop": [
+      "List.Forall",
+      "List.forall"
+    ]
+  },
+  "num_added_gates": 15,
+  "added_top_level_keys": [
+    "_rc4_release_candidate_metadata"
+  ],
+  "removed_top_level_keys": [],
+  "modified_fields": [
+    "priority_templates",
+    "theorem_name_tactic_gates"
+  ],
+  "unchanged_rc2_fields": [
+    "_rc1_note",
+    "_rc2_release_metadata",
+    "fallback_tactics",
+    "family_budgets",
+    "max_extra_tactics_per_state",
+    "max_steps",
+    "priority_template_budget",
+    "retrieval_enabled",
+    "retrieval_family_gates",
+    "retrieval_filter_self",
+    "retrieval_filter_unavailable",
+    "retrieval_requires_family",
+    "retrieval_shape_filter",
+    "retrieval_skip_bloating_apply",
+    "retrieval_tactic_forms",
+    "retrieval_top_k",
+    "symbolic_actions",
+    "symbolic_predictor",
+    "symbolic_sequence_search",
+    "tactic_templates",
+    "term_builder_budget",
+    "term_builder_templates",
+    "theorem_family_tactics",
+    "theorem_tactic_denylist",
+    "timeout_per_theorem",
+    "top_k",
+    "use_skeleton_bag"
+  ],
+  "component_mapping": {
+    "RC4A": [
+      "simp [Finset.disjUnion]",
+      "simp [Monotone, MonotoneOn]",
+      "simp [Antitone, AntitoneOn]",
+      "simp [StrictMono, StrictMonoOn]",
+      "simp [StrictAnti, StrictAntiOn]"
+    ],
+    "RC4B": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "RC4C_residue": [
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop",
+      "simp [Set.subset_pair_iff_eq]",
+      "simp [Set.subset_pair_iff_eq] <;> aesop",
+      "simp [List.forall_iff_forall_mem]",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ]
+  },
+  "rc2_priority_any_preserved": true,
+  "rc2_gates_preserved": true,
+  "unrelated_changes": [],
+  "diff_clean": true,
+  "verdict": "WRAPPER_DIFF_CLEAN"
+}

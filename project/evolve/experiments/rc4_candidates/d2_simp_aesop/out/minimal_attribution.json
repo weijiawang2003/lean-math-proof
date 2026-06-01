@@ -1,0 +1,817 @@
+{
+  "generated_by": "scripts/rc4c_minimal_attribution.py",
+  "num_new_wins": 19,
+  "classification_histogram": {
+    "SIMP_ONLY_DUPLICATE": 4,
+    "TRUE_D2_SIMP_AESOP_WIN": 7,
+    "TRUE_D2_SIMP_AESOP_OVERLAP_RC4B": 8
+  },
+  "num_pure_rc4c_true_wins": 7,
+  "num_overlap_rc4b_true_wins": 8,
+  "num_simp_only_duplicates": 4,
+  "num_composition_credited": 15,
+  "pure_rc4c_true_win_targets": [
+    "List.Forall.imp",
+    "Multiset.disjoint_add_right",
+    "Set.Nonempty.subset_pair_iff_eq",
+    "Multiset.disjoint_add_left",
+    "Multiset.disjoint_iff_ne",
+    "Multiset.disjoint_union_left",
+    "Multiset.singleton_disjoint"
+  ],
+  "split": {
+    "pure_rc4c_true_wins": [
+      "List.Forall.imp",
+      "Multiset.disjoint_add_right",
+      "Set.Nonempty.subset_pair_iff_eq",
+      "Multiset.disjoint_add_left",
+      "Multiset.disjoint_iff_ne",
+      "Multiset.disjoint_union_left",
+      "Multiset.singleton_disjoint"
+    ],
+    "pure_rc4c_by_namespace": {
+      "List": 1,
+      "Multiset": 5,
+      "Set": 1
+    },
+    "pure_rc4c_fresh": [
+      "Multiset.disjoint_iff_ne",
+      "Multiset.disjoint_union_left",
+      "Multiset.singleton_disjoint"
+    ],
+    "pure_rc4c_reproduction": [
+      "List.Forall.imp",
+      "Multiset.disjoint_add_left",
+      "Multiset.disjoint_add_right",
+      "Set.Nonempty.subset_pair_iff_eq"
+    ],
+    "overlap_rc4b_true_wins": [
+      "Multiset.disjoint_right",
+      "Multiset.disjoint_singleton",
+      "Set.disjoint_iUnion_left",
+      "Set.disjoint_iUnion_right",
+      "Set.disjoint_iff_forall_ne",
+      "Set.disjoint_right",
+      "Set.disjoint_sUnion_left",
+      "Set.disjoint_sUnion_right"
+    ],
+    "simp_only_duplicates": [
+      "Finset.biUnion_subset_iff_forall_subset",
+      "List.forall_map_iff",
+      "Multiset.disjoint_cons_left",
+      "Multiset.zero_disjoint"
+    ]
+  },
+  "records": [
+    {
+      "full_name": "Finset.biUnion_subset_iff_forall_subset",
+      "namespace": "Finset",
+      "sets": [
+        "known_wins_all",
+        "known_wins_nonoverlap"
+      ],
+      "candidate_winning_tactic": "simp [Finset.biUnion_subset] <;> aesop",
+      "candidate_winning_lemma": "Finset.biUnion_subset",
+      "lemmas_tested": [
+        "Finset.biUnion_subset"
+      ],
+      "per_lemma": {
+        "Finset.biUnion_subset": {
+          "simp_only": true,
+          "d2": true,
+          "lemma_direct_solved": [
+            "exact Finset.biUnion_subset",
+            "simpa using Finset.biUnion_subset"
+          ],
+          "genuine_d2": false,
+          "overlap": false,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [],
+      "overlap_genuine_d2_lemmas": [],
+      "simp_only_lemmas": [
+        "Finset.biUnion_subset"
+      ],
+      "classification": "SIMP_ONLY_DUPLICATE",
+      "credited_pure_rc4c": false,
+      "credited_composition": false,
+      "fresh": false,
+      "known_reproduction": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "List.Forall.imp",
+      "namespace": "List",
+      "sets": [
+        "known_wins_all",
+        "known_wins_nonoverlap"
+      ],
+      "candidate_winning_tactic": "simp [List.forall_iff_forall_mem] <;> aesop",
+      "candidate_winning_lemma": "List.forall_iff_forall_mem",
+      "lemmas_tested": [
+        "List.forall_iff_forall_mem"
+      ],
+      "per_lemma": {
+        "List.forall_iff_forall_mem": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": false,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [
+        "List.forall_iff_forall_mem"
+      ],
+      "overlap_genuine_d2_lemmas": [],
+      "simp_only_lemmas": [],
+      "classification": "TRUE_D2_SIMP_AESOP_WIN",
+      "credited_pure_rc4c": true,
+      "credited_composition": true,
+      "fresh": false,
+      "known_reproduction": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_add_right",
+      "namespace": "Multiset",
+      "sets": [
+        "known_wins_all",
+        "known_wins_nonoverlap"
+      ],
+      "candidate_winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Multiset.disjoint_left",
+      "lemmas_tested": [
+        "Multiset.disjoint_left",
+        "Multiset.disjoint_right"
+      ],
+      "per_lemma": {
+        "Multiset.disjoint_left": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": true,
+          "in_allowlist": true
+        },
+        "Multiset.disjoint_right": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": false,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [
+        "Multiset.disjoint_right"
+      ],
+      "overlap_genuine_d2_lemmas": [
+        "Multiset.disjoint_left"
+      ],
+      "simp_only_lemmas": [],
+      "classification": "TRUE_D2_SIMP_AESOP_WIN",
+      "credited_pure_rc4c": true,
+      "credited_composition": true,
+      "fresh": false,
+      "known_reproduction": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "namespace": "Set",
+      "sets": [
+        "known_wins_all",
+        "known_wins_nonoverlap"
+      ],
+      "candidate_winning_tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+      "candidate_winning_lemma": "Set.subset_pair_iff_eq",
+      "lemmas_tested": [
+        "Set.subset_pair_iff_eq"
+      ],
+      "per_lemma": {
+        "Set.subset_pair_iff_eq": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": false,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [
+        "Set.subset_pair_iff_eq"
+      ],
+      "overlap_genuine_d2_lemmas": [],
+      "simp_only_lemmas": [],
+      "classification": "TRUE_D2_SIMP_AESOP_WIN",
+      "credited_pure_rc4c": true,
+      "credited_composition": true,
+      "fresh": false,
+      "known_reproduction": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_add_left",
+      "namespace": "Multiset",
+      "sets": [
+        "known_wins_all"
+      ],
+      "candidate_winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Multiset.disjoint_left",
+      "lemmas_tested": [
+        "Multiset.disjoint_left",
+        "Multiset.disjoint_right"
+      ],
+      "per_lemma": {
+        "Multiset.disjoint_left": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": true,
+          "in_allowlist": true
+        },
+        "Multiset.disjoint_right": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": false,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [
+        "Multiset.disjoint_right"
+      ],
+      "overlap_genuine_d2_lemmas": [
+        "Multiset.disjoint_left"
+      ],
+      "simp_only_lemmas": [],
+      "classification": "TRUE_D2_SIMP_AESOP_WIN",
+      "credited_pure_rc4c": true,
+      "credited_composition": true,
+      "fresh": false,
+      "known_reproduction": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_left",
+      "namespace": "Multiset",
+      "sets": [
+        "known_wins_all"
+      ],
+      "candidate_winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Multiset.disjoint_left",
+      "lemmas_tested": [
+        "Multiset.disjoint_left",
+        "Multiset.disjoint_right"
+      ],
+      "per_lemma": {
+        "Multiset.disjoint_left": {
+          "simp_only": true,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": false,
+          "overlap": true,
+          "in_allowlist": true
+        },
+        "Multiset.disjoint_right": {
+          "simp_only": false,
+          "d2": false,
+          "lemma_direct_solved": [],
+          "genuine_d2": false,
+          "overlap": false,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [],
+      "overlap_genuine_d2_lemmas": [],
+      "simp_only_lemmas": [
+        "Multiset.disjoint_left"
+      ],
+      "classification": "SIMP_ONLY_DUPLICATE",
+      "credited_pure_rc4c": false,
+      "credited_composition": false,
+      "fresh": false,
+      "known_reproduction": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_left",
+      "namespace": "Set",
+      "sets": [
+        "known_wins_all"
+      ],
+      "candidate_winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Set.disjoint_left",
+      "lemmas_tested": [
+        "Set.disjoint_left"
+      ],
+      "per_lemma": {
+        "Set.disjoint_left": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": true,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [],
+      "overlap_genuine_d2_lemmas": [
+        "Set.disjoint_left"
+      ],
+      "simp_only_lemmas": [],
+      "classification": "TRUE_D2_SIMP_AESOP_OVERLAP_RC4B",
+      "credited_pure_rc4c": false,
+      "credited_composition": true,
+      "fresh": false,
+      "known_reproduction": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_right",
+      "namespace": "Set",
+      "sets": [
+        "known_wins_all"
+      ],
+      "candidate_winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Set.disjoint_left",
+      "lemmas_tested": [
+        "Set.disjoint_left"
+      ],
+      "per_lemma": {
+        "Set.disjoint_left": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": true,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [],
+      "overlap_genuine_d2_lemmas": [
+        "Set.disjoint_left"
+      ],
+      "simp_only_lemmas": [],
+      "classification": "TRUE_D2_SIMP_AESOP_OVERLAP_RC4B",
+      "credited_pure_rc4c": false,
+      "credited_composition": true,
+      "fresh": false,
+      "known_reproduction": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.disjoint_iff_forall_ne",
+      "namespace": "Set",
+      "sets": [
+        "known_wins_all"
+      ],
+      "candidate_winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Set.disjoint_left",
+      "lemmas_tested": [
+        "Set.disjoint_left"
+      ],
+      "per_lemma": {
+        "Set.disjoint_left": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": true,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [],
+      "overlap_genuine_d2_lemmas": [
+        "Set.disjoint_left"
+      ],
+      "simp_only_lemmas": [],
+      "classification": "TRUE_D2_SIMP_AESOP_OVERLAP_RC4B",
+      "credited_pure_rc4c": false,
+      "credited_composition": true,
+      "fresh": false,
+      "known_reproduction": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.disjoint_right",
+      "namespace": "Set",
+      "sets": [
+        "known_wins_all"
+      ],
+      "candidate_winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Set.disjoint_left",
+      "lemmas_tested": [
+        "Set.disjoint_left"
+      ],
+      "per_lemma": {
+        "Set.disjoint_left": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": true,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [],
+      "overlap_genuine_d2_lemmas": [
+        "Set.disjoint_left"
+      ],
+      "simp_only_lemmas": [],
+      "classification": "TRUE_D2_SIMP_AESOP_OVERLAP_RC4B",
+      "credited_pure_rc4c": false,
+      "credited_composition": true,
+      "fresh": false,
+      "known_reproduction": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_left",
+      "namespace": "Set",
+      "sets": [
+        "known_wins_all"
+      ],
+      "candidate_winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Set.disjoint_left",
+      "lemmas_tested": [
+        "Set.disjoint_left"
+      ],
+      "per_lemma": {
+        "Set.disjoint_left": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": true,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [],
+      "overlap_genuine_d2_lemmas": [
+        "Set.disjoint_left"
+      ],
+      "simp_only_lemmas": [],
+      "classification": "TRUE_D2_SIMP_AESOP_OVERLAP_RC4B",
+      "credited_pure_rc4c": false,
+      "credited_composition": true,
+      "fresh": false,
+      "known_reproduction": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "namespace": "Set",
+      "sets": [
+        "known_wins_all"
+      ],
+      "candidate_winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Set.disjoint_left",
+      "lemmas_tested": [
+        "Set.disjoint_left"
+      ],
+      "per_lemma": {
+        "Set.disjoint_left": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": true,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [],
+      "overlap_genuine_d2_lemmas": [
+        "Set.disjoint_left"
+      ],
+      "simp_only_lemmas": [],
+      "classification": "TRUE_D2_SIMP_AESOP_OVERLAP_RC4B",
+      "credited_pure_rc4c": false,
+      "credited_composition": true,
+      "fresh": false,
+      "known_reproduction": true,
+      "setup_error": null
+    },
+    {
+      "full_name": "List.forall_map_iff",
+      "namespace": "List",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "candidate_winning_tactic": "simp [List.forall_iff_forall_mem] <;> aesop",
+      "candidate_winning_lemma": "List.forall_iff_forall_mem",
+      "lemmas_tested": [
+        "List.forall_iff_forall_mem"
+      ],
+      "per_lemma": {
+        "List.forall_iff_forall_mem": {
+          "simp_only": true,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": false,
+          "overlap": false,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [],
+      "overlap_genuine_d2_lemmas": [],
+      "simp_only_lemmas": [
+        "List.forall_iff_forall_mem"
+      ],
+      "classification": "SIMP_ONLY_DUPLICATE",
+      "credited_pure_rc4c": false,
+      "credited_composition": false,
+      "fresh": true,
+      "known_reproduction": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_iff_ne",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "candidate_winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Multiset.disjoint_left",
+      "lemmas_tested": [
+        "Multiset.disjoint_left",
+        "Multiset.disjoint_right"
+      ],
+      "per_lemma": {
+        "Multiset.disjoint_left": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": true,
+          "in_allowlist": true
+        },
+        "Multiset.disjoint_right": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": false,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [
+        "Multiset.disjoint_right"
+      ],
+      "overlap_genuine_d2_lemmas": [
+        "Multiset.disjoint_left"
+      ],
+      "simp_only_lemmas": [],
+      "classification": "TRUE_D2_SIMP_AESOP_WIN",
+      "credited_pure_rc4c": true,
+      "credited_composition": true,
+      "fresh": true,
+      "known_reproduction": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_right",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "candidate_winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Multiset.disjoint_left",
+      "lemmas_tested": [
+        "Multiset.disjoint_left",
+        "Multiset.disjoint_right"
+      ],
+      "per_lemma": {
+        "Multiset.disjoint_left": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": true,
+          "in_allowlist": true
+        },
+        "Multiset.disjoint_right": {
+          "simp_only": false,
+          "d2": false,
+          "lemma_direct_solved": [],
+          "genuine_d2": false,
+          "overlap": false,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [],
+      "overlap_genuine_d2_lemmas": [
+        "Multiset.disjoint_left"
+      ],
+      "simp_only_lemmas": [],
+      "classification": "TRUE_D2_SIMP_AESOP_OVERLAP_RC4B",
+      "credited_pure_rc4c": false,
+      "credited_composition": true,
+      "fresh": true,
+      "known_reproduction": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_singleton",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "candidate_winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Multiset.disjoint_left",
+      "lemmas_tested": [
+        "Multiset.disjoint_left",
+        "Multiset.disjoint_right"
+      ],
+      "per_lemma": {
+        "Multiset.disjoint_left": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": true,
+          "in_allowlist": true
+        },
+        "Multiset.disjoint_right": {
+          "simp_only": true,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": false,
+          "overlap": false,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [],
+      "overlap_genuine_d2_lemmas": [
+        "Multiset.disjoint_left"
+      ],
+      "simp_only_lemmas": [
+        "Multiset.disjoint_right"
+      ],
+      "classification": "TRUE_D2_SIMP_AESOP_OVERLAP_RC4B",
+      "credited_pure_rc4c": false,
+      "credited_composition": true,
+      "fresh": true,
+      "known_reproduction": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_union_left",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "candidate_winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Multiset.disjoint_left",
+      "lemmas_tested": [
+        "Multiset.disjoint_left",
+        "Multiset.disjoint_right"
+      ],
+      "per_lemma": {
+        "Multiset.disjoint_left": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": true,
+          "in_allowlist": true
+        },
+        "Multiset.disjoint_right": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": false,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [
+        "Multiset.disjoint_right"
+      ],
+      "overlap_genuine_d2_lemmas": [
+        "Multiset.disjoint_left"
+      ],
+      "simp_only_lemmas": [],
+      "classification": "TRUE_D2_SIMP_AESOP_WIN",
+      "credited_pure_rc4c": true,
+      "credited_composition": true,
+      "fresh": true,
+      "known_reproduction": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.singleton_disjoint",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "candidate_winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Multiset.disjoint_left",
+      "lemmas_tested": [
+        "Multiset.disjoint_left",
+        "Multiset.disjoint_right"
+      ],
+      "per_lemma": {
+        "Multiset.disjoint_left": {
+          "simp_only": true,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": false,
+          "overlap": true,
+          "in_allowlist": true
+        },
+        "Multiset.disjoint_right": {
+          "simp_only": false,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": true,
+          "overlap": false,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [
+        "Multiset.disjoint_right"
+      ],
+      "overlap_genuine_d2_lemmas": [],
+      "simp_only_lemmas": [
+        "Multiset.disjoint_left"
+      ],
+      "classification": "TRUE_D2_SIMP_AESOP_WIN",
+      "credited_pure_rc4c": true,
+      "credited_composition": true,
+      "fresh": true,
+      "known_reproduction": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.zero_disjoint",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "candidate_winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "candidate_winning_lemma": "Multiset.disjoint_left",
+      "lemmas_tested": [
+        "Multiset.disjoint_left",
+        "Multiset.disjoint_right"
+      ],
+      "per_lemma": {
+        "Multiset.disjoint_left": {
+          "simp_only": true,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": false,
+          "overlap": true,
+          "in_allowlist": true
+        },
+        "Multiset.disjoint_right": {
+          "simp_only": true,
+          "d2": true,
+          "lemma_direct_solved": [],
+          "genuine_d2": false,
+          "overlap": false,
+          "in_allowlist": true
+        }
+      },
+      "bare_controls_solved": [],
+      "nonoverlap_genuine_d2_lemmas": [],
+      "overlap_genuine_d2_lemmas": [],
+      "simp_only_lemmas": [
+        "Multiset.disjoint_left",
+        "Multiset.disjoint_right"
+      ],
+      "classification": "SIMP_ONLY_DUPLICATE",
+      "credited_pure_rc4c": false,
+      "credited_composition": false,
+      "fresh": true,
+      "known_reproduction": false,
+      "setup_error": null
+    }
+  ]
+}

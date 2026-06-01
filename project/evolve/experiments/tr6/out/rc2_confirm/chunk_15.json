@@ -1,0 +1,81 @@
+{
+  "Multiset.disjoint_comm": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+  },
+  "Multiset.coe_disjoint": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+  },
+  "Multiset.disjoint_add_left": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 4,
+    "tactics_used": [
+      "induction s using Multiset.induction_on <;> simp_all",
+      "aesop",
+      "induction t using Multiset.induction_on <;> simp_all"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+  },
+  "Multiset.disjoint_add_right": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+  },
+  "Multiset.card_filter_le_iff": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 3,
+    "tactics_used": [
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "aesop"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+  },
+  "Multiset.toFinset_card_eq_card_iff_nodup": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 2,
+    "tactics_used": [
+      "aesop"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+  },
+  "mem_lowerBounds_iff_subset_Ici": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+  },
+  "mem_upperBounds_iff_subset_Iic": {
+    "classification": "RC2_SOLVED",
+    "rc2_finished": true,
+    "num_steps": 1,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+  },
+  "isGreatest_union_iff": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+  },
+  "isLeast_union_iff": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+  }
+}

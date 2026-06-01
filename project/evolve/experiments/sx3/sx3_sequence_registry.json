@@ -1,0 +1,224 @@
+{
+  "registry_version": "sx3.v1",
+  "description": "SX3 depth-2 symbolic proof-sequence families. All off-by-default. Only SX3_SET_ITE_AESOP is a plausible RC3 candidate; everything else is exploratory or diagnostic.",
+  "global_constraints": {
+    "max_one_sequence_emission_per_theorem_for_candidate": true,
+    "run_transition_single_line_only": true,
+    "forbid_bare_semicolon_chains": true,
+    "forbid_multiline_bullet_blocks": true
+  },
+  "controls_always_run": ["simp", "simp_all", "aesop", "classical <;> aesop", "simp [Set.ite]"],
+  "families": {
+    "SX3_SET_ITE_AESOP": {
+      "family": "SX3_SET_ITE_AESOP",
+      "sequence": "simp [Set.ite] <;> aesop",
+      "base_step": "simp [Set.ite]",
+      "close_step": "aesop",
+      "gate": {
+        "namespace_or_name_contains": ["Set."],
+        "signal": ["ite", "if", "Set.ite"],
+        "target_shape": ["set_equality", "set_membership", "set_iff_involving_ite"],
+        "forbid_namespaces": ["Nat", "Int", "Multiset"]
+      },
+      "status": "experimental_off_by_default",
+      "promotion_allowed": false,
+      "requires_minimal_relabel": true,
+      "requires_rc2_baseline_comparison": true,
+      "source": "rc2_deferred",
+      "risk": "low",
+      "provenance": "RC2 hardening deferred +4",
+      "expected_wins": ["Set.ite_inter", "Set.ite_inter_self", "Set.ite_compl", "Set.ite_inter_compl_self"]
+    },
+    "SX3_SET_ITE_SIMPALL": {
+      "family": "SX3_SET_ITE_SIMPALL",
+      "sequence": "simp [Set.ite] <;> simp_all",
+      "base_step": "simp [Set.ite]",
+      "close_step": "simp_all",
+      "gate": {
+        "namespace_or_name_contains": ["Set."],
+        "signal": ["ite", "if", "Set.ite"],
+        "target_shape": ["set_equality", "set_membership", "set_iff_involving_ite"],
+        "forbid_namespaces": ["Nat", "Int", "Multiset"]
+      },
+      "status": "experimental_off_by_default",
+      "promotion_allowed": false,
+      "requires_minimal_relabel": true,
+      "requires_rc2_baseline_comparison": true,
+      "source": "rc2_deferred",
+      "risk": "low"
+    },
+    "SX3_SET_ITE_EXT": {
+      "family": "SX3_SET_ITE_EXT",
+      "sequence": "ext x <;> simp [Set.ite]",
+      "base_step": "ext x",
+      "close_step": "simp [Set.ite]",
+      "gate": {
+        "namespace_or_name_contains": ["Set."],
+        "signal": ["ite", "if", "Set.ite"],
+        "target_shape": ["set_equality"],
+        "forbid_namespaces": ["Nat", "Int", "Multiset"]
+      },
+      "status": "experimental_off_by_default",
+      "promotion_allowed": false,
+      "requires_minimal_relabel": true,
+      "requires_rc2_baseline_comparison": true,
+      "source": "exploratory",
+      "risk": "medium"
+    },
+    "SX3_SET_ITE_EXT_AESOP": {
+      "family": "SX3_SET_ITE_EXT_AESOP",
+      "sequence": "ext x <;> simp [Set.ite] <;> aesop",
+      "base_step": "ext x",
+      "close_step": "simp [Set.ite] <;> aesop",
+      "gate": {
+        "namespace_or_name_contains": ["Set."],
+        "signal": ["ite", "if", "Set.ite"],
+        "target_shape": ["set_equality"],
+        "forbid_namespaces": ["Nat", "Int", "Multiset"]
+      },
+      "status": "experimental_off_by_default",
+      "promotion_allowed": false,
+      "requires_minimal_relabel": true,
+      "requires_rc2_baseline_comparison": true,
+      "source": "exploratory",
+      "risk": "medium",
+      "note": "may be parser-sensitive (triple <;>); keep diagnostic"
+    },
+    "SX3_SET_EXT_AESOP": {
+      "family": "SX3_SET_EXT_AESOP",
+      "sequence": "ext x <;> aesop",
+      "base_step": "ext x",
+      "close_step": "aesop",
+      "gate": {
+        "namespace_or_name_contains": ["Set."],
+        "target_shape": ["set_equality"],
+        "forbid_namespaces": ["Nat", "Int", "Multiset"]
+      },
+      "status": "experimental_off_by_default",
+      "promotion_allowed": false,
+      "requires_minimal_relabel": true,
+      "requires_rc2_baseline_comparison": true,
+      "source": "sf2_cluster",
+      "risk": "medium"
+    },
+    "SX3_SET_EXT_SIMPALL": {
+      "family": "SX3_SET_EXT_SIMPALL",
+      "sequence": "ext x <;> simp_all",
+      "base_step": "ext x",
+      "close_step": "simp_all",
+      "gate": {
+        "namespace_or_name_contains": ["Set."],
+        "target_shape": ["set_equality"],
+        "forbid_namespaces": ["Nat", "Int", "Multiset"]
+      },
+      "status": "experimental_off_by_default",
+      "promotion_allowed": false,
+      "requires_minimal_relabel": true,
+      "requires_rc2_baseline_comparison": true,
+      "source": "sf2_cluster",
+      "risk": "medium"
+    },
+    "SX3_SET_IFF_CONSTRUCTOR_AESOP": {
+      "family": "SX3_SET_IFF_CONSTRUCTOR_AESOP",
+      "sequence": "constructor <;> intro h <;> aesop",
+      "base_step": "constructor <;> intro h",
+      "close_step": "aesop",
+      "gate": {
+        "namespace_or_name_contains": ["Set."],
+        "target_shape": ["set_iff"],
+        "forbid_namespaces": ["Nat", "Int", "Multiset"]
+      },
+      "status": "experimental_off_by_default",
+      "promotion_allowed": false,
+      "requires_minimal_relabel": true,
+      "requires_rc2_baseline_comparison": true,
+      "source": "sf2_cluster",
+      "risk": "medium"
+    },
+    "SX3_SET_IFF_CONSTRUCTOR_SIMPALL": {
+      "family": "SX3_SET_IFF_CONSTRUCTOR_SIMPALL",
+      "sequence": "constructor <;> intro h <;> simp_all",
+      "base_step": "constructor <;> intro h",
+      "close_step": "simp_all",
+      "gate": {
+        "namespace_or_name_contains": ["Set."],
+        "target_shape": ["set_iff"],
+        "forbid_namespaces": ["Nat", "Int", "Multiset"]
+      },
+      "status": "experimental_off_by_default",
+      "promotion_allowed": false,
+      "requires_minimal_relabel": true,
+      "requires_rc2_baseline_comparison": true,
+      "source": "sf2_cluster",
+      "risk": "medium"
+    },
+    "SX3_SET_SUBSET_ANTISYMM_AESOP": {
+      "family": "SX3_SET_SUBSET_ANTISYMM_AESOP",
+      "sequence": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+      "base_step": "apply Set.Subset.antisymm <;> intro x",
+      "close_step": "aesop",
+      "gate": {
+        "namespace_or_name_contains": ["Set."],
+        "target_shape": ["set_equality", "set_subset", "set_diff", "set_union"],
+        "forbid_namespaces": ["Nat", "Int", "Multiset"]
+      },
+      "status": "experimental_off_by_default",
+      "promotion_allowed": false,
+      "requires_minimal_relabel": true,
+      "requires_rc2_baseline_comparison": true,
+      "source": "sf2_cluster",
+      "risk": "medium"
+    },
+    "SX3_SET_SUBSET_ANTISYMM_SIMPALL": {
+      "family": "SX3_SET_SUBSET_ANTISYMM_SIMPALL",
+      "sequence": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+      "base_step": "apply Set.Subset.antisymm <;> intro x",
+      "close_step": "simp_all",
+      "gate": {
+        "namespace_or_name_contains": ["Set."],
+        "target_shape": ["set_equality", "set_subset", "set_diff", "set_union"],
+        "forbid_namespaces": ["Nat", "Int", "Multiset"]
+      },
+      "status": "experimental_off_by_default",
+      "promotion_allowed": false,
+      "requires_minimal_relabel": true,
+      "requires_rc2_baseline_comparison": true,
+      "source": "sf2_cluster",
+      "risk": "medium"
+    },
+    "SX3_SET_BYCASES_SIMPALL": {
+      "family": "SX3_SET_BYCASES_SIMPALL",
+      "sequence": "by_cases h : ?p <;> simp_all [h]",
+      "base_step": "by_cases h : ?p",
+      "close_step": "simp_all [h]",
+      "gate": {
+        "namespace_or_name_contains": ["Set."],
+        "forbid_namespaces": ["Nat", "Int", "Multiset"]
+      },
+      "status": "diagnostic_only",
+      "promotion_allowed": false,
+      "requires_minimal_relabel": true,
+      "requires_rc2_baseline_comparison": true,
+      "source": "exploratory",
+      "risk": "high",
+      "note": "requires proposition inference; do not promote unless inference is implemented robustly. Disabled by default in runner (no ?p inference)."
+    },
+    "SX3_MULTISET_TOFINSET_AESOP": {
+      "family": "SX3_MULTISET_TOFINSET_AESOP",
+      "sequence": "simp [Multiset.mem_toFinset] <;> aesop",
+      "base_step": "simp [Multiset.mem_toFinset]",
+      "close_step": "aesop",
+      "gate": {
+        "namespace_or_name_contains": ["Multiset."],
+        "forbid_namespaces": ["Set", "Nat", "Int"]
+      },
+      "status": "diagnostic_only",
+      "promotion_allowed": false,
+      "requires_minimal_relabel": true,
+      "requires_rc2_baseline_comparison": true,
+      "source": "exploratory",
+      "risk": "high",
+      "note": "for future Multiset bridge cases only; not an RC3 candidate yet"
+    }
+  }
+}

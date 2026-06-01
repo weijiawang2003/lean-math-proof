@@ -1,0 +1,16 @@
+{
+  "sets": [
+    "set_ite_known_wins",
+    "set_ite_selected_failures",
+    "set_ite_fresh_holdout",
+    "sf1_frontier_runnable_subset"
+  ],
+  "comparison": "two independent v2 priority_templates full-wrapper runs",
+  "theorems_checked": 57,
+  "run1_hash": "e57a4325af9e58fb",
+  "run2_hash": "e57a4325af9e58fb",
+  "deterministic": true,
+  "num_diffs": 0,
+  "per_theorem_diffs": [],
+  "note": "Includes the 5 single-shot simp[Set.ite] wins AND the 4 multi-step aesop@2 wins. Determinism here tests whether the search-perturbation multi-step wins reproduce."
+}

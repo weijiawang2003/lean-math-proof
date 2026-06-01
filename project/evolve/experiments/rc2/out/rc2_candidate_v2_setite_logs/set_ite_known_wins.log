@@ -1,0 +1,69 @@
+[sf1_run_eval] registered 'rc2bench_set_ite_known_wins' with 5 theorems (dropped 0 without file_path)
+[sf1_run_eval] delegating: eval_rollout_all.py --theorem-set rc2bench_set_ite_known_wins --policy-type hybrid_evolved --route-config project/evolve/routing/ns24_router.json --strategy-config project/evolve/experiments/rc2/rc2_candidate_wrapper.json --top-k 8 --max-steps 8 --out-dir project/evolve/experiments/rc2/out/rc2_candidate_runs/set_ite_known_wins
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : rc2bench_set_ite_known_wins (5 theorems)
+  Checkpoint  : clf_ckpt
+  Policy type : hybrid_evolved
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+RoutedGenerativePolicy: 4 routes, default=project/models/gen_v5_ns12_balanced
+  '^Nat\\.' -> project/models/gen_v5_ns15_nat_oversample
+  '^Int\\.' -> project/models/gen_v5_ns24_int_minimal_omega_10x
+  '^Finset\\.' -> project/models/gen_v5_ns21_finset_aesop_20x
+  '^Set\\.' -> project/models/gen_v5_ns12_balanced
+[1/5] Set.ite_empty_right
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 45791.63it/s]
+Loaded generative policy from project/models/gen_v5_ns12_balanced (type=seq2seq)
+  Base model: project/models/gen_v5
+  Unique tactics in training: 104
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+[2/5] Set.ite_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+[3/5] Set.ite_empty
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+[4/5] Set.ite_empty_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+[5/5] Set.ite_left
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.ite_empty_right                      PROVED       1      simp [Set.ite]
+  Set.ite_right                            PROVED       1      simp [Set.ite]
+  Set.ite_empty                            PROVED       1      simp [Set.ite]
+  Set.ite_empty_left                       PROVED       1      simp [Set.ite]
+  Set.ite_left                             PROVED       1      simp [Set.ite]
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    5
+  Available:         5/5
+  Proved:            5/5  (100%)
+  Errored:           0/5
+  Exhausted:         0/5
+  Skipped:           0/5
+  Avg steps (proved): 1.0
+  Fallbacks used:     5
+  Proved by origin:   {'tactic_template': 5}
+  Family proofs:      {'priority:any:specific': 5}
+  Denied tactics:     5 (per-theorem deny-list)
+================================================================
+
+Run artifacts: project/evolve/experiments/rc2/out/rc2_candidate_runs/set_ite_known_wins/eval-621e96e2

@@ -1,0 +1,162 @@
+{
+  "num_families": 8,
+  "any_rc_candidate": false,
+  "total_true_delta_wins": 0,
+  "families": [
+    {
+      "family": "generic_aesop_simpall",
+      "cluster_ids": [
+        "unknown__compl__arithmetic",
+        "unknown__iff__iff",
+        "unknown__subset__subset"
+      ],
+      "risk": "low",
+      "probes_tried": 54,
+      "true_delta_wins": 0,
+      "true_delta_theorems": [],
+      "fresh_wins": 0,
+      "duplicates": 1,
+      "source_specific": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "promotion_recommendation": "training_only",
+      "determinism_gate": "UNVERIFIED \u2014 rerun required before any rc_candidate promotion"
+    },
+    {
+      "family": "multiset_tofinset_simp_aesop",
+      "cluster_ids": [
+        "Multiset__iff__iff"
+      ],
+      "risk": "medium",
+      "probes_tried": 2,
+      "true_delta_wins": 0,
+      "true_delta_theorems": [],
+      "fresh_wins": 0,
+      "duplicates": 0,
+      "source_specific": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "promotion_recommendation": "reject",
+      "determinism_gate": "UNVERIFIED \u2014 rerun required before any rc_candidate promotion"
+    },
+    {
+      "family": "set_ext_aesop",
+      "cluster_ids": [
+        "Set__iff__iff",
+        "Set__ite_if__equality",
+        "Set__map_filter__arithmetic",
+        "Set__other__equality",
+        "Set__singleton__arithmetic"
+      ],
+      "risk": "medium",
+      "probes_tried": 22,
+      "true_delta_wins": 0,
+      "true_delta_theorems": [],
+      "fresh_wins": 0,
+      "duplicates": 0,
+      "source_specific": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "promotion_recommendation": "reject",
+      "determinism_gate": "UNVERIFIED \u2014 rerun required before any rc_candidate promotion"
+    },
+    {
+      "family": "set_ext_simp",
+      "cluster_ids": [
+        "Set__iff__iff",
+        "Set__ite_if__equality",
+        "Set__other__equality"
+      ],
+      "risk": "low",
+      "probes_tried": 4,
+      "true_delta_wins": 0,
+      "true_delta_theorems": [],
+      "fresh_wins": 0,
+      "duplicates": 0,
+      "source_specific": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "promotion_recommendation": "reject",
+      "determinism_gate": "UNVERIFIED \u2014 rerun required before any rc_candidate promotion"
+    },
+    {
+      "family": "set_iff_constructor_aesop",
+      "cluster_ids": [
+        "Set__iff__iff"
+      ],
+      "risk": "medium",
+      "probes_tried": 32,
+      "true_delta_wins": 0,
+      "true_delta_theorems": [],
+      "fresh_wins": 0,
+      "duplicates": 0,
+      "source_specific": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "promotion_recommendation": "reject",
+      "determinism_gate": "UNVERIFIED \u2014 rerun required before any rc_candidate promotion"
+    },
+    {
+      "family": "set_ite_ext",
+      "cluster_ids": [
+        "Set__ite_if__equality",
+        "Set__ite_if__subset"
+      ],
+      "risk": "high",
+      "probes_tried": 8,
+      "true_delta_wins": 0,
+      "true_delta_theorems": [],
+      "fresh_wins": 0,
+      "duplicates": 0,
+      "source_specific": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "promotion_recommendation": "reject",
+      "determinism_gate": "UNVERIFIED \u2014 rerun required before any rc_candidate promotion"
+    },
+    {
+      "family": "set_ite_simp_aesop",
+      "cluster_ids": [
+        "Set__ite_if__equality",
+        "Set__ite_if__subset"
+      ],
+      "risk": "medium",
+      "probes_tried": 8,
+      "true_delta_wins": 0,
+      "true_delta_theorems": [],
+      "fresh_wins": 0,
+      "duplicates": 0,
+      "source_specific": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "promotion_recommendation": "reject",
+      "determinism_gate": "UNVERIFIED \u2014 rerun required before any rc_candidate promotion"
+    },
+    {
+      "family": "set_subset_antisymm",
+      "cluster_ids": [
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "risk": "high",
+      "probes_tried": 22,
+      "true_delta_wins": 0,
+      "true_delta_theorems": [],
+      "fresh_wins": 0,
+      "duplicates": 0,
+      "source_specific": 0,
+      "off_gate": 0,
+      "parse_errors": 0,
+      "timeouts": 0,
+      "promotion_recommendation": "reject",
+      "determinism_gate": "UNVERIFIED \u2014 rerun required before any rc_candidate promotion"
+    }
+  ]
+}

@@ -1,0 +1,3183 @@
+{
+  "generated_by": "scripts/rc5v2_run_rc2_baseline.py",
+  "wrapper": "project/evolve/experiments/rc2_release/rc2_production_wrapper.json",
+  "num_theorems": 240,
+  "status_histogram": {
+    "failed": 163,
+    "solved": 67,
+    "open_flake": 10
+  },
+  "by_set": {
+    "rc5v2_batch": {
+      "n": 240,
+      "solved": 67,
+      "failed": 163,
+      "flake": 10,
+      "path_error": 0
+    }
+  },
+  "by_namespace": {
+    "And": {
+      "n": 1,
+      "solved": 0
+    },
+    "Antitone": {
+      "n": 1,
+      "solved": 0
+    },
+    "AntitoneOn": {
+      "n": 3,
+      "solved": 0
+    },
+    "BEx": {
+      "n": 2,
+      "solved": 0
+    },
+    "BddAbove": {
+      "n": 8,
+      "solved": 1
+    },
+    "Finset": {
+      "n": 55,
+      "solved": 28
+    },
+    "List": {
+      "n": 45,
+      "solved": 8
+    },
+    "Multiset": {
+      "n": 45,
+      "solved": 14
+    },
+    "Nat": {
+      "n": 35,
+      "solved": 3
+    },
+    "Set": {
+      "n": 45,
+      "solved": 13
+    }
+  },
+  "results": [
+    {
+      "full_name": "Set.InjOn.image_diff_subset",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cd257b46/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.InjOn.mem_of_mem_image",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cd257b46/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.MapsTo.image_subset",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cd257b46/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.MapsTo.subset_preimage",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cd257b46/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.SurjOn.image_invFunOn_image_of_subset",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cd257b46/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set._root_.Function.invFunOn_image_image_subset",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set._root_.Function.leftInvOn_invFunOn_of_subset_image_image",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.biInter_subset_of_mem",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cd257b46/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.biUnion_preimage_singleton",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0fac1193/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.biUnion_range_preimage_singleton",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0fac1193/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.compl_range_subset_kernImage",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0fac1193/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.diff_singleton_sSubset",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0fac1193/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0fac1193/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.exists_image_eq_injOn_of_subset_range",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0fac1193/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.image2_iInter",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.image2_iInter_subset_left",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0fac1193/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.image2_iInter_subset_right",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7f6988b3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.image_iInter",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7f6988b3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.image_iInter_subset",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7f6988b3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.not_subset_iff_exists_mem_not_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Set.subset_def]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7f6988b3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.preimage_invFun_of_mem",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7f6988b3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.preimage_invFun_of_not_mem",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7f6988b3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.sInter_subset_of_mem",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7f6988b3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.singleton_subset_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Set.subset_def]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7f6988b3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.ssubset_iff_sdiff_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-2014e1a1/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-2014e1a1/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.subset_biUnion_of_mem",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-2014e1a1/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.subset_insert_diff_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "tauto",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-2014e1a1/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.subset_pair_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-2014e1a1/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-2014e1a1/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.subset_sUnion_of_mem",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-2014e1a1/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-2014e1a1/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.BijOn.exists_extend_of_subset",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6b61761c/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.BijOn.image_eq",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6b61761c/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.BijOn.iterate",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6b61761c/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.BijOn.subset_left",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6b61761c/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.BijOn.subset_range",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6b61761c/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.BijOn.subset_right",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6b61761c/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.EqOn.image_eq",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6b61761c/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.EqOn.image_eq_self",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6b61761c/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.EqOn.inter_preimage_eq",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-d16be9d3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.InjOn.bijOn_image",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-d16be9d3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.InjOn.exists_subset_injOn_subset_range_eq",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-d16be9d3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.InjOn.image",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-d16be9d3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Set.InjOn.imageFactorization_injective",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-d16be9d3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.biUnion_filter_eq_of_maps_to",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-d16be9d3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.filter_attach'",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-d16be9d3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.image_biUnion_filter_eq",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-d16be9d3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.preimage_subset",
+      "file_path": "Mathlib/Data/Finset/Preimage.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cb55cf0d/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.biUnion_image",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cb55cf0d/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.biUnion_singleton",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cb55cf0d/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.biUnion_subset_biUnion_of_subset_left",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cb55cf0d/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.coe_filterMap",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cb55cf0d/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.coe_image_subset_range",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Set.union_univ]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cb55cf0d/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.coe_map_subset_range",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Set.union_univ]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cb55cf0d/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.disjoint_filter",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-cb55cf0d/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.disjoint_range_addLeftEmbedding",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-21dab045/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.disjoint_range_addRightEmbedding",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-21dab045/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.erase_image_subset_image_erase",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-21dab045/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.exists_of_one_lt_card_pi",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-21dab045/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.fiber_nonempty_iff_mem_image",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-21dab045/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.filterMap_empty",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-21dab045/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.filterMap_mono",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-21dab045/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.filterMap_some",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-21dab045/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.filterMap_val",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9351cc81/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.filter_attach",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9351cc81/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.filter_biUnion",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9351cc81/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.filter_image",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9351cc81/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.filter_map",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9351cc81/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.filter_mem_image_eq_image",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9351cc81/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.fin_map",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9351cc81/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.image_biUnion",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9351cc81/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.image_inter_subset",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-435c386b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.image_preimage",
+      "file_path": "Mathlib/Data/Finset/Preimage.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-435c386b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.image_subset_image",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-435c386b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.image_toFinset",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-435c386b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.image_val",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-435c386b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.image_val_of_injOn",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-435c386b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.map_eq_image",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-435c386b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.map_eq_of_subset",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-435c386b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.map_filter",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8b864cbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.map_filter'",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8b864cbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.map_ofDual_max",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8b864cbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.map_ofDual_min",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8b864cbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.map_subtype_subset",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Set.inter_empty]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8b864cbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.map_toDual_max",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8b864cbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.map_toDual_min",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8b864cbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.mem_filterMap",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8b864cbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.preimage_map",
+      "file_path": "Mathlib/Data/Finset/Preimage.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0a6c91ac/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.set_biUnion_finset_image",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0a6c91ac/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.set_biUnion_preimage_singleton",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0a6c91ac/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.sigma_preimage_mk",
+      "file_path": "Mathlib/Data/Finset/Preimage.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0a6c91ac/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.sigma_preimage_mk_of_subset",
+      "file_path": "Mathlib/Data/Finset/Preimage.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0a6c91ac/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.subset_biUnion_of_mem",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0a6c91ac/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.subset_set_biUnion_of_mem",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0a6c91ac/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset.subtype_map",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-0a6c91ac/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset._root_.map_finset_inf",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset._root_.map_finset_inf'",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset._root_.map_finset_sup",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Finset._root_.map_finset_sup'",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.filterMap_eq_bind_toList",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-4d182598/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.filter_attach",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-4d182598/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.filter_attach'",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-4d182598/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.bind_pure_eq_map",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-4d182598/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.bind_ret_eq_map",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-51c466e8/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.eq_of_mem_map_const",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-51c466e8/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.filterMap_congr",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-51c466e8/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.get",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.getElem_pmap",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-51c466e8/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.getLast_pmap",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-51c466e8/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.get_pmap",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-51c466e8/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.infix_bind_of_mem",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-51c466e8/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.map_filter'",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f5158832/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.mem_filter_of_mem",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f5158832/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.mem_of_mem_filter",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f5158832/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.of_mem_filter",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f5158832/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.pmap_append",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f5158832/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.pmap_append'",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f5158832/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.pmap_map",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f5158832/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.splitOnP_spec",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f5158832/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.attach_map_coe'",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-28c34e93/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.attach_map_val",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-28c34e93/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.attach_map_val'",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-28c34e93/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.bind_congr",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-28c34e93/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.bind_eq_bind",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-28c34e93/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.choose_mem",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-28c34e93/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.comp_map",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [List.append_nil]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-28c34e93/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.cons_head",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.cons_subset_of_subset_of_mem",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-61f38fbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.count_map_of_injective",
+      "file_path": "Mathlib/Data/List/Count.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-61f38fbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.dedup_cons_of_mem",
+      "file_path": "Mathlib/Data/List/Dedup.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-61f38fbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.dedup_cons_of_mem'",
+      "file_path": "Mathlib/Data/List/Dedup.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-61f38fbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.dedup_cons_of_not_mem",
+      "file_path": "Mathlib/Data/List/Dedup.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-61f38fbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.dedup_cons_of_not_mem'",
+      "file_path": "Mathlib/Data/List/Dedup.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-61f38fbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.eq_cons_of_mem_head",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.exists_mem_cons_of",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-61f38fbf/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.exists_mem_cons_of_exists",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7996c500/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.filter_comm",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7996c500/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.filter_eq_foldr",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7996c500/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.filter_false",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7996c500/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.filter_singleton",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7996c500/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.filter_subset",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7996c500/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.filter_true",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [List.append_nil]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7996c500/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.finRange_map_get",
+      "file_path": "Mathlib/Data/List/Range.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-7996c500/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "List.foldrRecOn_cons",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-3f270e74/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filterMap_filterMap",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-3f270e74/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filter_attach",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-3f270e74/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filter_attach'",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-3f270e74/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.mem_filterMap",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-3f270e74/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.bind_add",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-3f270e74/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.bind_cons",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-3f270e74/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.bind_map",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-3f270e74/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.bind_map_comm",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.bind_singleton",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.card_bind",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.coe_mapAddMonoidHom",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.countP_eq_countP_filter_add",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.countP_map",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.count_bind",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.count_map",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-f925ca0f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.eq_of_mem_map_const",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-ff3b4ed3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filterMap_coe",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-ff3b4ed3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filterMap_cons_none",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-ff3b4ed3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filterMap_cons_some",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-ff3b4ed3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filterMap_eq_filter",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-ff3b4ed3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filterMap_eq_map",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-ff3b4ed3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filterMap_filter",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-ff3b4ed3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filterMap_le_filterMap",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-ff3b4ed3/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filterMap_map",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9ea4e868/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filterMap_some",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9ea4e868/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filterMap_zero",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9ea4e868/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filter_add",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9ea4e868/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filter_add_filter",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9ea4e868/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filter_add_not",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9ea4e868/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filter_filterMap",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9ea4e868/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.filter_map",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9ea4e868/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.forall_mem_map_iff",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.map_add",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.map_bind",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.map_count_True_eq_filter_card",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.map_erase_of_mem",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.map_filter'",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.map_filterMap",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.map_filterMap_of_inv",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.mem_add",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-22c3140f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.mem_bind",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-22c3140f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.mem_filter",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-22c3140f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.mem_filter_of_mem",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-22c3140f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.mem_map",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-22c3140f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Multiset.mem_map_of_injective",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-22c3140f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.div_lt_div_of_lt_of_dvd",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-22c3140f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.lt_mul_div_succ",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-22c3140f/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.lt_succ_sqrt",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9b74728e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.lt_succ_sqrt'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9b74728e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.mod_succ_eq_iff_lt",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9b74728e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.mul_div_lt_iff_not_dvd",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9b74728e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.sqrt_mul_sqrt_lt_succ",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9b74728e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.sqrt_mul_sqrt_lt_succ'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9b74728e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.succ_div_of_dvd",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9b74728e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.succ_div_of_not_dvd",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-9b74728e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.div_add_mod'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-b741cb4b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.div_dvd_iff_dvd_mul",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-b741cb4b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.div_lt_self'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "omega",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-b741cb4b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.div_mod_unique",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-b741cb4b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.div_ne_zero_iff_of_dvd",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-b741cb4b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.dvd_div_iff_mul_dvd",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-b741cb4b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.dvd_iff_le_div_mul",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-b741cb4b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.eq_of_dvd_of_div_eq_one",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-b741cb4b/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.eq_zero_of_dvd_of_div_eq_zero",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-1e409062/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.eq_zero_of_dvd_of_lt",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-1e409062/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.exists_lt_succ",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-1e409062/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.le_mod_add_mod_of_dvd_add_of_not_dvd",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-1e409062/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.le_of_lt_add_of_dvd",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-1e409062/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.le_self_pow",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-1e409062/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.lt_div_iff_mul_lt",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-1e409062/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.lt_div_mul_add",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-1e409062/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.lt_mul_of_div_lt",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8beb66ed/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.lt_of_div_lt_div",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8beb66ed/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.lt_of_pow_dvd_right",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8beb66ed/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.mod_add_div'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8beb66ed/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.mod_succ",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Nat.mul_one]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8beb66ed/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.mul_add_mod_of_lt",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8beb66ed/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.mul_div_eq_iff_dvd",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8beb66ed/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.mul_lt_mul_pow_succ",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-8beb66ed/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Nat.not_dvd_iff_between_consec_multiples",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-09e0b71e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "And.exists",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "And",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-09e0b71e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "Antitone.mem_upperBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Antitone",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-09e0b71e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "AntitoneOn.mem_lowerBounds_image_self",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-09e0b71e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "AntitoneOn.mem_upperBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-09e0b71e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "AntitoneOn.mem_upperBounds_image_self",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-09e0b71e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "BEx.imp_left",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "BEx",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-09e0b71e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "BEx.imp_right",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "BEx",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-09e0b71e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "BddAbove.bddBelow_image2_of_bddAbove",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "BddAbove",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-bfe5386e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "BddAbove.exists_ge",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "BddAbove",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-bfe5386e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "BddAbove.image2",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "BddAbove",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-bfe5386e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "BddAbove.image2_bddBelow",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "BddAbove",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-bfe5386e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "BddAbove.insert",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "BddAbove",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [List.nil_append]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-bfe5386e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "BddAbove.inter_of_left",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "BddAbove",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-bfe5386e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "BddAbove.inter_of_right",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "BddAbove",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-bfe5386e/traces.jsonl",
+      "provenance": "rc2_live"
+    },
+    {
+      "full_name": "BddAbove.mono",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "BddAbove",
+      "sets": [
+        "rc5v2_batch"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-bfe5386e/traces.jsonl",
+      "provenance": "rc2_live"
+    }
+  ]
+}

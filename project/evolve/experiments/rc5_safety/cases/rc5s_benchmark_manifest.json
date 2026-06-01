@@ -1,0 +1,24 @@
+{
+  "generated_by": "scripts/rc5s_build_benchmark_set.py",
+  "set_files": {
+    "true_winners": "project/evolve/experiments/rc5_safety/cases/true_winners.json",
+    "prior_stall_cases": "project/evolve/experiments/rc5_safety/cases/prior_stall_cases.json",
+    "off_policy_cases": "project/evolve/experiments/rc5_safety/cases/off_policy_cases.json",
+    "tr7_dynamic_tail": "project/evolve/experiments/rc5_safety/cases/tr7_dynamic_tail.json",
+    "hard_negatives": "project/evolve/experiments/rc5_safety/cases/hard_negatives.json",
+    "eligible_no_win": "project/evolve/experiments/rc5_safety/cases/eligible_no_win.json",
+    "floor_smoke": "project/evolve/experiments/rc5_safety/cases/floor_smoke.json"
+  },
+  "sizes": {
+    "true_winners": 3,
+    "prior_stall_cases": 84,
+    "off_policy_cases": 2,
+    "tr7_dynamic_tail": 0,
+    "hard_negatives": 12,
+    "eligible_no_win": 0,
+    "floor_smoke": 10
+  },
+  "total": 111,
+  "unique_total": 111,
+  "purpose": "safety/hardening benchmark (not coverage)"
+}

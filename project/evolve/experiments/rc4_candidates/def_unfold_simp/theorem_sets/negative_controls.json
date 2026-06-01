@@ -1,0 +1,202 @@
+[
+  {
+    "full_name": "List.perm_of_nodup_nodup_toFinset_eq",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem perm_of_nodup_nodup_toFinset_eq (hl : Nodup l) (hl' : Nodup l') (h : l.toFinset = l'.toFinset) : l ~ l'",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "List.toFinset.ext_iff",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem ext_iff {s₁ s₂ : Finset α} : s₁ = s₂ ↔ ∀ a, a ∈ s₁ ↔ a ∈ s₂",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "List.toFinset_eq",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem toFinset_eq {s : Multiset α} (n : Nodup s) : Finset.mk s n = s.toFinset",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "List.toFinset_eq_empty_iff",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem toFinset_eq_empty_iff (l : List α) : l.toFinset = ∅ ↔ l = nil",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "List.toFinset_eq_iff_perm_dedup",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem toFinset_eq_iff_perm_dedup : l.toFinset = l'.toFinset ↔ l.dedup ~ l'.dedup",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "List.toFinset_filter",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem toFinset_filter (s : Multiset α) (p : α → Prop) [DecidablePred p] : Multiset.toFinset (s.filter p) = s.toFinset.filter p",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "List.toFinset_nonempty_iff",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem toFinset_nonempty_iff (l : List α) : l.toFinset.Nonempty ↔ l ≠ []",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "List.toFinset_surj_on",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem toFinset_surj_on : Set.SurjOn toFinset { l : List α | l.Nodup } Set.univ",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "Multiset.Nodup.toFinset_inj",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": null,
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "Multiset.toFinset_eq_singleton_iff",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem toFinset_eq_singleton_iff (s : Multiset α) (a : α) : s.toFinset = {a} ↔ card s ≠ 0 ∧ s = card s • {a}",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "Multiset.toFinset_ssubset",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem toFinset_ssubset : s.toFinset ⊂ t.toFinset ↔ s ⊂ t",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "Multiset.toFinset_subset",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem toFinset_subset : s.toFinset ⊆ t.toFinset ↔ s ⊆ t",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "Nat.add_sub_one_le_mul",
+    "file_path": "Mathlib/Data/Nat/Defs.lean",
+    "namespace": "Nat",
+    "goal_text": "lemma add_sub_one_le_mul (ha : a ≠ 0) (hb : b ≠ 0) : a + b - 1 ≤ a * b",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "Nat.diag_induction",
+    "file_path": "Mathlib/Data/Nat/Defs.lean",
+    "namespace": "Nat",
+    "goal_text": "theorem diag_induction (P : ℕ → ℕ → Prop) (ha : ∀ a, P (a + 1) (a + 1)) (hb : ∀ b, P 0 (b + 1)) (hd : ∀ a b, a < b → P (a + 1) b → P a (b + 1) → P (a + 1) (b + 1)) : ∀ a b, a < b → P a b | 0, b + 1, _ => hb _ | a + 1, b + 1, h => by apply hd _ _ (Nat.add_lt_add_iff_right.1 h) · have this : a + 1 = b ∨ a + 1 < b",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "Nat.div_div_div_eq_div",
+    "file_path": "Mathlib/Data/Nat/Defs.lean",
+    "namespace": "Nat",
+    "goal_text": "@[simp] lemma div_div_div_eq_div (dvd : b ∣ a) (dvd2 : a ∣ c) : c / (a / b) / b = c / a",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "Nat.div_eq_iff_eq_of_dvd_dvd",
+    "file_path": "Mathlib/Data/Nat/Defs.lean",
+    "namespace": "Nat",
+    "goal_text": "lemma div_eq_iff_eq_of_dvd_dvd (hn : n ≠ 0) (ha : a ∣ n) (hb : b ∣ n) : n / a = n / b ↔ a = b",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "Nat.div_eq_self",
+    "file_path": "Mathlib/Data/Nat/Defs.lean",
+    "namespace": "Nat",
+    "goal_text": "lemma div_eq_self : m / n = m ↔ m = 0 ∨ n = 1",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "Nat.div_eq_sub_mod_div",
+    "file_path": "Mathlib/Data/Nat/Defs.lean",
+    "namespace": "Nat",
+    "goal_text": "lemma div_eq_sub_mod_div : m / n = (m - m % n) / n",
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "Nat.div_le_of_le_mul'",
+    "file_path": "Mathlib/Data/Nat/Defs.lean",
+    "namespace": "Nat",
+    "goal_text": null,
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  },
+  {
+    "full_name": "Nat.div_le_self'",
+    "file_path": "Mathlib/Data/Nat/Defs.lean",
+    "namespace": "Nat",
+    "goal_text": null,
+    "gate_should_fire": false,
+    "candidate_tactic": null,
+    "matched_defs": [],
+    "expected_behavior": "gate must NOT fire (off-gate check)"
+  }
+]

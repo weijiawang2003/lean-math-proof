@@ -1,0 +1,60 @@
+{
+  "sources": {
+    "literal_rc2": "project/evolve/experiments/rc3_validation/out/literal_rc2_results.json",
+    "frontier": "project/evolve/experiments/sf1/out/real/frontier_with_paths.jsonl",
+    "sx3_holdout": "project/evolve/experiments/sx3/out/sx3_fresh_holdout_results.json",
+    "sx3_cluster": "project/evolve/experiments/sx3/out/sx3_set_cluster_results.json"
+  },
+  "source_counts": {
+    "literal_rc2": 13,
+    "sf1_frontier": 39
+  },
+  "excluded_rc2_solved": [
+    "Set.diff_union_inter",
+    "Set.insert_diff_eq_singleton",
+    "Set.insert_diff_of_mem",
+    "Set.ite_compl",
+    "Set.ite_inter",
+    "Set.ite_inter_compl_self",
+    "Set.ite_inter_inter",
+    "Set.ite_inter_self",
+    "Set.ite_univ",
+    "Set.mem_dite",
+    "Set.mem_dite_empty_left",
+    "Set.mem_dite_empty_right",
+    "Set.mem_dite_univ_left",
+    "Set.mem_dite_univ_right",
+    "Set.mem_ite_empty_left",
+    "Set.mem_ite_empty_right",
+    "Set.pair_diff_left"
+  ],
+  "num_excluded_rc2_solved": 17,
+  "pool_size": 40,
+  "pool_with_file_path": 40,
+  "unresolved_size": 0,
+  "num_confirmed_rc2_failures": 13,
+  "num_frontier_unconfirmed": 27,
+  "by_namespace": {
+    "Eq": 1,
+    "Function": 1,
+    "GENERAL_FRONTIER": 1,
+    "Multiset": 3,
+    "Prop": 1,
+    "Set": 33
+  },
+  "confirmed_failures": [
+    "Multiset.toFinset_eq_singleton_iff",
+    "Set.antitoneOn_iff_antitone",
+    "Set.diff_singleton_subset_iff",
+    "Set.ite_eq_of_subset_left",
+    "Set.ite_eq_of_subset_right",
+    "Set.ite_inter_of_inter_eq",
+    "Set.pair_eq_pair_iff",
+    "Set.powerset_singleton",
+    "Set.ssubset_singleton_iff",
+    "Set.subset_insert_iff",
+    "Set.subset_ite",
+    "Set.subset_singleton_iff_eq",
+    "Set.union_empty_iff"
+  ]
+}

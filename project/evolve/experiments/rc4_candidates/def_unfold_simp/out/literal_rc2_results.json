@@ -1,0 +1,911 @@
+{
+  "generated_by": "scripts/rc4a_run_literal_rc2.py",
+  "rc2_wrapper": "project/evolve/experiments/rc2_release/rc2_production_wrapper.json",
+  "route_config": "project/evolve/routing/ns24_router.json",
+  "policy_type": "hybrid_evolved",
+  "top_k": 8,
+  "max_steps": 8,
+  "num_theorems": 61,
+  "status_histogram": {
+    "failed": 31,
+    "solved": 30
+  },
+  "per_set": {
+    "known_wins": {
+      "n": 5,
+      "solved": 0,
+      "failed": 5
+    },
+    "same_cluster_holdout": {
+      "n": 3,
+      "solved": 1,
+      "failed": 2
+    },
+    "fresh_frontier_holdout": {
+      "n": 3,
+      "solved": 3,
+      "failed": 0
+    },
+    "negative_controls": {
+      "n": 20,
+      "solved": 0,
+      "failed": 20
+    },
+    "canonical_smoke": {
+      "n": 30,
+      "solved": 26,
+      "failed": 4
+    }
+  },
+  "results": [
+    {
+      "full_name": "Finset.mem_disjUnion",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "known_wins"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-dde44f13/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "known_wins"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "reused:rc2_failure_confirmation"
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "known_wins"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "reused:rc2_failure_confirmation"
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "known_wins"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "reused:rc2_failure_confirmation"
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "known_wins"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "reused:rc2_failure_confirmation"
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "same_cluster_holdout"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "reused:rc2_failure_confirmation"
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "same_cluster_holdout"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "reused:rc2_failure_confirmation"
+    },
+    {
+      "full_name": "Finset.filter_cons",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "same_cluster_holdout"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-a48ce70a/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Finset.coe_disjUnion",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_frontier_holdout"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Finset.disjUnion_singleton",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_frontier_holdout"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Finset.disjUnion_eq_union",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_frontier_holdout"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "List.perm_of_nodup_nodup_toFinset_eq",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-261a1f5f/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "List.toFinset.ext_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-261a1f5f/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "List.toFinset_eq",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-261a1f5f/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "List.toFinset_eq_empty_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-261a1f5f/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "List.toFinset_eq_iff_perm_dedup",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-261a1f5f/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "List.toFinset_filter",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-261a1f5f/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "List.toFinset_nonempty_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-261a1f5f/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "List.toFinset_surj_on",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-b2dae95e/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Multiset.Nodup.toFinset_inj",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-b2dae95e/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 4,
+      "winning_tactic": null,
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl",
+      "provenance": "reused:rc2_failure_confirmation"
+    },
+    {
+      "full_name": "Multiset.toFinset_ssubset",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-b2dae95e/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Multiset.toFinset_subset",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 4,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-b2dae95e/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Nat.add_sub_one_le_mul",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-bc7ecfc9/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Nat.diag_induction",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-bc7ecfc9/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Nat.div_div_div_eq_div",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-bc7ecfc9/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Nat.div_eq_iff_eq_of_dvd_dvd",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 5,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-bc7ecfc9/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Nat.div_eq_self",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-bc7ecfc9/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Nat.div_eq_sub_mod_div",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 6,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-bc7ecfc9/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Nat.div_le_of_le_mul'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 4,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-bc7ecfc9/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Nat.div_le_self'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 3,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-bc7ecfc9/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Nat.mul_add_mod'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Set.ite_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp [Set.ite]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Set.union_comm",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Set.inter_comm",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Set.mem_union",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Set.mem_inter_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 2,
+      "winning_tactic": "tauto",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Set.subset_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp [Set.subset_def]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Set.empty_subset",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp [Set.subset_def]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Set.union_empty",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp [Set.ext_iff]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-1d1e2e08/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Set.empty_union",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp [Set.ext_iff]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Set.inter_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp [Set.subset_def]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Set.univ_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp [Set.subset_def]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Finset.disjoint_insert_right",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Finset.mem_insert",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Finset.mem_singleton",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 2,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.add_eq_left",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.add_eq_max_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.add_eq_min_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.add_eq_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.add_eq_right",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.add_mod_eq_add_mod_left",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-b678a026/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.add_mod_eq_add_mod_right",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "simp_all [Nat.add_mod, Nat.mod_eq_of_lt]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.div_le_div_right",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "by_cases hc : c = 0 <;> [simp [hc]; exact (Nat.le_div_iff_mul_le' (Nat.pos_of_ne_zero hc)).2 (Nat.le_trans (Nat.div_mul_le_self _ _) h)]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.div_lt_iff_lt_mul'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 3,
+      "winning_tactic": "simp_all",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.div_lt_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "rw [Nat.div_lt_iff_lt_mul hb, Nat.one_mul]",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.half_le_of_sub_le_half",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "omega",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.le_and_le_add_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "exact ⟨fun h => by omega, fun h => by omega⟩",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.AM_GM",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "failed",
+      "rc2_finished": false,
+      "num_steps": 1,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/def_unfold_simp/out/rc2_baseline/rc2_runs/eval-de751afb/traces.jsonl",
+      "provenance": "rc4a_live"
+    },
+    {
+      "full_name": "Nat.le_or_le_of_add_eq_add_pred",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 1,
+      "winning_tactic": "omega",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-65404903/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    },
+    {
+      "full_name": "Nat.add_mod_eq_ite",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "rc2_status": "solved",
+      "rc2_finished": true,
+      "num_steps": 2,
+      "winning_tactic": "split_ifs <;> omega",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-bc7ecfc9/traces.jsonl",
+      "provenance": "reused:tr3_rc2_confirmation"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "gate_policy": "project/evolve/experiments/sx2/set2_gate_policy.json",
+  "mode": "dry_gate_only_scan",
+  "surfaces_checked": [
+    "demo_v1",
+    "nat_defs_medium",
+    "multiset_preservation"
+  ],
+  "theorem_count": 12,
+  "set2_emissions_production_default": 0,
+  "set2_emissions_forced": 0,
+  "off_gate_emissions": 0,
+  "expected": "0 SET2 emissions on Nat/Multiset/canonical surfaces (both prod-default AND forced); positive Set controls fire only when forced.",
+  "sanity_ok": true,
+  "surface_reports": [
+    {
+      "surface": "demo_v1",
+      "available": true,
+      "theorem_count": 4,
+      "rows": [
+        {
+          "theorem": "Nat.add_comm",
+          "default_emissions": 0,
+          "forced_emissions": [],
+          "off_gate": 0
+        },
+        {
+          "theorem": "Nat.succ_le_succ",
+          "default_emissions": 0,
+          "forced_emissions": [],
+          "off_gate": 0
+        },
+        {
+          "theorem": "Bool.and_self",
+          "default_emissions": 0,
+          "forced_emissions": [],
+          "off_gate": 0
+        },
+        {
+          "theorem": "List.append_nil",
+          "default_emissions": 0,
+          "forced_emissions": [],
+          "off_gate": 0
+        }
+      ],
+      "forced_emissions_total": 0
+    },
+    {
+      "surface": "nat_defs_medium",
+      "available": true,
+      "theorem_count": 5,
+      "rows": [
+        {
+          "theorem": "Nat.mul_succ",
+          "default_emissions": 0,
+          "forced_emissions": [],
+          "off_gate": 0
+        },
+        {
+          "theorem": "Nat.lt_irrefl",
+          "default_emissions": 0,
+          "forced_emissions": [],
+          "off_gate": 0
+        },
+        {
+          "theorem": "Nat.mod_self",
+          "default_emissions": 0,
+          "forced_emissions": [],
+          "off_gate": 0
+        },
+        {
+          "theorem": "Nat.pow_zero",
+          "default_emissions": 0,
+          "forced_emissions": [],
+          "off_gate": 0
+        },
+        {
+          "theorem": "Int.add_mul",
+          "default_emissions": 0,
+          "forced_emissions": [],
+          "off_gate": 0
+        }
+      ],
+      "forced_emissions_total": 0
+    },
+    {
+      "surface": "multiset_preservation",
+      "available": true,
+      "theorem_count": 3,
+      "rows": [
+        {
+          "theorem": "Multiset.toFinset_eq_singleton_iff",
+          "default_emissions": 0,
+          "forced_emissions": [],
+          "off_gate": 0
+        },
+        {
+          "theorem": "Multiset.cons_inj_left",
+          "default_emissions": 0,
+          "forced_emissions": [],
+          "off_gate": 0
+        },
+        {
+          "theorem": "Multiset.map_id",
+          "default_emissions": 0,
+          "forced_emissions": [],
+          "off_gate": 0
+        }
+      ],
+      "forced_emissions_total": 0
+    }
+  ],
+  "positive_controls": [
+    {
+      "theorem": "Set.ite_right",
+      "expected_gate": "SET_ITE_SIMP",
+      "forced_emissions": [
+        "SET_ITE_SIMP",
+        "SET_EXT_SIMP",
+        "SET_SUBSET_ANTISYMM"
+      ],
+      "fired_expected": true,
+      "default_emissions": 0
+    },
+    {
+      "theorem": "Set.union_empty_iff",
+      "expected_gate": "SET_IFF_CONSTRUCTOR",
+      "forced_emissions": [
+        "SET_IFF_CONSTRUCTOR"
+      ],
+      "fired_expected": true,
+      "default_emissions": 0
+    }
+  ],
+  "note": "Gates are pure name+goal predicates; a dry scan is deterministic and sufficient. Live eval on demo_v1/nat_defs_medium is unnecessary and was not run (would be expensive). SET2 is off-by-default in production."
+}

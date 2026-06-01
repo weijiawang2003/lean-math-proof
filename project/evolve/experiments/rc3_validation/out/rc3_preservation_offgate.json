@@ -1,0 +1,83 @@
+{
+  "candidate_wrapper": "project/evolve/experiments/rc3_validation/rc3_candidate_wrapper.json",
+  "floors": {
+    "demo_v1": {
+      "rc3_solved": 12,
+      "total": 15,
+      "rc2_doc_solved": 12,
+      "floor_min": 11,
+      "floor_pass": true,
+      "regression_vs_rc2_doc": 0,
+      "offgate": {
+        "on_gate": 0,
+        "off_gate": 0,
+        "off_gate_theorems": [],
+        "trace_missing": false
+      },
+      "metrics_path": "project/evolve/experiments/rc3_validation/out/preservation_runs/demo_v1/eval-b2c47e0a/metrics.json",
+      "trace_path": "project/evolve/experiments/rc3_validation/out/preservation_runs/demo_v1/eval-b2c47e0a/traces.jsonl"
+    },
+    "nat_defs_medium": {
+      "rc3_solved": 37,
+      "total": 38,
+      "rc2_doc_solved": 37,
+      "floor_min": 37,
+      "floor_pass": true,
+      "regression_vs_rc2_doc": 0,
+      "offgate": {
+        "on_gate": 0,
+        "off_gate": 0,
+        "off_gate_theorems": [],
+        "trace_missing": false
+      },
+      "metrics_path": "project/evolve/experiments/rc3_validation/out/preservation_runs/nat_defs_medium/eval-f85e32f8/metrics.json",
+      "trace_path": "project/evolve/experiments/rc3_validation/out/preservation_runs/nat_defs_medium/eval-f85e32f8/traces.jsonl"
+    },
+    "nat_defs_large_v5": {
+      "rc3_solved": 49,
+      "total": 65,
+      "rc2_doc_solved": 49,
+      "floor_min": 49,
+      "floor_pass": true,
+      "regression_vs_rc2_doc": 0,
+      "offgate": {
+        "on_gate": 0,
+        "off_gate": 0,
+        "off_gate_theorems": [],
+        "trace_missing": false
+      },
+      "metrics_path": "project/evolve/experiments/rc3_validation/out/preservation_runs/nat_defs_large_v5/eval-92c870fa/metrics.json",
+      "trace_path": "project/evolve/experiments/rc3_validation/out/preservation_runs/nat_defs_large_v5/eval-92c870fa/traces.jsonl"
+    }
+  },
+  "negative_controls": {
+    "ran": 1,
+    "solved": 0,
+    "offgate": {
+      "on_gate": 0,
+      "off_gate": 0,
+      "off_gate_theorems": [],
+      "trace_missing": false
+    },
+    "metrics_path": "project/evolve/experiments/rc3_validation/out/preservation_runs/neg_controls/eval-4aa24655/metrics.json",
+    "trace_path": "project/evolve/experiments/rc3_validation/out/preservation_runs/neg_controls/eval-4aa24655/traces.jsonl",
+    "per_theorem": [
+      {
+        "full_name": "Multiset.toFinset_eq_singleton_iff",
+        "finished": false,
+        "available": true
+      }
+    ]
+  },
+  "summary": {
+    "all_floors_pass": true,
+    "any_regression_vs_rc2_doc": false,
+    "total_off_gate_emissions": 0,
+    "off_gate_clean": true
+  },
+  "expected": {
+    "off_gate": 0,
+    "regressions": 0,
+    "floors_preserved": true
+  }
+}

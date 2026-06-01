@@ -1,0 +1,163 @@
+{
+  "name": "sx3_set_ite_fresh_holdout",
+  "description": "Set.ite/dite theorems NOT in RC2 credited+5 or deferred+4.",
+  "provenance": "sf1 catalog (Set.*ite*), file paths confirmed in traced Set/Basic.lean",
+  "excluded_credited5": [
+    "Set.ite_empty",
+    "Set.ite_empty_left",
+    "Set.ite_empty_right",
+    "Set.ite_left",
+    "Set.ite_right"
+  ],
+  "excluded_deferred4": [
+    "Set.ite_inter",
+    "Set.ite_inter_self",
+    "Set.ite_compl",
+    "Set.ite_inter_compl_self"
+  ],
+  "cases": [
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "fresh_holdout_catalog",
+      "role": "fresh_holdout",
+      "shape": "set_equality",
+      "known_rc2_status_finished": null,
+      "note": "source: ext+by_cases (depth>2); subset hyp",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "fresh_holdout_catalog",
+      "role": "fresh_holdout",
+      "shape": "set_equality",
+      "known_rc2_status_finished": null,
+      "note": "subset hyp",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.ite_inter_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "fresh_holdout_catalog",
+      "role": "fresh_holdout",
+      "shape": "set_equality",
+      "known_rc2_status_finished": null,
+      "note": "pure ite equality",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "fresh_holdout_catalog",
+      "role": "fresh_holdout",
+      "shape": "set_equality",
+      "known_rc2_status_finished": null,
+      "note": "source: rw bridge (rw [<- ite_inter, <- h, ite_same]) -> source-specific risk",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.ite_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "fresh_holdout_catalog",
+      "role": "fresh_holdout",
+      "shape": "set_equality",
+      "known_rc2_status_finished": null,
+      "note": "source: simp [Set.ite] SINGLE-SHOT -> expected RC2 single_step_duplicate",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.mem_dite",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "fresh_holdout_catalog",
+      "role": "fresh_holdout",
+      "shape": "set_membership_iff",
+      "known_rc2_status_finished": null,
+      "note": "dite membership iff",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.mem_dite_empty_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "fresh_holdout_catalog",
+      "role": "fresh_holdout",
+      "shape": "set_membership_iff",
+      "known_rc2_status_finished": null,
+      "note": "dite membership iff",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.mem_dite_empty_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "fresh_holdout_catalog",
+      "role": "fresh_holdout",
+      "shape": "set_membership_iff",
+      "known_rc2_status_finished": null,
+      "note": "dite membership iff",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.mem_dite_univ_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "fresh_holdout_catalog",
+      "role": "fresh_holdout",
+      "shape": "set_membership_iff",
+      "known_rc2_status_finished": null,
+      "note": "dite membership iff",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.mem_dite_univ_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "fresh_holdout_catalog",
+      "role": "fresh_holdout",
+      "shape": "set_membership_iff",
+      "known_rc2_status_finished": null,
+      "note": "dite membership iff",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.mem_ite_empty_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "fresh_holdout_catalog",
+      "role": "fresh_holdout",
+      "shape": "set_membership_iff",
+      "known_rc2_status_finished": null,
+      "note": "ite membership iff",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.mem_ite_empty_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "fresh_holdout_catalog",
+      "role": "fresh_holdout",
+      "shape": "set_membership_iff",
+      "known_rc2_status_finished": null,
+      "note": "ite membership iff",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "fresh_holdout_catalog",
+      "role": "fresh_holdout",
+      "shape": "set_subset_iff",
+      "known_rc2_status_finished": null,
+      "note": "subset iff",
+      "exclude_reason": null
+    }
+  ]
+}

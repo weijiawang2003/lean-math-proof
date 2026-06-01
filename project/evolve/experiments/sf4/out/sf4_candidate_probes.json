@@ -1,0 +1,371 @@
+{
+  "clusters_input": "project/evolve/experiments/sf4/out/rc2_failure_clusters.json",
+  "num_probes": 15,
+  "families": [
+    "generic_aesop_simpall",
+    "multiset_tofinset_simp_aesop",
+    "set_ext_aesop",
+    "set_ext_simp",
+    "set_iff_constructor_aesop",
+    "set_ite_ext",
+    "set_ite_simp_aesop",
+    "set_subset_antisymm"
+  ],
+  "warning": "All probes generic/cluster-driven. No SOURCE_SPECIFIC rw bridges. High-risk broad tactics (subset_antisymm, nlinarith, generic) flagged; credit requires SX4 TRUE_DELTA + 0 off-gate.",
+  "probes": [
+    {
+      "family": "set_ext_aesop",
+      "tactic_or_sequence": "ext x <;> aesop",
+      "is_sequence": true,
+      "cluster_id": [
+        "Set__iff__iff",
+        "Set__ite_if__equality",
+        "Set__singleton__arithmetic",
+        "Set__other__equality",
+        "Set__map_filter__arithmetic"
+      ],
+      "gate": {
+        "namespaces": [
+          "Set"
+        ],
+        "name_features": [
+          "inter",
+          "union",
+          "diff",
+          "compl",
+          "singleton",
+          "pair",
+          "powerset"
+        ],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "low",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "set_ext_aesop",
+      "tactic_or_sequence": "ext x <;> simp_all",
+      "is_sequence": true,
+      "cluster_id": [
+        "Set__iff__iff",
+        "Set__ite_if__equality",
+        "Set__singleton__arithmetic",
+        "Set__other__equality",
+        "Set__map_filter__arithmetic"
+      ],
+      "gate": {
+        "namespaces": [
+          "Set"
+        ],
+        "name_features": [
+          "inter",
+          "union",
+          "diff",
+          "compl",
+          "singleton",
+          "pair",
+          "powerset"
+        ],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "medium",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "set_ext_simp",
+      "tactic_or_sequence": "ext x <;> simp",
+      "is_sequence": true,
+      "cluster_id": [
+        "Set__iff__iff",
+        "Set__ite_if__equality",
+        "Set__other__equality"
+      ],
+      "gate": {
+        "namespaces": [
+          "Set"
+        ],
+        "name_features": [
+          "inter",
+          "union",
+          "diff",
+          "compl"
+        ],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "low",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "set_iff_constructor_aesop",
+      "tactic_or_sequence": "constructor <;> intro h <;> aesop",
+      "is_sequence": true,
+      "cluster_id": [
+        "Set__iff__iff"
+      ],
+      "gate": {
+        "namespaces": [
+          "Set"
+        ],
+        "name_features": [
+          "_iff",
+          "iff_"
+        ],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "medium",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "set_iff_constructor_aesop",
+      "tactic_or_sequence": "constructor <;> intro h <;> simp_all",
+      "is_sequence": true,
+      "cluster_id": [
+        "Set__iff__iff"
+      ],
+      "gate": {
+        "namespaces": [
+          "Set"
+        ],
+        "name_features": [
+          "_iff",
+          "iff_"
+        ],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "medium",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "set_subset_antisymm",
+      "tactic_or_sequence": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+      "is_sequence": true,
+      "cluster_id": [
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "gate": {
+        "namespaces": [
+          "Set"
+        ],
+        "name_features": [
+          "subset",
+          "ssubset"
+        ],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "high",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "set_subset_antisymm",
+      "tactic_or_sequence": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+      "is_sequence": true,
+      "cluster_id": [
+        "Set__iff__iff",
+        "Set__ite_if__subset"
+      ],
+      "gate": {
+        "namespaces": [
+          "Set"
+        ],
+        "name_features": [
+          "subset",
+          "ssubset"
+        ],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "high",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "set_ite_simp_aesop",
+      "tactic_or_sequence": "simp [Set.ite] <;> aesop",
+      "is_sequence": true,
+      "cluster_id": [
+        "Set__ite_if__subset",
+        "Set__ite_if__equality"
+      ],
+      "gate": {
+        "namespaces": [
+          "Set"
+        ],
+        "name_features": [
+          "ite",
+          "dite",
+          ".if"
+        ],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "low",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "set_ite_simp_aesop",
+      "tactic_or_sequence": "simp [Set.ite, Set.ext_iff] <;> aesop",
+      "is_sequence": true,
+      "cluster_id": [
+        "Set__ite_if__subset",
+        "Set__ite_if__equality"
+      ],
+      "gate": {
+        "namespaces": [
+          "Set"
+        ],
+        "name_features": [
+          "ite",
+          "dite",
+          ".if"
+        ],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "medium",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "set_ite_ext",
+      "tactic_or_sequence": "ext x <;> simp [Set.ite]",
+      "is_sequence": true,
+      "cluster_id": [
+        "Set__ite_if__subset",
+        "Set__ite_if__equality"
+      ],
+      "gate": {
+        "namespaces": [
+          "Set"
+        ],
+        "name_features": [
+          "ite",
+          "dite"
+        ],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "low",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "set_ite_ext",
+      "tactic_or_sequence": "ext x <;> by_cases h : x \u2208 _ <;> simp_all [Set.ite]",
+      "is_sequence": true,
+      "cluster_id": [
+        "Set__ite_if__subset",
+        "Set__ite_if__equality"
+      ],
+      "gate": {
+        "namespaces": [
+          "Set"
+        ],
+        "name_features": [
+          "ite",
+          "dite"
+        ],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "high",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "multiset_tofinset_simp_aesop",
+      "tactic_or_sequence": "simp [Multiset.mem_toFinset] <;> aesop",
+      "is_sequence": true,
+      "cluster_id": [
+        "Multiset__iff__iff"
+      ],
+      "gate": {
+        "namespaces": [
+          "Multiset",
+          "Finset"
+        ],
+        "name_features": [
+          "toFinset"
+        ],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "medium",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "multiset_tofinset_simp_aesop",
+      "tactic_or_sequence": "simp [Finset.mem_coe, Multiset.mem_toFinset] <;> aesop",
+      "is_sequence": true,
+      "cluster_id": [
+        "Multiset__iff__iff"
+      ],
+      "gate": {
+        "namespaces": [
+          "Multiset",
+          "Finset"
+        ],
+        "name_features": [
+          "toFinset"
+        ],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "medium",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "generic_aesop_simpall",
+      "tactic_or_sequence": "aesop",
+      "is_sequence": false,
+      "cluster_id": [
+        "unknown__subset__subset",
+        "unknown__iff__iff",
+        "unknown__compl__arithmetic"
+      ],
+      "gate": {
+        "namespaces": [],
+        "name_features": [],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "low",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    },
+    {
+      "family": "generic_aesop_simpall",
+      "tactic_or_sequence": "simp_all",
+      "is_sequence": false,
+      "cluster_id": [
+        "unknown__subset__subset",
+        "unknown__iff__iff",
+        "unknown__compl__arithmetic"
+      ],
+      "gate": {
+        "namespaces": [],
+        "name_features": [],
+        "max_emissions_per_theorem": 1
+      },
+      "risk": "low",
+      "source": "cluster_generated",
+      "source_specific": false,
+      "promotion_allowed": false
+    }
+  ]
+}

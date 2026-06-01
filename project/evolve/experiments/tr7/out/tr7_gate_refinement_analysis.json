@@ -1,0 +1,53 @@
+{
+  "generated_by": "scripts/tr7_gate_refinement_analysis.py",
+  "components": [
+    {
+      "component": "RC4A",
+      "current_gate": "namespace-agnostic goal/name contains an allowlisted def (Monotone/.../Finset.disjUnion); single `simp [defs]`",
+      "fire_count": 76,
+      "success_count": 7,
+      "precision": 0.092,
+      "missed_tr6_wins": [],
+      "recommended_change": "tighten",
+      "rationale": "def-unfold gate fires 76× but closes only 7 (precision 0.092); it fires on every monotone/antitone theorem whether or not `simp [Monotone,…]` finishes — broad, low precision. Tighten to the iff-unfold shape (e.g. require `_iff_` in the name) or make it dynamic. Additive/safe today, but the loosest component."
+    },
+    {
+      "component": "RC4B",
+      "current_gate": "namespace ∈ {Set,Multiset} AND name/goal contains disjoint; `simp [<NS>.disjoint_left]`(+aesop)",
+      "fire_count": 18,
+      "success_count": 15,
+      "precision": 0.833,
+      "missed_tr6_wins": [
+        "Multiset.Disjoint.symm",
+        "Multiset.add_eq_union_right_of_le",
+        "Multiset.disjoint_comm",
+        "Set.disjoint_sUnion_right"
+      ],
+      "recommended_change": "keep",
+      "rationale": "tight gate (precision 0.833); fires 18× closes 15. Covers all its TR6 disjoint wins. The 1 wrapper miss (Set.disjoint_sUnion_right) is a search-depth gap, not a gate problem."
+    },
+    {
+      "component": "RC4C_residue",
+      "current_gate": "namespace+token gate for Multiset.disjoint_right / Set.subset_pair / List.forall; `simp [L]`(+aesop)",
+      "fire_count": 20,
+      "success_count": 12,
+      "precision": 0.6,
+      "missed_tr6_wins": [],
+      "recommended_change": "keep",
+      "rationale": "tight gate (precision 0.6); fires 20× closes 12. Covers its TR6 residue wins. Missing TR6 wins are single-occurrence / theorem-specific (Part 6), so allowlist expansion is not yet warranted."
+    }
+  ],
+  "candidate_proposals": [
+    "RC4A_TIGHTEN_MONO_GATE",
+    "RC4B_KEEP",
+    "RC4C_RESIDUE_KEEP",
+    "DYNAMIC_RETRIEVAL_REQUIRED"
+  ],
+  "rc4a_broad_gate": {
+    "fired": 76,
+    "closed": 7,
+    "precision": 0.092,
+    "needs_narrowing": true
+  },
+  "missing_wins_requiring_dynamic_or_new_lemma": 6
+}

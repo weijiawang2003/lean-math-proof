@@ -1,0 +1,25 @@
+{
+  "generated_by": "scripts/tr3_export_training_data.py",
+  "additive_only": true,
+  "components": {
+    "tr1": {
+      "path": "project/evolve/experiments/tr1/data/tr1_examples.jsonl",
+      "n": 57
+    },
+    "sf5": {
+      "path": "project/evolve/experiments/sf5/out/sf5_training_examples.jsonl",
+      "n": 20
+    },
+    "tr3": {
+      "path": "project/evolve/experiments/tr3/data/tr3_training_examples.jsonl",
+      "n": 92
+    }
+  },
+  "combined_n": 169,
+  "does_not_modify": [
+    "project/evolve/experiments/tr1/data/tr1_examples.jsonl",
+    "project/evolve/experiments/sf5/out/sf5_training_examples.jsonl",
+    "project/evolve/experiments/tr2/data/tr1_plus_tr2_examples.jsonl"
+  ],
+  "note": "Label spaces differ across components (TR1 action/triage families, SF5 retrieval gaps, TR3 retrieval-depth deltas); a TR4 multi-head or channel-tagged model should consume them additively, not merged blindly."
+}

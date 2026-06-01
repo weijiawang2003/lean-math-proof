@@ -1,0 +1,613 @@
+{
+  "generated_by": "scripts/rc4c_schema_wrapper_smoke.py",
+  "wrapper": "project/evolve/experiments/rc4_candidates/d2_simp_aesop/rc4c_candidate_wrapper.json",
+  "num_smoke": 50,
+  "known_wins_total": 12,
+  "known_wins_solved_by_wrapper": 0,
+  "regressions": [],
+  "new_wins": [],
+  "no_regression": true,
+  "note": "Name-substring gates approximate the external namespace+token gate; wrapper search may differ slightly from single-shot probe. Smoke only.",
+  "results": [
+    {
+      "full_name": "Finset.card_union_eq_card_add_card",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Set.disjoint_iff_forall_ne",
+      "sets": [
+        "known_wins_all"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.Coprime.lcm_eq_mul",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_left",
+      "sets": [
+        "known_wins_all"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.gcd_eq",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.add_div_eq_of_add_mod_lt",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_left",
+      "sets": [
+        "known_wins_all"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.pairwise_cons'",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Multiset.disjoint_add_right",
+      "sets": [
+        "known_wins_all"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.disjiUnion_filter_eq",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": true,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.eq_of_abs_lt",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Multiset.disjoint_add_left",
+      "sets": [
+        "known_wins_all"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.disjoint_sup_left",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_right",
+      "sets": [
+        "known_wins_all"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "sets": [
+        "known_wins_all"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.mul_left_cancel_iff'",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.filter_cons",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": true,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.powerset_card_disjiUnion",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.add_div",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "List.mem_pair",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": true,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.comm",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.biUnion_subset_iff_forall_subset",
+      "sets": [
+        "known_wins_all"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.Coprime.dvd_mul_left",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.disjiUnion_cons",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": true,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Set.disjoint_right",
+      "sets": [
+        "known_wins_all"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "List.Forall.imp",
+      "sets": [
+        "known_wins_all"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.disjiUnion_map",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": true,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.add_le_of_lt",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "List.disjoint_map",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_right",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.eq_of_lt_of_lt",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_left",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.Coprime.dvd_mul_right",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.disjoint_filter_filter'",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.cancel_right_of_coprime",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.disjiUnion_filter_eq_of_maps_to",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": true,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "sets": [
+        "known_wins_all"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.disjoint_sup_right",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.cancel_left_of_coprime",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.dvd_iff",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.disjoint_map",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.add_def",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": true,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "simp [List.length_cons]",
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.mul_right_cancel_iff'",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_left",
+      "sets": [
+        "known_wins_all"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.Coprime.eq_of_mul_eq_zero",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": true,
+      "wrapper_status": "solved",
+      "wrapper_finished": true,
+      "winning_tactic": "aesop",
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.add_div_eq_of_le_mod_add_mod",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.AM_GM",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "List.disjoint_pmap",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Nat.ModEq.le_of_lt_add",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    },
+    {
+      "full_name": "Finset.disjoint_image",
+      "sets": [
+        "negative_controls"
+      ],
+      "rc2_finished": false,
+      "wrapper_status": "failed",
+      "wrapper_finished": false,
+      "winning_tactic": null,
+      "regression": false,
+      "new_win": false
+    }
+  ]
+}

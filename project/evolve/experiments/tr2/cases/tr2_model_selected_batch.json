@@ -1,0 +1,262 @@
+[
+  {
+    "full_name": "Eq.subset",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Eq",
+    "known_rc2_status": "failed",
+    "tr1_predicted_label": "PROOF_SEARCH_DEPTH_GAP",
+    "tr1_entropy": 0.6765,
+    "tr1_margin": 0.182,
+    "sf4_cluster": "unknown__subset__subset",
+    "selection_tags": [
+      "confirmed_rc2_failure",
+      "underrepresented_pred",
+      "depth_gap",
+      "non_set_namespace",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 2.4765
+  },
+  {
+    "full_name": "Multiset.disjoint_toFinset",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Multiset",
+    "known_rc2_status": "solved",
+    "tr1_predicted_label": "WX3_MULTISET_INDUCTION",
+    "tr1_entropy": 0.6931,
+    "tr1_margin": 0.006,
+    "sf4_cluster": null,
+    "selection_tags": [
+      "rc2_solved",
+      "underrepresented_pred",
+      "non_set_namespace",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 1.9931
+  },
+  {
+    "full_name": "Set.ite_eq_of_subset_left",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "known_rc2_status": "failed",
+    "tr1_predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "tr1_entropy": 0.6881,
+    "tr1_margin": 0.1,
+    "sf4_cluster": "Set__ite_if__subset",
+    "selection_tags": [
+      "confirmed_rc2_failure",
+      "missing_bridge",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 1.9881
+  },
+  {
+    "full_name": "coe_notMemRangeEquiv_symm",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "GENERAL_FRONTIER",
+    "known_rc2_status": "solved",
+    "tr1_predicted_label": "BASELINE_DUPLICATE",
+    "tr1_entropy": 0.8475,
+    "tr1_margin": 0.011,
+    "sf4_cluster": null,
+    "selection_tags": [
+      "rc2_solved",
+      "non_set_namespace",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 1.5475
+  },
+  {
+    "full_name": "Set.pairwiseDisjoint_filter",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Set",
+    "known_rc2_status": "failed",
+    "tr1_predicted_label": "PROOF_SEARCH_DEPTH_GAP",
+    "tr1_entropy": -0.0,
+    "tr1_margin": 1.0,
+    "sf4_cluster": "Set__map_filter__arithmetic",
+    "selection_tags": [
+      "confirmed_rc2_failure",
+      "underrepresented_pred",
+      "depth_gap",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 1.1
+  },
+  {
+    "full_name": "Set.ite_eq_of_subset_right",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "known_rc2_status": "failed",
+    "tr1_predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "tr1_entropy": 0.0204,
+    "tr1_margin": 0.994,
+    "sf4_cluster": "Set__ite_if__subset",
+    "selection_tags": [
+      "confirmed_rc2_failure",
+      "missing_bridge",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 1.0204
+  },
+  {
+    "full_name": "Set.antitoneOn_iff_antitone",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "known_rc2_status": "failed",
+    "tr1_predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "tr1_entropy": -0.0,
+    "tr1_margin": 1.0,
+    "sf4_cluster": "Set__iff__iff",
+    "selection_tags": [
+      "confirmed_rc2_failure",
+      "missing_bridge",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 1.0
+  },
+  {
+    "full_name": "Set.monotoneOn_iff_monotone",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "known_rc2_status": "failed",
+    "tr1_predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "tr1_entropy": -0.0,
+    "tr1_margin": 1.0,
+    "sf4_cluster": "Set__iff__iff",
+    "selection_tags": [
+      "confirmed_rc2_failure",
+      "missing_bridge",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 1.0
+  },
+  {
+    "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "known_rc2_status": "failed",
+    "tr1_predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "tr1_entropy": -0.0,
+    "tr1_margin": 1.0,
+    "sf4_cluster": "Set__iff__iff",
+    "selection_tags": [
+      "confirmed_rc2_failure",
+      "missing_bridge",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 1.0
+  },
+  {
+    "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "known_rc2_status": "failed",
+    "tr1_predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "tr1_entropy": -0.0,
+    "tr1_margin": 1.0,
+    "sf4_cluster": "Set__iff__iff",
+    "selection_tags": [
+      "confirmed_rc2_failure",
+      "missing_bridge",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 1.0
+  },
+  {
+    "full_name": "Set.pair_eq_pair_iff",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "known_rc2_status": "failed",
+    "tr1_predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "tr1_entropy": -0.0,
+    "tr1_margin": 1.0,
+    "sf4_cluster": "Set__iff__iff",
+    "selection_tags": [
+      "confirmed_rc2_failure",
+      "missing_bridge",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 1.0
+  },
+  {
+    "full_name": "Set.subset_ite",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "known_rc2_status": "failed",
+    "tr1_predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "tr1_entropy": -0.0,
+    "tr1_margin": 1.0,
+    "sf4_cluster": "Set__ite_if__subset",
+    "selection_tags": [
+      "confirmed_rc2_failure",
+      "missing_bridge",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 1.0
+  },
+  {
+    "full_name": "Set.union_empty_iff",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "known_rc2_status": "failed",
+    "tr1_predicted_label": "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "tr1_entropy": -0.0,
+    "tr1_margin": 1.0,
+    "sf4_cluster": "Set__iff__iff",
+    "selection_tags": [
+      "confirmed_rc2_failure",
+      "missing_bridge",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 1.0
+  },
+  {
+    "full_name": "Function.Injective.nonempty_apply_iff",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Function",
+    "known_rc2_status": "failed",
+    "tr1_predicted_label": "NO_CHEAP_ACTION",
+    "tr1_entropy": -0.0,
+    "tr1_margin": 1.0,
+    "sf4_cluster": "unknown__iff__iff",
+    "selection_tags": [
+      "confirmed_rc2_failure",
+      "non_set_namespace",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 0.9
+  },
+  {
+    "full_name": "Prop.compl_singleton",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Prop",
+    "known_rc2_status": "failed",
+    "tr1_predicted_label": "NO_CHEAP_ACTION",
+    "tr1_entropy": -0.0,
+    "tr1_margin": 1.0,
+    "sf4_cluster": "unknown__compl__arithmetic",
+    "selection_tags": [
+      "confirmed_rc2_failure",
+      "non_set_namespace",
+      "triage_depth_gap",
+      "in_tr1_training"
+    ],
+    "selection_strategy": "model",
+    "model_score": 0.9
+  }
+]

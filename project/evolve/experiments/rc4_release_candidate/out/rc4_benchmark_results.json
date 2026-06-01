@@ -1,0 +1,4151 @@
+{
+  "generated_by": "scripts/rc4r_run_rc4_benchmark.py",
+  "wrapper": "project/evolve/experiments/rc4_release_candidate/rc4_release_candidate_wrapper.json",
+  "route_config": "project/evolve/routing/ns24_router.json",
+  "policy_type": "hybrid_evolved",
+  "top_k": 8,
+  "max_steps": 8,
+  "num_theorems": 271,
+  "status_histogram": {
+    "solved": 100,
+    "failed": 159,
+    "open_flake": 12
+  },
+  "by_set": {
+    "canonical_demo_v1": {
+      "n": 15,
+      "solved": 12,
+      "failed": 3,
+      "flake": 0,
+      "path_error": 0
+    },
+    "canonical_nat_defs_medium": {
+      "n": 38,
+      "solved": 37,
+      "failed": 1,
+      "flake": 0,
+      "path_error": 0
+    },
+    "canonical_nat_defs_large_v5": {
+      "n": 65,
+      "solved": 49,
+      "failed": 16,
+      "flake": 0,
+      "path_error": 0
+    },
+    "rc4_known_wins": {
+      "n": 23,
+      "solved": 22,
+      "failed": 1,
+      "flake": 0,
+      "path_error": 0
+    },
+    "fresh_out_of_sample_frontier": {
+      "n": 125,
+      "solved": 11,
+      "failed": 102,
+      "flake": 12,
+      "path_error": 0
+    },
+    "negative_controls": {
+      "n": 44,
+      "solved": 6,
+      "failed": 38,
+      "flake": 0,
+      "path_error": 0
+    },
+    "offgate_controls": {
+      "n": 45,
+      "solved": 7,
+      "failed": 38,
+      "flake": 0,
+      "path_error": 0
+    }
+  },
+  "by_namespace": {
+    "Antitone": {
+      "n": 7,
+      "solved": 0
+    },
+    "AntitoneOn": {
+      "n": 7,
+      "solved": 0
+    },
+    "BEx": {
+      "n": 1,
+      "solved": 0
+    },
+    "BddAbove": {
+      "n": 2,
+      "solved": 0
+    },
+    "BddBelow": {
+      "n": 2,
+      "solved": 0
+    },
+    "Bool": {
+      "n": 1,
+      "solved": 1
+    },
+    "Decidable": {
+      "n": 1,
+      "solved": 0
+    },
+    "Eq": {
+      "n": 1,
+      "solved": 1
+    },
+    "Equiv": {
+      "n": 1,
+      "solved": 0
+    },
+    "Exists": {
+      "n": 1,
+      "solved": 1
+    },
+    "ExistsUnique": {
+      "n": 1,
+      "solved": 0
+    },
+    "Finset": {
+      "n": 35,
+      "solved": 5
+    },
+    "Function": {
+      "n": 3,
+      "solved": 0
+    },
+    "Iff": {
+      "n": 1,
+      "solved": 0
+    },
+    "Int": {
+      "n": 1,
+      "solved": 0
+    },
+    "IsGLB": {
+      "n": 1,
+      "solved": 0
+    },
+    "IsGreatest": {
+      "n": 1,
+      "solved": 0
+    },
+    "IsLUB": {
+      "n": 1,
+      "solved": 0
+    },
+    "IsLeast": {
+      "n": 1,
+      "solved": 0
+    },
+    "LE": {
+      "n": 1,
+      "solved": 1
+    },
+    "LT": {
+      "n": 1,
+      "solved": 1
+    },
+    "LinearOrder": {
+      "n": 1,
+      "solved": 0
+    },
+    "List": {
+      "n": 18,
+      "solved": 3
+    },
+    "Monotone": {
+      "n": 7,
+      "solved": 1
+    },
+    "MonotoneOn": {
+      "n": 7,
+      "solved": 0
+    },
+    "Multiset": {
+      "n": 17,
+      "solved": 9
+    },
+    "Nat": {
+      "n": 91,
+      "solved": 52
+    },
+    "Ne": {
+      "n": 1,
+      "solved": 0
+    },
+    "Option": {
+      "n": 1,
+      "solved": 0
+    },
+    "OrderBot": {
+      "n": 1,
+      "solved": 0
+    },
+    "OrderDual": {
+      "n": 1,
+      "solved": 0
+    },
+    "OrderTop": {
+      "n": 1,
+      "solved": 0
+    },
+    "PLift": {
+      "n": 1,
+      "solved": 0
+    },
+    "PUnit": {
+      "n": 1,
+      "solved": 1
+    },
+    "PartialOrder": {
+      "n": 1,
+      "solved": 0
+    },
+    "Pi": {
+      "n": 1,
+      "solved": 0
+    },
+    "Preorder": {
+      "n": 1,
+      "solved": 0
+    },
+    "Prod": {
+      "n": 1,
+      "solved": 0
+    },
+    "Prop": {
+      "n": 1,
+      "solved": 0
+    },
+    "ScottContinuous": {
+      "n": 1,
+      "solved": 0
+    },
+    "Set": {
+      "n": 36,
+      "solved": 22
+    },
+    "Subtype": {
+      "n": 1,
+      "solved": 0
+    },
+    "Sum": {
+      "n": 1,
+      "solved": 0
+    },
+    "ULift": {
+      "n": 1,
+      "solved": 0
+    },
+    "and_forall_ne": {
+      "n": 1,
+      "solved": 0
+    },
+    "and_iff_not_or_not": {
+      "n": 1,
+      "solved": 1
+    },
+    "and_or_imp": {
+      "n": 1,
+      "solved": 1
+    },
+    "and_symm_left": {
+      "n": 1,
+      "solved": 0
+    },
+    "and_symm_right": {
+      "n": 1,
+      "solved": 0
+    },
+    "apply_dite": {
+      "n": 1,
+      "solved": 0
+    },
+    "strictMono_restrict": {
+      "n": 1,
+      "solved": 0
+    }
+  },
+  "results": [
+    {
+      "full_name": "Nat.mul_add_mod'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.ite_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.union_comm",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.inter_comm",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.mem_union",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.mem_inter_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.subset_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.empty_subset",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.union_empty",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.empty_union",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.inter_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.univ_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.disjoint_insert_right",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.mem_insert",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.mem_singleton",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "canonical_demo_v1"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_eq_left",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_eq_max_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_eq_min_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_eq_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_eq_right",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_mod_eq_add_mod_left",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_mod_eq_add_mod_right",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.div_le_div_right",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.div_lt_iff_lt_mul'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.div_lt_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.half_le_of_sub_le_half",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.le_and_le_add_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.AM_GM",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5",
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.le_or_le_of_add_eq_add_pred",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_mod_eq_ite",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_eq_zero",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_pos_iff_pos_or_pos",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.mul_eq_left",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.mul_eq_right",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.lt_iff_add_one_le",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.lt_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.le_one_iff_eq_zero_or_eq_one",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.le_add_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.one_add_le_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.eq_one_of_mul_eq_one_left",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.eq_zero_of_double_le",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.sub_lt_iff_lt_add",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.sub_lt_iff_lt_add'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.mod_two_ne_one",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.mod_two_ne_zero",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.div_pos",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.div_pos_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.succ_succ_ne_one",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.pred_eq_of_eq_succ",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.sqrt_lt",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.pow_lt_pow_iff_left",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.dvd_iff_div_mul_eq",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.two_mul_ne_two_mul_add_one",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_medium",
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_eq_two_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_eq_three_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.div_ne_zero_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.dvd_right_iff_eq",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.dvd_left_iff_eq",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.eq_div_of_mul_eq_left",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.eq_mul_of_div_eq_left",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.find_eq_zero",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.forall_lt_succ",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.le_add_pred_of_pos",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.le_of_mul_le_mul_right",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.lt_one_add_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.max_eq_zero_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.min_eq_zero_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.mod_mul_mod",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.mod_eq_iff_lt",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.one_le_div_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.one_le_pow",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.pow_le_pow_iff_left",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.pred_eq_self_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.pred_one_add",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.self_add_sub_one",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.sqrt_lt'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.sub_eq_of_eq_add'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.succ_add_sub_one",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.two_pow_succ",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.zero_eq_mul",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "canonical_nat_defs_large_v5"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.mem_disjUnion",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Finset.disjUnion]",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": "RC4A"
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Antitone, AntitoneOn]",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": "RC4A"
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Monotone, MonotoneOn]",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": "RC4A"
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [StrictAnti, StrictAntiOn]",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": "RC4A"
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [StrictMono, StrictMonoOn]",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": "RC4A"
+    },
+    {
+      "full_name": "Multiset.disjoint_add_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.disjoint_add_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left]",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": "RC4B"
+    },
+    {
+      "full_name": "Multiset.disjoint_iff_ne",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.disjoint_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.disjoint_singleton",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.disjoint_union_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.singleton_disjoint",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left]",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": "RC4B"
+    },
+    {
+      "full_name": "Multiset.zero_disjoint",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left]",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": "RC4B"
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_left",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_right",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.disjoint_iff_forall_ne",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.disjoint_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_left",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.disjoint_singleton_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Set.disjoint_left]",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": "RC4B"
+    },
+    {
+      "full_name": "List.Forall.imp",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "sets": [
+        "rc4_known_wins"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "reused:rc4d_schema_smoke",
+      "rc4_component": null
+    },
+    {
+      "full_name": "strictMono_restrict",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "strictMono_restrict",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-44106eea/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Antitone.image_lowerBounds_subset_upperBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-44106eea/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Antitone.image_upperBounds_subset_lowerBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-44106eea/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Antitone.map_bddAbove",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-44106eea/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Antitone.map_bddBelow",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-44106eea/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Antitone.map_isGreatest",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-44106eea/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Antitone.map_isLeast",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-44106eea/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Antitone.mem_lowerBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Antitone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-44106eea/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "AntitoneOn.image_lowerBounds_subset_upperBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-ecc4d164/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "AntitoneOn.image_upperBounds_subset_lowerBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-ecc4d164/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "AntitoneOn.map_bddAbove",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-ecc4d164/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "AntitoneOn.map_bddBelow",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-ecc4d164/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "AntitoneOn.map_isGreatest",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-ecc4d164/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "AntitoneOn.map_isLeast",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-ecc4d164/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "AntitoneOn.mem_lowerBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "AntitoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-ecc4d164/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "BddAbove.range_comp",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "BddAbove",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-ecc4d164/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "BddBelow.range_comp",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "BddBelow",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-6bf4f215/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset._root_.Monotone.map_finset_max'",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset._root_.Monotone.map_finset_min'",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.card_disjUnion",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-6bf4f215/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.card_mono",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-6bf4f215/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.card_strictMono",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-6bf4f215/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.comp_inf_eq_inf_comp_of_is_total",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-6bf4f215/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.comp_sup_eq_sup_comp_of_is_total",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-6bf4f215/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.fin_mono",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-38a1a2a5/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.image_mono",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-38a1a2a5/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.map_disjUnion",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-38a1a2a5/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.max'_image",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-38a1a2a5/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.mem_fin",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-38a1a2a5/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.min'_image",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-38a1a2a5/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.monotone_preimage",
+      "file_path": "Mathlib/Data/Finset/Preimage.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-38a1a2a5/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.subtype_mono",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-38a1a2a5/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Function.antitoneOn_of_rightInvOn_of_mapsTo",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Function",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-aa52e84e/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Function.monotoneOn_of_rightInvOn_of_mapsTo",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Function",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-aa52e84e/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.Pairwise.forall",
+      "file_path": "Mathlib/Data/List/Pairwise.lean",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-aa52e84e/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.Pairwise.forall_of_forall",
+      "file_path": "Mathlib/Data/List/Pairwise.lean",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-aa52e84e/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.forall_mem_of_forall_mem_cons",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-aa52e84e/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.lookmap_congr",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-aa52e84e/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.lookmap_of_forall_not",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-aa52e84e/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.pairwise_of_forall_mem_list",
+      "file_path": "Mathlib/Data/List/Pairwise.lean",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-aa52e84e/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.pairwise_of_reflexive_of_forall_ne",
+      "file_path": "Mathlib/Data/List/Pairwise.lean",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-fa963881/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Monotone.codRestrict",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-fa963881/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Monotone.image_lowerBounds_subset_lowerBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-fa963881/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Monotone.image_upperBounds_subset_upperBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-fa963881/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Monotone.map_bddAbove",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-fa963881/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Monotone.map_bddBelow",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-fa963881/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Monotone.map_isGreatest",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-fa963881/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Monotone.map_isLeast",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "Monotone",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-fa963881/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "MonotoneOn.image_lowerBounds_subset_lowerBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-2f519611/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "MonotoneOn.image_upperBounds_subset_upperBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-2f519611/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "MonotoneOn.map_bddAbove",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-2f519611/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "MonotoneOn.map_bddBelow",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-2f519611/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "MonotoneOn.map_isGreatest",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-2f519611/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "MonotoneOn.map_isLeast",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-2f519611/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "MonotoneOn.mem_lowerBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "MonotoneOn",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-2f519611/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.card_mono",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-2f519611/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.card_strictMono",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-4435cd24/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.disjoint_of_le_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-4435cd24/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.disjoint_of_le_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-4435cd24/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.map_mono",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-4435cd24/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.map_strictMono",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-4435cd24/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.monotone_filter_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-4435cd24/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.clog_antitone_left",
+      "file_path": "Mathlib/Data/Nat/Log.lean",
+      "namespace": "Nat",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-4435cd24/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.clog_monotone",
+      "file_path": "Mathlib/Data/Nat/Log.lean",
+      "namespace": "Nat",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-4435cd24/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.log_antitone_left",
+      "file_path": "Mathlib/Data/Nat/Log.lean",
+      "namespace": "Nat",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-5b89a6ac/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.log_monotone",
+      "file_path": "Mathlib/Data/Nat/Log.lean",
+      "namespace": "Nat",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-5b89a6ac/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.pow_log_le_add_one",
+      "file_path": "Mathlib/Data/Nat/Log.lean",
+      "namespace": "Nat",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-5b89a6ac/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "ScottContinuous.monotone",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "ScottContinuous",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-5b89a6ac/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.EqOn.congr_antitoneOn",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-5b89a6ac/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.EqOn.congr_monotoneOn",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-5b89a6ac/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.EqOn.congr_strictAntiOn",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-5b89a6ac/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.EqOn.congr_strictMonoOn",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_release_candidate/out/rc4_bench/runs/eval-5b89a6ac/traces.jsonl",
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set._root_.Antitone.iInter_nat_add",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set._root_.AntitoneOn.mono",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set._root_.AntitoneOn.monotone",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set._root_.Monotone.iUnion_nat_add",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set._root_.MonotoneOn.congr",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set._root_.MonotoneOn.mono",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set._root_.MonotoneOn.monotone",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set._root_.StrictAntiOn.mono",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_live",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.Nonempty.biUnion",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Set.BijOn.bijective",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Multiset.Nodup.le_dedup_iff_le",
+      "file_path": "Mathlib/Data/Multiset/Dedup.lean",
+      "namespace": "Multiset",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.Nodup.dedup",
+      "file_path": "Mathlib/Data/List/Dedup.lean",
+      "namespace": "List",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_div_le_add_div",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Int.add_emod_eq_add_mod_right",
+      "file_path": "Mathlib/Data/Int/Defs.lean",
+      "namespace": "Int",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Option.Mem.leftUnique",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Bool.and_le_left",
+      "file_path": "Mathlib/Data/Bool/Basic.lean",
+      "namespace": "Bool",
+      "sets": [
+        "fresh_out_of_sample_frontier",
+        "offgate_controls"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [*]",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Function.Semiconj.bijOn_image",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Function",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Prod.le_def",
+      "file_path": "Mathlib/Order/Basic.lean",
+      "namespace": "Prod",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Ne.dite_eq_left_iff",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "Ne",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "BddAbove.bddAbove_image2_of_bddBelow",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "BddAbove",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Equiv.bijOn",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Equiv",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "IsGLB.exists_between",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "IsGLB",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "IsGreatest.image2",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "IsGreatest",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "IsLUB.exists_between",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "IsLUB",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "IsLeast.image2",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "IsLeast",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "BddBelow.bddAbove_image2_of_bddAbove",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "BddBelow",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "LE.le.ge",
+      "file_path": "Mathlib/Order/Basic.lean",
+      "namespace": "LE",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [*]",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Decidable.and_forall_ne",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "Decidable",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Pi.compl_apply",
+      "file_path": "Mathlib/Order/Basic.lean",
+      "namespace": "Pi",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Iff.ne",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "Iff",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Eq.ge",
+      "file_path": "Mathlib/Order/Basic.lean",
+      "namespace": "Eq",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [*]",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Subtype.coe_le_coe",
+      "file_path": "Mathlib/Order/Basic.lean",
+      "namespace": "Subtype",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "BEx.elim",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "BEx",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "ExistsUnique.elim",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "ExistsUnique",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "LT.lt.false",
+      "file_path": "Mathlib/Order/Basic.lean",
+      "namespace": "LT",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [List.map]",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "OrderDual.Preorder.dual_dual",
+      "file_path": "Mathlib/Order/Basic.lean",
+      "namespace": "OrderDual",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "PUnit.le",
+      "file_path": "Mathlib/Order/Basic.lean",
+      "namespace": "PUnit",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [Nat.mul_zero]",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Sum.const_le_elim_iff",
+      "file_path": "Mathlib/Order/Basic.lean",
+      "namespace": "Sum",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Exists.fst",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "Exists",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp_all",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "LinearOrder.ext",
+      "file_path": "Mathlib/Order/Basic.lean",
+      "namespace": "LinearOrder",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "OrderBot.bddBelow",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "OrderBot",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "OrderTop.bddAbove",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "OrderTop",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "PLift.down_inj",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "PLift",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "PartialOrder.ext",
+      "file_path": "Mathlib/Order/Basic.lean",
+      "namespace": "PartialOrder",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Preorder.ext",
+      "file_path": "Mathlib/Order/Basic.lean",
+      "namespace": "Preorder",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Prop.exists_iff",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "Prop",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "ULift.down_inj",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "ULift",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "and_forall_ne",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "and_forall_ne",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "and_iff_not_or_not",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "and_iff_not_or_not",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp_all",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "and_or_imp",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "and_or_imp",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [*]",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "and_symm_left",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "and_symm_left",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "and_symm_right",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "and_symm_right",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "apply_dite",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "apply_dite",
+      "sets": [
+        "fresh_out_of_sample_frontier"
+      ],
+      "status": "open_flake",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.card_union_eq_card_add_card",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_left",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_right",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.disjiUnion_filter_eq",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.disjiUnion_filter_eq_of_maps_to",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.disjiUnion_map",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.disjoint_filter_filter'",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.disjoint_image",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.disjoint_map",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.disjoint_sup_left",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.disjoint_sup_right",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.pairwise_cons'",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.powerset_card_disjiUnion",
+      "file_path": "Mathlib/Data/Finset/Powerset.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.disjoint_map",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.disjoint_pmap",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.mem_pair",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_left",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_right",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.perm_of_nodup_nodup_toFinset_eq",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.toFinset.ext_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.toFinset_eq",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.toFinset_eq_empty_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.toFinset_eq_iff_perm_dedup",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "List.toFinset_filter",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "List",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.Coprime.dvd_mul_left",
+      "file_path": "Mathlib/Data/Nat/GCD/Basic.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.Coprime.dvd_mul_right",
+      "file_path": "Mathlib/Data/Nat/GCD/Basic.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.Coprime.eq_of_mul_eq_zero",
+      "file_path": "Mathlib/Data/Nat/GCD/Basic.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "aesop",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.Coprime.lcm_eq_mul",
+      "file_path": "Mathlib/Data/Nat/GCD/Basic.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.ModEq.add_le_of_lt",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.ModEq.cancel_left_of_coprime",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.ModEq.cancel_right_of_coprime",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.ModEq.comm",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.ModEq.dvd_iff",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.ModEq.eq_of_abs_lt",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.ModEq.eq_of_lt_of_lt",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.ModEq.gcd_eq",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.ModEq.le_of_lt_add",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.ModEq.mul_left_cancel_iff'",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.ModEq.mul_right_cancel_iff'",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_def",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "solved",
+      "finished": true,
+      "winning_tactic": "simp [List.length_cons]",
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_div",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_div_eq_of_add_mod_lt",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    },
+    {
+      "full_name": "Nat.add_div_eq_of_le_mod_add_mod",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "sets": [
+        "negative_controls",
+        "offgate_controls"
+      ],
+      "status": "failed",
+      "finished": false,
+      "winning_tactic": null,
+      "trace_path": null,
+      "provenance": "rc4_equals_rc2_nonfiring",
+      "rc4_component": null
+    }
+  ]
+}

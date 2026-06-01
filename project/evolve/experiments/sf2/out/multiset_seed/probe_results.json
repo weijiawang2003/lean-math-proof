@@ -1,0 +1,250 @@
+{
+  "live": {
+    "attempted": true,
+    "available": true,
+    "setup_error": null
+  },
+  "planned_probes": {
+    "Multiset.toFinset_nsmul": [
+      "ext x <;> simp [Multiset.mem_toFinset, Multiset.mem_nsmul]",
+      "ext x <;> simp [Multiset.mem_nsmul]",
+      "induction n <;> simp_all [Multiset.toFinset_cons, Multiset.succ_nsmul]",
+      "induction s using Multiset.induction_on <;> simp_all [Multiset.mem_nsmul]",
+      "simp [Finset.ext_iff, Multiset.mem_toFinset, Multiset.mem_nsmul]",
+      "aesop (add simp [Multiset.mem_toFinset, Multiset.mem_nsmul])",
+      "simp",
+      "simp_all",
+      "aesop",
+      "classical; aesop",
+      "ext x <;> simp",
+      "ext x <;> simp_all",
+      "induction s using Multiset.induction_on <;> simp_all",
+      "induction s using Multiset.induction_on <;> simp [Multiset.toFinset_cons]",
+      "induction s using Multiset.induction_on <;> aesop"
+    ],
+    "Multiset.toFinset_eq_singleton_iff": [
+      "simp [Finset.eq_singleton_iff_unique_mem, Multiset.mem_toFinset]",
+      "rw [Finset.eq_singleton_iff_unique_mem]; simp [Multiset.mem_toFinset]",
+      "constructor <;> intro h <;> simp_all [Finset.ext_iff, Multiset.mem_toFinset]",
+      "ext x <;> simp [Multiset.mem_toFinset]",
+      "aesop (add simp [Multiset.mem_toFinset, Finset.eq_singleton_iff_unique_mem])",
+      "simp",
+      "simp_all",
+      "aesop",
+      "classical; aesop",
+      "ext x <;> simp",
+      "ext x <;> simp_all",
+      "induction s using Multiset.induction_on <;> simp_all",
+      "induction s using Multiset.induction_on <;> simp [Multiset.toFinset_cons]",
+      "induction s using Multiset.induction_on <;> aesop"
+    ],
+    "Multiset.disjoint_toFinset": [
+      "simp [Multiset.disjoint_toFinset]",
+      "simp [Disjoint, Multiset.disjoint_left, Multiset.mem_toFinset]",
+      "simp only [Finset.disjoint_left, Multiset.mem_toFinset]",
+      "rw [Finset.disjoint_left]; simp [Multiset.mem_toFinset]",
+      "constructor <;> intro h <;> simp_all [Finset.disjoint_left, Multiset.mem_toFinset, Multiset.disjoint_left]",
+      "aesop (add simp [Multiset.mem_toFinset, Finset.disjoint_left, Multiset.disjoint_left])",
+      "simp",
+      "simp_all",
+      "aesop",
+      "classical; aesop",
+      "ext x <;> simp",
+      "ext x <;> simp_all",
+      "induction m1 using Multiset.induction_on <;> simp_all",
+      "induction m1 using Multiset.induction_on <;> simp [Multiset.toFinset_cons]",
+      "induction m1 using Multiset.induction_on <;> aesop"
+    ]
+  },
+  "results": [
+    {
+      "full_name": "Multiset.toFinset_nsmul",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "rc1_solved": true,
+      "probe_outcomes": [
+        {
+          "probe": "ext x <;> simp [Multiset.mem_toFinset, Multiset.mem_nsmul]",
+          "solved": false,
+          "error": "applyExtTheorem only applies to equations, not\n  ∀ (n : ℕ), n ≠ 0 → (n • s).toFinset = s.toFinset"
+        },
+        {
+          "probe": "ext x <;> simp [Multiset.mem_nsmul]",
+          "solved": false,
+          "error": "applyExtTheorem only applies to equations, not\n  ∀ (n : ℕ), n ≠ 0 → (n • s).toFinset = s.toFinset"
+        },
+        {
+          "probe": "induction n <;> simp_all [Multiset.toFinset_cons, Multiset.succ_nsmul]",
+          "solved": false,
+          "error": "tactic 'induction' failed, major premise type is not an inductive type \n  ?m.253804\nα : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝ : DecidableEq α\ns✝ t s : Multiset α\nx✝ : ?m.253804\n⊢ ∀ (n : ℕ), n ≠ 0 →"
+        },
+        {
+          "probe": "induction s using Multiset.induction_on <;> simp_all [Multiset.mem_nsmul]",
+          "solved": false
+        },
+        {
+          "probe": "simp [Finset.ext_iff, Multiset.mem_toFinset, Multiset.mem_nsmul]",
+          "solved": false
+        },
+        {
+          "probe": "aesop (add simp [Multiset.mem_toFinset, Multiset.mem_nsmul])",
+          "solved": true
+        }
+      ],
+      "run_error": null,
+      "solved_probe": {
+        "full_name": "Multiset.toFinset_nsmul",
+        "probe": "aesop (add simp [Multiset.mem_toFinset, Multiset.mem_nsmul])",
+        "solved": true,
+        "minimality_status": "unconfirmed",
+        "requires_ns23_relabel": true,
+        "minimality_prefix_results": [
+          {
+            "probe": "simp",
+            "solved": false
+          },
+          {
+            "probe": "simp_all",
+            "solved": false
+          },
+          {
+            "probe": "aesop",
+            "solved": true
+          },
+          {
+            "probe": "ext x <;> simp",
+            "solved": false
+          }
+        ]
+      }
+    },
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "rc1_solved": false,
+      "probe_outcomes": [
+        {
+          "probe": "simp [Finset.eq_singleton_iff_unique_mem, Multiset.mem_toFinset]",
+          "solved": false
+        },
+        {
+          "probe": "rw [Finset.eq_singleton_iff_unique_mem]; simp [Multiset.mem_toFinset]",
+          "solved": false,
+          "error": "<stdin>:1:39: expected end of input"
+        },
+        {
+          "probe": "constructor <;> intro h <;> simp_all [Finset.ext_iff, Multiset.mem_toFinset]",
+          "solved": false,
+          "error": "tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information"
+        },
+        {
+          "probe": "ext x <;> simp [Multiset.mem_toFinset]",
+          "solved": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s.toFinset = {a} ↔ Multiset.card s ≠ 0 ∧ s = Multiset.card s • {a}"
+        },
+        {
+          "probe": "aesop (add simp [Multiset.mem_toFinset, Finset.eq_singleton_iff_unique_mem])",
+          "solved": false,
+          "error": "aesop: error in norm simp: tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get di"
+        },
+        {
+          "probe": "simp",
+          "solved": false
+        },
+        {
+          "probe": "simp_all",
+          "solved": false
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "error": "aesop: error in norm simp: tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get di"
+        },
+        {
+          "probe": "classical; aesop",
+          "solved": false,
+          "error": "<stdin>:1:9: expected '{' or tactic"
+        },
+        {
+          "probe": "ext x <;> simp",
+          "solved": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s.toFinset = {a} ↔ Multiset.card s ≠ 0 ∧ s = Multiset.card s • {a}"
+        },
+        {
+          "probe": "ext x <;> simp_all",
+          "solved": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s.toFinset = {a} ↔ Multiset.card s ≠ 0 ∧ s = Multiset.card s • {a}"
+        },
+        {
+          "probe": "induction s using Multiset.induction_on <;> simp_all",
+          "solved": false
+        },
+        {
+          "probe": "induction s using Multiset.induction_on <;> simp [Multiset.toFinset_cons]",
+          "solved": false
+        },
+        {
+          "probe": "induction s using Multiset.induction_on <;> aesop",
+          "solved": false
+        }
+      ],
+      "run_error": null,
+      "solved_probe": null
+    },
+    {
+      "full_name": "Multiset.disjoint_toFinset",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "rc1_solved": true,
+      "probe_outcomes": [
+        {
+          "probe": "simp [Multiset.disjoint_toFinset]",
+          "solved": false,
+          "error": "kernel type check failed: (kernel) declaration has free variables '[anonymous]'"
+        },
+        {
+          "probe": "simp [Disjoint, Multiset.disjoint_left, Multiset.mem_toFinset]",
+          "solved": false
+        },
+        {
+          "probe": "simp only [Finset.disjoint_left, Multiset.mem_toFinset]",
+          "solved": false
+        },
+        {
+          "probe": "rw [Finset.disjoint_left]; simp [Multiset.mem_toFinset]",
+          "solved": false,
+          "error": "<stdin>:1:25: expected end of input"
+        },
+        {
+          "probe": "constructor <;> intro h <;> simp_all [Finset.disjoint_left, Multiset.mem_toFinset, Multiset.disjoint_left]",
+          "solved": true
+        }
+      ],
+      "run_error": null,
+      "solved_probe": {
+        "full_name": "Multiset.disjoint_toFinset",
+        "probe": "constructor <;> intro h <;> simp_all [Finset.disjoint_left, Multiset.mem_toFinset, Multiset.disjoint_left]",
+        "solved": true,
+        "minimality_status": "unconfirmed",
+        "requires_ns23_relabel": true,
+        "minimality_prefix_results": [
+          {
+            "probe": "simp",
+            "solved": false
+          },
+          {
+            "probe": "simp_all",
+            "solved": false
+          },
+          {
+            "probe": "aesop",
+            "solved": false
+          },
+          {
+            "probe": "ext x <;> simp",
+            "solved": false
+          }
+        ]
+      }
+    }
+  ],
+  "note": "No probe result is a confirmed production win; any solve needs NS23 minimal-sufficient relabel + deterministic reproduction before promotion. RC1/production configs were not modified."
+}

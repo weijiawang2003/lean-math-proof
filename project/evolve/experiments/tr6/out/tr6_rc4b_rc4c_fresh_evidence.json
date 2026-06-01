@@ -1,0 +1,65 @@
+{
+  "generated_by": "scripts/tr6_rc4b_rc4c_fresh_evidence.py",
+  "rc4b": {
+    "candidate": "RC4B_set_disjoint_left",
+    "fresh_true_wins": 8,
+    "fresh_win_targets": [
+      "Multiset.disjoint_add_left",
+      "Multiset.disjoint_cons_left",
+      "Multiset.singleton_disjoint",
+      "Multiset.zero_disjoint",
+      "Set.disjoint_iUnion_left",
+      "Set.disjoint_iUnion_right",
+      "Set.disjoint_sUnion_left",
+      "Set.disjoint_sUnion_right"
+    ],
+    "win_namespaces": {
+      "Multiset": 4,
+      "Set": 4
+    },
+    "fire_stats": {
+      "fired_in_top5": 38,
+      "closed_as_credited": 8,
+      "fired_but_not_winning": 30
+    },
+    "off_gate_risk": "low — single named-lemma rewrite gated to disjoint-shaped goals; fired in top-5 on 38 theorems, closed 8, fired-but-failed 30",
+    "validation_set_suggestion": "fresh Set/Finset/List disjoint_* wins + held-out disjoint goals",
+    "decision": "READY_FOR_LITERAL_VALIDATION_WITH_FRESH_SUPPORT"
+  },
+  "rc4c": {
+    "candidate": "RC4C_d2_simp_aesop",
+    "fresh_true_wins": 9,
+    "fresh_win_targets": [
+      "Finset.biUnion_subset_iff_forall_subset",
+      "List.Forall.imp",
+      "Multiset.disjoint_add_left",
+      "Multiset.disjoint_add_right",
+      "Multiset.disjoint_cons_left",
+      "Set.disjoint_iUnion_left",
+      "Set.disjoint_iUnion_right",
+      "Set.disjoint_sUnion_left",
+      "Set.disjoint_sUnion_right"
+    ],
+    "win_namespaces": {
+      "Finset": 1,
+      "List": 1,
+      "Multiset": 3,
+      "Set": 4
+    },
+    "fire_stats": {
+      "fired_in_top5": 135,
+      "closed_as_credited": 9,
+      "fired_but_not_winning": 126
+    },
+    "overlap_with_rc4b": [
+      "Multiset.disjoint_add_left",
+      "Multiset.disjoint_cons_left",
+      "Set.disjoint_iUnion_left",
+      "Set.disjoint_iUnion_right",
+      "Set.disjoint_sUnion_left",
+      "Set.disjoint_sUnion_right"
+    ],
+    "source_specific_risk": "medium — credit is the simp[L] enabling step; SX4 PRODUCTION_SUBSUMED guard applied (RC2 confirmed-failure)",
+    "decision": "READY_FOR_LITERAL_VALIDATION_WITH_FRESH_SUPPORT"
+  }
+}

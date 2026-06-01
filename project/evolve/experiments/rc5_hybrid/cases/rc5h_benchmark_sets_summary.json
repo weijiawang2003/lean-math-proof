@@ -1,0 +1,111 @@
+{
+  "generated_by": "scripts/rc5h_build_benchmark_sets.py",
+  "sizes": {
+    "TR6_dynamic_tail_replay": 8,
+    "TR6_static_covered_controls": 10,
+    "RC4R_fresh_no_delta_set": 28,
+    "Fresh_dynamic_candidate_frontier": 70,
+    "Multi_namespace_hard_negatives": 22,
+    "canonical_floors": 118,
+    "offgate_controls": 20
+  },
+  "total": 276,
+  "unique_total": 238,
+  "namespace_distribution": {
+    "TR6_dynamic_tail_replay": {
+      "Finset": 2,
+      "Multiset": 3,
+      "Nat": 1,
+      "Set": 2
+    },
+    "TR6_static_covered_controls": {
+      "List": 1,
+      "Multiset": 6,
+      "Set": 3
+    },
+    "RC4R_fresh_no_delta_set": {
+      "strictMono_restrict": 1,
+      "Antitone": 7,
+      "AntitoneOn": 7,
+      "BddAbove": 1,
+      "BddBelow": 1,
+      "Finset": 11
+    },
+    "Fresh_dynamic_candidate_frontier": {
+      "Finset": 17,
+      "List": 17,
+      "Multiset": 17,
+      "Nat": 17,
+      "Set": 2
+    },
+    "Multi_namespace_hard_negatives": {
+      "apply_ite": 1,
+      "associative_of_commutative_of_le": 1,
+      "bddAbove_iff_exists_ge": 1,
+      "bddAbove_insert": 1,
+      "bddAbove_pi": 1,
+      "bddAbove_preimage_ofDual": 1,
+      "bddAbove_preimage_toDual": 1,
+      "bddAbove_prod": 1,
+      "bddAbove_range_pi": 1,
+      "bddAbove_range_prod": 1,
+      "bddAbove_union": 1,
+      "bddBelow_iff_exists_le": 1,
+      "bddBelow_insert": 1,
+      "bddBelow_pi": 1,
+      "bddBelow_preimage_ofDual": 1,
+      "bddBelow_preimage_toDual": 1,
+      "bddBelow_prod": 1,
+      "bddBelow_range_pi": 1,
+      "bddBelow_range_prod": 1,
+      "bddBelow_union": 1,
+      "beq_eq_decide": 1,
+      "beq_ext": 1
+    },
+    "canonical_floors": {
+      "Nat": 104,
+      "Set": 11,
+      "Finset": 3
+    },
+    "offgate_controls": {
+      "Finset": 15,
+      "List": 5
+    }
+  },
+  "fresh_counts": {
+    "TR6_dynamic_tail_replay": 0,
+    "TR6_static_covered_controls": 0,
+    "RC4R_fresh_no_delta_set": 0,
+    "Fresh_dynamic_candidate_frontier": 70,
+    "Multi_namespace_hard_negatives": 22,
+    "canonical_floors": 0,
+    "offgate_controls": 0
+  },
+  "dynamic_eligible_namespace_counts": {
+    "TR6_dynamic_tail_replay": 8,
+    "TR6_static_covered_controls": 10,
+    "RC4R_fresh_no_delta_set": 11,
+    "Fresh_dynamic_candidate_frontier": 70,
+    "Multi_namespace_hard_negatives": 0,
+    "canonical_floors": 118,
+    "offgate_controls": 20
+  },
+  "static_gate_firing_counts": {
+    "TR6_dynamic_tail_replay": 3,
+    "TR6_static_covered_controls": 10,
+    "RC4R_fresh_no_delta_set": 14,
+    "Fresh_dynamic_candidate_frontier": 0,
+    "Multi_namespace_hard_negatives": 0,
+    "canonical_floors": 0,
+    "offgate_controls": 0
+  },
+  "overlap_with_tr7": {
+    "TR6_dynamic_tail_replay": 8,
+    "TR6_static_covered_controls": 10,
+    "RC4R_fresh_no_delta_set": 28,
+    "Fresh_dynamic_candidate_frontier": 0,
+    "Multi_namespace_hard_negatives": 0,
+    "canonical_floors": 118,
+    "offgate_controls": 20
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "run_real": true,
+  "results": [
+    {
+      "policy": "rc1",
+      "batch": "sf1_multiset_holdout",
+      "theorem_set": "sf1_multiset_holdout_runnable",
+      "ran": true,
+      "return_code": 0,
+      "run_dir": "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable",
+      "status": "ran",
+      "stdout_log": "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval.stdout.log",
+      "stderr_log": "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval.stderr.log",
+      "metrics_path": "project/evolve/experiments/sf1/out/real/eval/rc1_smoke_sf1_multiset_holdout_runnable/eval-4e872b94/metrics.json",
+      "solved": 2,
+      "total": 3,
+      "per_theorem": [
+        {
+          "full_name": "Multiset.toFinset_nsmul",
+          "file_path": "Mathlib/Data/Finset/Basic.lean",
+          "solved": true,
+          "finished": true,
+          "num_steps": 1,
+          "winning_tactic": "aesop",
+          "winning_tactic_origin": "generative_topk",
+          "error_message": null
+        },
+        {
+          "full_name": "Multiset.toFinset_eq_singleton_iff",
+          "file_path": "Mathlib/Data/Finset/Basic.lean",
+          "solved": false,
+          "finished": false,
+          "num_steps": 4,
+          "winning_tactic": null,
+          "winning_tactic_origin": null,
+          "error_message": "All top-13 tactics errored at step 4"
+        },
+        {
+          "full_name": "Multiset.disjoint_toFinset",
+          "file_path": "Mathlib/Data/Finset/Basic.lean",
+          "solved": true,
+          "finished": true,
+          "num_steps": 3,
+          "winning_tactic": "induction m1 using Multiset.induction_on <;> simp_all",
+          "winning_tactic_origin": "wrapper_symbolic_action",
+          "error_message": null
+        }
+      ],
+      "pre_repair_solved": 0,
+      "aggregate_solved": 2,
+      "parse_warnings": [],
+      "repaired": true
+    }
+  ],
+  "repaired_with_finished_key": true
+}

@@ -1,0 +1,90 @@
+{
+  "generated_by": "scripts/rc4b_offgate_preservation.py",
+  "per_set_gate_emissions": {
+    "known_wins": {
+      "n": 11,
+      "gate_emissions": 11,
+      "must_not_fire": false
+    },
+    "fresh_holdout_set": {
+      "n": 8,
+      "gate_emissions": 8,
+      "must_not_fire": false
+    },
+    "fresh_holdout_multiset": {
+      "n": 20,
+      "gate_emissions": 20,
+      "must_not_fire": false
+    },
+    "disjoint_negative_controls": {
+      "n": 15,
+      "gate_emissions": 0,
+      "must_not_fire": true
+    },
+    "namespace_negative_controls": {
+      "n": 20,
+      "gate_emissions": 0,
+      "must_not_fire": true
+    },
+    "canonical_smoke": {
+      "n": 45,
+      "gate_emissions": 0,
+      "must_not_fire": true
+    }
+  },
+  "gate_emissions_namespace_split": {
+    "known_wins": {
+      "Set": 7,
+      "Multiset": 4,
+      "Other": 0
+    },
+    "fresh_holdout_set": {
+      "Set": 8,
+      "Multiset": 0,
+      "Other": 0
+    },
+    "fresh_holdout_multiset": {
+      "Set": 0,
+      "Multiset": 20,
+      "Other": 0
+    },
+    "disjoint_negative_controls": {
+      "Set": 0,
+      "Multiset": 0,
+      "Other": 0
+    },
+    "namespace_negative_controls": {
+      "Set": 0,
+      "Multiset": 0,
+      "Other": 0
+    },
+    "canonical_smoke": {
+      "Set": 0,
+      "Multiset": 0,
+      "Other": 0
+    }
+  },
+  "off_gate_emissions": 0,
+  "unexpected_fired_cases": [],
+  "negative_control_emitted_and_failed": 0,
+  "regressions": 0,
+  "regression_note": "additive evaluator (candidate ⊇ RC2) → regressions structurally impossible",
+  "canonical_floors": {
+    "demo_v1": {
+      "n": 15,
+      "rc2_solved": 12,
+      "gate_fires": 0
+    },
+    "nat_defs_medium": {
+      "n": 15,
+      "rc2_solved": 14,
+      "gate_fires": 0
+    },
+    "nat_defs_large_v5": {
+      "n": 15,
+      "rc2_solved": 14,
+      "gate_fires": 0
+    }
+  },
+  "verdict": "OFFGATE_CLEAN"
+}

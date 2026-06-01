@@ -1,0 +1,4817 @@
+{
+  "generated_by": "scripts/tr4_evaluate_ranking.py",
+  "source": "tr3",
+  "num_theorems": 92,
+  "num_theorems_with_success": 13,
+  "first_success_rank_stats": {
+    "original_order": {
+      "n": 13,
+      "mean": 16.46,
+      "median": 8.0
+    },
+    "random_expected": {
+      "n": 13,
+      "mean": 8.73,
+      "median": 4.5
+    },
+    "heuristic": {
+      "n": 13,
+      "mean": 5.15,
+      "median": 2.0
+    },
+    "logistic": {
+      "n": 13,
+      "mean": 2.69,
+      "median": 2.0
+    },
+    "sgd": {
+      "n": 13,
+      "mean": 8.15,
+      "median": 2.0
+    },
+    "hgb": {
+      "n": 13,
+      "mean": 2.08,
+      "median": 2.0
+    }
+  },
+  "topk_success_recovery": {
+    "heuristic": {
+      "top1": 0.385,
+      "top3": 0.615,
+      "top5": 0.769
+    },
+    "logistic": {
+      "top1": 0.385,
+      "top3": 0.769,
+      "top5": 0.846
+    },
+    "sgd": {
+      "top1": 0.462,
+      "top3": 0.538,
+      "top5": 0.615
+    },
+    "hgb": {
+      "top1": 0.462,
+      "top3": 0.769,
+      "top5": 1.0
+    },
+    "original_order": {
+      "top1": 0.385,
+      "top3": 0.385,
+      "top5": 0.462
+    }
+  },
+  "per_theorem": [
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "num_programs": 54,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Multiset.toFinset_card_eq_card_iff_nodup] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 8.008716555909749e-05
+        },
+        {
+          "tactic": "simp [Multiset.singleton_eq_cons_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.710362824743837e-05
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 3.656161300580341e-05
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_card_eq_card_iff_nodup] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.422649065796224e-05
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_card_eq_card_iff_nodup]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.1553661958657384e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "num_programs": 47,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [AList.insert]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 3.997144727525586e-05
+        },
+        {
+          "tactic": "simp [Set.insert_diff_singleton] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.724919410581267e-05
+        },
+        {
+          "tactic": "simp [Set.diff_singleton_sSubset]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.5675220175820487e-06
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.2511971722413737e-06
+        },
+        {
+          "tactic": "simp [Set.subset_diff_singleton] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.867697431222399e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "num_programs": 51,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.ite_left]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 2.7422600885403178e-05
+        },
+        {
+          "tactic": "simp [Set.ite_left] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.869295004651743e-05
+        },
+        {
+          "tactic": "ext x <;> simp [Set.ite_left]",
+          "family": "d2_ext_simp",
+          "solved": false,
+          "score_hgb": 1.533267165465374e-05
+        },
+        {
+          "tactic": "simp [Set.ite_left] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.4594853610479545e-05
+        },
+        {
+          "tactic": "simp [Set.ite_eq_of_subset_right] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.0569204516945883e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "num_programs": 51,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.ite_subset_union] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.0002850112332731216
+        },
+        {
+          "tactic": "simp [Set.ite_eq_of_subset_left] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.00026633556616209895
+        },
+        {
+          "tactic": "simp [Set.ite_eq_of_subset_left] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.00024505915587682815
+        },
+        {
+          "tactic": "ext x <;> simp [Set.ite_eq_of_subset_left]",
+          "family": "d2_ext_simp",
+          "solved": false,
+          "score_hgb": 0.00013193531407228092
+        },
+        {
+          "tactic": "ext x <;> simp [Set.ite_subset_union]",
+          "family": "d2_ext_simp",
+          "solved": false,
+          "score_hgb": 6.889972385572569e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "num_programs": 53,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [AntitoneOn, MonotoneOn]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 3.4328343002353565e-05
+        },
+        {
+          "tactic": "simp [Set.antitoneOn_iff_antitone]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.6305582452628044e-07
+        },
+        {
+          "tactic": "simp [Set.ne_univ_iff_exists_not_mem]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.494301272998997e-07
+        },
+        {
+          "tactic": "simp [Set.not_disjoint_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 6.152004184138075e-08
+        },
+        {
+          "tactic": "simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.951893102359805e-09
+        }
+      ]
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "num_programs": 53,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [AntitoneOn, MonotoneOn]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 0.0016446071282126468
+        },
+        {
+          "tactic": "simp [Set.antitoneOn_iff_antitone]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 2.396224824323275e-06
+        },
+        {
+          "tactic": "simp [Set.ne_univ_iff_exists_not_mem]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 2.0322358570768773e-06
+        },
+        {
+          "tactic": "simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.1070346041296118e-06
+        },
+        {
+          "tactic": "simp [Set.not_disjoint_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.0279235530435326e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "num_programs": 52,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.9940360168074327
+        },
+        {
+          "tactic": "rw [Set.subset_pair_iff_eq] <;> aesop",
+          "family": "d2_rw_aesop",
+          "solved": false,
+          "score_hgb": 0.20829093208606403
+        },
+        {
+          "tactic": "simp [Set.pair_eq_singleton] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.1262790388364025
+        },
+        {
+          "tactic": "simp [Set.subset_pair_iff_eq] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.0447309139268251
+        },
+        {
+          "tactic": "simp [Set.pair_subset_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.031131028105980913
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ssubset_iff_insert",
+      "num_programs": 50,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.ssubset_insert] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.85922854930083e-05
+        },
+        {
+          "tactic": "simp [AList.insert]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 1.7148883014387632e-05
+        },
+        {
+          "tactic": "simp [Set.ssubset_insert] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 9.48374311316878e-06
+        },
+        {
+          "tactic": "simp [Set.ssubset_iff_of_subset] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 6.29595377189184e-06
+        },
+        {
+          "tactic": "rw [Set.ssubset_iff_of_subset] <;> aesop",
+          "family": "d2_rw_aesop",
+          "solved": false,
+          "score_hgb": 1.285716372690292e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ssubset_iff_sdiff_singleton",
+      "num_programs": 51,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.ssubset_univ_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.004564107060919297
+        },
+        {
+          "tactic": "simp [Set.ssubset_iff_of_subset] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.0021873712579320156
+        },
+        {
+          "tactic": "simp [Set.lt_iff_ssubset]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.0019740984871788776
+        },
+        {
+          "tactic": "simp [Set.diff_singleton_sSubset] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.00042108112877736357
+        },
+        {
+          "tactic": "simp [Set.empty_ssubset_singleton]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.00019997391030986264
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "num_programs": 51,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Multiset.ssubset_singleton_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 9.018504033077607e-06
+        },
+        {
+          "tactic": "simp [Set.lt_iff_ssubset]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 7.5307961693331465e-06
+        },
+        {
+          "tactic": "simp [Set.empty_ssubset_singleton]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.892691873641139e-06
+        },
+        {
+          "tactic": "simp [Set.diff_singleton_sSubset] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 4.7092689973380764e-07
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 2.8788392892094866e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "num_programs": 49,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [AList.insert]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 4.163216754108544e-05
+        },
+        {
+          "tactic": "simp [Set.insert_subset_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 7.272439114435142e-07
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 1.8714150592978285e-07
+        },
+        {
+          "tactic": "simp [Set.diff_singleton_subset_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.5910189134823872e-07
+        },
+        {
+          "tactic": "simp [Set.subset_insert_diff_singleton] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.5909578579614726e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "num_programs": 47,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.ite_subset_union] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 4.222036675228315e-06
+        },
+        {
+          "tactic": "simp [Set.ite_univ]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.6782860327623755e-07
+        },
+        {
+          "tactic": "simp [Set.ite_inter_self]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.187679871163679e-07
+        },
+        {
+          "tactic": "simp [Set.ite_diff_self]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.103118982337387e-07
+        },
+        {
+          "tactic": "simp [Set.ite_diff_self] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.9200677503263023e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Set.subset_pair_iff_eq",
+      "num_programs": 52,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.subset_pair_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.0002934352446187131
+        },
+        {
+          "tactic": "simp [Set.Nonempty.subset_pair_iff_eq] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 5.325513185484591e-05
+        },
+        {
+          "tactic": "simp [Set.subset_singleton_iff_eq]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 4.9726278566717854e-05
+        },
+        {
+          "tactic": "simp [Set.Nonempty.subset_pair_iff_eq] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.3303010506565481e-05
+        },
+        {
+          "tactic": "simp [Set.pair_eq_pair_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.228202167320593e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "num_programs": 52,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.subset_compl_singleton_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.5156844466317313e-06
+        },
+        {
+          "tactic": "simp [Set.diff_singleton_subset_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 2.7185478636572183e-06
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.0266029812493931e-06
+        },
+        {
+          "tactic": "simp [Set.singleton_eq_singleton_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 8.811486059097607e-07
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_iff] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 6.839852496940997e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "num_programs": 52,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.mem_diff_singleton_empty]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.00014068393375065753
+        },
+        {
+          "tactic": "simp [Set.sUnion_diff_singleton_empty]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.0001406750320063868
+        },
+        {
+          "tactic": "simp [Set.sUnion_eq_empty]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 7.086761719014914e-05
+        },
+        {
+          "tactic": "simp [Set.iUnion_eq_empty] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.3053253584772689e-05
+        },
+        {
+          "tactic": "simp [Set.iUnion_eq_empty] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.305259615399591e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "num_programs": 36,
+      "num_successes": 1,
+      "num_credited": 1,
+      "best_success_rank": {
+        "original_order": 36,
+        "random_expected": 18.5,
+        "heuristic": 6,
+        "logistic": 4,
+        "sgd": 36,
+        "hgb": 4
+      },
+      "best_credit_rank": {
+        "original_order": 36,
+        "heuristic": 6,
+        "logistic": 4,
+        "sgd": 36,
+        "hgb": 4
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.pair_subset_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 5.352920287304504e-07
+        },
+        {
+          "tactic": "simp [Set.nontrivial_iff_pair_subset]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.1464386672161316e-07
+        },
+        {
+          "tactic": "simp [Set.subset_singleton_iff_eq]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 7.636011492284191e-08
+        },
+        {
+          "tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": true,
+          "score_hgb": 6.159249304280844e-09
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 4.788219387190921e-09
+        }
+      ]
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "num_programs": 1,
+      "num_successes": 1,
+      "num_credited": 1,
+      "best_success_rank": {
+        "original_order": 1,
+        "random_expected": 1.0,
+        "heuristic": 1,
+        "logistic": 1,
+        "sgd": 1,
+        "hgb": 1
+      },
+      "best_credit_rank": {
+        "original_order": 1,
+        "heuristic": 1,
+        "logistic": 1,
+        "sgd": 1,
+        "hgb": 1
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Antitone, AntitoneOn]",
+          "family": "def_unfold_simp",
+          "solved": true,
+          "score_hgb": 0.983367888449959
+        }
+      ]
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "num_programs": 1,
+      "num_successes": 1,
+      "num_credited": 1,
+      "best_success_rank": {
+        "original_order": 1,
+        "random_expected": 1.0,
+        "heuristic": 1,
+        "logistic": 1,
+        "sgd": 1,
+        "hgb": 1
+      },
+      "best_credit_rank": {
+        "original_order": 1,
+        "heuristic": 1,
+        "logistic": 1,
+        "sgd": 1,
+        "hgb": 1
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Monotone, MonotoneOn]",
+          "family": "def_unfold_simp",
+          "solved": true,
+          "score_hgb": 0.9573953937287698
+        }
+      ]
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "num_programs": 1,
+      "num_successes": 1,
+      "num_credited": 1,
+      "best_success_rank": {
+        "original_order": 1,
+        "random_expected": 1.0,
+        "heuristic": 1,
+        "logistic": 1,
+        "sgd": 1,
+        "hgb": 1
+      },
+      "best_credit_rank": {
+        "original_order": 1,
+        "heuristic": 1,
+        "logistic": 1,
+        "sgd": 1,
+        "hgb": 1
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [StrictAnti, StrictAntiOn]",
+          "family": "def_unfold_simp",
+          "solved": true,
+          "score_hgb": 0.9983256779699383
+        }
+      ]
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "num_programs": 1,
+      "num_successes": 1,
+      "num_credited": 1,
+      "best_success_rank": {
+        "original_order": 1,
+        "random_expected": 1.0,
+        "heuristic": 1,
+        "logistic": 1,
+        "sgd": 1,
+        "hgb": 1
+      },
+      "best_credit_rank": {
+        "original_order": 1,
+        "heuristic": 1,
+        "logistic": 1,
+        "sgd": 1,
+        "hgb": 1
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [StrictMono, StrictMonoOn]",
+          "family": "def_unfold_simp",
+          "solved": true,
+          "score_hgb": 0.9949996612265485
+        }
+      ]
+    },
+    {
+      "full_name": "Eq.subset",
+      "num_programs": 44,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.eq_of_subset_of_subset] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.0002589674146626271
+        },
+        {
+          "tactic": "simp [Set.eq_of_subset_of_subset] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.00022099658555643493
+        },
+        {
+          "tactic": "simp [Set.sep_eq_of_subset]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 5.71804405905587e-05
+        },
+        {
+          "tactic": "simp [Set.eq_univ_of_subset]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 5.71804405905587e-05
+        },
+        {
+          "tactic": "simp [Set.inter_eq_self_of_subset_left]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 5.2194970764518984e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Function.Injective.nonempty_apply_iff",
+      "num_programs": 44,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 0.003591267698337945
+        },
+        {
+          "tactic": "simp_all",
+          "family": "d1_simp_all",
+          "solved": false,
+          "score_hgb": 2.3923207790718142e-05
+        },
+        {
+          "tactic": "tauto",
+          "family": "d1_tauto",
+          "solved": false,
+          "score_hgb": 2.3923207790718142e-05
+        },
+        {
+          "tactic": "simp [Function.invFunOn_apply_mem] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.0483007074765484e-05
+        },
+        {
+          "tactic": "simp [Function.invFunOn_apply_eq] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.0448815212490417e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Prop.compl_singleton",
+      "num_programs": 31,
+      "num_successes": 1,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": 31,
+        "random_expected": 16.0,
+        "heuristic": 31,
+        "logistic": 8,
+        "sgd": 2,
+        "hgb": 4
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.subset_compl_singleton_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 4.5097085743764836e-05
+        },
+        {
+          "tactic": "simp [Set.compl_setOf]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.5332231211568344e-05
+        },
+        {
+          "tactic": "simp [compls_singleton]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.330013003101154e-05
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": true,
+          "score_hgb": 1.0553100805963686e-05
+        },
+        {
+          "tactic": "simp [Set.compl_singleton_eq]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 7.263558065495104e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Set.eq_of_inclusion_surjective",
+      "num_programs": 55,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "ext x <;> simp [Set.inclusion_right]",
+          "family": "d2_ext_simp",
+          "solved": false,
+          "score_hgb": 0.004247470562069041
+        },
+        {
+          "tactic": "ext x <;> simp [Set.inclusion_eq_id]",
+          "family": "d2_ext_simp",
+          "solved": false,
+          "score_hgb": 0.003267262527036594
+        },
+        {
+          "tactic": "ext x <;> simp [Set.coe_inclusion]",
+          "family": "d2_ext_simp",
+          "solved": false,
+          "score_hgb": 0.003267262527036594
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 0.0005417198829136851
+        },
+        {
+          "tactic": "simp [Set.inclusion_right] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.00022315776046699944
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "num_programs": 54,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "ext x <;> simp [Set.ite_inter]",
+          "family": "d2_ext_simp",
+          "solved": false,
+          "score_hgb": 1.820228908580819e-05
+        },
+        {
+          "tactic": "ext x <;> simp [Set.ite_inter_inter]",
+          "family": "d2_ext_simp",
+          "solved": false,
+          "score_hgb": 5.449092985991873e-06
+        },
+        {
+          "tactic": "simp [Set.ite_right] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.6242743411082745e-06
+        },
+        {
+          "tactic": "simp [Set.ite_inter] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.33876592824387e-06
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 1.8726343348766087e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Set.pairwiseDisjoint_filter",
+      "num_programs": 35,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.PairwiseDisjoint.mono] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.00021730370115126884
+        },
+        {
+          "tactic": "simp [Set.PairwiseDisjoint.mono] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.00018927689900615977
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 3.51317739021682e-05
+        },
+        {
+          "tactic": "simp [Set.PairwiseDisjoint.attach] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 3.330012178110525e-05
+        },
+        {
+          "tactic": "simp [Set.PairwiseDisjoint.prod] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.939671950256282e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Set.powerset_singleton",
+      "num_programs": 48,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 3.7966426233093696e-05
+        },
+        {
+          "tactic": "simp [Set.mem_singleton] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.4539146056475197e-06
+        },
+        {
+          "tactic": "simp [Set.eq_of_mem_singleton] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.070667393456008e-06
+        },
+        {
+          "tactic": "ext x <;> aesop",
+          "family": "d2_ext_aesop",
+          "solved": false,
+          "score_hgb": 1.1193841169866903e-06
+        },
+        {
+          "tactic": "ext x <;> simp [Set.mem_singleton]",
+          "family": "d2_ext_simp",
+          "solved": false,
+          "score_hgb": 6.069355573106019e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.Nonempty.cons_induction",
+      "num_programs": 36,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.cons_induction] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.0011616630116695567
+        },
+        {
+          "tactic": "simp [Finset.cons_induction] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.0007192486019284704
+        },
+        {
+          "tactic": "simp [Finset.cons_induction]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.0003945797134746563
+        },
+        {
+          "tactic": "simp [Finset.induction_on]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 8.902126916752376e-05
+        },
+        {
+          "tactic": "simp [Finset.nonempty_cons]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 5.2687844540944365e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.Nontrivial.exists_cons_eq",
+      "num_programs": 40,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.Nontrivial] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.0002844251241769778
+        },
+        {
+          "tactic": "simp [Finset.Nontrivial] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 5.829719277090536e-05
+        },
+        {
+          "tactic": "simp [Finset.Nontrivial]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.598638348265339e-05
+        },
+        {
+          "tactic": "simp [Finset.range_nontrivial] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.1241279838947792e-05
+        },
+        {
+          "tactic": "simp [Finset.exists_list_nodup_eq] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 6.492746452443388e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.Nontrivial.sdiff_singleton_nonempty",
+      "num_programs": 41,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 0.0036446367116759896
+        },
+        {
+          "tactic": "simp [Finset.nontrivial_iff_ne_singleton] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 5.580272782407348e-05
+        },
+        {
+          "tactic": "simp [Finset.nontrivial_iff_ne_singleton] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 3.244026191820982e-05
+        },
+        {
+          "tactic": "simp [Finset.not_nontrivial_singleton] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.498082517870426e-05
+        },
+        {
+          "tactic": "simp [Finset.not_nontrivial_singleton] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.1860436662893039e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.cons_induction",
+      "num_programs": 36,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.induction_on]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.821190471470035e-05
+        },
+        {
+          "tactic": "simp [Finset.cons_induction_on] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 9.326166221068236e-06
+        },
+        {
+          "tactic": "simp [Finset.induction_on']",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 7.826896329875828e-06
+        },
+        {
+          "tactic": "simp [Finset.Nonempty.cons_induction]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 7.728063051902842e-06
+        },
+        {
+          "tactic": "simp [Finset.cons_induction_on] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.6491540840887537e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.disjoint_filter_filter'",
+      "num_programs": 40,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.map_filter'] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.0604778367839308e-06
+        },
+        {
+          "tactic": "simp [Finset.map_filter'] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.0604778367839308e-06
+        },
+        {
+          "tactic": "simp [Finset.disjoint_filter_filter]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 9.79640370342779e-07
+        },
+        {
+          "tactic": "simp [Finset.disjoint_filter_filter] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 8.062082728696266e-07
+        },
+        {
+          "tactic": "simp [Finset.disjoint_filter_filter] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 8.062082728696266e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.eq_singleton_iff_nonempty_unique_mem",
+      "num_programs": 52,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 0.0028289161263799845
+        },
+        {
+          "tactic": "simp [Finset.nonempty_iff_eq_singleton_default] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.00017462533068827
+        },
+        {
+          "tactic": "simp [Finset.eq_singleton_iff_unique_mem] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.0001362306046031908
+        },
+        {
+          "tactic": "simp [Finset.eq_singleton_iff_unique_mem] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.00013256230225610014
+        },
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "family": "d3_constructor_aesop",
+          "solved": false,
+          "score_hgb": 9.432260623495112e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.erase_inj",
+      "num_programs": 52,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.sdiff_singleton_eq_erase] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.149107555958619e-06
+        },
+        {
+          "tactic": "simp [Finset.sdiff_singleton_eq_erase] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 4.886488071123535e-07
+        },
+        {
+          "tactic": "simp [Finset.singleton_inj] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 3.5399223739434796e-07
+        },
+        {
+          "tactic": "simp [Finset.sdiff_singleton_eq_erase]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.185531420663951e-07
+        },
+        {
+          "tactic": "simp [Finset.mem_erase] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.9732834296183058e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.erase_nonempty",
+      "num_programs": 50,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.Nontrivial.erase_nonempty] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.0143278169503182e-05
+        },
+        {
+          "tactic": "simp [Finset.Nontrivial.erase_nonempty] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 7.902330770427475e-06
+        },
+        {
+          "tactic": "simp [Finset.image_nonempty] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 7.2370431490185806e-06
+        },
+        {
+          "tactic": "simp [Finset.nontrivial_prod_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.2253499036499746e-06
+        },
+        {
+          "tactic": "simp [Finset.image_nonempty] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.213343008335576e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.induction_on_union",
+      "num_programs": 40,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.induction]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.004022134117985844
+        },
+        {
+          "tactic": "simp [Finset.induction_on]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.00042408246062481666
+        },
+        {
+          "tactic": "simp [Finset.cons_induction_on]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.00024399963148384265
+        },
+        {
+          "tactic": "simp [Finset.induction_on] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.00012759377460759842
+        },
+        {
+          "tactic": "simp [Finset.cons_induction_on] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.00010146826420629039
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.insert_erase",
+      "num_programs": 45,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.erase_insert] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.2712646000539242e-07
+        },
+        {
+          "tactic": "simp [Finset.erase_insert_eq_erase] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.9845611416206912e-07
+        },
+        {
+          "tactic": "simp [Finset.erase_insert_of_ne] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.7226245181854911e-07
+        },
+        {
+          "tactic": "simp [Finset.erase_insert_subset]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.6968078135306186e-07
+        },
+        {
+          "tactic": "simp [Finset.erase_insert_of_ne] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.4632505361170442e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.inter_subset_inter",
+      "num_programs": 35,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 9.689366608923313e-08
+        },
+        {
+          "tactic": "simp [Finset.inter_subset_left] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 9.46146772191241e-08
+        },
+        {
+          "tactic": "simp [Set.inter_subset_inter] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 7.852038817793302e-08
+        },
+        {
+          "tactic": "simp [Finset.inter_subset_left] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 5.5207936788640593e-08
+        },
+        {
+          "tactic": "simp [Set.inter_subset_inter] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 4.581687245044564e-08
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.mem_disjUnion",
+      "num_programs": 1,
+      "num_successes": 1,
+      "num_credited": 1,
+      "best_success_rank": {
+        "original_order": 1,
+        "random_expected": 1.0,
+        "heuristic": 1,
+        "logistic": 1,
+        "sgd": 1,
+        "hgb": 1
+      },
+      "best_credit_rank": {
+        "original_order": 1,
+        "heuristic": 1,
+        "logistic": 1,
+        "sgd": 1,
+        "hgb": 1
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.disjUnion]",
+          "family": "def_unfold_simp",
+          "solved": true,
+          "score_hgb": 8.580218225144423e-09
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.pairwise_cons'",
+      "num_programs": 39,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.pairwiseDisjoint_slice] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.5428491546107405e-05
+        },
+        {
+          "tactic": "simp [Finset.pairwiseDisjoint_slice] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.3846583507214336e-05
+        },
+        {
+          "tactic": "simp [Finset.pairwiseDisjoint_fibers] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.3794752740304328e-05
+        },
+        {
+          "tactic": "simp [Finset.pairwise_disjoint_powersetCard] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.3708761492789501e-05
+        },
+        {
+          "tactic": "simp [Finset.pairwise_disjoint_powersetCard] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.3495706498136265e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.range_filter_eq",
+      "num_programs": 48,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.filter, Finset.range, Multiset.filter, Multiset.range]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 1.6169845759299127e-05
+        },
+        {
+          "tactic": "simp [Finset.filter_insert] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 7.339329469508372e-06
+        },
+        {
+          "tactic": "simp [Finset.filter_eq] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 5.492637274869521e-06
+        },
+        {
+          "tactic": "simp [Finset.filter_insert] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 5.31596628853638e-06
+        },
+        {
+          "tactic": "simp [Finset.filter_singleton] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 4.476017139697982e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.sizeOf_lt_sizeOf_of_mem",
+      "num_programs": 41,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Multiset.sizeOf]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 0.026587453862590933
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 0.023189956356462316
+        },
+        {
+          "tactic": "simp [Multiset.sizeOf_lt_sizeOf_of_mem]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.0017050552283082213
+        },
+        {
+          "tactic": "simp [Multiset.sizeOf_lt_sizeOf_of_mem] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.0015793399767897033
+        },
+        {
+          "tactic": "simp [Multiset.sizeOf_lt_sizeOf_of_mem] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.0006352201172556317
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.ssubset_iff_exists_cons_subset",
+      "num_programs": 51,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.ssubset_iff_exists_subset_erase] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 5.910592391885546e-08
+        },
+        {
+          "tactic": "simp [Finset.ssubset_iff_exists_subset_erase] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 3.7538344497727054e-08
+        },
+        {
+          "tactic": "simp [Finset.ssubset_iff_of_subset] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.0998218308132945e-08
+        },
+        {
+          "tactic": "simp [Finset.ssubset_iff_subset_ne] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.0135152920353304e-08
+        },
+        {
+          "tactic": "simp [Finset.exists_of_ssubset]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 2.91377655514499e-08
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.ssubset_iff_exists_subset_erase",
+      "num_programs": 52,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.ssubset_iff_subset_ne] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.857390931586792e-05
+        },
+        {
+          "tactic": "simp [Finset.ssubset_iff_subset_ne] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.0238475126364777e-05
+        },
+        {
+          "tactic": "simp [Finset.ssubset_iff_of_subset] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 8.781429077543421e-06
+        },
+        {
+          "tactic": "simp [Finset.erase_ssubset]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 8.612361074474605e-06
+        },
+        {
+          "tactic": "simp [Finset.ssubset_iff_exists_cons_subset] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 5.750212657497815e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Finset.subset_union_elim",
+      "num_programs": 45,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 0.00014954326582985848
+        },
+        {
+          "tactic": "simp [Finset.subset_union_left] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 4.5309952358899014e-05
+        },
+        {
+          "tactic": "simp [Finset.subset_union_left]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 4.2538654954472294e-05
+        },
+        {
+          "tactic": "simp [Finset.union_subset_iff] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.9167958526484497e-05
+        },
+        {
+          "tactic": "simp [Finset.subset_union_left] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.8809617533621666e-05
+        }
+      ]
+    },
+    {
+      "full_name": "List.perm_of_nodup_nodup_toFinset_eq",
+      "num_programs": 55,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "ext x <;> simp [List.toFinset_eq]",
+          "family": "d2_ext_simp",
+          "solved": false,
+          "score_hgb": 7.439543222713717e-05
+        },
+        {
+          "tactic": "ext x <;> simp [List.toFinset_card_of_nodup]",
+          "family": "d2_ext_simp",
+          "solved": false,
+          "score_hgb": 4.794352023706382e-05
+        },
+        {
+          "tactic": "ext x <;> simp [List.toFinset_eq_of_perm]",
+          "family": "d2_ext_simp",
+          "solved": false,
+          "score_hgb": 3.595935236900043e-05
+        },
+        {
+          "tactic": "simp [List.toFinset_eq_of_perm] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.7542024131769487e-06
+        },
+        {
+          "tactic": "simp [List.toFinset_eq] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.8434925345936267e-06
+        }
+      ]
+    },
+    {
+      "full_name": "List.toFinset.ext_iff",
+      "num_programs": 8,
+      "num_successes": 1,
+      "num_credited": 1,
+      "best_success_rank": {
+        "original_order": 8,
+        "random_expected": 4.5,
+        "heuristic": 2,
+        "logistic": 2,
+        "sgd": 8,
+        "hgb": 2
+      },
+      "best_credit_rank": {
+        "original_order": 8,
+        "heuristic": 2,
+        "logistic": 2,
+        "sgd": 8,
+        "hgb": 2
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [List.toFinset.ext]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.6459147514816765e-09
+        },
+        {
+          "tactic": "simp [Finset.ext_iff]",
+          "family": "d1_simp_lemma",
+          "solved": true,
+          "score_hgb": 6.918312901011518e-10
+        },
+        {
+          "tactic": "exact List.toFinset.ext",
+          "family": "d1_exact",
+          "solved": false,
+          "score_hgb": 4.5674009543646214e-10
+        },
+        {
+          "tactic": "simpa using List.toFinset.ext",
+          "family": "d1_simpa_using",
+          "solved": false,
+          "score_hgb": 4.5674009543646214e-10
+        },
+        {
+          "tactic": "simpa [List.toFinset.ext]",
+          "family": "d1_simpa_lemma",
+          "solved": false,
+          "score_hgb": 4.5674009543646214e-10
+        }
+      ]
+    },
+    {
+      "full_name": "List.toFinset_eq",
+      "num_programs": 4,
+      "num_successes": 1,
+      "num_credited": 1,
+      "best_success_rank": {
+        "original_order": 4,
+        "random_expected": 2.5,
+        "heuristic": 2,
+        "logistic": 2,
+        "sgd": 4,
+        "hgb": 2
+      },
+      "best_credit_rank": {
+        "original_order": 4,
+        "heuristic": 2,
+        "logistic": 2,
+        "sgd": 4,
+        "hgb": 2
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [List.toFinset, Cycle.toFinset, Multiset.Nodup, Multiset.toFinset]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 3.673347346192279e-10
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_eq]",
+          "family": "d1_simp_lemma",
+          "solved": true,
+          "score_hgb": 2.9624344637969316e-10
+        },
+        {
+          "tactic": "exact Multiset.toFinset_eq",
+          "family": "d1_exact",
+          "solved": false,
+          "score_hgb": 2.584886933620726e-10
+        },
+        {
+          "tactic": "simpa using Multiset.toFinset_eq",
+          "family": "d1_simpa_using",
+          "solved": false,
+          "score_hgb": 2.584886933620726e-10
+        }
+      ]
+    },
+    {
+      "full_name": "List.toFinset_eq_empty_iff",
+      "num_programs": 54,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Multiset.toFinset, Multiset.mem_toFinset]",
+          "family": "d1_tofinset_simp",
+          "solved": false,
+          "score_hgb": 0.0014808420425415235
+        },
+        {
+          "tactic": "simp [List.toFinset_nonempty_iff] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.00011159202991003456
+        },
+        {
+          "tactic": "simp [List.toFinset_nonempty_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 9.962078094220009e-05
+        },
+        {
+          "tactic": "simp [List.mem_toFinset]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 8.491235165461548e-05
+        },
+        {
+          "tactic": "simp [List.toFinset, Cycle.nil, Cycle.toFinset, Multiset.toFinset]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 8.056187213460137e-05
+        }
+      ]
+    },
+    {
+      "full_name": "List.toFinset_eq_iff_perm_dedup",
+      "num_programs": 54,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Multiset.toFinset, Multiset.mem_toFinset]",
+          "family": "d1_tofinset_simp",
+          "solved": false,
+          "score_hgb": 0.011193331844586188
+        },
+        {
+          "tactic": "simp [List.dedup_eq_cons] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.008241996557946525
+        },
+        {
+          "tactic": "simp [List.toFinset_eq_of_perm] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.0007121367950903176
+        },
+        {
+          "tactic": "simp [List.dedup, List.toFinset, Cycle.toFinset, Multiset.dedup]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 0.0005146350844088989
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 0.0002315005820446745
+        }
+      ]
+    },
+    {
+      "full_name": "List.toFinset_filter",
+      "num_programs": 55,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Multiset.toFinset_filter]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.6882064433180795
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_filter] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.03865712161582693
+        },
+        {
+          "tactic": "ext x <;> simp [Multiset.toFinset_filter]",
+          "family": "d2_ext_simp",
+          "solved": false,
+          "score_hgb": 0.021020115652984103
+        },
+        {
+          "tactic": "simp [Multiset.toFinset, Multiset.mem_toFinset]",
+          "family": "d1_tofinset_simp",
+          "solved": false,
+          "score_hgb": 0.007456976605528026
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_filter] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.005597632555119837
+        }
+      ]
+    },
+    {
+      "full_name": "List.toFinset_nonempty_iff",
+      "num_programs": 54,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Multiset.toFinset, Multiset.mem_toFinset]",
+          "family": "d1_tofinset_simp",
+          "solved": false,
+          "score_hgb": 0.0006323052751113674
+        },
+        {
+          "tactic": "simp [List.toFinset_eq_empty_iff] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 4.45737565836218e-05
+        },
+        {
+          "tactic": "simp [List.toFinset_eq_empty_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.261564263757002e-05
+        },
+        {
+          "tactic": "simp [List.toFinset_nil]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.1083386772487166e-05
+        },
+        {
+          "tactic": "simp [List.toFinset_eq_iff_perm_dedup]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.8365444507119526e-05
+        }
+      ]
+    },
+    {
+      "full_name": "List.toFinset_surj_on",
+      "num_programs": 49,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [List.toFinset_eq] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.00012445569933708953
+        },
+        {
+          "tactic": "simp [List.toFinset_eq]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 9.931091220449073e-05
+        },
+        {
+          "tactic": "simp [Multiset.toFinset, Multiset.mem_toFinset]",
+          "family": "d1_tofinset_simp",
+          "solved": false,
+          "score_hgb": 6.0114916945884545e-05
+        },
+        {
+          "tactic": "simp [List.toFinset_eq] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 4.07269911467487e-05
+        },
+        {
+          "tactic": "simp [List.coe_toFinset] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 3.456885172227343e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Multiset.Nodup.toFinset_inj",
+      "num_programs": 47,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Multiset.toFinset_eq] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.009501690962098597
+        },
+        {
+          "tactic": "simp [Multiset.inj_on_of_nodup_map] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.0011964606041269925
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_eq] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.0010100214400329056
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_eq]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.000936737639097829
+        },
+        {
+          "tactic": "simp [Multiset.inj_on_of_nodup_map] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.0009128118882719382
+        }
+      ]
+    },
+    {
+      "full_name": "Multiset.toFinset_ssubset",
+      "num_programs": 53,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 1.7019179874779732e-07
+        },
+        {
+          "tactic": "simp [Set.Finite.toFinset_ssubset] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 5.958065309919428e-08
+        },
+        {
+          "tactic": "simp [Set.Finite.toFinset_ssubset] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 5.644118915409807e-08
+        },
+        {
+          "tactic": "simp [Multiset.zero_ssubset] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 4.304449560472758e-08
+        },
+        {
+          "tactic": "simp [Multiset.ssubset_singleton_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.983856132990763e-08
+        }
+      ]
+    },
+    {
+      "full_name": "Multiset.toFinset_subset",
+      "num_programs": 54,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Multiset.toFinset, Multiset.mem_toFinset]",
+          "family": "d1_tofinset_simp",
+          "solved": false,
+          "score_hgb": 6.926021779762649e-05
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_ssubset] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 6.344120649919897e-05
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_ssubset] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 5.413765280198719e-05
+        },
+        {
+          "tactic": "simp [Set.Finite.toFinset_subset] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 4.3513625087464634e-05
+        },
+        {
+          "tactic": "simp [Multiset.range_subset]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.988841645913293e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.add_sub_one_le_mul",
+      "num_programs": 49,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 4.921349409458671e-06
+        },
+        {
+          "tactic": "simp [Nat.lt_mul_self_iff] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 3.8296300903139835e-06
+        },
+        {
+          "tactic": "simp [Nat.succ_add_sub_one] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 3.564301617077526e-06
+        },
+        {
+          "tactic": "simp [Nat.succ_add_sub_one] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.15071116709335e-06
+        },
+        {
+          "tactic": "simp [Nat.lt_mul_self_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.7607869304890926e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.diag_induction",
+      "num_programs": 49,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Nat.div_eq_iff_eq_of_dvd_dvd]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 7.590843028142004e-06
+        },
+        {
+          "tactic": "simp [Nat.le_add_one_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 4.402580457549139e-06
+        },
+        {
+          "tactic": "simp [Nat.add_pos_iff_pos_or_pos]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 4.402580457549139e-06
+        },
+        {
+          "tactic": "simp [Nat.mul_eq_right] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.3411039799488332e-06
+        },
+        {
+          "tactic": "simp [Nat.mul_eq_right] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 5.243589192043625e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.div_div_div_eq_div",
+      "num_programs": 48,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 5.981093023628313e-05
+        },
+        {
+          "tactic": "tauto",
+          "family": "d1_tauto",
+          "solved": false,
+          "score_hgb": 1.7369561511908398e-06
+        },
+        {
+          "tactic": "nlinarith",
+          "family": "d1_nlinarith",
+          "solved": false,
+          "score_hgb": 1.7369561511908398e-06
+        },
+        {
+          "tactic": "omega",
+          "family": "d1_omega",
+          "solved": false,
+          "score_hgb": 1.7369561511908398e-06
+        },
+        {
+          "tactic": "simp_all",
+          "family": "d1_simp_all",
+          "solved": false,
+          "score_hgb": 1.7369561511908398e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.div_eq_iff_eq_of_dvd_dvd",
+      "num_programs": 54,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Nat.dvd_right_iff_eq]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 4.336698226812974e-07
+        },
+        {
+          "tactic": "simp [Nat.dvd_left_iff_eq]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 4.336698226812974e-07
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 4.046316941184949e-07
+        },
+        {
+          "tactic": "simp [Nat.div_dvd_iff_dvd_mul] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.2728518489171399e-07
+        },
+        {
+          "tactic": "simp [Nat.dvd_iff_div_mul_eq] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 9.003834505730913e-08
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.div_eq_self",
+      "num_programs": 54,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Nat.dvd_iff_div_mul_eq] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 6.125373336017892e-06
+        },
+        {
+          "tactic": "simp [Nat.pred_eq_self_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.656801804260672e-06
+        },
+        {
+          "tactic": "simp [Nat.mul_right_eq_self_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 5.388529492853175e-07
+        },
+        {
+          "tactic": "simp [Nat.dvd_iff_div_mul_eq] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 4.889764078430557e-07
+        },
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "family": "d3_constructor_aesop",
+          "solved": false,
+          "score_hgb": 2.1616616492774263e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.div_eq_sub_mod_div",
+      "num_programs": 45,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 3.2067995348302644e-06
+        },
+        {
+          "tactic": "simp [Nat.sub_mod_eq_zero_of_mod_eq] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.1044118963453175e-07
+        },
+        {
+          "tactic": "simp [Nat.dvd_sub_mod] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.737433343234674e-07
+        },
+        {
+          "tactic": "simp [Nat.sub_mod_eq_zero_of_mod_eq] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 9.815740772969623e-08
+        },
+        {
+          "tactic": "simp [Nat.div_mod_unique]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 9.030656766529413e-08
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.div_le_of_le_mul'",
+      "num_programs": 44,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Nat.add_div_le_add_div]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.1004716832042075e-06
+        },
+        {
+          "tactic": "simp [Nat.div_lt_iff_lt_mul'] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.5616420448268366e-06
+        },
+        {
+          "tactic": "simp [Nat.not_prime_mul'] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 9.113974000898143e-07
+        },
+        {
+          "tactic": "simp [Nat.not_prime_mul'] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 6.902519135739749e-07
+        },
+        {
+          "tactic": "simp [Nat.div_mul_div_le_div]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.6980018326997986e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.div_le_self'",
+      "num_programs": 40,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Nat.exists_mul_self'] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 4.458212081867148e-07
+        },
+        {
+          "tactic": "simp [Nat.div_le_div_right]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 4.018585406508405e-07
+        },
+        {
+          "tactic": "simp [Nat.div_lt_self'] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.0974568062465184e-07
+        },
+        {
+          "tactic": "simp [Nat.div_lt_self'] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.7551337756141543e-07
+        },
+        {
+          "tactic": "simp [Nat.add_div_le_add_div] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.3802623669358313e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.div_mul_div_comm",
+      "num_programs": 41,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 7.518179861469412e-05
+        },
+        {
+          "tactic": "simp [Nat.div_mul_div_le_div] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 4.688585812937634e-05
+        },
+        {
+          "tactic": "simp [Nat.mul_div_mul_comm] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 4.085315270645531e-05
+        },
+        {
+          "tactic": "simp [Nat.div_mul_div_le] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.9012696843632566e-05
+        },
+        {
+          "tactic": "simp [Nat.div_mul_div_le_div] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.8607925453442894e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.div_mul_div_le",
+      "num_programs": 38,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Nat.mul_div_le_mul_div_assoc] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 8.888237238219545e-06
+        },
+        {
+          "tactic": "simp [Nat.div_mul_div_le_div] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 8.888237238219545e-06
+        },
+        {
+          "tactic": "simp [Nat.mul_le_of_le_div] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 4.277119744257328e-06
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 1.5888764574585775e-06
+        },
+        {
+          "tactic": "simp [Nat.mul_div_le_mul_div_assoc] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.850355507491825e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.div_mul_div_le_div",
+      "num_programs": 40,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 8.019620057128425e-06
+        },
+        {
+          "tactic": "simp [Nat.div_le_iff_le_mul_add_pred]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 4.093301792851822e-07
+        },
+        {
+          "tactic": "simp [Nat.mul_div_le_mul_div_assoc] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.7039851845168377e-07
+        },
+        {
+          "tactic": "simp [Nat.mul_le_of_le_div] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.7039851845168377e-07
+        },
+        {
+          "tactic": "simp [Nat.dvd_iff_le_div_mul]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.068125761522596e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.div_pow",
+      "num_programs": 42,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Nat.div_le_div_right] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.194175089559729e-06
+        },
+        {
+          "tactic": "simp [Nat.self_div_pow_eq_ofDigits_drop] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.3709835417130628e-06
+        },
+        {
+          "tactic": "simp [Nat.div_mul_div_le] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 8.629161161354915e-07
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 7.639265504046229e-07
+        },
+        {
+          "tactic": "simp [Nat.div_le_div_right] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.6713147483658526e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.dvd_sub'",
+      "num_programs": 42,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 1.5360540775122711e-07
+        },
+        {
+          "tactic": "simp [Nat.totient_dvd_of_dvd] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.578205213228735e-08
+        },
+        {
+          "tactic": "simp [Nat.div_dvd_of_dvd] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.578205213228735e-08
+        },
+        {
+          "tactic": "simp [Nat.totient_dvd_of_dvd] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.5655962064449764e-08
+        },
+        {
+          "tactic": "simp [Nat.div_dvd_of_dvd] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.5655962064449764e-08
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.eq_of_dvd_of_lt_two_mul",
+      "num_programs": 41,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 7.034722887930179e-08
+        },
+        {
+          "tactic": "simp [Nat.dvd_div_of_mul_dvd]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.9277822118091916e-08
+        },
+        {
+          "tactic": "simp [Nat.eq_zero_of_dvd_of_lt] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.4749528299996221e-08
+        },
+        {
+          "tactic": "simp [Nat.le_of_lt_add_of_dvd]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.139062449362186e-08
+        },
+        {
+          "tactic": "simp [Nat.factorization_centralBinom_eq_zero_of_two_mul_lt]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.139062449362186e-08
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.findGreatest_eq_iff",
+      "num_programs": 55,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Nat.find_eq_iff] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.00012346306260279446
+        },
+        {
+          "tactic": "simp [Nat.find_eq_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 8.319489968336069e-05
+        },
+        {
+          "tactic": "simp [Nat.findGreatest_eq_zero_iff] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 5.9375223402985117e-05
+        },
+        {
+          "tactic": "simp [Nat.findGreatest_pos] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 3.09775660373703e-05
+        },
+        {
+          "tactic": "simp [Nat.find_eq_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 9.470703946434922e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.findGreatest_mono_left",
+      "num_programs": 40,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 2.5377157767191785e-05
+        },
+        {
+          "tactic": "simp [Nat.count_mono_left] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.002764007653828e-05
+        },
+        {
+          "tactic": "simp [Nat.count_mono_left] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.0991878039689535e-05
+        },
+        {
+          "tactic": "simp [Nat.findGreatest_mono_right] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 4.882527252839138e-06
+        },
+        {
+          "tactic": "simp [Nat.findGreatest]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 4.403373143324831e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.findGreatest_mono_right",
+      "num_programs": 41,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 7.743117471736988e-05
+        },
+        {
+          "tactic": "simp [Nat.findGreatest]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 1.981550853703179e-05
+        },
+        {
+          "tactic": "simp [Nat.findGreatest_mono_left] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.2494208603661584e-05
+        },
+        {
+          "tactic": "simp [Nat.findGreatest_mono] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.072009189244343e-05
+        },
+        {
+          "tactic": "simp [Nat.findGreatest_mono_left] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 7.6099821138648975e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.findGreatest_spec",
+      "num_programs": 44,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 9.450335935895992e-05
+        },
+        {
+          "tactic": "simp [Nat.le_findGreatest] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.311912030527766e-05
+        },
+        {
+          "tactic": "simp [Nat.le_findGreatest] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.738592948790787e-05
+        },
+        {
+          "tactic": "simp [Nat.findGreatest_le] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.6020415845131738e-05
+        },
+        {
+          "tactic": "simp [Nat.findGreatest_zero] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.6020415845131738e-05
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.find_add",
+      "num_programs": 47,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [PartENat.find]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 0.0001922859504683873
+        },
+        {
+          "tactic": "simp [Nat.find_le] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.5436951769231874e-06
+        },
+        {
+          "tactic": "simp [Nat.lt_find_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 8.094155385380807e-07
+        },
+        {
+          "tactic": "simp [Nat.find_lt_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 5.268676815928094e-07
+        },
+        {
+          "tactic": "simp [Nat.find_le_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 5.268676815928094e-07
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.find_eq_iff",
+      "num_programs": 55,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [PartENat.find]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 7.422470844657925e-05
+        },
+        {
+          "tactic": "simp [Nat.findGreatest_eq_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.6296551375720426e-05
+        },
+        {
+          "tactic": "simp [Nat.lt_find_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 7.716436723356706e-06
+        },
+        {
+          "tactic": "simp [Nat.le_find_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.935864725687958e-06
+        },
+        {
+          "tactic": "simp [Nat.findGreatest_eq_iff] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.1395731185850344e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.leRecOn_injective",
+      "num_programs": 47,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 6.25634143458849e-06
+        },
+        {
+          "tactic": "simp [Nat.leRecOn_self]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 7.581633153193496e-07
+        },
+        {
+          "tactic": "simp [Nat.leRecOn_succ_left]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 7.581633153193496e-07
+        },
+        {
+          "tactic": "simp [Nat.leRecOn_succ]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.9784194157991052e-07
+        },
+        {
+          "tactic": "simp [Nat.leRecOn_succ'] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.856919916926819e-08
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.leRecOn_surjective",
+      "num_programs": 47,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 0.0009006655948847907
+        },
+        {
+          "tactic": "simp [Nat.leRecOn_injective] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.74602880654902e-05
+        },
+        {
+          "tactic": "simp [Nat.leRecOn_injective] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.095489151484243e-05
+        },
+        {
+          "tactic": "simp [Nat.leRecOn_succ'] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 4.316779121910784e-06
+        },
+        {
+          "tactic": "simp [Nat.leRecOn_trans] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.420675561710097e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.le_induction",
+      "num_programs": 45,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 1.563654546603653e-07
+        },
+        {
+          "tactic": "simp [Nat.modEq_and_modEq_iff_modEq_mul]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 5.133043326930064e-08
+        },
+        {
+          "tactic": "simp [Nat.count_strict_mono]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 5.133043326930064e-08
+        },
+        {
+          "tactic": "simp [Nat.primeFactors_mono]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 5.133043326930064e-08
+        },
+        {
+          "tactic": "simp [Nat.Upto.succ]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 4.029599271948295e-08
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.not_dvd_of_pos_of_lt",
+      "num_programs": 39,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Nat.not_dvd_of_between_consec_multiples] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.3811081660900481e-05
+        },
+        {
+          "tactic": "simp [Nat.not_prime_of_dvd_of_lt] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.0338019004176403e-05
+        },
+        {
+          "tactic": "simp [Nat.not_prime_of_dvd_of_ne] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 9.621773800735832e-06
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 6.4895191271908364e-06
+        },
+        {
+          "tactic": "simp [Nat.eq_zero_of_dvd_of_lt]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.1172185832073204e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.not_two_dvd_bit1",
+      "num_programs": 46,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Nat.bit1_mod_two] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 7.466789326875294e-06
+        },
+        {
+          "tactic": "simp [Nat.bit1_eq_bit1] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 4.3580720739203475e-06
+        },
+        {
+          "tactic": "simp [Nat.bit1_le] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 3.710709962838796e-06
+        },
+        {
+          "tactic": "simp [Nat.bit1_eq_bit1] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 3.300361066003882e-06
+        },
+        {
+          "tactic": "simp [Nat.bit1_le] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 3.300361066003882e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.one_lt_mul_iff",
+      "num_programs": 54,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Nat.lt_mul_iff_one_lt_left] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 5.0732313456162985e-05
+        },
+        {
+          "tactic": "simp [Nat.lt_mul_iff_one_lt_right] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.1429600543508531e-05
+        },
+        {
+          "tactic": "simp [Nat.lt_mul_iff_one_lt_left] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.1363416700749775e-05
+        },
+        {
+          "tactic": "simp [Nat.lt_one_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 9.226323945238441e-06
+        },
+        {
+          "tactic": "simp [Nat.add_eq_one_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 4.19791268176869e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.sqrt.iter_sq_le",
+      "num_programs": 38,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Nat.le_sqrt]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 2.0826942750493517e-07
+        },
+        {
+          "tactic": "simp [Nat.exists_infinite_primes]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 2.0826942750493517e-07
+        },
+        {
+          "tactic": "simp [Nat.sqrt_le_sqrt]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.8685373918560492e-07
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 9.130338726981335e-08
+        },
+        {
+          "tactic": "simp [Nat.sqrt.lt_iter_succ_sq] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 2.0290636000369855e-08
+        }
+      ]
+    },
+    {
+      "full_name": "Nat.sqrt.lt_iter_succ_sq",
+      "num_programs": 38,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Nat.sqrt.iter_sq_le] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.7331175661206041e-06
+        },
+        {
+          "tactic": "simp [Nat.sqrt.iter_sq_le] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.3110520771532178e-06
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 1.171823011296363e-06
+        },
+        {
+          "tactic": "simp [Nat.lt_succ_sqrt] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.1669925057784218e-06
+        },
+        {
+          "tactic": "simp [Nat.lt_succ_sqrt] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.0006598629287878e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Set.Nonempty.eq_univ",
+      "num_programs": 41,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.empty_ne_univ] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.26319478476223634
+        },
+        {
+          "tactic": "simp [Set.empty_ne_univ] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.07408067075698603
+        },
+        {
+          "tactic": "simp [Set.nonempty_iff_univ_nonempty] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.028428588603489645
+        },
+        {
+          "tactic": "simp [Set.univ_nonempty] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.015673802913119945
+        },
+        {
+          "tactic": "simp [Set.smul_univ]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.010284219177275908
+        }
+      ]
+    },
+    {
+      "full_name": "Set.compl_union_self",
+      "num_programs": 23,
+      "num_successes": 1,
+      "num_credited": 1,
+      "best_success_rank": {
+        "original_order": 23,
+        "random_expected": 12.0,
+        "heuristic": 5,
+        "logistic": 3,
+        "sgd": 1,
+        "hgb": 1
+      },
+      "best_credit_rank": {
+        "original_order": 23,
+        "heuristic": 5,
+        "logistic": 3,
+        "sgd": 1,
+        "hgb": 1
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.union_eq_compl_compl_inter_compl]",
+          "family": "d1_simp_lemma",
+          "solved": true,
+          "score_hgb": 1.7603988658913237e-07
+        },
+        {
+          "tactic": "simp [Set.inter_eq_compl_compl_union_compl]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.7603988658913237e-07
+        },
+        {
+          "tactic": "exact Set.union_eq_compl_compl_inter_compl",
+          "family": "d1_exact",
+          "solved": false,
+          "score_hgb": 1.677837317814061e-08
+        },
+        {
+          "tactic": "rw [Set.inter_eq_compl_compl_union_compl]",
+          "family": "d1_rw_lemma",
+          "solved": false,
+          "score_hgb": 1.677837317814061e-08
+        },
+        {
+          "tactic": "simpa [Set.inter_eq_compl_compl_union_compl]",
+          "family": "d1_simpa_lemma",
+          "solved": false,
+          "score_hgb": 1.677837317814061e-08
+        }
+      ]
+    },
+    {
+      "full_name": "Set.diff_singleton_sSubset",
+      "num_programs": 48,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.subset_diff_singleton]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 2.4397902455208155e-05
+        },
+        {
+          "tactic": "simp [Set.mem_diff_singleton]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 2.11182838023562e-05
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 1.1325185668068052e-05
+        },
+        {
+          "tactic": "simp [Set.diff_singleton_subset_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.1015429843391177e-05
+        },
+        {
+          "tactic": "simp [Set.ssubset_iff_sdiff_singleton] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 1.6579504579690563e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Set.disjoint_iff_forall_ne",
+      "num_programs": 42,
+      "num_successes": 1,
+      "num_credited": 1,
+      "best_success_rank": {
+        "original_order": 42,
+        "random_expected": 21.5,
+        "heuristic": 8,
+        "logistic": 3,
+        "sgd": 14,
+        "hgb": 2
+      },
+      "best_credit_rank": {
+        "original_order": 42,
+        "heuristic": 8,
+        "logistic": 3,
+        "sgd": 14,
+        "hgb": 2
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [AList.Disjoint, Multiset.Disjoint]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 0.0910827588520466
+        },
+        {
+          "tactic": "simp [Set.disjoint_left] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": true,
+          "score_hgb": 4.804110219047795e-05
+        },
+        {
+          "tactic": "simp [Set.disjoint_left]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 3.150538669299431e-05
+        },
+        {
+          "tactic": "simp [Set.not_disjoint_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 2.8724992005517225e-05
+        },
+        {
+          "tactic": "simp [Set.not_disjoint_iff] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 6.433936419942593e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Set.disjoint_right",
+      "num_programs": 46,
+      "num_successes": 1,
+      "num_credited": 1,
+      "best_success_rank": {
+        "original_order": 46,
+        "random_expected": 23.5,
+        "heuristic": 5,
+        "logistic": 6,
+        "sgd": 17,
+        "hgb": 4
+      },
+      "best_credit_rank": {
+        "original_order": 46,
+        "heuristic": 5,
+        "logistic": 6,
+        "sgd": 17,
+        "hgb": 4
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.disjoint_left]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.14648987425429252
+        },
+        {
+          "tactic": "simp [Finset.disjoint_right] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 0.0929824580056812
+        },
+        {
+          "tactic": "simp [Finset.disjoint_right] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.0929824580056812
+        },
+        {
+          "tactic": "simp [Set.disjoint_left] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": true,
+          "score_hgb": 0.04321638218221374
+        },
+        {
+          "tactic": "simp [Finset.disjoint_right]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.03405808209279445
+        }
+      ]
+    },
+    {
+      "full_name": "Set.disjoint_singleton_left",
+      "num_programs": 19,
+      "num_successes": 1,
+      "num_credited": 1,
+      "best_success_rank": {
+        "original_order": 19,
+        "random_expected": 10.0,
+        "heuristic": 3,
+        "logistic": 2,
+        "sgd": 19,
+        "hgb": 3
+      },
+      "best_credit_rank": {
+        "original_order": 19,
+        "heuristic": 3,
+        "logistic": 2,
+        "sgd": 19,
+        "hgb": 3
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Finset.disjoint_singleton_left]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.004363968495235026
+        },
+        {
+          "tactic": "simp [AList.Disjoint, Multiset.Disjoint]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 0.0002905996177144851
+        },
+        {
+          "tactic": "simp [Set.disjoint_left]",
+          "family": "d1_simp_lemma",
+          "solved": true,
+          "score_hgb": 3.710339786926666e-05
+        },
+        {
+          "tactic": "simp [Set.disjoint_singleton]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 1.2212224961352748e-05
+        },
+        {
+          "tactic": "simpa using Set.disjoint_left",
+          "family": "d1_simpa_using",
+          "solved": false,
+          "score_hgb": 4.755949599816746e-06
+        }
+      ]
+    },
+    {
+      "full_name": "Set.insert_subset_insert_iff",
+      "num_programs": 52,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [AList.insert]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 0.010262805551503591
+        },
+        {
+          "tactic": "simp [Set.insert_subset]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.00020194967773334158
+        },
+        {
+          "tactic": "simp [Set.subset_insert_iff]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.00016076720685920105
+        },
+        {
+          "tactic": "simp [Set.ssubset_iff_insert]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 0.0001141999591028386
+        },
+        {
+          "tactic": "simp [Set.insert_subset_iff] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 0.0001109449387467193
+        }
+      ]
+    },
+    {
+      "full_name": "Set.nonempty_compl_of_nontrivial",
+      "num_programs": 45,
+      "num_successes": 0,
+      "num_credited": 0,
+      "best_success_rank": {
+        "original_order": null,
+        "random_expected": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "best_credit_rank": {
+        "original_order": null,
+        "heuristic": null,
+        "logistic": null,
+        "sgd": null,
+        "hgb": null
+      },
+      "top_predictions": [
+        {
+          "tactic": "simp [Set.Nontrivial, Cycle.Nontrivial, Finset.Nonempty, Finset.Nontrivial]",
+          "family": "def_unfold_simp",
+          "solved": false,
+          "score_hgb": 0.00018370705663866424
+        },
+        {
+          "tactic": "simp [Set.nonempty_compl] <;> aesop",
+          "family": "d2_simp_aesop",
+          "solved": false,
+          "score_hgb": 8.211425262339171e-05
+        },
+        {
+          "tactic": "simp [Set.nonempty_compl] <;> simp_all",
+          "family": "d2_simp_simpall",
+          "solved": false,
+          "score_hgb": 1.839303456316009e-05
+        },
+        {
+          "tactic": "aesop",
+          "family": "d1_aesop",
+          "solved": false,
+          "score_hgb": 8.377738088167583e-06
+        },
+        {
+          "tactic": "simp [Set.compl_empty]",
+          "family": "d1_simp_lemma",
+          "solved": false,
+          "score_hgb": 7.5888660679392165e-06
+        }
+      ]
+    }
+  ]
+}

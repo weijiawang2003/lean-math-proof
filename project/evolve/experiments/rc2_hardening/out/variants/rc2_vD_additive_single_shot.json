@@ -1,0 +1,12 @@
+{
+  "variant": "D_additive_single_shot",
+  "kind": "external_additive_evaluator",
+  "rule": "candidate_finished = literal_rc1_finished OR (gate fires AND single-shot `simp [Set.ite]` closes)",
+  "gate": {
+    "name_prefix": [
+      "Set.ite"
+    ]
+  },
+  "perturbation": "none (no full-wrapper search; cannot reorder base policy)",
+  "note": "Cleanest attribution; recovers exactly the single-shot wins. Not a deployable eval_rollout_all wrapper \u2014 an external eval mode."
+}

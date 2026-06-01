@@ -1,0 +1,5831 @@
+{
+  "generated_by": "scripts/sf5_generate_retrieval_probes.py",
+  "limits": {
+    "max_lemmas": 10,
+    "max_probes": 40
+  },
+  "num_targets": 20,
+  "total_probes": 800,
+  "theorems": [
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "namespace": "Multiset",
+      "cluster_id": "Multiset__iff__iff",
+      "goal_text": "theorem toFinset_eq_singleton_iff (s : Multiset α) (a : α) : s.toFinset = {a} ↔ card s ≠ 0 ∧ s = card s • {a}",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp [Multiset.toFinset, Finset.card, List.toFinset, Option.toFinset]",
+          "family": "def_unfold_simp",
+          "lemma": "Multiset.toFinset+Finset.card+List.toFinset+Option.toFinset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Multiset.toFinset]",
+          "family": "def_unfold_simp",
+          "lemma": "Multiset.toFinset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Finset.card]",
+          "family": "def_unfold_simp",
+          "lemma": "Finset.card",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [List.toFinset]",
+          "family": "def_unfold_simp",
+          "lemma": "List.toFinset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Multiset.toFinset_card_eq_card_iff_nodup",
+          "family": "exact",
+          "lemma": "Multiset.toFinset_card_eq_card_iff_nodup",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Multiset.toFinset_card_eq_card_iff_nodup",
+          "family": "simpa_using",
+          "lemma": "Multiset.toFinset_card_eq_card_iff_nodup",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_card_eq_card_iff_nodup]",
+          "family": "simp_lemma",
+          "lemma": "Multiset.toFinset_card_eq_card_iff_nodup",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Multiset.toFinset_card_eq_card_iff_nodup]",
+          "family": "rw_lemma",
+          "lemma": "Multiset.toFinset_card_eq_card_iff_nodup",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Multiset.toFinset_card_eq_card_iff_nodup])",
+          "family": "aesop_add_simp",
+          "lemma": "Multiset.toFinset_card_eq_card_iff_nodup",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Multiset.toFinset_singleton",
+          "family": "exact",
+          "lemma": "Multiset.toFinset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Multiset.toFinset_singleton",
+          "family": "simpa_using",
+          "lemma": "Multiset.toFinset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Multiset.toFinset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Multiset.toFinset_singleton]",
+          "family": "rw_lemma",
+          "lemma": "Multiset.toFinset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Multiset.toFinset_singleton])",
+          "family": "aesop_add_simp",
+          "lemma": "Multiset.toFinset_singleton",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Multiset.mem_toFinset",
+          "family": "exact",
+          "lemma": "Multiset.mem_toFinset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Multiset.mem_toFinset",
+          "family": "simpa_using",
+          "lemma": "Multiset.mem_toFinset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Multiset.mem_toFinset]",
+          "family": "simp_lemma",
+          "lemma": "Multiset.mem_toFinset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Multiset.mem_toFinset]",
+          "family": "rw_lemma",
+          "lemma": "Multiset.mem_toFinset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Multiset.mem_toFinset])",
+          "family": "aesop_add_simp",
+          "lemma": "Multiset.mem_toFinset",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Multiset.toFinset_nsmul",
+          "family": "exact",
+          "lemma": "Multiset.toFinset_nsmul",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Multiset.toFinset_nsmul",
+          "family": "simpa_using",
+          "lemma": "Multiset.toFinset_nsmul",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_nsmul]",
+          "family": "simp_lemma",
+          "lemma": "Multiset.toFinset_nsmul",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Multiset.toFinset_nsmul]",
+          "family": "rw_lemma",
+          "lemma": "Multiset.toFinset_nsmul",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Multiset.toFinset_eq_empty",
+          "family": "exact",
+          "lemma": "Multiset.toFinset_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Multiset.toFinset_eq_empty",
+          "family": "simpa_using",
+          "lemma": "Multiset.toFinset_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_eq_empty]",
+          "family": "simp_lemma",
+          "lemma": "Multiset.toFinset_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Multiset.toFinset_eq_empty]",
+          "family": "rw_lemma",
+          "lemma": "Multiset.toFinset_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Multiset.toFinset",
+          "family": "exact",
+          "lemma": "Multiset.toFinset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Multiset.toFinset",
+          "family": "simpa_using",
+          "lemma": "Multiset.toFinset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Multiset.toFinset_subset",
+          "family": "exact",
+          "lemma": "Multiset.toFinset_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Multiset.toFinset_subset",
+          "family": "simpa_using",
+          "lemma": "Multiset.toFinset_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_subset]",
+          "family": "simp_lemma",
+          "lemma": "Multiset.toFinset_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Multiset.toFinset_subset]",
+          "family": "rw_lemma",
+          "lemma": "Multiset.toFinset_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Multiset.toFinset_nonempty",
+          "family": "exact",
+          "lemma": "Multiset.toFinset_nonempty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Multiset.toFinset_nonempty",
+          "family": "simpa_using",
+          "lemma": "Multiset.toFinset_nonempty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Multiset.toFinset_nonempty]",
+          "family": "simp_lemma",
+          "lemma": "Multiset.toFinset_nonempty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Multiset.toFinset_nonempty]",
+          "family": "rw_lemma",
+          "lemma": "Multiset.toFinset_nonempty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Multiset.dedup_card_eq_card_iff_nodup",
+          "family": "exact",
+          "lemma": "Multiset.dedup_card_eq_card_iff_nodup",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem subset_pair_iff_eq {x y : α} : s ⊆ {x, y} ↔ s = ∅ ∨ s = {x} ∨ s = {y} ∨ s = {x, y}",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inclusion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.inclusion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.fintypeSubset]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.fintypeSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.unionEqSigmaOfDisjoint]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_pair_iff_eq",
+          "family": "exact",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_pair_iff_eq",
+          "family": "simpa_using",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_pair_iff_eq]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.subset_pair_iff_eq]",
+          "family": "rw_lemma",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.subset_pair_iff_eq])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_pair_iff",
+          "family": "exact",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_pair_iff",
+          "family": "simpa_using",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_pair_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.subset_pair_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.subset_pair_iff])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.pair_eq_pair_iff",
+          "family": "exact",
+          "lemma": "Set.pair_eq_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.pair_eq_pair_iff",
+          "family": "simpa_using",
+          "lemma": "Set.pair_eq_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.pair_eq_pair_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.pair_eq_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.pair_eq_pair_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.pair_eq_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.pair_eq_pair_iff])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.pair_eq_pair_iff",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_singleton_iff_eq",
+          "family": "exact",
+          "lemma": "Set.subset_singleton_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_singleton_iff_eq",
+          "family": "simpa_using",
+          "lemma": "Set.subset_singleton_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_singleton_iff_eq]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_singleton_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.subset_singleton_iff_eq]",
+          "family": "rw_lemma",
+          "lemma": "Set.subset_singleton_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.pair_subset_iff",
+          "family": "exact",
+          "lemma": "Set.pair_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.pair_subset_iff",
+          "family": "simpa_using",
+          "lemma": "Set.pair_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.pair_subset_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.pair_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.pair_subset_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.pair_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.nontrivial_iff_pair_subset",
+          "family": "exact",
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.nontrivial_iff_pair_subset",
+          "family": "simpa_using",
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.nontrivial_iff_pair_subset]",
+          "family": "simp_lemma",
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.nontrivial_iff_pair_subset]",
+          "family": "rw_lemma",
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.pair_eq_singleton",
+          "family": "exact",
+          "lemma": "Set.pair_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.pair_eq_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.pair_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.pair_eq_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.pair_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.pair_eq_singleton]",
+          "family": "rw_lemma",
+          "lemma": "Set.pair_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.pair_subset",
+          "family": "exact",
+          "lemma": "Set.pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.pair_subset",
+          "family": "simpa_using",
+          "lemma": "Set.pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem antitoneOn_iff_antitone : AntitoneOn f s ↔ Antitone fun a : s => f a",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Antitone, AntitoneOn]",
+          "family": "def_unfold_simp",
+          "lemma": "Antitone+AntitoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Antitone]",
+          "family": "def_unfold_simp",
+          "lemma": "Antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [AntitoneOn]",
+          "family": "def_unfold_simp",
+          "lemma": "AntitoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inclusion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.inclusion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "family": "exact",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "family": "simpa_using",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le]",
+          "family": "simp_lemma",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le]",
+          "family": "rw_lemma",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "family": "exact",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "family": "simpa_using",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt]",
+          "family": "simp_lemma",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt]",
+          "family": "rw_lemma",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.EqOn.congr_antitoneOn",
+          "family": "exact",
+          "lemma": "Set.EqOn.congr_antitoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.EqOn.congr_antitoneOn",
+          "family": "simpa_using",
+          "lemma": "Set.EqOn.congr_antitoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.EqOn.congr_antitoneOn]",
+          "family": "simp_lemma",
+          "lemma": "Set.EqOn.congr_antitoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.EqOn.congr_antitoneOn]",
+          "family": "rw_lemma",
+          "lemma": "Set.EqOn.congr_antitoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.EqOn.congr_antitoneOn])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.EqOn.congr_antitoneOn",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.antitoneOn_singleton",
+          "family": "exact",
+          "lemma": "Set.antitoneOn_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.antitoneOn_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.antitoneOn_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.antitoneOn_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.antitoneOn_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.Subsingleton.antitoneOn",
+          "family": "exact",
+          "lemma": "Set.Subsingleton.antitoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.Subsingleton.antitoneOn",
+          "family": "simpa_using",
+          "lemma": "Set.Subsingleton.antitoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.Subsingleton.antitoneOn]",
+          "family": "simp_lemma",
+          "lemma": "Set.Subsingleton.antitoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact antitoneOn_dual_iff",
+          "family": "exact",
+          "lemma": "antitoneOn_dual_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using antitoneOn_dual_iff",
+          "family": "simpa_using",
+          "lemma": "antitoneOn_dual_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [antitoneOn_dual_iff]",
+          "family": "simp_lemma",
+          "lemma": "antitoneOn_dual_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [antitoneOn_dual_iff]",
+          "family": "rw_lemma",
+          "lemma": "antitoneOn_dual_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.strictAntiOn_iff_strictAnti",
+          "family": "exact",
+          "lemma": "Set.strictAntiOn_iff_strictAnti",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.strictAntiOn_iff_strictAnti",
+          "family": "simpa_using",
+          "lemma": "Set.strictAntiOn_iff_strictAnti",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.strictAntiOn_iff_strictAnti]",
+          "family": "simp_lemma",
+          "lemma": "Set.strictAntiOn_iff_strictAnti",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.strictAntiOn_iff_strictAnti]",
+          "family": "rw_lemma",
+          "lemma": "Set.strictAntiOn_iff_strictAnti",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.mem_def",
+          "family": "exact",
+          "lemma": "Set.mem_def",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.mem_def",
+          "family": "simpa_using",
+          "lemma": "Set.mem_def",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.mem_def]",
+          "family": "simp_lemma",
+          "lemma": "Set.mem_def",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem diff_singleton_subset_iff {x : α} {s t : Set α} : s \\ {x} ⊆ t ↔ s ⊆ insert x t",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inclusion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.inclusion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.fintypeSubset]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.fintypeSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.fintypeInsertOfMem]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.fintypeInsertOfMem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_insert_diff_singleton",
+          "family": "exact",
+          "lemma": "Set.subset_insert_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_insert_diff_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.subset_insert_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_insert_diff_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_insert_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.subset_insert_diff_singleton])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.subset_insert_diff_singleton",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.insert_diff_singleton",
+          "family": "exact",
+          "lemma": "Set.insert_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.insert_diff_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.insert_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.insert_diff_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.insert_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.insert_diff_singleton]",
+          "family": "rw_lemma",
+          "lemma": "Set.insert_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.insert_diff_singleton])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.insert_diff_singleton",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.insert_diff_eq_singleton",
+          "family": "exact",
+          "lemma": "Set.insert_diff_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.insert_diff_eq_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.insert_diff_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.insert_diff_eq_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.insert_diff_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.insert_diff_eq_singleton]",
+          "family": "rw_lemma",
+          "lemma": "Set.insert_diff_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.insert_diff_eq_singleton])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.insert_diff_eq_singleton",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_diff_singleton",
+          "family": "exact",
+          "lemma": "Set.subset_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_diff_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.subset_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_diff_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.diff_singleton_sSubset",
+          "family": "exact",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.diff_singleton_sSubset",
+          "family": "simpa_using",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.diff_singleton_sSubset]",
+          "family": "simp_lemma",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.diff_singleton_sSubset]",
+          "family": "rw_lemma",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.insert_diff_singleton_comm",
+          "family": "exact",
+          "lemma": "Set.insert_diff_singleton_comm",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.insert_diff_singleton_comm",
+          "family": "simpa_using",
+          "lemma": "Set.insert_diff_singleton_comm",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.insert_diff_singleton_comm]",
+          "family": "simp_lemma",
+          "lemma": "Set.insert_diff_singleton_comm",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.insert_diff_singleton_comm]",
+          "family": "rw_lemma",
+          "lemma": "Set.insert_diff_singleton_comm",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.mem_diff_singleton",
+          "family": "exact",
+          "lemma": "Set.mem_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.mem_diff_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.mem_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.mem_diff_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.mem_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.mem_diff_singleton]",
+          "family": "rw_lemma",
+          "lemma": "Set.mem_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.singleton_subset_singleton",
+          "family": "exact",
+          "lemma": "Set.singleton_subset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.singleton_subset_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.singleton_subset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.singleton_subset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.singleton_subset_singleton]",
+          "family": "rw_lemma",
+          "lemma": "Set.singleton_subset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__ite_if__subset",
+      "goal_text": "⊢ t.ite s₁ s₂ = s₁ ∪ s₂ \\ t",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.inter_subset_ite, Set.ite_inter, Set.ite, Set.ite_univ, Set.ite_mono, Set.ite_right]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inter_subset_ite, Set.ite_inter, Set.ite, Set.ite_univ]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.ite",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.unionEqSigmaOfDisjoint]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.sigmaToiUnion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.sigmaToiUnion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_left",
+          "family": "exact",
+          "lemma": "Set.ite_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_left",
+          "family": "simpa_using",
+          "lemma": "Set.ite_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_left]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_left]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ite_left])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ite_left",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_eq_of_subset_right",
+          "family": "exact",
+          "lemma": "Set.ite_eq_of_subset_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_eq_of_subset_right",
+          "family": "simpa_using",
+          "lemma": "Set.ite_eq_of_subset_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_eq_of_subset_right]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_eq_of_subset_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_eq_of_subset_right]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_eq_of_subset_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ite_eq_of_subset_right])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ite_eq_of_subset_right",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_subset_union",
+          "family": "exact",
+          "lemma": "Set.ite_subset_union",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_subset_union",
+          "family": "simpa_using",
+          "lemma": "Set.ite_subset_union",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_subset_union]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_subset_union",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ite_subset_union])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ite_subset_union",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_inter_of_inter_eq",
+          "family": "exact",
+          "lemma": "Set.ite_inter_of_inter_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_inter_of_inter_eq",
+          "family": "simpa_using",
+          "lemma": "Set.ite_inter_of_inter_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_inter_of_inter_eq]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_inter_of_inter_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_inter_of_inter_eq]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_inter_of_inter_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_empty_left",
+          "family": "exact",
+          "lemma": "Set.ite_empty_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_empty_left",
+          "family": "simpa_using",
+          "lemma": "Set.ite_empty_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_empty_left]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_empty_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_empty_left]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_empty_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite",
+          "family": "exact",
+          "lemma": "Set.ite",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite",
+          "family": "simpa_using",
+          "lemma": "Set.ite",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_inter",
+          "family": "exact",
+          "lemma": "Set.ite_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_inter",
+          "family": "simpa_using",
+          "lemma": "Set.ite_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_inter]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_inter]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_inter_inter",
+          "family": "exact",
+          "lemma": "Set.ite_inter_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_inter_inter",
+          "family": "simpa_using",
+          "lemma": "Set.ite_inter_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_inter_inter]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_inter_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_inter_inter]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_inter_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.iUnion_ite",
+          "family": "exact",
+          "lemma": "Set.iUnion_ite",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__ite_if__subset",
+      "goal_text": "⊢ t.ite s₁ s₂ = s₁ ∩ t ∪ s₂",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.inter_subset_ite, Set.ite_inter, Set.ite, Set.ite_univ, Set.ite_mono, Set.ite_right]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inter_subset_ite, Set.ite_inter, Set.ite, Set.ite_univ]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.ite",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.unionEqSigmaOfDisjoint]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.sigmaToiUnion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.sigmaToiUnion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_eq_of_subset_left",
+          "family": "exact",
+          "lemma": "Set.ite_eq_of_subset_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_eq_of_subset_left",
+          "family": "simpa_using",
+          "lemma": "Set.ite_eq_of_subset_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_eq_of_subset_left]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_eq_of_subset_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_eq_of_subset_left]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_eq_of_subset_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ite_eq_of_subset_left])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ite_eq_of_subset_left",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_left",
+          "family": "exact",
+          "lemma": "Set.ite_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_left",
+          "family": "simpa_using",
+          "lemma": "Set.ite_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_left]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_left]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ite_left])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ite_left",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_inter_of_inter_eq",
+          "family": "exact",
+          "lemma": "Set.ite_inter_of_inter_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_inter_of_inter_eq",
+          "family": "simpa_using",
+          "lemma": "Set.ite_inter_of_inter_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_inter_of_inter_eq]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_inter_of_inter_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_inter_of_inter_eq]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_inter_of_inter_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ite_inter_of_inter_eq])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ite_inter_of_inter_eq",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_right",
+          "family": "exact",
+          "lemma": "Set.ite_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_right",
+          "family": "simpa_using",
+          "lemma": "Set.ite_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_right]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_right]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_subset_union",
+          "family": "exact",
+          "lemma": "Set.ite_subset_union",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_subset_union",
+          "family": "simpa_using",
+          "lemma": "Set.ite_subset_union",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_subset_union]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_subset_union",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_inter",
+          "family": "exact",
+          "lemma": "Set.ite_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_inter",
+          "family": "simpa_using",
+          "lemma": "Set.ite_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_inter]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_inter]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_inter_inter",
+          "family": "exact",
+          "lemma": "Set.ite_inter_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_inter_inter",
+          "family": "simpa_using",
+          "lemma": "Set.ite_inter_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_inter_inter]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_inter_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_inter_inter]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_inter_inter",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_empty_right",
+          "family": "exact",
+          "lemma": "Set.ite_empty_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_empty_right",
+          "family": "simpa_using",
+          "lemma": "Set.ite_empty_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_empty_right]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_empty_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem monotoneOn_iff_monotone : MonotoneOn f s ↔ Monotone fun a : s => f a",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Monotone, MonotoneOn]",
+          "family": "def_unfold_simp",
+          "lemma": "Monotone+MonotoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Monotone]",
+          "family": "def_unfold_simp",
+          "lemma": "Monotone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [MonotoneOn]",
+          "family": "def_unfold_simp",
+          "lemma": "MonotoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inclusion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.inclusion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "family": "exact",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "family": "simpa_using",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le]",
+          "family": "simp_lemma",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le]",
+          "family": "rw_lemma",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "family": "exact",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "family": "simpa_using",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt]",
+          "family": "simp_lemma",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt]",
+          "family": "rw_lemma",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.monotoneOn_singleton",
+          "family": "exact",
+          "lemma": "Set.monotoneOn_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.monotoneOn_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.monotoneOn_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.monotoneOn_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.monotoneOn_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.monotoneOn_singleton])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.monotoneOn_singleton",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.EqOn.congr_monotoneOn",
+          "family": "exact",
+          "lemma": "Set.EqOn.congr_monotoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.EqOn.congr_monotoneOn",
+          "family": "simpa_using",
+          "lemma": "Set.EqOn.congr_monotoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.EqOn.congr_monotoneOn]",
+          "family": "simp_lemma",
+          "lemma": "Set.EqOn.congr_monotoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.EqOn.congr_monotoneOn]",
+          "family": "rw_lemma",
+          "lemma": "Set.EqOn.congr_monotoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.Subsingleton.monotoneOn",
+          "family": "exact",
+          "lemma": "Set.Subsingleton.monotoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.Subsingleton.monotoneOn",
+          "family": "simpa_using",
+          "lemma": "Set.Subsingleton.monotoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.Subsingleton.monotoneOn]",
+          "family": "simp_lemma",
+          "lemma": "Set.Subsingleton.monotoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.monotone_powerset",
+          "family": "exact",
+          "lemma": "Set.monotone_powerset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.monotone_powerset",
+          "family": "simpa_using",
+          "lemma": "Set.monotone_powerset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.monotone_powerset]",
+          "family": "simp_lemma",
+          "lemma": "Set.monotone_powerset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.monotone_setOf",
+          "family": "exact",
+          "lemma": "Set.monotone_setOf",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.monotone_setOf",
+          "family": "simpa_using",
+          "lemma": "Set.monotone_setOf",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.monotone_setOf]",
+          "family": "simp_lemma",
+          "lemma": "Set.monotone_setOf",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.monotone_preimage",
+          "family": "exact",
+          "lemma": "Set.monotone_preimage",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.monotone_preimage",
+          "family": "simpa_using",
+          "lemma": "Set.monotone_preimage",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.monotone_preimage]",
+          "family": "simp_lemma",
+          "lemma": "Set.monotone_preimage",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set._root_.MonotoneOn.monotone",
+          "family": "exact",
+          "lemma": "Set._root_.MonotoneOn.monotone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set._root_.MonotoneOn.monotone",
+          "family": "simpa_using",
+          "lemma": "Set._root_.MonotoneOn.monotone",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_le_le : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a ≤ b ∧ b ≤ c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [AntitoneOn, MonotoneOn]",
+          "family": "def_unfold_simp",
+          "lemma": "AntitoneOn+MonotoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [AntitoneOn]",
+          "family": "def_unfold_simp",
+          "lemma": "AntitoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [MonotoneOn]",
+          "family": "def_unfold_simp",
+          "lemma": "MonotoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.Accumulate]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.Accumulate",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "family": "exact",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "family": "simpa_using",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt]",
+          "family": "simp_lemma",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt]",
+          "family": "rw_lemma",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.monotoneOn_iff_monotone",
+          "family": "exact",
+          "lemma": "Set.monotoneOn_iff_monotone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.monotoneOn_iff_monotone",
+          "family": "simpa_using",
+          "lemma": "Set.monotoneOn_iff_monotone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.monotoneOn_iff_monotone]",
+          "family": "simp_lemma",
+          "lemma": "Set.monotoneOn_iff_monotone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.monotoneOn_iff_monotone]",
+          "family": "rw_lemma",
+          "lemma": "Set.monotoneOn_iff_monotone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.monotoneOn_iff_monotone])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.monotoneOn_iff_monotone",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.not_disjoint_iff",
+          "family": "exact",
+          "lemma": "Set.not_disjoint_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.not_disjoint_iff",
+          "family": "simpa_using",
+          "lemma": "Set.not_disjoint_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.not_disjoint_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.not_disjoint_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.not_disjoint_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.not_disjoint_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.not_disjoint_iff])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.not_disjoint_iff",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.not_subset_iff_exists_mem_not_mem",
+          "family": "exact",
+          "lemma": "Set.not_subset_iff_exists_mem_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.not_subset_iff_exists_mem_not_mem",
+          "family": "simpa_using",
+          "lemma": "Set.not_subset_iff_exists_mem_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.not_subset_iff_exists_mem_not_mem]",
+          "family": "simp_lemma",
+          "lemma": "Set.not_subset_iff_exists_mem_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.not_subset_iff_exists_mem_not_mem]",
+          "family": "rw_lemma",
+          "lemma": "Set.not_subset_iff_exists_mem_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ne_univ_iff_exists_not_mem",
+          "family": "exact",
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ne_univ_iff_exists_not_mem",
+          "family": "simpa_using",
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ne_univ_iff_exists_not_mem]",
+          "family": "simp_lemma",
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ne_univ_iff_exists_not_mem]",
+          "family": "rw_lemma",
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.not_not_mem",
+          "family": "exact",
+          "lemma": "Set.not_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.not_not_mem",
+          "family": "simpa_using",
+          "lemma": "Set.not_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.not_not_mem]",
+          "family": "simp_lemma",
+          "lemma": "Set.not_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.not_not_mem]",
+          "family": "rw_lemma",
+          "lemma": "Set.not_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.antitoneOn_iff_antitone",
+          "family": "exact",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.antitoneOn_iff_antitone",
+          "family": "simpa_using",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.antitoneOn_iff_antitone]",
+          "family": "simp_lemma",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.antitoneOn_iff_antitone]",
+          "family": "rw_lemma",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.mem_inter_iff",
+          "family": "exact",
+          "lemma": "Set.mem_inter_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_lt_lt : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a < b ∧ b < c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [AntitoneOn, MonotoneOn]",
+          "family": "def_unfold_simp",
+          "lemma": "AntitoneOn+MonotoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [AntitoneOn]",
+          "family": "def_unfold_simp",
+          "lemma": "AntitoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [MonotoneOn]",
+          "family": "def_unfold_simp",
+          "lemma": "MonotoneOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.fintypeInsertOfNotMem]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.fintypeInsertOfNotMem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "family": "exact",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "family": "simpa_using",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le]",
+          "family": "simp_lemma",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le]",
+          "family": "rw_lemma",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.monotoneOn_iff_monotone",
+          "family": "exact",
+          "lemma": "Set.monotoneOn_iff_monotone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.monotoneOn_iff_monotone",
+          "family": "simpa_using",
+          "lemma": "Set.monotoneOn_iff_monotone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.monotoneOn_iff_monotone]",
+          "family": "simp_lemma",
+          "lemma": "Set.monotoneOn_iff_monotone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.monotoneOn_iff_monotone]",
+          "family": "rw_lemma",
+          "lemma": "Set.monotoneOn_iff_monotone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.monotoneOn_iff_monotone])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.monotoneOn_iff_monotone",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.not_disjoint_iff",
+          "family": "exact",
+          "lemma": "Set.not_disjoint_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.not_disjoint_iff",
+          "family": "simpa_using",
+          "lemma": "Set.not_disjoint_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.not_disjoint_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.not_disjoint_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.not_disjoint_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.not_disjoint_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.not_disjoint_iff])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.not_disjoint_iff",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.not_subset_iff_exists_mem_not_mem",
+          "family": "exact",
+          "lemma": "Set.not_subset_iff_exists_mem_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.not_subset_iff_exists_mem_not_mem",
+          "family": "simpa_using",
+          "lemma": "Set.not_subset_iff_exists_mem_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.not_subset_iff_exists_mem_not_mem]",
+          "family": "simp_lemma",
+          "lemma": "Set.not_subset_iff_exists_mem_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.not_subset_iff_exists_mem_not_mem]",
+          "family": "rw_lemma",
+          "lemma": "Set.not_subset_iff_exists_mem_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ne_univ_iff_exists_not_mem",
+          "family": "exact",
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ne_univ_iff_exists_not_mem",
+          "family": "simpa_using",
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ne_univ_iff_exists_not_mem]",
+          "family": "simp_lemma",
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ne_univ_iff_exists_not_mem]",
+          "family": "rw_lemma",
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.not_not_mem",
+          "family": "exact",
+          "lemma": "Set.not_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.not_not_mem",
+          "family": "simpa_using",
+          "lemma": "Set.not_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.not_not_mem]",
+          "family": "simp_lemma",
+          "lemma": "Set.not_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.not_not_mem]",
+          "family": "rw_lemma",
+          "lemma": "Set.not_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.one_lt_encard_iff",
+          "family": "exact",
+          "lemma": "Set.one_lt_encard_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.one_lt_encard_iff",
+          "family": "simpa_using",
+          "lemma": "Set.one_lt_encard_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.one_lt_encard_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.one_lt_encard_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.one_lt_encard_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.one_lt_encard_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.antitoneOn_iff_antitone",
+          "family": "exact",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem pair_eq_pair_iff {x y z w : α} : ({x, y} : Set α) = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.Subsingleton]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.Subsingleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.unionEqSigmaOfDisjoint]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.EqOn]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.EqOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.pair_subset_iff",
+          "family": "exact",
+          "lemma": "Set.pair_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.pair_subset_iff",
+          "family": "simpa_using",
+          "lemma": "Set.pair_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.pair_subset_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.pair_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.pair_subset_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.pair_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.pair_subset_iff])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.pair_subset_iff",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.pair_eq_singleton",
+          "family": "exact",
+          "lemma": "Set.pair_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.pair_eq_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.pair_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.pair_eq_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.pair_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.pair_eq_singleton]",
+          "family": "rw_lemma",
+          "lemma": "Set.pair_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.pair_eq_singleton])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.pair_eq_singleton",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_pair_iff_eq",
+          "family": "exact",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_pair_iff_eq",
+          "family": "simpa_using",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_pair_iff_eq]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.subset_pair_iff_eq]",
+          "family": "rw_lemma",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.subset_pair_iff_eq])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_pair_iff",
+          "family": "exact",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_pair_iff",
+          "family": "simpa_using",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_pair_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.subset_pair_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.pairwise_pair",
+          "family": "exact",
+          "lemma": "Set.pairwise_pair",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.pairwise_pair",
+          "family": "simpa_using",
+          "lemma": "Set.pairwise_pair",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.pairwise_pair]",
+          "family": "simp_lemma",
+          "lemma": "Set.pairwise_pair",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.pairwise_pair]",
+          "family": "rw_lemma",
+          "lemma": "Set.pairwise_pair",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.nontrivial_iff_pair_subset",
+          "family": "exact",
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.nontrivial_iff_pair_subset",
+          "family": "simpa_using",
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.nontrivial_iff_pair_subset]",
+          "family": "simp_lemma",
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.nontrivial_iff_pair_subset]",
+          "family": "rw_lemma",
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.pair_diff_left",
+          "family": "exact",
+          "lemma": "Set.pair_diff_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.pair_diff_left",
+          "family": "simpa_using",
+          "lemma": "Set.pair_diff_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.pair_diff_left]",
+          "family": "simp_lemma",
+          "lemma": "Set.pair_diff_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.pair_diff_left]",
+          "family": "rw_lemma",
+          "lemma": "Set.pair_diff_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.pair_diff_right",
+          "family": "exact",
+          "lemma": "Set.pair_diff_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.pair_diff_right",
+          "family": "simpa_using",
+          "lemma": "Set.pair_diff_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ssubset_iff_insert",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem ssubset_iff_insert {s t : Set α} : s ⊂ t ↔ ∃ a ∉ s, insert a s ⊆ t",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.fintypeInsertOfNotMem]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.fintypeInsertOfNotMem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.fintypeInsertOfMem]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.fintypeInsertOfMem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inclusion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.inclusion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ssubset_insert",
+          "family": "exact",
+          "lemma": "Set.ssubset_insert",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ssubset_insert",
+          "family": "simpa_using",
+          "lemma": "Set.ssubset_insert",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ssubset_insert]",
+          "family": "simp_lemma",
+          "lemma": "Set.ssubset_insert",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ssubset_insert])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ssubset_insert",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ssubset_iff_of_subset",
+          "family": "exact",
+          "lemma": "Set.ssubset_iff_of_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ssubset_iff_of_subset",
+          "family": "simpa_using",
+          "lemma": "Set.ssubset_iff_of_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ssubset_iff_of_subset]",
+          "family": "simp_lemma",
+          "lemma": "Set.ssubset_iff_of_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ssubset_iff_of_subset]",
+          "family": "rw_lemma",
+          "lemma": "Set.ssubset_iff_of_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ssubset_iff_of_subset])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ssubset_iff_of_subset",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ssubset_iff_sdiff_singleton",
+          "family": "exact",
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ssubset_iff_sdiff_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ssubset_iff_sdiff_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ssubset_iff_sdiff_singleton]",
+          "family": "rw_lemma",
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ssubset_iff_sdiff_singleton])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.diff_singleton_sSubset",
+          "family": "exact",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.diff_singleton_sSubset",
+          "family": "simpa_using",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.diff_singleton_sSubset]",
+          "family": "simp_lemma",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.diff_singleton_sSubset]",
+          "family": "rw_lemma",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ssubset_singleton_iff",
+          "family": "exact",
+          "lemma": "Set.ssubset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ssubset_singleton_iff",
+          "family": "simpa_using",
+          "lemma": "Set.ssubset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ssubset_singleton_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.ssubset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ssubset_singleton_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.ssubset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.lt_iff_ssubset",
+          "family": "exact",
+          "lemma": "Set.lt_iff_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.lt_iff_ssubset",
+          "family": "simpa_using",
+          "lemma": "Set.lt_iff_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.lt_iff_ssubset]",
+          "family": "simp_lemma",
+          "lemma": "Set.lt_iff_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.lt_iff_ssubset]",
+          "family": "rw_lemma",
+          "lemma": "Set.lt_iff_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ssubset_univ_iff",
+          "family": "exact",
+          "lemma": "Set.ssubset_univ_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ssubset_univ_iff",
+          "family": "simpa_using",
+          "lemma": "Set.ssubset_univ_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ssubset_univ_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.ssubset_univ_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ssubset_univ_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.ssubset_univ_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ssubset_iff_subset_ne",
+          "family": "exact",
+          "lemma": "Set.ssubset_iff_subset_ne",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ssubset_iff_subset_ne",
+          "family": "simpa_using",
+          "lemma": "Set.ssubset_iff_subset_ne",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ssubset_iff_subset_ne]",
+          "family": "simp_lemma",
+          "lemma": "Set.ssubset_iff_subset_ne",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ssubset_iff_sdiff_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "lemma ssubset_iff_sdiff_singleton : s ⊂ t ↔ ∃ a ∈ t, s ⊆ t \\ {a}",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inclusion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.inclusion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.fintypeSubset]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.fintypeSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singletonMonoidHom]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.singletonMonoidHom",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.diff_singleton_sSubset",
+          "family": "exact",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.diff_singleton_sSubset",
+          "family": "simpa_using",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.diff_singleton_sSubset]",
+          "family": "simp_lemma",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.diff_singleton_sSubset]",
+          "family": "rw_lemma",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.diff_singleton_sSubset])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ssubset_singleton_iff",
+          "family": "exact",
+          "lemma": "Set.ssubset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ssubset_singleton_iff",
+          "family": "simpa_using",
+          "lemma": "Set.ssubset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ssubset_singleton_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.ssubset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ssubset_singleton_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.ssubset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ssubset_singleton_iff])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ssubset_singleton_iff",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ssubset_iff_of_subset",
+          "family": "exact",
+          "lemma": "Set.ssubset_iff_of_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ssubset_iff_of_subset",
+          "family": "simpa_using",
+          "lemma": "Set.ssubset_iff_of_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ssubset_iff_of_subset]",
+          "family": "simp_lemma",
+          "lemma": "Set.ssubset_iff_of_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ssubset_iff_of_subset]",
+          "family": "rw_lemma",
+          "lemma": "Set.ssubset_iff_of_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ssubset_iff_of_subset])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ssubset_iff_of_subset",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.lt_iff_ssubset",
+          "family": "exact",
+          "lemma": "Set.lt_iff_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.lt_iff_ssubset",
+          "family": "simpa_using",
+          "lemma": "Set.lt_iff_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.lt_iff_ssubset]",
+          "family": "simp_lemma",
+          "lemma": "Set.lt_iff_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.lt_iff_ssubset]",
+          "family": "rw_lemma",
+          "lemma": "Set.lt_iff_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.empty_ssubset_singleton",
+          "family": "exact",
+          "lemma": "Set.empty_ssubset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.empty_ssubset_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.empty_ssubset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.empty_ssubset_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.empty_ssubset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ssubset_univ_iff",
+          "family": "exact",
+          "lemma": "Set.ssubset_univ_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ssubset_univ_iff",
+          "family": "simpa_using",
+          "lemma": "Set.ssubset_univ_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ssubset_univ_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.ssubset_univ_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ssubset_univ_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.ssubset_univ_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ssubset_iff_subset_ne",
+          "family": "exact",
+          "lemma": "Set.ssubset_iff_subset_ne",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ssubset_iff_subset_ne",
+          "family": "simpa_using",
+          "lemma": "Set.ssubset_iff_subset_ne",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ssubset_iff_subset_ne]",
+          "family": "simp_lemma",
+          "lemma": "Set.ssubset_iff_subset_ne",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ssubset_iff_subset_ne]",
+          "family": "rw_lemma",
+          "lemma": "Set.ssubset_iff_subset_ne",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.eq_empty_of_ssubset_singleton",
+          "family": "exact",
+          "lemma": "Set.eq_empty_of_ssubset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.eq_empty_of_ssubset_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.eq_empty_of_ssubset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.eq_empty_of_ssubset_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.eq_empty_of_ssubset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem ssubset_singleton_iff {s : Set α} {x : α} : s ⊂ {x} ↔ s = ∅",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inclusion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.inclusion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singletonMonoidHom]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.singletonMonoidHom",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singletonMulHom]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.singletonMulHom",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ssubset_iff_sdiff_singleton",
+          "family": "exact",
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ssubset_iff_sdiff_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ssubset_iff_sdiff_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ssubset_iff_sdiff_singleton]",
+          "family": "rw_lemma",
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ssubset_iff_sdiff_singleton])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.diff_singleton_sSubset",
+          "family": "exact",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.diff_singleton_sSubset",
+          "family": "simpa_using",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.diff_singleton_sSubset]",
+          "family": "simp_lemma",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.diff_singleton_sSubset]",
+          "family": "rw_lemma",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.diff_singleton_sSubset])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.diff_singleton_sSubset",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.empty_ssubset_singleton",
+          "family": "exact",
+          "lemma": "Set.empty_ssubset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.empty_ssubset_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.empty_ssubset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.empty_ssubset_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.empty_ssubset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.empty_ssubset_singleton])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.empty_ssubset_singleton",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Finset.ssubset_singleton_iff",
+          "family": "exact",
+          "lemma": "Finset.ssubset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Finset.ssubset_singleton_iff",
+          "family": "simpa_using",
+          "lemma": "Finset.ssubset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Finset.ssubset_singleton_iff]",
+          "family": "simp_lemma",
+          "lemma": "Finset.ssubset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Finset.ssubset_singleton_iff]",
+          "family": "rw_lemma",
+          "lemma": "Finset.ssubset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.eq_empty_of_ssubset_singleton",
+          "family": "exact",
+          "lemma": "Set.eq_empty_of_ssubset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.eq_empty_of_ssubset_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.eq_empty_of_ssubset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.eq_empty_of_ssubset_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.eq_empty_of_ssubset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.eq_empty_of_ssubset_singleton]",
+          "family": "rw_lemma",
+          "lemma": "Set.eq_empty_of_ssubset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.empty_ssubset",
+          "family": "exact",
+          "lemma": "Set.empty_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.empty_ssubset",
+          "family": "simpa_using",
+          "lemma": "Set.empty_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.empty_ssubset]",
+          "family": "simp_lemma",
+          "lemma": "Set.empty_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.empty_ssubset]",
+          "family": "rw_lemma",
+          "lemma": "Set.empty_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.lt_iff_ssubset",
+          "family": "exact",
+          "lemma": "Set.lt_iff_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.lt_iff_ssubset",
+          "family": "simpa_using",
+          "lemma": "Set.lt_iff_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.lt_iff_ssubset]",
+          "family": "simp_lemma",
+          "lemma": "Set.lt_iff_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.lt_iff_ssubset]",
+          "family": "rw_lemma",
+          "lemma": "Set.lt_iff_ssubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ssubset_univ_iff",
+          "family": "exact",
+          "lemma": "Set.ssubset_univ_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ssubset_univ_iff",
+          "family": "simpa_using",
+          "lemma": "Set.ssubset_univ_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ssubset_univ_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.ssubset_univ_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem strictAntiOn_iff_strictAnti : StrictAntiOn f s ↔ StrictAnti fun a : s => f a",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [StrictAnti, StrictAntiOn]",
+          "family": "def_unfold_simp",
+          "lemma": "StrictAnti+StrictAntiOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [StrictAnti]",
+          "family": "def_unfold_simp",
+          "lemma": "StrictAnti",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [StrictAntiOn]",
+          "family": "def_unfold_simp",
+          "lemma": "StrictAntiOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inclusion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.inclusion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.antitoneOn_iff_antitone",
+          "family": "exact",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.antitoneOn_iff_antitone",
+          "family": "simpa_using",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.antitoneOn_iff_antitone]",
+          "family": "simp_lemma",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.antitoneOn_iff_antitone]",
+          "family": "rw_lemma",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.antitoneOn_iff_antitone])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.mem_def",
+          "family": "exact",
+          "lemma": "Set.mem_def",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.mem_def",
+          "family": "simpa_using",
+          "lemma": "Set.mem_def",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.mem_def]",
+          "family": "simp_lemma",
+          "lemma": "Set.mem_def",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.mem_def]",
+          "family": "rw_lemma",
+          "lemma": "Set.mem_def",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.mem_def])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.mem_def",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.mem_inter_iff",
+          "family": "exact",
+          "lemma": "Set.mem_inter_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.mem_inter_iff",
+          "family": "simpa_using",
+          "lemma": "Set.mem_inter_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.mem_inter_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.mem_inter_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.mem_inter_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.mem_inter_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.mem_inter_iff])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.mem_inter_iff",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ext_iff",
+          "family": "exact",
+          "lemma": "Set.ext_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ext_iff",
+          "family": "simpa_using",
+          "lemma": "Set.ext_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ext_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.ext_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ext_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.ext_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.not_not_mem",
+          "family": "exact",
+          "lemma": "Set.not_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.not_not_mem",
+          "family": "simpa_using",
+          "lemma": "Set.not_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.not_not_mem]",
+          "family": "simp_lemma",
+          "lemma": "Set.not_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.not_not_mem]",
+          "family": "rw_lemma",
+          "lemma": "Set.not_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.disjoint_left",
+          "family": "exact",
+          "lemma": "Set.disjoint_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.disjoint_left",
+          "family": "simpa_using",
+          "lemma": "Set.disjoint_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.disjoint_left]",
+          "family": "simp_lemma",
+          "lemma": "Set.disjoint_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.disjoint_left]",
+          "family": "rw_lemma",
+          "lemma": "Set.disjoint_left",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.disjoint_right",
+          "family": "exact",
+          "lemma": "Set.disjoint_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.disjoint_right",
+          "family": "simpa_using",
+          "lemma": "Set.disjoint_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.disjoint_right]",
+          "family": "simp_lemma",
+          "lemma": "Set.disjoint_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.disjoint_right]",
+          "family": "rw_lemma",
+          "lemma": "Set.disjoint_right",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.eq_univ_iff_forall",
+          "family": "exact",
+          "lemma": "Set.eq_univ_iff_forall",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem strictMonoOn_iff_strictMono : StrictMonoOn f s ↔ StrictMono fun a : s => f a",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [StrictMono, StrictMonoOn]",
+          "family": "def_unfold_simp",
+          "lemma": "StrictMono+StrictMonoOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [StrictMono]",
+          "family": "def_unfold_simp",
+          "lemma": "StrictMono",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [StrictMonoOn]",
+          "family": "def_unfold_simp",
+          "lemma": "StrictMonoOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inclusion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.inclusion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact strictMono_restrict",
+          "family": "exact",
+          "lemma": "strictMono_restrict",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using strictMono_restrict",
+          "family": "simpa_using",
+          "lemma": "strictMono_restrict",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [strictMono_restrict]",
+          "family": "simp_lemma",
+          "lemma": "strictMono_restrict",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [strictMono_restrict]",
+          "family": "rw_lemma",
+          "lemma": "strictMono_restrict",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [strictMono_restrict])",
+          "family": "aesop_add_simp",
+          "lemma": "strictMono_restrict",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.EqOn.congr_strictMonoOn",
+          "family": "exact",
+          "lemma": "Set.EqOn.congr_strictMonoOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.EqOn.congr_strictMonoOn",
+          "family": "simpa_using",
+          "lemma": "Set.EqOn.congr_strictMonoOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.EqOn.congr_strictMonoOn]",
+          "family": "simp_lemma",
+          "lemma": "Set.EqOn.congr_strictMonoOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.EqOn.congr_strictMonoOn]",
+          "family": "rw_lemma",
+          "lemma": "Set.EqOn.congr_strictMonoOn",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.EqOn.congr_strictMonoOn])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.EqOn.congr_strictMonoOn",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.strictMonoOn_singleton",
+          "family": "exact",
+          "lemma": "Set.strictMonoOn_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.strictMonoOn_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.strictMonoOn_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.strictMonoOn_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.strictMonoOn_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.strictMonoOn_singleton])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.strictMonoOn_singleton",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set._root_.StrictMonoOn.strictMono",
+          "family": "exact",
+          "lemma": "Set._root_.StrictMonoOn.strictMono",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set._root_.StrictMonoOn.strictMono",
+          "family": "simpa_using",
+          "lemma": "Set._root_.StrictMonoOn.strictMono",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set._root_.StrictMonoOn.strictMono]",
+          "family": "simp_lemma",
+          "lemma": "Set._root_.StrictMonoOn.strictMono",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ncard_strictMono",
+          "family": "exact",
+          "lemma": "Set.ncard_strictMono",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ncard_strictMono",
+          "family": "simpa_using",
+          "lemma": "Set.ncard_strictMono",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ncard_strictMono]",
+          "family": "simp_lemma",
+          "lemma": "Set.ncard_strictMono",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.encard_strictMono",
+          "family": "exact",
+          "lemma": "Set.encard_strictMono",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.encard_strictMono",
+          "family": "simpa_using",
+          "lemma": "Set.encard_strictMono",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.encard_strictMono]",
+          "family": "simp_lemma",
+          "lemma": "Set.encard_strictMono",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.antitoneOn_iff_antitone",
+          "family": "exact",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.antitoneOn_iff_antitone",
+          "family": "simpa_using",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.antitoneOn_iff_antitone]",
+          "family": "simp_lemma",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.antitoneOn_iff_antitone]",
+          "family": "rw_lemma",
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.strictAntiOn_iff_strictAnti",
+          "family": "exact",
+          "lemma": "Set.strictAntiOn_iff_strictAnti",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.strictAntiOn_iff_strictAnti",
+          "family": "simpa_using",
+          "lemma": "Set.strictAntiOn_iff_strictAnti",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.strictAntiOn_iff_strictAnti]",
+          "family": "simp_lemma",
+          "lemma": "Set.strictAntiOn_iff_strictAnti",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.strictAntiOn_iff_strictAnti]",
+          "family": "rw_lemma",
+          "lemma": "Set.strictAntiOn_iff_strictAnti",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.mem_def",
+          "family": "exact",
+          "lemma": "Set.mem_def",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem subset_insert_iff {s t : Set α} {x : α} : s ⊆ insert x t ↔ s ⊆ t ∨ (x ∈ s ∧ s \\ {x} ⊆ t)",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inclusion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.inclusion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.fintypeInsertOfMem]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.fintypeInsertOfMem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.fintypeInsertOfNotMem]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.fintypeInsertOfNotMem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.insert_subset_iff",
+          "family": "exact",
+          "lemma": "Set.insert_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.insert_subset_iff",
+          "family": "simpa_using",
+          "lemma": "Set.insert_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.insert_subset_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.insert_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.insert_subset_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.insert_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.insert_subset_iff])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.insert_subset_iff",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.diff_singleton_subset_iff",
+          "family": "exact",
+          "lemma": "Set.diff_singleton_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.diff_singleton_subset_iff",
+          "family": "simpa_using",
+          "lemma": "Set.diff_singleton_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.diff_singleton_subset_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.diff_singleton_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.diff_singleton_subset_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.diff_singleton_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.diff_singleton_subset_iff])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.diff_singleton_subset_iff",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_insert_diff_singleton",
+          "family": "exact",
+          "lemma": "Set.subset_insert_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_insert_diff_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.subset_insert_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_insert_diff_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_insert_diff_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.subset_insert_diff_singleton])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.subset_insert_diff_singleton",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_insert_iff_of_not_mem",
+          "family": "exact",
+          "lemma": "Set.subset_insert_iff_of_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_insert_iff_of_not_mem",
+          "family": "simpa_using",
+          "lemma": "Set.subset_insert_iff_of_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_insert_iff_of_not_mem]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_insert_iff_of_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.subset_insert_iff_of_not_mem]",
+          "family": "rw_lemma",
+          "lemma": "Set.subset_insert_iff_of_not_mem",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.insert_subset_insert_iff",
+          "family": "exact",
+          "lemma": "Set.insert_subset_insert_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.insert_subset_insert_iff",
+          "family": "simpa_using",
+          "lemma": "Set.insert_subset_insert_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.insert_subset_insert_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.insert_subset_insert_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.insert_subset_insert_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.insert_subset_insert_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.mem_insert_iff",
+          "family": "exact",
+          "lemma": "Set.mem_insert_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.mem_insert_iff",
+          "family": "simpa_using",
+          "lemma": "Set.mem_insert_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.mem_insert_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.mem_insert_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.mem_insert_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.mem_insert_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.exists_mem_insert",
+          "family": "exact",
+          "lemma": "Set.exists_mem_insert",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.exists_mem_insert",
+          "family": "simpa_using",
+          "lemma": "Set.exists_mem_insert",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.exists_mem_insert]",
+          "family": "simp_lemma",
+          "lemma": "Set.exists_mem_insert",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.exists_mem_insert]",
+          "family": "rw_lemma",
+          "lemma": "Set.exists_mem_insert",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ssubset_iff_insert",
+          "family": "exact",
+          "lemma": "Set.ssubset_iff_insert",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ssubset_iff_insert",
+          "family": "simpa_using",
+          "lemma": "Set.ssubset_iff_insert",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ssubset_iff_insert]",
+          "family": "simp_lemma",
+          "lemma": "Set.ssubset_iff_insert",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__ite_if__subset",
+      "goal_text": "theorem subset_ite {t s s' u : Set α} : u ⊆ t.ite s s' ↔ u ∩ t ⊆ s ∧ u \\ t ⊆ s'",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.inter_subset_ite, Set.ite_inter, Set.ite, Set.ite_univ, Set.ite_mono, Set.ite_right]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inter_subset_ite, Set.ite_inter, Set.ite, Set.ite_univ]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.ite",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inclusion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.inclusion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.fintypeSubset]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.fintypeSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.inter_subset_ite",
+          "family": "exact",
+          "lemma": "Set.inter_subset_ite",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.inter_subset_ite",
+          "family": "simpa_using",
+          "lemma": "Set.inter_subset_ite",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inter_subset_ite]",
+          "family": "simp_lemma",
+          "lemma": "Set.inter_subset_ite",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.inter_subset_ite])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.inter_subset_ite",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite",
+          "family": "exact",
+          "lemma": "Set.ite",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite",
+          "family": "simpa_using",
+          "lemma": "Set.ite",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ite])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ite",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_subset_union",
+          "family": "exact",
+          "lemma": "Set.ite_subset_union",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_subset_union",
+          "family": "simpa_using",
+          "lemma": "Set.ite_subset_union",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_subset_union]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_subset_union",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.ite_subset_union])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.ite_subset_union",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_diff_self",
+          "family": "exact",
+          "lemma": "Set.ite_diff_self",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_diff_self",
+          "family": "simpa_using",
+          "lemma": "Set.ite_diff_self",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_diff_self]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_diff_self",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_diff_self]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_diff_self",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_inter_self",
+          "family": "exact",
+          "lemma": "Set.ite_inter_self",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_inter_self",
+          "family": "simpa_using",
+          "lemma": "Set.ite_inter_self",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_inter_self]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_inter_self",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_inter_self]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_inter_self",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_univ",
+          "family": "exact",
+          "lemma": "Set.ite_univ",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_univ",
+          "family": "simpa_using",
+          "lemma": "Set.ite_univ",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_univ]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_univ",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_univ]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_univ",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_empty",
+          "family": "exact",
+          "lemma": "Set.ite_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_empty",
+          "family": "simpa_using",
+          "lemma": "Set.ite_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_empty]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_empty]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_compl",
+          "family": "exact",
+          "lemma": "Set.ite_compl",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_compl",
+          "family": "simpa_using",
+          "lemma": "Set.ite_compl",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.ite_compl]",
+          "family": "simp_lemma",
+          "lemma": "Set.ite_compl",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.ite_compl]",
+          "family": "rw_lemma",
+          "lemma": "Set.ite_compl",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.ite_inter_compl_self",
+          "family": "exact",
+          "lemma": "Set.ite_inter_compl_self",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.ite_inter_compl_self",
+          "family": "simpa_using",
+          "lemma": "Set.ite_inter_compl_self",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem subset_pair_iff_eq {x y : α} : s ⊆ {x, y} ↔ s = ∅ ∨ s = {x} ∨ s = {y} ∨ s = {x, y}",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inclusion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.inclusion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.fintypeSubset]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.fintypeSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.unionEqSigmaOfDisjoint]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.Nonempty.subset_pair_iff_eq",
+          "family": "exact",
+          "lemma": "Set.Nonempty.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.Nonempty.subset_pair_iff_eq",
+          "family": "simpa_using",
+          "lemma": "Set.Nonempty.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.Nonempty.subset_pair_iff_eq]",
+          "family": "simp_lemma",
+          "lemma": "Set.Nonempty.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.Nonempty.subset_pair_iff_eq]",
+          "family": "rw_lemma",
+          "lemma": "Set.Nonempty.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.Nonempty.subset_pair_iff_eq])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.Nonempty.subset_pair_iff_eq",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_pair_iff",
+          "family": "exact",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_pair_iff",
+          "family": "simpa_using",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_pair_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.subset_pair_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.subset_pair_iff])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.subset_pair_iff",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.pair_eq_pair_iff",
+          "family": "exact",
+          "lemma": "Set.pair_eq_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.pair_eq_pair_iff",
+          "family": "simpa_using",
+          "lemma": "Set.pair_eq_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.pair_eq_pair_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.pair_eq_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.pair_eq_pair_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.pair_eq_pair_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.pair_eq_pair_iff])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.pair_eq_pair_iff",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_singleton_iff_eq",
+          "family": "exact",
+          "lemma": "Set.subset_singleton_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_singleton_iff_eq",
+          "family": "simpa_using",
+          "lemma": "Set.subset_singleton_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_singleton_iff_eq]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_singleton_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.subset_singleton_iff_eq]",
+          "family": "rw_lemma",
+          "lemma": "Set.subset_singleton_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.pair_subset_iff",
+          "family": "exact",
+          "lemma": "Set.pair_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.pair_subset_iff",
+          "family": "simpa_using",
+          "lemma": "Set.pair_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.pair_subset_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.pair_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.pair_subset_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.pair_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.nontrivial_iff_pair_subset",
+          "family": "exact",
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.nontrivial_iff_pair_subset",
+          "family": "simpa_using",
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.nontrivial_iff_pair_subset]",
+          "family": "simp_lemma",
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.nontrivial_iff_pair_subset]",
+          "family": "rw_lemma",
+          "lemma": "Set.nontrivial_iff_pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.pair_eq_singleton",
+          "family": "exact",
+          "lemma": "Set.pair_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.pair_eq_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.pair_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.pair_eq_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.pair_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.pair_eq_singleton]",
+          "family": "rw_lemma",
+          "lemma": "Set.pair_eq_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.pair_subset",
+          "family": "exact",
+          "lemma": "Set.pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.pair_subset",
+          "family": "simpa_using",
+          "lemma": "Set.pair_subset",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem subset_singleton_iff_eq {s : Set α} {x : α} : s ⊆ {x} ↔ s = ∅ ∨ s = {x}",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.mem_sep_iff, Set.mem_inter_iff, Set.not_not_mem]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.mem_sep_iff]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inclusion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.inclusion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.fintypeSubset]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.fintypeSubset",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singletonMonoidHom]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.singletonMonoidHom",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.singleton_subset_singleton",
+          "family": "exact",
+          "lemma": "Set.singleton_subset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.singleton_subset_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.singleton_subset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.singleton_subset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.singleton_subset_singleton]",
+          "family": "rw_lemma",
+          "lemma": "Set.singleton_subset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.singleton_subset_singleton])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.singleton_subset_singleton",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.singleton_subset_iff",
+          "family": "exact",
+          "lemma": "Set.singleton_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.singleton_subset_iff",
+          "family": "simpa_using",
+          "lemma": "Set.singleton_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.singleton_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.singleton_subset_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.singleton_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.singleton_subset_iff])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.singleton_subset_iff",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_singleton_iff",
+          "family": "exact",
+          "lemma": "Set.subset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_singleton_iff",
+          "family": "simpa_using",
+          "lemma": "Set.subset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_singleton_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.subset_singleton_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.subset_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.subset_singleton_iff])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.subset_singleton_iff",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.singleton_eq_singleton_iff",
+          "family": "exact",
+          "lemma": "Set.singleton_eq_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.singleton_eq_singleton_iff",
+          "family": "simpa_using",
+          "lemma": "Set.singleton_eq_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_eq_singleton_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.singleton_eq_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.singleton_eq_singleton_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.singleton_eq_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.range_subset_singleton",
+          "family": "exact",
+          "lemma": "Set.range_subset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.range_subset_singleton",
+          "family": "simpa_using",
+          "lemma": "Set.range_subset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.range_subset_singleton]",
+          "family": "simp_lemma",
+          "lemma": "Set.range_subset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.range_subset_singleton]",
+          "family": "rw_lemma",
+          "lemma": "Set.range_subset_singleton",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_compl_singleton_iff",
+          "family": "exact",
+          "lemma": "Set.subset_compl_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_compl_singleton_iff",
+          "family": "simpa_using",
+          "lemma": "Set.subset_compl_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_compl_singleton_iff]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_compl_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.subset_compl_singleton_iff]",
+          "family": "rw_lemma",
+          "lemma": "Set.subset_compl_singleton_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.subset_pair_iff_eq",
+          "family": "exact",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.subset_pair_iff_eq",
+          "family": "simpa_using",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.subset_pair_iff_eq]",
+          "family": "simp_lemma",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.subset_pair_iff_eq]",
+          "family": "rw_lemma",
+          "lemma": "Set.subset_pair_iff_eq",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.diff_singleton_subset_iff",
+          "family": "exact",
+          "lemma": "Set.diff_singleton_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.diff_singleton_subset_iff",
+          "family": "simpa_using",
+          "lemma": "Set.diff_singleton_subset_iff",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "cluster_id": "Set__iff__iff",
+      "goal_text": "theorem union_empty_iff {s t : Set α} : s ∪ t = ∅ ↔ s = ∅ ∧ t = ∅",
+      "num_probes": 40,
+      "num_lemmas_used": 10,
+      "probes": [
+        {
+          "tactic": "exact?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "apply?",
+          "family": "diagnostic_search",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": true
+        },
+        {
+          "tactic": "simp only [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq, Set.mem_sep_iff, Set.mem_inter_iff]",
+          "family": "cluster_simp_only",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.singleton_subset_singleton, Set.subset_singleton_iff, Set.singleton_subset_iff, Set.subset_singleton_iff_eq]",
+          "family": "cluster_simp",
+          "lemma": null,
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.sigmaToiUnion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.sigmaToiUnion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.fintypeBiUnion]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.fintypeBiUnion",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.unionEqSigmaOfDisjoint]",
+          "family": "def_unfold_simp",
+          "lemma": "Set.unionEqSigmaOfDisjoint",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.mem_diff_singleton_empty",
+          "family": "exact",
+          "lemma": "Set.mem_diff_singleton_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.mem_diff_singleton_empty",
+          "family": "simpa_using",
+          "lemma": "Set.mem_diff_singleton_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.mem_diff_singleton_empty]",
+          "family": "simp_lemma",
+          "lemma": "Set.mem_diff_singleton_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.mem_diff_singleton_empty]",
+          "family": "rw_lemma",
+          "lemma": "Set.mem_diff_singleton_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.mem_diff_singleton_empty])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.mem_diff_singleton_empty",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.iUnion_eq_empty",
+          "family": "exact",
+          "lemma": "Set.iUnion_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.iUnion_eq_empty",
+          "family": "simpa_using",
+          "lemma": "Set.iUnion_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.iUnion_eq_empty]",
+          "family": "simp_lemma",
+          "lemma": "Set.iUnion_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.iUnion_eq_empty]",
+          "family": "rw_lemma",
+          "lemma": "Set.iUnion_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.iUnion_eq_empty])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.iUnion_eq_empty",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.empty_union",
+          "family": "exact",
+          "lemma": "Set.empty_union",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.empty_union",
+          "family": "simpa_using",
+          "lemma": "Set.empty_union",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.empty_union]",
+          "family": "simp_lemma",
+          "lemma": "Set.empty_union",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.empty_union]",
+          "family": "rw_lemma",
+          "lemma": "Set.empty_union",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "aesop (add simp [Set.empty_union])",
+          "family": "aesop_add_simp",
+          "lemma": "Set.empty_union",
+          "parse_risk": "medium",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.union_empty",
+          "family": "exact",
+          "lemma": "Set.union_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.union_empty",
+          "family": "simpa_using",
+          "lemma": "Set.union_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.union_empty]",
+          "family": "simp_lemma",
+          "lemma": "Set.union_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.union_empty]",
+          "family": "rw_lemma",
+          "lemma": "Set.union_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.sUnion_eq_empty",
+          "family": "exact",
+          "lemma": "Set.sUnion_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.sUnion_eq_empty",
+          "family": "simpa_using",
+          "lemma": "Set.sUnion_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.sUnion_eq_empty]",
+          "family": "simp_lemma",
+          "lemma": "Set.sUnion_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.sUnion_eq_empty]",
+          "family": "rw_lemma",
+          "lemma": "Set.sUnion_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.sUnion_diff_singleton_empty",
+          "family": "exact",
+          "lemma": "Set.sUnion_diff_singleton_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.sUnion_diff_singleton_empty",
+          "family": "simpa_using",
+          "lemma": "Set.sUnion_diff_singleton_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.sUnion_diff_singleton_empty]",
+          "family": "simp_lemma",
+          "lemma": "Set.sUnion_diff_singleton_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.sUnion_diff_singleton_empty]",
+          "family": "rw_lemma",
+          "lemma": "Set.sUnion_diff_singleton_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.inter_singleton_eq_empty",
+          "family": "exact",
+          "lemma": "Set.inter_singleton_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.inter_singleton_eq_empty",
+          "family": "simpa_using",
+          "lemma": "Set.inter_singleton_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simp [Set.inter_singleton_eq_empty]",
+          "family": "simp_lemma",
+          "lemma": "Set.inter_singleton_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "rw [Set.inter_singleton_eq_empty]",
+          "family": "rw_lemma",
+          "lemma": "Set.inter_singleton_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "exact Set.singleton_inter_eq_empty",
+          "family": "exact",
+          "lemma": "Set.singleton_inter_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        },
+        {
+          "tactic": "simpa using Set.singleton_inter_eq_empty",
+          "family": "simpa_using",
+          "lemma": "Set.singleton_inter_eq_empty",
+          "parse_risk": "low",
+          "diagnostic": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,560 @@
+{
+  "generated_by": "scripts/rc4d_minimal_attribution.py",
+  "num_new_wins": 24,
+  "classification_histogram": {
+    "TRUE_RC4A_WIN": 5,
+    "TRUE_RC4B_WIN": 16,
+    "TRUE_RC4C_RESIDUE_WIN": 2,
+    "SIMP_ONLY_DUPLICATE": 1
+  },
+  "credited_delta_total": 23,
+  "credited_delta_by_component": {
+    "RC4A": 5,
+    "RC4B": 16,
+    "RC4C_residue": 2
+  },
+  "credited_fresh": [],
+  "credited_reproductions": [
+    "Finset.mem_disjUnion",
+    "Set.antitoneOn_iff_antitone",
+    "Set.monotoneOn_iff_monotone",
+    "Set.strictAntiOn_iff_strictAnti",
+    "Set.strictMonoOn_iff_strictMono",
+    "Multiset.disjoint_add_left",
+    "Multiset.disjoint_add_right",
+    "Multiset.disjoint_cons_left",
+    "Multiset.disjoint_iff_ne",
+    "Multiset.disjoint_right",
+    "Multiset.disjoint_singleton",
+    "Multiset.disjoint_union_left",
+    "Multiset.singleton_disjoint",
+    "Multiset.zero_disjoint",
+    "Set.disjoint_iUnion_left",
+    "Set.disjoint_iUnion_right",
+    "Set.disjoint_iff_forall_ne",
+    "Set.disjoint_right",
+    "Set.disjoint_sUnion_left",
+    "Set.disjoint_sUnion_right",
+    "Set.disjoint_singleton_left",
+    "List.Forall.imp",
+    "Set.Nonempty.subset_pair_iff_eq"
+  ],
+  "overlap_removed_rc4c_to_rc4b": [
+    "Multiset.disjoint_add_left",
+    "Multiset.disjoint_add_right",
+    "Multiset.disjoint_cons_left",
+    "Multiset.disjoint_iff_ne",
+    "Multiset.disjoint_right",
+    "Multiset.disjoint_singleton",
+    "Multiset.disjoint_union_left",
+    "Multiset.singleton_disjoint",
+    "Multiset.zero_disjoint"
+  ],
+  "credited_targets": [
+    "Finset.mem_disjUnion",
+    "Set.antitoneOn_iff_antitone",
+    "Set.monotoneOn_iff_monotone",
+    "Set.strictAntiOn_iff_strictAnti",
+    "Set.strictMonoOn_iff_strictMono",
+    "Multiset.disjoint_add_left",
+    "Multiset.disjoint_add_right",
+    "Multiset.disjoint_cons_left",
+    "Multiset.disjoint_iff_ne",
+    "Multiset.disjoint_right",
+    "Multiset.disjoint_singleton",
+    "Multiset.disjoint_union_left",
+    "Multiset.singleton_disjoint",
+    "Multiset.zero_disjoint",
+    "Set.disjoint_iUnion_left",
+    "Set.disjoint_iUnion_right",
+    "Set.disjoint_iff_forall_ne",
+    "Set.disjoint_right",
+    "Set.disjoint_sUnion_left",
+    "Set.disjoint_sUnion_right",
+    "Set.disjoint_singleton_left",
+    "List.Forall.imp",
+    "Set.Nonempty.subset_pair_iff_eq"
+  ],
+  "records": [
+    {
+      "full_name": "Finset.mem_disjUnion",
+      "namespace": "Finset",
+      "sets": [
+        "rc4a_known_wins"
+      ],
+      "winning_component": "RC4A",
+      "winning_tactic": "simp [Finset.disjUnion]",
+      "winning_lemma": [
+        "Finset.disjUnion"
+      ],
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": true,
+      "winning_tactic_solved": true,
+      "genuine_depth2": false,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4A_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "namespace": "Set",
+      "sets": [
+        "rc4a_known_wins"
+      ],
+      "winning_component": "RC4A",
+      "winning_tactic": "simp [Antitone, AntitoneOn]",
+      "winning_lemma": [
+        "Antitone",
+        "AntitoneOn"
+      ],
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": true,
+      "winning_tactic_solved": true,
+      "genuine_depth2": false,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4A_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "namespace": "Set",
+      "sets": [
+        "rc4a_known_wins"
+      ],
+      "winning_component": "RC4A",
+      "winning_tactic": "simp [Monotone, MonotoneOn]",
+      "winning_lemma": [
+        "Monotone",
+        "MonotoneOn"
+      ],
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": true,
+      "winning_tactic_solved": true,
+      "genuine_depth2": false,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4A_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "namespace": "Set",
+      "sets": [
+        "rc4a_known_wins"
+      ],
+      "winning_component": "RC4A",
+      "winning_tactic": "simp [StrictAnti, StrictAntiOn]",
+      "winning_lemma": [
+        "StrictAnti",
+        "StrictAntiOn"
+      ],
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": true,
+      "winning_tactic_solved": true,
+      "genuine_depth2": false,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4A_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "namespace": "Set",
+      "sets": [
+        "rc4a_known_wins"
+      ],
+      "winning_component": "RC4A",
+      "winning_tactic": "simp [StrictMono, StrictMonoOn]",
+      "winning_lemma": [
+        "StrictMono",
+        "StrictMonoOn"
+      ],
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": true,
+      "winning_tactic_solved": true,
+      "genuine_depth2": false,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4A_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_add_left",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4b_known_wins",
+        "rc4c_residue_known_wins",
+        "component_overlap_controls"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": true,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_add_right",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4b_known_wins",
+        "rc4c_residue_known_wins",
+        "component_overlap_controls"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": true,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_left",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Multiset.disjoint_left]",
+      "winning_lemma": "Multiset.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": true,
+      "winning_tactic_solved": true,
+      "genuine_depth2": false,
+      "residue_also_fires_but_rc4b_won": true,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_iff_ne",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4b_known_wins",
+        "rc4c_residue_known_wins",
+        "component_overlap_controls"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": true,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_right",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": true,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_singleton",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": true,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.disjoint_union_left",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4b_known_wins",
+        "rc4c_residue_known_wins",
+        "component_overlap_controls"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": true,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.singleton_disjoint",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4b_known_wins",
+        "rc4c_residue_known_wins",
+        "component_overlap_controls"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Multiset.disjoint_left]",
+      "winning_lemma": "Multiset.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": true,
+      "winning_tactic_solved": true,
+      "genuine_depth2": false,
+      "residue_also_fires_but_rc4b_won": true,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Multiset.zero_disjoint",
+      "namespace": "Multiset",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Multiset.disjoint_left]",
+      "winning_lemma": "Multiset.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": true,
+      "winning_tactic_solved": true,
+      "genuine_depth2": false,
+      "residue_also_fires_but_rc4b_won": true,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_left",
+      "namespace": "Set",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "winning_lemma": "Set.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_right",
+      "namespace": "Set",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "winning_lemma": "Set.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.disjoint_iff_forall_ne",
+      "namespace": "Set",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "winning_lemma": "Set.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.disjoint_right",
+      "namespace": "Set",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "winning_lemma": "Set.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_left",
+      "namespace": "Set",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "winning_lemma": "Set.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "namespace": "Set",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "winning_lemma": "Set.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.disjoint_singleton_left",
+      "namespace": "Set",
+      "sets": [
+        "rc4b_known_wins"
+      ],
+      "winning_component": "RC4B",
+      "winning_tactic": "simp [Set.disjoint_left]",
+      "winning_lemma": "Set.disjoint_left",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": true,
+      "winning_tactic_solved": true,
+      "genuine_depth2": false,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4B_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "List.Forall.imp",
+      "namespace": "List",
+      "sets": [
+        "rc4c_residue_known_wins"
+      ],
+      "winning_component": "RC4C_residue",
+      "winning_tactic": "simp [List.forall_iff_forall_mem] <;> aesop",
+      "winning_lemma": "List.forall_iff_forall_mem",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4C_RESIDUE_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "namespace": "Set",
+      "sets": [
+        "rc4c_residue_known_wins"
+      ],
+      "winning_component": "RC4C_residue",
+      "winning_tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+      "winning_lemma": "Set.subset_pair_iff_eq",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": false,
+      "winning_tactic_solved": true,
+      "genuine_depth2": true,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "TRUE_RC4C_RESIDUE_WIN",
+      "credited": true,
+      "fresh": false,
+      "setup_error": null
+    },
+    {
+      "full_name": "List.forall_map_iff",
+      "namespace": "List",
+      "sets": [
+        "composition_fresh_holdout"
+      ],
+      "winning_component": "RC4C_residue",
+      "winning_tactic": "simp [List.forall_iff_forall_mem]",
+      "winning_lemma": "List.forall_iff_forall_mem",
+      "bare_controls_solved": [],
+      "simp_l_alone_solved": true,
+      "winning_tactic_solved": true,
+      "genuine_depth2": false,
+      "residue_also_fires_but_rc4b_won": false,
+      "classification": "SIMP_ONLY_DUPLICATE",
+      "credited": false,
+      "fresh": true,
+      "setup_error": null
+    }
+  ]
+}

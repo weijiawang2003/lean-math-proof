@@ -1,0 +1,341 @@
+{
+  "generated_by": "scripts/tr4_probe_budget_simulation.py",
+  "total_programs": 3926,
+  "total_theorems": 92,
+  "total_theorems_with_success": 13,
+  "total_theorems_with_credit": 12,
+  "simulations": {
+    "original_order": {
+      "B=1": {
+        "successes_recovered": 5,
+        "credited_recovered": 5,
+        "programs_run": 92,
+        "probe_reduction_pct": 97.7,
+        "success_recovery_frac": 0.385,
+        "credit_recovery_frac": 0.417
+      },
+      "B=3": {
+        "successes_recovered": 5,
+        "credited_recovered": 5,
+        "programs_run": 266,
+        "probe_reduction_pct": 93.2,
+        "success_recovery_frac": 0.385,
+        "credit_recovery_frac": 0.417
+      },
+      "B=5": {
+        "successes_recovered": 6,
+        "credited_recovered": 6,
+        "programs_run": 439,
+        "probe_reduction_pct": 88.8,
+        "success_recovery_frac": 0.462,
+        "credit_recovery_frac": 0.5
+      },
+      "B=10": {
+        "successes_recovered": 7,
+        "credited_recovered": 7,
+        "programs_run": 867,
+        "probe_reduction_pct": 77.9,
+        "success_recovery_frac": 0.538,
+        "credit_recovery_frac": 0.583
+      },
+      "B=20": {
+        "successes_recovered": 8,
+        "credited_recovered": 8,
+        "programs_run": 1716,
+        "probe_reduction_pct": 56.3,
+        "success_recovery_frac": 0.615,
+        "credit_recovery_frac": 0.667
+      },
+      "top5%": {
+        "successes_recovered": 5,
+        "credited_recovered": 5,
+        "programs_run": 242,
+        "probe_reduction_pct": 93.8,
+        "success_recovery_frac": 0.385,
+        "credit_recovery_frac": 0.417
+      },
+      "top10%": {
+        "successes_recovered": 5,
+        "credited_recovered": 5,
+        "programs_run": 440,
+        "probe_reduction_pct": 88.8,
+        "success_recovery_frac": 0.385,
+        "credit_recovery_frac": 0.417
+      },
+      "top20%": {
+        "successes_recovered": 5,
+        "credited_recovered": 5,
+        "programs_run": 822,
+        "probe_reduction_pct": 79.1,
+        "success_recovery_frac": 0.385,
+        "credit_recovery_frac": 0.417
+      }
+    },
+    "heuristic": {
+      "B=1": {
+        "successes_recovered": 5,
+        "credited_recovered": 5,
+        "programs_run": 92,
+        "probe_reduction_pct": 97.7,
+        "success_recovery_frac": 0.385,
+        "credit_recovery_frac": 0.417
+      },
+      "B=3": {
+        "successes_recovered": 8,
+        "credited_recovered": 8,
+        "programs_run": 266,
+        "probe_reduction_pct": 93.2,
+        "success_recovery_frac": 0.615,
+        "credit_recovery_frac": 0.667
+      },
+      "B=5": {
+        "successes_recovered": 10,
+        "credited_recovered": 10,
+        "programs_run": 439,
+        "probe_reduction_pct": 88.8,
+        "success_recovery_frac": 0.769,
+        "credit_recovery_frac": 0.833
+      },
+      "B=10": {
+        "successes_recovered": 12,
+        "credited_recovered": 12,
+        "programs_run": 867,
+        "probe_reduction_pct": 77.9,
+        "success_recovery_frac": 0.923,
+        "credit_recovery_frac": 1.0
+      },
+      "B=20": {
+        "successes_recovered": 12,
+        "credited_recovered": 12,
+        "programs_run": 1716,
+        "probe_reduction_pct": 56.3,
+        "success_recovery_frac": 0.923,
+        "credit_recovery_frac": 1.0
+      },
+      "top5%": {
+        "successes_recovered": 5,
+        "credited_recovered": 5,
+        "programs_run": 242,
+        "probe_reduction_pct": 93.8,
+        "success_recovery_frac": 0.385,
+        "credit_recovery_frac": 0.417
+      },
+      "top10%": {
+        "successes_recovered": 6,
+        "credited_recovered": 6,
+        "programs_run": 440,
+        "probe_reduction_pct": 88.8,
+        "success_recovery_frac": 0.462,
+        "credit_recovery_frac": 0.5
+      },
+      "top20%": {
+        "successes_recovered": 11,
+        "credited_recovered": 11,
+        "programs_run": 822,
+        "probe_reduction_pct": 79.1,
+        "success_recovery_frac": 0.846,
+        "credit_recovery_frac": 0.917
+      }
+    },
+    "logistic": {
+      "B=1": {
+        "successes_recovered": 5,
+        "credited_recovered": 5,
+        "programs_run": 92,
+        "probe_reduction_pct": 97.7,
+        "success_recovery_frac": 0.385,
+        "credit_recovery_frac": 0.417
+      },
+      "B=3": {
+        "successes_recovered": 10,
+        "credited_recovered": 10,
+        "programs_run": 266,
+        "probe_reduction_pct": 93.2,
+        "success_recovery_frac": 0.769,
+        "credit_recovery_frac": 0.833
+      },
+      "B=5": {
+        "successes_recovered": 11,
+        "credited_recovered": 11,
+        "programs_run": 439,
+        "probe_reduction_pct": 88.8,
+        "success_recovery_frac": 0.846,
+        "credit_recovery_frac": 0.917
+      },
+      "B=10": {
+        "successes_recovered": 13,
+        "credited_recovered": 12,
+        "programs_run": 867,
+        "probe_reduction_pct": 77.9,
+        "success_recovery_frac": 1.0,
+        "credit_recovery_frac": 1.0
+      },
+      "B=20": {
+        "successes_recovered": 13,
+        "credited_recovered": 12,
+        "programs_run": 1716,
+        "probe_reduction_pct": 56.3,
+        "success_recovery_frac": 1.0,
+        "credit_recovery_frac": 1.0
+      },
+      "top5%": {
+        "successes_recovered": 6,
+        "credited_recovered": 6,
+        "programs_run": 242,
+        "probe_reduction_pct": 93.8,
+        "success_recovery_frac": 0.462,
+        "credit_recovery_frac": 0.5
+      },
+      "top10%": {
+        "successes_recovered": 9,
+        "credited_recovered": 9,
+        "programs_run": 440,
+        "probe_reduction_pct": 88.8,
+        "success_recovery_frac": 0.692,
+        "credit_recovery_frac": 0.75
+      },
+      "top20%": {
+        "successes_recovered": 11,
+        "credited_recovered": 11,
+        "programs_run": 822,
+        "probe_reduction_pct": 79.1,
+        "success_recovery_frac": 0.846,
+        "credit_recovery_frac": 0.917
+      }
+    },
+    "sgd": {
+      "B=1": {
+        "successes_recovered": 6,
+        "credited_recovered": 6,
+        "programs_run": 92,
+        "probe_reduction_pct": 97.7,
+        "success_recovery_frac": 0.462,
+        "credit_recovery_frac": 0.5
+      },
+      "B=3": {
+        "successes_recovered": 7,
+        "credited_recovered": 6,
+        "programs_run": 266,
+        "probe_reduction_pct": 93.2,
+        "success_recovery_frac": 0.538,
+        "credit_recovery_frac": 0.5
+      },
+      "B=5": {
+        "successes_recovered": 8,
+        "credited_recovered": 7,
+        "programs_run": 439,
+        "probe_reduction_pct": 88.8,
+        "success_recovery_frac": 0.615,
+        "credit_recovery_frac": 0.583
+      },
+      "B=10": {
+        "successes_recovered": 9,
+        "credited_recovered": 8,
+        "programs_run": 867,
+        "probe_reduction_pct": 77.9,
+        "success_recovery_frac": 0.692,
+        "credit_recovery_frac": 0.667
+      },
+      "B=20": {
+        "successes_recovered": 12,
+        "credited_recovered": 11,
+        "programs_run": 1716,
+        "probe_reduction_pct": 56.3,
+        "success_recovery_frac": 0.923,
+        "credit_recovery_frac": 0.917
+      },
+      "top5%": {
+        "successes_recovered": 7,
+        "credited_recovered": 6,
+        "programs_run": 242,
+        "probe_reduction_pct": 93.8,
+        "success_recovery_frac": 0.538,
+        "credit_recovery_frac": 0.5
+      },
+      "top10%": {
+        "successes_recovered": 7,
+        "credited_recovered": 6,
+        "programs_run": 440,
+        "probe_reduction_pct": 88.8,
+        "success_recovery_frac": 0.538,
+        "credit_recovery_frac": 0.5
+      },
+      "top20%": {
+        "successes_recovered": 7,
+        "credited_recovered": 6,
+        "programs_run": 822,
+        "probe_reduction_pct": 79.1,
+        "success_recovery_frac": 0.538,
+        "credit_recovery_frac": 0.5
+      }
+    },
+    "hgb": {
+      "B=1": {
+        "successes_recovered": 6,
+        "credited_recovered": 6,
+        "programs_run": 92,
+        "probe_reduction_pct": 97.7,
+        "success_recovery_frac": 0.462,
+        "credit_recovery_frac": 0.5
+      },
+      "B=3": {
+        "successes_recovered": 10,
+        "credited_recovered": 10,
+        "programs_run": 266,
+        "probe_reduction_pct": 93.2,
+        "success_recovery_frac": 0.769,
+        "credit_recovery_frac": 0.833
+      },
+      "B=5": {
+        "successes_recovered": 13,
+        "credited_recovered": 12,
+        "programs_run": 439,
+        "probe_reduction_pct": 88.8,
+        "success_recovery_frac": 1.0,
+        "credit_recovery_frac": 1.0
+      },
+      "B=10": {
+        "successes_recovered": 13,
+        "credited_recovered": 12,
+        "programs_run": 867,
+        "probe_reduction_pct": 77.9,
+        "success_recovery_frac": 1.0,
+        "credit_recovery_frac": 1.0
+      },
+      "B=20": {
+        "successes_recovered": 13,
+        "credited_recovered": 12,
+        "programs_run": 1716,
+        "probe_reduction_pct": 56.3,
+        "success_recovery_frac": 1.0,
+        "credit_recovery_frac": 1.0
+      },
+      "top5%": {
+        "successes_recovered": 7,
+        "credited_recovered": 7,
+        "programs_run": 242,
+        "probe_reduction_pct": 93.8,
+        "success_recovery_frac": 0.538,
+        "credit_recovery_frac": 0.583
+      },
+      "top10%": {
+        "successes_recovered": 10,
+        "credited_recovered": 9,
+        "programs_run": 440,
+        "probe_reduction_pct": 88.8,
+        "success_recovery_frac": 0.769,
+        "credit_recovery_frac": 0.75
+      },
+      "top20%": {
+        "successes_recovered": 12,
+        "credited_recovered": 11,
+        "programs_run": 822,
+        "probe_reduction_pct": 79.1,
+        "success_recovery_frac": 0.923,
+        "credit_recovery_frac": 0.917
+      }
+    }
+  },
+  "best_model_top20pct": "hgb",
+  "decision": "RANKER_USEFUL_FOR_PROBE_REDUCTION"
+}

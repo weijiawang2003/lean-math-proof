@@ -1,0 +1,49 @@
+{
+  "generated_by": "scripts/tr5_candidate_evidence_analysis.py",
+  "rc4b": {
+    "candidate": "RC4B_set_disjoint_left",
+    "true_wins": 3,
+    "win_targets": [
+      "Set.disjoint_iff_forall_ne",
+      "Set.disjoint_right",
+      "Set.disjoint_singleton_left"
+    ],
+    "reproduced_tr3": [
+      "Set.disjoint_iff_forall_ne",
+      "Set.disjoint_right",
+      "Set.disjoint_singleton_left"
+    ],
+    "fresh_wins": [],
+    "fire_stats": {
+      "attempted_in_top5": 9,
+      "closed_as_credited": 3
+    },
+    "off_gate_risk": "low — simp[Set.disjoint_left] is a single named-lemma rewrite gated to Set goals; only fires when the lemma is retrieved",
+    "candidate_policy_suggestion": "narrow allowlist gate: add `simp [Set.disjoint_left]` (and the d2 `simp [Set.disjoint_left] <;> aesop`) to the Set route battery, gated to goals mentioning Disjoint; off-by-default, additive over RC2 (SET_ITE_SIMP / RC4A pattern)",
+    "validation_set_suggestion": "the live Set.disjoint_* wins + held-out Disjoint/disjoint_left Set theorems from the discovered catalog as fresh holdouts",
+    "decision": "READY_FOR_RC4B_VALIDATION"
+  },
+  "rc4c": {
+    "candidate": "RC4C_d2_simp_aesop",
+    "true_wins": 3,
+    "win_targets": [
+      "Set.Nonempty.subset_pair_iff_eq",
+      "Set.disjoint_iff_forall_ne",
+      "Set.disjoint_right"
+    ],
+    "reproduced_tr3": [
+      "Set.Nonempty.subset_pair_iff_eq",
+      "Set.disjoint_iff_forall_ne",
+      "Set.disjoint_right"
+    ],
+    "fresh_wins": [],
+    "fire_stats": {
+      "attempted_in_top5": 170,
+      "closed_as_credited": 3
+    },
+    "false_positives_live_b5": 153,
+    "source_specific_risk": "medium — the win depends on the retrieved lemma L being the right bridge; aesop after simp[L] can also close goals where plain aesop times out, so the credit is the simp[L] enabling step (SX4 PRODUCTION_SUBSUMED guard already applied — RC2's best-first search does NOT reach the simp[L]-advanced state)",
+    "separate_validation_warranted": true,
+    "decision": "READY_FOR_RC4C_VALIDATION"
+  }
+}

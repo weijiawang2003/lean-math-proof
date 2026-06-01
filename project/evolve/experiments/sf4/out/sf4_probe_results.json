@@ -1,0 +1,3103 @@
+{
+  "confirmed_failures_input": "project/evolve/experiments/sf4/out/rc2_failure_confirmation.json",
+  "probes_input": "project/evolve/experiments/sf4/out/sf4_candidate_probes.json",
+  "num_theorems": 27,
+  "classification_histogram": {
+    "no_win": 26,
+    "baseline_duplicate": 1
+  },
+  "candidate_wins_pre_sx4": [],
+  "results": [
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "simp [Multiset.mem_toFinset] <;> aesop",
+          "solved": false,
+          "outcome": "max_recursion",
+          "dead": false,
+          "error": "aesop: error in norm simp: tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get di",
+          "family": "multiset_tofinset_simp_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "simp [Finset.mem_coe, Multiset.mem_toFinset] <;> aesop",
+          "solved": false,
+          "outcome": "max_recursion",
+          "dead": false,
+          "error": "aesop: error in norm simp: tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get di",
+          "family": "multiset_tofinset_simp_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "max_recursion",
+          "dead": false,
+          "error": "aesop: error in norm simp: tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get di",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "max_recursion",
+          "dead": false,
+          "error": "aesop: error in norm simp: tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get di"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "simp [Multiset.mem_toFinset]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "max_recursion",
+          "dead": false,
+          "error": "aesop: error in norm simp: tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get di"
+        },
+        {
+          "tactic": "simp [Finset.mem_coe, Multiset.mem_toFinset]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case mp\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n  inst\u271d\u00b9 : Preorder \u03b1\n  inst\u271d : Preorder \u03b2\n  f",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress\nsimp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "ext x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \\ {x} \u2286 t \u2194 s \u2286 insert x t",
+          "family": "set_ext_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \\ {x} \u2286 t \u2194 s \u2286 insert x t",
+          "family": "set_ext_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \\ {x} \u2286 t \u2194 s \u2286 insert x t",
+          "family": "set_ext_simp",
+          "risk": "low"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case mp\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u : Set \u03b1\n  x : \u03b1\n  s t : Set \u03b1\n  h : s \\ {x} \u2286 t\n  \u22a2 ",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress\nsimp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \\ {x} \u2286 t \u2194 s \u2286 insert x t\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u : Set \u03b1\nx : \u03b1\ns t : Set \u03b1\n\u22a2 s \\ {x} \u2286 t \u2194 s",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \\ {x} \u2286 t \u2194 s \u2286 insert x t\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u : Set \u03b1\nx : \u03b1\ns t : Set \u03b1\n\u22a2 s \\ {x} \u2286 t \u2194 s",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \\ {x} \u2286 t \u2194 s \u2286 insert x t"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \\ {x} \u2286 t \u2194 s \u2286 insert x t\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u : Set \u03b1\nx : \u03b1\ns t : Set \u03b1\n\u22a2 s \\ {x} \u2286 t \u2194 s"
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "simp [Set.ite] <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081\u271d s\u2082\u271d t\u271d t\u2081 t\u2082 u t s\u2081 s\u2082 : Set \u03b1\n  h : s\u2081 \u2286 s\u2082\n  \u22a2 s\u2081 \u2229 t \u222a s\u2082 \\ t = s\u2081 \u222a s\u2082 \\",
+          "family": "set_ite_simp_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp [Set.ite, Set.ext_iff] <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ite_simp_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "ext x <;> simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ite_ext",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> by_cases h : x \u2208 _ <;> simp_all [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "typeclass instance problem is stuck, it is often due to metavariables\n  Decidable (x \u2208 ?m.162755)",
+          "family": "set_ite_ext",
+          "risk": "high"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081\u271d s\u2082\u271d t\u271d t\u2081 t\u2082 u t s\u2081 s\u2082 : Set \u03b1\n  h : s\u2081 \u2286 s\u2082\n  \u22a2 t.ite s\u2081 s\u2082 = s\u2081 \u222a s\u2082 \\ t",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081\u271d s\u2082\u271d t\u271d t\u2081 t\u2082 u t s\u2081 s\u2082 : Set \u03b1\n  h : s\u2081 \u2286 s\u2082\n  \u22a2 t.ite s\u2081 s\u2082 = s\u2081 \u222a s\u2082 \\ t"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "apply Set.Subset.antisymm",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081\u271d s\u2082\u271d t\u271d t\u2081 t\u2082 u t s\u2081 s\u2082 : Set \u03b1\n  h : s\u2081 \u2286 s\u2082\n  \u22a2 t.ite s\u2081 s\u2082 = s\u2081 \u222a s\u2082 \\ t"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp [Set.ite, Set.ext_iff]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "simp [Set.ite] <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081\u271d s\u2082\u271d t\u271d t\u2081 t\u2082 u t s\u2081 s\u2082 : Set \u03b1\n  h : s\u2082 \u2286 s\u2081\n  \u22a2 s\u2081 \u2229 t \u222a s\u2082 \\ t = s\u2081 \u2229 t \u222a ",
+          "family": "set_ite_simp_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp [Set.ite, Set.ext_iff] <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ite_simp_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "ext x <;> simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ite_ext",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> by_cases h : x \u2208 _ <;> simp_all [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "typeclass instance problem is stuck, it is often due to metavariables\n  Decidable (x \u2208 ?m.162087)",
+          "family": "set_ite_ext",
+          "risk": "high"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081\u271d s\u2082\u271d t\u271d t\u2081 t\u2082 u t s\u2081 s\u2082 : Set \u03b1\n  h : s\u2082 \u2286 s\u2081\n  \u22a2 t.ite s\u2081 s\u2082 = s\u2081 \u2229 t \u222a s\u2082",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081\u271d s\u2082\u271d t\u271d t\u2081 t\u2082 u t s\u2081 s\u2082 : Set \u03b1\n  h : s\u2082 \u2286 s\u2081\n  \u22a2 t.ite s\u2081 s\u2082 = s\u2081 \u2229 t \u222a s\u2082"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "apply Set.Subset.antisymm",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081\u271d s\u2082\u271d t\u271d t\u2081 t\u2082 u t s\u2081 s\u2082 : Set \u03b1\n  h : s\u2082 \u2286 s\u2081\n  \u22a2 t.ite s\u2081 s\u2082 = s\u2081 \u2229 t \u222a s\u2082"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp [Set.ite, Set.ext_iff]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "ext x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ext_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ext_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ext_simp",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp [Set.ite] <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ite_simp_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp [Set.ite, Set.ext_iff] <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ite_simp_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "ext x <;> simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ite_ext",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> by_cases h : x \u2208 _ <;> simp_all [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "typeclass instance problem is stuck, it is often due to metavariables\n  Decidable (x \u2208 ?m.164136)",
+          "family": "set_ite_ext",
+          "risk": "high"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp [Set.ite, Set.ext_iff]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "ext x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  {x, y} = {z, w} \u2194 x = z \u2227 y = w \u2228 x = w \u2227 y = z",
+          "family": "set_ext_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  {x, y} = {z, w} \u2194 x = z \u2227 y = w \u2228 x = w \u2227 y = z",
+          "family": "set_ext_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case mp\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n  x y z w : \u03b1\n  h : {x, y} = {z, w}\n  \u22a2 x = z ",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress\nsimp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  {x, y} = {z, w} \u2194 x = z \u2227 y = w \u2228 x = w \u2227 y = z"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.powerset_singleton",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "ext x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ext_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ext_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n  x : \u03b1\n  \u22a2 \ud835\udcab{x} = {\u2205, {x}}",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n  x : \u03b1\n  \u22a2 \ud835\udcab{x} = {\u2205, {x}}"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n  x : \u03b1\n  \u22a2 \ud835\udcab{x} = {\u2205, {x}}"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "ext x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2282 {x} \u2194 s = \u2205",
+          "family": "set_ext_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2282 {x} \u2194 s = \u2205",
+          "family": "set_ext_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case mp\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s\u271d s\u2081 s\u2082 t t\u2081 t\u2082 u s : Set \u03b1\n  x : \u03b1\n  h : s \u2282 {x}\n  \u22a2 s = \u2205",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2282 {x} \u2194 s = \u2205\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t t\u2081 t\u2082 u s : Set \u03b1\nx : \u03b1\n\u22a2 s \u2282 {x} \u2194 s = \u2205",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2282 {x} \u2194 s = \u2205\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t t\u2081 t\u2082 u s : Set \u03b1\nx : \u03b1\n\u22a2 s \u2282 {x} \u2194 s = \u2205",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2282 {x} \u2194 s = \u2205"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2282 {x} \u2194 s = \u2205\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t t\u2081 t\u2082 u s : Set \u03b1\nx : \u03b1\n\u22a2 s \u2282 {x} \u2194 s = \u2205"
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2286 insert x t \u2194 s \u2286 t \u2228 x \u2208 s \u2227 s \\ {x} \u2286 t\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u s t : Set \u03b1\nx : \u03b1\n\u22a2 s \u2286 ins",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2286 insert x t \u2194 s \u2286 t \u2228 x \u2208 s \u2227 s \\ {x} \u2286 t\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u s t : Set \u03b1\nx : \u03b1\n\u22a2 s \u2286 ins",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2286 insert x t \u2194 s \u2286 t \u2228 x \u2208 s \u2227 s \\ {x} \u2286 t\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u s t : Set \u03b1\nx : \u03b1\n\u22a2 s \u2286 ins"
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  u \u2286 t.ite s s' \u2194 u \u2229 t \u2286 s \u2227 u \\ t \u2286 s'\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u\u271d t s s' u : Set \u03b1\n\u22a2 u \u2286 t.ite s ",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  u \u2286 t.ite s s' \u2194 u \u2229 t \u2286 s \u2227 u \\ t \u2286 s'\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u\u271d t s s' u : Set \u03b1\n\u22a2 u \u2286 t.ite s ",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "simp [Set.ite] <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ite_simp_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp [Set.ite, Set.ext_iff] <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_ite_simp_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "ext x <;> simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  u \u2286 t.ite s s' \u2194 u \u2229 t \u2286 s \u2227 u \\ t \u2286 s'",
+          "family": "set_ite_ext",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> by_cases h : x \u2208 _ <;> simp_all [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  u \u2286 t.ite s s' \u2194 u \u2229 t \u2286 s \u2227 u \\ t \u2286 s'",
+          "family": "set_ite_ext",
+          "risk": "high"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "apply Set.Subset.antisymm",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  u \u2286 t.ite s s' \u2194 u \u2229 t \u2286 s \u2227 u \\ t \u2286 s'\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u\u271d t s s' u : Set \u03b1\n\u22a2 u \u2286 t.ite s "
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "simp [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp [Set.ite, Set.ext_iff]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  u \u2286 t.ite s s' \u2194 u \u2229 t \u2286 s \u2227 u \\ t \u2286 s'"
+        },
+        {
+          "tactic": "simp_all [Set.ite]",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "ext x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2286 {x} \u2194 s = \u2205 \u2228 s = {x}",
+          "family": "set_ext_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2286 {x} \u2194 s = \u2205 \u2228 s = {x}",
+          "family": "set_ext_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2286 {x} \u2194 s = \u2205 \u2228 s = {x}\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t t\u2081 t\u2082 u s : Set \u03b1\nx : \u03b1\n\u22a2 s \u2286 {x} \u2194 s = \u2205 \u2228 s = {x}",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2286 {x} \u2194 s = \u2205 \u2228 s = {x}\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t t\u2081 t\u2082 u s : Set \u03b1\nx : \u03b1\n\u22a2 s \u2286 {x} \u2194 s = \u2205 \u2228 s = {x}",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2286 {x} \u2194 s = \u2205 \u2228 s = {x}"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2286 {x} \u2194 s = \u2205 \u2228 s = {x}\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t t\u2081 t\u2082 u s : Set \u03b1\nx : \u03b1\n\u22a2 s \u2286 {x} \u2194 s = \u2205 \u2228 s = {x}"
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "ext x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u222a t = \u2205 \u2194 s = \u2205 \u2227 t = \u2205",
+          "family": "set_ext_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u222a t = \u2205 \u2194 s = \u2205 \u2227 t = \u2205",
+          "family": "set_ext_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u222a t = \u2205 \u2194 s = \u2205 \u2227 t = \u2205",
+          "family": "set_ext_simp",
+          "risk": "low"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u222a t = \u2205 \u2194 s = \u2205 \u2227 t = \u2205"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Eq.subset",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Function.Injective.nonempty_apply_iff",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Prop.compl_singleton",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "aesop",
+          "solved": true,
+          "outcome": "success",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [
+        "aesop"
+      ],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": true,
+          "outcome": "success",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "classification_pre_sx4": "baseline_duplicate"
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "ext x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2286 {a, b} \u2194 s = {a} \u2228 s = {b} \u2228 s = {a, b}",
+          "family": "set_ext_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2286 {a, b} \u2194 s = {a} \u2228 s = {b} \u2228 s = {a, b}",
+          "family": "set_ext_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case mp\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n  hs : s.Nonempty\n  h : s \u2286 {a, b}\n  \u22a2 s = {a}",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress\nsimp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2286 {a, b} \u2194 s = {a} \u2228 s = {b} \u2228 s = {a, b}\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\nhs : s.Nonempty\n\u22a2 s \u2286 ",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2286 {a, b} \u2194 s = {a} \u2228 s = {b} \u2228 s = {a, b}\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\nhs : s.Nonempty\n\u22a2 s \u2286 ",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2286 {a, b} \u2194 s = {a} \u2228 s = {b} \u2228 s = {a, b}"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2286 {a, b} \u2194 s = {a} \u2228 s = {b} \u2228 s = {a, b}\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\nhs : s.Nonempty\n\u22a2 s \u2286 "
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.eq_of_inclusion_surjective",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u_1\n  s\u271d t\u271d u s t : Set \u03b1\n  h : s \u2286 t\n  h_surj : Function.Surjective (Set.inclusion h)\n  \u22a2 s = t",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u_1\n  s\u271d t\u271d u s t : Set \u03b1\n  h : s \u2286 t\n  h_surj : Function.Surjective (Set.inclusion h)\n  \u22a2 s = t"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case mp\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n  inst\u271d\u00b9 : Preorder \u03b1\n  inst\u271d : Preorder \u03b2\n  f",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress\nsimp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress\nsimp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress\nsimp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.pairwiseDisjoint_filter",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "ext x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  \u2200 \u2983x : \u03b2\u2984, x \u2208 s \u2192 \u2200 \u2983y : \u03b2\u2984, y \u2208 s \u2192 x \u2260 y \u2192 (Disjoint on fun x => Finset.filter (fun x_1 => f x_1 = x) t) x y",
+          "family": "set_ext_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  \u2200 \u2983x : \u03b2\u2984, x \u2208 s \u2192 \u2200 \u2983y : \u03b2\u2984, y \u2208 s \u2192 x \u2260 y \u2192 (Disjoint on fun x => Finset.filter (fun x_1 => f x_1 = x) t) x y",
+          "family": "set_ext_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u_1\n  \u03b2 : Type u_2\n  \u03b3 : Type u_3\n  p q : \u03b1 \u2192 Prop\n  inst\u271d\u00b2 : DecidablePred p\n  inst\u271d\u00b9 : DecidablePred q\n  s\u271d : Finset \u03b1\n  inst\u271d : Deci",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u_1\n  \u03b2 : Type u_2\n  \u03b3 : Type u_3\n  p q : \u03b1 \u2192 Prop\n  inst\u271d\u00b2 : DecidablePred p\n  inst\u271d\u00b9 : DecidablePred q\n  s\u271d : Finset \u03b1\n  inst\u271d : Deci"
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  \u2200 \u2983x : \u03b2\u2984, x \u2208 s \u2192 \u2200 \u2983y : \u03b2\u2984, y \u2208 s \u2192 x \u2260 y \u2192 (Disjoint on fun x => Finset.filter (fun x_1 => f x_1 = x) t) x y"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  \u03b1 : Type u_1\n  \u03b2 : Type u_2\n  \u03b3 : Type u_3\n  p q : \u03b1 \u2192 Prop\n  inst\u271d\u00b2 : DecidablePred p\n  inst\u271d\u00b9 : DecidablePred q\n  s\u271d : Finset \u03b1\n  inst\u271d : Deci"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.ssubset_iff_insert",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case mp\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u s t : Set \u03b1\n  h : s \u2282 t\n  \u22a2 \u2203 a \u2209 s, insert a s \u2286 t",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress\nsimp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2282 t \u2194 \u2203 a \u2209 s, insert a s \u2286 t\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u s t : Set \u03b1\n\u22a2 s \u2282 t \u2194 \u2203 a \u2209 s, insert a ",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2282 t \u2194 \u2203 a \u2209 s, insert a s \u2286 t\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u s t : Set \u03b1\n\u22a2 s \u2282 t \u2194 \u2203 a \u2209 s, insert a ",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2282 t \u2194 \u2203 a \u2209 s, insert a s \u2286 t\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns\u271d s\u2081 s\u2082 t\u271d t\u2081 t\u2082 u s t : Set \u03b1\n\u22a2 s \u2282 t \u2194 \u2203 a \u2209 s, insert a "
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.ssubset_iff_sdiff_singleton",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "ext x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2282 t \u2194 \u2203 a \u2208 t, s \u2286 t \\ {a}",
+          "family": "set_ext_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2282 t \u2194 \u2203 a \u2208 t, s \u2286 t \\ {a}",
+          "family": "set_ext_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "ext x <;> simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2282 t \u2194 \u2203 a \u2208 t, s \u2286 t \\ {a}",
+          "family": "set_ext_simp",
+          "risk": "low"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case mp\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n  h : s \u2282 t\n  \u22a2 \u2203 a \u2208 t, s \u2286 t \\ {a}",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress\nsimp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2282 t \u2194 \u2203 a \u2208 t, s \u2286 t \\ {a}\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n\u22a2 s \u2282 t \u2194 \u2203 a \u2208 t, s \u2286 t \\ {a}",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2282 t \u2194 \u2203 a \u2208 t, s \u2286 t \\ {a}\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n\u22a2 s \u2282 t \u2194 \u2203 a \u2208 t, s \u2286 t \\ {a}",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2282 t \u2194 \u2203 a \u2208 t, s \u2286 t \\ {a}"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2282 t \u2194 \u2203 a \u2208 t, s \u2286 t \\ {a}\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n\u22a2 s \u2282 t \u2194 \u2203 a \u2208 t, s \u2286 t \\ {a}"
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case mp\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n  inst\u271d\u00b9 : Preorder \u03b1\n  inst\u271d : Preorder \u03b2\n  f",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress\nsimp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case mp\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n  inst\u271d\u00b9 : Preorder \u03b1\n  inst\u271d : Preorder \u03b2\n  f",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress\nsimp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    },
+    {
+      "full_name": "Set.subset_pair_iff_eq",
+      "rc2_confirmed_failure": true,
+      "live": true,
+      "setup_error": null,
+      "probes_tried": [
+        {
+          "tactic": "ext x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2286 {x, y} \u2194 s = \u2205 \u2228 s = {x} \u2228 s = {y} \u2228 s = {x, y}",
+          "family": "set_ext_aesop",
+          "risk": "low"
+        },
+        {
+          "tactic": "ext x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2286 {x, y} \u2194 s = \u2205 \u2228 s = {x} \u2228 s = {y} \u2228 s = {x, y}",
+          "family": "set_ext_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'aesop' failed, made no progress\nInitial goal:\n  case mp\n  \u03b1 : Type u\n  \u03b2 : Type v\n  \u03b3 : Type w\n  \u03b9 : Sort x\n  a b : \u03b1\n  s s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\n  x y : \u03b1\n  h : s \u2286 {x, y}\n  \u22a2 s = \u2205 \u2228 s = {x}",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "constructor <;> intro h <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress\nsimp_all made no progress",
+          "family": "set_iff_constructor_aesop",
+          "risk": "medium"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2286 {x, y} \u2194 s = \u2205 \u2228 s = {x} \u2228 s = {y} \u2228 s = {x, y}\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\nx y : \u03b1\n\u22a2 s \u2286 ",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm <;> intro x <;> simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2286 {x, y} \u2194 s = \u2205 \u2228 s = {x} \u2228 s = {y} \u2228 s = {x, y}\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\nx y : \u03b1\n\u22a2 s \u2286 ",
+          "family": "set_subset_antisymm",
+          "risk": "high"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress",
+          "family": "generic_aesop_simpall",
+          "risk": "low"
+        }
+      ],
+      "winning_probes": [],
+      "controls": [
+        {
+          "tactic": "simp",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp made no progress"
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error",
+          "dead": false,
+          "error": "<stdin>:1:10: expected '{' or tactic"
+        }
+      ],
+      "depth1_subcontrols": [
+        {
+          "tactic": "ext x",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "applyExtTheorem only applies to equations, not\n  s \u2286 {x, y} \u2194 s = \u2205 \u2228 s = {x} \u2228 s = {y} \u2228 s = {x, y}"
+        },
+        {
+          "tactic": "aesop",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "simp_all made no progress"
+        },
+        {
+          "tactic": "constructor",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false
+        },
+        {
+          "tactic": "apply Set.Subset.antisymm",
+          "solved": false,
+          "outcome": "proof_failed",
+          "dead": false,
+          "error": "tactic 'apply' failed, failed to unify\n  ?a = ?b\nwith\n  s \u2286 {x, y} \u2194 s = \u2205 \u2228 s = {x} \u2228 s = {y} \u2228 s = {x, y}\n\u03b1 : Type u\n\u03b2 : Type v\n\u03b3 : Type w\n\u03b9 : Sort x\na b : \u03b1\ns s\u2081 s\u2082 t t\u2081 t\u2082 u : Set \u03b1\nx y : \u03b1\n\u22a2 s \u2286 "
+        }
+      ],
+      "classification_pre_sx4": "no_win"
+    }
+  ]
+}

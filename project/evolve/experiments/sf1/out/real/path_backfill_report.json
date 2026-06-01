@@ -1,0 +1,47 @@
+{
+  "total_frontier_rows": 52,
+  "exact_matches": 50,
+  "normalized_unambiguous_matches": 0,
+  "ambiguous_matches": 0,
+  "unresolved": 2,
+  "source_coverage_cumulative": {
+    "discovered_theorems": 50,
+    "routing": 50,
+    "tasks": 50,
+    "eval_runs_or_final": 50
+  },
+  "eval_runs_files_scanned": 531,
+  "resolved_by_namespace": {
+    "Set": 43,
+    "Multiset": 3,
+    "Eq": 1,
+    "Function": 1,
+    "Prop": 1,
+    "GENERAL_FRONTIER": 1
+  },
+  "unresolved_by_namespace": {
+    "Nat": 1,
+    "traces_from_search": 1
+  },
+  "examples_unresolved": [
+    "Nat.lt_of_lt_of_le",
+    "traces_from_search.jsonl"
+  ],
+  "batch_runnability": {
+    "sf1_balanced_mini": {
+      "size": 8,
+      "with_path": 6,
+      "runnable": true
+    },
+    "sf1_multiset_holdout": {
+      "size": 3,
+      "with_path": 3,
+      "runnable": true
+    },
+    "sf1_frontier_all": {
+      "size": 52,
+      "with_path": 50,
+      "runnable": true
+    }
+  }
+}

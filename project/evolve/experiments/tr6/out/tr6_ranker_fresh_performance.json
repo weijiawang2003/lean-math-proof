@@ -1,0 +1,87 @@
+{
+  "generated_by": "scripts/tr6_analyze_ranker_fresh_performance.py",
+  "fresh_failures_searched": 137,
+  "programs_attempted": {
+    "b5": 654,
+    "b10": 622,
+    "b20": 1182,
+    "b5_controls": 540,
+    "total": 2458
+  },
+  "wins_by_budget": {
+    "b5": 9,
+    "b10": 11,
+    "b20": 18
+  },
+  "credited_total": 18,
+  "total_live_successes": 21,
+  "success_per_probe": 0.0073,
+  "tr5_success_per_probe_reference": 0.0161,
+  "mean_first_success_rank": 8.28,
+  "no_win_rate": 0.8321,
+  "unknown_name_failures_encountered": 42,
+  "by_namespace": {
+    "AntitoneOn": {
+      "searched": 2,
+      "credited": 0
+    },
+    "Equiv": {
+      "searched": 1,
+      "credited": 0
+    },
+    "Finset": {
+      "searched": 30,
+      "credited": 2
+    },
+    "IsGLB": {
+      "searched": 1,
+      "credited": 0
+    },
+    "IsLUB": {
+      "searched": 1,
+      "credited": 0
+    },
+    "List": {
+      "searched": 29,
+      "credited": 1
+    },
+    "MonotoneOn": {
+      "searched": 2,
+      "credited": 0
+    },
+    "Multiset": {
+      "searched": 22,
+      "credited": 9
+    },
+    "Nat": {
+      "searched": 14,
+      "credited": 1
+    },
+    "Option": {
+      "searched": 3,
+      "credited": 0
+    },
+    "PLift": {
+      "searched": 1,
+      "credited": 0
+    },
+    "Set": {
+      "searched": 21,
+      "credited": 5
+    },
+    "": {
+      "searched": 10,
+      "credited": 0
+    }
+  },
+  "by_winning_family": {
+    "d2_simp_aesop": 9,
+    "d1_simp_lemma": 3,
+    "d1_tauto": 3,
+    "d2_rw_aesop": 1,
+    "d1_exact": 1,
+    "def_unfold_simp": 1
+  },
+  "nonset_credited": 13,
+  "decision": "RANKER_GENERALIZES_TO_FRESH_FRONTIER"
+}

@@ -1,0 +1,13 @@
+TR3 protected-file confirmation
+
+git diff --stat HEAD over protected wrappers + ns24 (empty == untouched):
+<<<empty == untouched>>>
+
+Protected paths unstaged/staged change status (empty == none):
+<<<empty == none>>>
+
+TR1/TR2/SF5 datasets not modified by TR3 (only read):
+?? project/evolve/experiments/sf5/out/sf5_training_examples.jsonl
+?? project/evolve/experiments/tr1/data/
+?? project/evolve/experiments/tr2/data/
+<<<dirs untracked from prior work; TR3 wrote none of these>>>

@@ -1,0 +1,64 @@
+{
+  "generated_by": "scripts/rc5h_compare_systems.py",
+  "systems": {
+    "RC2": {
+      "solved": 75,
+      "new_over_rc2": 0,
+      "new_over_rc4": 0,
+      "regressions": 10
+    },
+    "RC4_static": {
+      "solved": 85,
+      "new_over_rc2": 10,
+      "new_over_rc4": 0,
+      "regressions": 0
+    },
+    "RC5H_B5": {
+      "solved": 88,
+      "new_over_rc2": 13,
+      "new_over_rc4": 3,
+      "regressions": 0,
+      "dynamic_probes": 443,
+      "dynamic_probes_per_additional_win": 147.7
+    },
+    "RC5H_B10": {
+      "solved": 88,
+      "new_over_rc2": 13,
+      "new_over_rc4": 3,
+      "regressions": 0,
+      "dynamic_probes": 864,
+      "dynamic_probes_per_additional_win": 288.0
+    },
+    "RC5H_B20": {
+      "solved": 88,
+      "new_over_rc2": 13,
+      "new_over_rc4": 3,
+      "regressions": 0,
+      "dynamic_probes": 1285,
+      "dynamic_probes_per_additional_win": 428.3
+    }
+  },
+  "cumulative_dynamic_probes": {
+    "B5": 443,
+    "B10": 864,
+    "B20": 1285
+  },
+  "floors": {
+    "n": 80,
+    "rc2": 61,
+    "rc4": 61,
+    "rc5h": 61
+  },
+  "new_over_rc4_by_namespace": {
+    "Finset": 2,
+    "Multiset": 1
+  },
+  "new_over_rc4_by_set": {
+    "TR6_dynamic_tail_replay": 2,
+    "Fresh_dynamic_candidate_frontier": 1
+  },
+  "rc4_static_contribution": 10,
+  "dynamic_stage_contribution": 3,
+  "hybrid_net_delta_over_rc2": 13,
+  "best_budget": "B5"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "sx3_case_manifest",
+  "sizes": {
+    "deferred": 4,
+    "fresh_holdout": 13,
+    "cluster": 12,
+    "negative_controls": 6,
+    "canonical_smoke": 5
+  },
+  "roles": {
+    "deferred_known": "the +4 RC2-deferred candidates; reproduction target, NOT fresh delta",
+    "fresh_holdout": "Set.ite/dite never credited or deferred; the genuine fresh-delta surface",
+    "set_cluster_failure": "general Set failures to test ext/iff/subset families",
+    "negative_control": "non-Set; expect 0 Set sequence emissions (off-gate guard)",
+    "canonical_smoke": "non-Set canonical floor sample; expect 0 Set emissions"
+  },
+  "exclusions": {
+    "credited5_excluded_everywhere": [
+      "Set.ite_empty",
+      "Set.ite_empty_left",
+      "Set.ite_empty_right",
+      "Set.ite_left",
+      "Set.ite_right"
+    ],
+    "deferred4_in_deferred_set_only": [
+      "Set.ite_inter",
+      "Set.ite_inter_self",
+      "Set.ite_compl",
+      "Set.ite_inter_compl_self"
+    ],
+    "fresh_holdout_excludes": "credited5 + deferred4"
+  },
+  "leakage_risk": [
+    "Set.ite_univ (fresh) source proof is single-shot simp[Set.ite] -> expected single_step_duplicate, NOT a depth-2 win (attribution must catch it).",
+    "Set.ite_inter_of_inter_eq (fresh) source uses an rw bridge -> source-specific risk.",
+    "Some fresh-holdout names overlap RC2's own fresh_holdout set; that is acceptable because SX3 freshness is defined relative to credited5+deferred4, and attribution is recomputed live here.",
+    "Deferred4 are 'known' wins (reproduction), so they are reported separately from fresh delta and never counted toward the RC3 fresh-delta gate."
+  ],
+  "note": "Every claimed new win is compared against RC2's deterministic credited mechanism (single-shot simp[Set.ite] + bare baselines), which the runner executes as controls per theorem."
+}

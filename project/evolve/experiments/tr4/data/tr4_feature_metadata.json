@@ -1,0 +1,42 @@
+{
+  "generated_by": "scripts/tr4_featurize_programs.py",
+  "num_rows": 4737,
+  "num_features": 4825,
+  "block_dims": {
+    "name_char": 799,
+    "name_tok": 318,
+    "goal_word": 495,
+    "tactic_tok": 2053,
+    "lemma_tok": 913,
+    "dict": 247
+  },
+  "block_col_ranges": {
+    "name_char": [
+      0,
+      799
+    ],
+    "name_tok": [
+      799,
+      1117
+    ],
+    "goal_word": [
+      1117,
+      1612
+    ],
+    "tactic_tok": [
+      1612,
+      3665
+    ],
+    "lemma_tok": [
+      3665,
+      4578
+    ],
+    "dict": [
+      4578,
+      4825
+    ]
+  },
+  "labels_path": "project/evolve/experiments/tr4/data/tr4_features_labels.npz",
+  "num_positive_success": 23,
+  "num_positive_credit": 22
+}

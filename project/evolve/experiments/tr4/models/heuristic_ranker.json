@@ -1,0 +1,16 @@
+{
+  "family_weights": {
+    "def_unfold_simp": 1.0,
+    "d1_simp_lemma": 0.8,
+    "d2_simp_aesop": 0.7
+  },
+  "rules": [
+    "+win_family",
+    "+0.4 ns_match",
+    "+0.5 uses_retrieved",
+    "+max(0,0.6-0.05*rank)",
+    "-0.3 if no retrieval",
+    "-0.1*(depth-1)",
+    "+0.3 def_unfold"
+  ]
+}

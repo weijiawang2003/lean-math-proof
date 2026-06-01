@@ -1,0 +1,3163 @@
+{
+  "generated_by": "scripts/rc4c_run_candidate_eval.py",
+  "evaluation_mode": "external_additive_dual",
+  "metrics": {
+    "num_theorems": 109,
+    "rc2_solved": 38,
+    "candidate_solved_all": 57,
+    "raw_delta_all": 19,
+    "raw_delta_nonoverlap": 11,
+    "overlap_rc4b_wins": 8,
+    "regressions": 0,
+    "gate_emissions": 42,
+    "off_gate_emissions": 0,
+    "emitted_and_solved": 19,
+    "emitted_and_failed": 19,
+    "new_wins_by_namespace_all": {
+      "Finset": 1,
+      "List": 2,
+      "Multiset": 9,
+      "Set": 7
+    },
+    "new_wins_by_namespace_nonoverlap": {
+      "Finset": 1,
+      "List": 2,
+      "Multiset": 7,
+      "Set": 1
+    }
+  },
+  "new_win_targets_all": [
+    "Finset.biUnion_subset_iff_forall_subset",
+    "List.Forall.imp",
+    "Multiset.disjoint_add_right",
+    "Set.Nonempty.subset_pair_iff_eq",
+    "Multiset.disjoint_add_left",
+    "Multiset.disjoint_cons_left",
+    "Set.disjoint_iUnion_left",
+    "Set.disjoint_iUnion_right",
+    "Set.disjoint_iff_forall_ne",
+    "Set.disjoint_right",
+    "Set.disjoint_sUnion_left",
+    "Set.disjoint_sUnion_right",
+    "List.forall_map_iff",
+    "Multiset.disjoint_iff_ne",
+    "Multiset.disjoint_right",
+    "Multiset.disjoint_singleton",
+    "Multiset.disjoint_union_left",
+    "Multiset.singleton_disjoint",
+    "Multiset.zero_disjoint"
+  ],
+  "new_win_targets_nonoverlap": [
+    "Finset.biUnion_subset_iff_forall_subset",
+    "List.Forall.imp",
+    "Multiset.disjoint_add_right",
+    "Set.Nonempty.subset_pair_iff_eq",
+    "Multiset.disjoint_add_left",
+    "List.forall_map_iff",
+    "Multiset.disjoint_iff_ne",
+    "Multiset.disjoint_singleton",
+    "Multiset.disjoint_union_left",
+    "Multiset.singleton_disjoint",
+    "Multiset.zero_disjoint"
+  ],
+  "overlap_rc4b_win_targets": [
+    "Multiset.disjoint_cons_left",
+    "Set.disjoint_iUnion_left",
+    "Set.disjoint_iUnion_right",
+    "Set.disjoint_iff_forall_ne",
+    "Set.disjoint_right",
+    "Set.disjoint_sUnion_left",
+    "Set.disjoint_sUnion_right",
+    "Multiset.disjoint_right"
+  ],
+  "results": [
+    {
+      "full_name": "Finset.biUnion_subset_iff_forall_subset",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "sets": [
+        "known_wins_all",
+        "known_wins_nonoverlap"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "FINSET_BIUNION_SUBSET_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Finset.biUnion_subset] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Finset.biUnion_subset] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Finset.biUnion_subset] <;> aesop",
+      "winning_lemma": "Finset.biUnion_subset",
+      "winning_overlap_family": "none",
+      "nonoverlap_winning_tactic": "simp [Finset.biUnion_subset] <;> aesop",
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": true,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-1e9cbccd/traces.jsonl"
+    },
+    {
+      "full_name": "List.Forall.imp",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "sets": [
+        "known_wins_all",
+        "known_wins_nonoverlap"
+      ],
+      "namespace": "List",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "LIST_FORALL_D2"
+      ],
+      "candidate_tactics": [
+        "simp [List.forall_iff_forall_mem] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [List.forall_iff_forall_mem] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [List.forall_iff_forall_mem] <;> aesop",
+      "winning_lemma": "List.forall_iff_forall_mem",
+      "winning_overlap_family": "none",
+      "nonoverlap_winning_tactic": "simp [List.forall_iff_forall_mem] <;> aesop",
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": true,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-07d0ee29/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_add_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "known_wins_all",
+        "known_wins_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "success",
+        "simp [Multiset.disjoint_right] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": "simp [Multiset.disjoint_right] <;> aesop",
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": true,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "known_wins_all",
+        "known_wins_nonoverlap"
+      ],
+      "namespace": "Set",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "SET_SUBSET_PAIR_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Set.subset_pair_iff_eq] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Set.subset_pair_iff_eq] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+      "winning_lemma": "Set.subset_pair_iff_eq",
+      "winning_overlap_family": "none",
+      "nonoverlap_winning_tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": true,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_add_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "known_wins_all"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "success",
+        "simp [Multiset.disjoint_right] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": "simp [Multiset.disjoint_right] <;> aesop",
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": true,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "known_wins_all"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "success",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": true,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_left",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "sets": [
+        "known_wins_all"
+      ],
+      "namespace": "Set",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "SET_DISJOINT_LEFT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Set.disjoint_left] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Set.disjoint_left] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "winning_lemma": "Set.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": true,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-17606bcc/traces.jsonl"
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_right",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "sets": [
+        "known_wins_all"
+      ],
+      "namespace": "Set",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "SET_DISJOINT_LEFT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Set.disjoint_left] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Set.disjoint_left] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "winning_lemma": "Set.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": true,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-128b8e44/traces.jsonl"
+    },
+    {
+      "full_name": "Set.disjoint_iff_forall_ne",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "known_wins_all"
+      ],
+      "namespace": "Set",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "SET_DISJOINT_LEFT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Set.disjoint_left] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Set.disjoint_left] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "winning_lemma": "Set.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": true,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-2baf47b7/traces.jsonl"
+    },
+    {
+      "full_name": "Set.disjoint_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "known_wins_all"
+      ],
+      "namespace": "Set",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "SET_DISJOINT_LEFT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Set.disjoint_left] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Set.disjoint_left] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "winning_lemma": "Set.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": true,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-2baf47b7/traces.jsonl"
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_left",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "sets": [
+        "known_wins_all"
+      ],
+      "namespace": "Set",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "SET_DISJOINT_LEFT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Set.disjoint_left] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Set.disjoint_left] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "winning_lemma": "Set.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": true,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-17606bcc/traces.jsonl"
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "sets": [
+        "known_wins_all"
+      ],
+      "namespace": "Set",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "SET_DISJOINT_LEFT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Set.disjoint_left] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Set.disjoint_left] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Set.disjoint_left] <;> aesop",
+      "winning_lemma": "Set.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": true,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-17606bcc/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.biUnion_subset",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "FINSET_BIUNION_SUBSET_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Finset.biUnion_subset] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Finset.biUnion_subset] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-1e9cbccd/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_left",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "FINSET_BIUNION_SUBSET_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Finset.biUnion_subset] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Finset.biUnion_subset] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-2c63d009/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_right",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "FINSET_BIUNION_SUBSET_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Finset.biUnion_subset] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Finset.biUnion_subset] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-2c63d009/traces.jsonl"
+    },
+    {
+      "full_name": "List.filterMap_eq_map_iff_forall_eq_some",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "List",
+      "rc2_finished": false,
+      "rc2_status": "open_flake",
+      "gate_fired": true,
+      "actions_emitted": [
+        "LIST_FORALL_D2"
+      ],
+      "candidate_tactics": [
+        "simp [List.forall_iff_forall_mem] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": "DojoInitError: Cannot interact with theorems with the `where` keyword.\nte-packages/lean_dojo/interaction/dojo.py\", line 390, in _get_modified_proof\n    raise DojoInitError(\nlean_dojo.interaction.dojo.DojoInitError: Cannot interact with theorems with the `where` keyword.\n",
+      "trace_path": null
+    },
+    {
+      "full_name": "List.forall_cons",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "List",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "LIST_FORALL_D2"
+      ],
+      "candidate_tactics": [
+        "simp [List.forall_iff_forall_mem] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [List.forall_iff_forall_mem] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-51604cfc/traces.jsonl"
+    },
+    {
+      "full_name": "List.forall_iff_forall_mem",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "List",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "LIST_FORALL_D2"
+      ],
+      "candidate_tactics": [
+        "simp [List.forall_iff_forall_mem] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [List.forall_iff_forall_mem] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-07d0ee29/traces.jsonl"
+    },
+    {
+      "full_name": "List.forall_map_iff",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "List",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "LIST_FORALL_D2"
+      ],
+      "candidate_tactics": [
+        "simp [List.forall_iff_forall_mem] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [List.forall_iff_forall_mem] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [List.forall_iff_forall_mem] <;> aesop",
+      "winning_lemma": "List.forall_iff_forall_mem",
+      "winning_overlap_family": "none",
+      "nonoverlap_winning_tactic": "simp [List.forall_iff_forall_mem] <;> aesop",
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": true,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-51604cfc/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.Disjoint.symm",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-19277c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.add_eq_union_iff_disjoint",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.add_eq_union_left_of_le",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.add_eq_union_right_of_le",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.coe_disjoint",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_comm",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b3cd4c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Multiset.disjoint_right] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_right] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_right",
+      "winning_overlap_family": "none",
+      "nonoverlap_winning_tactic": "simp [Multiset.disjoint_right] <;> aesop",
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_iff_ne",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "success",
+        "simp [Multiset.disjoint_right] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": "simp [Multiset.disjoint_right] <;> aesop",
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": true,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-19277c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-19277c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_map_map",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "success",
+        "simp [Multiset.disjoint_right] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": "simp [Multiset.disjoint_right] <;> aesop",
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-19277c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_of_subset_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_of_subset_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all",
+        "fresh_holdout_nonoverlap"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "success",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": true,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-19277c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_singleton",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "success",
+        "simp [Multiset.disjoint_right] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": "simp [Multiset.disjoint_right] <;> aesop",
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": true,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-19277c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_toFinset",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "project/evolve/experiments/sf4/out/rc2_confirm_runs/eval-6a461639/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_union_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "success",
+        "simp [Multiset.disjoint_right] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": "simp [Multiset.disjoint_right] <;> aesop",
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": true,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.disjoint_union_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "success",
+        "simp [Multiset.disjoint_right] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": "simp [Multiset.disjoint_right] <;> aesop",
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.inter_eq_zero_iff_disjoint",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.nodup_bind",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Multiset.disjoint_right] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-19277c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.singleton_disjoint",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "success",
+        "simp [Multiset.disjoint_right] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": "simp [Multiset.disjoint_right] <;> aesop",
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": true,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-19277c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Multiset.zero_disjoint",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "namespace": "Multiset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "MULTISET_DISJOINT_LEFT_D2",
+        "MULTISET_DISJOINT_RIGHT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Multiset.disjoint_left] <;> aesop",
+        "simp [Multiset.disjoint_right] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Multiset.disjoint_left] <;> aesop": "success",
+        "simp [Multiset.disjoint_right] <;> aesop": "success"
+      },
+      "candidate_finished": true,
+      "winning_tactic": "simp [Multiset.disjoint_left] <;> aesop",
+      "winning_lemma": "Multiset.disjoint_left",
+      "winning_overlap_family": "RC4B",
+      "nonoverlap_winning_tactic": "simp [Multiset.disjoint_right] <;> aesop",
+      "new_win_over_rc2": true,
+      "nonoverlap_new_win": true,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-19277c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Set._root_.Disjoint.image",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "namespace": "Set",
+      "rc2_finished": false,
+      "rc2_status": "open_flake",
+      "gate_fired": true,
+      "actions_emitted": [
+        "SET_DISJOINT_LEFT_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Set.disjoint_left] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": "DojoInitError: Failed to locate the theorem with `Set._root_.Disjoint.image` as its fully qualified name.\nojo.py\", line 375, in _get_modified_proof\n    raise DojoInitError(\nlean_dojo.interaction.dojo.DojoInitError: Failed to locate the theorem with `Set._root_.Disjoint.image` as its fully qualified name.\n",
+      "trace_path": null
+    },
+    {
+      "full_name": "Set.biUnion_compl_eq_of_pairwise_disjoint_of_iUnion_eq_univ",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "sets": [
+        "fresh_holdout_all"
+      ],
+      "namespace": "Set",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": true,
+      "actions_emitted": [
+        "SET_DISJOINT_LEFT_D2",
+        "SET_SUBSET_PAIR_D2"
+      ],
+      "candidate_tactics": [
+        "simp [Set.disjoint_left] <;> aesop",
+        "simp [Set.subset_pair_iff_eq] <;> aesop"
+      ],
+      "candidate_probe_outcomes": {
+        "simp [Set.disjoint_left] <;> aesop": "proof_failed",
+        "simp [Set.subset_pair_iff_eq] <;> aesop": "proof_failed"
+      },
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-c491bc22/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.card_union_eq_card_add_card",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-2c63d009/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_left",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b6964db5/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_right",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b6964db5/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.disjiUnion_cons",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-9d5eb1a4/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.disjiUnion_filter_eq",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b6964db5/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.disjiUnion_filter_eq_of_maps_to",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b6964db5/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.disjiUnion_map",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-1e9cbccd/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.disjoint_filter_filter'",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-a48ce70a/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.disjoint_image",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b6964db5/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.disjoint_map",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b6964db5/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.disjoint_sup_left",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b6964db5/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.disjoint_sup_right",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-b6964db5/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.filter_cons",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-a48ce70a/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.pairwise_cons'",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-dde44f13/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.powerset_card_disjiUnion",
+      "file_path": "Mathlib/Data/Finset/Powerset.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-1e9cbccd/traces.jsonl"
+    },
+    {
+      "full_name": "List.disjoint_map",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "List",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-9d5eb1a4/traces.jsonl"
+    },
+    {
+      "full_name": "List.disjoint_pmap",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "List",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-9d5eb1a4/traces.jsonl"
+    },
+    {
+      "full_name": "List.mem_pair",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "sets": [
+        "negative_controls"
+      ],
+      "namespace": "List",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-51604cfc/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.AM_GM",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "namespace_negative_controls",
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-54f1a988/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.Coprime.dvd_mul_left",
+      "file_path": "Mathlib/Data/Nat/GCD/Basic.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-54f1a988/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.Coprime.dvd_mul_right",
+      "file_path": "Mathlib/Data/Nat/GCD/Basic.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-54f1a988/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.Coprime.eq_of_mul_eq_zero",
+      "file_path": "Mathlib/Data/Nat/GCD/Basic.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-54f1a988/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.Coprime.lcm_eq_mul",
+      "file_path": "Mathlib/Data/Nat/GCD/Basic.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-54f1a988/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.ModEq.add_le_of_lt",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-54f1a988/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.ModEq.cancel_left_of_coprime",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-54f1a988/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.ModEq.cancel_right_of_coprime",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-54f1a988/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.ModEq.comm",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-e0b443e2/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.ModEq.dvd_iff",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-54f1a988/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.ModEq.eq_of_abs_lt",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-54f1a988/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.ModEq.eq_of_lt_of_lt",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-54f1a988/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.ModEq.gcd_eq",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-54f1a988/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.ModEq.le_of_lt_add",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-449f7c62/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.ModEq.mul_left_cancel_iff'",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-449f7c62/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.ModEq.mul_right_cancel_iff'",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-449f7c62/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.add_def",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-449f7c62/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.add_div",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-449f7c62/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.add_div_eq_of_add_mod_lt",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-449f7c62/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.add_div_eq_of_le_mod_add_mod",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "sets": [
+        "namespace_negative_controls"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-449f7c62/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.mul_add_mod'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-449f7c62/traces.jsonl"
+    },
+    {
+      "full_name": "Set.ite_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Set",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-449f7c62/traces.jsonl"
+    },
+    {
+      "full_name": "Set.union_comm",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Set",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-449f7c62/traces.jsonl"
+    },
+    {
+      "full_name": "Set.inter_comm",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Set",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-449f7c62/traces.jsonl"
+    },
+    {
+      "full_name": "Set.mem_union",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Set",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-449f7c62/traces.jsonl"
+    },
+    {
+      "full_name": "Set.mem_inter_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Set",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-e4f81781/traces.jsonl"
+    },
+    {
+      "full_name": "Set.subset_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Set",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-e4f81781/traces.jsonl"
+    },
+    {
+      "full_name": "Set.empty_subset",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Set",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-e4f81781/traces.jsonl"
+    },
+    {
+      "full_name": "Set.union_empty",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Set",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-e4f81781/traces.jsonl"
+    },
+    {
+      "full_name": "Set.empty_union",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Set",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-e4f81781/traces.jsonl"
+    },
+    {
+      "full_name": "Set.inter_univ",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Set",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-e4f81781/traces.jsonl"
+    },
+    {
+      "full_name": "Set.univ_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Set",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-e4f81781/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.disjoint_insert_right",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-e4f81781/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.mem_insert",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-e4f81781/traces.jsonl"
+    },
+    {
+      "full_name": "Finset.mem_singleton",
+      "file_path": "Mathlib/Data/Finset/Basic.lean",
+      "sets": [
+        "canonical_smoke"
+      ],
+      "namespace": "Finset",
+      "rc2_finished": false,
+      "rc2_status": "failed",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": false,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-e4f81781/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.add_eq_left",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-e4f81781/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.add_eq_max_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-19277c9f/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.add_eq_min_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-e4f81781/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.add_eq_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.add_eq_right",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.add_mod_eq_add_mod_left",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.add_mod_eq_add_mod_right",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.div_le_div_right",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.div_lt_iff_lt_mul'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.div_lt_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-e0b443e2/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.half_le_of_sub_le_half",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.le_and_le_add_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc4_candidates/d2_simp_aesop/out/rc2_baseline/rc2_runs/eval-0e92d56a/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.le_or_le_of_add_eq_add_pred",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-65404903/traces.jsonl"
+    },
+    {
+      "full_name": "Nat.add_mod_eq_ite",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "sets": [
+        "canonical_smoke",
+        "canonical_smoke"
+      ],
+      "namespace": "Nat",
+      "rc2_finished": true,
+      "rc2_status": "solved",
+      "gate_fired": false,
+      "actions_emitted": [],
+      "candidate_tactics": [],
+      "candidate_probe_outcomes": {},
+      "candidate_finished": true,
+      "winning_tactic": null,
+      "winning_lemma": null,
+      "winning_overlap_family": null,
+      "nonoverlap_winning_tactic": null,
+      "new_win_over_rc2": false,
+      "nonoverlap_new_win": false,
+      "overlaps_rc4b": false,
+      "off_gate": false,
+      "error": null,
+      "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-bc7ecfc9/traces.jsonl"
+    }
+  ]
+}

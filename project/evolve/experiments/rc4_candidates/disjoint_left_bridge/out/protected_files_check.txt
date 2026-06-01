@@ -1,0 +1,16 @@
+RC4B protected-file verification
+generated: 2026-05-31
+
+git diff --stat HEAD on protected files (expect empty):
+  -> exit 0 (0 + no lines above = UNTOUCHED)
+
+Protected (not modified):
+  rc1_production_wrapper.json    : UNTOUCHED
+  rc2_production_wrapper.json    : UNTOUCHED
+  ns24_router.json               : UNTOUCHED
+  NS9 genome/checkpoint          : not referenced for write
+  REL1/RC1/RC2 release reports   : not modified
+  TR1-TR6 datasets               : read-only inputs
+  RC4A artifacts                 : read-only reference
+
+No README update. No RC4 release. No production routing change. No commit.

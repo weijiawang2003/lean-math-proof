@@ -1,0 +1,36 @@
+{
+  "policy_id": "set_ite_simp_rc2_candidate_v1",
+  "status": "experimental_rc2_candidate",
+  "global_enabled": true,
+  "promotion_allowed": false,
+  "requires_literal_rc1_confirmation": true,
+  "requires_ns23_minimal_relabel": true,
+  "description": "RC2 candidate validation policy. EXACTLY ONE active gate: SET_ITE_SIMP (simp [Set.ite]), narrowly gated to Set + ite/if goals. All speculative SX2 gates are disabled/removed. Additive, off-by-default in production. NEVER modifies rc1_production_wrapper.json or ns24_router.json.",
+  "disabled_gates": [
+    "SET_EXT_SIMP", "SET_EXT_BYCASES", "SET_IFF_CONSTRUCTOR",
+    "SET_SUBSET_ANTISYMM", "SET_RW_BRIDGE", "SOURCE_SPECIFIC"
+  ],
+  "gates": [
+    {
+      "family": "SET_ITE_SIMP",
+      "status": "experimental_rc2_candidate",
+      "enabled": true,
+      "tactic": "simp [Set.ite]",
+      "gate": {
+        "requires_namespace_or_name_contains": ["Set"],
+        "requires_goal_or_name_contains_any": ["ite", "if"],
+        "forbids_namespace_or_name_contains": ["Multiset", "Nat", "Int"],
+        "target_shapes": ["set_membership", "set_equality", "set_iff_or_ite"],
+        "max_emissions_per_theorem": 1
+      },
+      "promotion_allowed": false,
+      "requires_literal_rc1_confirmation": true,
+      "requires_ns23_minimal_relabel": true,
+      "mined_support": {
+        "num_theorems": 5,
+        "selected_reproduction": ["Set.ite_empty_right", "Set.ite_right"],
+        "fresh_holdout": ["Set.ite_empty", "Set.ite_empty_left", "Set.ite_left"]
+      }
+    }
+  ]
+}

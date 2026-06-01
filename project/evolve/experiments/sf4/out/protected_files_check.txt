@@ -1,0 +1,20 @@
+=== git diff --stat HEAD -- protected files (expect EMPTY) ===
+<empty above = protected files UNTOUCHED>
+
+=== README unmodified? ===
+no README changes
+
+=== git status --short (SF4 additions) ===
+?? project/evolve/experiments/sf4/
+?? project/evolve/reports/sf4/
+?? scripts/sf4_analyze_candidate_families.py
+?? scripts/sf4_apply_sx4_attribution.py
+?? scripts/sf4_cluster_failures.py
+?? scripts/sf4_collect_rc2_failures.py
+?? scripts/sf4_confirm_rc2_failures.py
+?? scripts/sf4_generate_candidate_probes.py
+?? scripts/sf4_missing_lemma_triage.py
+?? scripts/sf4_run_candidate_probes.py
+
+=== HEAD (no new commit by me) ===
+94bde0a Add SX4 sequence attribution harness

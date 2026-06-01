@@ -1,0 +1,30 @@
+{
+  "generated_by": "scripts/tr7_export_diagnostic_dataset.py",
+  "num_examples": 18,
+  "static_coverage_histogram": {
+    "RC4C_RESIDUE_EXCLUDED": 1,
+    "ALLOWLIST_MISS": 3,
+    "STATIC_COVERED_AND_SHOULD_SOLVE": 10,
+    "DYNAMIC_RETRIEVAL_REQUIRED": 3,
+    "WRAPPER_REPRESENTATION_MISS": 1
+  },
+  "replay_histogram": {
+    "RC4_MISSES_GATE": 4,
+    "RC4_REPRODUCES_TR6_WIN": 10,
+    "RC4_ACTION_FAILS_BUT_TR6_PROGRAM_WORKS": 4
+  },
+  "dynamic_vs_static_histogram": {
+    "STATIC_WRAPPER_COMPATIBLE_WITH_ALLOWLIST_EXPANSION": 3,
+    "STATIC_WRAPPER_COMPATIBLE_NOW": 10,
+    "DYNAMIC_RETRIEVAL_PREFERRED": 4,
+    "STATIC_WRAPPER_COMPATIBLE_WITH_SCHEMA_FIX": 1
+  },
+  "recommended_next_action_histogram": {
+    "TR8: gather recurrence evidence, then add lemma": 3,
+    "none (already in RC4)": 10,
+    "RC5H: ranker-guided dynamic retrieval stage": 4,
+    "RC5H: deploy as bare simp[L] enabling action (RC4B-style)": 1
+  },
+  "tr6_program_reproduces_all": true,
+  "usage": "Diagnostic set for RC5 design: each row says whether a TR6 fresh win is static-reachable and the concrete next action. Use to scope RC5H (hybrid) and to seed TR8's recurrence search; NOT a prover training set."
+}

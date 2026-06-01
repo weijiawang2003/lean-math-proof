@@ -1,0 +1,37 @@
+{
+  "generated_by": "scripts/tr3_build_case_pool.py",
+  "num_cases": 150,
+  "num_unresolved": 0,
+  "case_type_histogram": {
+    "A": 15,
+    "B": 5,
+    "C": 7,
+    "D": 24,
+    "E": 99
+  },
+  "namespace_histogram": {
+    "Set": 59,
+    "Nat": 31,
+    "Finset": 30,
+    "Multiset": 13,
+    "List": 13,
+    "Eq": 1,
+    "Function": 1,
+    "Prop": 1,
+    "GENERAL_FRONTIER": 1
+  },
+  "known_rc2_status_histogram": {
+    "failed": 27,
+    "solved": 17,
+    "unknown": 106
+  },
+  "target_size": 150,
+  "frontier_exhaustion_note": "Confirmed-failure case types A/B/C are bounded by the SF4/SF5 pool; fresh signal comes only from D (SF1 frontier) and E (discovered expansion). Most E cases are 'easy' and expected to be RC2_SOLVED — confirmed failures remain the scarce, valuable subset.",
+  "sources": {
+    "sf5_targets": 20,
+    "sf4_confirmed_failures": 27,
+    "sf1_frontier": 50,
+    "discovered_theorems": 527,
+    "expansion_added": 99
+  }
+}

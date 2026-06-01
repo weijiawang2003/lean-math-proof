@@ -1,0 +1,5537 @@
+{
+  "generated_by": "scripts/tr3_analyze_results.py",
+  "num_lemmas_used": 464,
+  "lemmas": [
+    {
+      "lemma": "Set.disjoint_left",
+      "used_in_targets": [
+        "Set.disjoint_iff_forall_ne",
+        "Set.disjoint_right",
+        "Set.disjoint_singleton_left"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [
+        "Set.disjoint_iff_forall_ne",
+        "Set.disjoint_right",
+        "Set.disjoint_singleton_left"
+      ],
+      "num_wins": 3,
+      "clusters": [],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "AntitoneOn",
+      "used_in_targets": [
+        "Set.antitoneOn_iff_antitone",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [
+        "Set.antitoneOn_iff_antitone"
+      ],
+      "num_wins": 1,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "MonotoneOn",
+      "used_in_targets": [
+        "Set.monotoneOn_iff_monotone",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [
+        "Set.monotoneOn_iff_monotone"
+      ],
+      "num_wins": 1,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "Set.subset_pair_iff_eq",
+      "used_in_targets": [
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.pair_eq_pair_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [
+        "Set.Nonempty.subset_pair_iff_eq"
+      ],
+      "num_wins": 1,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "Multiset.toFinset_eq",
+      "used_in_targets": [
+        "List.toFinset_eq",
+        "Multiset.Nodup.toFinset_inj"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [
+        "List.toFinset_eq"
+      ],
+      "num_wins": 1,
+      "clusters": [],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "Antitone",
+      "used_in_targets": [
+        "Set.antitoneOn_iff_antitone"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [
+        "Set.antitoneOn_iff_antitone"
+      ],
+      "num_wins": 1,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "Monotone",
+      "used_in_targets": [
+        "Set.monotoneOn_iff_monotone"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [
+        "Set.monotoneOn_iff_monotone"
+      ],
+      "num_wins": 1,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "StrictAnti",
+      "used_in_targets": [
+        "Set.strictAntiOn_iff_strictAnti"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [
+        "Set.strictAntiOn_iff_strictAnti"
+      ],
+      "num_wins": 1,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "StrictAntiOn",
+      "used_in_targets": [
+        "Set.strictAntiOn_iff_strictAnti"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [
+        "Set.strictAntiOn_iff_strictAnti"
+      ],
+      "num_wins": 1,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "StrictMono",
+      "used_in_targets": [
+        "Set.strictMonoOn_iff_strictMono"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [
+        "Set.strictMonoOn_iff_strictMono"
+      ],
+      "num_wins": 1,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "StrictMonoOn",
+      "used_in_targets": [
+        "Set.strictMonoOn_iff_strictMono"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [
+        "Set.strictMonoOn_iff_strictMono"
+      ],
+      "num_wins": 1,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "Finset.disjUnion",
+      "used_in_targets": [
+        "Finset.mem_disjUnion"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [
+        "Finset.mem_disjUnion"
+      ],
+      "num_wins": 1,
+      "clusters": [],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "Finset.ext_iff",
+      "used_in_targets": [
+        "List.toFinset.ext_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [
+        "List.toFinset.ext_iff"
+      ],
+      "num_wins": 1,
+      "clusters": [],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "Set.union_eq_compl_compl_inter_compl",
+      "used_in_targets": [
+        "Set.compl_union_self"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [
+        "Set.compl_union_self"
+      ],
+      "num_wins": 1,
+      "clusters": [],
+      "classification": "useful_retrieval_lemma"
+    },
+    {
+      "lemma": "Cycle.toFinset",
+      "used_in_targets": [
+        "List.perm_of_nodup_nodup_toFinset_eq",
+        "List.toFinset_eq",
+        "List.toFinset_eq_empty_iff",
+        "List.toFinset_eq_iff_perm_dedup",
+        "List.toFinset_filter",
+        "List.toFinset_nonempty_iff",
+        "List.toFinset_surj_on",
+        "Multiset.toFinset_eq_singleton_iff",
+        "Multiset.toFinset_ssubset",
+        "Multiset.toFinset_subset"
+      ],
+      "num_used_in_targets": 10,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Multiset__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "List.toFinset",
+      "used_in_targets": [
+        "List.perm_of_nodup_nodup_toFinset_eq",
+        "List.toFinset_eq",
+        "List.toFinset_eq_empty_iff",
+        "List.toFinset_eq_iff_perm_dedup",
+        "List.toFinset_filter",
+        "List.toFinset_nonempty_iff",
+        "List.toFinset_surj_on",
+        "Multiset.toFinset_ssubset",
+        "Multiset.toFinset_subset"
+      ],
+      "num_used_in_targets": 9,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Multiset.toFinset",
+      "used_in_targets": [
+        "List.perm_of_nodup_nodup_toFinset_eq",
+        "List.toFinset_eq",
+        "List.toFinset_eq_empty_iff",
+        "List.toFinset_nonempty_iff",
+        "List.toFinset_surj_on",
+        "Multiset.toFinset_eq_singleton_iff",
+        "Multiset.toFinset_ssubset",
+        "Multiset.toFinset_subset"
+      ],
+      "num_used_in_targets": 8,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Multiset__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "AList.insert",
+      "used_in_targets": [
+        "Finset.insert_erase",
+        "Set.diff_singleton_subset_iff",
+        "Set.insert_subset_insert_iff",
+        "Set.ssubset_iff_insert",
+        "Set.subset_insert_iff"
+      ],
+      "num_used_in_targets": 5,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.ite",
+      "used_in_targets": [
+        "Set.ite_eq_of_subset_left",
+        "Set.ite_eq_of_subset_right",
+        "Set.ite_inter_of_inter_eq",
+        "Set.subset_ite"
+      ],
+      "num_used_in_targets": 4,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.inter_subset_ite",
+      "used_in_targets": [
+        "Set.ite_eq_of_subset_left",
+        "Set.ite_eq_of_subset_right",
+        "Set.ite_inter_of_inter_eq",
+        "Set.subset_ite"
+      ],
+      "num_used_in_targets": 4,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.not_disjoint_iff",
+      "used_in_targets": [
+        "Set.disjoint_iff_forall_ne",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Set.strictAntiOn_iff_strictAnti"
+      ],
+      "num_used_in_targets": 4,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Finset.Nonempty",
+      "used_in_targets": [
+        "Finset.eq_singleton_iff_nonempty_unique_mem",
+        "Finset.erase_nonempty",
+        "List.toFinset_nonempty_iff",
+        "Set.nonempty_compl_of_nontrivial"
+      ],
+      "num_used_in_targets": 4,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Finset.erase",
+      "used_in_targets": [
+        "Finset.erase_inj",
+        "Finset.erase_nonempty",
+        "Finset.insert_erase",
+        "Finset.ssubset_iff_exists_subset_erase"
+      ],
+      "num_used_in_targets": 4,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "AList.erase",
+      "used_in_targets": [
+        "Finset.erase_inj",
+        "Finset.erase_nonempty",
+        "Finset.insert_erase",
+        "Finset.ssubset_iff_exists_subset_erase"
+      ],
+      "num_used_in_targets": 4,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Nat.mul_le_of_le_div",
+      "used_in_targets": [
+        "Nat.div_le_of_le_mul'",
+        "Nat.div_mul_div_comm",
+        "Nat.div_mul_div_le",
+        "Nat.div_mul_div_le_div"
+      ],
+      "num_used_in_targets": 4,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Nat.div_mul_div_le_div",
+      "used_in_targets": [
+        "Nat.div_le_of_le_mul'",
+        "Nat.div_le_self'",
+        "Nat.div_mul_div_comm",
+        "Nat.div_mul_div_le"
+      ],
+      "num_used_in_targets": 4,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Nat.div_mul_div_le",
+      "used_in_targets": [
+        "Nat.div_le_self'",
+        "Nat.div_mul_div_comm",
+        "Nat.div_mul_div_le_div",
+        "Nat.div_pow"
+      ],
+      "num_used_in_targets": 4,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Nat.findGreatest",
+      "used_in_targets": [
+        "Nat.findGreatest_eq_iff",
+        "Nat.findGreatest_mono_left",
+        "Nat.findGreatest_mono_right",
+        "Nat.findGreatest_spec"
+      ],
+      "num_used_in_targets": 4,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.diff_singleton_sSubset",
+      "used_in_targets": [
+        "Set.diff_singleton_subset_iff",
+        "Set.ssubset_iff_sdiff_singleton",
+        "Set.ssubset_singleton_iff"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.ite_subset_union",
+      "used_in_targets": [
+        "Set.ite_eq_of_subset_left",
+        "Set.ite_eq_of_subset_right",
+        "Set.subset_ite"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "used_in_targets": [
+        "Set.antitoneOn_iff_antitone",
+        "Set.monotoneOn_iff_monotone",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.antitoneOn_iff_antitone",
+      "used_in_targets": [
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Set.strictAntiOn_iff_strictAnti"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "used_in_targets": [
+        "Set.antitoneOn_iff_antitone",
+        "Set.monotoneOn_iff_monotone",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.pair_subset_iff",
+      "used_in_targets": [
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.pair_eq_pair_iff",
+        "Set.subset_pair_iff_eq"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.subset_pair_iff",
+      "used_in_targets": [
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.pair_eq_pair_iff",
+        "Set.subset_pair_iff_eq"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.nontrivial_iff_pair_subset",
+      "used_in_targets": [
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.pair_eq_pair_iff",
+        "Set.subset_pair_iff_eq"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.ssubset_iff_sdiff_singleton",
+      "used_in_targets": [
+        "Set.diff_singleton_sSubset",
+        "Set.ssubset_iff_insert",
+        "Set.ssubset_singleton_iff"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.ssubset_singleton_iff",
+      "used_in_targets": [
+        "Set.diff_singleton_sSubset",
+        "Set.ssubset_iff_insert",
+        "Set.ssubset_iff_sdiff_singleton"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.lt_iff_ssubset",
+      "used_in_targets": [
+        "Set.ssubset_iff_insert",
+        "Set.ssubset_iff_sdiff_singleton",
+        "Set.ssubset_singleton_iff"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.empty_ssubset_singleton",
+      "used_in_targets": [
+        "Set.diff_singleton_sSubset",
+        "Set.ssubset_iff_sdiff_singleton",
+        "Set.ssubset_singleton_iff"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.diff_singleton_subset_iff",
+      "used_in_targets": [
+        "Set.diff_singleton_sSubset",
+        "Set.subset_insert_iff",
+        "Set.subset_singleton_iff_eq"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Finset.cons",
+      "used_in_targets": [
+        "Finset.Nonempty.cons_induction",
+        "Finset.cons_induction",
+        "Finset.ssubset_iff_exists_cons_subset"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Finset.Pi.cons",
+      "used_in_targets": [
+        "Finset.Nonempty.cons_induction",
+        "Finset.cons_induction",
+        "Finset.ssubset_iff_exists_cons_subset"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Finset.cons_induction_on",
+      "used_in_targets": [
+        "Finset.Nonempty.cons_induction",
+        "Finset.cons_induction",
+        "Finset.induction_on_union"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Finset.induction",
+      "used_in_targets": [
+        "Finset.Nonempty.cons_induction",
+        "Finset.cons_induction",
+        "Finset.induction_on_union"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Finset.induction_on",
+      "used_in_targets": [
+        "Finset.Nonempty.cons_induction",
+        "Finset.cons_induction",
+        "Finset.induction_on_union"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Finset.Nontrivial",
+      "used_in_targets": [
+        "Finset.Nontrivial.exists_cons_eq",
+        "Finset.erase_nonempty",
+        "Set.nonempty_compl_of_nontrivial"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Multiset.erase",
+      "used_in_targets": [
+        "Finset.erase_inj",
+        "Finset.insert_erase",
+        "Finset.ssubset_iff_exists_subset_erase"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Multiset.Nodup",
+      "used_in_targets": [
+        "List.perm_of_nodup_nodup_toFinset_eq",
+        "List.toFinset_eq",
+        "List.toFinset_surj_on"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "List.toFinset_eq_of_perm",
+      "used_in_targets": [
+        "List.perm_of_nodup_nodup_toFinset_eq",
+        "List.toFinset_eq",
+        "List.toFinset_eq_iff_perm_dedup"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "List.toFinset_card_of_nodup",
+      "used_in_targets": [
+        "List.perm_of_nodup_nodup_toFinset_eq",
+        "List.toFinset_eq",
+        "List.toFinset_surj_on"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "List.toFinset_eq_iff_perm_dedup",
+      "used_in_targets": [
+        "List.perm_of_nodup_nodup_toFinset_eq",
+        "List.toFinset_eq_empty_iff",
+        "List.toFinset_nonempty_iff"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "List.toFinset_coe",
+      "used_in_targets": [
+        "List.toFinset_eq",
+        "List.toFinset_filter",
+        "List.toFinset_surj_on"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "List.disjoint_toFinset_iff_disjoint",
+      "used_in_targets": [
+        "List.toFinset_eq_empty_iff",
+        "List.toFinset_eq_iff_perm_dedup",
+        "List.toFinset_nonempty_iff"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Nat.dvd_iff_div_mul_eq",
+      "used_in_targets": [
+        "Nat.div_div_div_eq_div",
+        "Nat.div_eq_iff_eq_of_dvd_dvd",
+        "Nat.div_eq_self"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Nat.dvd_iff_le_div_mul",
+      "used_in_targets": [
+        "Nat.div_eq_iff_eq_of_dvd_dvd",
+        "Nat.div_mul_div_le",
+        "Nat.div_mul_div_le_div"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Nat.div_le_div_right",
+      "used_in_targets": [
+        "Nat.div_le_self'",
+        "Nat.div_mul_div_le",
+        "Nat.div_pow"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Nat.findGreatest_le",
+      "used_in_targets": [
+        "Nat.findGreatest_mono_left",
+        "Nat.findGreatest_mono_right",
+        "Nat.findGreatest_spec"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Nat.findGreatest_zero",
+      "used_in_targets": [
+        "Nat.findGreatest_mono_left",
+        "Nat.findGreatest_mono_right",
+        "Nat.findGreatest_spec"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Nat.findGreatest_of_not",
+      "used_in_targets": [
+        "Nat.findGreatest_mono_left",
+        "Nat.findGreatest_mono_right",
+        "Nat.findGreatest_spec"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Nat.findGreatest_eq_iff",
+      "used_in_targets": [
+        "Nat.findGreatest_mono_right",
+        "Nat.findGreatest_spec",
+        "Nat.find_eq_iff"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "AList.Disjoint",
+      "used_in_targets": [
+        "Set.disjoint_iff_forall_ne",
+        "Set.disjoint_right",
+        "Set.disjoint_singleton_left"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Multiset.Disjoint",
+      "used_in_targets": [
+        "Set.disjoint_iff_forall_ne",
+        "Set.disjoint_right",
+        "Set.disjoint_singleton_left"
+      ],
+      "num_used_in_targets": 3,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "needs_review"
+    },
+    {
+      "lemma": "Set.subset_insert_diff_singleton",
+      "used_in_targets": [
+        "Set.diff_singleton_subset_iff",
+        "Set.subset_insert_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.subset_diff_singleton",
+      "used_in_targets": [
+        "Set.diff_singleton_sSubset",
+        "Set.diff_singleton_subset_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.singleton_subset_iff",
+      "used_in_targets": [
+        "Set.diff_singleton_subset_iff",
+        "Set.subset_singleton_iff_eq"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ite_eq_of_subset_right",
+      "used_in_targets": [
+        "Set.ite_eq_of_subset_left",
+        "Set.ite_inter_of_inter_eq"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ite_inter_of_inter_eq",
+      "used_in_targets": [
+        "Set.ite_eq_of_subset_left",
+        "Set.ite_eq_of_subset_right"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ite_right",
+      "used_in_targets": [
+        "Set.ite_eq_of_subset_right",
+        "Set.ite_inter_of_inter_eq"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.monotoneOn_iff_monotone",
+      "used_in_targets": [
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.not_subset_iff_exists_mem_not_mem",
+      "used_in_targets": [
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ne_univ_iff_exists_not_mem",
+      "used_in_targets": [
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ssubset_iff_of_subset",
+      "used_in_targets": [
+        "Set.ssubset_iff_insert",
+        "Set.ssubset_iff_sdiff_singleton"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ssubset_univ_iff",
+      "used_in_targets": [
+        "Set.ssubset_iff_insert",
+        "Set.ssubset_iff_sdiff_singleton"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.ssubset_singleton_iff",
+      "used_in_targets": [
+        "Multiset.toFinset_ssubset",
+        "Set.ssubset_singleton_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.insert_subset_iff",
+      "used_in_targets": [
+        "Set.insert_subset_insert_iff",
+        "Set.subset_insert_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.subset_insert_iff_of_not_mem",
+      "used_in_targets": [
+        "Set.insert_subset_insert_iff",
+        "Set.subset_insert_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ite_inter_self",
+      "used_in_targets": [
+        "Set.ite_inter_of_inter_eq",
+        "Set.subset_ite"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.pair_eq_pair_iff",
+      "used_in_targets": [
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.subset_pair_iff_eq"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.subset_singleton_iff_eq",
+      "used_in_targets": [
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.subset_pair_iff_eq"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.subset_compl_singleton_iff",
+      "used_in_targets": [
+        "Prop.compl_singleton",
+        "Set.subset_singleton_iff_eq"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ext_iff",
+      "used_in_targets": [
+        "List.toFinset.ext_iff",
+        "Set.strictAntiOn_iff_strictAnti"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.compl_singleton_eq",
+      "used_in_targets": [
+        "Prop.compl_singleton",
+        "Set.nonempty_compl_of_nontrivial"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.empty",
+      "used_in_targets": [
+        "Finset.Nonempty.cons_induction",
+        "Finset.cons_induction"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.Pi.empty",
+      "used_in_targets": [
+        "Finset.Nonempty.cons_induction",
+        "Finset.cons_induction"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.induction_on_union",
+      "used_in_targets": [
+        "Finset.Nonempty.cons_induction",
+        "Finset.cons_induction"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.singleton_nonempty",
+      "used_in_targets": [
+        "Finset.Nontrivial.sdiff_singleton_nonempty",
+        "Finset.eq_singleton_iff_nonempty_unique_mem"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.nontrivial_prod_iff",
+      "used_in_targets": [
+        "Finset.Nontrivial.sdiff_singleton_nonempty",
+        "Finset.erase_nonempty"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.filter",
+      "used_in_targets": [
+        "Finset.range_filter_eq",
+        "List.toFinset_filter"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.filter",
+      "used_in_targets": [
+        "Finset.range_filter_eq",
+        "List.toFinset_filter"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.ssubset_iff_of_subset",
+      "used_in_targets": [
+        "Finset.ssubset_iff_exists_cons_subset",
+        "Finset.ssubset_iff_exists_subset_erase"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.ssubset_iff_subset_ne",
+      "used_in_targets": [
+        "Finset.ssubset_iff_exists_cons_subset",
+        "Finset.ssubset_iff_exists_subset_erase"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.toFinset_eq",
+      "used_in_targets": [
+        "List.perm_of_nodup_nodup_toFinset_eq",
+        "List.toFinset_surj_on"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.toFinset_inter",
+      "used_in_targets": [
+        "List.perm_of_nodup_nodup_toFinset_eq",
+        "List.toFinset_surj_on"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.toFinset.ext",
+      "used_in_targets": [
+        "List.toFinset.ext_iff",
+        "List.toFinset_eq_iff_perm_dedup"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.toFinset_val",
+      "used_in_targets": [
+        "List.toFinset_eq",
+        "List.toFinset_filter"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.toFinset_nil",
+      "used_in_targets": [
+        "List.toFinset_eq_empty_iff",
+        "List.toFinset_nonempty_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.mem_toFinset",
+      "used_in_targets": [
+        "List.toFinset_eq_empty_iff",
+        "List.toFinset_nonempty_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.coe_toFinset",
+      "used_in_targets": [
+        "List.toFinset_filter",
+        "List.toFinset_surj_on"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.toFinset_reverse",
+      "used_in_targets": [
+        "List.toFinset_filter",
+        "List.toFinset_surj_on"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Option.toFinset",
+      "used_in_targets": [
+        "Multiset.toFinset_ssubset",
+        "Multiset.toFinset_subset"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.mem_toFinset",
+      "used_in_targets": [
+        "Multiset.toFinset_ssubset",
+        "Multiset.toFinset_subset"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_le_iff_le_mul_add_pred",
+      "used_in_targets": [
+        "Nat.diag_induction",
+        "Nat.div_mul_div_le_div"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_eq_iff_eq_of_dvd_dvd",
+      "used_in_targets": [
+        "Nat.diag_induction",
+        "Nat.div_eq_self"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_dvd_of_dvd",
+      "used_in_targets": [
+        "Nat.div_div_div_eq_div",
+        "Nat.dvd_sub'"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.dvd_left_iff_eq",
+      "used_in_targets": [
+        "Nat.div_eq_iff_eq_of_dvd_dvd",
+        "Nat.dvd_sub'"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.dvd_right_iff_eq",
+      "used_in_targets": [
+        "Nat.div_eq_iff_eq_of_dvd_dvd",
+        "Nat.dvd_sub'"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_mod_eq_mod_mul_div",
+      "used_in_targets": [
+        "Nat.div_eq_sub_mod_div",
+        "Nat.div_mul_div_comm"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.add_div_le_add_div",
+      "used_in_targets": [
+        "Nat.div_le_of_le_mul'",
+        "Nat.div_le_self'"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.dvd_div_of_mul_dvd",
+      "used_in_targets": [
+        "Nat.div_mul_div_comm",
+        "Nat.eq_of_dvd_of_lt_two_mul"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.mul_div_le_mul_div_assoc",
+      "used_in_targets": [
+        "Nat.div_mul_div_le",
+        "Nat.div_mul_div_le_div"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.eq_zero_of_dvd_of_lt",
+      "used_in_targets": [
+        "Nat.eq_of_dvd_of_lt_two_mul",
+        "Nat.not_dvd_of_pos_of_lt"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.findGreatest_pos",
+      "used_in_targets": [
+        "Nat.findGreatest_eq_iff",
+        "Nat.findGreatest_spec"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.add_eq_one_iff",
+      "used_in_targets": [
+        "Nat.findGreatest_eq_iff",
+        "Nat.one_lt_mul_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.findGreatest_mono",
+      "used_in_targets": [
+        "Nat.findGreatest_mono_left",
+        "Nat.findGreatest_mono_right"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.findGreatest_mono_right",
+      "used_in_targets": [
+        "Nat.findGreatest_mono_left",
+        "Nat.le_induction"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "PartENat.find",
+      "used_in_targets": [
+        "Nat.find_add",
+        "Nat.find_eq_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.find_le_iff",
+      "used_in_targets": [
+        "Nat.find_add",
+        "Nat.find_eq_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.find_pos",
+      "used_in_targets": [
+        "Nat.find_add",
+        "Nat.find_eq_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.lt_find_iff",
+      "used_in_targets": [
+        "Nat.find_add",
+        "Nat.find_eq_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.find_eq_zero",
+      "used_in_targets": [
+        "Nat.find_add",
+        "Nat.find_eq_iff"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.leRecOn",
+      "used_in_targets": [
+        "Nat.leRecOn_injective",
+        "Nat.leRecOn_surjective"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.next",
+      "used_in_targets": [
+        "Nat.leRecOn_injective",
+        "Nat.leRecOn_surjective"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.leRecOn_trans",
+      "used_in_targets": [
+        "Nat.leRecOn_injective",
+        "Nat.leRecOn_surjective"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.leRecOn_succ'",
+      "used_in_targets": [
+        "Nat.leRecOn_injective",
+        "Nat.leRecOn_surjective"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.leRecOn_succ",
+      "used_in_targets": [
+        "Nat.leRecOn_injective",
+        "Nat.leRecOn_surjective"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.leRecOn_self",
+      "used_in_targets": [
+        "Nat.leRecOn_injective",
+        "Nat.leRecOn_surjective"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.leRecOn_succ_left",
+      "used_in_targets": [
+        "Nat.leRecOn_injective",
+        "Nat.leRecOn_surjective"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.iter_fp_bound",
+      "used_in_targets": [
+        "Nat.sqrt.iter_sq_le",
+        "Nat.sqrt.lt_iter_succ_sq"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.disjoint_singleton_right",
+      "used_in_targets": [
+        "Set.disjoint_right",
+        "Set.disjoint_singleton_left"
+      ],
+      "num_used_in_targets": 2,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.card",
+      "used_in_targets": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Multiset__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.card",
+      "used_in_targets": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Multiset__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.toFinset_card_eq_card_iff_nodup",
+      "used_in_targets": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Multiset__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.singleton_eq_cons_iff",
+      "used_in_targets": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Multiset__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.add_singleton_eq_iff",
+      "used_in_targets": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Multiset__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.map_eq_singleton",
+      "used_in_targets": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Multiset__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.toFinset_singleton",
+      "used_in_targets": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Multiset__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.toList_eq_singleton_iff",
+      "used_in_targets": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Multiset__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.insert_diff_singleton",
+      "used_in_targets": [
+        "Set.diff_singleton_subset_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.insert_diff_eq_singleton",
+      "used_in_targets": [
+        "Set.diff_singleton_subset_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ite_left",
+      "used_in_targets": [
+        "Set.ite_eq_of_subset_left"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.union_eq_self_of_subset_left",
+      "used_in_targets": [
+        "Set.ite_eq_of_subset_left"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ite_eq_of_subset_left",
+      "used_in_targets": [
+        "Set.ite_eq_of_subset_right"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.union_eq_self_of_subset_right",
+      "used_in_targets": [
+        "Set.ite_eq_of_subset_right"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.pair_eq_singleton",
+      "used_in_targets": [
+        "Set.pair_eq_pair_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.pairwise_pair",
+      "used_in_targets": [
+        "Set.pair_eq_pair_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ssubset_insert",
+      "used_in_targets": [
+        "Set.ssubset_iff_insert"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.ssubset_singleton_iff",
+      "used_in_targets": [
+        "Set.ssubset_singleton_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.insert_subset_insert_iff",
+      "used_in_targets": [
+        "Set.subset_insert_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.subset_insert",
+      "used_in_targets": [
+        "Set.subset_insert_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ite_diff_self",
+      "used_in_targets": [
+        "Set.subset_ite"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ite_univ",
+      "used_in_targets": [
+        "Set.subset_ite"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ite_empty",
+      "used_in_targets": [
+        "Set.subset_ite"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__ite_if__subset"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.Nonempty.subset_pair_iff_eq",
+      "used_in_targets": [
+        "Set.subset_pair_iff_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.subset_singleton_iff",
+      "used_in_targets": [
+        "Set.subset_singleton_iff_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.singleton_subset_singleton",
+      "used_in_targets": [
+        "Set.subset_singleton_iff_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.singleton_eq_singleton_iff",
+      "used_in_targets": [
+        "Set.subset_singleton_iff_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.empty_union",
+      "used_in_targets": [
+        "Set.union_empty_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.union_empty",
+      "used_in_targets": [
+        "Set.union_empty_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.iUnion_eq_empty",
+      "used_in_targets": [
+        "Set.union_empty_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.mem_diff_singleton_empty",
+      "used_in_targets": [
+        "Set.union_empty_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.sUnion_eq_empty",
+      "used_in_targets": [
+        "Set.union_empty_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.sUnion_diff_singleton_empty",
+      "used_in_targets": [
+        "Set.union_empty_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.antitoneOn_singleton",
+      "used_in_targets": [
+        "Set.antitoneOn_iff_antitone"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.EqOn.congr_antitoneOn",
+      "used_in_targets": [
+        "Set.antitoneOn_iff_antitone"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.Subsingleton.antitoneOn",
+      "used_in_targets": [
+        "Set.antitoneOn_iff_antitone"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "antitoneOn_dual_iff",
+      "used_in_targets": [
+        "Set.antitoneOn_iff_antitone"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.monotoneOn_singleton",
+      "used_in_targets": [
+        "Set.monotoneOn_iff_monotone"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.EqOn.congr_monotoneOn",
+      "used_in_targets": [
+        "Set.monotoneOn_iff_monotone"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.Subsingleton.monotoneOn",
+      "used_in_targets": [
+        "Set.monotoneOn_iff_monotone"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set._root_.MonotoneOn.monotone",
+      "used_in_targets": [
+        "Set.monotoneOn_iff_monotone"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.mem_inter_iff",
+      "used_in_targets": [
+        "Set.strictAntiOn_iff_strictAnti"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.mem_sep_iff",
+      "used_in_targets": [
+        "Set.strictAntiOn_iff_strictAnti"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.sep_ext_iff",
+      "used_in_targets": [
+        "Set.strictAntiOn_iff_strictAnti"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set._root_.StrictMonoOn.strictMono",
+      "used_in_targets": [
+        "Set.strictMonoOn_iff_strictMono"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.strictMonoOn_singleton",
+      "used_in_targets": [
+        "Set.strictMonoOn_iff_strictMono"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.EqOn.congr_strictMonoOn",
+      "used_in_targets": [
+        "Set.strictMonoOn_iff_strictMono"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "strictMono_restrict",
+      "used_in_targets": [
+        "Set.strictMonoOn_iff_strictMono"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ncard_strictMono",
+      "used_in_targets": [
+        "Set.strictMonoOn_iff_strictMono"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.encard_strictMono",
+      "used_in_targets": [
+        "Set.strictMonoOn_iff_strictMono"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [
+        "Set__iff__iff"
+      ],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.eq_of_subset_of_subset",
+      "used_in_targets": [
+        "Eq.subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.le_eq_subset",
+      "used_in_targets": [
+        "Eq.subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.Subset.rfl",
+      "used_in_targets": [
+        "Eq.subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.eq_univ_of_subset",
+      "used_in_targets": [
+        "Eq.subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.sep_eq_of_subset",
+      "used_in_targets": [
+        "Eq.subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.inter_eq_self_of_subset_left",
+      "used_in_targets": [
+        "Eq.subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Function.Surjective.nonempty_preimage",
+      "used_in_targets": [
+        "Function.Injective.nonempty_apply_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Function.invFunOn_apply_mem",
+      "used_in_targets": [
+        "Function.Injective.nonempty_apply_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Function.invFunOn_apply_eq",
+      "used_in_targets": [
+        "Function.Injective.nonempty_apply_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Function.Injective.subsingleton_image_iff",
+      "used_in_targets": [
+        "Function.Injective.nonempty_apply_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Function.Injective.mem_range_iff_exists_unique",
+      "used_in_targets": [
+        "Function.Injective.nonempty_apply_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Function.invFunOn_neg",
+      "used_in_targets": [
+        "Function.Injective.nonempty_apply_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.compl_ne_eq_singleton",
+      "used_in_targets": [
+        "Prop.compl_singleton"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.mem_compl_singleton_iff",
+      "used_in_targets": [
+        "Prop.compl_singleton"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "compls_singleton",
+      "used_in_targets": [
+        "Prop.compl_singleton"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.compl_setOf",
+      "used_in_targets": [
+        "Prop.compl_singleton"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.inclusion",
+      "used_in_targets": [
+        "Set.eq_of_inclusion_surjective"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.inclusion_eq_id",
+      "used_in_targets": [
+        "Set.eq_of_inclusion_surjective"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.coe_inclusion",
+      "used_in_targets": [
+        "Set.eq_of_inclusion_surjective"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.inclusion_right",
+      "used_in_targets": [
+        "Set.eq_of_inclusion_surjective"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.inclusion_self",
+      "used_in_targets": [
+        "Set.eq_of_inclusion_surjective"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.inclusion_mk",
+      "used_in_targets": [
+        "Set.eq_of_inclusion_surjective"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.val_comp_inclusion",
+      "used_in_targets": [
+        "Set.eq_of_inclusion_surjective"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ite_inter",
+      "used_in_targets": [
+        "Set.ite_inter_of_inter_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ite_inter_inter",
+      "used_in_targets": [
+        "Set.ite_inter_of_inter_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.PairwiseDisjoint.mono",
+      "used_in_targets": [
+        "Set.pairwiseDisjoint_filter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.PairwiseDisjoint.attach",
+      "used_in_targets": [
+        "Set.pairwiseDisjoint_filter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.PairwiseDisjoint.prod",
+      "used_in_targets": [
+        "Set.pairwiseDisjoint_filter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.pairwiseDisjoint_fiber",
+      "used_in_targets": [
+        "Set.pairwiseDisjoint_filter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.PairwiseDisjoint.range",
+      "used_in_targets": [
+        "Set.pairwiseDisjoint_filter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.pairwiseDisjoint_pi",
+      "used_in_targets": [
+        "Set.pairwiseDisjoint_filter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.mem_singleton",
+      "used_in_targets": [
+        "Set.powerset_singleton"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.singleton_injective",
+      "used_in_targets": [
+        "Set.powerset_singleton"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.eq_of_mem_singleton",
+      "used_in_targets": [
+        "Set.powerset_singleton"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.mem_singleton_of_eq",
+      "used_in_targets": [
+        "Set.powerset_singleton"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.setOf_eq_eq_singleton",
+      "used_in_targets": [
+        "Set.powerset_singleton"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.default_coe_singleton",
+      "used_in_targets": [
+        "Set.powerset_singleton"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.cons_induction",
+      "used_in_targets": [
+        "Finset.Nonempty.cons_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.nonempty_cons",
+      "used_in_targets": [
+        "Finset.Nonempty.cons_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.range_nontrivial",
+      "used_in_targets": [
+        "Finset.Nontrivial.exists_cons_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.exists_list_nodup_eq",
+      "used_in_targets": [
+        "Finset.Nontrivial.exists_cons_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.exists_mem_eq_inf'",
+      "used_in_targets": [
+        "Finset.Nontrivial.exists_cons_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.exists_mem_eq_sup'",
+      "used_in_targets": [
+        "Finset.Nontrivial.exists_cons_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.exists_mem_ne",
+      "used_in_targets": [
+        "Finset.Nontrivial.exists_cons_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.nontrivial_iff_ne_singleton",
+      "used_in_targets": [
+        "Finset.Nontrivial.sdiff_singleton_nonempty"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.not_nontrivial_singleton",
+      "used_in_targets": [
+        "Finset.Nontrivial.sdiff_singleton_nonempty"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.erase_nonempty",
+      "used_in_targets": [
+        "Finset.Nontrivial.sdiff_singleton_nonempty"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.Nonempty.exists_eq_singleton_or_nontrivial",
+      "used_in_targets": [
+        "Finset.Nontrivial.sdiff_singleton_nonempty"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.Nonempty.cons_induction",
+      "used_in_targets": [
+        "Finset.cons_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.induction_on'",
+      "used_in_targets": [
+        "Finset.cons_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.map_filter'",
+      "used_in_targets": [
+        "Finset.disjoint_filter_filter'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.disjoint_filter_filter",
+      "used_in_targets": [
+        "Finset.disjoint_filter_filter'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.disjoint_filter_filter_neg",
+      "used_in_targets": [
+        "Finset.disjoint_filter_filter'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.filter_filter",
+      "used_in_targets": [
+        "Finset.disjoint_filter_filter'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.mem_of_mem_filter",
+      "used_in_targets": [
+        "Finset.disjoint_filter_filter'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.filter_inter",
+      "used_in_targets": [
+        "Finset.disjoint_filter_filter'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.eq_singleton_iff_nonempty_unique_mem",
+      "used_in_targets": [
+        "Finset.eq_singleton_iff_nonempty_unique_mem"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.eq_singleton_iff_unique_mem",
+      "used_in_targets": [
+        "Finset.eq_singleton_iff_nonempty_unique_mem"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.nonempty_iff_eq_singleton_default",
+      "used_in_targets": [
+        "Finset.eq_singleton_iff_nonempty_unique_mem"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.singleton_iff_unique_mem",
+      "used_in_targets": [
+        "Finset.eq_singleton_iff_nonempty_unique_mem"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.powerset_eq_singleton_empty",
+      "used_in_targets": [
+        "Finset.eq_singleton_iff_nonempty_unique_mem"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.singleton_inj",
+      "used_in_targets": [
+        "Finset.erase_inj"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.sdiff_singleton_eq_erase",
+      "used_in_targets": [
+        "Finset.erase_inj"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.mem_erase",
+      "used_in_targets": [
+        "Finset.erase_inj"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.erase_ne_self",
+      "used_in_targets": [
+        "Finset.erase_inj"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.erase_injOn",
+      "used_in_targets": [
+        "Finset.erase_inj"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.disjoint_erase_comm",
+      "used_in_targets": [
+        "Finset.erase_inj"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.Nontrivial.erase_nonempty",
+      "used_in_targets": [
+        "Finset.erase_nonempty"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.image_nonempty",
+      "used_in_targets": [
+        "Finset.erase_nonempty"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.pi_nonempty",
+      "used_in_targets": [
+        "Finset.erase_nonempty"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.symmDiff_nonempty",
+      "used_in_targets": [
+        "Finset.erase_nonempty"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.card_pos",
+      "used_in_targets": [
+        "Finset.erase_nonempty"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.fold_union_empty_singleton",
+      "used_in_targets": [
+        "Finset.induction_on_union"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.empty_union",
+      "used_in_targets": [
+        "Finset.induction_on_union"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.union_empty",
+      "used_in_targets": [
+        "Finset.induction_on_union"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.erase_insert",
+      "used_in_targets": [
+        "Finset.insert_erase"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.erase_insert_eq_erase",
+      "used_in_targets": [
+        "Finset.insert_erase"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.erase_insert_of_ne",
+      "used_in_targets": [
+        "Finset.insert_erase"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.insert_erase_invOn",
+      "used_in_targets": [
+        "Finset.insert_erase"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.erase_insert_subset",
+      "used_in_targets": [
+        "Finset.insert_erase"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.insert_erase_subset",
+      "used_in_targets": [
+        "Finset.insert_erase"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.subset_inter",
+      "used_in_targets": [
+        "Finset.inter_subset_inter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.inter_subset_inter",
+      "used_in_targets": [
+        "Finset.inter_subset_inter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.inter_subset_left",
+      "used_in_targets": [
+        "Finset.inter_subset_inter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.inter_subset_right",
+      "used_in_targets": [
+        "Finset.inter_subset_inter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.inter_subset_inter_left",
+      "used_in_targets": [
+        "Finset.inter_subset_inter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.inter_subset_inter_right",
+      "used_in_targets": [
+        "Finset.inter_subset_inter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.card_disjUnion",
+      "used_in_targets": [
+        "Finset.mem_disjUnion"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.singleton_disjUnion",
+      "used_in_targets": [
+        "Finset.mem_disjUnion"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.disjUnion_eq_union",
+      "used_in_targets": [
+        "Finset.mem_disjUnion"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.disjUnion_singleton",
+      "used_in_targets": [
+        "Finset.mem_disjUnion"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.coe_disjUnion",
+      "used_in_targets": [
+        "Finset.mem_disjUnion"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.map_disjUnion",
+      "used_in_targets": [
+        "Finset.mem_disjUnion"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.pairwise_disjoint_powersetCard",
+      "used_in_targets": [
+        "Finset.pairwise_cons'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.pairwiseDisjoint_slice",
+      "used_in_targets": [
+        "Finset.pairwise_cons'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.pairwiseDisjoint_fibers",
+      "used_in_targets": [
+        "Finset.pairwise_cons'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.pairwiseDisjoint_map_sigmaMk",
+      "used_in_targets": [
+        "Finset.pairwise_cons'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.noncommProd_lemma",
+      "used_in_targets": [
+        "Finset.pairwise_cons'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.noncommProd_cons'",
+      "used_in_targets": [
+        "Finset.pairwise_cons'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.range",
+      "used_in_targets": [
+        "Finset.range_filter_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.range",
+      "used_in_targets": [
+        "Finset.range_filter_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.filter_singleton",
+      "used_in_targets": [
+        "Finset.range_filter_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.filter_eq",
+      "used_in_targets": [
+        "Finset.range_filter_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.filter_insert",
+      "used_in_targets": [
+        "Finset.range_filter_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.filter_const",
+      "used_in_targets": [
+        "Finset.range_filter_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.card_erase_eq_ite",
+      "used_in_targets": [
+        "Finset.range_filter_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.card_insert_eq_ite",
+      "used_in_targets": [
+        "Finset.range_filter_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.sizeOf",
+      "used_in_targets": [
+        "Finset.sizeOf_lt_sizeOf_of_mem"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.sizeOf_lt_sizeOf_of_mem",
+      "used_in_targets": [
+        "Finset.sizeOf_lt_sizeOf_of_mem"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.sizeOf_lt_sizeOf_of_mem",
+      "used_in_targets": [
+        "Finset.sizeOf_lt_sizeOf_of_mem"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.eq_of_mem_singleton",
+      "used_in_targets": [
+        "Finset.sizeOf_lt_sizeOf_of_mem"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.inter_singleton_of_mem",
+      "used_in_targets": [
+        "Finset.sizeOf_lt_sizeOf_of_mem"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.singleton_inter_of_mem",
+      "used_in_targets": [
+        "Finset.sizeOf_lt_sizeOf_of_mem"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.mem_singleton_self",
+      "used_in_targets": [
+        "Finset.sizeOf_lt_sizeOf_of_mem"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.Pi.cons",
+      "used_in_targets": [
+        "Finset.ssubset_iff_exists_cons_subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.cons",
+      "used_in_targets": [
+        "Finset.ssubset_iff_exists_cons_subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.ssubset_iff_exists_subset_erase",
+      "used_in_targets": [
+        "Finset.ssubset_iff_exists_cons_subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.ssubset_cons",
+      "used_in_targets": [
+        "Finset.ssubset_iff_exists_cons_subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.ssubset_iff",
+      "used_in_targets": [
+        "Finset.ssubset_iff_exists_cons_subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.exists_of_ssubset",
+      "used_in_targets": [
+        "Finset.ssubset_iff_exists_cons_subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.ssubset_iff_exists_cons_subset",
+      "used_in_targets": [
+        "Finset.ssubset_iff_exists_subset_erase"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.erase_ssubset",
+      "used_in_targets": [
+        "Finset.ssubset_iff_exists_subset_erase"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.lt_iff_ssubset",
+      "used_in_targets": [
+        "Finset.ssubset_iff_exists_subset_erase"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.ssubset_def",
+      "used_in_targets": [
+        "Finset.ssubset_iff_exists_subset_erase"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.union_subset_iff",
+      "used_in_targets": [
+        "Finset.subset_union_elim"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.subset_union_left",
+      "used_in_targets": [
+        "Finset.subset_union_elim"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.union_subset",
+      "used_in_targets": [
+        "Finset.subset_union_elim"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.subset_union_right",
+      "used_in_targets": [
+        "Finset.subset_union_elim"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.union_subset_union_left",
+      "used_in_targets": [
+        "Finset.subset_union_elim"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.union_subset_union_right",
+      "used_in_targets": [
+        "Finset.subset_union_elim"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.toFinset_surj_on",
+      "used_in_targets": [
+        "List.perm_of_nodup_nodup_toFinset_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.ext",
+      "used_in_targets": [
+        "List.toFinset.ext_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.ext_get_iff",
+      "used_in_targets": [
+        "List.toFinset.ext_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.mem_ext",
+      "used_in_targets": [
+        "List.toFinset.ext_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.perm_of_nodup_nodup_toFinset_eq",
+      "used_in_targets": [
+        "List.toFinset_eq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Cycle.nil",
+      "used_in_targets": [
+        "List.toFinset_eq_empty_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.toFinset_nonempty_iff",
+      "used_in_targets": [
+        "List.toFinset_eq_empty_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.isEmpty_iff_eq_nil",
+      "used_in_targets": [
+        "List.toFinset_eq_empty_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.dedup",
+      "used_in_targets": [
+        "List.toFinset_eq_iff_perm_dedup"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.dedup",
+      "used_in_targets": [
+        "List.toFinset_eq_iff_perm_dedup"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.dedup_eq_cons",
+      "used_in_targets": [
+        "List.toFinset_eq_iff_perm_dedup"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.dedup_eq_self",
+      "used_in_targets": [
+        "List.toFinset_eq_iff_perm_dedup"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.mem_dedup",
+      "used_in_targets": [
+        "List.toFinset_eq_iff_perm_dedup"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.toFinset_filter",
+      "used_in_targets": [
+        "List.toFinset_filter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.toFinset_surjective",
+      "used_in_targets": [
+        "List.toFinset_filter"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.toFinset_eq_empty_iff",
+      "used_in_targets": [
+        "List.toFinset_nonempty_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "List.rotate_one_eq_self_iff_eq_replicate",
+      "used_in_targets": [
+        "List.toFinset_nonempty_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.toFinset_card_of_nodup",
+      "used_in_targets": [
+        "Multiset.Nodup.toFinset_inj"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.inj_on_of_nodup_map",
+      "used_in_targets": [
+        "Multiset.Nodup.toFinset_inj"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.toFinset_inter",
+      "used_in_targets": [
+        "Multiset.Nodup.toFinset_inj"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.toFinset_dedup",
+      "used_in_targets": [
+        "Multiset.Nodup.toFinset_inj"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.toFinset_card_le",
+      "used_in_targets": [
+        "Multiset.Nodup.toFinset_inj"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.Finite.toFinset_ssubset",
+      "used_in_targets": [
+        "Multiset.toFinset_ssubset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.zero_ssubset",
+      "used_in_targets": [
+        "Multiset.toFinset_ssubset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.toFinset_subset",
+      "used_in_targets": [
+        "Multiset.toFinset_ssubset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.ssubset_cons",
+      "used_in_targets": [
+        "Multiset.toFinset_ssubset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.Finite.toFinset_subset",
+      "used_in_targets": [
+        "Multiset.toFinset_subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.toFinset_ssubset",
+      "used_in_targets": [
+        "Multiset.toFinset_subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.subset_iff",
+      "used_in_targets": [
+        "Multiset.toFinset_subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.coe_subset",
+      "used_in_targets": [
+        "Multiset.toFinset_subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.range_subset",
+      "used_in_targets": [
+        "Multiset.toFinset_subset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.lt_mul_self_iff",
+      "used_in_targets": [
+        "Nat.add_sub_one_le_mul"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.succ_add_sub_one",
+      "used_in_targets": [
+        "Nat.add_sub_one_le_mul"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.sub_one_add_self",
+      "used_in_targets": [
+        "Nat.add_sub_one_le_mul"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.add_succ_sub_one",
+      "used_in_targets": [
+        "Nat.add_sub_one_le_mul"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.one_add_le_iff",
+      "used_in_targets": [
+        "Nat.add_sub_one_le_mul"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.lt_iff_add_one_le",
+      "used_in_targets": [
+        "Nat.add_sub_one_le_mul"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.mul_eq_right",
+      "used_in_targets": [
+        "Nat.diag_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_lt_one_iff",
+      "used_in_targets": [
+        "Nat.diag_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.add_pos_iff_pos_or_pos",
+      "used_in_targets": [
+        "Nat.diag_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.le_add_one_iff",
+      "used_in_targets": [
+        "Nat.diag_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.mul_div_eq_iff_dvd",
+      "used_in_targets": [
+        "Nat.div_div_div_eq_div"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.eq_zero_of_dvd_of_div_eq_zero",
+      "used_in_targets": [
+        "Nat.div_div_div_eq_div"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.eq_of_dvd_of_div_eq_one",
+      "used_in_targets": [
+        "Nat.div_div_div_eq_div"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_eq_self",
+      "used_in_targets": [
+        "Nat.div_div_div_eq_div"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_dvd_iff_dvd_mul",
+      "used_in_targets": [
+        "Nat.div_eq_iff_eq_of_dvd_dvd"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_ne_zero_iff_of_dvd",
+      "used_in_targets": [
+        "Nat.div_eq_iff_eq_of_dvd_dvd"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.pred_eq_self_iff",
+      "used_in_targets": [
+        "Nat.div_eq_self"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.mul_right_eq_self_iff",
+      "used_in_targets": [
+        "Nat.div_eq_self"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.mul_left_eq_self_iff",
+      "used_in_targets": [
+        "Nat.div_eq_self"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_eq_zero_iff",
+      "used_in_targets": [
+        "Nat.div_eq_self"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.sub_mod_eq_zero_of_mod_eq",
+      "used_in_targets": [
+        "Nat.div_eq_sub_mod_div"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.dvd_sub_mod",
+      "used_in_targets": [
+        "Nat.div_eq_sub_mod_div"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.add_div_eq_of_add_mod_lt",
+      "used_in_targets": [
+        "Nat.div_eq_sub_mod_div"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.modEq_sub",
+      "used_in_targets": [
+        "Nat.div_eq_sub_mod_div"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_mod_unique",
+      "used_in_targets": [
+        "Nat.div_eq_sub_mod_div"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_lt_iff_lt_mul'",
+      "used_in_targets": [
+        "Nat.div_le_of_le_mul'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.not_prime_mul'",
+      "used_in_targets": [
+        "Nat.div_le_of_le_mul'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.eq_zero_of_le_div",
+      "used_in_targets": [
+        "Nat.div_le_of_le_mul'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_lt_self'",
+      "used_in_targets": [
+        "Nat.div_le_self'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.exists_mul_self'",
+      "used_in_targets": [
+        "Nat.div_le_self'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.mul_div_mul_comm",
+      "used_in_targets": [
+        "Nat.div_mul_div_comm"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_le_of_le_mul'",
+      "used_in_targets": [
+        "Nat.div_mul_div_le"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.le_div_iff_mul_le'",
+      "used_in_targets": [
+        "Nat.div_mul_div_le_div"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.self_div_pow_eq_ofDigits_drop",
+      "used_in_targets": [
+        "Nat.div_pow"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.ofDigits_div_pow_eq_ofDigits_drop",
+      "used_in_targets": [
+        "Nat.div_pow"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.pow_lt_pow_right",
+      "used_in_targets": [
+        "Nat.div_pow"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.div_div_self",
+      "used_in_targets": [
+        "Nat.div_pow"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.dvd_iff_dvd_dvd",
+      "used_in_targets": [
+        "Nat.dvd_sub'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.totient_dvd_of_dvd",
+      "used_in_targets": [
+        "Nat.dvd_sub'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.factorial_dvd_factorial",
+      "used_in_targets": [
+        "Nat.dvd_sub'"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.dvd_of_forall_prime_mul_dvd",
+      "used_in_targets": [
+        "Nat.eq_of_dvd_of_lt_two_mul"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.lt_of_pow_dvd_right",
+      "used_in_targets": [
+        "Nat.eq_of_dvd_of_lt_two_mul"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.le_of_lt_add_of_dvd",
+      "used_in_targets": [
+        "Nat.eq_of_dvd_of_lt_two_mul"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.factorization_centralBinom_eq_zero_of_two_mul_lt",
+      "used_in_targets": [
+        "Nat.eq_of_dvd_of_lt_two_mul"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.findGreatest_eq_zero_iff",
+      "used_in_targets": [
+        "Nat.findGreatest_eq_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.find_eq_iff",
+      "used_in_targets": [
+        "Nat.findGreatest_eq_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.add_eq_min_iff",
+      "used_in_targets": [
+        "Nat.findGreatest_eq_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.add_eq_two_iff",
+      "used_in_targets": [
+        "Nat.findGreatest_eq_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.count_mono_left",
+      "used_in_targets": [
+        "Nat.findGreatest_mono_left"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.findGreatest_mono_left",
+      "used_in_targets": [
+        "Nat.findGreatest_mono_right"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.le_findGreatest",
+      "used_in_targets": [
+        "Nat.findGreatest_spec"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.find_le",
+      "used_in_targets": [
+        "Nat.find_add"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.find_lt_iff",
+      "used_in_targets": [
+        "Nat.find_add"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.le_find_iff",
+      "used_in_targets": [
+        "Nat.find_eq_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.leRecOn_surjective",
+      "used_in_targets": [
+        "Nat.leRecOn_injective"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.leRecOn_injective",
+      "used_in_targets": [
+        "Nat.leRecOn_surjective"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.Upto.succ",
+      "used_in_targets": [
+        "Nat.le_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.decreasingInduction_trans",
+      "used_in_targets": [
+        "Nat.le_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.squarefree_mul",
+      "used_in_targets": [
+        "Nat.le_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.primeFactors_mono",
+      "used_in_targets": [
+        "Nat.le_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.count_strict_mono",
+      "used_in_targets": [
+        "Nat.le_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.modEq_and_modEq_iff_modEq_mul",
+      "used_in_targets": [
+        "Nat.le_induction"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.not_prime_of_dvd_of_lt",
+      "used_in_targets": [
+        "Nat.not_dvd_of_pos_of_lt"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.not_prime_of_dvd_of_ne",
+      "used_in_targets": [
+        "Nat.not_dvd_of_pos_of_lt"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.not_dvd_of_between_consec_multiples",
+      "used_in_targets": [
+        "Nat.not_dvd_of_pos_of_lt"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.mul_div_lt_iff_not_dvd",
+      "used_in_targets": [
+        "Nat.not_dvd_of_pos_of_lt"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.not_pos_pow_dvd",
+      "used_in_targets": [
+        "Nat.not_dvd_of_pos_of_lt"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.bit1_mod_two",
+      "used_in_targets": [
+        "Nat.not_two_dvd_bit1"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.bit1_le",
+      "used_in_targets": [
+        "Nat.not_two_dvd_bit1"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.bit1_eq_bit1",
+      "used_in_targets": [
+        "Nat.not_two_dvd_bit1"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.bit1_val",
+      "used_in_targets": [
+        "Nat.not_two_dvd_bit1"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.bit1_eq_one",
+      "used_in_targets": [
+        "Nat.not_two_dvd_bit1"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.one_eq_bit1",
+      "used_in_targets": [
+        "Nat.not_two_dvd_bit1"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.lt_mul_iff_one_lt_left",
+      "used_in_targets": [
+        "Nat.one_lt_mul_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.lt_mul_iff_one_lt_right",
+      "used_in_targets": [
+        "Nat.one_lt_mul_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.lt_one_iff",
+      "used_in_targets": [
+        "Nat.one_lt_mul_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.lt_one_add_iff",
+      "used_in_targets": [
+        "Nat.one_lt_mul_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.le_and_le_add_one_iff",
+      "used_in_targets": [
+        "Nat.one_lt_mul_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.sqrt.lt_iter_succ_sq",
+      "used_in_targets": [
+        "Nat.sqrt.iter_sq_le"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.sqrt_le",
+      "used_in_targets": [
+        "Nat.sqrt.iter_sq_le"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.sqrt_le_sqrt",
+      "used_in_targets": [
+        "Nat.sqrt.iter_sq_le"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.le_sqrt",
+      "used_in_targets": [
+        "Nat.sqrt.iter_sq_le"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.exists_infinite_primes",
+      "used_in_targets": [
+        "Nat.sqrt.iter_sq_le"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.sqrt.iter_sq_le",
+      "used_in_targets": [
+        "Nat.sqrt.lt_iter_succ_sq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.lt_succ_sqrt",
+      "used_in_targets": [
+        "Nat.sqrt.lt_iter_succ_sq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.sqrt_mul_sqrt_lt_succ",
+      "used_in_targets": [
+        "Nat.sqrt.lt_iter_succ_sq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.succ_iterate",
+      "used_in_targets": [
+        "Nat.sqrt.lt_iter_succ_sq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Nat.lt_succ_sqrt'",
+      "used_in_targets": [
+        "Nat.sqrt.lt_iter_succ_sq"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.empty_ne_univ",
+      "used_in_targets": [
+        "Set.Nonempty.eq_univ"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.nonempty_iff_univ_nonempty",
+      "used_in_targets": [
+        "Set.Nonempty.eq_univ"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.univ_nonempty",
+      "used_in_targets": [
+        "Set.Nonempty.eq_univ"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.mul_univ",
+      "used_in_targets": [
+        "Set.Nonempty.eq_univ"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.smul_univ",
+      "used_in_targets": [
+        "Set.Nonempty.eq_univ"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.univ_pi_empty",
+      "used_in_targets": [
+        "Set.Nonempty.eq_univ"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.union_compl_self",
+      "used_in_targets": [
+        "Set.compl_union_self"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.compl_union",
+      "used_in_targets": [
+        "Set.compl_union_self"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.inter_union_compl",
+      "used_in_targets": [
+        "Set.compl_union_self"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.inter_eq_compl_compl_union_compl",
+      "used_in_targets": [
+        "Set.compl_union_self"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.compl_inter",
+      "used_in_targets": [
+        "Set.compl_union_self"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.mem_diff_singleton",
+      "used_in_targets": [
+        "Set.diff_singleton_sSubset"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.disjoint_right",
+      "used_in_targets": [
+        "Set.disjoint_iff_forall_ne"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.eq_univ_iff_forall",
+      "used_in_targets": [
+        "Set.disjoint_iff_forall_ne"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.forall_sups_iff",
+      "used_in_targets": [
+        "Set.disjoint_iff_forall_ne"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.forall_sigma_iff",
+      "used_in_targets": [
+        "Set.disjoint_iff_forall_ne"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.disjoint_right",
+      "used_in_targets": [
+        "Set.disjoint_right"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Multiset.disjoint_right",
+      "used_in_targets": [
+        "Set.disjoint_right"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.disjoint_sdiff_right",
+      "used_in_targets": [
+        "Set.disjoint_right"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.disjoint_union_right",
+      "used_in_targets": [
+        "Set.disjoint_right"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.disjoint_singleton_left",
+      "used_in_targets": [
+        "Set.disjoint_singleton_left"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.disjoint_singleton",
+      "used_in_targets": [
+        "Set.disjoint_singleton_left"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.disjoint_sdiff_left",
+      "used_in_targets": [
+        "Set.disjoint_singleton_left"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.disjoint_union_left",
+      "used_in_targets": [
+        "Set.disjoint_singleton_left"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Finset.insert_subset_insert_iff",
+      "used_in_targets": [
+        "Set.insert_subset_insert_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.subset_insert_iff",
+      "used_in_targets": [
+        "Set.insert_subset_insert_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.ssubset_iff_insert",
+      "used_in_targets": [
+        "Set.insert_subset_insert_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.insert_subset",
+      "used_in_targets": [
+        "Set.insert_subset_insert_iff"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.Nontrivial",
+      "used_in_targets": [
+        "Set.nonempty_compl_of_nontrivial"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Cycle.Nontrivial",
+      "used_in_targets": [
+        "Set.nonempty_compl_of_nontrivial"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.nonempty_compl",
+      "used_in_targets": [
+        "Set.nonempty_compl_of_nontrivial"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.Nontrivial.nonempty",
+      "used_in_targets": [
+        "Set.nonempty_compl_of_nontrivial"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.compl_ne_univ",
+      "used_in_targets": [
+        "Set.nonempty_compl_of_nontrivial"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.inter_compl_nonempty_iff",
+      "used_in_targets": [
+        "Set.nonempty_compl_of_nontrivial"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    },
+    {
+      "lemma": "Set.compl_empty",
+      "used_in_targets": [
+        "Set.nonempty_compl_of_nontrivial"
+      ],
+      "num_used_in_targets": 1,
+      "wins": [],
+      "num_wins": 0,
+      "clusters": [],
+      "classification": "noise"
+    }
+  ]
+}

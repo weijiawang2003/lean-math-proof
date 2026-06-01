@@ -1,0 +1,340 @@
+{
+  "candidate": "RC2 ⊕ SX3_SET_ITE_AESOP",
+  "added_sequence": "simp [Set.ite] <;> aesop",
+  "gate": "theorem name contains 'Set.ite'",
+  "surfaces": [
+    "canonical_smoke",
+    "deferred",
+    "fresh_holdout",
+    "negative_control"
+  ],
+  "num_theorems": 28,
+  "new_wins_over_rc2": [
+    "Set.ite_compl",
+    "Set.ite_inter",
+    "Set.ite_inter_compl_self",
+    "Set.ite_inter_inter",
+    "Set.ite_inter_self"
+  ],
+  "new_fresh_wins": [
+    "Set.ite_inter_inter"
+  ],
+  "reproduced_deferred_wins": [
+    "Set.ite_compl",
+    "Set.ite_inter",
+    "Set.ite_inter_compl_self",
+    "Set.ite_inter_self"
+  ],
+  "off_gate_emissions": [],
+  "regressions_vs_rc2": [],
+  "per_theorem": [
+    {
+      "full_name": "Bool.and_self",
+      "surface": "canonical_smoke",
+      "role": "canonical_smoke",
+      "namespace": "Bool",
+      "gate_fires": false,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "List.append_nil",
+      "surface": "canonical_smoke",
+      "role": "canonical_smoke",
+      "namespace": "List",
+      "gate_fires": false,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Nat.add_zero",
+      "surface": "canonical_smoke",
+      "role": "canonical_smoke",
+      "namespace": "Nat",
+      "gate_fires": false,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Nat.succ_le_succ",
+      "surface": "canonical_smoke",
+      "role": "canonical_smoke",
+      "namespace": "Nat",
+      "gate_fires": false,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Nat.zero_add",
+      "surface": "canonical_smoke",
+      "role": "canonical_smoke",
+      "namespace": "Nat",
+      "gate_fires": false,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Set.ite_compl",
+      "surface": "deferred",
+      "role": "deferred_known",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": false,
+      "candidate_solves": true,
+      "sequence_solved": true,
+      "new_over_rc2": true
+    },
+    {
+      "full_name": "Set.ite_inter",
+      "surface": "deferred",
+      "role": "deferred_known",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": false,
+      "candidate_solves": true,
+      "sequence_solved": true,
+      "new_over_rc2": true
+    },
+    {
+      "full_name": "Set.ite_inter_compl_self",
+      "surface": "deferred",
+      "role": "deferred_known",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": false,
+      "candidate_solves": true,
+      "sequence_solved": true,
+      "new_over_rc2": true
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "surface": "deferred",
+      "role": "deferred_known",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": false,
+      "candidate_solves": true,
+      "sequence_solved": true,
+      "new_over_rc2": true
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "surface": "fresh_holdout",
+      "role": "fresh_holdout",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "surface": "fresh_holdout",
+      "role": "fresh_holdout",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Set.ite_inter_inter",
+      "surface": "fresh_holdout",
+      "role": "fresh_holdout",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": false,
+      "candidate_solves": true,
+      "sequence_solved": true,
+      "new_over_rc2": true
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "surface": "fresh_holdout",
+      "role": "fresh_holdout",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Set.ite_univ",
+      "surface": "fresh_holdout",
+      "role": "fresh_holdout",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": true,
+      "candidate_solves": true,
+      "sequence_solved": true,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Set.mem_dite",
+      "surface": "fresh_holdout",
+      "role": "fresh_holdout",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": true,
+      "candidate_solves": true,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Set.mem_dite_empty_left",
+      "surface": "fresh_holdout",
+      "role": "fresh_holdout",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": true,
+      "candidate_solves": true,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Set.mem_dite_empty_right",
+      "surface": "fresh_holdout",
+      "role": "fresh_holdout",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": true,
+      "candidate_solves": true,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Set.mem_dite_univ_left",
+      "surface": "fresh_holdout",
+      "role": "fresh_holdout",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": true,
+      "candidate_solves": true,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Set.mem_dite_univ_right",
+      "surface": "fresh_holdout",
+      "role": "fresh_holdout",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": true,
+      "candidate_solves": true,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Set.mem_ite_empty_left",
+      "surface": "fresh_holdout",
+      "role": "fresh_holdout",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": true,
+      "candidate_solves": true,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Set.mem_ite_empty_right",
+      "surface": "fresh_holdout",
+      "role": "fresh_holdout",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": true,
+      "candidate_solves": true,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "surface": "fresh_holdout",
+      "role": "fresh_holdout",
+      "namespace": "Set",
+      "gate_fires": true,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Int.add_mul",
+      "surface": "negative_control",
+      "role": "negative_control",
+      "namespace": "Int",
+      "gate_fires": false,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "List.append_nil",
+      "surface": "negative_control",
+      "role": "negative_control",
+      "namespace": "List",
+      "gate_fires": false,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Multiset.cons_inj_left",
+      "surface": "negative_control",
+      "role": "negative_control",
+      "namespace": "Multiset",
+      "gate_fires": false,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "surface": "negative_control",
+      "role": "negative_control",
+      "namespace": "Multiset",
+      "gate_fires": false,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Nat.add_comm",
+      "surface": "negative_control",
+      "role": "negative_control",
+      "namespace": "Nat",
+      "gate_fires": false,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    },
+    {
+      "full_name": "Nat.mul_succ",
+      "surface": "negative_control",
+      "role": "negative_control",
+      "namespace": "Nat",
+      "gate_fires": false,
+      "rc2_solves": false,
+      "candidate_solves": false,
+      "sequence_solved": false,
+      "new_over_rc2": false
+    }
+  ]
+}

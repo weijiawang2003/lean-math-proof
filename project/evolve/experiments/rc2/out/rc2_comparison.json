@@ -1,0 +1,349 @@
+{
+  "global": {
+    "rc1_solved": 113,
+    "rc2_solved": 131,
+    "delta": 18,
+    "new_wins": 18,
+    "regressions": 0,
+    "off_gate": 0,
+    "total_delta": 18,
+    "total_new_wins": 18,
+    "total_regressions": 0,
+    "total_off_gate": 0,
+    "canonical_floor_pass": true,
+    "credited_new_wins_unique": 5,
+    "credited_new_win_theorems": [
+      "Set.ite_empty",
+      "Set.ite_empty_left",
+      "Set.ite_empty_right",
+      "Set.ite_left",
+      "Set.ite_right"
+    ],
+    "search_perturbation_wins_unique": 4,
+    "search_perturbation_theorems": [
+      "Set.ite_compl",
+      "Set.ite_inter",
+      "Set.ite_inter_compl_self",
+      "Set.ite_inter_self"
+    ]
+  },
+  "canonical_floor_status": {
+    "demo_v1": {
+      "rc2_solved": 11,
+      "floor": ">=11/15",
+      "pass": true
+    },
+    "nat_defs_medium": {
+      "rc2_solved": 37,
+      "floor": ">=37/38",
+      "pass": true
+    },
+    "nat_defs_large_v5": {
+      "rc2_solved": 49,
+      "floor": ">=49/65",
+      "pass": true
+    }
+  },
+  "per_surface": [
+    {
+      "surface": "demo_v1",
+      "role": "canonical_floor",
+      "rc1_solved": 11,
+      "rc2_solved": 11,
+      "delta": 0,
+      "new_wins": 0,
+      "regressions": 0,
+      "off_gate_emissions": 0,
+      "gate_emissions": 1,
+      "new_win_theorems": [],
+      "regression_theorems": []
+    },
+    {
+      "surface": "nat_defs_medium",
+      "role": "canonical_floor",
+      "rc1_solved": 37,
+      "rc2_solved": 37,
+      "delta": 0,
+      "new_wins": 0,
+      "regressions": 0,
+      "off_gate_emissions": 0,
+      "gate_emissions": 0,
+      "new_win_theorems": [],
+      "regression_theorems": []
+    },
+    {
+      "surface": "nat_defs_large_v5",
+      "role": "canonical_floor",
+      "rc1_solved": 49,
+      "rc2_solved": 49,
+      "delta": 0,
+      "new_wins": 0,
+      "regressions": 0,
+      "off_gate_emissions": 0,
+      "gate_emissions": 0,
+      "new_win_theorems": [],
+      "regression_theorems": []
+    },
+    {
+      "surface": "set_ite_known_wins",
+      "role": "candidate_validation",
+      "rc1_solved": 0,
+      "rc2_solved": 5,
+      "delta": 5,
+      "new_wins": 5,
+      "regressions": 0,
+      "off_gate_emissions": 0,
+      "gate_emissions": 5,
+      "new_win_theorems": [
+        "Set.ite_empty_left",
+        "Set.ite_empty_right",
+        "Set.ite_left",
+        "Set.ite_empty",
+        "Set.ite_right"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "surface": "set_ite_selected_failures",
+      "role": "candidate_validation",
+      "rc1_solved": 0,
+      "rc2_solved": 4,
+      "delta": 4,
+      "new_wins": 4,
+      "regressions": 0,
+      "off_gate_emissions": 0,
+      "gate_emissions": 5,
+      "new_win_theorems": [
+        "Set.ite_inter_self",
+        "Set.ite_inter",
+        "Set.ite_empty_right",
+        "Set.ite_right"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "surface": "set_ite_fresh_holdout",
+      "role": "candidate_validation",
+      "rc1_solved": 11,
+      "rc2_solved": 15,
+      "delta": 4,
+      "new_wins": 4,
+      "regressions": 0,
+      "off_gate_emissions": 0,
+      "gate_emissions": 5,
+      "new_win_theorems": [
+        "Set.ite_compl",
+        "Set.ite_left",
+        "Set.ite_empty",
+        "Set.ite_empty_left"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "surface": "sf1_frontier_runnable_subset",
+      "role": "fresh_frontier",
+      "rc1_solved": 5,
+      "rc2_solved": 10,
+      "delta": 5,
+      "new_wins": 5,
+      "regressions": 0,
+      "off_gate_emissions": 0,
+      "gate_emissions": 7,
+      "new_win_theorems": [
+        "Set.ite_inter_self",
+        "Set.ite_empty_right",
+        "Set.ite_right",
+        "Set.ite_inter",
+        "Set.ite_inter_compl_self"
+      ],
+      "regression_theorems": []
+    },
+    {
+      "surface": "set_ite_negative_controls",
+      "role": "negative_control",
+      "rc1_solved": 0,
+      "rc2_solved": 0,
+      "delta": 0,
+      "new_wins": 0,
+      "regressions": 0,
+      "off_gate_emissions": 0,
+      "gate_emissions": 0,
+      "note": "non-Set control; gate cannot fire (off-gate=0)"
+    }
+  ],
+  "new_win_classification": [
+    {
+      "surface": "set_ite_known_wins",
+      "full_name": "Set.ite_empty_left",
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "single_shot_set_ite": true,
+      "classification": "fresh_SET_ITE_win"
+    },
+    {
+      "surface": "set_ite_known_wins",
+      "full_name": "Set.ite_empty_right",
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "single_shot_set_ite": true,
+      "classification": "expected_SET_ITE_win"
+    },
+    {
+      "surface": "set_ite_known_wins",
+      "full_name": "Set.ite_left",
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "single_shot_set_ite": true,
+      "classification": "fresh_SET_ITE_win"
+    },
+    {
+      "surface": "set_ite_known_wins",
+      "full_name": "Set.ite_empty",
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "single_shot_set_ite": true,
+      "classification": "fresh_SET_ITE_win"
+    },
+    {
+      "surface": "set_ite_known_wins",
+      "full_name": "Set.ite_right",
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "single_shot_set_ite": true,
+      "classification": "expected_SET_ITE_win"
+    },
+    {
+      "surface": "set_ite_selected_failures",
+      "full_name": "Set.ite_inter_self",
+      "rc2_winning_tactic": "aesop",
+      "rc2_num_steps": 2,
+      "single_shot_set_ite": false,
+      "classification": "search_perturbation_multistep_NOT_credited"
+    },
+    {
+      "surface": "set_ite_selected_failures",
+      "full_name": "Set.ite_inter",
+      "rc2_winning_tactic": "aesop",
+      "rc2_num_steps": 2,
+      "single_shot_set_ite": false,
+      "classification": "search_perturbation_multistep_NOT_credited"
+    },
+    {
+      "surface": "set_ite_selected_failures",
+      "full_name": "Set.ite_empty_right",
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "single_shot_set_ite": true,
+      "classification": "expected_SET_ITE_win"
+    },
+    {
+      "surface": "set_ite_selected_failures",
+      "full_name": "Set.ite_right",
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "single_shot_set_ite": true,
+      "classification": "expected_SET_ITE_win"
+    },
+    {
+      "surface": "set_ite_fresh_holdout",
+      "full_name": "Set.ite_compl",
+      "rc2_winning_tactic": "aesop",
+      "rc2_num_steps": 2,
+      "single_shot_set_ite": false,
+      "classification": "search_perturbation_multistep_NOT_credited"
+    },
+    {
+      "surface": "set_ite_fresh_holdout",
+      "full_name": "Set.ite_left",
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "single_shot_set_ite": true,
+      "classification": "fresh_SET_ITE_win"
+    },
+    {
+      "surface": "set_ite_fresh_holdout",
+      "full_name": "Set.ite_empty",
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "single_shot_set_ite": true,
+      "classification": "fresh_SET_ITE_win"
+    },
+    {
+      "surface": "set_ite_fresh_holdout",
+      "full_name": "Set.ite_empty_left",
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "single_shot_set_ite": true,
+      "classification": "fresh_SET_ITE_win"
+    },
+    {
+      "surface": "sf1_frontier_runnable_subset",
+      "full_name": "Set.ite_inter_self",
+      "rc2_winning_tactic": "aesop",
+      "rc2_num_steps": 2,
+      "single_shot_set_ite": false,
+      "classification": "search_perturbation_multistep_NOT_credited"
+    },
+    {
+      "surface": "sf1_frontier_runnable_subset",
+      "full_name": "Set.ite_empty_right",
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "single_shot_set_ite": true,
+      "classification": "expected_SET_ITE_win"
+    },
+    {
+      "surface": "sf1_frontier_runnable_subset",
+      "full_name": "Set.ite_right",
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "single_shot_set_ite": true,
+      "classification": "expected_SET_ITE_win"
+    },
+    {
+      "surface": "sf1_frontier_runnable_subset",
+      "full_name": "Set.ite_inter",
+      "rc2_winning_tactic": "aesop",
+      "rc2_num_steps": 2,
+      "single_shot_set_ite": false,
+      "classification": "search_perturbation_multistep_NOT_credited"
+    },
+    {
+      "surface": "sf1_frontier_runnable_subset",
+      "full_name": "Set.ite_inter_compl_self",
+      "rc2_winning_tactic": "aesop",
+      "rc2_num_steps": 2,
+      "single_shot_set_ite": false,
+      "classification": "search_perturbation_multistep_NOT_credited"
+    }
+  ],
+  "emitted_and_failed_classification": [
+    {
+      "surface": "demo_v1",
+      "full_name": "Set.ite_univ",
+      "classification": "harmless_failed_emission"
+    },
+    {
+      "surface": "set_ite_selected_failures",
+      "full_name": "Set.ite_eq_of_subset_left",
+      "classification": "harmless_failed_emission"
+    },
+    {
+      "surface": "set_ite_fresh_holdout",
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "classification": "harmless_failed_emission"
+    },
+    {
+      "surface": "sf1_frontier_runnable_subset",
+      "full_name": "Set.ite_eq_of_subset_left",
+      "classification": "harmless_failed_emission"
+    },
+    {
+      "surface": "sf1_frontier_runnable_subset",
+      "full_name": "Set.ite_eq_of_subset_right",
+      "classification": "harmless_failed_emission"
+    }
+  ],
+  "regression_rows": [],
+  "note": "RC2 differs from RC1 only on Set.ite* names; off-gate=0 by construction (name-prefix gate). New wins must all be (fresh_)SET_ITE_win."
+}

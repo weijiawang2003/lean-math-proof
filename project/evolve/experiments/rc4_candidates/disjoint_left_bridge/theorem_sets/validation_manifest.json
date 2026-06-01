@@ -1,0 +1,67 @@
+{
+  "generated_by": "scripts/rc4b_build_validation_sets.py",
+  "policy": "project/evolve/experiments/rc4_candidates/disjoint_left_bridge/disjoint_left_bridge_policy.json",
+  "bridge_lemmas": [
+    "Set.disjoint_left",
+    "Multiset.disjoint_left"
+  ],
+  "sizes": {
+    "known_wins": 11,
+    "fresh_holdout_set": 8,
+    "fresh_holdout_multiset": 20,
+    "disjoint_negative_controls": 15,
+    "namespace_negative_controls": 20,
+    "canonical_smoke": 45
+  },
+  "total": 119,
+  "gate_fire_counts": {
+    "known_wins": 11,
+    "fresh_holdout_set": 8,
+    "fresh_holdout_multiset": 20,
+    "disjoint_negative_controls": 0,
+    "namespace_negative_controls": 0,
+    "canonical_smoke": 0
+  },
+  "fresh_vs_known": {
+    "known_wins": {
+      "known": 11,
+      "fresh_evidence": 8
+    },
+    "fresh_holdout_set": {
+      "fresh_out_of_sample": 8
+    },
+    "fresh_holdout_multiset": {
+      "fresh_out_of_sample": 20
+    }
+  },
+  "overlap_with_evidence": {
+    "known_wins": 11,
+    "fresh_holdout_set": 0,
+    "fresh_holdout_multiset": 0,
+    "disjoint_negative_controls": 0,
+    "namespace_negative_controls": 0,
+    "canonical_smoke": 0
+  },
+  "expected_gate_emissions": {
+    "known_wins": "fires on all (Set/Multiset disjoint) — reproduce wins",
+    "fresh_holdout_set": "fires on all; wins NOT guaranteed",
+    "fresh_holdout_multiset": "fires on all; wins NOT guaranteed",
+    "disjoint_negative_controls": "0 emissions (namespace gate suppresses Finset/Order/List disjoint)",
+    "namespace_negative_controls": "0 emissions",
+    "canonical_smoke": "≈0 emissions; floors preserved"
+  },
+  "leakage_notes": [
+    "known_wins are the 3 TR3/TR5 Set reproductions + 8 TR6 fresh wins (in-sample by construction).",
+    "fresh_holdout_set / fresh_holdout_multiset are disjoint_* theorems that gate-fire but are NOT credited evidence wins — out-of-sample generalization tests.",
+    "disjoint_negative_controls hold the namespace gate honest: Finset/Order/List disjoint theorems (incl. Finset.disjoint_left, deliberately out of scope) must show 0 emissions.",
+    "namespace_negative_controls + canonical_smoke must show 0 gate emissions / 0 regressions."
+  ],
+  "set_files": {
+    "known_wins": "project/evolve/experiments/rc4_candidates/disjoint_left_bridge/theorem_sets/known_wins.json",
+    "fresh_holdout_set": "project/evolve/experiments/rc4_candidates/disjoint_left_bridge/theorem_sets/fresh_holdout_set.json",
+    "fresh_holdout_multiset": "project/evolve/experiments/rc4_candidates/disjoint_left_bridge/theorem_sets/fresh_holdout_multiset.json",
+    "disjoint_negative_controls": "project/evolve/experiments/rc4_candidates/disjoint_left_bridge/theorem_sets/disjoint_negative_controls.json",
+    "namespace_negative_controls": "project/evolve/experiments/rc4_candidates/disjoint_left_bridge/theorem_sets/namespace_negative_controls.json",
+    "canonical_smoke": "project/evolve/experiments/rc4_candidates/disjoint_left_bridge/theorem_sets/canonical_smoke.json"
+  }
+}

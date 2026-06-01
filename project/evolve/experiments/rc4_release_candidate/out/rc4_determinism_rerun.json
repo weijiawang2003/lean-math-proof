@@ -1,0 +1,16 @@
+{
+  "generated_by": "scripts/rc4r_determinism_rerun.py",
+  "num_targets": 63,
+  "num_compared": 63,
+  "clean_run1_hash": "ded0e256b75a12eb",
+  "clean_run2_hash": "ded0e256b75a12eb",
+  "genuine_diffs": [],
+  "open_flakes": [
+    "Finset._root_.Monotone.map_finset_max'",
+    "Finset._root_.Monotone.map_finset_min'"
+  ],
+  "num_open_flakes": 2,
+  "win_affecting_flakes": [],
+  "deterministic": true,
+  "determinism_note": "hash over cleanly-executed theorems; open flakes are Dojo hard-timeout / worker-kill infra events, excluded from the hash."
+}

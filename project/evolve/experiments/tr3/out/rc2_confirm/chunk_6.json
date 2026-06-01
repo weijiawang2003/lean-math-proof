@@ -1,0 +1,110 @@
+{
+  "Nat.div_pow": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 4,
+    "tactics_used": [
+      "rw [Nat.div_eq_of_lt]",
+      "rw [Nat.div_eq_of_lt]",
+      "simp [Nat.mul_one]"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-74cd3523/traces.jsonl"
+  },
+  "Nat.dvd_sub'": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-74cd3523/traces.jsonl"
+  },
+  "Nat.eq_of_dvd_of_lt_two_mul": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 2,
+    "tactics_used": [
+      "simp_all"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-74cd3523/traces.jsonl"
+  },
+  "Nat.findGreatest_eq_iff": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 8,
+    "tactics_used": [
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "simp [Nat.mul_one]",
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "simp [Nat.mul_one]",
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "simp [Nat.mul_one]",
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "simp [Nat.mul_one]"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-74cd3523/traces.jsonl"
+  },
+  "Nat.findGreatest_mono_left": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-74cd3523/traces.jsonl"
+  },
+  "Nat.findGreatest_mono_right": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-74cd3523/traces.jsonl"
+  },
+  "Nat.findGreatest_spec": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-74cd3523/traces.jsonl"
+  },
+  "Nat.find_add": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-74cd3523/traces.jsonl"
+  },
+  "Nat.find_eq_iff": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 8,
+    "tactics_used": [
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "simp [Nat.mul_one]",
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "simp [Nat.mul_one]",
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "simp [Nat.mul_one]",
+      "simp only [← Nat.not_le, Nat.le_sqrt]",
+      "simp [Nat.mul_one]"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-74cd3523/traces.jsonl"
+  },
+  "Nat.leRecOn_injective": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-74cd3523/traces.jsonl"
+  },
+  "Nat.leRecOn_surjective": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-74cd3523/traces.jsonl"
+  },
+  "Nat.le_induction": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr3/out/rc2_confirm/rc2_runs/eval-74cd3523/traces.jsonl"
+  }
+}

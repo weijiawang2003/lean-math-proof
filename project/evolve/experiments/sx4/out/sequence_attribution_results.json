@@ -1,0 +1,1443 @@
+{
+  "candidate_id": "SX3_SET_ITE_AESOP",
+  "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+  "literal_baseline_policy": "RC2",
+  "candidate_policy": "RC3_candidate",
+  "inputs": {
+    "baseline": "project/evolve/experiments/rc3_validation/out/literal_rc2_results.json",
+    "candidate": "project/evolve/experiments/rc3_validation/out/literal_rc3_results.json",
+    "sequence": "project/evolve/experiments/sx3/out/sx3_minimal_attribution.json",
+    "cases": "project/evolve/experiments/sx3/cases/sx3_case_manifest.json",
+    "baseline_trace": "project/evolve/experiments/rc3_validation/out/literal_rc2_runs/eval-a334e4a0/traces.jsonl"
+  },
+  "num_theorems": 39,
+  "classification_histogram": {
+    "FAILED_SEQUENCE": 22,
+    "PRODUCTION_SUBSUMED": 17
+  },
+  "credited_true_sequence_deltas": [],
+  "num_credited": 0,
+  "production_subsumed": [
+    "Set.diff_union_inter",
+    "Set.insert_diff_eq_singleton",
+    "Set.insert_diff_of_mem",
+    "Set.ite_compl",
+    "Set.ite_inter",
+    "Set.ite_inter_compl_self",
+    "Set.ite_inter_inter",
+    "Set.ite_inter_self",
+    "Set.ite_univ",
+    "Set.mem_dite",
+    "Set.mem_dite_empty_left",
+    "Set.mem_dite_empty_right",
+    "Set.mem_dite_univ_left",
+    "Set.mem_dite_univ_right",
+    "Set.mem_ite_empty_left",
+    "Set.mem_ite_empty_right",
+    "Set.pair_diff_left"
+  ],
+  "proxy_runner_credited": [
+    "Set.ite_compl",
+    "Set.ite_inter",
+    "Set.ite_inter_compl_self",
+    "Set.ite_inter_inter",
+    "Set.ite_inter_self"
+  ],
+  "num_proxy_credited": 5,
+  "over_credit_caught_theorems": [
+    "Set.ite_compl",
+    "Set.ite_inter",
+    "Set.ite_inter_compl_self",
+    "Set.ite_inter_inter",
+    "Set.ite_inter_self"
+  ],
+  "over_credit_caught": true,
+  "records": [
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Bool.and_self",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": null,
+        "baseline_applies_B_after_A_state": null,
+        "equivalent_sequence_observed": null,
+        "baseline_winning_path": [],
+        "trace_confidence": "insufficient"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Int.add_mul",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": null,
+        "baseline_applies_B_after_A_state": null,
+        "equivalent_sequence_observed": null,
+        "baseline_winning_path": [],
+        "trace_confidence": "insufficient"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "List.append_nil",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": null,
+        "baseline_applies_B_after_A_state": null,
+        "equivalent_sequence_observed": null,
+        "baseline_winning_path": [],
+        "trace_confidence": "insufficient"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Multiset.cons_inj_left",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": null,
+        "baseline_applies_B_after_A_state": null,
+        "equivalent_sequence_observed": null,
+        "baseline_winning_path": [],
+        "trace_confidence": "insufficient"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Multiset.toFinset_eq_singleton_iff",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "simp [Set.univ_union]",
+          "induction s using Multiset.induction_on <;> simp_all",
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Nat.add_comm",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": null,
+        "baseline_applies_B_after_A_state": null,
+        "equivalent_sequence_observed": null,
+        "baseline_winning_path": [],
+        "trace_confidence": "insufficient"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Nat.add_zero",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": null,
+        "baseline_applies_B_after_A_state": null,
+        "equivalent_sequence_observed": null,
+        "baseline_winning_path": [],
+        "trace_confidence": "insufficient"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Nat.mul_succ",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": null,
+        "baseline_applies_B_after_A_state": null,
+        "equivalent_sequence_observed": null,
+        "baseline_winning_path": [],
+        "trace_confidence": "insufficient"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Nat.succ_le_succ",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": null,
+        "baseline_applies_B_after_A_state": null,
+        "equivalent_sequence_observed": null,
+        "baseline_winning_path": [],
+        "trace_confidence": "insufficient"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Nat.zero_add",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": null,
+        "baseline_applies_B_after_A_state": null,
+        "equivalent_sequence_observed": null,
+        "baseline_winning_path": [],
+        "trace_confidence": "insufficient"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.antitoneOn_iff_antitone",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [],
+        "trace_confidence": "full"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.diff_singleton_subset_iff",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop",
+          "tauto",
+          "simp [Set.subset_def]",
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.diff_union_inter",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "solved",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "simp [Set.ext_iff]",
+          "tauto"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline already solves (path=['simp [Set.ext_iff]', 'tauto'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.insert_diff_eq_singleton",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "solved",
+        "A_then_B": "solved",
+        "baseline_controls_solved": [
+          "aesop"
+        ]
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline already solves (path=['aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.insert_diff_of_mem",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "solved",
+        "A_then_B": "solved",
+        "baseline_controls_solved": [
+          "aesop"
+        ]
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline already solves (path=['aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.ite_compl",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": true,
+      "proxy_runner_credited": true,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "solved",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": true,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": true,
+        "baseline_winning_path": [
+          "simp [Set.ite]",
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline solves via equivalent simp [Set.ite] -> aesop continuation (path=['simp [Set.ite]', 'aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.ite_eq_of_subset_left",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": true,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "simp [Set.ite]"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.ite_eq_of_subset_right",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": true,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "simp [Set.ite]"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.ite_inter",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": true,
+      "proxy_runner_credited": true,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "solved",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": true,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": true,
+        "baseline_winning_path": [
+          "simp [Set.ite]",
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline solves via equivalent simp [Set.ite] -> aesop continuation (path=['simp [Set.ite]', 'aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.ite_inter_compl_self",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": true,
+      "proxy_runner_credited": true,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "solved",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": true,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": true,
+        "baseline_winning_path": [
+          "simp [Set.ite]",
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline solves via equivalent simp [Set.ite] -> aesop continuation (path=['simp [Set.ite]', 'aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.ite_inter_inter",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": true,
+      "proxy_runner_credited": true,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "solved",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": true,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": true,
+        "baseline_winning_path": [
+          "simp [Set.ite]",
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline solves via equivalent simp [Set.ite] -> aesop continuation (path=['simp [Set.ite]', 'aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.ite_inter_of_inter_eq",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": true,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "simp [Set.ite]",
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.ite_inter_self",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": true,
+      "proxy_runner_credited": true,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "solved",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": true,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": true,
+        "baseline_winning_path": [
+          "simp [Set.ite]",
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline solves via equivalent simp [Set.ite] -> aesop continuation (path=['simp [Set.ite]', 'aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.ite_univ",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": true,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "solved",
+        "B_initial": "failed",
+        "A_then_B": "solved",
+        "baseline_controls_solved": [
+          "simp [Set.ite]"
+        ]
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "simp [Set.ite]"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline already solves (path=['simp [Set.ite]'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.mem_dite",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "solved",
+        "A_then_B": "solved",
+        "baseline_controls_solved": [
+          "aesop"
+        ]
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline already solves (path=['aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.mem_dite_empty_left",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "solved",
+        "A_then_B": "solved",
+        "baseline_controls_solved": [
+          "aesop"
+        ]
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline already solves (path=['aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.mem_dite_empty_right",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "solved",
+        "A_then_B": "solved",
+        "baseline_controls_solved": [
+          "aesop"
+        ]
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline already solves (path=['aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.mem_dite_univ_left",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "solved",
+        "A_then_B": "solved",
+        "baseline_controls_solved": [
+          "aesop"
+        ]
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline already solves (path=['aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.mem_dite_univ_right",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "solved",
+        "A_then_B": "solved",
+        "baseline_controls_solved": [
+          "aesop"
+        ]
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline already solves (path=['aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.mem_ite_empty_left",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "solved",
+        "A_then_B": "solved",
+        "baseline_controls_solved": [
+          "aesop"
+        ]
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline already solves (path=['aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.mem_ite_empty_right",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "solved",
+        "A_then_B": "solved",
+        "baseline_controls_solved": [
+          "aesop"
+        ]
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline already solves (path=['aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.pair_diff_left",
+      "baseline_finished": true,
+      "candidate_finished": true,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "solved",
+        "A_then_B": "solved",
+        "baseline_controls_solved": [
+          "simp_all",
+          "aesop"
+        ]
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": true,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "PRODUCTION_SUBSUMED",
+      "credit": false,
+      "notes": [
+        "literal baseline already solves (path=['aesop'])"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.pair_eq_pair_iff",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.powerset_singleton",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "simp [Set.ext_iff]",
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.ssubset_singleton_iff",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "simp [Set.ext_iff]",
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.subset_insert_iff",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "simp [Set.subset_def]",
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.subset_ite",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "simp [Set.subset_def]",
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.subset_singleton_iff_eq",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    },
+    {
+      "candidate_id": "SX3_SET_ITE_AESOP",
+      "sequence": [
+        "simp [Set.ite]",
+        "aesop"
+      ],
+      "full_sequence_tactic": "simp [Set.ite] <;> aesop",
+      "theorem": "Set.union_empty_iff",
+      "baseline_finished": false,
+      "candidate_finished": false,
+      "sequence_runner_solved": false,
+      "proxy_runner_credited": false,
+      "controls": {
+        "A_initial": "failed",
+        "B_initial": "failed",
+        "A_then_B": "failed",
+        "baseline_controls_solved": []
+      },
+      "production_trace_analysis": {
+        "baseline_reaches_A_equivalent_state": false,
+        "baseline_applies_B_after_A_state": false,
+        "equivalent_sequence_observed": false,
+        "baseline_winning_path": [
+          "aesop",
+          "simp [Set.ext_iff]",
+          "aesop"
+        ],
+        "trace_confidence": "full"
+      },
+      "classification": "FAILED_SEQUENCE",
+      "credit": false,
+      "notes": [
+        "candidate sequence does not solve the theorem"
+      ],
+      "literal_baseline_policy": "RC2",
+      "candidate_policy": "RC3_candidate"
+    }
+  ]
+}

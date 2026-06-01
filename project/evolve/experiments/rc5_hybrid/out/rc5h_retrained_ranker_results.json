@@ -1,0 +1,29 @@
+{
+  "generated_by": "scripts/rc5h_export_and_retrain_ranker.py",
+  "rc5h_examples": 756,
+  "rc5h_positives": 3,
+  "comparison": [
+    {
+      "set": "TR4_only",
+      "n": 4737,
+      "positives": 23,
+      "pr_auc": 0.4282,
+      "folds": 4
+    },
+    {
+      "set": "TR4+TR6",
+      "n": 7195,
+      "positives": 44,
+      "pr_auc": 0.5098,
+      "folds": 4
+    },
+    {
+      "set": "TR4+TR6+RC5H",
+      "n": 7951,
+      "positives": 47,
+      "pr_auc": 0.3665,
+      "folds": 4
+    }
+  ],
+  "note": "grouped (group=theorem) PR-AUC; does NOT replace the global TR4 model."
+}

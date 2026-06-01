@@ -1,0 +1,29 @@
+{
+  "generated_by": "scripts/rc5v2_compare_systems.py",
+  "systems": {
+    "RC2": {
+      "solved": 67
+    },
+    "RC4_static": {
+      "solved": 67,
+      "delta_over_rc2": 0
+    },
+    "RC5V2": {
+      "solved": 75,
+      "delta_over_rc4": 8,
+      "delta_over_rc2": 8,
+      "regressions": 0
+    }
+  },
+  "fresh_dynamic_delta_over_rc4": 8,
+  "dynamic_probes": 698,
+  "dynamic_probes_per_fresh_delta": 87.2,
+  "fresh_delta_by_namespace": {
+    "List": 4,
+    "Set": 1,
+    "Multiset": 2,
+    "Finset": 1
+  },
+  "rc4_remains_static_core": true,
+  "safe_dynamic_gives_fresh_gain": true
+}

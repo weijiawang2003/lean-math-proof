@@ -1,0 +1,96 @@
+[sf1_run_eval] registered 'rc2bench_set_ite_selected_failures' with 12 theorems (dropped 0 without file_path)
+[sf1_run_eval] delegating: eval_rollout_all.py --theorem-set rc2bench_set_ite_selected_failures --policy-type hybrid_evolved --route-config project/evolve/routing/ns24_router.json --strategy-config project/evolve/experiments/rc2/rc2_candidate_wrapper.json --top-k 8 --max-steps 8 --out-dir project/evolve/experiments/rc2_hardening/out/rc2_candidate_runs/set_ite_selected_failures
+
+================================================================
+  LEAN TACTIC POLICY EVALUATION
+================================================================
+  Theorem set : rc2bench_set_ite_selected_failures (12 theorems)
+  Checkpoint  : clf_ckpt
+  Policy type : hybrid_evolved
+  Strategy    : top-8 fallback, max 8 steps
+================================================================
+
+RoutedGenerativePolicy: 4 routes, default=project/models/gen_v5_ns12_balanced
+  '^Nat\\.' -> project/models/gen_v5_ns15_nat_oversample
+  '^Int\\.' -> project/models/gen_v5_ns24_int_minimal_omega_10x
+  '^Finset\\.' -> project/models/gen_v5_ns21_finset_aesop_20x
+  '^Set\\.' -> project/models/gen_v5_ns12_balanced
+[1/12] Set.diff_singleton_subset_iff
+Loading weights:   0%|          | 0/131 [00:00<?, ?it/s]Loading weights: 100%|██████████| 131/131 [00:00<00:00, 59004.92it/s]
+Loaded generative policy from project/models/gen_v5_ns12_balanced (type=seq2seq)
+  Base model: project/models/gen_v5
+  Unique tactics in training: 104
+       FAILED at step 5 (All top-11 tactics errored at step 5)
+
+[2/12] Set.ite_eq_of_subset_left
+       FAILED at step 2 (All top-13 tactics errored at step 2)
+
+[3/12] Set.pair_eq_pair_iff
+       FAILED at step 2 (All top-11 tactics errored at step 2)
+
+[4/12] Set.subset_insert_iff
+       FAILED at step 3 (All top-11 tactics errored at step 3)
+
+[5/12] Set.subset_singleton_iff_eq
+       FAILED at step 2 (All top-11 tactics errored at step 2)
+
+[6/12] Set.union_empty_iff
+       FAILED at step 4 (All top-11 tactics errored at step 4)
+
+[7/12] Set.antitoneOn_iff_antitone
+       FAILED at step 1 (All top-14 tactics errored at step 1)
+
+[8/12] Set.ssubset_singleton_iff
+       FAILED at step 3 (All top-11 tactics errored at step 3)
+
+[9/12] Set.ite_empty_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+[10/12] Set.ite_inter
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: simp [Set.ite] -> aesop
+
+[11/12] Set.ite_inter_self
+       PROVED in 2 step(s) (used 2 fallback(s))
+       Proof: simp [Set.ite] -> aesop
+
+[12/12] Set.ite_right
+       PROVED in 1 step(s) (used 1 fallback(s))
+       Proof: simp [Set.ite]
+
+
+================================================================
+  RESULTS SUMMARY
+================================================================
+
+  Theorem                                  Status       Steps  Tactic
+  ──────────────────────────────────────── ──────────── ────── ──────────────────────────────
+  Set.diff_singleton_subset_iff            ERROR        5      
+  Set.ite_eq_of_subset_left                ERROR        2      
+  Set.pair_eq_pair_iff                     ERROR        2      
+  Set.subset_insert_iff                    ERROR        3      
+  Set.subset_singleton_iff_eq              ERROR        2      
+  Set.union_empty_iff                      ERROR        4      
+  Set.antitoneOn_iff_antitone              ERROR        1      
+  Set.ssubset_singleton_iff                ERROR        3      
+  Set.ite_empty_right                      PROVED       1      simp [Set.ite]
+  Set.ite_inter                            PROVED       2      aesop
+  Set.ite_inter_self                       PROVED       2      aesop
+  Set.ite_right                            PROVED       1      simp [Set.ite]
+
+  ────────────────────────────────────────────────────────────────
+  Total theorems:    12
+  Available:         12/12
+  Proved:            4/12  (33%)
+  Errored:           8/12
+  Exhausted:         0/12
+  Skipped:           0/12
+  Avg steps (proved): 1.5
+  Fallbacks used:     6
+  Proved by origin:   {'tactic_template': 2, 'generative_topk': 2}
+  Family proofs:      {'priority:any:specific': 2}
+  Denied tactics:     48 (per-theorem deny-list)
+================================================================
+
+Run artifacts: project/evolve/experiments/rc2_hardening/out/rc2_candidate_runs/set_ite_selected_failures/eval-aa406d27

@@ -1,0 +1,28 @@
+{
+  "queue_size": 33,
+  "eval_per_theorem_available": true,
+  "by_priority": {
+    "high": 3,
+    "medium": 30
+  },
+  "by_candidate_family": {
+    "wx3_multiset_induction": 3,
+    "future_failure_driven_lemma_candidate": 30
+  },
+  "by_namespace": {
+    "Multiset": 3,
+    "Eq": 1,
+    "Function": 1,
+    "Nat": 1,
+    "Prop": 1,
+    "Set": 24,
+    "GENERAL_FRONTIER": 1,
+    "traces_from_search": 1
+  },
+  "high_priority_decls": [
+    "Multiset.disjoint_toFinset",
+    "Multiset.toFinset_eq_singleton_iff",
+    "Multiset.toFinset_nsmul"
+  ],
+  "note": "Queue built from classification (Stage C) + eval status (Stage E). No new family win is claimed; NS23 minimal-sufficient relabel must confirm each candidate before any promotion."
+}

@@ -1,0 +1,47 @@
+{
+  "name": "sx3_deferred_set_ite_cases",
+  "description": "The +4 RC2-hardening deferred SX3 depth-2 sequence candidates.",
+  "provenance": "rc2_hardening/out/rc2_delta_ledger.json deferred_sx3",
+  "cases": [
+    {
+      "full_name": "Set.ite_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "rc2_deferred",
+      "role": "deferred_known",
+      "shape": "set_equality",
+      "known_rc2_status_finished": false,
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "rc2_deferred",
+      "role": "deferred_known",
+      "shape": "set_equality",
+      "known_rc2_status_finished": false,
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.ite_compl",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "rc2_deferred",
+      "role": "deferred_known",
+      "shape": "set_equality",
+      "known_rc2_status_finished": false,
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.ite_inter_compl_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "rc2_deferred",
+      "role": "deferred_known",
+      "shape": "set_equality",
+      "known_rc2_status_finished": false,
+      "exclude_reason": null
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "component": "SX3_SET_ITE_AESOP",
+  "candidate": "RC3 candidate = RC2 ⊕ SX3_SET_ITE_AESOP",
+  "status": "RC3_CANDIDATE_CONFIRMED (experimental, off-by-default, owner approval pending)",
+  "base": "RC2 release wrapper (project/evolve/experiments/rc2_release/rc2_production_wrapper.json, untouched)",
+  "added_sequence": "simp [Set.ite] <;> aesop",
+  "gate": "narrow Set.ite theorem-name gate (same as RC2 SET_ITE_SIMP)",
+  "attribution_distinction": {
+    "rc2_official_delta": "single-shot 'simp [Set.ite]' (+5 credited)",
+    "sx3_candidate_delta": "depth-2 'simp [Set.ite] <;> aesop' (separate, NOT mixed with RC2's +5)"
+  },
+  "delta": {
+    "reproduced_deferred_wins": 4,
+    "reproduced_deferred": ["Set.ite_inter", "Set.ite_inter_self", "Set.ite_compl", "Set.ite_inter_compl_self"],
+    "fresh_true_wins": 1,
+    "fresh_wins": ["Set.ite_inter_inter"],
+    "total_true_depth2_wins": 5
+  },
+  "safety": {
+    "off_gate_emissions": 0,
+    "regressions_vs_rc2": 0,
+    "non_set_emissions": 0,
+    "deterministic": true,
+    "deferred_result_hash": "c0144cd63fd5",
+    "fresh_holdout_result_hash": "ed6b9ef789a0"
+  },
+  "minimal_attribution": {
+    "TRUE_DEPTH2_SEQUENCE_WIN": 5,
+    "controls_failed_on_every_true_win": true,
+    "single_step_duplicates_excluded": ["Set.ite_univ"],
+    "source_specific_wins": 0,
+    "note": "Every true win: depth-2 sequence solved AND simp/simp_all/aesop/single-shot simp[Set.ite] all failed."
+  },
+  "general_sequence_search": {
+    "verdict": "does NOT generalize beyond SET_ITE_AESOP",
+    "evidence": "Set cluster (ext/iff/subset_antisymm families, 11 live theorems): 0 true depth-2 wins, only baseline duplicates.",
+    "policy": "Do NOT promote broad sequence search; keep the narrow Set.ite gate only."
+  }
+}

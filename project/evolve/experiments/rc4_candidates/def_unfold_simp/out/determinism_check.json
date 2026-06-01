@@ -1,0 +1,310 @@
+{
+  "generated_by": "scripts/rc4a_determinism_check.py",
+  "num_targets": 28,
+  "num_gate_firing": 8,
+  "run1_hash": "7c6eb2db19043c83",
+  "run2_hash": "7c6eb2db19043c83",
+  "diffs": [],
+  "open_flakes": [],
+  "deterministic": true,
+  "run1": {
+    "Finset.mem_disjUnion": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.antitoneOn_iff_antitone": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.monotoneOn_iff_monotone": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.strictAntiOn_iff_strictAnti": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.strictMonoOn_iff_strictMono": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Finset.filter_cons": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "List.perm_of_nodup_nodup_toFinset_eq": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset.ext_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_eq": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_eq_empty_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_eq_iff_perm_dedup": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_filter": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_nonempty_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_surj_on": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Multiset.Nodup.toFinset_inj": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Multiset.toFinset_eq_singleton_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Multiset.toFinset_ssubset": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Multiset.toFinset_subset": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.add_sub_one_le_mul": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.diag_induction": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.div_div_div_eq_div": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.div_eq_iff_eq_of_dvd_dvd": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.div_eq_self": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.div_eq_sub_mod_div": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.div_le_of_le_mul'": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.div_le_self'": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    }
+  },
+  "run2": {
+    "Finset.mem_disjUnion": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.antitoneOn_iff_antitone": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.monotoneOn_iff_monotone": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.strictAntiOn_iff_strictAnti": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.strictMonoOn_iff_strictMono": {
+      "gate_fired": true,
+      "solved": true,
+      "outcome": "success",
+      "setup_error": null
+    },
+    "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "Finset.filter_cons": {
+      "gate_fired": true,
+      "solved": false,
+      "outcome": "proof_failed",
+      "setup_error": null
+    },
+    "List.perm_of_nodup_nodup_toFinset_eq": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset.ext_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_eq": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_eq_empty_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_eq_iff_perm_dedup": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_filter": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_nonempty_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "List.toFinset_surj_on": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Multiset.Nodup.toFinset_inj": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Multiset.toFinset_eq_singleton_iff": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Multiset.toFinset_ssubset": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Multiset.toFinset_subset": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.add_sub_one_le_mul": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.diag_induction": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.div_div_div_eq_div": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.div_eq_iff_eq_of_dvd_dvd": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.div_eq_self": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.div_eq_sub_mod_div": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.div_le_of_le_mul'": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    },
+    "Nat.div_le_self'": {
+      "gate_fired": false,
+      "solved": false,
+      "outcome": "no_emission"
+    }
+  }
+}

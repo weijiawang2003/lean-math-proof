@@ -1,0 +1,12 @@
+=== git diff --stat HEAD -- protected files (expect EMPTY) ===
+(empty above = untouched)
+
+=== git status --short (rc3 validation + scripts + reports) ===
+?? project/evolve/experiments/rc3_candidates/
+?? project/evolve/experiments/rc3_validation/
+?? project/evolve/reports/rc3/
+?? scripts/rc3_compare_validation.py
+?? scripts/rc3_determinism_flake_audit.py
+?? scripts/rc3_minimal_relabel_set_ite_aesop.py
+?? scripts/rc3_preservation_offgate.py
+?? scripts/rc3_run_literal_validation.py

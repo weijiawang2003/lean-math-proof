@@ -1,0 +1,1837 @@
+[
+  {
+    "full_name": "strictMono_restrict",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "strictMono_restrict",
+    "goal_text": "@[simp] theorem strictMono_restrict [Preorder α] [Preorder β] {f : α → β} {s : Set α} : StrictMono (s.restrict f) ↔ StrictMonoOn f s",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [StrictMono, StrictMonoOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Antitone.image_lowerBounds_subset_upperBounds_image",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "Antitone",
+    "goal_text": "theorem image_lowerBounds_subset_upperBounds_image : f '' lowerBounds s ⊆ upperBounds (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Antitone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Antitone.image_upperBounds_subset_lowerBounds_image",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "Antitone",
+    "goal_text": "theorem image_upperBounds_subset_lowerBounds_image : f '' upperBounds s ⊆ lowerBounds (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Antitone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Antitone.map_bddAbove",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "Antitone",
+    "goal_text": "theorem map_bddAbove : BddAbove s → BddBelow (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Antitone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Antitone.map_bddBelow",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "Antitone",
+    "goal_text": "theorem map_bddBelow : BddBelow s → BddAbove (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Antitone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Antitone.map_isGreatest",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "Antitone",
+    "goal_text": "theorem map_isGreatest : IsGreatest s a → IsLeast (f '' s) (f a)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Antitone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Antitone.map_isLeast",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "Antitone",
+    "goal_text": "theorem map_isLeast : IsLeast s a → IsGreatest (f '' s) (f a)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Antitone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Antitone.mem_lowerBounds_image",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "Antitone",
+    "goal_text": "theorem mem_lowerBounds_image : a ∈ upperBounds s → f a ∈ lowerBounds (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Antitone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "AntitoneOn.image_lowerBounds_subset_upperBounds_image",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "AntitoneOn",
+    "goal_text": "theorem image_lowerBounds_subset_upperBounds_image : f '' (lowerBounds s ∩ t) ⊆ upperBounds (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "AntitoneOn.image_upperBounds_subset_lowerBounds_image",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "AntitoneOn",
+    "goal_text": "theorem image_upperBounds_subset_lowerBounds_image : f '' (upperBounds s ∩ t) ⊆ lowerBounds (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "AntitoneOn.map_bddAbove",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "AntitoneOn",
+    "goal_text": "theorem map_bddAbove : (upperBounds s ∩ t).Nonempty → BddBelow (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "AntitoneOn.map_bddBelow",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "AntitoneOn",
+    "goal_text": "theorem map_bddBelow : (lowerBounds s ∩ t).Nonempty → BddAbove (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "AntitoneOn.map_isGreatest",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "AntitoneOn",
+    "goal_text": "theorem map_isGreatest : IsGreatest t a → IsLeast (f '' t) (f a)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "AntitoneOn.map_isLeast",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "AntitoneOn",
+    "goal_text": "theorem map_isLeast : IsLeast t a → IsGreatest (f '' t) (f a)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "AntitoneOn.mem_lowerBounds_image",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "AntitoneOn",
+    "goal_text": "theorem mem_lowerBounds_image : a ∈ upperBounds s → a ∈ t → f a ∈ lowerBounds (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "BddAbove.range_comp",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "BddAbove",
+    "goal_text": "lemma BddAbove.range_comp {γ : Type*} [Preorder β] [Preorder γ] {f : α → β} {g : β → γ} (hf : BddAbove (range f)) (hg : Monotone g) : BddAbove (range (fun x => g (f x)))",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "BddBelow.range_comp",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "BddBelow",
+    "goal_text": "lemma BddBelow.range_comp {γ : Type*} [Preorder β] [Preorder γ] {f : α → β} {g : β → γ} (hf : BddBelow (range f)) (hg : Monotone g) : BddBelow (range (fun x => g (f x)))",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset._root_.Monotone.map_finset_max'",
+    "file_path": "Mathlib/Data/Finset/Lattice.lean",
+    "namespace": "Finset",
+    "goal_text": "lemma _root_.Monotone.map_finset_max' [LinearOrder β] {f : α → β} (hf : Monotone f) {s : Finset α} (h : s.Nonempty) : f (s.max' h) = (s.image f).max' (h.image f)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset._root_.Monotone.map_finset_min'",
+    "file_path": "Mathlib/Data/Finset/Lattice.lean",
+    "namespace": "Finset",
+    "goal_text": "lemma _root_.Monotone.map_finset_min' [LinearOrder β] {f : α → β} (hf : Monotone f) {s : Finset α} (h : s.Nonempty) : f (s.min' h) = (s.image f).min' (h.image f)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.card_disjUnion",
+    "file_path": "Mathlib/Data/Finset/Card.lean",
+    "namespace": "Finset",
+    "goal_text": "@[simp] theorem card_disjUnion (s t : Finset α) (h) : (s.disjUnion t h).card = s.card + t.card",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Finset.disjUnion]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.card_mono",
+    "file_path": "Mathlib/Data/Finset/Card.lean",
+    "namespace": "Finset",
+    "goal_text": "@[mono] theorem card_mono : Monotone (@card α)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.card_strictMono",
+    "file_path": "Mathlib/Data/Finset/Card.lean",
+    "namespace": "Finset",
+    "goal_text": "lemma card_strictMono : StrictMono (card : Finset α → ℕ)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [StrictMono]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.comp_inf_eq_inf_comp_of_is_total",
+    "file_path": "Mathlib/Data/Finset/Lattice.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem comp_inf_eq_inf_comp_of_is_total [SemilatticeInf β] [OrderTop β] (g : α → β) (mono_g : Monotone g) (top : g ⊤ = ⊤) : g (s.inf f) = s.inf (g ∘ f)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.comp_sup_eq_sup_comp_of_is_total",
+    "file_path": "Mathlib/Data/Finset/Lattice.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem comp_sup_eq_sup_comp_of_is_total [SemilatticeSup β] [OrderBot β] (g : α → β) (mono_g : Monotone g) (bot : g ⊥ = ⊥) : g (s.sup f) = s.sup (g ∘ f)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.fin_mono",
+    "file_path": "Mathlib/Data/Finset/Image.lean",
+    "namespace": "Finset",
+    "goal_text": "@[mono] theorem fin_mono {n} : Monotone (Finset.fin n)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.image_mono",
+    "file_path": "Mathlib/Data/Finset/Image.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem image_mono (f : α → β) : Monotone (Finset.image f)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.map_disjUnion",
+    "file_path": "Mathlib/Data/Finset/Image.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem map_disjUnion {f : α ↪ β} (s₁ s₂ : Finset α) (h) (h'",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Finset.disjUnion]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.max'_image",
+    "file_path": "Mathlib/Data/Finset/Lattice.lean",
+    "namespace": "Finset",
+    "goal_text": "@[simp] theorem max'_image [LinearOrder β] {f : α → β} (hf : Monotone f) (s : Finset α) (h : (s.image f).Nonempty) : (s.image f).max' h = f (s.max' h.of_image)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.mem_fin",
+    "file_path": "Mathlib/Data/Finset/Image.lean",
+    "namespace": "Finset",
+    "goal_text": "@[simp] theorem mem_fin {n} {s : Finset ℕ} : ∀ a : Fin n, a ∈ s.fin n ↔ (a : ℕ) ∈ s | ⟨a, ha⟩ => by simp [Finset.fin, ha, and_comm] #align finset.mem_fin Finset.mem_fin @[mono] theorem fin_mono {n} : Monotone (Finset.fin n)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.min'_image",
+    "file_path": "Mathlib/Data/Finset/Lattice.lean",
+    "namespace": "Finset",
+    "goal_text": "@[simp] theorem min'_image [LinearOrder β] {f : α → β} (hf : Monotone f) (s : Finset α) (h : (s.image f).Nonempty) : (s.image f).min' h = f (s.min' h.of_image)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.monotone_preimage",
+    "file_path": "Mathlib/Data/Finset/Preimage.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem monotone_preimage {f : α → β} (h : Injective f) : Monotone fun s => preimage s f h.injOn",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.subtype_mono",
+    "file_path": "Mathlib/Data/Finset/Image.lean",
+    "namespace": "Finset",
+    "goal_text": "@[mono] theorem subtype_mono {p : α → Prop} [DecidablePred p] : Monotone (Finset.subtype p)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Function.antitoneOn_of_rightInvOn_of_mapsTo",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Function",
+    "goal_text": "theorem antitoneOn_of_rightInvOn_of_mapsTo [PartialOrder α] [LinearOrder β] {φ : β → α} {ψ : α → β} {t : Set β} {s : Set α} (hφ : AntitoneOn φ t) (φψs : Set.RightInvOn ψ φ s) (ψts : Set.MapsTo ψ s t) : AntitoneOn ψ s",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Function.monotoneOn_of_rightInvOn_of_mapsTo",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Function",
+    "goal_text": "theorem monotoneOn_of_rightInvOn_of_mapsTo {α β : Type*} [PartialOrder α] [LinearOrder β] {φ : β → α} {ψ : α → β} {t : Set β} {s : Set α} (hφ : MonotoneOn φ t) (φψs : Set.RightInvOn ψ φ s) (ψts : Set.MapsTo ψ s t) : MonotoneOn ψ s",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "List.Pairwise.forall",
+    "file_path": "Mathlib/Data/List/Pairwise.lean",
+    "namespace": "List",
+    "goal_text": "theorem Pairwise.forall (hR : Symmetric R) (hl : l.Pairwise R) : ∀ ⦃a⦄, a ∈ l → ∀ ⦃b⦄, b ∈ l → a ≠ b → R a b",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [List.forall_iff_forall_mem]",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "expected_credit_component": "RC4C_residue",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "List.Pairwise.forall_of_forall",
+    "file_path": "Mathlib/Data/List/Pairwise.lean",
+    "namespace": "List",
+    "goal_text": "theorem Pairwise.forall_of_forall (H : Symmetric R) (H₁ : ∀ x ∈ l, R x x) (H₂ : l.Pairwise R) : ∀ ⦃x⦄, x ∈ l → ∀ ⦃y⦄, y ∈ l → R x y",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [List.forall_iff_forall_mem]",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "expected_credit_component": "RC4C_residue",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "List.forall_mem_of_forall_mem_cons",
+    "file_path": "Mathlib/Data/List/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem forall_mem_of_forall_mem_cons {p : α → Prop} {a : α} {l : List α} (h : ∀ x ∈ a :: l, p x) : ∀ x ∈ l, p x",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [List.forall_iff_forall_mem]",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "expected_credit_component": "RC4C_residue",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "List.lookmap_congr",
+    "file_path": "Mathlib/Data/List/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem lookmap_congr {f g : α → Option α} : ∀ {l : List α}, (∀ a ∈ l, f a = g a) → l.lookmap f = l.lookmap g | [], _ => rfl | a :: l, H => by cases' forall_mem_cons.1 H with H₁ H₂ cases' h : g a with b · simp [h, H₁.trans h, lookmap_congr H₂] · simp [lookmap_cons_some _ _ h, lookmap_cons_some _ _ (H₁.trans h)] #align list.lookmap_congr List.lookmap_congr theorem lookmap_of_forall_not {l : List α}",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [List.forall_iff_forall_mem]",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "expected_credit_component": "RC4C_residue",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "List.lookmap_of_forall_not",
+    "file_path": "Mathlib/Data/List/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem lookmap_of_forall_not {l : List α} (H : ∀ a ∈ l, f a = none) : l.lookmap f = l",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [List.forall_iff_forall_mem]",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "expected_credit_component": "RC4C_residue",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "List.pairwise_of_forall_mem_list",
+    "file_path": "Mathlib/Data/List/Pairwise.lean",
+    "namespace": "List",
+    "goal_text": "theorem pairwise_of_forall_mem_list {l : List α} {r : α → α → Prop} (h : ∀ a ∈ l, ∀ b ∈ l, r a b) : l.Pairwise r",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [List.forall_iff_forall_mem]",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "expected_credit_component": "RC4C_residue",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "List.pairwise_of_reflexive_of_forall_ne",
+    "file_path": "Mathlib/Data/List/Pairwise.lean",
+    "namespace": "List",
+    "goal_text": "theorem pairwise_of_reflexive_of_forall_ne {l : List α} {r : α → α → Prop} (hr : Reflexive r) (h : ∀ a ∈ l, ∀ b ∈ l, a ≠ b → r a b) : l.Pairwise r",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [List.forall_iff_forall_mem]",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "expected_credit_component": "RC4C_residue",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Monotone.codRestrict",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Monotone",
+    "goal_text": "protected theorem codRestrict (h : Monotone f) {s : Set β} (hs : ∀ x, f x ∈ s) : Monotone (s.codRestrict f hs)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Monotone.image_lowerBounds_subset_lowerBounds_image",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "Monotone",
+    "goal_text": "theorem image_lowerBounds_subset_lowerBounds_image : f '' lowerBounds s ⊆ lowerBounds (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Monotone.image_upperBounds_subset_upperBounds_image",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "Monotone",
+    "goal_text": "theorem image_upperBounds_subset_upperBounds_image : f '' upperBounds s ⊆ upperBounds (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Monotone.map_bddAbove",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "Monotone",
+    "goal_text": "theorem map_bddAbove : BddAbove s → BddAbove (f '' s) | ⟨C, hC⟩ => ⟨f C, Hf.mem_upperBounds_image hC⟩ #align monotone.map_bdd_above Monotone.map_bddAbove theorem map_bddBelow : BddBelow s → BddBelow (f '' s) | ⟨C, hC⟩ => ⟨f C, Hf.mem_lowerBounds_image hC⟩ #align monotone.map_bdd_below Monotone.map_bddBelow theorem map_isLeast (Ha : IsLeast s a) : IsLeast (f '' s) (f a)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Monotone.map_bddBelow",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "Monotone",
+    "goal_text": "theorem map_bddBelow : BddBelow s → BddBelow (f '' s) | ⟨C, hC⟩ => ⟨f C, Hf.mem_lowerBounds_image hC⟩ #align monotone.map_bdd_below Monotone.map_bddBelow theorem map_isLeast (Ha : IsLeast s a) : IsLeast (f '' s) (f a)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Monotone.map_isGreatest",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "Monotone",
+    "goal_text": "theorem map_isGreatest (Ha : IsGreatest s a) : IsGreatest (f '' s) (f a)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Monotone.map_isLeast",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "Monotone",
+    "goal_text": "theorem map_isLeast (Ha : IsLeast s a) : IsLeast (f '' s) (f a)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "MonotoneOn.image_lowerBounds_subset_lowerBounds_image",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "MonotoneOn",
+    "goal_text": "theorem image_lowerBounds_subset_lowerBounds_image : f '' (lowerBounds s ∩ t) ⊆ lowerBounds (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "MonotoneOn.image_upperBounds_subset_upperBounds_image",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "MonotoneOn",
+    "goal_text": "theorem image_upperBounds_subset_upperBounds_image (Hst : s ⊆ t) : f '' (upperBounds s ∩ t) ⊆ upperBounds (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "MonotoneOn.map_bddAbove",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "MonotoneOn",
+    "goal_text": "theorem map_bddAbove : (upperBounds s ∩ t).Nonempty → BddAbove (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "MonotoneOn.map_bddBelow",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "MonotoneOn",
+    "goal_text": "theorem map_bddBelow : (lowerBounds s ∩ t).Nonempty → BddBelow (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "MonotoneOn.map_isGreatest",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "MonotoneOn",
+    "goal_text": "theorem map_isGreatest (Ha : IsGreatest t a) : IsGreatest (f '' t) (f a)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "MonotoneOn.map_isLeast",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "MonotoneOn",
+    "goal_text": "theorem map_isLeast (Ha : IsLeast t a) : IsLeast (f '' t) (f a)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "MonotoneOn.mem_lowerBounds_image",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "MonotoneOn",
+    "goal_text": "theorem mem_lowerBounds_image (Has : a ∈ lowerBounds s) (Hat : a ∈ t) : f a ∈ lowerBounds (f '' s)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Multiset.card_mono",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[mono] theorem card_mono : Monotone (@card α)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Multiset.card_strictMono",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "lemma card_strictMono : StrictMono (card : Multiset α → ℕ)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [StrictMono]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Multiset.disjoint_of_le_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_of_le_left {s t u : Multiset α} (h : s ≤ u) : Disjoint u t → Disjoint s t",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Multiset.disjoint_of_le_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_of_le_right {s t u : Multiset α} (h : t ≤ u) : Disjoint s u → Disjoint s t",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Multiset.map_mono",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem map_mono (f : α → β) : Monotone (map f)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Multiset.map_strictMono",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem map_strictMono (f : α → β) : StrictMono (map f)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [StrictMono]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Multiset.monotone_filter_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem monotone_filter_left : Monotone (filter p)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Nat.clog_antitone_left",
+    "file_path": "Mathlib/Data/Nat/Log.lean",
+    "namespace": "Nat",
+    "goal_text": "theorem clog_antitone_left {n : ℕ} : AntitoneOn (fun b : ℕ => clog b n) (Set.Ioi 1)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Nat.clog_monotone",
+    "file_path": "Mathlib/Data/Nat/Log.lean",
+    "namespace": "Nat",
+    "goal_text": "theorem clog_monotone (b : ℕ) : Monotone (clog b)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Nat.log_antitone_left",
+    "file_path": "Mathlib/Data/Nat/Log.lean",
+    "namespace": "Nat",
+    "goal_text": "theorem log_antitone_left {n : ℕ} : AntitoneOn (fun b => log b n) (Set.Ioi 1)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Nat.log_monotone",
+    "file_path": "Mathlib/Data/Nat/Log.lean",
+    "namespace": "Nat",
+    "goal_text": "theorem log_monotone {b : ℕ} : Monotone (log b)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Nat.pow_log_le_add_one",
+    "file_path": "Mathlib/Data/Nat/Log.lean",
+    "namespace": "Nat",
+    "goal_text": "theorem pow_log_le_add_one (b : ℕ) : ∀ x, b ^ log b x ≤ x + 1 | 0 => by rw [log_zero_right, Nat.pow_zero] | x + 1 => (pow_log_le_self b x.succ_ne_zero).trans (x + 1).le_succ #align nat.pow_log_le_add_one Nat.pow_log_le_add_one theorem log_monotone {b : ℕ} : Monotone (log b)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "ScottContinuous.monotone",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "ScottContinuous",
+    "goal_text": "protected theorem ScottContinuous.monotone (h : ScottContinuous f) : Monotone f",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Set.EqOn.congr_antitoneOn",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "theorem EqOn.congr_antitoneOn (h : s.EqOn f₁ f₂) : AntitoneOn f₁ s ↔ AntitoneOn f₂ s",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Set.EqOn.congr_monotoneOn",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "theorem EqOn.congr_monotoneOn (h : s.EqOn f₁ f₂) : MonotoneOn f₁ s ↔ MonotoneOn f₂ s",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Set.EqOn.congr_strictAntiOn",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "theorem EqOn.congr_strictAntiOn (h : s.EqOn f₁ f₂) : StrictAntiOn f₁ s ↔ StrictAntiOn f₂ s",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [StrictAntiOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Set.EqOn.congr_strictMonoOn",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "theorem EqOn.congr_strictMonoOn (h : s.EqOn f₁ f₂) : StrictMonoOn f₁ s ↔ StrictMonoOn f₂ s",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [StrictMonoOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Set._root_.Antitone.iInter_nat_add",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "theorem _root_.Antitone.iInter_nat_add {f : ℕ → Set α} (hf : Antitone f) (k : ℕ) : ⋂ n, f (n + k) = ⋂ n, f n",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Antitone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Set._root_.AntitoneOn.mono",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "theorem _root_.AntitoneOn.mono (h : AntitoneOn f s) (h' : s₂ ⊆ s) : AntitoneOn f s₂",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Set._root_.AntitoneOn.monotone",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "protected theorem _root_.AntitoneOn.monotone (h : AntitoneOn f s) : Antitone (f ∘ Subtype.val : s → β)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Antitone, AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Set._root_.Monotone.iUnion_nat_add",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "theorem _root_.Monotone.iUnion_nat_add {f : ℕ → Set α} (hf : Monotone f) (k : ℕ) : ⋃ n, f (n + k) = ⋃ n, f n",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Set._root_.MonotoneOn.congr",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "theorem _root_.MonotoneOn.congr (h₁ : MonotoneOn f₁ s) (h : s.EqOn f₁ f₂) : MonotoneOn f₂ s",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Set._root_.MonotoneOn.mono",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "theorem _root_.MonotoneOn.mono (h : MonotoneOn f s) (h' : s₂ ⊆ s) : MonotoneOn f s₂",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Set._root_.MonotoneOn.monotone",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "protected theorem _root_.MonotoneOn.monotone (h : MonotoneOn f s) : Monotone (f ∘ Subtype.val : s → β)",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [Monotone, MonotoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Set._root_.StrictAntiOn.mono",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "theorem _root_.StrictAntiOn.mono (h : StrictAntiOn f s) (h' : s₂ ⊆ s) : StrictAntiOn f s₂",
+    "rc4_gate_fires": true,
+    "rc4_components": [
+      "RC4A"
+    ],
+    "rc4_tactics": [
+      "simp [StrictAntiOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Finset.Nonempty.biUnion",
+    "file_path": "Mathlib/Data/Finset/Union.lean",
+    "namespace": "Finset",
+    "goal_text": "lemma Nonempty.biUnion (hs : s.Nonempty) (ht : ∀ x ∈ s, (t x).Nonempty) : (s.biUnion t).Nonempty",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Set.BijOn.bijective",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "theorem BijOn.bijective (h : BijOn f s t) : Bijective (h.mapsTo.restrict f s t)",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Multiset.Nodup.le_dedup_iff_le",
+    "file_path": "Mathlib/Data/Multiset/Dedup.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem Nodup.le_dedup_iff_le {s t : Multiset α} (hno : s.Nodup) : s ≤ t.dedup ↔ s ≤ t",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "List.Nodup.dedup",
+    "file_path": "Mathlib/Data/List/Dedup.lean",
+    "namespace": "List",
+    "goal_text": "protected theorem Nodup.dedup {l : List α} (h : l.Nodup) : l.dedup = l",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Nat.add_div_le_add_div",
+    "file_path": "Mathlib/Data/Nat/ModEq.lean",
+    "namespace": "Nat",
+    "goal_text": "theorem add_div_le_add_div (a b c : ℕ) : a / c + b / c ≤ (a + b) / c",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Int.add_emod_eq_add_mod_right",
+    "file_path": "Mathlib/Data/Int/Defs.lean",
+    "namespace": "Int",
+    "goal_text": "lemma add_emod_eq_add_mod_right {m n k : ℤ} (i : ℤ) (H : m % n = k % n) : (m + i) % n = (k + i) % n",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Option.Mem.leftUnique",
+    "file_path": "Mathlib/Data/Option/Basic.lean",
+    "namespace": "Option",
+    "goal_text": "theorem Mem.leftUnique : Relator.LeftUnique ((· ∈ ·) : α → Option α → Prop)",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Bool.and_le_left",
+    "file_path": "Mathlib/Data/Bool/Basic.lean",
+    "namespace": "Bool",
+    "goal_text": "theorem and_le_left : ∀ x y : Bool, (x && y) ≤ x",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Function.Semiconj.bijOn_image",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Function",
+    "goal_text": "theorem bijOn_image (h : Semiconj f fa fb) (ha : BijOn fa s t) (hf : InjOn f t) : BijOn fb (f '' s) (f '' t)",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Prod.le_def",
+    "file_path": "Mathlib/Order/Basic.lean",
+    "namespace": "Prod",
+    "goal_text": "theorem le_def [LE α] [LE β] {x y : α × β} : x ≤ y ↔ x.1 ≤ y.1 ∧ x.2 ≤ y.2",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Ne.dite_eq_left_iff",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "Ne",
+    "goal_text": "protected theorem Ne.dite_eq_left_iff (h : ∀ h, a ≠ B h) : dite P (fun _ ↦ a) B = a ↔ P",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "BddAbove.bddAbove_image2_of_bddBelow",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "BddAbove",
+    "goal_text": "theorem BddAbove.bddAbove_image2_of_bddBelow : BddAbove s → BddBelow t → BddAbove (Set.image2 f s t)",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Equiv.bijOn",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Equiv",
+    "goal_text": "protected lemma bijOn (h : ∀ a, e a ∈ t ↔ a ∈ s) : BijOn e s t",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "IsGLB.exists_between",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "IsGLB",
+    "goal_text": "theorem IsGLB.exists_between (h : IsGLB s a) (hb : a < b) : ∃ c ∈ s, a ≤ c ∧ c < b",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "IsGreatest.image2",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "IsGreatest",
+    "goal_text": "protected theorem IsGreatest.image2 (ha : IsGreatest s a) (hb : IsGreatest t b) : IsGreatest (image2 f s t) (f a b)",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "IsLUB.exists_between",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "IsLUB",
+    "goal_text": "theorem IsLUB.exists_between (h : IsLUB s a) (hb : b < a) : ∃ c ∈ s, b < c ∧ c ≤ a",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "IsLeast.image2",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "IsLeast",
+    "goal_text": "protected theorem IsLeast.image2 (ha : IsLeast s a) (hb : IsLeast t b) : IsLeast (image2 f s t) (f a b)",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "BddBelow.bddAbove_image2_of_bddAbove",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "BddBelow",
+    "goal_text": "theorem BddBelow.bddAbove_image2_of_bddAbove : BddBelow s → BddAbove t → BddAbove (Set.image2 f s t)",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "LE.le.ge",
+    "file_path": "Mathlib/Order/Basic.lean",
+    "namespace": "LE",
+    "goal_text": "protected theorem ge [LE α] {x y : α} (h : x ≤ y) : y ≥ x",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Decidable.and_forall_ne",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "Decidable",
+    "goal_text": "theorem Decidable.and_forall_ne [DecidableEq α] (a : α) {p : α → Prop} : (p a ∧ ∀ b, b ≠ a → p b) ↔ ∀ b, p b",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Pi.compl_apply",
+    "file_path": "Mathlib/Order/Basic.lean",
+    "namespace": "Pi",
+    "goal_text": "@[simp] theorem Pi.compl_apply [∀ i, HasCompl (π i)] (x : ∀ i, π i) (i : ι) : xᶜ i = (x i)ᶜ",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Iff.ne",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "Iff",
+    "goal_text": "protected lemma Iff.ne {α β : Sort*} {a b : α} {c d : β} : (a = b ↔ c = d) → (a ≠ b ↔ c ≠ d)",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Eq.ge",
+    "file_path": "Mathlib/Order/Basic.lean",
+    "namespace": "Eq",
+    "goal_text": "protected theorem ge (h : x = y) : y ≤ x",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Subtype.coe_le_coe",
+    "file_path": "Mathlib/Order/Basic.lean",
+    "namespace": "Subtype",
+    "goal_text": "@[simp, norm_cast] theorem coe_le_coe [LE α] {p : α → Prop} {x y : Subtype p} : (x : α) ≤ y ↔ x ≤ y",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "BEx.elim",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "BEx",
+    "goal_text": "theorem BEx.elim {b : Prop} : (∃ x h, P x h) → (∀ a h, P a h → b) → b | ⟨a, h₁, h₂⟩, h' => h' a h₁ h₂ #align bex.elim BEx.elim theorem BEx.intro (a : α) (h₁ : p a) (h₂ : P a h₁) : ∃ (x : _) (h : p x), P x h",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "ExistsUnique.elim",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "ExistsUnique",
+    "goal_text": "theorem ExistsUnique.elim₂ {α : Sort*} {p : α → Sort*} [∀ x, Subsingleton (p x)] {q : ∀ (x) (_ : p x), Prop} {b : Prop} (h₂ : ∃! x, ∃! h : p x, q x h) (h₁ : ∀ (x) (h : p x), q x h → (∀ (y) (hy : p y), q y hy → y = x) → b) : b",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "LT.lt.false",
+    "file_path": "Mathlib/Order/Basic.lean",
+    "namespace": "LT",
+    "goal_text": "protected theorem false [Preorder α] {x : α} : x < x → False",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "OrderDual.Preorder.dual_dual",
+    "file_path": "Mathlib/Order/Basic.lean",
+    "namespace": "OrderDual",
+    "goal_text": "theorem Preorder.dual_dual (α : Type*) [H : Preorder α] : OrderDual.instPreorder αᵒᵈ = H",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "PUnit.le",
+    "file_path": "Mathlib/Order/Basic.lean",
+    "namespace": "PUnit",
+    "goal_text": "protected theorem le : a ≤ b",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Sum.const_le_elim_iff",
+    "file_path": "Mathlib/Order/Basic.lean",
+    "namespace": "Sum",
+    "goal_text": "lemma const_le_elim_iff {b : β} {v₁ : α₁ → β} {v₂ : α₂ → β} : Function.const _ b ≤ Sum.elim v₁ v₂ ↔ Function.const _ b ≤ v₁ ∧ Function.const _ b ≤ v₂",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Exists.fst",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "Exists",
+    "goal_text": "theorem Exists.fst {b : Prop} {p : b → Prop} : Exists p → b | ⟨h, _⟩ => h #align Exists.fst Exists.fst theorem Exists.snd {b : Prop} {p : b → Prop} : ∀ h : Exists p, p h.fst | ⟨_, h⟩ => h #align Exists.snd Exists.snd theorem Prop.exists_iff {p : Prop → Prop} : (∃ h, p h) ↔ p False ∨ p True",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "LinearOrder.ext",
+    "file_path": "Mathlib/Order/Basic.lean",
+    "namespace": "LinearOrder",
+    "goal_text": "theorem LinearOrder.ext {A B : LinearOrder α} (H : ∀ x y : α, (haveI",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "OrderBot.bddBelow",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "OrderBot",
+    "goal_text": "@[simp] protected theorem OrderBot.bddBelow [OrderBot α] (s : Set α) : BddBelow s",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "OrderTop.bddAbove",
+    "file_path": "Mathlib/Order/Bounds/Basic.lean",
+    "namespace": "OrderTop",
+    "goal_text": "@[simp] protected theorem OrderTop.bddAbove [OrderTop α] (s : Set α) : BddAbove s",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "PLift.down_inj",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "PLift",
+    "goal_text": "@[simp] theorem PLift.down_inj {a b : PLift α} : a.down = b.down ↔ a = b",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "PartialOrder.ext",
+    "file_path": "Mathlib/Order/Basic.lean",
+    "namespace": "PartialOrder",
+    "goal_text": "theorem PartialOrder.ext {A B : PartialOrder α} (H : ∀ x y : α, (haveI",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Preorder.ext",
+    "file_path": "Mathlib/Order/Basic.lean",
+    "namespace": "Preorder",
+    "goal_text": "theorem Preorder.ext {A B : Preorder α} (H : ∀ x y : α, (haveI",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "Prop.exists_iff",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "Prop",
+    "goal_text": "theorem Prop.exists_iff {p : Prop → Prop} : (∃ h, p h) ↔ p False ∨ p True",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "ULift.down_inj",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "ULift",
+    "goal_text": "@[simp] theorem ULift.down_inj {α : Sort _} {a b : ULift α} : a.down = b.down ↔ a = b",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "and_forall_ne",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "and_forall_ne",
+    "goal_text": "theorem and_forall_ne (a : α) : (p a ∧ ∀ b, b ≠ a → p b) ↔ ∀ b, p b",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "and_iff_not_or_not",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "and_iff_not_or_not",
+    "goal_text": "theorem and_iff_not_or_not : a ∧ b ↔ ¬(¬a ∨ ¬b)",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "and_or_imp",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "and_or_imp",
+    "goal_text": "theorem and_or_imp {a b c : Prop} : a ∧ b ∨ (a → c) ↔ a → b ∨ c",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "and_symm_left",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "and_symm_left",
+    "goal_text": "theorem and_symm_left {α : Sort*} (a b : α) (p : Prop) : a = b ∧ p ↔ b = a ∧ p",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "and_symm_right",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "and_symm_right",
+    "goal_text": "theorem and_symm_right {α : Sort*} (a b : α) (p : Prop) : p ∧ a = b ↔ p ∧ b = a",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  },
+  {
+    "full_name": "apply_dite",
+    "file_path": "Mathlib/Logic/Basic.lean",
+    "namespace": "apply_dite",
+    "goal_text": "theorem apply_dite₂ {α β γ : Sort*} (f : α → β → γ) (P : Prop) [Decidable P] (a : P → α) (b : ¬P → α) (c : P → β) (d : ¬P → β) : f (dite P a b) (dite P c d) = dite P (fun h ↦ f (a h) (c h)) fun h ↦ f (b h) (d h)",
+    "rc4_gate_fires": false,
+    "rc4_components": [],
+    "rc4_tactics": [],
+    "expected_credit_component": null,
+    "set_tag": "fresh_out_of_sample_frontier",
+    "expected_behavior": "fresh out-of-sample"
+  }
+]

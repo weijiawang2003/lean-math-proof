@@ -1,0 +1,30 @@
+{
+  "gate_name": "SX3_SET_ITE_AESOP",
+  "status": "experimental_off_by_default",
+  "sequence": "simp [Set.ite] <;> aesop",
+  "base_step": "simp [Set.ite]",
+  "close_step": "aesop",
+  "wrapper_expression": {
+    "priority_templates_any_added": "simp [Set.ite] <;> aesop",
+    "theorem_name_tactic_gates_added": {"simp [Set.ite] <;> aesop": ["Set.ite"]},
+    "placement_note": "Added to priority_templates['any'] AFTER the single-shot 'simp [Set.ite]' so RC2's credited single-shot is always tried first; the depth-2 sequence only contributes when single-shot fails. Mirrors the RC2 SET_ITE_SIMP mechanism (gated battery action MUST live in priority_templates, not fallback_tactics).",
+    "gate_semantics": "theorem_name_tactic_gates filters ONLY wrapper-added entries by theorem-name substring; base policy output is ungated, so the candidate is byte-equivalent to RC2 on every theorem whose name lacks 'Set.ite'."
+  },
+  "gate": {
+    "namespace_or_name_contains": ["Set.ite"],
+    "signal": ["ite", "if"],
+    "target_shape": ["set_equality", "set_membership", "set_iff_involving_ite"],
+    "forbid_namespaces": ["Nat", "Int", "Multiset"],
+    "max_sequence_emissions_per_theorem": 1
+  },
+  "live_evidence": {
+    "reproduced_deferred4": ["Set.ite_inter", "Set.ite_inter_self", "Set.ite_compl", "Set.ite_inter_compl_self"],
+    "fresh_true_wins": ["Set.ite_inter_inter"],
+    "off_gate_emissions": 0,
+    "regressions_vs_rc2": 0,
+    "controls_failed_on_every_true_win": true,
+    "determinism": "deferred result hash c0144cd63fd5 reproduced across runs"
+  },
+  "promotion_allowed": false,
+  "note": "RC3 CANDIDATE ONLY. Not wired into ns24_router. Off-by-default. Attribution is strictly separate from RC2's single-shot SET_ITE_SIMP delta."
+}

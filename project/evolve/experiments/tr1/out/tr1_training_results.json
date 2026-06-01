@@ -1,0 +1,531 @@
+{
+  "num_examples": 57,
+  "num_features": 1600,
+  "labels": [
+    "BASELINE_DUPLICATE",
+    "MISSING_BRIDGE_LEMMA_CANDIDATE",
+    "NO_CHEAP_ACTION",
+    "PROOF_SEARCH_DEPTH_GAP",
+    "SET_ITE_SIMP",
+    "SX3_PRODUCTION_SUBSUMED",
+    "WX3_MULTISET_INDUCTION"
+  ],
+  "label_support": {
+    "BASELINE_DUPLICATE": 18,
+    "MISSING_BRIDGE_LEMMA_CANDIDATE": 19,
+    "NO_CHEAP_ACTION": 7,
+    "PROOF_SEARCH_DEPTH_GAP": 1,
+    "SET_ITE_SIMP": 6,
+    "SX3_PRODUCTION_SUBSUMED": 5,
+    "WX3_MULTISET_INDUCTION": 1
+  },
+  "cv": "LeaveOneOut OOF (tiny corpus; honest per-sample held-out)",
+  "models": {
+    "rule_baseline": {
+      "type": "handcrafted_rules",
+      "rules": [
+        "Set \u2227 ite -> SET_ITE_SIMP",
+        "Multiset \u2227 induction-signal -> WX3_MULTISET_INDUCTION",
+        "toFinset/Finite -> MX2_TOFINSET_AESOP",
+        "rc2_failed \u2227 (iff \u2228 subset) -> MISSING_BRIDGE_LEMMA_CANDIDATE",
+        "rc2_failed (else) -> NO_CHEAP_ACTION",
+        "rc2_solved (else) -> BASELINE_DUPLICATE"
+      ],
+      "metrics": {
+        "accuracy": 0.632,
+        "top1_accuracy": 0.632,
+        "macro_f1": 0.436,
+        "per_label": {
+          "BASELINE_DUPLICATE": {
+            "precision": 1.0,
+            "recall": 0.556,
+            "f1": 0.714,
+            "support": 18
+          },
+          "MISSING_BRIDGE_LEMMA_CANDIDATE": {
+            "precision": 0.889,
+            "recall": 0.842,
+            "f1": 0.865,
+            "support": 19
+          },
+          "NO_CHEAP_ACTION": {
+            "precision": 0.75,
+            "recall": 0.429,
+            "f1": 0.545,
+            "support": 7
+          },
+          "PROOF_SEARCH_DEPTH_GAP": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "SET_ITE_SIMP": {
+            "precision": 0.273,
+            "recall": 1.0,
+            "f1": 0.429,
+            "support": 6
+          },
+          "SX3_PRODUCTION_SUBSUMED": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 5
+          },
+          "WX3_MULTISET_INDUCTION": {
+            "precision": 0.333,
+            "recall": 1.0,
+            "f1": 0.5,
+            "support": 1
+          }
+        },
+        "confusion_matrix": [
+          [
+            10,
+            0,
+            0,
+            0,
+            7,
+            0,
+            1
+          ],
+          [
+            0,
+            16,
+            0,
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            3,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            5,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    "logistic": {
+      "type": "LogisticRegression",
+      "metrics": {
+        "accuracy": 0.842,
+        "top1_accuracy": 0.842,
+        "macro_f1": 0.579,
+        "per_label": {
+          "BASELINE_DUPLICATE": {
+            "precision": 0.944,
+            "recall": 0.944,
+            "f1": 0.944,
+            "support": 18
+          },
+          "MISSING_BRIDGE_LEMMA_CANDIDATE": {
+            "precision": 0.864,
+            "recall": 1.0,
+            "f1": 0.927,
+            "support": 19
+          },
+          "NO_CHEAP_ACTION": {
+            "precision": 0.75,
+            "recall": 0.429,
+            "f1": 0.545,
+            "support": 7
+          },
+          "PROOF_SEARCH_DEPTH_GAP": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "SET_ITE_SIMP": {
+            "precision": 0.833,
+            "recall": 0.833,
+            "f1": 0.833,
+            "support": 6
+          },
+          "SX3_PRODUCTION_SUBSUMED": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1": 0.8,
+            "support": 5
+          },
+          "WX3_MULTISET_INDUCTION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "confusion_matrix": [
+          [
+            17,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            19,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            3,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            5,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            4,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "top3_accuracy": 0.965,
+        "abstention": {
+          "threshold": 0.35,
+          "kept": 53,
+          "abstained": 4,
+          "accuracy_on_kept": 0.906
+        },
+        "grouped_leave_one_namespace_out_accuracy": 0.404
+      },
+      "model_path": "project/evolve/experiments/tr1/models/logistic_router.joblib"
+    },
+    "sgd": {
+      "type": "SGDClassifier",
+      "metrics": {
+        "accuracy": 0.877,
+        "top1_accuracy": 0.877,
+        "macro_f1": 0.628,
+        "per_label": {
+          "BASELINE_DUPLICATE": {
+            "precision": 0.944,
+            "recall": 0.944,
+            "f1": 0.944,
+            "support": 18
+          },
+          "MISSING_BRIDGE_LEMMA_CANDIDATE": {
+            "precision": 0.95,
+            "recall": 1.0,
+            "f1": 0.974,
+            "support": 19
+          },
+          "NO_CHEAP_ACTION": {
+            "precision": 0.8,
+            "recall": 0.571,
+            "f1": 0.667,
+            "support": 7
+          },
+          "PROOF_SEARCH_DEPTH_GAP": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "SET_ITE_SIMP": {
+            "precision": 0.857,
+            "recall": 1.0,
+            "f1": 0.923,
+            "support": 6
+          },
+          "SX3_PRODUCTION_SUBSUMED": {
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.889,
+            "support": 5
+          },
+          "WX3_MULTISET_INDUCTION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "confusion_matrix": [
+          [
+            17,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            19,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            4,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            4,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "top3_accuracy": 0.93,
+        "abstention": {
+          "threshold": 0.35,
+          "kept": 57,
+          "abstained": 0,
+          "accuracy_on_kept": 0.877
+        },
+        "grouped_leave_one_namespace_out_accuracy": 0.386
+      },
+      "model_path": "project/evolve/experiments/tr1/models/sgd_router.joblib"
+    },
+    "random_forest": {
+      "type": "RandomForestClassifier",
+      "metrics": {
+        "accuracy": 0.789,
+        "top1_accuracy": 0.789,
+        "macro_f1": 0.462,
+        "per_label": {
+          "BASELINE_DUPLICATE": {
+            "precision": 0.9,
+            "recall": 1.0,
+            "f1": 0.947,
+            "support": 18
+          },
+          "MISSING_BRIDGE_LEMMA_CANDIDATE": {
+            "precision": 0.792,
+            "recall": 1.0,
+            "f1": 0.884,
+            "support": 19
+          },
+          "NO_CHEAP_ACTION": {
+            "precision": 0.667,
+            "recall": 0.286,
+            "f1": 0.4,
+            "support": 7
+          },
+          "PROOF_SEARCH_DEPTH_GAP": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "SET_ITE_SIMP": {
+            "precision": 0.625,
+            "recall": 0.833,
+            "f1": 0.714,
+            "support": 6
+          },
+          "SX3_PRODUCTION_SUBSUMED": {
+            "precision": 0.5,
+            "recall": 0.2,
+            "f1": 0.286,
+            "support": 5
+          },
+          "WX3_MULTISET_INDUCTION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "confusion_matrix": [
+          [
+            18,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            19,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            5,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            5,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "top3_accuracy": 0.965,
+        "abstention": {
+          "threshold": 0.35,
+          "kept": 57,
+          "abstained": 0,
+          "accuracy_on_kept": 0.789
+        },
+        "grouped_leave_one_namespace_out_accuracy": 0.105
+      },
+      "model_path": "project/evolve/experiments/tr1/models/random_forest_router.joblib"
+    }
+  },
+  "best_model": "sgd",
+  "best_macro_f1": 0.628,
+  "beats_rule_baseline": true
+}

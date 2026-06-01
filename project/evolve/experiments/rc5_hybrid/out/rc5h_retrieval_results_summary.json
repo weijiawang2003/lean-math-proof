@@ -1,0 +1,23 @@
+{
+  "generated_by": "scripts/rc5h_retrieve_for_static_failures.py",
+  "num_eligible_static_failures": 90,
+  "gated_out_counts": {
+    "static_win": 85,
+    "namespace": 34,
+    "flake": 29,
+    "no_file": 0
+  },
+  "retrieval_coverage": 90,
+  "retrieval_coverage_rate": 1.0,
+  "best_score_mean": 1.4601,
+  "namespace_match_top5": 90,
+  "eligible_by_set": {
+    "TR6_dynamic_tail_replay": 8,
+    "RC4R_fresh_no_delta_set": 11,
+    "Fresh_dynamic_candidate_frontier": 37,
+    "canonical_floors": 18,
+    "offgate_controls": 16
+  },
+  "confirmation_file": "project/evolve/experiments/rc5_hybrid/cases/rc5h_dynamic_confirmation.json",
+  "retrieval_file": "project/evolve/experiments/rc5_hybrid/out/rc5h_retrieval_results.json"
+}

@@ -1,0 +1,951 @@
+{
+  "gate_policy": "project/evolve/experiments/rc2_candidates/set_ite_simp/set_ite_simp_gate_policy.json",
+  "literal_rc1_results": "project/evolve/experiments/rc2_candidates/set_ite_simp/out/literal_rc1_results.json",
+  "production_default_emits": false,
+  "metrics": {
+    "total": 32,
+    "literal_rc1_solved": 11,
+    "candidate_solved": 16,
+    "new_wins_over_literal_rc1": 5,
+    "candidate_regressions": 0,
+    "regression_note": "0 by construction — additive; RC1 behavior unaltered.",
+    "gate_fired": 10,
+    "off_gate_emissions": 0,
+    "gate_precision": {
+      "emitted_and_solved": 5,
+      "emitted_and_failed": 5,
+      "not_emitted": 22
+    }
+  },
+  "results": [
+    {
+      "full_name": "Set.ite_empty_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_known_wins",
+        "set_ite_selected_failures"
+      ],
+      "validation_role": "known_win",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_tactic": "simp [Set.ite]",
+      "set_ite_finished": true,
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error"
+        }
+      ],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": true,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s : Set α\n⊢ t.ite s ∅ = s ∩ t",
+      "gate_reason": "ok",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_known_wins",
+        "set_ite_selected_failures"
+      ],
+      "validation_role": "known_win",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_tactic": "simp [Set.ite]",
+      "set_ite_finished": true,
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error"
+        }
+      ],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": true,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\n⊢ s.ite t s = t ∩ s",
+      "gate_reason": "ok",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_empty",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_known_wins",
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "known_win",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_tactic": "simp [Set.ite]",
+      "set_ite_finished": true,
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error"
+        }
+      ],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": true,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t t₁ t₂ u s s' : Set α\n⊢ ∅.ite s s' = s'",
+      "gate_reason": "ok",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_empty_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_known_wins",
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "known_win",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_tactic": "simp [Set.ite]",
+      "set_ite_finished": true,
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error"
+        }
+      ],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": true,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s : Set α\n⊢ t.ite ∅ s = s \\ t",
+      "gate_reason": "ok",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_known_wins",
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "known_win",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_tactic": "simp [Set.ite]",
+      "set_ite_finished": true,
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error"
+        }
+      ],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": true,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\n⊢ s.ite s t = s ∪ t",
+      "gate_reason": "ok",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "validation_role": "selected_failure",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u : Set α\nx : α\ns t : Set α\n⊢ s \\ {x} ⊆ t ↔ s ⊆ insert x t",
+      "gate_reason": "no ite/if token in name or goal",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "validation_role": "selected_failure",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_tactic": "simp [Set.ite]",
+      "set_ite_finished": false,
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error"
+        }
+      ],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ : Set α\nh : s₁ ⊆ s₂\n⊢ t.ite s₁ s₂ = s₁ ∪ s₂ \\ t",
+      "gate_reason": "ok",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "validation_role": "selected_failure",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\nx y z w : α\n⊢ {x, y} = {z, w} ↔ x = z ∧ y = w ∨ x = w ∧ y = z",
+      "gate_reason": "no ite/if token in name or goal",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "validation_role": "selected_failure",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\nx : α\n⊢ s ⊆ insert x t ↔ s ⊆ t ∨ x ∈ s ∧ s \\ {x} ⊆ t",
+      "gate_reason": "no ite/if token in name or goal",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "validation_role": "selected_failure",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t t₁ t₂ u s : Set α\nx : α\n⊢ s ⊆ {x} ↔ s = ∅ ∨ s = {x}",
+      "gate_reason": "no ite/if token in name or goal",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "validation_role": "selected_failure",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u s t : Set α\n⊢ s ∪ t = ∅ ↔ s = ∅ ∧ t = ∅",
+      "gate_reason": "no ite/if token in name or goal",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "validation_role": "selected_failure",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\ninst✝¹ : Preorder α\ninst✝ : Preorder β\nf : α → β\n⊢ AntitoneOn f s ↔ Antitone fun a => f ↑a",
+      "gate_reason": "no ite/if token in name or goal",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "validation_role": "selected_failure",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t t₁ t₂ u s : Set α\nx : α\n⊢ s ⊂ {x} ↔ s = ∅",
+      "gate_reason": "no ite/if token in name or goal",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "validation_role": "selected_failure",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_tactic": "simp [Set.ite]",
+      "set_ite_finished": false,
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error"
+        }
+      ],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ s : Set α\n⊢ t.ite (s₁ ∩ s) (s₂ ∩ s) = t.ite s₁ s₂ ∩ s",
+      "gate_reason": "ok",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_selected_failures"
+      ],
+      "validation_role": "selected_failure",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_tactic": "simp [Set.ite]",
+      "set_ite_finished": false,
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error"
+        }
+      ],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n⊢ t.ite s s' ∩ t = s ∩ t",
+      "gate_reason": "ok",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_compl",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_tactic": "simp [Set.ite]",
+      "set_ite_finished": false,
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error"
+        }
+      ],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁ s₂ t✝ t₁ t₂ u t s s' : Set α\n⊢ tᶜ.ite s s' = t.ite s' s",
+      "gate_reason": "ok",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": true,
+      "set_ite_tactic": "simp [Set.ite]",
+      "set_ite_finished": false,
+      "baseline_outcomes": [
+        {
+          "probe": "simp",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "simp_all",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "aesop",
+          "solved": false,
+          "outcome": "proof_failed"
+        },
+        {
+          "probe": "classical <;> aesop",
+          "solved": false,
+          "outcome": "parse_error"
+        }
+      ],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns✝ s₁✝ s₂✝ t✝ t₁ t₂ u t s₁ s₂ s : Set α\nh : s₁ ∩ s = s₂ ∩ s\n⊢ t.ite s₁ s₂ ∩ s = s₁ ∩ s",
+      "gate_reason": "ok",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.mem_dite",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": null,
+      "note": "RC1 already solved; candidate adds nothing (additive)"
+    },
+    {
+      "full_name": "Set.mem_dite_empty_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": null,
+      "note": "RC1 already solved; candidate adds nothing (additive)"
+    },
+    {
+      "full_name": "Set.mem_dite_empty_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": null,
+      "note": "RC1 already solved; candidate adds nothing (additive)"
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\nhs : s.Nonempty\n⊢ s ⊆ {a, b} ↔ s = {a} ∨ s = {b} ∨ s = {a, b}",
+      "gate_reason": "no ite/if token in name or goal",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.diff_union_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": null,
+      "note": "RC1 already solved; candidate adds nothing (additive)"
+    },
+    {
+      "full_name": "Set.eq_of_inclusion_surjective",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u_1\ns✝ t✝ u s t : Set α\nh : s ⊆ t\nh_surj : Surjective (inclusion h)\n⊢ s = t",
+      "gate_reason": "no ite/if token in name or goal",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.inclusion_inclusion",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": null,
+      "note": "RC1 already solved; candidate adds nothing (additive)"
+    },
+    {
+      "full_name": "Set.inclusion_right",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": null,
+      "note": "RC1 already solved; candidate adds nothing (additive)"
+    },
+    {
+      "full_name": "Set.inclusion_self",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": null,
+      "note": "RC1 already solved; candidate adds nothing (additive)"
+    },
+    {
+      "full_name": "Set.insert_diff_eq_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": null,
+      "note": "RC1 already solved; candidate adds nothing (additive)"
+    },
+    {
+      "full_name": "Set.insert_diff_of_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": null,
+      "note": "RC1 already solved; candidate adds nothing (additive)"
+    },
+    {
+      "full_name": "Set.insert_diff_of_not_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": null,
+      "note": "RC1 already solved; candidate adds nothing (additive)"
+    },
+    {
+      "full_name": "Set.insert_diff_self_of_not_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": true,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": true,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": null,
+      "note": "RC1 already solved; candidate adds nothing (additive)"
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\ninst✝¹ : Preorder α\ninst✝ : Preorder β\nf : α → β\n⊢ MonotoneOn f s ↔ Monotone fun a => f ↑a",
+      "gate_reason": "no ite/if token in name or goal",
+      "setup_error": null
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "in_sets": [
+        "set_ite_fresh_holdout"
+      ],
+      "validation_role": "fresh_holdout",
+      "literal_rc1_finished": false,
+      "set_ite_gate_fired": false,
+      "set_ite_tactic": null,
+      "set_ite_finished": false,
+      "baseline_outcomes": [],
+      "baseline_solved_by": null,
+      "candidate_finished": false,
+      "new_win_over_literal_rc1": false,
+      "off_gate": false,
+      "parse_error": false,
+      "error": null,
+      "live": true,
+      "initial_goal": "α : Type u\nβ : Type v\nγ : Type w\nι : Sort x\na b : α\ns s₁ s₂ t t₁ t₂ u : Set α\ninst✝¹ : LinearOrder α\ninst✝ : LinearOrder β\nf : α → β\n⊢ ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔\n    ∃ a ∈ s, ∃ b ∈ s, ∃ c ∈ s, a < b ∧ b < c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+      "gate_reason": "no ite/if token in name or goal",
+      "setup_error": null
+    }
+  ]
+}

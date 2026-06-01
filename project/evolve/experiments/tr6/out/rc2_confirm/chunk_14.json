@@ -1,0 +1,110 @@
+{
+  "Multiset.inter_eq_zero_iff_disjoint": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 8,
+    "tactics_used": [
+      "aesop",
+      "induction s using Multiset.induction_on <;> simp_all",
+      "aesop",
+      "induction t using Multiset.induction_on <;> simp_all",
+      "aesop",
+      "induction s using Multiset.induction_on <;> simp_all",
+      "aesop",
+      "induction s_1 using Multiset.induction_on <;> simp_all"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+  },
+  "Multiset.add_eq_union_iff_disjoint": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 8,
+    "tactics_used": [
+      "aesop",
+      "induction s using Multiset.induction_on <;> simp_all",
+      "aesop",
+      "induction t using Multiset.induction_on <;> simp_all",
+      "aesop",
+      "induction s using Multiset.induction_on <;> simp_all",
+      "induction s_1 using Multiset.induction_on <;> simp_all"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+  },
+  "Multiset.disjoint_cons_left": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+  },
+  "Multiset.disjoint_cons_right": {
+    "classification": "RC2_SOLVED",
+    "rc2_finished": true,
+    "num_steps": 5,
+    "winning_tactic": "aesop",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+  },
+  "Multiset.add_eq_union_left_of_le": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 8,
+    "tactics_used": [
+      "aesop",
+      "induction s using Multiset.induction_on <;> simp_all",
+      "aesop",
+      "tauto",
+      "aesop",
+      "induction t using Multiset.induction_on <;> simp_all",
+      "induction u using Multiset.induction_on <;> simp_all",
+      "aesop"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+  },
+  "Multiset.add_eq_union_right_of_le": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 5,
+    "tactics_used": [
+      "aesop",
+      "induction x using Multiset.induction_on <;> simp_all",
+      "induction y using Multiset.induction_on <;> simp_all",
+      "induction z using Multiset.induction_on <;> simp_all"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+  },
+  "Multiset.disjoint_union_left": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 5,
+    "tactics_used": [
+      "aesop",
+      "induction s using Multiset.induction_on <;> simp_all",
+      "aesop",
+      "aesop"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+  },
+  "Multiset.disjoint_union_right": {
+    "classification": "RC2_SOLVED",
+    "rc2_finished": true,
+    "num_steps": 4,
+    "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+  },
+  "Multiset.disjoint_of_subset_right": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 1,
+    "tactics_used": [],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+  },
+  "Multiset.disjoint_of_subset_left": {
+    "classification": "CONFIRMED_RC2_FAILURE",
+    "rc2_finished": false,
+    "num_steps": 2,
+    "tactics_used": [
+      "induction s using Multiset.induction_on <;> simp_all"
+    ],
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/tr6/out/rc2_confirm/rc2_runs/eval-8ec85a98/traces.jsonl"
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "credited_delta": 5,
+  "credited": [
+    "Set.ite_empty",
+    "Set.ite_empty_left",
+    "Set.ite_empty_right",
+    "Set.ite_left",
+    "Set.ite_right"
+  ],
+  "deferred_sx3": [
+    "Set.ite_compl",
+    "Set.ite_inter",
+    "Set.ite_inter_compl_self",
+    "Set.ite_inter_self"
+  ],
+  "excluded": [],
+  "category_histogram": {
+    "credited_SET_ITE_SIMP": 5,
+    "SX3_sequence_candidate": 4
+  },
+  "policy": "Official RC2 credited delta counts ONLY credited_SET_ITE_SIMP (single-shot, literal-RC1-confirmed, minimal-relabel TRUE). SX3_sequence_candidate -> deferred to SX3. search_perturbation -> excluded.",
+  "ledger": [
+    {
+      "full_name": "Set.ite_empty",
+      "category": "credited_SET_ITE_SIMP",
+      "rc1_status": "failed",
+      "rc2_status": "finished",
+      "minimal_relabel": "TRUE_SET_ITE_SIMP_WIN",
+      "direct_probe_result": null,
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "credit_decision": "credit",
+      "reason": "single-shot simp [Set.ite] closes it; literal RC1 and all baselines fail (minimal relabel TRUE_SET_ITE_SIMP_WIN)"
+    },
+    {
+      "full_name": "Set.ite_empty_left",
+      "category": "credited_SET_ITE_SIMP",
+      "rc1_status": "failed",
+      "rc2_status": "finished",
+      "minimal_relabel": "TRUE_SET_ITE_SIMP_WIN",
+      "direct_probe_result": null,
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "credit_decision": "credit",
+      "reason": "single-shot simp [Set.ite] closes it; literal RC1 and all baselines fail (minimal relabel TRUE_SET_ITE_SIMP_WIN)"
+    },
+    {
+      "full_name": "Set.ite_empty_right",
+      "category": "credited_SET_ITE_SIMP",
+      "rc1_status": "failed",
+      "rc2_status": "finished",
+      "minimal_relabel": "TRUE_SET_ITE_SIMP_WIN",
+      "direct_probe_result": null,
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "credit_decision": "credit",
+      "reason": "single-shot simp [Set.ite] closes it; literal RC1 and all baselines fail (minimal relabel TRUE_SET_ITE_SIMP_WIN)"
+    },
+    {
+      "full_name": "Set.ite_left",
+      "category": "credited_SET_ITE_SIMP",
+      "rc1_status": "failed",
+      "rc2_status": "finished",
+      "minimal_relabel": "TRUE_SET_ITE_SIMP_WIN",
+      "direct_probe_result": null,
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "credit_decision": "credit",
+      "reason": "single-shot simp [Set.ite] closes it; literal RC1 and all baselines fail (minimal relabel TRUE_SET_ITE_SIMP_WIN)"
+    },
+    {
+      "full_name": "Set.ite_right",
+      "category": "credited_SET_ITE_SIMP",
+      "rc1_status": "failed",
+      "rc2_status": "finished",
+      "minimal_relabel": "TRUE_SET_ITE_SIMP_WIN",
+      "direct_probe_result": null,
+      "rc2_winning_tactic": "simp [Set.ite]",
+      "rc2_num_steps": 1,
+      "credit_decision": "credit",
+      "reason": "single-shot simp [Set.ite] closes it; literal RC1 and all baselines fail (minimal relabel TRUE_SET_ITE_SIMP_WIN)"
+    },
+    {
+      "full_name": "Set.ite_compl",
+      "category": "SX3_sequence_candidate",
+      "rc1_status": "failed",
+      "rc2_status": "finished",
+      "minimal_relabel": "UNEXPECTED_WIN_NEEDS_REVIEW",
+      "direct_probe_result": {
+        "simp [Set.ite]": "proof_failed",
+        "simp [Set.ite] <;> aesop": "solved",
+        "simp [Set.ite] <;> simp_all": "proof_failed",
+        "simp [Set.ite] <;> try aesop": "solved",
+        "aesop": "proof_failed",
+        "simp_all": "proof_failed",
+        "simp [Set.ext_iff]": "proof_failed",
+        "simp [Set.ite, Set.ext_iff]": "proof_failed",
+        "ext x <;> simp [Set.ite]": "proof_failed"
+      },
+      "rc2_winning_tactic": "aesop",
+      "rc2_num_steps": 2,
+      "credit_decision": "defer",
+      "reason": "simp [Set.ite] <;> aesop/simp_all closes it (depth-2); bare baselines + single-shot simp[Set.ite] do not -> SX3"
+    },
+    {
+      "full_name": "Set.ite_inter",
+      "category": "SX3_sequence_candidate",
+      "rc1_status": "failed",
+      "rc2_status": "finished",
+      "minimal_relabel": "UNEXPECTED_WIN_NEEDS_REVIEW",
+      "direct_probe_result": {
+        "simp [Set.ite]": "proof_failed",
+        "simp [Set.ite] <;> aesop": "solved",
+        "simp [Set.ite] <;> simp_all": "proof_failed",
+        "simp [Set.ite] <;> try aesop": "solved",
+        "aesop": "proof_failed",
+        "simp_all": "proof_failed",
+        "simp [Set.ext_iff]": "proof_failed",
+        "simp [Set.ite, Set.ext_iff]": "proof_failed",
+        "ext x <;> simp [Set.ite]": "proof_failed"
+      },
+      "rc2_winning_tactic": "aesop",
+      "rc2_num_steps": 2,
+      "credit_decision": "defer",
+      "reason": "simp [Set.ite] <;> aesop/simp_all closes it (depth-2); bare baselines + single-shot simp[Set.ite] do not -> SX3"
+    },
+    {
+      "full_name": "Set.ite_inter_compl_self",
+      "category": "SX3_sequence_candidate",
+      "rc1_status": "failed",
+      "rc2_status": "finished",
+      "minimal_relabel": "UNEXPECTED_WIN_NEEDS_REVIEW",
+      "direct_probe_result": {
+        "simp [Set.ite]": "proof_failed",
+        "simp [Set.ite] <;> aesop": "solved",
+        "simp [Set.ite] <;> simp_all": "proof_failed",
+        "simp [Set.ite] <;> try aesop": "solved",
+        "aesop": "proof_failed",
+        "simp_all": "proof_failed",
+        "simp [Set.ext_iff]": "proof_failed",
+        "simp [Set.ite, Set.ext_iff]": "proof_failed",
+        "ext x <;> simp [Set.ite]": "proof_failed"
+      },
+      "rc2_winning_tactic": "aesop",
+      "rc2_num_steps": 2,
+      "credit_decision": "defer",
+      "reason": "simp [Set.ite] <;> aesop/simp_all closes it (depth-2); bare baselines + single-shot simp[Set.ite] do not -> SX3"
+    },
+    {
+      "full_name": "Set.ite_inter_self",
+      "category": "SX3_sequence_candidate",
+      "rc1_status": "failed",
+      "rc2_status": "finished",
+      "minimal_relabel": "UNEXPECTED_WIN_NEEDS_REVIEW",
+      "direct_probe_result": {
+        "simp [Set.ite]": "proof_failed",
+        "simp [Set.ite] <;> aesop": "solved",
+        "simp [Set.ite] <;> simp_all": "proof_failed",
+        "simp [Set.ite] <;> try aesop": "solved",
+        "aesop": "proof_failed",
+        "simp_all": "proof_failed",
+        "simp [Set.ext_iff]": "proof_failed",
+        "simp [Set.ite, Set.ext_iff]": "proof_failed",
+        "ext x <;> simp [Set.ite]": "proof_failed"
+      },
+      "rc2_winning_tactic": "aesop",
+      "rc2_num_steps": 2,
+      "credit_decision": "defer",
+      "reason": "simp [Set.ite] <;> aesop/simp_all closes it (depth-2); bare baselines + single-shot simp[Set.ite] do not -> SX3"
+    }
+  ]
+}

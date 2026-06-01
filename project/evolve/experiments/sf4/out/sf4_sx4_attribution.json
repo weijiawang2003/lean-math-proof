@@ -1,0 +1,262 @@
+{
+  "confirmation_input": "project/evolve/experiments/sf4/out/rc2_failure_confirmation.json",
+  "probe_results_input": "project/evolve/experiments/sf4/out/sf4_probe_results.json",
+  "num_candidates": 27,
+  "classification_histogram": {
+    "FAILED_CANDIDATE": 26,
+    "BASELINE_DUPLICATE": 1
+  },
+  "true_delta_wins": [],
+  "num_true_delta": 0,
+  "credit_policy": "Only TRUE_DELTA is credited.",
+  "production_subsumed_note": "On a failure-first pool, PRODUCTION_SUBSUMED should be ~0; any occurrence flags a stale baseline or open-flake.",
+  "records": [
+    {
+      "full_name": "Multiset.toFinset_eq_singleton_iff",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_left",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.ite_eq_of_subset_right",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.ite_inter_of_inter_eq",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.powerset_singleton",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.subset_ite",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Eq.subset",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Function.Injective.nonempty_apply_iff",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Prop.compl_singleton",
+      "classification": "BASELINE_DUPLICATE",
+      "credit": false,
+      "reason": "bare control solves: ['aesop']",
+      "winning_probes": [
+        "aesop"
+      ],
+      "winning_families": [
+        "generic_aesop_simpall"
+      ],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.Nonempty.subset_pair_iff_eq",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.eq_of_inclusion_surjective",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.monotoneOn_iff_monotone",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.pairwiseDisjoint_filter",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.ssubset_iff_insert",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.ssubset_iff_sdiff_singleton",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.strictAntiOn_iff_strictAnti",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.strictMonoOn_iff_strictMono",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    },
+    {
+      "full_name": "Set.subset_pair_iff_eq",
+      "classification": "FAILED_CANDIDATE",
+      "credit": false,
+      "reason": "no gated probe solved",
+      "winning_probes": [],
+      "winning_families": [],
+      "rc2_baseline_finished": false
+    }
+  ]
+}

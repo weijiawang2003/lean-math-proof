@@ -1,0 +1,120 @@
+{
+  "family": "rc5s_strict_timeout_safe",
+  "base": "RC5H dynamic stage (hardened)",
+  "status": "experimental_hardening_prototype",
+  "promotion_allowed": false,
+  "allowed_grammar": [
+    {
+      "pattern_id": "exact_L",
+      "regex": "^exact\\s+\\S.*$",
+      "example": "exact L"
+    },
+    {
+      "pattern_id": "simpa_using_L",
+      "regex": "^simpa\\s+using\\s+\\S.*$",
+      "example": "simpa using L"
+    },
+    {
+      "pattern_id": "simpa_L",
+      "regex": "^simpa\\s+\\[[^\\]]+\\]$",
+      "example": "simpa [L]"
+    },
+    {
+      "pattern_id": "simp_L",
+      "regex": "^simp\\s+\\[[^\\]]+\\]$",
+      "example": "simp [L]"
+    },
+    {
+      "pattern_id": "rw_L",
+      "regex": "^rw\\s+\\[[^\\]]+\\]$",
+      "example": "rw [L]"
+    },
+    {
+      "pattern_id": "simp_L_aesop",
+      "regex": "^simp\\s+\\[[^\\]]+\\]\\s+<;>\\s+aesop$",
+      "example": "simp [L] <;> aesop"
+    },
+    {
+      "pattern_id": "rw_L_aesop",
+      "regex": "^rw\\s+\\[[^\\]]+\\]\\s+<;>\\s+aesop$",
+      "example": "rw [L] <;> aesop"
+    },
+    {
+      "pattern_id": "ext_simp_L",
+      "regex": "^ext\\s+\\w+\\s+<;>\\s+simp\\s+\\[[^\\]]+\\]$",
+      "example": "ext x <;> simp [L]"
+    },
+    {
+      "pattern_id": "constructor_aesop",
+      "regex": "^constructor\\s+<;>\\s+intro\\s+\\w+\\s+<;>\\s+aesop$",
+      "example": "constructor <;> intro h <;> aesop"
+    }
+  ],
+  "removed_by_default": {
+    "simp_all": "any tactic containing simp_all (simp [L] <;> simp_all, rw [L] <;> simp_all, bare simp_all) — top Dojo-stall cause in RC5H (230+ programs, ignores SIGALRM)",
+    "depth3_try_chains": "simp [L] <;> try aesop <;> try simp_all and similar — 112 programs, depth-3 try chains stall and are off-grammar",
+    "depth3_other": "any program with >=2 `<;>` except the single `constructor <;> intro h <;> aesop` pattern (e.g. ext x <;> simp [L] <;> aesop)",
+    "bare_tactics": "aesop / omega / nlinarith / tauto / decide with no lemma — off-policy TR6 grammar leakage (74 off-policy programs in RC5H)"
+  },
+  "quarantine_only": {
+    "note": "simp_all and depth-3 chains may be re-enabled ONLY in an explicit offline quarantine mode (never B5/B10), out of scope for RC5S."
+  },
+  "aesop_namespaces": [
+    "Set",
+    "Finset",
+    "List",
+    "Multiset"
+  ],
+  "aesop_namespace_rationale": "`<;> aesop` (and constructor<;>aesop) only on Set/Finset/List/Multiset where RC5H/TR6 had aesop wins without stalls; NOT Nat.",
+  "allowed_namespaces": [
+    "Set",
+    "Finset",
+    "List",
+    "Multiset",
+    "Nat"
+  ],
+  "disabled_namespaces": [
+    "Order",
+    "root/Other (unless explicitly whitelisted)"
+  ],
+  "budgets": {
+    "default": "B5",
+    "B5": {
+      "max_programs": 5,
+      "controls": true,
+      "all_families": true
+    },
+    "B10": {
+      "max_programs": 10,
+      "controls": false,
+      "safe_families_only": [
+        "exact_L",
+        "simpa_using_L",
+        "simpa_L",
+        "simp_L",
+        "rw_L"
+      ],
+      "note": "B10 only continues with NON-aesop low-risk families to avoid residual stalls"
+    },
+    "B20": "DISABLED in safe mode"
+  },
+  "timeout_policy": {
+    "per_theorem_wall_cap_seconds": 60,
+    "per_tactic_seconds": 8,
+    "process_group_kill_fallback": true,
+    "kill_method": "run_with_timeout.py: SIGTERM process group, then SIGKILL after 5s; exit 124 on timeout (works even when LeanDojo/aesop ignore SIGALRM)",
+    "checkpoint_each_theorem": true,
+    "deterministic_resume": true,
+    "rationale": "the outer wall cap is the hard guarantee; per-tactic SIGALRM is best-effort."
+  },
+  "strict_grammar_enforcement": {
+    "reject_off_policy_before_scoring": true,
+    "every_program_matches_allowed_grammar": true,
+    "target_off_policy_in_final_plan": 0
+  },
+  "rc5h_winners_preserved": [
+    "Finset.biUnion_subset_iff_forall_subset (simp [Finset.biUnion_subset] <;> aesop)",
+    "Multiset.add_bind (simp [Multiset.bind])",
+    "Finset.image_subset_iff (simp [Finset.subset_iff])"
+  ]
+}

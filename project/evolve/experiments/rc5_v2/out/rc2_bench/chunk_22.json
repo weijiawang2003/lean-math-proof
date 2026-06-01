@@ -1,0 +1,50 @@
+{
+  "Multiset.forall_mem_map_iff": {
+    "status": "failed",
+    "num_steps": 6,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl"
+  },
+  "Multiset.map_add": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "induction s using Multiset.induction_on <;> simp_all",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl"
+  },
+  "Multiset.map_bind": {
+    "status": "solved",
+    "num_steps": 1,
+    "winning_tactic": "induction m using Multiset.induction_on <;> simp_all",
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl"
+  },
+  "Multiset.map_count_True_eq_filter_card": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl"
+  },
+  "Multiset.map_erase_of_mem": {
+    "status": "failed",
+    "num_steps": 6,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl"
+  },
+  "Multiset.map_filter'": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl"
+  },
+  "Multiset.map_filterMap": {
+    "status": "failed",
+    "num_steps": 1,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl"
+  },
+  "Multiset.map_filterMap_of_inv": {
+    "status": "failed",
+    "num_steps": 2,
+    "winning_tactic": null,
+    "trace_path": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc2_bench/runs/eval-6d862888/traces.jsonl"
+  }
+}

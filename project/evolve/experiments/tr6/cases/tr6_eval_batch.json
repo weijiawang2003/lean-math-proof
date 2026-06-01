@@ -1,0 +1,5100 @@
+{
+  "generated_by": "scripts/tr6_select_eval_batch.py",
+  "batch_size": 200,
+  "theorems": [
+    {
+      "full_name": "Set.disjoint_sUnion_left",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] theorem disjoint_sUnion_left {S : Set (Set α)} {t : Set α} : Disjoint (⋃₀S) t ↔ ∀ s ∈ S, Disjoint s t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.disjoint_sUnion_right",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] theorem disjoint_sUnion_right {s : Set α} {S : Set (Set α)} : Disjoint s (⋃₀S) ↔ ∀ t ∈ S, Disjoint s t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.injOn_union",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "theorem injOn_union (h : Disjoint s₁ s₂) : InjOn f (s₁ ∪ s₂) ↔ InjOn f s₁ ∧ InjOn f s₂ ∧ ∀ x ∈ s₁, ∀ y ∈ s₂, f x ≠ f y",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_left",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] theorem disjoint_iUnion_left {ι : Sort*} {s : ι → Set α} : Disjoint (⋃ i, s i) t ↔ ∀ i, Disjoint (s i) t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.disjoint_iUnion_right",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] theorem disjoint_iUnion_right {ι : Sort*} {s : ι → Set α} : Disjoint t (⋃ i, s i) ↔ ∀ i, Disjoint t (s i)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.disjoint_iUnion",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "theorem disjoint_iUnion₂_left {s : ∀ i, κ i → Set α} {t : Set α} : Disjoint (⋃ (i) (j), s i j) t ↔ ∀ i j, Disjoint (s i j) t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set._root_.Disjoint.image",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "theorem _root_.Disjoint.image {s t u : Set α} {f : α → β} (h : Disjoint s t) (hf : u.InjOn f) (hs : s ⊆ u) (ht : t ⊆ u) : Disjoint (f '' s) (f '' t)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.InjOn.mem_image_iff",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "theorem InjOn.mem_image_iff {x} (hf : InjOn f s) (hs : s₁ ⊆ s) (hx : x ∈ s) : f x ∈ f '' s₁ ↔ x ∈ s₁",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.sUnion_subset_iff",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] theorem sUnion_subset_iff {s : Set (Set α)} {t : Set α} : ⋃₀s ⊆ t ↔ ∀ t' ∈ s, t' ⊆ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.subset_sInter_iff",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] theorem subset_sInter_iff {S : Set (Set α)} {t : Set α} : t ⊆ ⋂₀ S ↔ ∀ t' ∈ S, t ⊆ t'",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.mapsTo_sInter",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] theorem mapsTo_sInter {s : Set α} {T : Set (Set β)} {f : α → β} : MapsTo f s (⋂₀ T) ↔ ∀ t ∈ T, MapsTo f s t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.mapsTo_sUnion",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] theorem mapsTo_sUnion {S : Set (Set α)} {t : Set β} {f : α → β} : MapsTo f (⋃₀ S) t ↔ ∀ s ∈ S, MapsTo f s t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.mapsTo'",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "theorem mapsTo' : MapsTo f s t ↔ f '' s ⊆ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.kernImage_preimage_eq_iff",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "lemma kernImage_preimage_eq_iff {s : Set β} : kernImage f (f ⁻¹' s) = s ↔ (range f)ᶜ ⊆ s",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.InjOn.image_eq_image_iff",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "theorem InjOn.image_eq_image_iff (h : s.InjOn f) (h₁ : s₁ ⊆ s) (h₂ : s₂ ⊆ s) : f '' s₁ = f '' s₂ ↔ s₁ = s₂",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.InjOn.image_subset_image_iff",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "lemma InjOn.image_subset_image_iff (h : s.InjOn f) (h₁ : s₁ ⊆ s) (h₂ : s₂ ⊆ s) : f '' s₁ ⊆ f '' s₂ ↔ s₁ ⊆ s₂",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.InjOn.image_ssubset_image_iff",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "lemma InjOn.image_ssubset_image_iff (h : s.InjOn f) (h₁ : s₁ ⊆ s) (h₂ : s₂ ⊆ s) : f '' s₁ ⊂ f '' s₂ ↔ s₁ ⊂ s₂",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.surjOn_iff_exists_map_subtype",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "theorem surjOn_iff_exists_map_subtype : SurjOn f s t ↔ ∃ (t' : Set β) (g : s → t'), t ⊆ t' ∧ Surjective g ∧ ∀ x : s, f x = g x",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.biUnion_compl_eq_of_pairwise_disjoint_of_iUnion_eq_univ",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "lemma biUnion_compl_eq_of_pairwise_disjoint_of_iUnion_eq_univ {ι : Type*} {Es : ι → Set α} (Es_union : ⋃ i, Es i = univ) (Es_disj : Pairwise fun i j ↦ Disjoint (Es i) (Es j)) (I : Set ι) : (⋃ i ∈ I, Es i)ᶜ = ⋃ i ∈ Iᶜ, Es i",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.iUnion_subset_iff",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] theorem iUnion_subset_iff {s : ι → Set α} {t : Set α} : ⋃ i, s i ⊆ t ↔ ∀ i, s i ⊆ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.subset_iInter_iff",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] theorem subset_iInter_iff {s : Set α} {t : ι → Set α} : (s ⊆ ⋂ i, t i) ↔ ∀ i, s ⊆ t i",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.seq_subset",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "theorem seq_subset {s : Set (α → β)} {t : Set α} {u : Set β} : seq s t ⊆ u ↔ ∀ f ∈ s, ∀ a ∈ t, (f : α → β) a ∈ u",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.image_sInter_subset",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "theorem image_sInter_subset (S : Set (Set α)) (f : α → β) : f '' ⋂₀ S ⊆ ⋂ s ∈ S, f '' s",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.mapsTo_univ_iff",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] lemma mapsTo_univ_iff : MapsTo f univ t ↔ ∀ x, f x ∈ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.mapsTo_singleton",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] theorem mapsTo_singleton {x : α} : MapsTo f {x} t ↔ f x ∈ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.mapsTo_inter",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] theorem mapsTo_inter : MapsTo f s (t₁ ∩ t₂) ↔ MapsTo f s t₁ ∧ MapsTo f s t₂",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.mapsTo_union",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] theorem mapsTo_union : MapsTo f (s₁ ∪ s₂) t ↔ MapsTo f s₁ t ∧ MapsTo f s₂ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.mapsTo_range_iff",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "@[simp] lemma mapsTo_range_iff {g : ι → α} : MapsTo f (range g) t ↔ ∀ i, f (g i) ∈ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.MapsTo.mem_iff",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Set",
+      "statement_text": "theorem MapsTo.mem_iff (h : MapsTo f s t) (hc : MapsTo f sᶜ tᶜ) {x} : f x ∈ t ↔ x ∈ s",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Set.bijective_iff_bijective_of_iUnion_eq_univ",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "Set",
+      "statement_text": "theorem bijective_iff_bijective_of_iUnion_eq_univ : Bijective f ↔ ∀ i, Bijective ((U i).restrictPreimage f)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.card_union_eq_card_add_card",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "statement_text": "lemma card_union_eq_card_add_card : (s ∪ t).card = s.card + t.card ↔ Disjoint s t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_left",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "statement_text": "lemma disjoint_biUnion_left (s : Finset α) (f : α → Finset β) (t : Finset β) : Disjoint (s.biUnion f) t ↔ ∀ i ∈ s, Disjoint (f i) t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.disjoint_biUnion_right",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "statement_text": "lemma disjoint_biUnion_right (s : Finset β) (t : Finset α) (f : α → Finset β) : Disjoint s (t.biUnion f) ↔ ∀ i ∈ t, Disjoint s (f i)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.card_filter_le_iff",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "statement_text": "lemma card_filter_le_iff (s : Finset α) (P : α → Prop) [DecidablePred P] (n : ℕ) : (s.filter P).card ≤ n ↔ ∀ s' ⊆ s, n < s'.card → ∃ a ∈ s', ¬ P a",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.disjoint_map",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "statement_text": "@[simp] theorem disjoint_map {s t : Finset α} (f : α ↪ β) : Disjoint (s.map f) (t.map f) ↔ Disjoint s t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.disjoint_image",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "statement_text": "@[simp] theorem disjoint_image {s t : Finset α} {f : α → β} (hf : Injective f) : Disjoint (s.image f) (t.image f) ↔ Disjoint s t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.disjoint_sup_left",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "statement_text": "protected theorem disjoint_sup_left : Disjoint (s.sup f) a ↔ ∀ ⦃i⦄, i ∈ s → Disjoint (f i) a",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.disjoint_sup_right",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "statement_text": "protected theorem disjoint_sup_right : Disjoint a (s.sup f) ↔ ∀ ⦃i⦄, i ∈ s → Disjoint a (f i)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_left",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "statement_text": "protected theorem codisjoint_inf_left : Codisjoint (s.inf f) a ↔ ∀ ⦃i⦄, i ∈ s → Codisjoint (f i) a",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.codisjoint_inf_right",
+      "file_path": "Mathlib/Data/Finset/Lattice.lean",
+      "namespace": "Finset",
+      "statement_text": "protected theorem codisjoint_inf_right : Codisjoint a (s.inf f) ↔ ∀ ⦃i⦄, i ∈ s → Codisjoint a (f i)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.disjiUnion_filter_eq_of_maps_to",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "statement_text": "lemma disjiUnion_filter_eq_of_maps_to (h : ∀ x ∈ s, f x ∈ t) : t.disjiUnion (fun a ↦ s.filter (f · = a)) pairwiseDisjoint_fibers = s",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.disjiUnion_filter_eq",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "statement_text": "@[simp, nolint simpNF] lemma disjiUnion_filter_eq (s : Finset α) (t : Finset β) (f : α → β) : t.disjiUnion (fun a ↦ s.filter (f · = a)) pairwiseDisjoint_fibers = s.filter fun c ↦ f c ∈ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.image_subset_iff",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem image_subset_iff : s.image f ⊆ t ↔ ∀ x ∈ s, f x ∈ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.mem_powersetCard",
+      "file_path": "Mathlib/Data/Finset/Powerset.lean",
+      "namespace": "Finset",
+      "statement_text": "@[simp] lemma mem_powersetCard : s ∈ powersetCard n t ↔ s ⊆ t ∧ card s = n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": true,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.exists_eq_insert_iff",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem exists_eq_insert_iff [DecidableEq α] {s t : Finset α} : (∃ a ∉ s, insert a s = t) ↔ s ⊆ t ∧ s.card + 1 = t.card",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": true,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.biUnion_subset",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "statement_text": "lemma biUnion_subset {s' : Finset β} : s.biUnion t ⊆ s' ↔ ∀ x ∈ s, t x ⊆ s'",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.biUnion_subset_iff_forall_subset",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "statement_text": "@[simp] lemma biUnion_subset_iff_forall_subset {α β : Type*} [DecidableEq β] {s : Finset α} {t : Finset β} {f : α → Finset β} : s.biUnion f ⊆ t ↔ ∀ x ∈ s, f x ⊆ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.fiber_card_ne_zero_iff_mem_image",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem fiber_card_ne_zero_iff_mem_image (s : Finset α) (f : α → β) [DecidableEq β] (y : β) : (s.filter fun x => f x = y).card ≠ 0 ↔ y ∈ s.image f",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.disjiUnion_map",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem disjiUnion_map {s : Finset α} {t : α → Finset β} {f : β ↪ γ} {h} : (s.disjiUnion t h).map f = s.disjiUnion (fun a => (t a).map f) (h.mono' fun _ _ ↦ (disjoint_map _).2)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.powerset_card_disjiUnion",
+      "file_path": "Mathlib/Data/Finset/Powerset.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem powerset_card_disjiUnion (s : Finset α) : Finset.powerset s = (range (s.card + 1)).disjiUnion (fun i => powersetCard i s) (s.pairwise_disjoint_powersetCard.set_pairwise _)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.subset_iff_eq_of_card_le",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem subset_iff_eq_of_card_le (h : t.card ≤ s.card) : s ⊆ t ↔ s = t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.le_card_iff_exists_subset_card",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem le_card_iff_exists_subset_card : n ≤ s.card ↔ ∃ t ⊆ s, t.card = n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.map_ssubset_map",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "statement_text": "@[simp] theorem map_ssubset_map {s t : Finset α} : s.map f ⊂ t.map f ↔ s ⊂ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.map_subset_map",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "statement_text": "@[simp] theorem map_subset_map {s₁ s₂ : Finset α} : s₁.map f ⊆ s₂.map f ↔ s₁ ⊆ s₂",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.map_symm_subset",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem map_symm_subset {t : Finset β} {f : α ≃ β} : t.map f.symm ⊆ s ↔ t ⊆ s.map f",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.subset_map_symm",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem subset_map_symm {t : Finset β} {f : α ≃ β} : s ⊆ t.map f.symm ↔ s.map f ⊆ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.card_le_one_iff_subset_singleton",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem card_le_one_iff_subset_singleton [Nonempty α] : s.card ≤ 1 ↔ ∃ x : α, s ⊆ {x}",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.image_ssubset_image",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "statement_text": "lemma image_ssubset_image {t : Finset α} (hf : Injective f) : s.image f ⊂ t.image f ↔ s ⊂ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.image_subset_image_iff",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem image_subset_image_iff {t : Finset α} (hf : Injective f) : s.image f ⊆ t.image f ↔ s ⊆ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.subset_map_iff",
+      "file_path": "Mathlib/Data/Finset/Preimage.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem subset_map_iff {f : α ↪ β} {s : Finset β} {t : Finset α} : s ⊆ t.map f ↔ ∃ u ⊆ t, s = u.map f",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.map_subset_iff_subset_preimage",
+      "file_path": "Mathlib/Data/Finset/Preimage.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem map_subset_iff_subset_preimage {f : α ↪ β} {s : Finset α} {t : Finset β} : s.map f ⊆ t ↔ s ⊆ t.preimage f f.injective.injOn",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.subset_image_iff",
+      "file_path": "Mathlib/Data/Finset/Image.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem subset_image_iff [DecidableEq β] {s : Set α} {t : Finset β} {f : α → β} : ↑t ⊆ f '' s ↔ ∃ s' : Finset α, ↑s' ⊆ s ∧ s'.image f = t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset._root_.Multiset.toFinset_card_eq_one_iff",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem _root_.Multiset.toFinset_card_eq_one_iff [DecidableEq α] (s : Multiset α) : s.toFinset.card = 1 ↔ Multiset.card s ≠ 0 ∧ ∃ a : α, s = Multiset.card s • {a}",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": true,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.image_subset_iff_subset_preimage",
+      "file_path": "Mathlib/Data/Finset/Preimage.lean",
+      "namespace": "Finset",
+      "statement_text": "theorem image_subset_iff_subset_preimage [DecidableEq β] {f : α → β} {s : Finset α} {t : Finset β} (hf : Set.InjOn f (f ⁻¹' ↑t)) : s.image f ⊆ t ↔ s ⊆ t.preimage f hf",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Finset.disjiUnion_cons",
+      "file_path": "Mathlib/Data/Finset/Union.lean",
+      "namespace": "Finset",
+      "statement_text": "@[simp] lemma disjiUnion_cons (a : α) (s : Finset α) (ha : a ∉ s) (f : α → Finset β) (H) : disjiUnion (cons a s ha) f H = (f a).disjUnion ((s.disjiUnion f) fun _ hb _ hc ↦ H (mem_cons_of_mem hb) (mem_cons_of_mem hc)) (disjoint_left.2 fun _ hb h ↦ let ⟨_, hc, h⟩",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.disjoint_pmap",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "theorem disjoint_pmap {p : α → Prop} {f : ∀ a : α, p a → β} {s t : List α} (hs : ∀ a ∈ s, p a) (ht : ∀ a ∈ t, p a) (hf : ∀ (a a' : α) (ha : p a) (ha' : p a'), f a ha = f a' ha' → a = a') (h : Disjoint s t) : Disjoint (s.pmap f hs) (t.pmap f ht)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.map_subset_iff",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "theorem map_subset_iff {l₁ l₂ : List α} (f : α → β) (h : Injective f) : map f l₁ ⊆ map f l₂ ↔ l₁ ⊆ l₂",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.disjoint_map",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "theorem disjoint_map {f : α → β} {s t : List α} (hf : Function.Injective f) (h : Disjoint s t) : Disjoint (s.map f) (t.map f)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate"
+      ]
+    },
+    {
+      "full_name": "List.length_filter_lt_length_iff_exists",
+      "file_path": "Mathlib/Data/List/Count.lean",
+      "namespace": "List",
+      "statement_text": "theorem length_filter_lt_length_iff_exists (l) : length (filter p l) < length l ↔ ∃ x ∈ l, ¬p x",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.mem_map_of_involutive",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "theorem mem_map_of_involutive {f : α → α} (hf : Involutive f) {a : α} {l : List α} : a ∈ map f l ↔ f a ∈ l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.mem_map_swap",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp 1100] theorem mem_map_swap (x : α) (y : β) (xs : List (α × β)) : (y, x) ∈ map Prod.swap xs ↔ (x, y) ∈ xs",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.mem_pmap",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem mem_pmap {p : α → Prop} {f : ∀ a, p a → β} {l H b} : b ∈ pmap f l H ↔ ∃ (a : _) (h : a ∈ l), f a (H a h) = b",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.mem_map_of_injective",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp 1100, nolint simpNF] theorem mem_map_of_injective {f : α → β} (H : Injective f) {a : α} {l : List α} : f a ∈ map f l ↔ a ∈ l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.filterMap_eq_map_iff_forall_eq_some",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "theorem filterMap_eq_map_iff_forall_eq_some {f : α → Option β} {g : α → β} {l : List α} : l.filterMap f = l.map g ↔ ∀ x ∈ l, f x = some (g x) where mp",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.Forall.imp",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "theorem Forall.imp (h : ∀ x, p x → q x) : ∀ {l : List α}, Forall p l → Forall q l | [] => id | x :: l => by simp only [forall_cons, and_imp] rw [← and_imp] exact And.imp (h x) (Forall.imp h) #align list.all₂.imp List.Forall.imp @[simp] theorem forall_map_iff {p : β → Prop} (f : α → β) : Forall p (l.map f) ↔ Forall (p ∘ f) l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.pairwise_pmap",
+      "file_path": "Mathlib/Data/List/Pairwise.lean",
+      "namespace": "List",
+      "statement_text": "theorem pairwise_pmap {p : β → Prop} {f : ∀ b, p b → α} {l : List β} (h : ∀ x ∈ l, p x) : Pairwise R (l.pmap f h) ↔ Pairwise (fun b₁ b₂ => ∀ (h₁ : p b₁) (h₂ : p b₂), R (f b₁ h₁) (f b₂ h₂)) l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.forall_iff_forall_mem",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "theorem forall_iff_forall_mem : ∀ {l : List α}, Forall p l ↔ ∀ x ∈ l, p x | [] => (iff_true_intro <| forall_mem_nil _).symm | x :: l => by rw [forall_mem_cons, forall_cons, forall_iff_forall_mem] #align list.all₂_iff_forall List.forall_iff_forall_mem",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.ranges_join'",
+      "file_path": "Mathlib/Data/List/Range.lean",
+      "namespace": "List",
+      "statement_text": "lemma ranges_join' : ∀ l : List ℕ, l.ranges.join = range (Nat.sum l) | [] => rfl | a :: l => by simp only [sum_cons, join, ← map_join, ranges_join', range_add] lemma mem_mem_ranges_iff_lt_natSum (l : List ℕ) {n : ℕ} : (∃ s ∈ l.ranges, n ∈ s) ↔ n < Nat.sum l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.subset_singleton_iff",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "theorem subset_singleton_iff {a : α} {L : List α} : L ⊆ [a] ↔ ∃ n, L = replicate n a",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.indexOf_cons_ne",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem indexOf_cons_ne {a b : α} (l : List α) : b ≠ a → indexOf a (b :: l) = succ (indexOf a l) | h => by simp only [indexOf, findIdx_cons, Bool.cond_eq_ite, beq_iff_eq, h, ite_false] #align list.index_of_cons_ne List.indexOf_cons_ne #align list.index_of_cons List.indexOf_cons theorem indexOf_eq_length {a : α} {l : List α} : indexOf a l = length l ↔ a ∉ l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.eq_replicate_length",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "theorem eq_replicate_length {a : α} : ∀ {l : List α}, l = replicate l.length a ↔ ∀ b ∈ l, b = a | [] => by simp | (b :: l) => by simp [eq_replicate_length] #align list.eq_replicate_length List.eq_replicate_length #align list.eq_replicate_of_mem List.eq_replicate_of_mem #align list.eq_replicate List.eq_replicate theorem replicate_add (m n) (a : α) : replicate (m + n) a = replicate m a ++ replicate ",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.ranges_disjoint",
+      "file_path": "Mathlib/Data/List/Range.lean",
+      "namespace": "List",
+      "statement_text": "theorem ranges_disjoint (l : List ℕ) : Pairwise Disjoint (ranges l)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate"
+      ]
+    },
+    {
+      "full_name": "List.map_bijective_iff",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem map_bijective_iff {f : α → β} : Bijective (map f) ↔ Bijective f",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.map_injective_iff",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem map_injective_iff {f : α → β} : Injective (map f) ↔ Injective f",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.map_involutive_iff",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem map_involutive_iff {f : α → α} : Involutive (map f) ↔ Involutive f",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.map_surjective_iff",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem map_surjective_iff {f : α → β} : Surjective (map f) ↔ Surjective f",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.pmap_eq_nil",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem pmap_eq_nil {p : α → Prop} {f : ∀ a, p a → β} {l H} : pmap f l H = [] ↔ l = []",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.forall_map_iff",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem forall_map_iff {p : β → Prop} (f : α → β) : Forall p (l.map f) ↔ Forall (p ∘ f) l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.map_leftInverse_iff",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem map_leftInverse_iff {f : α → β} {g : β → α} : LeftInverse (map f) (map g) ↔ LeftInverse f g",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.map_rightInverse_iff",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem map_rightInverse_iff {f : α → β} {g : β → α} : RightInverse (map f) (map g) ↔ RightInverse f g",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.forall_cons",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem forall_cons (p : α → Prop) (x : α) : ∀ l : List α, Forall p (x :: l) ↔ p x ∧ Forall p l | [] => (and_true_iff _).symm | _ :: _ => Iff.rfl #align list.all₂_cons List.forall_cons",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.mem_pair",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "lemma mem_pair {a b c : α} : a ∈ [b, c] ↔ a = b ∨ a = c",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.mem_pure",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "theorem mem_pure (x y : α) : x ∈ (pure y : List α) ↔ x = y",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.mem_dedup",
+      "file_path": "Mathlib/Data/List/Dedup.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem mem_dedup {a : α} {l : List α} : a ∈ dedup l ↔ a ∈ l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.dropWhile_eq_nil_iff",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem dropWhile_eq_nil_iff : dropWhile p l = [] ↔ ∀ x ∈ l, p x",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.takeWhile_eq_self_iff",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "@[simp] theorem takeWhile_eq_self_iff : takeWhile p l = l ↔ ∀ x ∈ l, p x",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.indexOf_lt_length",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "theorem indexOf_lt_length {a} {l : List α} : indexOf a l < length l ↔ a ∈ l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.indexOf_eq_length",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "theorem indexOf_eq_length {a : α} {l : List α} : indexOf a l = length l ↔ a ∉ l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.mem_mem_ranges_iff_lt_natSum",
+      "file_path": "Mathlib/Data/List/Range.lean",
+      "namespace": "List",
+      "statement_text": "lemma mem_mem_ranges_iff_lt_natSum (l : List ℕ) {n : ℕ} : (∃ s ∈ l.ranges, n ∈ s) ↔ n < Nat.sum l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "List.exists_mem_cons_iff",
+      "file_path": "Mathlib/Data/List/Basic.lean",
+      "namespace": "List",
+      "statement_text": "theorem exists_mem_cons_iff (p : α → Prop) (a : α) (l : List α) : (∃ x ∈ a :: l, p x) ↔ p a ∨ ∃ x ∈ l, p x",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.le_of_pred_lt",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma le_of_pred_lt : ∀ {m}, pred m < n → m ≤ n | 0 => Nat.le_of_lt | _ + 1 => id #align nat.le_of_pred_lt Nat.le_of_pred_lt lemma lt_iff_add_one_le : m < n ↔ m + 1 ≤ n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.le_mul_self",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma le_mul_self : ∀ n : ℕ, n ≤ n * n | 0 => Nat.le_refl _ | n + 1 => by simp [Nat.mul_add] #align nat.le_mul_self Nat.le_mul_self lemma mul_self_inj : m * m = n * n ↔ m = n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.two_le_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma two_le_iff : ∀ n, 2 ≤ n ↔ n ≠ 0 ∧ n ≠ 1 | 0 => by simp | 1 => by simp | n + 2 => by simp #align nat.two_le_iff Nat.two_le_iff lemma add_eq_max_iff : m + n = max m n ↔ m = 0 ∨ n = 0",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.lt_mul_self_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "@[simp] lemma lt_mul_self_iff : ∀ {n : ℕ}, n < n * n ↔ 1 < n | 0 => by simp | n + 1 => Nat.lt_mul_iff_one_lt_left n.succ_pos #align nat.lt_mul_self_iff Nat.lt_mul_self_iff lemma add_sub_one_le_mul (ha : a ≠ 0) (hb : b ≠ 0) : a + b - 1 ≤ a * b",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.one_lt_iff_ne_zero_and_ne_one",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma one_lt_iff_ne_zero_and_ne_one : ∀ {n : ℕ}, 1 < n ↔ n ≠ 0 ∧ n ≠ 1 | 0 => by decide | 1 => by decide | n + 2 => by omega #align nat.one_lt_iff_ne_zero_and_ne_one Nat.one_lt_iff_ne_zero_and_ne_one lemma le_one_iff_eq_zero_or_eq_one : ∀ {n : ℕ}, n ≤ 1 ↔ n = 0 ∨ n = 1",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.lt_iff_le_pred",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma lt_iff_le_pred : ∀ {n}, 0 < n → (m < n ↔ m ≤ n - 1) | _ + 1, _ => Nat.lt_succ_iff #align nat.lt_iff_le_pred Nat.lt_iff_le_pred lemma le_of_pred_lt : ∀ {m}, pred m < n → m ≤ n | 0 => Nat.le_of_lt | _ + 1 => id #align nat.le_of_pred_lt Nat.le_of_pred_lt lemma lt_iff_add_one_le : m < n ↔ m + 1 ≤ n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.one_lt_pow_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "@[simp] lemma one_lt_pow_iff {n : ℕ} (hn : n ≠ 0) : ∀ {a}, 1 < a ^ n ↔ 1 < a | 0 => by simp [Nat.zero_pow (Nat.pos_of_ne_zero hn)] | 1 => by simp | a + 2 => by simp [one_lt_pow hn] #align nat.one_lt_pow_iff Nat.one_lt_pow_iff #align nat.one_lt_two_pow Nat.one_lt_two_pow lemma one_lt_two_pow' (n : ℕ) : 1 < 2 ^ (n + 1)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.sqrt_pos",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma sqrt_pos : 0 < sqrt n ↔ 0 < n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.le_sqrt",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma le_sqrt : m ≤ sqrt n ↔ m * m ≤ n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.sqrt_lt",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma sqrt_lt : sqrt m < n ↔ m < n * n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.succ_le_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma succ_le_iff : succ m ≤ n ↔ m < n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.le_sqrt'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma le_sqrt' : m ≤ sqrt n ↔ m ^ 2 ≤ n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.sqrt_eq_zero",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma sqrt_eq_zero : sqrt n = 0 ↔ n = 0",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.sqrt_lt'",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma sqrt_lt' : sqrt m < n ↔ m < n ^ 2",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.lt_one_add_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma lt_one_add_iff : m < 1 + n ↔ m ≤ n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.lt_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "@[simp] lemma lt_one_iff : n < 1 ↔ n = 0",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.one_add_le_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma one_add_le_iff : 1 + m ≤ n ↔ m < n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.one_le_iff_ne_zero",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma one_le_iff_ne_zero : 1 ≤ n ↔ n ≠ 0",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.mul_self_inj",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma mul_self_inj : m * m = n * n ↔ m = n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.lt_iff_add_one_le",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma lt_iff_add_one_le : m < n ↔ m + 1 ≤ n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.lt_pred_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma lt_pred_iff : a < pred b ↔ succ a < b",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.pred_eq_self_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma pred_eq_self_iff : n.pred = n ↔ n = 0",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.pred_le_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma pred_le_iff : pred m ≤ n ↔ m ≤ succ n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.succ_ne_succ",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma succ_ne_succ : succ m ≠ succ n ↔ m ≠ n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.modEq_zero_iff_dvd",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "statement_text": "theorem modEq_zero_iff_dvd : a ≡ 0 [MOD n] ↔ n ∣ a",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.mul_eq_left",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma mul_eq_left (ha : a ≠ 0) : a * b = a ↔ b = 1",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.mul_eq_right",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma mul_eq_right (hb : b ≠ 0) : a * b = b ↔ a = 1",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.le_add_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma le_add_one_iff : m ≤ n + 1 ↔ m ≤ n ∨ m = n + 1",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.modEq_zero_iff",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "statement_text": "@[simp] lemma modEq_zero_iff : a ≡ b [MOD 0] ↔ a = b",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.mod_eq_iff_lt",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma mod_eq_iff_lt (hn : n ≠ 0) : m % n = m ↔ m < n",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.div_lt_one_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma div_lt_one_iff (hb : 0 < b) : a / b < 1 ↔ a < b",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.mod_two_ne_one",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "@[simp] lemma mod_two_ne_one : ¬n % 2 = 1 ↔ n % 2 = 0",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.one_le_div_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma one_le_div_iff (hb : 0 < b) : 1 ≤ a / b ↔ b ≤ a",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.ModEq.comm",
+      "file_path": "Mathlib/Data/Nat/ModEq.lean",
+      "namespace": "Nat",
+      "statement_text": "protected theorem comm : a ≡ b [MOD n] ↔ b ≡ a [MOD n]",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Nat.add_eq_max_iff",
+      "file_path": "Mathlib/Data/Nat/Defs.lean",
+      "namespace": "Nat",
+      "statement_text": "lemma add_eq_max_iff : m + n = max m n ↔ m = 0 ∨ n = 0",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.nodup_bind",
+      "file_path": "Mathlib/Data/Multiset/Bind.lean",
+      "namespace": "Multiset",
+      "statement_text": "@[simp] lemma nodup_bind : Nodup (bind s f) ↔ (∀ a ∈ s, Nodup (f a)) ∧ s.Pairwise fun a b => Disjoint (f a) (f b)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_map_map",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "theorem disjoint_map_map {f : α → γ} {g : β → γ} {s : Multiset α} {t : Multiset β} : Disjoint (s.map f) (t.map g) ↔ ∀ a ∈ s, ∀ b ∈ t, f a ≠ g b",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.zero_disjoint",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "@[simp] theorem zero_disjoint (l : Multiset α) : Disjoint 0 l | a => (not_mem_nil a).elim #align multiset.zero_disjoint Multiset.zero_disjoint @[simp] theorem singleton_disjoint {l : Multiset α} {a : α} : Disjoint {a} l ↔ a ∉ l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.Disjoint.symm",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "@[symm] theorem Disjoint.symm {s t : Multiset α} (d : Disjoint s t) : Disjoint t s | _a, i₂, i₁ => d i₁ i₂ #align multiset.disjoint.symm Multiset.Disjoint.symm theorem disjoint_comm {s t : Multiset α} : Disjoint s t ↔ Disjoint t s",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "theorem disjoint_left {s t : Multiset α} : Disjoint s t ↔ ∀ {a}, a ∈ s → a ∉ t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "theorem disjoint_right {s t : Multiset α} : Disjoint s t ↔ ∀ {a}, a ∈ t → a ∉ s",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_iff_ne",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "theorem disjoint_iff_ne {s t : Multiset α} : Disjoint s t ↔ ∀ a ∈ s, ∀ b ∈ t, a ≠ b",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_singleton",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "@[simp] theorem disjoint_singleton {l : Multiset α} {a : α} : Disjoint l {a} ↔ a ∉ l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.singleton_disjoint",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "@[simp] theorem singleton_disjoint {l : Multiset α} {a : α} : Disjoint {a} l ↔ a ∉ l",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.inter_eq_zero_iff_disjoint",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "theorem inter_eq_zero_iff_disjoint [DecidableEq α] {s t : Multiset α} : s ∩ t = 0 ↔ Disjoint s t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.add_eq_union_iff_disjoint",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "theorem add_eq_union_iff_disjoint [DecidableEq α] {s t : Multiset α} : s + t = s ∪ t ↔ Disjoint s t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "@[simp] theorem disjoint_cons_left {a : α} {s t : Multiset α} : Disjoint (a ::ₘ s) t ↔ a ∉ t ∧ Disjoint s t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_cons_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "@[simp] theorem disjoint_cons_right {a : α} {s t : Multiset α} : Disjoint s (a ::ₘ t) ↔ a ∉ s ∧ Disjoint s t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.add_eq_union_left_of_le",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "lemma add_eq_union_left_of_le [DecidableEq α] {s t u : Multiset α} (h : t ≤ s) : u + s = u ∪ t ↔ u.Disjoint s ∧ s = t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.add_eq_union_right_of_le",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "lemma add_eq_union_right_of_le [DecidableEq α] {x y z : Multiset α} (h : z ≤ y) : x + y = x ∪ z ↔ y = z ∧ x.Disjoint y",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_union_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "@[simp] theorem disjoint_union_left [DecidableEq α] {s t u : Multiset α} : Disjoint (s ∪ t) u ↔ Disjoint s u ∧ Disjoint t u",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_union_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "@[simp] theorem disjoint_union_right [DecidableEq α] {s t u : Multiset α} : Disjoint s (t ∪ u) ↔ Disjoint s t ∧ Disjoint s u",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_of_subset_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "theorem disjoint_of_subset_right {s t u : Multiset α} (h : t ⊆ u) (d : Disjoint s u) : Disjoint s t | _x, m, m₁ => d m (h m₁) #align multiset.disjoint_of_subset_right Multiset.disjoint_of_subset_right theorem disjoint_of_le_left {s t u : Multiset α} (h : s ≤ u) : Disjoint u t → Disjoint s t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": true,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_of_subset_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "theorem disjoint_of_subset_left {s t u : Multiset α} (h : s ⊆ u) (d : Disjoint u t) : Disjoint s t | _x, m₁ => d (h m₁) #align multiset.disjoint_of_subset_left Multiset.disjoint_of_subset_left theorem disjoint_of_subset_right {s t u : Multiset α} (h : t ⊆ u) (d : Disjoint s u) : Disjoint s t | _x, m, m₁ => d m (h m₁) #align multiset.disjoint_of_subset_right Multiset.disjoint_of_subset_right theore",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": true,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_comm",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "theorem disjoint_comm {s t : Multiset α} : Disjoint s t ↔ Disjoint t s",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.coe_disjoint",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "@[simp] theorem coe_disjoint (l₁ l₂ : List α) : @Disjoint α l₁ l₂ ↔ l₁.Disjoint l₂",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_add_left",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "@[simp] theorem disjoint_add_left {s t u : Multiset α} : Disjoint (s + t) u ↔ Disjoint s u ∧ Disjoint t u",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.disjoint_add_right",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "@[simp] theorem disjoint_add_right {s t u : Multiset α} : Disjoint s (t + u) ↔ Disjoint s t ∧ Disjoint s u",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": true,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "rc4b_candidate",
+        "rc4c_candidate",
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.card_filter_le_iff",
+      "file_path": "Mathlib/Data/Multiset/Basic.lean",
+      "namespace": "Multiset",
+      "statement_text": "lemma card_filter_le_iff (s : Multiset α) (P : α → Prop) [DecidablePred P] (n : ℕ) : card (s.filter P) ≤ n ↔ ∀ s' ≤ s, n < card s' → ∃ a ∈ s', ¬ P a",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Multiset.toFinset_card_eq_card_iff_nodup",
+      "file_path": "Mathlib/Data/Finset/Card.lean",
+      "namespace": "Multiset",
+      "statement_text": "theorem Multiset.toFinset_card_eq_card_iff_nodup {m : Multiset α} : m.toFinset.card = card m ↔ m.Nodup",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": true,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "mem_lowerBounds_iff_subset_Ici",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "lemma mem_lowerBounds_iff_subset_Ici : a ∈ lowerBounds s ↔ s ⊆ Ici a",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "mem_upperBounds_iff_subset_Iic",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "lemma mem_upperBounds_iff_subset_Iic : a ∈ upperBounds s ↔ s ⊆ Iic a",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "isGreatest_union_iff",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "theorem isGreatest_union_iff : IsGreatest (s ∪ t) a ↔ IsGreatest s a ∧ a ∈ upperBounds t ∨ a ∈ upperBounds s ∧ IsGreatest t a",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "isLeast_union_iff",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "theorem isLeast_union_iff {a : α} {s t : Set α} : IsLeast (s ∪ t) a ↔ IsLeast s a ∧ a ∈ lowerBounds t ∨ a ∈ lowerBounds s ∧ IsLeast t a",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "bddAbove_iff_subset_Iic",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "theorem bddAbove_iff_subset_Iic : BddAbove s ↔ ∃ a, s ⊆ Iic a",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "bddBelow_iff_subset_Ici",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "theorem bddBelow_iff_subset_Ici : BddBelow s ↔ ∃ a, s ⊆ Ici a",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "bddBelow_bddAbove_iff_subset_Icc",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "theorem bddBelow_bddAbove_iff_subset_Icc : BddBelow s ∧ BddAbove s ↔ ∃ a b, s ⊆ Icc a b",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "AntitoneOn.image_lowerBounds_subset_upperBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "AntitoneOn",
+      "statement_text": "theorem image_lowerBounds_subset_upperBounds_image : f '' (lowerBounds s ∩ t) ⊆ upperBounds (f '' s)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "AntitoneOn.image_upperBounds_subset_lowerBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "AntitoneOn",
+      "statement_text": "theorem image_upperBounds_subset_lowerBounds_image : f '' (upperBounds s ∩ t) ⊆ lowerBounds (f '' s)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "MonotoneOn.image_lowerBounds_subset_lowerBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "MonotoneOn",
+      "statement_text": "theorem image_lowerBounds_subset_lowerBounds_image : f '' (lowerBounds s ∩ t) ⊆ lowerBounds (f '' s)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "MonotoneOn.image_upperBounds_subset_upperBounds_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "MonotoneOn",
+      "statement_text": "theorem image_upperBounds_subset_upperBounds_image (Hst : s ⊆ t) : f '' (upperBounds s ∩ t) ⊆ upperBounds (f '' s)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": false,
+        "has_eq": false,
+        "has_subset": true,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "bddAbove_preimage_ofDual",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "@[simp] lemma bddAbove_preimage_ofDual {s : Set α} : BddAbove (ofDual ⁻¹' s) ↔ BddBelow s",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "bddBelow_preimage_ofDual",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "@[simp] lemma bddBelow_preimage_ofDual {s : Set α} : BddBelow (ofDual ⁻¹' s) ↔ BddAbove s",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "bddAbove_preimage_toDual",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "@[simp] lemma bddAbove_preimage_toDual {s : Set αᵒᵈ} : BddAbove (toDual ⁻¹' s) ↔ BddBelow s",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "bddBelow_preimage_toDual",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "@[simp] lemma bddBelow_preimage_toDual {s : Set αᵒᵈ} : BddBelow (toDual ⁻¹' s) ↔ BddAbove s",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "IsGLB.of_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "IsGLB",
+      "statement_text": "theorem IsGLB.of_image [Preorder α] [Preorder β] {f : α → β} (hf : ∀ {x y}, f x ≤ f y ↔ x ≤ y) {s : Set α} {x : α} (hx : IsGLB (f '' s) (f x)) : IsGLB s x",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "IsLUB.of_image",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "IsLUB",
+      "statement_text": "theorem IsLUB.of_image [Preorder α] [Preorder β] {f : α → β} (hf : ∀ {x y}, f x ≤ f y ↔ x ≤ y) {s : Set α} {x : α} (hx : IsLUB (f '' s) (f x)) : IsLUB s x",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "bddAbove_def",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "theorem bddAbove_def : BddAbove s ↔ ∃ x, ∀ y ∈ s, y ≤ x",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "bddBelow_def",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "theorem bddBelow_def : BddBelow s ↔ ∃ x, ∀ y ∈ s, x ≤ y",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "mem_lowerBounds",
+      "file_path": "Mathlib/Order/Bounds/Basic.lean",
+      "namespace": "",
+      "statement_text": "theorem mem_lowerBounds : a ∈ lowerBounds s ↔ ∀ x ∈ s, a ≤ x",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": true,
+        "has_order": true,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Option.mem_map",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "statement_text": "theorem mem_map {f : α → β} {y : β} {o : Option α} : y ∈ o.map f ↔ ∃ x ∈ o, f x = y",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Option.exists_mem_map",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "statement_text": "theorem exists_mem_map {f : α → β} {o : Option α} {p : β → Prop} : (∃ y ∈ o.map f, p y) ↔ ∃ x ∈ o, p (f x)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Option.forall_mem_map",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "statement_text": "theorem forall_mem_map {f : α → β} {o : Option α} {p : β → Prop} : (∀ y ∈ o.map f, p y) ↔ ∀ x ∈ o, p (f x)",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Option.pbind_eq_some",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "statement_text": "theorem pbind_eq_some {f : ∀ a : α, a ∈ x → Option β} {y : β} : x.pbind f = some y ↔ ∃ (z : α) (H : z ∈ x), f z H = some y",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Option.pbind_eq_none",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "statement_text": "theorem pbind_eq_none {f : ∀ a : α, a ∈ x → Option β} (h' : ∀ a (H : a ∈ x), f a H = none → x = none) : x.pbind f = none ↔ x = none",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Option.mem_map_of_injective",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "statement_text": "@[simp 1100, nolint simpNF] theorem mem_map_of_injective {f : α → β} (H : Function.Injective f) {a : α} {o : Option α} : f a ∈ o.map f ↔ a ∈ o",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "exists_of_exists_mem",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "",
+      "statement_text": "theorem exists_of_exists_mem : (∃ (x : _) (_ : p x), q x) → ∃ x, q x | ⟨x, _, hq⟩ => ⟨x, hq⟩ #align exists_of_bex exists_of_exists_mem theorem exists₂_imp : (∃ x h, P x h) → b ↔ ∀ x h, P x h → b",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "exists_sUnion",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "",
+      "statement_text": "lemma exists_sUnion {S : Set (Set α)} {p : α → Prop} : (∃ x ∈ ⋃₀ S, p x) ↔ ∃ s ∈ S, ∃ x ∈ s, p x",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "forall_sUnion",
+      "file_path": "Mathlib/Data/Set/Lattice.lean",
+      "namespace": "",
+      "statement_text": "lemma forall_sUnion {S : Set (Set α)} {p : α → Prop} : (∀ x ∈ ⋃₀ S, p x) ↔ ∀ s ∈ S, ∀ x ∈ s, p x",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": true
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "exists_mem_of_exists",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "",
+      "statement_text": "theorem exists_mem_of_exists (H : ∀ x, p x) : (∃ x, q x) → ∃ (x : _) (_ : p x), q x | ⟨x, hq⟩ => ⟨x, H x, hq⟩ #align bex_of_exists exists_mem_of_exists theorem exists_of_exists_mem : (∃ (x : _) (_ : p x), q x) → ∃ x, q x | ⟨x, _, hq⟩ => ⟨x, hq⟩ #align exists_of_bex exists_of_exists_mem theorem exists₂_imp : (∃ x h, P x h) → b ↔ ∀ x h, P x h → b",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Option.pmap_eq_none_iff",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "statement_text": "theorem pmap_eq_none_iff {h} : pmap f x h = none ↔ x = none",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Option.map_eq_id",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "statement_text": "@[simp] theorem map_eq_id {f : α → α} : Option.map f = id ↔ f = id",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Option.map_inj",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "statement_text": "@[simp] theorem map_inj {f g : α → β} : Option.map f = Option.map g ↔ f = g",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Option.pmap_eq_some_iff",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "statement_text": "theorem pmap_eq_some_iff {hf} {y : β} : pmap f x hf = some y ↔ ∃ (a : α) (H : x = some a), f a (hf a H) = y",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Option.bind_eq_some'",
+      "file_path": "Mathlib/Data/Option/Basic.lean",
+      "namespace": "Option",
+      "statement_text": "theorem bind_eq_some' {x : Option α} {f : α → Option β} {b : β} : x.bind f = some b ↔ ∃ a, x = some a ∧ f a = some b",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": true,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Exists.snd",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "Exists",
+      "statement_text": "theorem Exists.snd {b : Prop} {p : b → Prop} : ∀ h : Exists p, p h.fst | ⟨_, h⟩ => h #align Exists.snd Exists.snd theorem Prop.exists_iff {p : Prop → Prop} : (∃ h, p h) ↔ p False ∨ p True",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "PLift.down_injective",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "PLift",
+      "statement_text": "theorem PLift.down_injective : Function.Injective (@PLift.down α) | ⟨a⟩, ⟨b⟩, _ => by congr #align plift.down_injective PLift.down_injective @[simp] theorem PLift.down_inj {a b : PLift α} : a.down = b.down ↔ a = b",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": true,
+        "has_subset": false,
+        "has_mem": false,
+        "has_disjoint": false,
+        "has_card": true,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": true,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "not_exists_mem",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "",
+      "statement_text": "theorem not_exists_mem : (¬∃ x h, P x h) ↔ ∀ x h, ¬P x h",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "Equiv.bijOn",
+      "file_path": "Mathlib/Data/Set/Function.lean",
+      "namespace": "Equiv",
+      "statement_text": "protected lemma bijOn (h : ∀ a, e a ∈ t ↔ a ∈ s) : BijOn e s t",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    },
+    {
+      "full_name": "exists_mem_or",
+      "file_path": "Mathlib/Logic/Basic.lean",
+      "namespace": "",
+      "statement_text": "theorem exists_mem_or : (∃ x h, P x h ∨ Q x h) ↔ (∃ x h, P x h) ∨ ∃ x h, Q x h",
+      "source": "source_scan",
+      "features": {
+        "has_iff": true,
+        "has_eq": false,
+        "has_subset": false,
+        "has_mem": true,
+        "has_disjoint": false,
+        "has_card": false,
+        "has_map_filter": false,
+        "has_tofinset": false,
+        "has_nat_arith": false,
+        "has_order": false,
+        "has_singleton": false,
+        "has_union_inter": false
+      },
+      "freshness_status": "fresh",
+      "candidate_family_tags": [
+        "d2_simp_aesop_candidate"
+      ]
+    }
+  ]
+}

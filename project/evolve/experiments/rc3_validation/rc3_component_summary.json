@@ -1,0 +1,97 @@
+{
+  "component": "SX3_SET_ITE_AESOP",
+  "candidate": "RC3 candidate = RC2 release \u2295 SX3_SET_ITE_AESOP",
+  "status": "VALIDATED \u2014 REJECT_NO_LITERAL_DELTA (subsumed by production best-first search; off-by-default, NOT promoted)",
+  "provenance": {
+    "source_candidate": "project/evolve/experiments/rc3_candidates/set_ite_aesop/rc3_candidate_wrapper.json",
+    "validation_copy": "project/evolve/experiments/rc3_validation/rc3_candidate_wrapper.json",
+    "byte_identical_to_source": true
+  },
+  "untouched_components": {
+    "RC1": "project/evolve/experiments/rc1/rc1_production_wrapper.json \u2014 UNTOUCHED",
+    "RC2_release": "project/evolve/experiments/rc2_release/rc2_production_wrapper.json \u2014 UNTOUCHED",
+    "NS24_router": "project/evolve/routing/ns24_router.json \u2014 UNTOUCHED",
+    "NS9_genome_checkpoints": "UNTOUCHED"
+  },
+  "rc3_is_separate": true,
+  "added_component_count_beyond_rc2": 1,
+  "added_component": "SX3_SET_ITE_AESOP",
+  "exact_structural_delta_vs_rc2": {
+    "priority_templates.any": {
+      "added": "simp [Set.ite] <;> aesop",
+      "placement": "immediately AFTER 'simp [Set.ite]' (RC2's credited single-shot is always tried first; the depth-2 sequence only contributes when single-shot fails)"
+    },
+    "theorem_name_tactic_gates": {
+      "added": {
+        "simp [Set.ite] <;> aesop": [
+          "Set.ite"
+        ]
+      }
+    },
+    "all_other_keys": "byte-identical to RC2 release wrapper"
+  },
+  "added_sequence": "simp [Set.ite] <;> aesop",
+  "gate": {
+    "narrow_name_signal": [
+      "Set.ite"
+    ],
+    "forbid_namespaces": [
+      "Nat",
+      "Int",
+      "Multiset",
+      "List"
+    ],
+    "max_sx3_emissions_per_theorem": 1,
+    "no_broad_set_sequence_search": true,
+    "no_ext_iff_subset_exploratory_families": true,
+    "no_source_inspired_theorem_specific_rw_bridges": true,
+    "gate_semantics": "theorem_name_tactic_gates filters ONLY wrapper-added entries by theorem-name substring; base policy output is ungated, so the candidate is byte-equivalent to RC2 on every theorem whose name lacks 'Set.ite'."
+  },
+  "attribution_distinction": {
+    "rc2_official_delta": "single-shot 'simp [Set.ite]' (+5 credited, RC2 release)",
+    "sx3_candidate_delta": "depth-2 'simp [Set.ite] <;> aesop' (separate; NOT mixed with RC2's +5)"
+  },
+  "expected_sx3_delta_over_rc2": {
+    "reproduced_deferred_wins": 4,
+    "reproduced_deferred": [
+      "Set.ite_inter",
+      "Set.ite_inter_self",
+      "Set.ite_compl",
+      "Set.ite_inter_compl_self"
+    ],
+    "fresh_true_wins": 1,
+    "fresh_wins": [
+      "Set.ite_inter_inter"
+    ],
+    "total_true_depth2_wins_target": 5,
+    "note": "TARGET from the custom SX3 runner. Literal-wrapper validation REFUTED these as a sequence delta: all 5 are RC2_ALREADY_SOLVED through the production harness (see validation_outcome). Credited delta = 0."
+  },
+  "validation_outcome": {
+    "decision": "REJECT_NO_LITERAL_DELTA",
+    "surface": "30 theorems (deferred 4 / fresh 1 / holdout 13 / cluster 12 / neg-control 1, deduped)",
+    "literal_rc2_solved": 17,
+    "literal_rc3_solved": 17,
+    "raw_delta": 0,
+    "credited_sx3_delta_over_literal_rc2": 0,
+    "true_sx3_set_ite_aesop_wins": 0,
+    "regressions_vs_rc2": 0,
+    "off_gate_emissions": 0,
+    "canonical_floors": {
+      "demo_v1": "12/15",
+      "nat_defs_medium": "37/38",
+      "nat_defs_large_v5": "49/65",
+      "all_pass": true
+    },
+    "determinism": "deterministic (hash 5757bbb27215, 0 open flakes, 0 proof diffs)",
+    "root_cause": "Literal RC2 best-first search already solves all 4 deferred + the fresh Set.ite_inter_inter in 2 steps: simp [Set.ite] (advances) then aesop (closes). The grouped sequence 'simp [Set.ite] <;> aesop' is subsumed; it is never the winning tactic and adds 0 wins. The custom SX3 runner over-credited because its aesop control was single-shot on the INITIAL goal (fails), never on the simp[Set.ite]-advanced state (succeeds).",
+    "report": "project/evolve/reports/rc3/rc3_set_ite_aesop_validation_report.md",
+    "artifacts": [
+      "out/literal_rc2_results.json",
+      "out/literal_rc3_results.json",
+      "out/rc3_minimal_relabel_results.json",
+      "out/rc3_preservation_offgate.json",
+      "out/rc3_determinism_flake_audit.json",
+      "out/rc3_validation_comparison.json"
+    ]
+  }
+}

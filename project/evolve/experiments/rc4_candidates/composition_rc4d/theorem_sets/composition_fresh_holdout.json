@@ -1,0 +1,1227 @@
+[
+  {
+    "full_name": "Multiset.Disjoint.symm",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[symm] theorem Disjoint.symm {s t : Multiset α} (d : Disjoint s t) : Disjoint t s | _a, i₂, i₁ => d i₁ i₂ #align multiset.disjoint.symm Multiset.Disjoint.symm theorem disjoint_comm {s t : Multiset α} : Disjoint s t ↔ Disjoint t s",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.add_eq_union_iff_disjoint",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem add_eq_union_iff_disjoint [DecidableEq α] {s t : Multiset α} : s + t = s ∪ t ↔ Disjoint s t",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.add_eq_union_left_of_le",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "lemma add_eq_union_left_of_le [DecidableEq α] {s t u : Multiset α} (h : t ≤ s) : u + s = u ∪ t ↔ u.Disjoint s ∧ s = t",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.add_eq_union_right_of_le",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "lemma add_eq_union_right_of_le [DecidableEq α] {x y z : Multiset α} (h : z ≤ y) : x + y = x ∪ z ↔ y = z ∧ x.Disjoint y",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.coe_disjoint",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem coe_disjoint (l₁ l₂ : List α) : @Disjoint α l₁ l₂ ↔ l₁.Disjoint l₂",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.disjoint_comm",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_comm {s t : Multiset α} : Disjoint s t ↔ Disjoint t s",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.disjoint_cons_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_cons_right {a : α} {s t : Multiset α} : Disjoint s (a ::ₘ t) ↔ a ∉ s ∧ Disjoint s t",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.disjoint_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_left {s t : Multiset α} : Disjoint s t ↔ ∀ {a}, a ∈ s → a ∉ t",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.disjoint_map_map",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_map_map {f : α → γ} {g : β → γ} {s : Multiset α} {t : Multiset β} : Disjoint (s.map f) (t.map g) ↔ ∀ a ∈ s, ∀ b ∈ t, f a ≠ g b",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.disjoint_of_subset_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_of_subset_left {s t u : Multiset α} (h : s ⊆ u) (d : Disjoint u t) : Disjoint s t | _x, m₁ => d (h m₁) #align multiset.disjoint_of_subset_left Multiset.disjoint_of_subset_left theorem disjoint_of_subset_right {s t u : Multiset α} (h : t ⊆ u) (d : Disjoint s u) : Disjoint s t | _x, m, m₁ => d m (h m₁) #align multiset.disjoint_of_subset_right Multiset.disjoint_of_subset_right theore",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.disjoint_of_subset_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_of_subset_right {s t u : Multiset α} (h : t ⊆ u) (d : Disjoint s u) : Disjoint s t | _x, m, m₁ => d m (h m₁) #align multiset.disjoint_of_subset_right Multiset.disjoint_of_subset_right theorem disjoint_of_le_left {s t u : Multiset α} (h : s ≤ u) : Disjoint u t → Disjoint s t",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.disjoint_toFinset",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem disjoint_toFinset {m1 m2 : Multiset α} : _root_.Disjoint m1.toFinset m2.toFinset ↔ m1.Disjoint m2",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.disjoint_union_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_union_right [DecidableEq α] {s t u : Multiset α} : Disjoint s (t ∪ u) ↔ Disjoint s t ∧ Disjoint s u",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.inter_eq_zero_iff_disjoint",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "theorem inter_eq_zero_iff_disjoint [DecidableEq α] {s t : Multiset α} : s ∩ t = 0 ↔ Disjoint s t",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Multiset.nodup_bind",
+    "file_path": "Mathlib/Data/Multiset/Bind.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] lemma nodup_bind : Nodup (bind s f) ↔ (∀ a ∈ s, Nodup (f a)) ∧ s.Pairwise fun a b => Disjoint (f a) (f b)",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Multiset.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "MULTISET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Multiset.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "MULTISET_DISJOINT_RIGHT_D2",
+        "tactic": "simp [Multiset.disjoint_right] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right]",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_multiset.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Set._root_.Disjoint.image",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "theorem _root_.Disjoint.image {s t u : Set α} {f : α → β} (h : Disjoint s t) (hf : u.InjOn f) (hs : s ⊆ u) (ht : t ⊆ u) : Disjoint (f '' s) (f '' t)",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Set.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Set.disjoint_left] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_set.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Set.biUnion_compl_eq_of_pairwise_disjoint_of_iUnion_eq_univ",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "lemma biUnion_compl_eq_of_pairwise_disjoint_of_iUnion_eq_univ {ι : Type*} {Es : ι → Set α} (Es_union : ⋃ i, Es i = univ) (Es_disj : Pairwise fun i j ↦ Disjoint (Es i) (Es j)) (I : Set ι) : (⋃ i ∈ I, Es i)ᶜ = ⋃ i ∈ Iᶜ, Es i",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Set.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Set.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "SET_SUBSET_PAIR_D2",
+        "tactic": "simp [Set.subset_pair_iff_eq]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "SET_SUBSET_PAIR_D2",
+        "tactic": "simp [Set.subset_pair_iff_eq] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop",
+      "simp [Set.subset_pair_iff_eq]",
+      "simp [Set.subset_pair_iff_eq] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_set.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Set.disjoint_iUnion",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "theorem disjoint_iUnion₂_left {s : ∀ i, κ i → Set α} {t : Set α} : Disjoint (⋃ (i) (j), s i j) t ↔ ∀ i j, Disjoint (s i j) t",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Set.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Set.disjoint_left] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_set.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Set.disjoint_singleton",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "lemma disjoint_singleton : Disjoint ({a} : Set α) {b} ↔ a ≠ b",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Set.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Set.disjoint_left] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_set.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Set.injOn_union",
+    "file_path": "Mathlib/Data/Set/Function.lean",
+    "namespace": "Set",
+    "goal_text": "theorem injOn_union (h : Disjoint s₁ s₂) : InjOn f (s₁ ∪ s₂) ↔ InjOn f s₁ ∧ InjOn f s₂ ∧ ∀ x ∈ s₁, ∀ y ∈ s₂, f x ≠ f y",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Set.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Set.disjoint_left] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_set.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Set.pairwiseDisjoint_filter",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Set",
+    "goal_text": null,
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Set.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Set.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "SET_SUBSET_PAIR_D2",
+        "tactic": "simp [Set.subset_pair_iff_eq]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "SET_SUBSET_PAIR_D2",
+        "tactic": "simp [Set.subset_pair_iff_eq] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop",
+      "simp [Set.subset_pair_iff_eq]",
+      "simp [Set.subset_pair_iff_eq] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_set.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Set.sigmaToiUnion_bijective",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "theorem sigmaToiUnion_bijective (h : Pairwise fun i j => Disjoint (t i) (t j)) : Bijective (sigmaToiUnion t)",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Set.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Set.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "SET_SUBSET_PAIR_D2",
+        "tactic": "simp [Set.subset_pair_iff_eq]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "SET_SUBSET_PAIR_D2",
+        "tactic": "simp [Set.subset_pair_iff_eq] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop",
+      "simp [Set.subset_pair_iff_eq]",
+      "simp [Set.subset_pair_iff_eq] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_set.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Set.sigmaToiUnion_injective",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "theorem sigmaToiUnion_injective (h : Pairwise fun i j => Disjoint (t i) (t j)) : Injective (sigmaToiUnion t) | ⟨a₁, b₁, h₁⟩, ⟨a₂, b₂, h₂⟩, eq => have b_eq : b₁ = b₂",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4B",
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP",
+        "tactic": "simp [Set.disjoint_left]"
+      },
+      {
+        "component": "RC4B",
+        "action": "SET_DISJOINT_LEFT_SIMP_AESOP",
+        "tactic": "simp [Set.disjoint_left] <;> aesop"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "SET_SUBSET_PAIR_D2",
+        "tactic": "simp [Set.subset_pair_iff_eq]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "SET_SUBSET_PAIR_D2",
+        "tactic": "simp [Set.subset_pair_iff_eq] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop",
+      "simp [Set.subset_pair_iff_eq]",
+      "simp [Set.subset_pair_iff_eq] <;> aesop"
+    ],
+    "expected_credit_component": "RC4B",
+    "source_set": "disjoint_left_bridge/fresh_holdout_set.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "List.filterMap_eq_map_iff_forall_eq_some",
+    "file_path": "Mathlib/Data/List/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem filterMap_eq_map_iff_forall_eq_some {f : α → Option β} {g : α → β} {l : List α} : l.filterMap f = l.map g ↔ ∀ x ∈ l, f x = some (g x) where mp",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4C_residue",
+        "action": "LIST_FORALL_D2",
+        "tactic": "simp [List.forall_iff_forall_mem]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "LIST_FORALL_D2",
+        "tactic": "simp [List.forall_iff_forall_mem] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [List.forall_iff_forall_mem]",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "expected_credit_component": "RC4C_residue",
+    "source_set": "d2_simp_aesop/fresh_holdout_all.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "List.forall_cons",
+    "file_path": "Mathlib/Data/List/Basic.lean",
+    "namespace": "List",
+    "goal_text": "@[simp] theorem forall_cons (p : α → Prop) (x : α) : ∀ l : List α, Forall p (x :: l) ↔ p x ∧ Forall p l | [] => (and_true_iff _).symm | _ :: _ => Iff.rfl #align list.all₂_cons List.forall_cons",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4C_residue",
+        "action": "LIST_FORALL_D2",
+        "tactic": "simp [List.forall_iff_forall_mem]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "LIST_FORALL_D2",
+        "tactic": "simp [List.forall_iff_forall_mem] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [List.forall_iff_forall_mem]",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "expected_credit_component": "RC4C_residue",
+    "source_set": "d2_simp_aesop/fresh_holdout_all.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "List.forall_iff_forall_mem",
+    "file_path": "Mathlib/Data/List/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem forall_iff_forall_mem : ∀ {l : List α}, Forall p l ↔ ∀ x ∈ l, p x | [] => (iff_true_intro <| forall_mem_nil _).symm | x :: l => by rw [forall_mem_cons, forall_cons, forall_iff_forall_mem] #align list.all₂_iff_forall List.forall_iff_forall_mem",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4C_residue",
+        "action": "LIST_FORALL_D2",
+        "tactic": "simp [List.forall_iff_forall_mem]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "LIST_FORALL_D2",
+        "tactic": "simp [List.forall_iff_forall_mem] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [List.forall_iff_forall_mem]",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "expected_credit_component": "RC4C_residue",
+    "source_set": "d2_simp_aesop/fresh_holdout_all.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "List.forall_map_iff",
+    "file_path": "Mathlib/Data/List/Basic.lean",
+    "namespace": "List",
+    "goal_text": "@[simp] theorem forall_map_iff {p : β → Prop} (f : α → β) : Forall p (l.map f) ↔ Forall (p ∘ f) l",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4C_residue"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4C_residue",
+        "action": "LIST_FORALL_D2",
+        "tactic": "simp [List.forall_iff_forall_mem]"
+      },
+      {
+        "component": "RC4C_residue",
+        "action": "LIST_FORALL_D2",
+        "tactic": "simp [List.forall_iff_forall_mem] <;> aesop"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [List.forall_iff_forall_mem]",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "expected_credit_component": "RC4C_residue",
+    "source_set": "d2_simp_aesop/fresh_holdout_all.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Finset.coe_disjUnion",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem coe_disjUnion {s t : Finset α} (h : Disjoint s t) : (disjUnion s t h : Set α) = (s : Set α) ∪ t",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4A"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4A",
+        "action": "def_unfold_simp_allowlist",
+        "tactic": "simp [Finset.disjUnion]"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Finset.disjUnion]"
+    ],
+    "expected_credit_component": "RC4A",
+    "source_set": "def_unfold_simp/fresh_frontier_holdout.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Finset.disjUnion_singleton",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem disjUnion_singleton (s : Finset α) (a : α) (h : Disjoint s {a}) : disjUnion s {a} h = cons a s (disjoint_singleton_right.mp h)",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4A"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4A",
+        "action": "def_unfold_simp_allowlist",
+        "tactic": "simp [Finset.disjUnion]"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Finset.disjUnion]"
+    ],
+    "expected_credit_component": "RC4A",
+    "source_set": "def_unfold_simp/fresh_frontier_holdout.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Finset.disjUnion_eq_union",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem disjUnion_eq_union (s t h) : @disjUnion α s t h = s ∪ t",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4A"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4A",
+        "action": "def_unfold_simp_allowlist",
+        "tactic": "simp [Finset.disjUnion]"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Finset.disjUnion]"
+    ],
+    "expected_credit_component": "RC4A",
+    "source_set": "def_unfold_simp/fresh_frontier_holdout.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_le_le : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a ≤ b ∧ b ≤ c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4A"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4A",
+        "action": "def_unfold_simp_allowlist",
+        "tactic": "simp [MonotoneOn, AntitoneOn]"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [MonotoneOn, AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "source_set": "def_unfold_simp/same_cluster_holdout.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem not_monotoneOn_not_antitoneOn_iff_exists_lt_lt : ¬MonotoneOn f s ∧ ¬AntitoneOn f s ↔ ∃ᵉ (a ∈ s) (b ∈ s) (c ∈ s), a < b ∧ b < c ∧ (f a < f b ∧ f c < f b ∨ f b < f a ∧ f b < f c)",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4A"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4A",
+        "action": "def_unfold_simp_allowlist",
+        "tactic": "simp [MonotoneOn, AntitoneOn]"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [MonotoneOn, AntitoneOn]"
+    ],
+    "expected_credit_component": "RC4A",
+    "source_set": "def_unfold_simp/same_cluster_holdout.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Finset.filter_cons",
+    "file_path": "Mathlib/Data/Finset/Basic.lean",
+    "namespace": "Finset",
+    "goal_text": "theorem filter_cons {a : α} (s : Finset α) (ha : a ∉ s) : filter p (cons a s ha) = (if p a then {a} else ∅ : Finset α).disjUnion (filter p s) (by split_ifs · rw [disjoint_singleton_left] exact mem_filter.not.mpr <| mt And.left ha · exact disjoint_empty_left _)",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4A"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4A",
+        "action": "def_unfold_simp_allowlist",
+        "tactic": "simp [Finset.disjUnion]"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Finset.disjUnion]"
+    ],
+    "expected_credit_component": "RC4A",
+    "source_set": "def_unfold_simp/same_cluster_holdout.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "fresh-frontier holdout; gate may fire"
+  },
+  {
+    "full_name": "Finset.disjiUnion_cons",
+    "file_path": "Mathlib/Data/Finset/Union.lean",
+    "namespace": "Finset",
+    "goal_text": "@[simp] lemma disjiUnion_cons (a : α) (s : Finset α) (ha : a ∉ s) (f : α → Finset β) (H) : disjiUnion (cons a s ha) f H = (f a).disjUnion ((s.disjiUnion f) fun _ hb _ hc ↦ H (mem_cons_of_mem hb) (mem_cons_of_mem hc)) (disjoint_left.2 fun _ hb h ↦ let ⟨_, hc, h⟩",
+    "rc4d_gate_fires": true,
+    "rc4d_components": [
+      "RC4A"
+    ],
+    "rc4d_emissions": [
+      {
+        "component": "RC4A",
+        "action": "def_unfold_simp_allowlist",
+        "tactic": "simp [Finset.disjUnion]"
+      }
+    ],
+    "rc4d_tactics": [
+      "simp [Finset.disjUnion]"
+    ],
+    "expected_credit_component": "RC4A",
+    "source_set": "disjoint_left_bridge/disjoint_negative_controls.json",
+    "set_tag": "composition_fresh_holdout",
+    "expected_behavior": "was a component-specific negative but fires RC4D ['RC4A'] → reclassified to fresh holdout"
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "Multiset.disjoint_add_left": {
+    "status": "solved",
+    "winning_tactic": "aesop",
+    "num_steps": 2
+  },
+  "Multiset.disjoint_cons_left": {
+    "status": "solved",
+    "winning_tactic": "simp [Multiset.disjoint_left]",
+    "num_steps": 1
+  },
+  "Multiset.singleton_disjoint": {
+    "status": "solved",
+    "winning_tactic": "simp [Multiset.disjoint_left]",
+    "num_steps": 1
+  },
+  "Multiset.zero_disjoint": {
+    "status": "solved",
+    "winning_tactic": "simp [Multiset.disjoint_left]",
+    "num_steps": 1
+  },
+  "Set.disjoint_iUnion_left": {
+    "status": "solved",
+    "winning_tactic": "aesop",
+    "num_steps": 2
+  },
+  "Set.disjoint_iUnion_right": {
+    "status": "solved",
+    "winning_tactic": "aesop",
+    "num_steps": 2
+  },
+  "Set.disjoint_iff_forall_ne": {
+    "status": "solved",
+    "winning_tactic": "aesop",
+    "num_steps": 2
+  },
+  "Set.disjoint_right": {
+    "status": "solved",
+    "winning_tactic": "aesop",
+    "num_steps": 2
+  },
+  "Set.disjoint_sUnion_left": {
+    "status": "solved",
+    "winning_tactic": "aesop",
+    "num_steps": 2
+  },
+  "Set.disjoint_sUnion_right": {
+    "status": "failed",
+    "winning_tactic": null,
+    "num_steps": 2
+  },
+  "Set.disjoint_singleton_left": {
+    "status": "solved",
+    "winning_tactic": "simp [Set.disjoint_left]",
+    "num_steps": 1
+  },
+  "Finset.card_union_eq_card_add_card": {
+    "status": "failed",
+    "winning_tactic": null,
+    "num_steps": 2
+  }
+}

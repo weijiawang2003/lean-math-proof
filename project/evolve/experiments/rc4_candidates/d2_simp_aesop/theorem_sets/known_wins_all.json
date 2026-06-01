@@ -1,0 +1,284 @@
+[
+  {
+    "full_name": "Finset.biUnion_subset_iff_forall_subset",
+    "file_path": "Mathlib/Data/Finset/Union.lean",
+    "namespace": "Finset",
+    "goal_text": "@[simp] lemma biUnion_subset_iff_forall_subset {α β : Type*} [DecidableEq β] {s : Finset α} {t : Finset β} {f : α → Finset β} : s.biUnion f ⊆ t ↔ ∀ x ∈ s, f x ⊆ t",
+    "gate_should_fire_all": true,
+    "gate_should_fire_nonoverlap": true,
+    "candidate_actions_all": [
+      "FINSET_BIUNION_SUBSET_D2"
+    ],
+    "candidate_actions_nonoverlap": [
+      "FINSET_BIUNION_SUBSET_D2"
+    ],
+    "candidate_tactics_all": [
+      "simp [Finset.biUnion_subset] <;> aesop"
+    ],
+    "candidate_tactics_nonoverlap": [
+      "simp [Finset.biUnion_subset] <;> aesop"
+    ],
+    "overlap_family": "none",
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (L=Finset.biUnion_subset); expected reproduction/NEW WIN; overlap=none",
+    "evidence_lemma": "Finset.biUnion_subset",
+    "overlaps_rc4b": false
+  },
+  {
+    "full_name": "List.Forall.imp",
+    "file_path": "Mathlib/Data/List/Basic.lean",
+    "namespace": "List",
+    "goal_text": "theorem Forall.imp (h : ∀ x, p x → q x) : ∀ {l : List α}, Forall p l → Forall q l | [] => id | x :: l => by simp only [forall_cons, and_imp] rw [← and_imp] exact And.imp (h x) (Forall.imp h) #align list.all₂.imp List.Forall.imp @[simp] theorem forall_map_iff {p : β → Prop} (f : α → β) : Forall p (l.map f) ↔ Forall (p ∘ f) l",
+    "gate_should_fire_all": true,
+    "gate_should_fire_nonoverlap": true,
+    "candidate_actions_all": [
+      "LIST_FORALL_D2"
+    ],
+    "candidate_actions_nonoverlap": [
+      "LIST_FORALL_D2"
+    ],
+    "candidate_tactics_all": [
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "candidate_tactics_nonoverlap": [
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "overlap_family": "none",
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (L=List.forall_iff_forall_mem); expected reproduction/NEW WIN; overlap=none",
+    "evidence_lemma": "List.forall_iff_forall_mem",
+    "overlaps_rc4b": false
+  },
+  {
+    "full_name": "Multiset.disjoint_add_right",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_add_right {s t u : Multiset α} : Disjoint s (t + u) ↔ Disjoint s t ∧ Disjoint s u",
+    "gate_should_fire_all": true,
+    "gate_should_fire_nonoverlap": true,
+    "candidate_actions_all": [
+      "MULTISET_DISJOINT_LEFT_D2",
+      "MULTISET_DISJOINT_RIGHT_D2"
+    ],
+    "candidate_actions_nonoverlap": [
+      "MULTISET_DISJOINT_RIGHT_D2"
+    ],
+    "candidate_tactics_all": [
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "candidate_tactics_nonoverlap": [
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "overlap_family": "mixed",
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (L=Multiset.disjoint_right); expected reproduction/NEW WIN; overlap=none",
+    "evidence_lemma": "Multiset.disjoint_right",
+    "overlaps_rc4b": false
+  },
+  {
+    "full_name": "Set.Nonempty.subset_pair_iff_eq",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem subset_pair_iff_eq {x y : α} : s ⊆ {x, y} ↔ s = ∅ ∨ s = {x} ∨ s = {y} ∨ s = {x, y}",
+    "gate_should_fire_all": true,
+    "gate_should_fire_nonoverlap": true,
+    "candidate_actions_all": [
+      "SET_SUBSET_PAIR_D2"
+    ],
+    "candidate_actions_nonoverlap": [
+      "SET_SUBSET_PAIR_D2"
+    ],
+    "candidate_tactics_all": [
+      "simp [Set.subset_pair_iff_eq] <;> aesop"
+    ],
+    "candidate_tactics_nonoverlap": [
+      "simp [Set.subset_pair_iff_eq] <;> aesop"
+    ],
+    "overlap_family": "none",
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (L=Set.subset_pair_iff_eq); expected reproduction/NEW WIN; overlap=none",
+    "evidence_lemma": "Set.subset_pair_iff_eq",
+    "overlaps_rc4b": false
+  },
+  {
+    "full_name": "Multiset.disjoint_add_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_add_left {s t u : Multiset α} : Disjoint (s + t) u ↔ Disjoint s u ∧ Disjoint t u",
+    "gate_should_fire_all": true,
+    "gate_should_fire_nonoverlap": true,
+    "candidate_actions_all": [
+      "MULTISET_DISJOINT_LEFT_D2",
+      "MULTISET_DISJOINT_RIGHT_D2"
+    ],
+    "candidate_actions_nonoverlap": [
+      "MULTISET_DISJOINT_RIGHT_D2"
+    ],
+    "candidate_tactics_all": [
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "candidate_tactics_nonoverlap": [
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "overlap_family": "mixed",
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (L=Multiset.disjoint_left); expected reproduction/NEW WIN; overlap=RC4B",
+    "evidence_lemma": "Multiset.disjoint_left",
+    "overlaps_rc4b": true
+  },
+  {
+    "full_name": "Multiset.disjoint_cons_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_cons_left {a : α} {s t : Multiset α} : Disjoint (a ::ₘ s) t ↔ a ∉ t ∧ Disjoint s t",
+    "gate_should_fire_all": true,
+    "gate_should_fire_nonoverlap": true,
+    "candidate_actions_all": [
+      "MULTISET_DISJOINT_LEFT_D2",
+      "MULTISET_DISJOINT_RIGHT_D2"
+    ],
+    "candidate_actions_nonoverlap": [
+      "MULTISET_DISJOINT_RIGHT_D2"
+    ],
+    "candidate_tactics_all": [
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "candidate_tactics_nonoverlap": [
+      "simp [Multiset.disjoint_right] <;> aesop"
+    ],
+    "overlap_family": "mixed",
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (L=Multiset.disjoint_left); expected reproduction/NEW WIN; overlap=RC4B",
+    "evidence_lemma": "Multiset.disjoint_left",
+    "overlaps_rc4b": true
+  },
+  {
+    "full_name": "Set.disjoint_iUnion_left",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "@[simp] theorem disjoint_iUnion_left {ι : Sort*} {s : ι → Set α} : Disjoint (⋃ i, s i) t ↔ ∀ i, Disjoint (s i) t",
+    "gate_should_fire_all": true,
+    "gate_should_fire_nonoverlap": false,
+    "candidate_actions_all": [
+      "SET_DISJOINT_LEFT_D2"
+    ],
+    "candidate_actions_nonoverlap": [],
+    "candidate_tactics_all": [
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_tactics_nonoverlap": [],
+    "overlap_family": "RC4B",
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (L=Set.disjoint_left); expected reproduction/NEW WIN; overlap=RC4B",
+    "evidence_lemma": "Set.disjoint_left",
+    "overlaps_rc4b": true
+  },
+  {
+    "full_name": "Set.disjoint_iUnion_right",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "@[simp] theorem disjoint_iUnion_right {ι : Sort*} {s : ι → Set α} : Disjoint t (⋃ i, s i) ↔ ∀ i, Disjoint t (s i)",
+    "gate_should_fire_all": true,
+    "gate_should_fire_nonoverlap": false,
+    "candidate_actions_all": [
+      "SET_DISJOINT_LEFT_D2"
+    ],
+    "candidate_actions_nonoverlap": [],
+    "candidate_tactics_all": [
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_tactics_nonoverlap": [],
+    "overlap_family": "RC4B",
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (L=Set.disjoint_left); expected reproduction/NEW WIN; overlap=RC4B",
+    "evidence_lemma": "Set.disjoint_left",
+    "overlaps_rc4b": true
+  },
+  {
+    "full_name": "Set.disjoint_iff_forall_ne",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "lemma disjoint_iff_forall_ne : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ s → ∀ ⦃b⦄, b ∈ t → a ≠ b",
+    "gate_should_fire_all": true,
+    "gate_should_fire_nonoverlap": false,
+    "candidate_actions_all": [
+      "SET_DISJOINT_LEFT_D2"
+    ],
+    "candidate_actions_nonoverlap": [],
+    "candidate_tactics_all": [
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_tactics_nonoverlap": [],
+    "overlap_family": "RC4B",
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (L=Set.disjoint_left); expected reproduction/NEW WIN; overlap=RC4B",
+    "evidence_lemma": "Set.disjoint_left",
+    "overlaps_rc4b": true
+  },
+  {
+    "full_name": "Set.disjoint_right",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem disjoint_right : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ t → a ∉ s",
+    "gate_should_fire_all": true,
+    "gate_should_fire_nonoverlap": false,
+    "candidate_actions_all": [
+      "SET_DISJOINT_LEFT_D2"
+    ],
+    "candidate_actions_nonoverlap": [],
+    "candidate_tactics_all": [
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_tactics_nonoverlap": [],
+    "overlap_family": "RC4B",
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (L=Set.disjoint_left); expected reproduction/NEW WIN; overlap=RC4B",
+    "evidence_lemma": "Set.disjoint_left",
+    "overlaps_rc4b": true
+  },
+  {
+    "full_name": "Set.disjoint_sUnion_left",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "@[simp] theorem disjoint_sUnion_left {S : Set (Set α)} {t : Set α} : Disjoint (⋃₀S) t ↔ ∀ s ∈ S, Disjoint s t",
+    "gate_should_fire_all": true,
+    "gate_should_fire_nonoverlap": false,
+    "candidate_actions_all": [
+      "SET_DISJOINT_LEFT_D2"
+    ],
+    "candidate_actions_nonoverlap": [],
+    "candidate_tactics_all": [
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_tactics_nonoverlap": [],
+    "overlap_family": "RC4B",
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (L=Set.disjoint_left); expected reproduction/NEW WIN; overlap=RC4B",
+    "evidence_lemma": "Set.disjoint_left",
+    "overlaps_rc4b": true
+  },
+  {
+    "full_name": "Set.disjoint_sUnion_right",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "@[simp] theorem disjoint_sUnion_right {s : Set α} {S : Set (Set α)} : Disjoint s (⋃₀S) ↔ ∀ t ∈ S, Disjoint s t",
+    "gate_should_fire_all": true,
+    "gate_should_fire_nonoverlap": false,
+    "candidate_actions_all": [
+      "SET_DISJOINT_LEFT_D2"
+    ],
+    "candidate_actions_nonoverlap": [],
+    "candidate_tactics_all": [
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_tactics_nonoverlap": [],
+    "overlap_family": "RC4B",
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (L=Set.disjoint_left); expected reproduction/NEW WIN; overlap=RC4B",
+    "evidence_lemma": "Set.disjoint_left",
+    "overlaps_rc4b": true
+  }
+]

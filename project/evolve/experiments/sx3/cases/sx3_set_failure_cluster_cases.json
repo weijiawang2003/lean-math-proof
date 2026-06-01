@@ -1,0 +1,139 @@
+{
+  "name": "sx3_set_failure_cluster_cases",
+  "description": "General (non-ite) Set failures: SF2 selected + frontier equality.",
+  "provenance": "sf2 selected_cases (general) + sf1 frontier_with_paths",
+  "cases": [
+    {
+      "full_name": "Set.diff_singleton_subset_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "cluster_sf2",
+      "role": "set_cluster_failure",
+      "shape": "set_subset_iff",
+      "known_rc2_status_finished": null,
+      "note": "rw-bridge source",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.pair_eq_pair_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "cluster_sf2",
+      "role": "set_cluster_failure",
+      "shape": "set_iff",
+      "known_rc2_status_finished": null,
+      "note": "sf2 win: simp[...]<;>aesop (depth-2)",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.subset_insert_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "cluster_sf2",
+      "role": "set_cluster_failure",
+      "shape": "set_iff",
+      "known_rc2_status_finished": null,
+      "note": "sf2 UNSOLVED",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.subset_singleton_iff_eq",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "cluster_sf2",
+      "role": "set_cluster_failure",
+      "shape": "set_iff",
+      "known_rc2_status_finished": null,
+      "note": "sf2 UNSOLVED",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.union_empty_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "cluster_sf2",
+      "role": "set_cluster_failure",
+      "shape": "set_iff",
+      "known_rc2_status_finished": null,
+      "note": "rw-bridge source",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.antitoneOn_iff_antitone",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "cluster_sf2",
+      "role": "set_cluster_failure",
+      "shape": "set_iff",
+      "known_rc2_status_finished": null,
+      "note": "simp[Antitone,AntitoneOn] source",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.ssubset_singleton_iff",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "cluster_sf2",
+      "role": "set_cluster_failure",
+      "shape": "set_iff",
+      "known_rc2_status_finished": null,
+      "note": "rw-bridge source",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.diff_union_inter",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "cluster_frontier",
+      "role": "set_cluster_failure",
+      "shape": "set_equality",
+      "known_rc2_status_finished": null,
+      "note": "set equality",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.insert_diff_of_mem",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "cluster_frontier",
+      "role": "set_cluster_failure",
+      "shape": "set_equality",
+      "known_rc2_status_finished": null,
+      "note": "set equality, hyp",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.insert_diff_eq_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "cluster_frontier",
+      "role": "set_cluster_failure",
+      "shape": "set_equality",
+      "known_rc2_status_finished": null,
+      "note": "set equality, hyp",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.pair_diff_left",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "cluster_frontier",
+      "role": "set_cluster_failure",
+      "shape": "set_equality",
+      "known_rc2_status_finished": null,
+      "note": "set equality, hyp",
+      "exclude_reason": null
+    },
+    {
+      "full_name": "Set.powerset_singleton",
+      "file_path": "Mathlib/Data/Set/Basic.lean",
+      "namespace": "Set",
+      "source": "cluster_frontier",
+      "role": "set_cluster_failure",
+      "shape": "set_equality",
+      "known_rc2_status_finished": null,
+      "note": "set equality",
+      "exclude_reason": null
+    }
+  ]
+}

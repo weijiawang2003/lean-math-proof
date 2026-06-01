@@ -1,0 +1,211 @@
+[
+  {
+    "full_name": "Multiset.disjoint_add_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_add_left {s t u : Multiset α} : Disjoint (s + t) u ↔ Disjoint s u ∧ Disjoint t u",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (Multiset.disjoint_left); expected reproduction/NEW WIN"
+  },
+  {
+    "full_name": "Multiset.disjoint_cons_left",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem disjoint_cons_left {a : α} {s t : Multiset α} : Disjoint (a ::ₘ s) t ↔ a ∉ t ∧ Disjoint s t",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (Multiset.disjoint_left); expected reproduction/NEW WIN"
+  },
+  {
+    "full_name": "Multiset.singleton_disjoint",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem singleton_disjoint {l : Multiset α} {a : α} : Disjoint {a} l ↔ a ∉ l",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (Multiset.disjoint_left); expected reproduction/NEW WIN"
+  },
+  {
+    "full_name": "Multiset.zero_disjoint",
+    "file_path": "Mathlib/Data/Multiset/Basic.lean",
+    "namespace": "Multiset",
+    "goal_text": "@[simp] theorem zero_disjoint (l : Multiset α) : Disjoint 0 l | a => (not_mem_nil a).elim #align multiset.zero_disjoint Multiset.zero_disjoint @[simp] theorem singleton_disjoint {l : Multiset α} {a : α} : Disjoint {a} l ↔ a ∉ l",
+    "gate_should_fire": true,
+    "bridge_namespace": "Multiset",
+    "bridge_lemma": "Multiset.disjoint_left",
+    "candidate_tactics": [
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "MULTISET_DISJOINT_LEFT_SIMP",
+      "MULTISET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (Multiset.disjoint_left); expected reproduction/NEW WIN"
+  },
+  {
+    "full_name": "Set.disjoint_iUnion_left",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "@[simp] theorem disjoint_iUnion_left {ι : Sort*} {s : ι → Set α} : Disjoint (⋃ i, s i) t ↔ ∀ i, Disjoint (s i) t",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (Set.disjoint_left); expected reproduction/NEW WIN"
+  },
+  {
+    "full_name": "Set.disjoint_iUnion_right",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "@[simp] theorem disjoint_iUnion_right {ι : Sort*} {s : ι → Set α} : Disjoint t (⋃ i, s i) ↔ ∀ i, Disjoint t (s i)",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (Set.disjoint_left); expected reproduction/NEW WIN"
+  },
+  {
+    "full_name": "Set.disjoint_iff_forall_ne",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "lemma disjoint_iff_forall_ne : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ s → ∀ ⦃b⦄, b ∈ t → a ≠ b",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (Set.disjoint_left); expected reproduction/NEW WIN"
+  },
+  {
+    "full_name": "Set.disjoint_right",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "theorem disjoint_right : Disjoint s t ↔ ∀ ⦃a⦄, a ∈ t → a ∉ s",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (Set.disjoint_left); expected reproduction/NEW WIN"
+  },
+  {
+    "full_name": "Set.disjoint_sUnion_left",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "@[simp] theorem disjoint_sUnion_left {S : Set (Set α)} {t : Set α} : Disjoint (⋃₀S) t ↔ ∀ s ∈ S, Disjoint s t",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (Set.disjoint_left); expected reproduction/NEW WIN"
+  },
+  {
+    "full_name": "Set.disjoint_sUnion_right",
+    "file_path": "Mathlib/Data/Set/Lattice.lean",
+    "namespace": "Set",
+    "goal_text": "@[simp] theorem disjoint_sUnion_right {s : Set α} {S : Set (Set α)} : Disjoint s (⋃₀S) ↔ ∀ t ∈ S, Disjoint s t",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (Set.disjoint_left); expected reproduction/NEW WIN"
+  },
+  {
+    "full_name": "Set.disjoint_singleton_left",
+    "file_path": "Mathlib/Data/Set/Basic.lean",
+    "namespace": "Set",
+    "goal_text": "lemma disjoint_singleton_left : Disjoint {a} s ↔ a ∉ s",
+    "gate_should_fire": true,
+    "bridge_namespace": "Set",
+    "bridge_lemma": "Set.disjoint_left",
+    "candidate_tactics": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop"
+    ],
+    "candidate_actions": [
+      "SET_DISJOINT_LEFT_SIMP",
+      "SET_DISJOINT_LEFT_SIMP_AESOP"
+    ],
+    "rc2_status_hint": "failed",
+    "expected_behavior": "gate fires (Set.disjoint_left); expected reproduction/NEW WIN"
+  }
+]

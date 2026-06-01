@@ -1,0 +1,134 @@
+{
+  "generated_by": "scripts/tr4_error_analysis.py",
+  "model": "hgb",
+  "false_positives": {
+    "top50_failures": 37,
+    "by_outcome": {
+      "proof_failed": 35,
+      "unknown_name": 2
+    },
+    "by_family": {
+      "d2_simp_aesop": 8,
+      "d1_simp_lemma": 10,
+      "d2_rw_aesop": 1,
+      "d2_simp_simpall": 7,
+      "def_unfold_simp": 6,
+      "aesop_add_simp": 1,
+      "d1_aesop": 1,
+      "d2_ext_simp": 1,
+      "d1_tofinset_simp": 2
+    },
+    "unknown_name_in_top50": 2
+  },
+  "false_negatives": {
+    "successes": 23,
+    "ranked_below_100": 10,
+    "worst": [
+      {
+        "full_name": "List.toFinset_eq",
+        "tactic": "simp [Multiset.toFinset_eq]",
+        "family": "d1_simp_lemma",
+        "global_rank": 4574
+      },
+      {
+        "full_name": "List.toFinset.ext_iff",
+        "tactic": "simp [Finset.ext_iff]",
+        "family": "d1_simp_lemma",
+        "global_rank": 4330
+      },
+      {
+        "full_name": "Set.Nonempty.subset_pair_iff_eq",
+        "tactic": "simp [Set.subset_pair_iff_eq] <;> aesop",
+        "family": "d2_simp_aesop",
+        "global_rank": 3664
+      },
+      {
+        "full_name": "Finset.mem_disjUnion",
+        "tactic": "simp [Finset.disjUnion]",
+        "family": "def_unfold_simp",
+        "global_rank": 3513
+      },
+      {
+        "full_name": "Finset.mem_disjUnion",
+        "tactic": "simp [Finset.disjUnion]",
+        "family": "def_unfold_simp",
+        "global_rank": 3368
+      },
+      {
+        "full_name": "Set.Nonempty.subset_pair_iff_eq",
+        "tactic": "aesop (add simp [Set.subset_pair_iff_eq])",
+        "family": "aesop_add_simp",
+        "global_rank": 2372
+      },
+      {
+        "full_name": "Set.compl_union_self",
+        "tactic": "simp [Set.union_eq_compl_compl_inter_compl]",
+        "family": "d1_simp_lemma",
+        "global_rank": 1899
+      },
+      {
+        "full_name": "Prop.compl_singleton",
+        "tactic": "aesop",
+        "family": "d1_aesop",
+        "global_rank": 437
+      },
+      {
+        "full_name": "Set.disjoint_singleton_left",
+        "tactic": "simp [Set.disjoint_left]",
+        "family": "d1_simp_lemma",
+        "global_rank": 249
+      },
+      {
+        "full_name": "Set.disjoint_iff_forall_ne",
+        "tactic": "simp [Set.disjoint_left] <;> aesop",
+        "family": "d2_simp_aesop",
+        "global_rank": 214
+      }
+    ]
+  },
+  "imbalance": {
+    "num_examples": 4737,
+    "num_positive": 23,
+    "positive_rate": 0.00486,
+    "positives_by_namespace": {
+      "Set": 18,
+      "Prop": 1,
+      "Finset": 2,
+      "List": 2
+    },
+    "positives_by_family": {
+      "d2_simp_aesop": 3,
+      "def_unfold_simp": 14,
+      "d1_aesop": 1,
+      "d1_simp_lemma": 4,
+      "aesop_add_simp": 1
+    }
+  },
+  "generalization": {
+    "by_theorem": {
+      "pr_auc": 0.5216,
+      "roc_auc": 0.7745
+    },
+    "by_namespace": {
+      "pr_auc": 0.0079,
+      "roc_auc": 0.6279
+    },
+    "by_cluster": {
+      "pr_auc": 0.3357,
+      "roc_auc": 0.7502
+    }
+  },
+  "leakage": {
+    "oof_by_theorem_pr_auc": 0.5216,
+    "oof_by_namespace_pr_auc": 0.0079,
+    "oof_by_cluster_pr_auc": 0.3357,
+    "interpretation": "Strong by-theorem but weak by-namespace PR-AUC => the ranker relies on namespace/family-surface cues that do NOT transfer to a held-out namespace (same gap as TR1). Within-distribution probe reduction is real; cross-namespace transfer is not established."
+  },
+  "budget_decision": "RANKER_USEFUL_FOR_PROBE_REDUCTION",
+  "recommendations": [
+    "Probe reduction is usable WITHIN seen namespaces (Set/Finset/List); do NOT assume transfer to an unseen namespace — collect positives there first.",
+    "Collect more positives via RC4B (Set.disjoint_left) and RC4C (d2_simp_aesop) validation before retraining — positives (23) and namespaces with positives (4) are the binding constraint, not model capacity.",
+    "A better/scope-aware retrieval index (cut the unknown-name failures that dominate false positives: 2/50 top-ranked failures) likely helps more than further model tuning.",
+    "Nat has 0 positives despite many failures — retrieval-aware programs do not address Nat arithmetic depth gaps; route those to a depth/search experiment."
+  ]
+}

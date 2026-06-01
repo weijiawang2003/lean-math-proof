@@ -1,0 +1,24 @@
+{
+  "rc2_baseline": "single-shot simp[Set.ite] + base policy (controls)",
+  "rc3_candidate": "RC2 + gated depth-2 'simp [Set.ite] <;> aesop'",
+  "equivalence_on_non_gated": "RC2 ≡ candidate on every theorem where the Set.ite gate does not fire OR where RC2 already solves it; the candidate only adds solves where the gated sequence fires and RC2's single-shot/baselines fail.",
+  "delta_fresh_wins": [
+    "Set.ite_inter_inter"
+  ],
+  "delta_deferred_reproduced": [
+    "Set.ite_compl",
+    "Set.ite_inter",
+    "Set.ite_inter_compl_self",
+    "Set.ite_inter_self"
+  ],
+  "num_new_fresh": 1,
+  "num_reproduced_deferred": 4,
+  "off_gate_emissions": 0,
+  "regressions": 0,
+  "verdict_inputs": {
+    "positive_fresh_delta": true,
+    "reproduced_all_deferred4": true,
+    "zero_off_gate": true,
+    "zero_regressions": true
+  }
+}

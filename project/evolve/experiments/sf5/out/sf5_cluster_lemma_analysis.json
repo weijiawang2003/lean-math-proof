@@ -1,0 +1,222 @@
+{
+  "generated_by": "scripts/sf5_cluster_lemma_analysis.py",
+  "num_clusters": 3,
+  "clusters": [
+    {
+      "cluster_id": "Set__iff__iff",
+      "size": 16,
+      "targets": [
+        "Set.Nonempty.subset_pair_iff_eq",
+        "Set.antitoneOn_iff_antitone",
+        "Set.diff_singleton_subset_iff",
+        "Set.monotoneOn_iff_monotone",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_le_le",
+        "Set.not_monotoneOn_not_antitoneOn_iff_exists_lt_lt",
+        "Set.pair_eq_pair_iff",
+        "Set.ssubset_iff_insert",
+        "Set.ssubset_iff_sdiff_singleton",
+        "Set.ssubset_singleton_iff",
+        "Set.strictAntiOn_iff_strictAnti",
+        "Set.strictMonoOn_iff_strictMono",
+        "Set.subset_insert_iff",
+        "Set.subset_pair_iff_eq",
+        "Set.subset_singleton_iff_eq",
+        "Set.union_empty_iff"
+      ],
+      "shared_retrieved_lemmas": [
+        {
+          "lemma": "Set.singleton_subset_singleton",
+          "appears_in_targets": 7
+        },
+        {
+          "lemma": "Set.subset_singleton_iff",
+          "appears_in_targets": 7
+        },
+        {
+          "lemma": "Set.singleton_subset_iff",
+          "appears_in_targets": 7
+        },
+        {
+          "lemma": "Set.subset_singleton_iff_eq",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.mem_sep_iff",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.mem_inter_iff",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.not_not_mem",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.not_disjoint_iff",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.diff_singleton_sSubset",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.antitoneOn_iff_antitone",
+          "appears_in_targets": 5
+        },
+        {
+          "lemma": "Set.subset_insert_iff",
+          "appears_in_targets": 4
+        },
+        {
+          "lemma": "Set.ne_univ_iff_exists_not_mem",
+          "appears_in_targets": 4
+        },
+        {
+          "lemma": "Set.subset_insert_diff_singleton",
+          "appears_in_targets": 4
+        },
+        {
+          "lemma": "Set.ssubset_iff_sdiff_singleton",
+          "appears_in_targets": 4
+        },
+        {
+          "lemma": "Set.diff_singleton_subset_iff",
+          "appears_in_targets": 4
+        }
+      ],
+      "winning_lemmas": [
+        {
+          "lemma": "Set.subset_pair_iff_eq",
+          "count": 1
+        },
+        {
+          "lemma": "Antitone+AntitoneOn",
+          "count": 1
+        },
+        {
+          "lemma": "Monotone+MonotoneOn",
+          "count": 1
+        },
+        {
+          "lemma": "StrictAnti+StrictAntiOn",
+          "count": 1
+        },
+        {
+          "lemma": "StrictMono+StrictMonoOn",
+          "count": 1
+        }
+      ],
+      "classification_histogram": {
+        "RETRIEVAL_ROUTING_GAP": 1,
+        "EXISTING_LEMMA_GAP": 4,
+        "PROOF_DEPTH_GAP": 11
+      },
+      "retrieval_wins": 5,
+      "existing_lemma_gap_count": 4,
+      "retrieval_routing_gap_count": 1,
+      "true_missing_bridge_candidates": 0,
+      "proof_depth_gap_count": 11,
+      "recommendation": "deeper_search"
+    },
+    {
+      "cluster_id": "Set__ite_if__subset",
+      "size": 3,
+      "targets": [
+        "Set.ite_eq_of_subset_left",
+        "Set.ite_eq_of_subset_right",
+        "Set.subset_ite"
+      ],
+      "shared_retrieved_lemmas": [
+        {
+          "lemma": "Set.inter_subset_ite",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_inter",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_univ",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_mono",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_right",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_subset_union",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_inter_self",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_inter_inter",
+          "appears_in_targets": 3
+        },
+        {
+          "lemma": "Set.ite_eq_of_subset_right",
+          "appears_in_targets": 2
+        },
+        {
+          "lemma": "Set.ite_inter_of_inter_eq",
+          "appears_in_targets": 2
+        },
+        {
+          "lemma": "Set.preimage_ite",
+          "appears_in_targets": 2
+        },
+        {
+          "lemma": "Set.subset_ite",
+          "appears_in_targets": 2
+        },
+        {
+          "lemma": "Set.ite_same",
+          "appears_in_targets": 2
+        },
+        {
+          "lemma": "Set.iUnion_ite",
+          "appears_in_targets": 2
+        }
+      ],
+      "winning_lemmas": [],
+      "classification_histogram": {
+        "PROOF_DEPTH_GAP": 3
+      },
+      "retrieval_wins": 0,
+      "existing_lemma_gap_count": 0,
+      "retrieval_routing_gap_count": 0,
+      "true_missing_bridge_candidates": 0,
+      "proof_depth_gap_count": 3,
+      "recommendation": "deeper_search"
+    },
+    {
+      "cluster_id": "Multiset__iff__iff",
+      "size": 1,
+      "targets": [
+        "Multiset.toFinset_eq_singleton_iff"
+      ],
+      "shared_retrieved_lemmas": [],
+      "winning_lemmas": [],
+      "classification_histogram": {
+        "PROOF_DEPTH_GAP": 1
+      },
+      "retrieval_wins": 0,
+      "existing_lemma_gap_count": 0,
+      "retrieval_routing_gap_count": 0,
+      "true_missing_bridge_candidates": 0,
+      "proof_depth_gap_count": 1,
+      "recommendation": "deeper_search"
+    }
+  ]
+}
