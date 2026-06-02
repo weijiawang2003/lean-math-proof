@@ -1,0 +1,202 @@
+{
+  "generated_by": "scripts/rc4bc_compare_candidates.py",
+  "note": "Pure read-only comparison over the committed RC4B/RC4C validation record (commit 8f9d08e). No live evaluation, no artifact mutation. Composition is a separate later task and is NOT performed here.",
+  "rc4b": {
+    "candidate": "RC4B",
+    "root": "project/evolve/experiments/rc4_candidates/disjoint_left_bridge",
+    "classification_histogram": {
+      "TRUE_DISJOINT_LEFT_BRIDGE_WIN": 16
+    },
+    "true_delta_total": 16,
+    "true_delta_pure": 16,
+    "true_delta_overlap_rc4b": 0,
+    "composition_credited": 16,
+    "mechanism": "simp [<NS>.disjoint_left]  (optionally  <;> aesop) ; namespace-parametric over {Set, Multiset}",
+    "num_known_wins": 11,
+    "fresh_holdout_wins": 8,
+    "reproduction_wins": 3,
+    "fresh_holdout_rate": 0.727,
+    "candidate_probe": {
+      "num_theorems": 103,
+      "rc2_solved": 38,
+      "raw_delta": 16,
+      "raw_delta_nonoverlap": null,
+      "gate_emissions": 39,
+      "emitted_and_solved": 16,
+      "emitted_and_failed": 18
+    },
+    "namespace_coverage_all": {
+      "Set": 7,
+      "Multiset": 9
+    },
+    "namespace_coverage_residue": {
+      "Set": 7,
+      "Multiset": 9
+    },
+    "off_gate_emissions": 0,
+    "off_gate_emissions_nonoverlap": 0,
+    "regressions": 0,
+    "offgate_verdict": "OFFGATE_CLEAN",
+    "deterministic": true,
+    "determinism_hash": "7574d704d3505a47",
+    "determinism_hash_match": true,
+    "schema_smoke": {
+      "known_wins_total": 11,
+      "known_wins_solved_by_wrapper": 10,
+      "no_regression": true,
+      "reproduces_wins": true
+    },
+    "wrapper_added_gated_actions": [
+      "simp [Set.disjoint_left]",
+      "simp [Set.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_left]",
+      "simp [Multiset.disjoint_left] <;> aesop"
+    ],
+    "wrapper_added_action_count": 4
+  },
+  "rc4c": {
+    "candidate": "RC4C",
+    "root": "project/evolve/experiments/rc4_candidates/d2_simp_aesop",
+    "classification_histogram": {
+      "SIMP_ONLY_DUPLICATE": 4,
+      "TRUE_D2_SIMP_AESOP_WIN": 7,
+      "TRUE_D2_SIMP_AESOP_OVERLAP_RC4B": 8
+    },
+    "true_delta_total": 15,
+    "true_delta_pure": 7,
+    "true_delta_overlap_rc4b": 8,
+    "composition_credited": 15,
+    "mechanism": "simp [L] <;> aesop over a small allowlist of retrieved lemmas L (per-lemma narrow gate)",
+    "num_known_wins": 12,
+    "fresh_holdout_wins": 9,
+    "reproduction_wins": 3,
+    "fresh_holdout_rate": 0.75,
+    "candidate_probe": {
+      "num_theorems": 109,
+      "rc2_solved": 38,
+      "raw_delta": 19,
+      "raw_delta_nonoverlap": 11,
+      "gate_emissions": 42,
+      "emitted_and_solved": 19,
+      "emitted_and_failed": 19
+    },
+    "namespace_coverage_all": {
+      "Finset": 1,
+      "List": 2,
+      "Multiset": 9,
+      "Set": 7
+    },
+    "namespace_coverage_residue": {
+      "Finset": 1,
+      "List": 2,
+      "Multiset": 7,
+      "Set": 1
+    },
+    "off_gate_emissions": 0,
+    "off_gate_emissions_nonoverlap": 0,
+    "regressions": 0,
+    "offgate_verdict": "OFFGATE_CLEAN",
+    "deterministic": true,
+    "determinism_hash": "620a7e9d5dcdf044",
+    "determinism_hash_match": true,
+    "schema_smoke": {
+      "known_wins_total": 12,
+      "known_wins_solved_by_wrapper": 0,
+      "no_regression": true,
+      "reproduces_wins": false
+    },
+    "wrapper_added_gated_actions": [
+      "simp [Set.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_left] <;> aesop",
+      "simp [Multiset.disjoint_right] <;> aesop",
+      "simp [Set.subset_pair_iff_eq] <;> aesop",
+      "simp [Finset.biUnion_subset] <;> aesop",
+      "simp [List.forall_iff_forall_mem] <;> aesop"
+    ],
+    "wrapper_added_action_count": 6
+  },
+  "readiness": {
+    "rc4b": {
+      "checks": {
+        "has_true_delta": true,
+        "evidence_replays_probe": true,
+        "zero_regressions": true,
+        "zero_offgate": true,
+        "deterministic": true,
+        "wrapper_smoke_no_regression": true
+      },
+      "ready": true,
+      "caveats": [],
+      "committed_decision": "RC4B_CANDIDATE_CONFIRMED"
+    },
+    "rc4c": {
+      "checks": {
+        "has_true_delta": true,
+        "evidence_replays_probe": true,
+        "zero_regressions": true,
+        "zero_offgate": true,
+        "deterministic": true,
+        "wrapper_smoke_no_regression": true
+      },
+      "ready": true,
+      "caveats": [
+        "production-search wrapper smoke reproduces 0 known wins under the deployed (fused `simp [L] <;> aesop`) form — deploy as the bare `simp [L]` enabling action (RC4B-style) so the search's own aesop closes; documented in RC4D."
+      ],
+      "committed_decision": "RC4C_CONFIRMED_WITH_RC4B_OVERLAP"
+    }
+  },
+  "comparison": {
+    "true_delta": {
+      "RC4B": 16,
+      "RC4C_total": 15,
+      "RC4C_pure_nonoverlap": 7,
+      "RC4C_overlap_rc4b": 8
+    },
+    "fresh_holdout_rate": {
+      "RC4B": 0.727,
+      "RC4C": 0.75
+    },
+    "fresh_holdout_wins": {
+      "RC4B": 8,
+      "RC4C": 9
+    },
+    "offgate_risk": {
+      "RC4B": 0,
+      "RC4C": 0
+    },
+    "regression_risk": {
+      "RC4B": 0,
+      "RC4C": 0
+    },
+    "namespace_coverage_all": {
+      "RC4B": {
+        "Set": 7,
+        "Multiset": 9
+      },
+      "RC4C": {
+        "Finset": 1,
+        "List": 2,
+        "Multiset": 9,
+        "Set": 7
+      }
+    },
+    "wrapper_added_action_count": {
+      "RC4B": 4,
+      "RC4C": 6
+    },
+    "deterministic": {
+      "RC4B": true,
+      "RC4C": true
+    }
+  },
+  "rc4c_residue_actions_beyond_rc4b": [
+    "simp [Multiset.disjoint_right] <;> aesop",
+    "simp [Set.subset_pair_iff_eq] <;> aesop",
+    "simp [Finset.biUnion_subset] <;> aesop",
+    "simp [List.forall_iff_forall_mem] <;> aesop"
+  ],
+  "overlap_note": "RC4C overlaps RC4B on 8 wins (`disjoint_left` is literally an RC4B action); RC4C's net contribution beyond RC4B is 7 pure depth-2 wins via the residue actions ['simp [Multiset.disjoint_right] <;> aesop', 'simp [Set.subset_pair_iff_eq] <;> aesop', 'simp [Finset.biUnion_subset] <;> aesop', 'simp [List.forall_iff_forall_mem] <;> aesop'].",
+  "decision": "BOTH_READY_FOR_COMPOSITION",
+  "decision_rationale": "Both candidates clear every READY gate (>=1 TRUE_DELTA, probe evidence replay, 0 regressions, 0 off-gate, deterministic, wrapper-smoke no-regression). RC4C carries a deployment caveat (deploy bare `simp [L]`, not the fused combinator) and overlaps RC4B; its additive value for an RC4 composition is the residue actions only.",
+  "composition_guidance": "If composed (separate task): order the gate as [RC4A, RC4B, RC4C_residue] so the namespace-parametric disjoint_left bridge (RC4B) is attributed before the depth-2 residue; de-duplicate the RC4B/RC4C overlap to avoid double-counting (8 Multiset/Set disjoint wins). This matches the already-committed RC4D composition."
+}
