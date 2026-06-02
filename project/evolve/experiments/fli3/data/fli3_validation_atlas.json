@@ -1,0 +1,82 @@
+{
+  "generated_by": "scripts/fli3_write_validation_atlas.py",
+  "validation_sets": {
+    "num_items": 55
+  },
+  "literal_rc2": {
+    "solved": 16,
+    "failed": 39
+  },
+  "candidate_wins": 7,
+  "robust_wins": 7,
+  "true_fli3_delta": 7,
+  "true_delta_by_family": {
+    "LIST_DEF_UNFOLD": 2,
+    "FINSET_CARD_BRIDGE": 1,
+    "FINSET_MEM_DEF_UNFOLD": 4
+  },
+  "rescue_replay_reproduced": 6,
+  "family_holdout_wins": 1,
+  "safety_verdict": "FLI3_SAFE",
+  "offgate_emissions": 0,
+  "regressions": 0,
+  "reproduction_rate": 1.0,
+  "best_examples": [
+    {
+      "theorem": "List.bidirectionalRec_nil",
+      "family": "LIST_DEF_UNFOLD",
+      "lemma": "List.bidirectionalRec",
+      "tactic": "simp [List.bidirectionalRec]",
+      "set": "family_holdout",
+      "explanation": "literal RC2 failed; gate fired (LIST_DEF_UNFOLD); `simp [List.bidirectionalRec]` deploying `List.bidirectionalRec` solves; controls [] failed; robust; non-vacuous"
+    },
+    {
+      "theorem": "Finset.card_le_one_iff",
+      "family": "FINSET_CARD_BRIDGE",
+      "lemma": "Finset.card_le_one",
+      "tactic": "simp [Finset.card_le_one] <;> aesop",
+      "set": "rescue_replay",
+      "explanation": "literal RC2 failed; gate fired (FINSET_CARD_BRIDGE); `simp [Finset.card_le_one] <;> aesop` deploying `Finset.card_le_one` solves; controls [] failed; robust; non-vacuous"
+    },
+    {
+      "theorem": "Finset.card_subtype",
+      "family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.subtype",
+      "tactic": "simp [Finset.subtype]",
+      "set": "rescue_replay",
+      "explanation": "literal RC2 failed; gate fired (FINSET_MEM_DEF_UNFOLD); `simp [Finset.subtype]` deploying `Finset.subtype` solves; controls [] failed; robust; non-vacuous"
+    },
+    {
+      "theorem": "Finset.mem_filterMap",
+      "family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.filterMap",
+      "tactic": "simp [Finset.filterMap]",
+      "set": "rescue_replay",
+      "explanation": "literal RC2 failed; gate fired (FINSET_MEM_DEF_UNFOLD); `simp [Finset.filterMap]` deploying `Finset.filterMap` solves; controls [] failed; robust; non-vacuous"
+    },
+    {
+      "theorem": "Finset.mem_map",
+      "family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.map",
+      "tactic": "simp [Finset.map]",
+      "set": "rescue_replay",
+      "explanation": "literal RC2 failed; gate fired (FINSET_MEM_DEF_UNFOLD); `simp [Finset.map]` deploying `Finset.map` solves; controls [] failed; robust; non-vacuous"
+    },
+    {
+      "theorem": "Finset.mem_preimage",
+      "family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.preimage",
+      "tactic": "simp [Finset.preimage]",
+      "set": "rescue_replay",
+      "explanation": "literal RC2 failed; gate fired (FINSET_MEM_DEF_UNFOLD); `simp [Finset.preimage]` deploying `Finset.preimage` solves; controls [] failed; robust; non-vacuous"
+    },
+    {
+      "theorem": "List.bidirectionalRec_singleton",
+      "family": "LIST_DEF_UNFOLD",
+      "lemma": "List.bidirectionalRec",
+      "tactic": "simp [List.bidirectionalRec]",
+      "set": "rescue_replay",
+      "explanation": "literal RC2 failed; gate fired (LIST_DEF_UNFOLD); `simp [List.bidirectionalRec]` deploying `List.bidirectionalRec` solves; controls [] failed; robust; non-vacuous"
+    }
+  ]
+}

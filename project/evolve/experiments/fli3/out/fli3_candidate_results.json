@@ -1,0 +1,1305 @@
+{
+  "generated_by": "scripts/fli3_run_candidate_eval.py",
+  "num_items": 55,
+  "gate_fired": 24,
+  "candidate_wins": 7,
+  "robust_wins": 7,
+  "rescue_replay_wins": 6,
+  "family_holdout_wins": 1,
+  "offgate_emissions": 0,
+  "regressions": 0,
+  "unknown_name_or_import": 0,
+  "win_theorems": [
+    "Finset.card_le_one_iff",
+    "Finset.card_subtype",
+    "Finset.mem_filterMap",
+    "Finset.mem_map",
+    "Finset.mem_preimage",
+    "List.bidirectionalRec_nil",
+    "List.bidirectionalRec_singleton"
+  ],
+  "results": [
+    {
+      "theorem": "Finset.Insert.comm",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.attach_eq_empty_iff",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.coe_disjUnion",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.coe_eq_empty",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.coe_eq_singleton",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.coe_insert",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.coe_subset_singleton",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.cons_eq_insert",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.card_attach",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "lemma": "Finset.card",
+      "gate": true,
+      "gate_reason": "Finset + card + Finset.card_* lemma with constant overlap",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.card]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.card] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t : Finset α\na b : α\n⊢ s.attach.card = s.card",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.card_bij",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "lemma": "Finset.card_nbij",
+      "gate": true,
+      "gate_reason": "Finset + card + Finset.card_* lemma with constant overlap",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.card_nbij]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.card_nbij] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t✝ u : Finset α\nf : α → β\nn : ℕ\nt : Finset β\ni : (a : α) → a ∈ s → β\nhi : ∀ (a : α) (ha : a ∈ s), i a ha ∈ t\ni_inj : ∀ (a₁ : α) (ha₁ : a₁ ∈ s) (a₂ : α) (ha₂ : ",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.card_bij'",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "lemma": "Finset.card_nbij'",
+      "gate": true,
+      "gate_reason": "Finset + card + Finset.card_* lemma with constant overlap",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.card_nbij']",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.card_nbij'] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t✝ u : Finset α\nf : α → β\nn : ℕ\nt : Finset β\ni : (a : α) → a ∈ s → β\nj : (a : β) → a ∈ t → α\nhi : ∀ (a : α) (ha : a ∈ s), i a ha ∈ t\nhj : ∀ (a : β) (ha : a ∈ t",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.card_bijective",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "lemma": "Finset.card_equiv",
+      "gate": true,
+      "gate_reason": "Finset + card + Finset.card_* lemma with constant overlap",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.card_equiv]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.card_equiv] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t✝ u : Finset α\nf : α → β\nn : ℕ\nt : Finset β\ne : α → β\nhe : Bijective e\nhst : ∀ (i : α), i ∈ s ↔ e i ∈ t\n⊢ s.card = t.card",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.card_eq_of_bijective",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "lemma": "Finset.card_le_card_of_injOn",
+      "gate": true,
+      "gate_reason": "Finset + card + Finset.card_* lemma with constant overlap",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.card_le_card_of_injOn]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.card_le_card_of_injOn] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf✝ : α → β\nn : ℕ\nf : (i : ℕ) → i < n → α\nhf : ∀ a ∈ s, ∃ i, ∃ (h : i < n), f i h = a\nhf' : ∀ (i : ℕ) (h : i < n), f i h ∈ s\nf_inj : ∀ (i j : ℕ) ",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.card_eq_one",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "lemma": "Finset.card_le_one_iff_subsingleton_coe",
+      "gate": true,
+      "gate_reason": "Finset + card + Finset.card_* lemma with constant overlap",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.card_le_one_iff_subsingleton_coe]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.card_le_one_iff_subsingleton_coe] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf : α → β\nn : ℕ\n⊢ s.card = 1 ↔ ∃ a, s = {a}",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.card_eq_succ",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "lemma": "Finset.card_eq_two",
+      "gate": true,
+      "gate_reason": "Finset + card + Finset.card_* lemma with constant overlap",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.card_eq_two]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.card_eq_two] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf : α → β\nn : ℕ\ninst✝ : DecidableEq α\n⊢ s.card = n + 1 ↔ ∃ a t, a ∉ t ∧ insert a t = s ∧ t.card = n",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.exists_of_one_lt_card_pi",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "lemma": "Finset.exists_ne_of_one_lt_card",
+      "gate": true,
+      "gate_reason": "Finset + card + Finset.card_* lemma with constant overlap",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.exists_ne_of_one_lt_card]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.exists_ne_of_one_lt_card] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "α✝ : Type u_1\nβ : Type u_2\nR : Type u_3\ns✝ t u : Finset α✝\nf : α✝ → β\nn : ℕ\nι : Type u_4\nα : ι → Type u_5\ninst✝ : (i : ι) → DecidableEq (α i)\ns : Finset ((i : ι) → α i)\nh : 1 < s.card\n⊢ ∃ i, 1 < (imag",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.filterMap_mono",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.filterMap",
+      "gate": true,
+      "gate_reason": "Finset + filterMap + Finset.filterMap definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.filterMap]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nf : α → Option β\ns' s t : Finset α\nf_inj : ∀ (a a' : α), ∀ b ∈ f a, b ∈ f a' → a = a'\nh : s ⊆ t\n⊢ { val := Multiset.filterMap f s.val, nodup := ⋯ } ⊆ { val := Mu"
+        },
+        {
+          "tactic": "simp [Finset.filterMap] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nf : α → Option β\ns' s t : Finset α\nf_inj : ∀ (a a' : α), ∀ b ∈ f a, b ∈ f a' → a = a'\nh : s ⊆ t\n⊢ filterMap f s f_inj ⊆ filterMap f t f_inj",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.fin_map",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.map",
+      "gate": true,
+      "gate_reason": "Finset + map + Finset.map definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.map]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nn : ℕ\ns : Finset ℕ\n⊢ { val := Multiset.map (fun x => ↑x) (Finset.fin n s).val, nodup := ⋯ } = filter (fun x => x < n) s"
+        },
+        {
+          "tactic": "simp [Finset.map] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "ext x <;> simp [Finset.map]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": "case a\nα : Type u_1\nβ : Type u_2\nγ : Type u_3\nn : ℕ\ns : Finset ℕ\nx : ℕ\n⊢ (∃ a, ↑a ∈ s ∧ ↑a = x) ↔ x ∈ s ∧ x < n"
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nn : ℕ\ns : Finset ℕ\n⊢ map Fin.valEmbedding (Finset.fin n s) = filter (fun x => x < n) s",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.map_eq_of_subset",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.map",
+      "gate": true,
+      "gate_reason": "Finset + map + Finset.map definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.map]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf✝ : α → β\nn : ℕ\nf : α ↪ α\nhs : map f s ⊆ s\n⊢ { val := Multiset.map (⇑f) s.val, nodup := ⋯ } = s"
+        },
+        {
+          "tactic": "simp [Finset.map] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "ext x <;> simp [Finset.map]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": "case a\nα : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf✝ : α → β\nn : ℕ\nf : α ↪ α\nhs : map f s ⊆ s\nx : α\n⊢ (∃ a ∈ s, f a = x) ↔ x ∈ s"
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf✝ : α → β\nn : ℕ\nf : α ↪ α\nhs : map f s ⊆ s\n⊢ map f s = s",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.map_ofDual_max",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.map",
+      "gate": true,
+      "gate_reason": "Finset + map + Finset.map definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.map]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.map] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "ext x <;> simp [Finset.map]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "F : Type u_1\nα : Type u_2\nβ : Type u_3\nγ : Type u_4\nι : Type u_5\nκ : Type u_6\ninst✝ : LinearOrder α\ns✝ : Finset α\nH : s✝.Nonempty\nx : α\ns : Finset αᵒᵈ\n⊢ WithBot.map (⇑ofDual) s.max = (image (⇑ofDual) ",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.map_ofDual_min",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.map",
+      "gate": true,
+      "gate_reason": "Finset + map + Finset.map definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.map]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.map] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "ext x <;> simp [Finset.map]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "F : Type u_1\nα : Type u_2\nβ : Type u_3\nγ : Type u_4\nι : Type u_5\nκ : Type u_6\ninst✝ : LinearOrder α\ns✝ : Finset α\nH : s✝.Nonempty\nx : α\ns : Finset αᵒᵈ\n⊢ WithTop.map (⇑ofDual) s.min = (image (⇑ofDual) ",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.map_toDual_max",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.map",
+      "gate": true,
+      "gate_reason": "Finset + map + Finset.map definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.map]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.map] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "ext x <;> simp [Finset.map]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "F : Type u_1\nα : Type u_2\nβ : Type u_3\nγ : Type u_4\nι : Type u_5\nκ : Type u_6\ninst✝ : LinearOrder α\ns✝ : Finset α\nH : s✝.Nonempty\nx : α\ns : Finset α\n⊢ WithBot.map (⇑toDual) s.max = (image (⇑toDual) s)",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.map_toDual_min",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.map",
+      "gate": true,
+      "gate_reason": "Finset + map + Finset.map definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.map]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.map] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "ext x <;> simp [Finset.map]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "F : Type u_1\nα : Type u_2\nβ : Type u_3\nγ : Type u_4\nι : Type u_5\nκ : Type u_6\ninst✝ : LinearOrder α\ns✝ : Finset α\nH : s✝.Nonempty\nx : α\ns : Finset α\n⊢ WithTop.map (⇑toDual) s.min = (image (⇑toDual) s)",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.preimage_subset",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.map",
+      "gate": true,
+      "gate_reason": "Finset + map + Finset.map definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.map]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.map] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u\nβ : Type v\nι : Sort w\nγ : Type x\nf : α ↪ β\ns : Finset β\nt : Finset α\nhs : s ⊆ map f t\n⊢ s.preimage ⇑f ⋯ ⊆ t",
+      "setup_error": null
+    },
+    {
+      "theorem": "List.bidirectionalRec_cons_append",
+      "set": "family_holdout",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "lemma": "List.bidirectionalRec",
+      "gate": true,
+      "gate_reason": "List + bidirectionalRec definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [List.bidirectionalRec]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [List.bidirectionalRec] <;> aesop",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false,
+      "residual_before": "ι : Type u_1\nα : Type u\nβ : Type v\nγ : Type w\nl₁ l₂ : List α\nmotive : List α → Sort u_2\nnil : motive []\nsingleton : (a : α) → motive [a]\ncons_append : (a : α) → (l : List α) → (b : α) → motive l → mot",
+      "setup_error": null
+    },
+    {
+      "theorem": "List.bidirectionalRec_nil",
+      "set": "family_holdout",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "lemma": "List.bidirectionalRec",
+      "gate": true,
+      "gate_reason": "List + bidirectionalRec definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [List.bidirectionalRec]",
+          "solved": true,
+          "status": "solved",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [List.bidirectionalRec] <;> aesop",
+          "solved": true,
+          "status": "solved",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": true,
+      "winning_tactic": "simp [List.bidirectionalRec]",
+      "robust": true,
+      "is_offgate_emission": false,
+      "residual_before": "ι : Type u_1\nα : Type u\nβ : Type v\nγ : Type w\nl₁ l₂ : List α\nmotive : List α → Sort u_2\nnil : motive []\nsingleton : (a : α) → motive [a]\ncons_append : (a : α) → (l : List α) → (b : α) → motive l → mot",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.biUnion_mono",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.biUnion_nonempty",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.biUnion_subset_biUnion_of_subset_left",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.coe_subset_singleton",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.cons_subset_cons",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.disjoint_filter",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.erase_image_subset_image_erase",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.image_inter_subset",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.image_subset_image",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "List.bind_congr",
+      "set": "offgate_negative",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no List bidirectionalRec trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "List.bind_eq_bind",
+      "set": "offgate_negative",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no List bidirectionalRec trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "List.filter_comm",
+      "set": "offgate_negative",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no List bidirectionalRec trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "List.filter_eq_foldr",
+      "set": "offgate_negative",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no List bidirectionalRec trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "List.filter_false",
+      "set": "offgate_negative",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no List bidirectionalRec trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "List.filter_subset",
+      "set": "offgate_negative",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no List bidirectionalRec trigger",
+      "rc2_status": "failed",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.Nontrivial.erase_nonempty",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.attach_nonempty_iff",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.coe_empty",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.coe_eq_pair",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.coe_erase",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.coe_ssubset",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.coe_symmDiff",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.cons_sdiff_cons",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": null,
+      "gate": false,
+      "gate_reason": "no filterMap/map/preimage/subtype trigger",
+      "rc2_status": "solved",
+      "actions": [],
+      "control_solved": null,
+      "candidate_win": false,
+      "winning_tactic": null,
+      "robust": null,
+      "is_offgate_emission": false
+    },
+    {
+      "theorem": "Finset.card_le_one_iff",
+      "set": "rescue_replay",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "lemma": "Finset.card_le_one",
+      "gate": true,
+      "gate_reason": "Finset + card + Finset.card_* lemma with constant overlap",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.card_le_one]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf : α → β\nn : ℕ\n⊢ (∀ a ∈ s, ∀ b ∈ s, a = b) ↔ ∀ {a b : α}, a ∈ s → b ∈ s → a = b"
+        },
+        {
+          "tactic": "simp [Finset.card_le_one] <;> aesop",
+          "solved": true,
+          "status": "solved",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": true,
+      "winning_tactic": "simp [Finset.card_le_one] <;> aesop",
+      "robust": true,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf : α → β\nn : ℕ\n⊢ s.card ≤ 1 ↔ ∀ {a b : α}, a ∈ s → b ∈ s → a = b",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.card_subtype",
+      "set": "rescue_replay",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.subtype",
+      "gate": true,
+      "gate_reason": "Finset + subtype + Finset.subtype definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.subtype]",
+          "solved": true,
+          "status": "solved",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.subtype] <;> aesop",
+          "solved": true,
+          "status": "solved",
+          "residual_after": ""
+        },
+        {
+          "tactic": "ext x <;> simp [Finset.subtype]",
+          "solved": false,
+          "status": "failed",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": true,
+      "winning_tactic": "simp [Finset.subtype]",
+      "robust": true,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns✝ t u : Finset α\nf : α → β\nn : ℕ\np : α → Prop\ninst✝ : DecidablePred p\ns : Finset α\n⊢ (Finset.subtype p s).card = (filter p s).card",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.mem_filterMap",
+      "set": "rescue_replay",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.filterMap",
+      "gate": true,
+      "gate_reason": "Finset + filterMap + Finset.filterMap definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.filterMap]",
+          "solved": true,
+          "status": "solved",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.filterMap] <;> aesop",
+          "solved": true,
+          "status": "solved",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": true,
+      "winning_tactic": "simp [Finset.filterMap]",
+      "robust": true,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nf : α → Option β\ns' s t : Finset α\nf_inj : ∀ (a a' : α), ∀ b ∈ f a, b ∈ f a' → a = a'\nb : β\n⊢ b ∈ filterMap f s f_inj ↔ ∃ a ∈ s, f a = some b",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.mem_map",
+      "set": "rescue_replay",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.map",
+      "gate": true,
+      "gate_reason": "Finset + map + Finset.map definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.map]",
+          "solved": true,
+          "status": "solved",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.map] <;> aesop",
+          "solved": true,
+          "status": "solved",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": true,
+      "winning_tactic": "simp [Finset.map]",
+      "robust": true,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\nf : α ↪ β\ns : Finset α\nb : β\n⊢ b ∈ map f s ↔ ∃ a ∈ s, f a = b",
+      "setup_error": null
+    },
+    {
+      "theorem": "Finset.mem_preimage",
+      "set": "rescue_replay",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "lemma": "Finset.preimage",
+      "gate": true,
+      "gate_reason": "Finset + preimage + Finset.preimage definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [Finset.preimage]",
+          "solved": true,
+          "status": "solved",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [Finset.preimage] <;> aesop",
+          "solved": true,
+          "status": "solved",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": true,
+      "winning_tactic": "simp [Finset.preimage]",
+      "robust": true,
+      "is_offgate_emission": false,
+      "residual_before": "α : Type u\nβ : Type v\nι : Sort w\nγ : Type x\nf : α → β\ns : Finset β\nhf : InjOn f (f ⁻¹' ↑s)\nx : α\n⊢ x ∈ s.preimage f hf ↔ f x ∈ s",
+      "setup_error": null
+    },
+    {
+      "theorem": "List.bidirectionalRec_singleton",
+      "set": "rescue_replay",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "lemma": "List.bidirectionalRec",
+      "gate": true,
+      "gate_reason": "List + bidirectionalRec definition unfold",
+      "rc2_status": "failed",
+      "actions": [
+        {
+          "tactic": "simp [List.bidirectionalRec]",
+          "solved": true,
+          "status": "solved",
+          "residual_after": ""
+        },
+        {
+          "tactic": "simp [List.bidirectionalRec] <;> aesop",
+          "solved": true,
+          "status": "solved",
+          "residual_after": ""
+        }
+      ],
+      "control_solved": [],
+      "candidate_win": true,
+      "winning_tactic": "simp [List.bidirectionalRec]",
+      "robust": true,
+      "is_offgate_emission": false,
+      "residual_before": "ι : Type u_1\nα : Type u\nβ : Type v\nγ : Type w\nl₁ l₂ : List α\nmotive : List α → Sort u_2\nnil : motive []\nsingleton : (a : α) → motive [a]\ncons_append : (a : α) → (l : List α) → (b : α) → motive l → mot",
+      "setup_error": null
+    }
+  ]
+}

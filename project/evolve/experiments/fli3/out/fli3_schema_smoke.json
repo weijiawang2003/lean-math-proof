@@ -1,0 +1,44 @@
+{
+  "generated_by": "scripts/fli3_schema_smoke.py",
+  "schema_compatible": true,
+  "checks": {
+    "json_serializable": true,
+    "rc2_wrapper_readable": true,
+    "fragment_keys_valid": true,
+    "gates_reference_known_actions": true,
+    "installed": false,
+    "merges_onto_rc2_copy": true
+  },
+  "fragment": {
+    "_fli3_candidate_fragment": true,
+    "priority_templates_any_additions": [
+      "simp [Finset.card_le_one] <;> aesop",
+      "simp [Finset.filterMap]",
+      "simp [Finset.map]",
+      "simp [Finset.preimage]",
+      "simp [Finset.subtype]",
+      "simp [List.bidirectionalRec]"
+    ],
+    "theorem_name_tactic_gates_additions": {
+      "simp [Finset.card_le_one] <;> aesop": [
+        "Finset."
+      ],
+      "simp [Finset.filterMap]": [
+        "Finset."
+      ],
+      "simp [Finset.map]": [
+        "Finset."
+      ],
+      "simp [Finset.preimage]": [
+        "Finset."
+      ],
+      "simp [Finset.subtype]": [
+        "Finset."
+      ],
+      "simp [List.bidirectionalRec]": [
+        "List."
+      ]
+    }
+  },
+  "note": "Fragment validated in memory only; NOT written to any wrapper. No install."
+}

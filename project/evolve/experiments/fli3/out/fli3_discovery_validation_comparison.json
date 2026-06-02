@@ -1,0 +1,44 @@
+{
+  "generated_by": "scripts/fli3_compare_discovery_to_validation.py",
+  "fli2_true_rescue_count": 6,
+  "fli2_true_rescues": [
+    "Finset.card_le_one_iff",
+    "Finset.card_subtype",
+    "Finset.mem_filterMap",
+    "Finset.mem_map",
+    "Finset.mem_preimage",
+    "List.bidirectionalRec_singleton"
+  ],
+  "fli3_true_delta_count": 7,
+  "fli3_true_deltas": [
+    "Finset.card_le_one_iff",
+    "Finset.card_subtype",
+    "Finset.mem_filterMap",
+    "Finset.mem_map",
+    "Finset.mem_preimage",
+    "List.bidirectionalRec_nil",
+    "List.bidirectionalRec_singleton"
+  ],
+  "fli2_rescues_reproduced_under_literal_rc2": [
+    "Finset.card_le_one_iff",
+    "Finset.card_subtype",
+    "Finset.mem_filterMap",
+    "Finset.mem_map",
+    "Finset.mem_preimage",
+    "List.bidirectionalRec_singleton"
+  ],
+  "fli2_rescues_not_reproduced": [],
+  "reproduction_rate": 1.0,
+  "family_holdout_generalization_wins": [
+    "List.bidirectionalRec_nil"
+  ],
+  "num_family_holdout_wins": 1,
+  "families_surviving": [
+    "FINSET_CARD_BRIDGE",
+    "FINSET_MEM_DEF_UNFOLD",
+    "LIST_DEF_UNFOLD"
+  ],
+  "control_duplicates": 0,
+  "unknown_name_gaps": 0,
+  "narrative": "FLI2 discovered 6 robust rescues; under literal-RC2 additive validation 6 reproduce as TRUE_FLI3_DELTA (all). Family holdout produced 1 additional generalization wins, so failure-derived discovery DOES generalize beyond the exact discovered theorems. Failure-derived discovery CAN feed RC-style validation."
+}

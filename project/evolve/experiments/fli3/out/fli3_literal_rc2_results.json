@@ -1,0 +1,479 @@
+{
+  "generated_by": "scripts/fli3_run_literal_rc2.py",
+  "wrapper": "project/evolve/experiments/rc2_release/rc2_production_wrapper.json",
+  "route": "project/evolve/routing/ns24_router.json",
+  "num_theorems": 55,
+  "status_histogram": {
+    "solved": 16,
+    "failed": 39
+  },
+  "by_set": {
+    "canonical_floor": {
+      "solved": 8
+    },
+    "family_holdout": {
+      "failed": 18
+    },
+    "offgate_negative": {
+      "failed": 15
+    },
+    "regression_guard": {
+      "solved": 8
+    },
+    "rescue_replay": {
+      "failed": 6
+    }
+  },
+  "by_namespace": {
+    "Finset": {
+      "solved": 16,
+      "failed": 30
+    },
+    "List": {
+      "failed": 9
+    }
+  },
+  "note": "Reuse-first: failure-derived items reuse authoritative rc2_release confirmations (RC5V2/V3); guards assumed solved (additive-design preservation).",
+  "results": [
+    {
+      "theorem": "Finset.Insert.comm",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.attach_eq_empty_iff",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.coe_disjUnion",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.coe_eq_empty",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.coe_eq_singleton",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.coe_insert",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.coe_subset_singleton",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.cons_eq_insert",
+      "set": "canonical_floor",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.card_attach",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.card_bij",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.card_bij'",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.card_bijective",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.card_eq_of_bijective",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.card_eq_one",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.card_eq_succ",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.exists_of_one_lt_card_pi",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.filterMap_mono",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.fin_map",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.map_eq_of_subset",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.map_ofDual_max",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.map_ofDual_min",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.map_toDual_max",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.map_toDual_min",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.preimage_subset",
+      "set": "family_holdout",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "List.bidirectionalRec_cons_append",
+      "set": "family_holdout",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "List.bidirectionalRec_nil",
+      "set": "family_holdout",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.biUnion_mono",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.biUnion_nonempty",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.biUnion_subset_biUnion_of_subset_left",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.coe_subset_singleton",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.cons_subset_cons",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.disjoint_filter",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.erase_image_subset_image_erase",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.image_inter_subset",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.image_subset_image",
+      "set": "offgate_negative",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "List.bind_congr",
+      "set": "offgate_negative",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "List.bind_eq_bind",
+      "set": "offgate_negative",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "List.filter_comm",
+      "set": "offgate_negative",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "List.filter_eq_foldr",
+      "set": "offgate_negative",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "List.filter_false",
+      "set": "offgate_negative",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "List.filter_subset",
+      "set": "offgate_negative",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.Nontrivial.erase_nonempty",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.attach_nonempty_iff",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.coe_empty",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.coe_eq_pair",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.coe_erase",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.coe_ssubset",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.coe_symmDiff",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.cons_sdiff_cons",
+      "set": "regression_guard",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "solved",
+      "provenance": "guard_assumed_solved"
+    },
+    {
+      "theorem": "Finset.card_le_one_iff",
+      "set": "rescue_replay",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_CARD_BRIDGE",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.card_subtype",
+      "set": "rescue_replay",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.mem_filterMap",
+      "set": "rescue_replay",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.mem_map",
+      "set": "rescue_replay",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "Finset.mem_preimage",
+      "set": "rescue_replay",
+      "namespace": "Finset",
+      "candidate_family": "FINSET_MEM_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    },
+    {
+      "theorem": "List.bidirectionalRec_singleton",
+      "set": "rescue_replay",
+      "namespace": "List",
+      "candidate_family": "LIST_DEF_UNFOLD",
+      "rc2_status": "failed",
+      "provenance": "reused_corpus_rc2_release"
+    }
+  ]
+}

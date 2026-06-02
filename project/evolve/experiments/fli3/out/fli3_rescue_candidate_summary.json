@@ -1,0 +1,24 @@
+{
+  "generated_by": "scripts/fli3_extract_rescue_candidates.py",
+  "num_rescue_candidates": 6,
+  "rescue_by_family": {
+    "FINSET_MEM_DEF_UNFOLD": 4,
+    "FINSET_CARD_BRIDGE": 1,
+    "LIST_DEF_UNFOLD": 1
+  },
+  "rescue_theorems": [
+    "Finset.card_le_one_iff",
+    "Finset.card_subtype",
+    "Finset.mem_filterMap",
+    "Finset.mem_map",
+    "Finset.mem_preimage",
+    "List.bidirectionalRec_singleton"
+  ],
+  "num_partial_candidates": 29,
+  "partial_by_family": {
+    "FINSET_OTHER": 12,
+    "MULTISET_OTHER": 9,
+    "SET_OTHER": 6,
+    "LIST_OTHER": 2
+  }
+}
