@@ -1,0 +1,1601 @@
+{
+  "generated_by": "scripts/fli0_write_failure_atlas.py",
+  "corpus": {
+    "total_failures": 455,
+    "clean_failures": 327,
+    "seeds": 40
+  },
+  "by_namespace_clean": {
+    "Finset": 107,
+    "Nat": 87,
+    "Set": 57,
+    "List": 41,
+    "Multiset": 35
+  },
+  "by_primary_pattern_clean": {
+    "MAP_FILTER_BIND_BRIDGE": 101,
+    "ORDER_STRUCTURE_GAP": 42,
+    "SUBSET_BRIDGE": 39,
+    "IFF_SPLIT": 36,
+    "LOW_SIGNAL": 24,
+    "NEEDS_REVIEW": 23,
+    "NAT_ARITH_GAP": 21,
+    "MEMBERSHIP_BRIDGE": 20,
+    "INDUCTION_GENERALIZATION": 11,
+    "SINGLETON_CHARACTERIZATION": 6,
+    "DISJOINT_BRIDGE": 3,
+    "EXTENSIONALITY_NEEDED": 1
+  },
+  "patterns": [
+    {
+      "pattern": "MAP_FILTER_BIND_BRIDGE",
+      "clean_count": 101,
+      "intuition": "The goal talks about membership in (or equality of) an image / map / filter / bind / biUnion of a container. `simp`/`aesop` stall because they lack a membership-unfolding lemma for that specific transformer, so the elementwise structure never gets exposed.",
+      "example_theorem": "List.bind_ret_eq_map",
+      "example_statement": "@[deprecated bind_pure_eq_map (since",
+      "candidate_lemma_shape_nl": "a membership lemma for the map/filter/bind/image, e.g. `x ∈ f <$> s ↔ ∃ y ∈ s, f y = x`.",
+      "why_search_failed": "dynamic search (RC5V2) result was 'failed'; retrieval surfaced lemmas but none closed it"
+    },
+    {
+      "pattern": "ORDER_STRUCTURE_GAP",
+      "clean_count": 42,
+      "intuition": "Order/lattice goals where the tactic families have no order-specific structural route. Lower priority for lemma invention (often not a single missing lemma).",
+      "example_theorem": "Finset.card_le_two",
+      "example_statement": "theorem card_le_two : card {a, b} ≤ 2",
+      "candidate_lemma_shape_nl": "an order/lattice structural lemma; current tactic batteries have no order-specific route.",
+      "why_search_failed": "dynamic search (RC5V3) result was 'failed'; retrieval surfaced lemmas but none closed it"
+    },
+    {
+      "pattern": "SUBSET_BRIDGE",
+      "clean_count": 39,
+      "intuition": "The goal is (or reduces to) a subset relation. Search fails when it cannot turn `s ⊆ t` into the pointwise `∀ x, x ∈ s → x ∈ t` form (or a pair/singleton subset characterization) that downstream automation can chew on.",
+      "example_theorem": "Finset.card_le_card",
+      "example_statement": "@[gcongr] theorem card_le_card : s ⊆ t → s.card ≤ t.card",
+      "candidate_lemma_shape_nl": "a `s ⊆ t ↔ ∀ x, x ∈ s → x ∈ t` / pair-subset characterization for this type.",
+      "why_search_failed": "dynamic search (RC5V3) result was 'failed'; retrieval surfaced lemmas but none closed it"
+    },
+    {
+      "pattern": "IFF_SPLIT",
+      "clean_count": 36,
+      "intuition": "The goal is a biconditional. Single-shot tactics fail to make progress because the two directions need different reasoning; a `constructor` split plus a one-directional bridge lemma on each side is the likely shape.",
+      "example_theorem": "Finset.card_eq_zero",
+      "example_statement": "@[simp] lemma card_eq_zero : s.card = 0 ↔ s = ∅",
+      "candidate_lemma_shape_nl": "no new lemma per se — a `constructor`/two-direction split helper or the missing one-directional bridge lemma each side needs.",
+      "why_search_failed": "dynamic search (RC5V3) result was 'failed'; retrieval surfaced lemmas but none closed it"
+    },
+    {
+      "pattern": "NAT_ARITH_GAP",
+      "clean_count": 21,
+      "intuition": "Nat/Int arithmetic beyond the current omega/nlinarith reach. Usually not a reusable bridge lemma.",
+      "example_theorem": "Nat.div_add_mod'",
+      "example_statement": "lemma div_add_mod' (a b : ℕ) : a / b * b + a % b = a",
+      "candidate_lemma_shape_nl": "arithmetic beyond the current search (omega/nlinarith gap), not an obvious reusable bridge.",
+      "why_search_failed": "dynamic search (RC5V2) result was 'failed'; retrieval surfaced lemmas but none closed it"
+    },
+    {
+      "pattern": "MEMBERSHIP_BRIDGE",
+      "clean_count": 20,
+      "intuition": "The goal is an iff whose left side is a membership statement about a derived structure. The missing piece appears to be a `x ∈ … ↔ <condition>` rewrite that bridges the membership to an elementwise predicate.",
+      "example_theorem": "Finset.card_le_one",
+      "example_statement": "theorem card_le_one : s.card ≤ 1 ↔ ∀ a ∈ s, ∀ b ∈ s, a = b",
+      "candidate_lemma_shape_nl": "a `x ∈ <transformed container> ↔ <elementwise condition>` rewrite lemma.",
+      "why_search_failed": "dynamic search (RC5V3) result was 'failed'; retrieval surfaced lemmas but none closed it"
+    },
+    {
+      "pattern": "INDUCTION_GENERALIZATION",
+      "clean_count": 11,
+      "intuition": "A List/Multiset goal over a recursive constructor (cons/append/foldr…) where plain simp/aesop cannot fold through the recursion; a generalized induction helper with a stronger hypothesis seems needed.",
+      "example_theorem": "List.dedup_append",
+      "example_statement": "theorem dedup_append (l₁ l₂ : List α) : dedup (l₁ ++ l₂) = l₁ ∪ dedup l₂",
+      "candidate_lemma_shape_nl": "a generalized induction helper (stronger IH over the recursive structure) that the elementwise goal can fold through.",
+      "why_search_failed": "dynamic search (RC5V3) result was 'failed'; retrieval surfaced lemmas but none closed it"
+    },
+    {
+      "pattern": "SINGLETON_CHARACTERIZATION",
+      "clean_count": 6,
+      "intuition": "The goal characterizes a singleton (or a `card ≤ 1` / subsingleton condition). The candidate is a `… = {x} ↔ …` (or `y ∈ {x} ↔ y = x`) lemma for the container.",
+      "example_theorem": "Finset.card_singleton_inter",
+      "example_statement": "theorem card_singleton_inter [DecidableEq α] : ({a} ∩ s).card ≤ 1",
+      "candidate_lemma_shape_nl": "a `… = {x} ↔ …` (or `y ∈ {x} ↔ y = x`) characterization lemma for this container.",
+      "why_search_failed": "dynamic search (RC5V3) result was 'failed'; retrieval surfaced lemmas but none closed it"
+    }
+  ],
+  "seeds": [
+    {
+      "seed_id": "FLI0-S01",
+      "theorem": "Finset.biUnion_nonempty",
+      "namespace": "Finset",
+      "statement": "@[simp] lemma biUnion_nonempty : (s.biUnion t).Nonempty ↔ ∃ x ∈ s, (t x).Nonempty",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "IFF_SPLIT",
+        "MAP_FILTER_BIND_BRIDGE",
+        "MEMBERSHIP_BRIDGE"
+      ],
+      "primary_pattern": "MEMBERSHIP_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary MEMBERSHIP_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Finset.Nonempty.biUnion",
+        "Finset.mem_biUnion",
+        "Finset.biUnion_empty",
+        "Finset.disjoint_biUnion_left",
+        "Finset.disjoint_biUnion_right"
+      ],
+      "failed_tactics": [
+        "simp [Finset.Nonempty.biUnion] <;> aesop",
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "similar_solved_theorem": "Finset.fiber_nonempty_iff_mem_image",
+      "candidate_lemma_shape_nl": "a `x ∈ <transformed container> ↔ <elementwise condition>` rewrite lemma.",
+      "candidate_lemma_name_suggested": "Finset.mem_biUnion_nonempty_iff",
+      "recommended_fli1_action": "generate_membership_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S02",
+      "theorem": "Finset.card_le_card",
+      "namespace": "Finset",
+      "statement": "@[gcongr] theorem card_le_card : s ⊆ t → s.card ≤ t.card",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "NAT_ARITH_GAP",
+        "ORDER_STRUCTURE_GAP",
+        "SUBSET_BRIDGE"
+      ],
+      "primary_pattern": "SUBSET_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary SUBSET_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Finset.eq_of_subset_of_card_le",
+        "Finset.card",
+        "Finset.le_card_iff_exists_subset_card",
+        "Finset.subset_iff_eq_of_card_le",
+        "Finset.card_filter_le_iff"
+      ],
+      "failed_tactics": [
+        "simp [Finset.le_card_iff_exists_subset_card] <;> aesop",
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "similar_solved_theorem": "Finset.card_def",
+      "candidate_lemma_shape_nl": "a `s ⊆ t ↔ ∀ x, x ∈ s → x ∈ t` / pair-subset characterization for this type.",
+      "candidate_lemma_name_suggested": "Finset.card_le_card_subset_iff",
+      "recommended_fli1_action": "generate_subset_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S03",
+      "theorem": "Finset.card_le_one",
+      "namespace": "Finset",
+      "statement": "theorem card_le_one : s.card ≤ 1 ↔ ∀ a ∈ s, ∀ b ∈ s, a = b",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "IFF_SPLIT",
+        "MEMBERSHIP_BRIDGE",
+        "NAT_ARITH_GAP",
+        "ORDER_STRUCTURE_GAP"
+      ],
+      "primary_pattern": "MEMBERSHIP_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary MEMBERSHIP_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Finset.card_le_one_iff",
+        "Finset.one_lt_card",
+        "Finset.card_eq_one",
+        "Finset.one_lt_card_iff",
+        "Finset.one_le_card"
+      ],
+      "failed_tactics": [
+        "simp [Finset.one_lt_card] <;> aesop",
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "similar_solved_theorem": "Finset.card_def",
+      "candidate_lemma_shape_nl": "a `x ∈ <transformed container> ↔ <elementwise condition>` rewrite lemma.",
+      "candidate_lemma_name_suggested": "Finset.mem_card_le_one_iff",
+      "recommended_fli1_action": "generate_membership_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S04",
+      "theorem": "Finset.card_le_one_iff",
+      "namespace": "Finset",
+      "statement": "theorem card_le_one_iff : s.card ≤ 1 ↔ ∀ {a b}, a ∈ s → b ∈ s → a = b",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "IFF_SPLIT",
+        "MEMBERSHIP_BRIDGE",
+        "NAT_ARITH_GAP",
+        "ORDER_STRUCTURE_GAP"
+      ],
+      "primary_pattern": "MEMBERSHIP_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary MEMBERSHIP_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Finset.card_le_one",
+        "Finset.card_le_one_iff_subsingleton_coe",
+        "Finset.card_le_one_iff_subset_singleton",
+        "Finset.one_lt_card_iff",
+        "Finset.one_lt_card"
+      ],
+      "failed_tactics": [
+        "simp [Finset.card_le_one_iff_subsingleton_coe] <;> aesop",
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "similar_solved_theorem": "Finset.card_def",
+      "candidate_lemma_shape_nl": "a `x ∈ <transformed container> ↔ <elementwise condition>` rewrite lemma.",
+      "candidate_lemma_name_suggested": "Finset.mem_card_le_one_iff_iff",
+      "recommended_fli1_action": "generate_membership_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S05",
+      "theorem": "Finset.card_le_one_iff_subsingleton_coe",
+      "namespace": "Finset",
+      "statement": "theorem card_le_one_iff_subsingleton_coe : s.card ≤ 1 ↔ Subsingleton (s : Type _)",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "IFF_SPLIT",
+        "NAT_ARITH_GAP",
+        "ORDER_STRUCTURE_GAP",
+        "SINGLETON_CHARACTERIZATION"
+      ],
+      "primary_pattern": "SINGLETON_CHARACTERIZATION",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary SINGLETON_CHARACTERIZATION (conf high); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Finset.card_le_one_of_subsingleton",
+        "Finset.card_le_one_iff",
+        "Finset.card_le_one",
+        "Finset.card_le_one_iff_subset_singleton",
+        "Finset.one_le_card"
+      ],
+      "failed_tactics": [
+        "simp [Finset.one_le_card]",
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "similar_solved_theorem": "Finset.card_def",
+      "candidate_lemma_shape_nl": "a `… = {x} ↔ …` (or `y ∈ {x} ↔ y = x`) characterization lemma for this container.",
+      "candidate_lemma_name_suggested": "Finset.card_le_one_iff_subsingleton_coe_singleton_iff",
+      "recommended_fli1_action": "generate_singleton_iff",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S06",
+      "theorem": "Finset.card_le_one_of_subsingleton",
+      "namespace": "Finset",
+      "statement": "theorem card_le_one_of_subsingleton [Subsingleton α] (s : Finset α) : s.card ≤ 1",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "NAT_ARITH_GAP",
+        "ORDER_STRUCTURE_GAP",
+        "SINGLETON_CHARACTERIZATION"
+      ],
+      "primary_pattern": "SINGLETON_CHARACTERIZATION",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary SINGLETON_CHARACTERIZATION (conf high); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Finset.card_le_one_iff_subsingleton_coe",
+        "Finset.card_singleton",
+        "Finset.card_le_one",
+        "Finset.card",
+        "Finset.card_le_one_iff"
+      ],
+      "failed_tactics": [
+        "simp [Finset.card_le_one_iff]",
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "similar_solved_theorem": "Finset.card_def",
+      "candidate_lemma_shape_nl": "a `… = {x} ↔ …` (or `y ∈ {x} ↔ y = x`) characterization lemma for this container.",
+      "candidate_lemma_name_suggested": "Finset.card_le_one_of_subsingleton_singleton_iff",
+      "recommended_fli1_action": "generate_singleton_iff",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S07",
+      "theorem": "Finset.card_singleton_inter",
+      "namespace": "Finset",
+      "statement": "theorem card_singleton_inter [DecidableEq α] : ({a} ∩ s).card ≤ 1",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "NAT_ARITH_GAP",
+        "ORDER_STRUCTURE_GAP",
+        "SINGLETON_CHARACTERIZATION"
+      ],
+      "primary_pattern": "SINGLETON_CHARACTERIZATION",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary SINGLETON_CHARACTERIZATION (conf high); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Finset.card_singleton",
+        "Finset.card_mul_singleton",
+        "Finset.card_singleton_mul",
+        "Finset.inter_mul_singleton",
+        "Finset.singleton_mul_inter"
+      ],
+      "failed_tactics": [
+        "simp [Finset.inter_mul_singleton]",
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "similar_solved_theorem": "Finset.card_def",
+      "candidate_lemma_shape_nl": "a `… = {x} ↔ …` (or `y ∈ {x} ↔ y = x`) characterization lemma for this container.",
+      "candidate_lemma_name_suggested": "Finset.card_singleton_inter_singleton_iff",
+      "recommended_fli1_action": "generate_singleton_iff",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S08",
+      "theorem": "Finset.disjoint_range_addLeftEmbedding",
+      "namespace": "Finset",
+      "statement": "theorem disjoint_range_addLeftEmbedding (a b : ℕ) : Disjoint (range a) (map (addLeftEmbedding a) (range b))",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "DISJOINT_BRIDGE",
+        "MAP_FILTER_BIND_BRIDGE",
+        "NAT_ARITH_GAP"
+      ],
+      "primary_pattern": "DISJOINT_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary DISJOINT_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Finset.range_add",
+        "Finset.disjoint_range_addRightEmbedding",
+        "Finset.range",
+        "Finset.disjoint_map",
+        "Finset.coe_map_subset_range"
+      ],
+      "failed_tactics": [
+        "simp [Set.disjoint_left] <;> aesop",
+        "simp [Set.disjoint_left]",
+        "simp [Finset.range_add] <;> aesop",
+        "simp [Finset.map, Finset.range, AList.Disjoint, Cycle.map]",
+        "simp [Finset.coe_map_subset_range]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "Finset.card_def",
+      "candidate_lemma_shape_nl": "a membership translation `Disjoint a b ↔ ∀ x, x ∈ a → x ∉ b` specialized to this container, letting `simp`+`aesop` discharge it.",
+      "candidate_lemma_name_suggested": "Finset.disjoint_disjoint_range_addLeftEmbedding_iff",
+      "recommended_fli1_action": "generate_disjoint_membership_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S09",
+      "theorem": "Finset.disjoint_range_addRightEmbedding",
+      "namespace": "Finset",
+      "statement": "theorem disjoint_range_addRightEmbedding (a b : ℕ) : Disjoint (range a) (map (addRightEmbedding a) (range b))",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "DISJOINT_BRIDGE",
+        "MAP_FILTER_BIND_BRIDGE",
+        "NAT_ARITH_GAP"
+      ],
+      "primary_pattern": "DISJOINT_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary DISJOINT_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Finset.disjoint_range_addLeftEmbedding",
+        "Finset.range",
+        "Finset.disjoint_map",
+        "Finset.coe_map_subset_range",
+        "Finset.range_add"
+      ],
+      "failed_tactics": [
+        "simp [Set.disjoint_left] <;> aesop",
+        "simp [Set.disjoint_left]",
+        "simp [Finset.coe_map_subset_range] <;> aesop",
+        "simp [Finset.map, Finset.range, AList.Disjoint, Cycle.map]",
+        "simp [Finset.range_add]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "Finset.card_def",
+      "candidate_lemma_shape_nl": "a membership translation `Disjoint a b ↔ ∀ x, x ∈ a → x ∉ b` specialized to this container, letting `simp`+`aesop` discharge it.",
+      "candidate_lemma_name_suggested": "Finset.disjoint_disjoint_range_addRightEmbedding_iff",
+      "recommended_fli1_action": "generate_disjoint_membership_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S10",
+      "theorem": "Finset.eq_of_subset_of_card_le",
+      "namespace": "Finset",
+      "statement": "theorem eq_of_subset_of_card_le {s t : Finset α} (h : s ⊆ t) (h₂ : t.card ≤ s.card) : s = t",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "NAT_ARITH_GAP",
+        "ORDER_STRUCTURE_GAP",
+        "SUBSET_BRIDGE"
+      ],
+      "primary_pattern": "SUBSET_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary SUBSET_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Finset.subset_iff_eq_of_card_le",
+        "Finset.card_le_card",
+        "Finset.card_le_one_of_subsingleton",
+        "Finset.le_card_iff_exists_subset_card",
+        "Finset.card_le_one_iff_subset_singleton"
+      ],
+      "failed_tactics": [
+        "simp [Finset.card_le_card] <;> aesop",
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "similar_solved_theorem": "Finset.subset_insert_iff_of_not_mem",
+      "candidate_lemma_shape_nl": "a `s ⊆ t ↔ ∀ x, x ∈ s → x ∈ t` / pair-subset characterization for this type.",
+      "candidate_lemma_name_suggested": "Finset.eq_of_subset_of_card_le_subset_iff",
+      "recommended_fli1_action": "generate_subset_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S11",
+      "theorem": "Finset.exists_of_one_lt_card_pi",
+      "namespace": "Finset",
+      "statement": "lemma exists_of_one_lt_card_pi {ι : Type*} {α : ι → Type*} [∀ i, DecidableEq (α i)] {s : Finset (∀ i, α i)} (h : 1 < s.card) : ∃ i, 1 < (s.image (· i)).card ∧ ∀ ai, s.filter (· i = ai) ⊂ s",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "EXTENSIONALITY_NEEDED",
+        "MAP_FILTER_BIND_BRIDGE",
+        "NAT_ARITH_GAP",
+        "ORDER_STRUCTURE_GAP",
+        "SUBSET_BRIDGE"
+      ],
+      "primary_pattern": "SUBSET_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary SUBSET_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Finset.exists_ne_of_one_lt_card",
+        "Finset.card_le_one_of_subsingleton",
+        "Finset.card_le_one_iff_subsingleton_coe",
+        "Finset.one_lt_card_iff",
+        "Finset.one_lt_card"
+      ],
+      "failed_tactics": [
+        "simp [Finset.exists_ne_of_one_lt_card] <;> aesop",
+        "simp [Finset.card_le_one_of_subsingleton] <;> aesop",
+        "simp [Finset.card_le_one_iff_subsingleton_coe] <;> aesop",
+        "simp [Finset.one_lt_card_iff]",
+        "simp [Finset.one_lt_card]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "Finset.card_def",
+      "candidate_lemma_shape_nl": "a `s ⊆ t ↔ ∀ x, x ∈ s → x ∈ t` / pair-subset characterization for this type.",
+      "candidate_lemma_name_suggested": "Finset.exists_of_one_lt_card_pi_subset_iff",
+      "recommended_fli1_action": "generate_subset_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S12",
+      "theorem": "Finset.exists_subset_card_eq",
+      "namespace": "Finset",
+      "statement": "lemma exists_subset_card_eq (hns : n ≤ s.card) : ∃ t ⊆ s, t.card = n",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "NAT_ARITH_GAP",
+        "ORDER_STRUCTURE_GAP",
+        "SUBSET_BRIDGE"
+      ],
+      "primary_pattern": "SUBSET_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary SUBSET_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Set.exists_subset_card_eq",
+        "Finset.eq_of_subset_of_card_le",
+        "Finset.exists_subsuperset_card_eq",
+        "Finset.exists_smaller_set",
+        "Finset.le_card_iff_exists_subset_card"
+      ],
+      "failed_tactics": [
+        "simp [Set.exists_subset_card_eq]",
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "similar_solved_theorem": "Finset.card_def",
+      "candidate_lemma_shape_nl": "a `s ⊆ t ↔ ∀ x, x ∈ s → x ∈ t` / pair-subset characterization for this type.",
+      "candidate_lemma_name_suggested": "Finset.exists_subset_card_eq_subset_iff",
+      "recommended_fli1_action": "generate_subset_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S13",
+      "theorem": "Finset.filter_attach'",
+      "namespace": "Finset",
+      "statement": "lemma filter_attach' [DecidableEq α] (s : Finset α) (p : s → Prop) [DecidablePred p] : s.attach.filter p = (s.filter fun x => ∃ h, p ⟨x, h⟩).attach.map ⟨Subtype.map id <| filter_subset _ _, Subtype.map_injective _ injective_id⟩",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "EXTENSIONALITY_NEEDED",
+        "MAP_FILTER_BIND_BRIDGE",
+        "NAT_ARITH_GAP",
+        "SUBSET_BRIDGE"
+      ],
+      "primary_pattern": "SUBSET_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary SUBSET_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Finset.filter_subset",
+        "Finset.map_injective",
+        "Finset.map_subtype_subset",
+        "Finset.filter_subset_filter",
+        "Finset.filter_attach"
+      ],
+      "failed_tactics": [
+        "simp [Finset.filter_subset] <;> aesop",
+        "simp [Finset.map_injective] <;> aesop",
+        "simp [Finset.map_subtype_subset] <;> aesop",
+        "simp [Finset.attach, Finset.filter, Finset.map, Cycle.map]",
+        "simp [Finset.filter_subset]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "Finset.card_def",
+      "candidate_lemma_shape_nl": "a `s ⊆ t ↔ ∀ x, x ∈ s → x ∈ t` / pair-subset characterization for this type.",
+      "candidate_lemma_name_suggested": "Finset.filter_attach'_subset_iff",
+      "recommended_fli1_action": "generate_subset_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S14",
+      "theorem": "Finset.map_eq_of_subset",
+      "namespace": "Finset",
+      "statement": "theorem map_eq_of_subset {f : α ↪ α} (hs : s.map f ⊆ s) : s.map f = s",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "EXTENSIONALITY_NEEDED",
+        "MAP_FILTER_BIND_BRIDGE",
+        "SUBSET_BRIDGE"
+      ],
+      "primary_pattern": "SUBSET_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Finset failure, primary SUBSET_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Set.map_eq_of_subset",
+        "Finset.eq_of_subset_of_card_le",
+        "Finset.subset_of_eq",
+        "Finset.map_subset_map",
+        "Finset.map_perm"
+      ],
+      "failed_tactics": [
+        "simp [Set.map_eq_of_subset]",
+        "simp [Set.map_eq_of_subset] <;> aesop",
+        "simp [Finset.subset_of_eq] <;> aesop",
+        "simp [Finset.eq_of_subset_of_card_le] <;> aesop",
+        "simp [Finset.map_subset_map]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "Finset.subset_insert_iff_of_not_mem",
+      "candidate_lemma_shape_nl": "a `s ⊆ t ↔ ∀ x, x ∈ s → x ∈ t` / pair-subset characterization for this type.",
+      "candidate_lemma_name_suggested": "Finset.map_eq_of_subset_subset_iff",
+      "recommended_fli1_action": "generate_subset_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S15",
+      "theorem": "Multiset.forall_mem_map_iff",
+      "namespace": "Multiset",
+      "statement": "theorem forall_mem_map_iff {f : α → β} {p : β → Prop} {s : Multiset α} : (∀ y ∈ s.map f, p y) ↔ ∀ x ∈ s, p (f x)",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "IFF_SPLIT",
+        "MAP_FILTER_BIND_BRIDGE",
+        "MEMBERSHIP_BRIDGE"
+      ],
+      "primary_pattern": "MEMBERSHIP_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Multiset failure, primary MEMBERSHIP_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Multiset.forall_mem_cons",
+        "Multiset.mem_map",
+        "Multiset.map_eq_singleton",
+        "Multiset.eq_zero_iff_forall_not_mem",
+        "Multiset.mem_singleton"
+      ],
+      "failed_tactics": [
+        "simp [Multiset.forall_mem_cons] <;> aesop",
+        "simp [Multiset.mem_map] <;> aesop",
+        "simp [Multiset.forall_mem_cons]",
+        "simp [Multiset.mem_singleton]",
+        "simp [Multiset.eq_zero_iff_forall_not_mem]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "Multiset.map_count_True_eq_filter_card",
+      "candidate_lemma_shape_nl": "a `x ∈ <transformed container> ↔ <elementwise condition>` rewrite lemma.",
+      "candidate_lemma_name_suggested": "Multiset.mem_forall_mem_map_iff_iff",
+      "recommended_fli1_action": "generate_membership_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S16",
+      "theorem": "Multiset.mem_filter",
+      "namespace": "Multiset",
+      "statement": "@[simp] theorem mem_filter {a : α} {s} : a ∈ filter p s ↔ a ∈ s ∧ p a",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "IFF_SPLIT",
+        "MAP_FILTER_BIND_BRIDGE",
+        "MEMBERSHIP_BRIDGE"
+      ],
+      "primary_pattern": "MEMBERSHIP_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Multiset failure, primary MEMBERSHIP_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Finset.mem_filter",
+        "Multiset.le_filter",
+        "Multiset.filter",
+        "Multiset.filter_eq_self",
+        "Multiset.mem_filterMap"
+      ],
+      "failed_tactics": [
+        "simp [Finset.mem_filter]",
+        "simp [Finset.mem_filter] <;> aesop",
+        "simp [Multiset.le_filter] <;> aesop",
+        "simp [Multiset.filter_eq_self] <;> aesop",
+        "simp [Multiset.filter, Finset.filter]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "Multiset.map_count_True_eq_filter_card",
+      "candidate_lemma_shape_nl": "a `x ∈ <transformed container> ↔ <elementwise condition>` rewrite lemma.",
+      "candidate_lemma_name_suggested": "Multiset.mem_mem_filter_iff",
+      "recommended_fli1_action": "generate_membership_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S17",
+      "theorem": "Multiset.mem_filterMap",
+      "namespace": "Multiset",
+      "statement": "@[simp] theorem mem_filterMap (f : α → Option β) (s : Multiset α) {b : β} : b ∈ filterMap f s ↔ ∃ a, a ∈ s ∧ f a = some b",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "EXTENSIONALITY_NEEDED",
+        "IFF_SPLIT",
+        "MAP_FILTER_BIND_BRIDGE",
+        "MEMBERSHIP_BRIDGE"
+      ],
+      "primary_pattern": "MEMBERSHIP_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Multiset failure, primary MEMBERSHIP_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Multiset.filterMap",
+        "Multiset.filterMap_cons_some",
+        "Multiset.filterMap_map",
+        "Multiset.filterMap_some",
+        "Multiset.map_filterMap_of_inv"
+      ],
+      "failed_tactics": [
+        "simp [Multiset.filterMap, Finset.filterMap, PartENat.some, Set.Nonempty.some]",
+        "simp [Multiset.filterMap_map] <;> aesop",
+        "simp [Multiset.filterMap_cons_some] <;> aesop",
+        "simp [Multiset.filterMap_some] <;> aesop",
+        "simp [Multiset.filterMap_some]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "Multiset.mem_bind",
+      "candidate_lemma_shape_nl": "a `x ∈ <transformed container> ↔ <elementwise condition>` rewrite lemma.",
+      "candidate_lemma_name_suggested": "Multiset.mem_mem_filterMap_iff",
+      "recommended_fli1_action": "generate_membership_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S18",
+      "theorem": "Multiset.one_le_count_iff_mem",
+      "namespace": "Multiset",
+      "statement": "theorem one_le_count_iff_mem {a : α} {s : Multiset α} : 1 ≤ count a s ↔ a ∈ s",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "IFF_SPLIT",
+        "MEMBERSHIP_BRIDGE",
+        "NAT_ARITH_GAP",
+        "ORDER_STRUCTURE_GAP"
+      ],
+      "primary_pattern": "MEMBERSHIP_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Multiset failure, primary MEMBERSHIP_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Multiset.nodup_iff_count_le_one",
+        "Multiset.le_iff_count",
+        "Multiset.nodup_iff_count_eq_one",
+        "Multiset.le_count_iff_replicate_le",
+        "Multiset.ext"
+      ],
+      "failed_tactics": [
+        "simp [Multiset.le_count_iff_replicate_le]",
+        "simp [Multiset.ext]"
+      ],
+      "similar_solved_theorem": "Multiset.map_count_True_eq_filter_card",
+      "candidate_lemma_shape_nl": "a `x ∈ <transformed container> ↔ <elementwise condition>` rewrite lemma.",
+      "candidate_lemma_name_suggested": "Multiset.mem_one_le_count_iff_mem_iff",
+      "recommended_fli1_action": "generate_membership_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S19",
+      "theorem": "Set.InjOn.image_diff_subset",
+      "namespace": "Set",
+      "statement": "lemma InjOn.image_diff_subset {f : α → β} {t : Set α} (h : InjOn f s) (hst : t ⊆ s) : f '' (s \\ t) = f '' s \\ f '' t",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "EXTENSIONALITY_NEEDED",
+        "MAP_FILTER_BIND_BRIDGE",
+        "SUBSET_BRIDGE"
+      ],
+      "primary_pattern": "SUBSET_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Set failure, primary SUBSET_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Set.subset_image_diff",
+        "Set.subset_diff_singleton",
+        "Set.diff_subset_diff",
+        "Set.diff_subset",
+        "Set.InjOn.image_diff"
+      ],
+      "failed_tactics": [
+        "simp [Set.InjOn.image_diff]",
+        "simp [Set.range_diff_image_subset]",
+        "simp [Set.diff_subset]",
+        "simp [Set.diff_subset_diff] <;> aesop",
+        "simp [Set.subset_image_diff] <;> aesop",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "Set.compl_range_subset_kernImage",
+      "candidate_lemma_shape_nl": "a `s ⊆ t ↔ ∀ x, x ∈ s → x ∈ t` / pair-subset characterization for this type.",
+      "candidate_lemma_name_suggested": "Set.image_diff_subset_subset_iff",
+      "recommended_fli1_action": "generate_subset_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S20",
+      "theorem": "Set.InjOn.image_inter",
+      "namespace": "Set",
+      "statement": "lemma InjOn.image_inter {s t u : Set α} (hf : u.InjOn f) (hs : s ⊆ u) (ht : t ⊆ u) : f '' (s ∩ t) = f '' s ∩ f '' t",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "EXTENSIONALITY_NEEDED",
+        "MAP_FILTER_BIND_BRIDGE",
+        "SUBSET_BRIDGE"
+      ],
+      "primary_pattern": "SUBSET_BRIDGE",
+      "confidence": "high",
+      "why_selected": "clean fresh Set failure, primary SUBSET_BRIDGE (conf high); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Set.image_inter",
+        "Set.InjOn.preimage_image_inter",
+        "Set.exists_image_eq_injOn_of_subset_range",
+        "Set.InjOn.mono",
+        "Set.InjOn.mem_of_mem_image"
+      ],
+      "failed_tactics": [
+        "simp [Set.exists_image_eq_injOn_of_subset_range] <;> aesop",
+        "simp [Set.InjOn.mono]"
+      ],
+      "similar_solved_theorem": "Set.compl_range_subset_kernImage",
+      "candidate_lemma_shape_nl": "a `s ⊆ t ↔ ∀ x, x ∈ s → x ∈ t` / pair-subset characterization for this type.",
+      "candidate_lemma_name_suggested": "Set.image_inter_subset_iff",
+      "recommended_fli1_action": "generate_subset_bridge",
+      "selection_score": 20.0
+    },
+    {
+      "seed_id": "FLI0-S21",
+      "theorem": "List.attach_map_coe'",
+      "namespace": "List",
+      "statement": "theorem attach_map_coe' (l : List α) (f : α → β) : (l.attach.map fun (i : {i // i ∈ l}) => f i) = l.map f",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "EXTENSIONALITY_NEEDED",
+        "MAP_FILTER_BIND_BRIDGE"
+      ],
+      "primary_pattern": "MAP_FILTER_BIND_BRIDGE",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary MAP_FILTER_BIND_BRIDGE (conf medium); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.pmap_eq_map_attach",
+        "List.filter_attach",
+        "List.mem_attach",
+        "List.count_attach",
+        "List.filter_attach'"
+      ],
+      "failed_tactics": [
+        "simp [List.pmap_eq_map_attach] <;> aesop",
+        "simp [List.filter_attach] <;> aesop",
+        "simp [List.mem_attach] <;> aesop",
+        "simp [List.pmap_eq_map_attach]",
+        "simp [List.count_attach]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "List.attach_map_val'",
+      "candidate_lemma_shape_nl": "a membership lemma for the map/filter/bind/image, e.g. `x ∈ f <$> s ↔ ∃ y ∈ s, f y = x`.",
+      "candidate_lemma_name_suggested": "List.mem_attach_map_coe'",
+      "recommended_fli1_action": "generate_map_filter_bind_membership",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S22",
+      "theorem": "List.attach_map_val",
+      "namespace": "List",
+      "statement": "@[simp] theorem attach_map_val (l : List α) : l.attach.map Subtype.val = l",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "EXTENSIONALITY_NEEDED",
+        "MAP_FILTER_BIND_BRIDGE"
+      ],
+      "primary_pattern": "MAP_FILTER_BIND_BRIDGE",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary MAP_FILTER_BIND_BRIDGE (conf medium); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.attach_map_val'",
+        "Multiset.attach_map_val",
+        "Finset.attach_map_val",
+        "List.pmap_eq_map_attach",
+        "List.attach_map_coe'"
+      ],
+      "failed_tactics": [
+        "simp [Finset.attach_map_val]",
+        "simp [Multiset.attach_map_val]",
+        "simp [Finset.attach_map_val] <;> aesop",
+        "simp [List.pmap_eq_map_attach]",
+        "simp [List.attach_map_val'] <;> aesop",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "List.attach_map_val'",
+      "candidate_lemma_shape_nl": "a membership lemma for the map/filter/bind/image, e.g. `x ∈ f <$> s ↔ ∃ y ∈ s, f y = x`.",
+      "candidate_lemma_name_suggested": "List.mem_attach_map_val",
+      "recommended_fli1_action": "generate_map_filter_bind_membership",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S23",
+      "theorem": "List.bind_congr",
+      "namespace": "List",
+      "statement": "theorem bind_congr {l : List α} {f g : α → List β} (h : ∀ x ∈ l, f x = g x) : List.bind l f = List.bind l g",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "MAP_FILTER_BIND_BRIDGE"
+      ],
+      "primary_pattern": "MAP_FILTER_BIND_BRIDGE",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary MAP_FILTER_BIND_BRIDGE (conf medium); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.bind_eq_bind",
+        "Multiset.bind_congr",
+        "List.infix_bind_of_mem",
+        "List.pmap_congr",
+        "List.bind_eq_nil"
+      ],
+      "failed_tactics": [
+        "simp [Multiset.bind_congr]",
+        "simp [List.bind_eq_bind] <;> aesop",
+        "simp [Multiset.bind_congr] <;> aesop",
+        "simp [List.infix_bind_of_mem] <;> aesop",
+        "simp [List.bind_eq_bind]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "List.attach_map_val'",
+      "candidate_lemma_shape_nl": "a membership lemma for the map/filter/bind/image, e.g. `x ∈ f <$> s ↔ ∃ y ∈ s, f y = x`.",
+      "candidate_lemma_name_suggested": "List.mem_bind_congr",
+      "recommended_fli1_action": "generate_map_filter_bind_membership",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S24",
+      "theorem": "List.bind_eq_bind",
+      "namespace": "List",
+      "statement": "@[simp] theorem bind_eq_bind {α β} (f : α → List β) (l : List α) : l >>= f = l.bind f",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "MAP_FILTER_BIND_BRIDGE"
+      ],
+      "primary_pattern": "MAP_FILTER_BIND_BRIDGE",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary MAP_FILTER_BIND_BRIDGE (conf medium); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.bind_pure_eq_map",
+        "List.bind_eq_nil",
+        "List.bind_congr",
+        "List.bind_ret_eq_map",
+        "List.length_injective"
+      ],
+      "failed_tactics": [
+        "simp [List.bind_pure_eq_map] <;> aesop",
+        "simp [List.bind_eq_nil] <;> aesop",
+        "simp [List.bind_congr] <;> aesop",
+        "simp [List.bind_ret_eq_map]",
+        "simp [List.bind_pure_eq_map]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "List.attach_map_val'",
+      "candidate_lemma_shape_nl": "a membership lemma for the map/filter/bind/image, e.g. `x ∈ f <$> s ↔ ∃ y ∈ s, f y = x`.",
+      "candidate_lemma_name_suggested": "List.mem_bind_eq_bind",
+      "recommended_fli1_action": "generate_map_filter_bind_membership",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S25",
+      "theorem": "List.bind_pure_eq_map",
+      "namespace": "List",
+      "statement": "theorem bind_pure_eq_map (f : α → β) (l : List α) : l.bind (pure ∘ f) = map f l",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "EXTENSIONALITY_NEEDED",
+        "MAP_FILTER_BIND_BRIDGE"
+      ],
+      "primary_pattern": "MAP_FILTER_BIND_BRIDGE",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary MAP_FILTER_BIND_BRIDGE (conf medium); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.bind_ret_eq_map",
+        "List.bind_eq_bind",
+        "List.mem_pure",
+        "List.map_pure_sublist_sublists",
+        "List.filterMap_eq_bind_toList"
+      ],
+      "failed_tactics": [
+        "simp [List.bind_ret_eq_map] <;> aesop",
+        "simp [List.bind_eq_bind] <;> aesop",
+        "simp [List.mem_pure] <;> aesop",
+        "simp [List.bind_ret_eq_map]",
+        "simp [List.filterMap_eq_bind_toList]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "List.attach_map_val'",
+      "candidate_lemma_shape_nl": "a membership lemma for the map/filter/bind/image, e.g. `x ∈ f <$> s ↔ ∃ y ∈ s, f y = x`.",
+      "candidate_lemma_name_suggested": "List.mem_bind_pure_eq_map",
+      "recommended_fli1_action": "generate_map_filter_bind_membership",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S26",
+      "theorem": "List.bind_ret_eq_map",
+      "namespace": "List",
+      "statement": "@[deprecated bind_pure_eq_map (since",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "MAP_FILTER_BIND_BRIDGE"
+      ],
+      "primary_pattern": "MAP_FILTER_BIND_BRIDGE",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary MAP_FILTER_BIND_BRIDGE (conf medium); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.bind_pure_eq_map",
+        "List.bind_eq_bind",
+        "List.pairwise_map'",
+        "List.filterMap_eq_bind_toList",
+        "List.getLast?_eq_none"
+      ],
+      "failed_tactics": [
+        "simp [List.bind_pure_eq_map] <;> aesop",
+        "simp [List.bind_eq_bind] <;> aesop",
+        "simp [List.bind_pure_eq_map]",
+        "simp [List.pairwise_map'] <;> aesop",
+        "simp [List.filterMap_eq_bind_toList]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "List.attach_map_val'",
+      "candidate_lemma_shape_nl": "a membership lemma for the map/filter/bind/image, e.g. `x ∈ f <$> s ↔ ∃ y ∈ s, f y = x`.",
+      "candidate_lemma_name_suggested": "List.mem_bind_ret_eq_map",
+      "recommended_fli1_action": "generate_map_filter_bind_membership",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S27",
+      "theorem": "List.count_map_of_injective",
+      "namespace": "List",
+      "statement": "@[simp] theorem count_map_of_injective {β} [DecidableEq α] [DecidableEq β] (l : List α) (f : α → β) (hf : Function.Injective f) (x : α) : count (f x) (map f l) = count x l",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "EXTENSIONALITY_NEEDED",
+        "MAP_FILTER_BIND_BRIDGE"
+      ],
+      "primary_pattern": "MAP_FILTER_BIND_BRIDGE",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary MAP_FILTER_BIND_BRIDGE (conf medium); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.singleton_injective",
+        "List.length_injective",
+        "List.mem_map_of_injective",
+        "List.length_injective_iff",
+        "List.disjoint_map"
+      ],
+      "failed_tactics": [
+        "simp [List.length_injective] <;> aesop",
+        "simp [List.mem_map_of_injective] <;> aesop",
+        "simp [List.singleton_injective] <;> aesop",
+        "simp [List.length_injective_iff]",
+        "simp [List.nodup_singleton]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "List.attach_map_val'",
+      "candidate_lemma_shape_nl": "a membership lemma for the map/filter/bind/image, e.g. `x ∈ f <$> s ↔ ∃ y ∈ s, f y = x`.",
+      "candidate_lemma_name_suggested": "List.mem_count_map_of_injective",
+      "recommended_fli1_action": "generate_map_filter_bind_membership",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S28",
+      "theorem": "List.dedup_append",
+      "namespace": "List",
+      "statement": "theorem dedup_append (l₁ l₂ : List α) : dedup (l₁ ++ l₂) = l₁ ∪ dedup l₂",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "INDUCTION_GENERALIZATION"
+      ],
+      "primary_pattern": "INDUCTION_GENERALIZATION",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary INDUCTION_GENERALIZATION (conf medium); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.union_sublist_append",
+        "List.Nodup.dedup",
+        "List.dedup_cons_of_mem",
+        "List.dedup_idem",
+        "List.dedup_subset"
+      ],
+      "failed_tactics": [
+        "simp [List.Nodup.dedup] <;> aesop",
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "similar_solved_theorem": "List.pmap_append'",
+      "candidate_lemma_shape_nl": "a generalized induction helper (stronger IH over the recursive structure) that the elementwise goal can fold through.",
+      "candidate_lemma_name_suggested": "List.dedup_append_induction_aux",
+      "recommended_fli1_action": "generate_induction_helper",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S29",
+      "theorem": "List.dedup_cons_of_mem",
+      "namespace": "List",
+      "statement": "@[simp] theorem dedup_cons_of_mem {a : α} {l : List α} (h : a ∈ l) : dedup (a :: l) = dedup l",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "INDUCTION_GENERALIZATION"
+      ],
+      "primary_pattern": "INDUCTION_GENERALIZATION",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary INDUCTION_GENERALIZATION (conf medium); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.dedup_cons_of_not_mem",
+        "List.dedup_cons_of_mem'",
+        "List.dedup_cons_of_not_mem'",
+        "Multiset.dedup_cons_of_mem",
+        "List.mem_dedup"
+      ],
+      "failed_tactics": [
+        "simp [Multiset.dedup_cons_of_mem]",
+        "simp [List.dedup_cons_of_mem'] <;> aesop",
+        "simp [List.dedup_cons_of_not_mem] <;> aesop",
+        "simp [List.dedup, Multiset.dedup]",
+        "simp [List.replicate_dedup]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "List.choose_mem",
+      "candidate_lemma_shape_nl": "a generalized induction helper (stronger IH over the recursive structure) that the elementwise goal can fold through.",
+      "candidate_lemma_name_suggested": "List.dedup_cons_of_mem_induction_aux",
+      "recommended_fli1_action": "generate_induction_helper",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S30",
+      "theorem": "List.dedup_cons_of_mem'",
+      "namespace": "List",
+      "statement": "theorem dedup_cons_of_mem' {a : α} {l : List α} (h : a ∈ dedup l) : dedup (a :: l) = dedup l",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "INDUCTION_GENERALIZATION"
+      ],
+      "primary_pattern": "INDUCTION_GENERALIZATION",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary INDUCTION_GENERALIZATION (conf medium); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.dedup_cons_of_not_mem'",
+        "List.dedup_cons_of_mem",
+        "List.dedup_cons_of_not_mem",
+        "List.mem_dedup",
+        "List.Nodup.dedup"
+      ],
+      "failed_tactics": [
+        "simp [List.dedup_cons_of_mem] <;> aesop",
+        "simp [List.dedup_cons_of_not_mem] <;> aesop",
+        "simp [List.dedup_cons_of_not_mem'] <;> aesop",
+        "simp [List.Nodup.dedup]",
+        "simp [List.dedup_idem]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "List.choose_mem",
+      "candidate_lemma_shape_nl": "a generalized induction helper (stronger IH over the recursive structure) that the elementwise goal can fold through.",
+      "candidate_lemma_name_suggested": "List.dedup_cons_of_mem'_induction_aux",
+      "recommended_fli1_action": "generate_induction_helper",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S31",
+      "theorem": "List.dedup_cons_of_not_mem",
+      "namespace": "List",
+      "statement": "@[simp] theorem dedup_cons_of_not_mem {a : α} {l : List α} (h : a ∉ l) : dedup (a :: l) = a :: dedup l",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "INDUCTION_GENERALIZATION"
+      ],
+      "primary_pattern": "INDUCTION_GENERALIZATION",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary INDUCTION_GENERALIZATION (conf medium); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.dedup_cons_of_mem",
+        "List.dedup_cons_of_not_mem'",
+        "Multiset.dedup_cons_of_not_mem",
+        "List.dedup_cons_of_mem'",
+        "List.mem_dedup"
+      ],
+      "failed_tactics": [
+        "simp [Multiset.dedup_cons_of_not_mem]",
+        "simp [List.dedup_cons_of_mem] <;> aesop",
+        "simp [Multiset.dedup_cons_of_not_mem] <;> aesop",
+        "simp [List.dedup_cons_of_not_mem'] <;> aesop",
+        "simp [List.dedup_cons_of_mem']",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "List.choose_mem",
+      "candidate_lemma_shape_nl": "a generalized induction helper (stronger IH over the recursive structure) that the elementwise goal can fold through.",
+      "candidate_lemma_name_suggested": "List.dedup_cons_of_not_mem_induction_aux",
+      "recommended_fli1_action": "generate_induction_helper",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S32",
+      "theorem": "List.dedup_cons_of_not_mem'",
+      "namespace": "List",
+      "statement": "theorem dedup_cons_of_not_mem' {a : α} {l : List α} (h : a ∉ dedup l) : dedup (a :: l) = a :: dedup l",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "INDUCTION_GENERALIZATION"
+      ],
+      "primary_pattern": "INDUCTION_GENERALIZATION",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary INDUCTION_GENERALIZATION (conf medium); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.dedup_cons_of_mem'",
+        "List.dedup_cons_of_not_mem",
+        "List.dedup_cons_of_mem",
+        "List.dedup",
+        "List.dedup_eq_cons"
+      ],
+      "failed_tactics": [
+        "simp [List.dedup_cons_of_mem'] <;> aesop",
+        "simp [List.dedup_cons_of_not_mem] <;> aesop",
+        "simp [List.dedup_cons_of_mem] <;> aesop",
+        "simp [List.dedup_cons_of_mem']",
+        "simp [List.dedup_cons_of_mem]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "List.choose_mem",
+      "candidate_lemma_shape_nl": "a generalized induction helper (stronger IH over the recursive structure) that the elementwise goal can fold through.",
+      "candidate_lemma_name_suggested": "List.dedup_cons_of_not_mem'_induction_aux",
+      "recommended_fli1_action": "generate_induction_helper",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S33",
+      "theorem": "List.filterMap_congr",
+      "namespace": "List",
+      "statement": "theorem filterMap_congr {f g : α → Option β} {l : List α} (h : ∀ x ∈ l, f x = g x) : l.filterMap f = l.filterMap g",
+      "source_stage": "RC5V2",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "EXTENSIONALITY_NEEDED",
+        "MAP_FILTER_BIND_BRIDGE"
+      ],
+      "primary_pattern": "MAP_FILTER_BIND_BRIDGE",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary MAP_FILTER_BIND_BRIDGE (conf medium); retrieval found 5 lemmas but search (RC5V2) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.Nodup.filterMap",
+        "List.filterMap_eq_map_iff_forall_eq_some",
+        "List.bind_congr",
+        "List.pmap_congr",
+        "List.reverseRecOn"
+      ],
+      "failed_tactics": [
+        "simp [List.filterMap_eq_map_iff_forall_eq_some] <;> aesop",
+        "simp [List.bind_congr] <;> aesop",
+        "simp [List.Nodup.filterMap] <;> aesop",
+        "simp [List.singleton_eq]",
+        "simp [List.pmap_congr]",
+        "simp",
+        "simp_all",
+        "aesop"
+      ],
+      "similar_solved_theorem": "List.attach_map_val'",
+      "candidate_lemma_shape_nl": "a membership lemma for the map/filter/bind/image, e.g. `x ∈ f <$> s ↔ ∃ y ∈ s, f y = x`.",
+      "candidate_lemma_name_suggested": "List.mem_filterMap_congr",
+      "recommended_fli1_action": "generate_map_filter_bind_membership",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S34",
+      "theorem": "List.getLast_append'",
+      "namespace": "List",
+      "statement": "theorem getLast_append' (l₁ l₂ : List α) (h : l₂ ≠ []) : getLast (l₁ ++ l₂) (append_ne_nil_of_ne_nil_right l₁ l₂ h) = getLast l₂ h",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "INDUCTION_GENERALIZATION"
+      ],
+      "primary_pattern": "INDUCTION_GENERALIZATION",
+      "confidence": "medium",
+      "why_selected": "clean fresh List failure, primary INDUCTION_GENERALIZATION (conf medium); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "List.getLast_append_singleton",
+        "List.getLast_cons",
+        "List.getLast_cons_cons",
+        "List.getLast_singleton'",
+        "List.getLast_concat'"
+      ],
+      "failed_tactics": [
+        "simp [List.getLast_cons] <;> aesop",
+        "simp",
+        "simp_all",
+        "aesop",
+        "classical <;> aesop"
+      ],
+      "similar_solved_theorem": "List.pmap_append'",
+      "candidate_lemma_shape_nl": "a generalized induction helper (stronger IH over the recursive structure) that the elementwise goal can fold through.",
+      "candidate_lemma_name_suggested": "List.getLast_append'_induction_aux",
+      "recommended_fli1_action": "generate_induction_helper",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S35",
+      "theorem": "Set.inter_empty_of_inter_sUnion_empty",
+      "namespace": "Set",
+      "statement": "theorem inter_empty_of_inter_sUnion_empty {s t : Set α} {S : Set (Set α)} (hs : t ∈ S) (h : s ∩ ⋃₀S = ∅) : s ∩ t = ∅",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "EXTENSIONALITY_NEEDED"
+      ],
+      "primary_pattern": "EXTENSIONALITY_NEEDED",
+      "confidence": "medium",
+      "why_selected": "clean fresh Set failure, primary EXTENSIONALITY_NEEDED (conf medium); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Set.sUnion_empty",
+        "Set.sUnion_diff_singleton_empty",
+        "Set.sUnion_eq_empty",
+        "Set.sUnion_mem_empty_univ",
+        "Set.sUnion_inter_sUnion"
+      ],
+      "failed_tactics": [
+        "simp [Set.sUnion_empty]",
+        "simp [Set.empty_inter]"
+      ],
+      "similar_solved_theorem": "Set.compl_range_subset_kernImage",
+      "candidate_lemma_shape_nl": "an extensionality bridge: reduce container equality to elementwise membership (`ext x; simp [...]`).",
+      "candidate_lemma_name_suggested": "Set.inter_empty_of_inter_sUnion_empty_ext",
+      "recommended_fli1_action": "generate_ext_membership_bridge",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S36",
+      "theorem": "Set.sInter_diff_singleton_univ",
+      "namespace": "Set",
+      "statement": "@[simp] theorem sInter_diff_singleton_univ (s : Set (Set α)) : ⋂₀ (s \\ {univ}) = ⋂₀ s",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "SINGLETON_CHARACTERIZATION"
+      ],
+      "primary_pattern": "SINGLETON_CHARACTERIZATION",
+      "confidence": "medium",
+      "why_selected": "clean fresh Set failure, primary SINGLETON_CHARACTERIZATION (conf medium); retrieval found 5 lemmas but search (RC5V3) did not close it; a similar theorem was solved",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Set.mem_diff_singleton",
+        "Set.ncard_diff_singleton_le",
+        "Set.sInter_eq_univ",
+        "Set.diff_singleton_eq_self",
+        "Set.encard_diff_singleton_of_mem"
+      ],
+      "failed_tactics": [
+        "simp [Set.sInter_singleton]",
+        "simp [Set.ncard_diff_singleton_le] <;> aesop"
+      ],
+      "similar_solved_theorem": "Set.compl_range_subset_kernImage",
+      "candidate_lemma_shape_nl": "a `… = {x} ↔ …` (or `y ∈ {x} ↔ y = x`) characterization lemma for this container.",
+      "candidate_lemma_name_suggested": "Set.sInter_diff_singleton_univ_singleton_iff",
+      "recommended_fli1_action": "generate_singleton_iff",
+      "selection_score": 18.5
+    },
+    {
+      "seed_id": "FLI0-S37",
+      "theorem": "Nat.coprime_add_mul_left_left",
+      "namespace": "Nat",
+      "statement": "@[simp] theorem coprime_add_mul_left_left (m n k : ℕ) : Coprime (m + n * k) n ↔ Coprime m n",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "IFF_SPLIT",
+        "NAT_ARITH_GAP"
+      ],
+      "primary_pattern": "IFF_SPLIT",
+      "confidence": "medium",
+      "why_selected": "clean fresh Nat failure, primary IFF_SPLIT (conf medium); retrieval found 5 lemmas but search (RC5V3) did not close it",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Nat.coprime_mul_left_add_left",
+        "Nat.coprime_add_mul_left_right",
+        "Nat.coprime_add_mul_right_left",
+        "Nat.coprime_mul_left_add_right",
+        "Nat.coprime_mul_right_add_left"
+      ],
+      "failed_tactics": [
+        "simp [Nat.coprime_mul_left_add_left]",
+        "simp [Nat.coprime_add_mul_right_left]"
+      ],
+      "similar_solved_theorem": null,
+      "candidate_lemma_shape_nl": "no new lemma per se — a `constructor`/two-direction split helper or the missing one-directional bridge lemma each side needs.",
+      "candidate_lemma_name_suggested": "Nat.coprime_add_mul_left_left_helper",
+      "recommended_fli1_action": "generate_iff_split_helper",
+      "selection_score": 17.5
+    },
+    {
+      "seed_id": "FLI0-S38",
+      "theorem": "Nat.coprime_add_mul_left_right",
+      "namespace": "Nat",
+      "statement": "@[simp] theorem coprime_add_mul_left_right (m n k : ℕ) : Coprime m (n + m * k) ↔ Coprime m n",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "IFF_SPLIT",
+        "NAT_ARITH_GAP"
+      ],
+      "primary_pattern": "IFF_SPLIT",
+      "confidence": "medium",
+      "why_selected": "clean fresh Nat failure, primary IFF_SPLIT (conf medium); retrieval found 5 lemmas but search (RC5V3) did not close it",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Nat.coprime_add_mul_right_left",
+        "Nat.coprime_mul_left_add_right",
+        "Nat.coprime_mul_right_add_left",
+        "Nat.coprime_add_mul_right_right",
+        "Nat.coprime_mul_right_add_right"
+      ],
+      "failed_tactics": [
+        "simp [Nat.coprime_add_mul_right_left]",
+        "simp [Nat.coprime_mul_right_add_left]"
+      ],
+      "similar_solved_theorem": null,
+      "candidate_lemma_shape_nl": "no new lemma per se — a `constructor`/two-direction split helper or the missing one-directional bridge lemma each side needs.",
+      "candidate_lemma_name_suggested": "Nat.coprime_add_mul_left_right_helper",
+      "recommended_fli1_action": "generate_iff_split_helper",
+      "selection_score": 17.5
+    },
+    {
+      "seed_id": "FLI0-S39",
+      "theorem": "Nat.coprime_add_mul_right_left",
+      "namespace": "Nat",
+      "statement": "@[simp] theorem coprime_add_mul_right_left (m n k : ℕ) : Coprime (m + k * n) n ↔ Coprime m n",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "IFF_SPLIT",
+        "NAT_ARITH_GAP"
+      ],
+      "primary_pattern": "IFF_SPLIT",
+      "confidence": "medium",
+      "why_selected": "clean fresh Nat failure, primary IFF_SPLIT (conf medium); retrieval found 5 lemmas but search (RC5V3) did not close it",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Nat.coprime_add_mul_left_right",
+        "Nat.coprime_mul_left_add_right",
+        "Nat.coprime_mul_right_add_left",
+        "Nat.coprime_add_mul_right_right",
+        "Nat.coprime_mul_right_add_right"
+      ],
+      "failed_tactics": [
+        "simp [Nat.coprime_mul_right_add_left]",
+        "simp [Nat.coprime_add_mul_left_right]"
+      ],
+      "similar_solved_theorem": null,
+      "candidate_lemma_shape_nl": "no new lemma per se — a `constructor`/two-direction split helper or the missing one-directional bridge lemma each side needs.",
+      "candidate_lemma_name_suggested": "Nat.coprime_add_mul_right_left_helper",
+      "recommended_fli1_action": "generate_iff_split_helper",
+      "selection_score": 17.5
+    },
+    {
+      "seed_id": "FLI0-S40",
+      "theorem": "Nat.coprime_add_mul_right_right",
+      "namespace": "Nat",
+      "statement": "@[simp] theorem coprime_add_mul_right_right (m n k : ℕ) : Coprime m (n + k * m) ↔ Coprime m n",
+      "source_stage": "RC5V3",
+      "freshness_status": "strict_fresh",
+      "failure_pattern": [
+        "IFF_SPLIT",
+        "NAT_ARITH_GAP"
+      ],
+      "primary_pattern": "IFF_SPLIT",
+      "confidence": "medium",
+      "why_selected": "clean fresh Nat failure, primary IFF_SPLIT (conf medium); retrieval found 5 lemmas but search (RC5V3) did not close it",
+      "residual_goal": null,
+      "residual_goal_status": "MISSING",
+      "top_retrieved_lemmas": [
+        "Nat.coprime_mul_right_add_right",
+        "Nat.coprime_add_mul_left_right",
+        "Nat.coprime_add_mul_right_left",
+        "Nat.coprime_mul_left_add_right",
+        "Nat.coprime_mul_right_add_left"
+      ],
+      "failed_tactics": [
+        "simp [Nat.coprime_add_mul_right_left]",
+        "simp [Nat.coprime_add_mul_left_right]"
+      ],
+      "similar_solved_theorem": null,
+      "candidate_lemma_shape_nl": "no new lemma per se — a `constructor`/two-direction split helper or the missing one-directional bridge lemma each side needs.",
+      "candidate_lemma_name_suggested": "Nat.coprime_add_mul_right_right_helper",
+      "recommended_fli1_action": "generate_iff_split_helper",
+      "selection_score": 17.5
+    }
+  ]
+}

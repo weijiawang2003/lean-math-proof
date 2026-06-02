@@ -1,0 +1,1346 @@
+{
+  "generated_by": "scripts/fli2_write_deployment_atlas.py",
+  "pool_size": 217,
+  "actions_generated": 1472,
+  "actions_run": 1059,
+  "theorems_evaluated": 161,
+  "action_classification": {
+    "NO_RESCUE": 880,
+    "UNKNOWN_NAME_OR_IMPORT_GAP": 101,
+    "PARTIAL_PROGRESS": 64,
+    "TRUE_RETRIEVAL_GAP_RESCUE": 11,
+    "CONTROL_DUPLICATE": 2,
+    "NEEDS_REVIEW": 1
+  },
+  "true_rescues": [
+    {
+      "theorem": "Finset.card_le_one_iff",
+      "lemma": "Finset.card_le_one",
+      "tactic": "simp [Finset.card_le_one] <;> aesop",
+      "namespace": "Finset",
+      "controls_failed": true,
+      "why": "controls [] failed; `simp [Finset.card_le_one] <;> aesop` deploying `Finset.card_le_one` closes `Finset.card_le_one_iff` at position; robust"
+    },
+    {
+      "theorem": "Finset.mem_filterMap",
+      "lemma": "Finset.filterMap",
+      "tactic": "simp [Finset.filterMap]",
+      "namespace": "Finset",
+      "controls_failed": true,
+      "why": "controls [] failed; `simp [Finset.filterMap]` deploying `Finset.filterMap` closes `Finset.mem_filterMap` at position; robust"
+    },
+    {
+      "theorem": "Finset.mem_filterMap",
+      "lemma": "Finset.filterMap",
+      "tactic": "simp [Finset.filterMap] <;> aesop",
+      "namespace": "Finset",
+      "controls_failed": true,
+      "why": "controls [] failed; `simp [Finset.filterMap] <;> aesop` deploying `Finset.filterMap` closes `Finset.mem_filterMap` at position; robust"
+    },
+    {
+      "theorem": "Finset.card_subtype",
+      "lemma": "Finset.subtype",
+      "tactic": "simp [Finset.subtype]",
+      "namespace": "Finset",
+      "controls_failed": true,
+      "why": "controls [] failed; `simp [Finset.subtype]` deploying `Finset.subtype` closes `Finset.card_subtype` at position; robust"
+    },
+    {
+      "theorem": "Finset.card_subtype",
+      "lemma": "Finset.subtype",
+      "tactic": "simp [Finset.subtype] <;> aesop",
+      "namespace": "Finset",
+      "controls_failed": true,
+      "why": "controls [] failed; `simp [Finset.subtype] <;> aesop` deploying `Finset.subtype` closes `Finset.card_subtype` at position; robust"
+    },
+    {
+      "theorem": "Finset.mem_map",
+      "lemma": "Finset.map",
+      "tactic": "simp [Finset.map]",
+      "namespace": "Finset",
+      "controls_failed": true,
+      "why": "controls [] failed; `simp [Finset.map]` deploying `Finset.map` closes `Finset.mem_map` at position; robust"
+    },
+    {
+      "theorem": "Finset.mem_map",
+      "lemma": "Finset.map",
+      "tactic": "simp [Finset.map] <;> aesop",
+      "namespace": "Finset",
+      "controls_failed": true,
+      "why": "controls [] failed; `simp [Finset.map] <;> aesop` deploying `Finset.map` closes `Finset.mem_map` at position; robust"
+    },
+    {
+      "theorem": "Finset.mem_preimage",
+      "lemma": "Finset.preimage",
+      "tactic": "simp [Finset.preimage]",
+      "namespace": "Finset",
+      "controls_failed": true,
+      "why": "controls [] failed; `simp [Finset.preimage]` deploying `Finset.preimage` closes `Finset.mem_preimage` at position; robust"
+    },
+    {
+      "theorem": "Finset.mem_preimage",
+      "lemma": "Finset.preimage",
+      "tactic": "simp [Finset.preimage] <;> aesop",
+      "namespace": "Finset",
+      "controls_failed": true,
+      "why": "controls [] failed; `simp [Finset.preimage] <;> aesop` deploying `Finset.preimage` closes `Finset.mem_preimage` at position; robust"
+    },
+    {
+      "theorem": "List.bidirectionalRec_singleton",
+      "lemma": "List.bidirectionalRec",
+      "tactic": "simp [List.bidirectionalRec]",
+      "namespace": "List",
+      "controls_failed": true,
+      "why": "controls [] failed; `simp [List.bidirectionalRec]` deploying `List.bidirectionalRec` closes `List.bidirectionalRec_singleton` at position; robust"
+    },
+    {
+      "theorem": "List.bidirectionalRec_singleton",
+      "lemma": "List.bidirectionalRec",
+      "tactic": "simp [List.bidirectionalRec] <;> aesop",
+      "namespace": "List",
+      "controls_failed": true,
+      "why": "controls [] failed; `simp [List.bidirectionalRec] <;> aesop` deploying `List.bidirectionalRec` closes `List.bidirectionalRec_singleton` at position; robust"
+    }
+  ],
+  "partial_progress": [
+    {
+      "theorem": "Finset.card_le_one_iff",
+      "lemma": "Finset.card_le_one",
+      "tactic": "simp [Finset.card_le_one]",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf : α → β\nn : ℕ\n⊢ s.card ≤ 1 ↔ ∀ {a b : α}, a ∈ s → b ∈ s → a = b",
+      "residual_after": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf : α → β\nn : ℕ\n⊢ (∀ a ∈ s, ∀ b ∈ s, a = b) ↔ ∀ {a b : α}, a ∈ s → b ∈ s → a = b"
+    },
+    {
+      "theorem": "Finset.card_le_one_iff",
+      "lemma": "Finset.card_le_one",
+      "tactic": "simp [Finset.card_le_one]",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf : α → β\nn : ℕ\n⊢ s.card ≤ 1 ↔ ∀ {a b : α}, a ∈ s → b ∈ s → a = b",
+      "residual_after": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf : α → β\nn : ℕ\n⊢ (∀ a ∈ s, ∀ b ∈ s, a = b) ↔ ∀ {a b : α}, a ∈ s → b ∈ s → a = b"
+    },
+    {
+      "theorem": "Finset.image_val_of_injOn",
+      "lemma": "Finset.image_val",
+      "tactic": "simp [Finset.image_val]",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝ : DecidableEq β\nf g : α → β\ns : Finset α\nt : Finset β\na : α\nb c : β\nH : Set.InjOn f ↑s\n⊢ (image f s).val = Multiset.map f s.val",
+      "residual_after": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝ : DecidableEq β\nf g : α → β\ns : Finset α\nt : Finset β\na : α\nb c : β\nH : Set.InjOn f ↑s\n⊢ (Multiset.map f s.val).dedup = Multiset.map f s.val"
+    },
+    {
+      "theorem": "Finset.card_filter_le",
+      "lemma": null,
+      "tactic": "gcongr",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns✝ t u : Finset α\nf : α → β\nn : ℕ\ns : Finset α\np : α → Prop\ninst✝ : DecidablePred p\n⊢ (filter p s).card ≤ s.card",
+      "residual_after": "case a\nα : Type u_1\nβ : Type u_2\nR : Type u_3\ns✝ t u : Finset α\nf : α → β\nn : ℕ\ns : Finset α\np : α → Prop\ninst✝ : DecidablePred p\n⊢ filter p s ⊆ s"
+    },
+    {
+      "theorem": "Finset.card_le_one_iff_subsingleton_coe",
+      "lemma": "Finset.card_le_one",
+      "tactic": "simp [Finset.card_le_one]",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf : α → β\nn : ℕ\n⊢ s.card ≤ 1 ↔ Subsingleton { x // x ∈ s }",
+      "residual_after": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf : α → β\nn : ℕ\n⊢ (∀ a ∈ s, ∀ b ∈ s, a = b) ↔ Subsingleton { x // x ∈ s }"
+    },
+    {
+      "theorem": "Finset.card_le_one_of_subsingleton",
+      "lemma": "Finset.card_le_one_iff_subsingleton_coe",
+      "tactic": "simp [Finset.card_le_one_iff_subsingleton_coe]",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns✝ t u : Finset α\nf : α → β\nn : ℕ\ninst✝ : Subsingleton α\ns : Finset α\n⊢ s.card ≤ 1",
+      "residual_after": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns✝ t u : Finset α\nf : α → β\nn : ℕ\ninst✝ : Subsingleton α\ns : Finset α\n⊢ Subsingleton { x // x ∈ s }"
+    },
+    {
+      "theorem": "Finset.card_le_one_of_subsingleton",
+      "lemma": "Finset.card_le_one",
+      "tactic": "simp [Finset.card_le_one]",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns✝ t u : Finset α\nf : α → β\nn : ℕ\ninst✝ : Subsingleton α\ns : Finset α\n⊢ s.card ≤ 1",
+      "residual_after": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns✝ t u : Finset α\nf : α → β\nn : ℕ\ninst✝ : Subsingleton α\ns : Finset α\n⊢ ∀ a ∈ s, ∀ b ∈ s, a = b"
+    },
+    {
+      "theorem": "Finset.map_val_val_powersetCard",
+      "lemma": "Finset.powersetCard",
+      "tactic": "simp [Finset.powersetCard]",
+      "residual_before": "α : Type u_1\ns✝¹ t✝ : Finset α\nn : ?m.17539\ns✝ t s : Finset α\ni : ℕ\n⊢ Multiset.map val (powersetCard i s).val = Multiset.powersetCard i s.val",
+      "residual_after": "α : Type u_1\ns✝¹ t✝ : Finset α\nn : ?m.17539\ns✝ t s : Finset α\ni : ℕ\n⊢ Multiset.map val (pmap mk (Multiset.powersetCard i s.val) ⋯) = Multiset.powersetCard i s.val"
+    },
+    {
+      "theorem": "Finset.max_mem_image_coe",
+      "lemma": "Finset.coe_max'",
+      "tactic": "simp [Finset.coe_max']",
+      "residual_before": "F : Type u_1\nα : Type u_2\nβ : Type u_3\nγ : Type u_4\nι : Type u_5\nκ : Type u_6\ninst✝ : LinearOrder α\ns✝ : Finset α\nH : s✝.Nonempty\nx : α\ns : Finset α\nhs : s.Nonempty\n⊢ s.max ∈ image WithBot.some s",
+      "residual_after": "F : Type u_1\nα : Type u_2\nβ : Type u_3\nγ : Type u_4\nι : Type u_5\nκ : Type u_6\ninst✝ : LinearOrder α\ns✝ : Finset α\nH : s✝.Nonempty\nx : α\ns : Finset α\nhs : s.Nonempty\n⊢ ∃ a ∈ s, ↑a = s.max"
+    },
+    {
+      "theorem": "Finset.max_mem_insert_bot_image_coe",
+      "lemma": "Finset.max_insert",
+      "tactic": "simp [Finset.max_insert]",
+      "residual_before": "F : Type u_1\nα : Type u_2\nβ : Type u_3\nγ : Type u_4\nι : Type u_5\nκ : Type u_6\ninst✝ : LinearOrder α\ns✝ : Finset α\nH : s✝.Nonempty\nx : α\ns : Finset α\n⊢ s.max ∈ insert ⊥ (image WithBot.some s)",
+      "residual_after": "F : Type u_1\nα : Type u_2\nβ : Type u_3\nγ : Type u_4\nι : Type u_5\nκ : Type u_6\ninst✝ : LinearOrder α\ns✝ : Finset α\nH : s✝.Nonempty\nx : α\ns : Finset α\n⊢ s.max = ⊥ ∨ ∃ a ∈ s, ↑a = s.max"
+    },
+    {
+      "theorem": "Finset.max_mem_insert_bot_image_coe",
+      "lemma": "Finset.max_mem_image_coe",
+      "tactic": "simp [Finset.max_mem_image_coe]",
+      "residual_before": "F : Type u_1\nα : Type u_2\nβ : Type u_3\nγ : Type u_4\nι : Type u_5\nκ : Type u_6\ninst✝ : LinearOrder α\ns✝ : Finset α\nH : s✝.Nonempty\nx : α\ns : Finset α\n⊢ s.max ∈ insert ⊥ (image WithBot.some s)",
+      "residual_after": "F : Type u_1\nα : Type u_2\nβ : Type u_3\nγ : Type u_4\nι : Type u_5\nκ : Type u_6\ninst✝ : LinearOrder α\ns✝ : Finset α\nH : s✝.Nonempty\nx : α\ns : Finset α\n⊢ s.max = ⊥ ∨ ∃ a ∈ s, ↑a = s.max"
+    },
+    {
+      "theorem": "Finset.mem_image_const_self",
+      "lemma": "Finset.mem_image_const",
+      "tactic": "simp [Finset.mem_image_const]",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝ : DecidableEq β\nf g : α → β\ns : Finset α\nt : Finset β\na : α\nb c : β\n⊢ b ∈ image (const α b) s ↔ s.Nonempty",
+      "residual_after": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝ : DecidableEq β\nf g : α → β\ns : Finset α\nt : Finset β\na : α\nb c : β\n⊢ (∃ a, a ∈ s) ↔ s.Nonempty"
+    },
+    {
+      "theorem": "Finset.mem_image_const_self",
+      "lemma": "Finset.mem_image_const",
+      "tactic": "simp [Finset.mem_image_const] <;> aesop",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝ : DecidableEq β\nf g : α → β\ns : Finset α\nt : Finset β\na : α\nb c : β\n⊢ b ∈ image (const α b) s ↔ s.Nonempty",
+      "residual_after": "case mp\nα : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst : DecidableEq β\nf g : α → β\ns : Finset α\nt : Finset β\na : α\nb c : β\nw : α\nh : w ∈ s\n⊢ s.Nonempty"
+    },
+    {
+      "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq",
+      "lemma": "Finset.mem_range",
+      "tactic": "simp [Finset.mem_range]",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝¹ : DecidableEq β\nf✝ g : α → β\ns : Finset α\nt : Finset β\na✝ : α\nb c : β\ninst✝ : DecidableEq α\nf : ℤ → α\na : α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℤ), f (i % ↑n) = f",
+      "residual_after": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝¹ : DecidableEq β\nf✝ g : α → β\ns : Finset α\nt : Finset β\na✝ : α\nb c : β\ninst✝ : DecidableEq α\nf : ℤ → α\na : α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℤ), f (i % ↑n) = f"
+    },
+    {
+      "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq",
+      "lemma": "Finset.mem_range_iff_mem_finset_range_of_mod_eq'",
+      "tactic": "simp [Finset.mem_range_iff_mem_finset_range_of_mod_eq']",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝¹ : DecidableEq β\nf✝ g : α → β\ns : Finset α\nt : Finset β\na✝ : α\nb c : β\ninst✝ : DecidableEq α\nf : ℤ → α\na : α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℤ), f (i % ↑n) = f",
+      "residual_after": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝¹ : DecidableEq β\nf✝ g : α → β\ns : Finset α\nt : Finset β\na✝ : α\nb c : β\ninst✝ : DecidableEq α\nf : ℤ → α\na : α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℤ), f (i % ↑n) = f"
+    },
+    {
+      "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq",
+      "lemma": "Finset.mem_range_succ_iff",
+      "tactic": "simp [Finset.mem_range_succ_iff]",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝¹ : DecidableEq β\nf✝ g : α → β\ns : Finset α\nt : Finset β\na✝ : α\nb c : β\ninst✝ : DecidableEq α\nf : ℤ → α\na : α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℤ), f (i % ↑n) = f",
+      "residual_after": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝¹ : DecidableEq β\nf✝ g : α → β\ns : Finset α\nt : Finset β\na✝ : α\nb c : β\ninst✝ : DecidableEq α\nf : ℤ → α\na : α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℤ), f (i % ↑n) = f"
+    },
+    {
+      "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq",
+      "lemma": "Finset.mem_range",
+      "tactic": "simp [Finset.mem_range] <;> aesop",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝¹ : DecidableEq β\nf✝ g : α → β\ns : Finset α\nt : Finset β\na✝ : α\nb c : β\ninst✝ : DecidableEq α\nf : ℤ → α\na : α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℤ), f (i % ↑n) = f",
+      "residual_after": "case mp\nα : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst : DecidableEq β\nf_1 g : α → β\ns : Finset α\nt : Finset β\na_1 : α\nb c : β\ninst_1 : DecidableEq α\nf : ℤ → α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℤ), f (i % ↑n) "
+    },
+    {
+      "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq",
+      "lemma": "Finset.mem_range_iff_mem_finset_range_of_mod_eq'",
+      "tactic": "simp [Finset.mem_range_iff_mem_finset_range_of_mod_eq'] <;> aesop",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝¹ : DecidableEq β\nf✝ g : α → β\ns : Finset α\nt : Finset β\na✝ : α\nb c : β\ninst✝ : DecidableEq α\nf : ℤ → α\na : α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℤ), f (i % ↑n) = f",
+      "residual_after": "case mp\nα : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst : DecidableEq β\nf_1 g : α → β\ns : Finset α\nt : Finset β\na_1 : α\nb c : β\ninst_1 : DecidableEq α\nf : ℤ → α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℤ), f (i % ↑n) "
+    },
+    {
+      "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq",
+      "lemma": "Finset.mem_range_succ_iff",
+      "tactic": "simp [Finset.mem_range_succ_iff] <;> aesop",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝¹ : DecidableEq β\nf✝ g : α → β\ns : Finset α\nt : Finset β\na✝ : α\nb c : β\ninst✝ : DecidableEq α\nf : ℤ → α\na : α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℤ), f (i % ↑n) = f",
+      "residual_after": "case mp\nα : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst : DecidableEq β\nf_1 g : α → β\ns : Finset α\nt : Finset β\na_1 : α\nb c : β\ninst_1 : DecidableEq α\nf : ℤ → α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℤ), f (i % ↑n) "
+    },
+    {
+      "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq'",
+      "lemma": "Finset.mem_range",
+      "tactic": "simp [Finset.mem_range]",
+      "residual_before": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝¹ : DecidableEq β\nf✝ g : α → β\ns : Finset α\nt : Finset β\na✝ : α\nb c : β\ninst✝ : DecidableEq α\nf : ℕ → α\na : α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℕ), f (i % n) = f ",
+      "residual_after": "α : Type u_1\nβ : Type u_2\nγ : Type u_3\ninst✝¹ : DecidableEq β\nf✝ g : α → β\ns : Finset α\nt : Finset β\na✝ : α\nb c : β\ninst✝ : DecidableEq α\nf : ℕ → α\na : α\nn : ℕ\nhn : 0 < n\nh : ∀ (i : ℕ), f (i % n) = f "
+    }
+  ],
+  "deployment_rules": [
+    {
+      "rule_id": "FINSET_MAP_BRIDGE",
+      "pattern": null,
+      "namespace": "Finset",
+      "trigger_conditions": [
+        "theorem/residual in Finset",
+        "retrieved lemma in family Finset.map_*"
+      ],
+      "lemma_family": "Finset.map_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [
+        {
+          "theorem": "Finset.mem_filterMap",
+          "lemma": "Finset.filterMap",
+          "tactic": "simp [Finset.filterMap]"
+        },
+        {
+          "theorem": "Finset.mem_filterMap",
+          "lemma": "Finset.filterMap",
+          "tactic": "simp [Finset.filterMap] <;> aesop"
+        },
+        {
+          "theorem": "Finset.mem_map",
+          "lemma": "Finset.map",
+          "tactic": "simp [Finset.map]"
+        },
+        {
+          "theorem": "Finset.mem_map",
+          "lemma": "Finset.map",
+          "tactic": "simp [Finset.map] <;> aesop"
+        }
+      ],
+      "partial_progress_cases": [],
+      "false_positive_cases": [
+        "simp [Finset.filterMap]",
+        "simp [Finset.filterMap_empty]",
+        "exact Finset.filterMap",
+        "exact Finset.filterMap h",
+        "exact Finset.filterMap_empty",
+        "exact Finset.filterMap_empty h",
+        "simp [Finset.filter_map]",
+        "simp [Finset.filter_map] <;> aesop"
+      ],
+      "num_rescues": 4,
+      "num_partials": 0,
+      "num_false_positives": 45,
+      "false_positive_rate": 0.918,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "FINSET_IMAGE_BRIDGE",
+      "pattern": null,
+      "namespace": "Finset",
+      "trigger_conditions": [
+        "theorem/residual in Finset",
+        "retrieved lemma in family Finset.image_*"
+      ],
+      "lemma_family": "Finset.image_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [
+        {
+          "theorem": "Finset.mem_preimage",
+          "lemma": "Finset.preimage",
+          "tactic": "simp [Finset.preimage]"
+        },
+        {
+          "theorem": "Finset.mem_preimage",
+          "lemma": "Finset.preimage",
+          "tactic": "simp [Finset.preimage] <;> aesop"
+        }
+      ],
+      "partial_progress_cases": [
+        {
+          "theorem": "Finset.image_val_of_injOn",
+          "lemma": "Finset.image_val"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Finset.image_val] <;> aesop",
+        "simp [Finset.forall_image]",
+        "simp [Finset.sup_image]",
+        "simp [Finset.forall_image] <;> aesop",
+        "simp [Finset.sup_image] <;> aesop",
+        "constructor <;> intro h <;> simp [Finset.preimage] at *"
+      ],
+      "num_rescues": 2,
+      "num_partials": 1,
+      "num_false_positives": 6,
+      "false_positive_rate": 0.75,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "FINSET_SUBTYPE_BRIDGE",
+      "pattern": null,
+      "namespace": "Finset",
+      "trigger_conditions": [
+        "theorem/residual in Finset",
+        "retrieved lemma in family Finset.subtype_*"
+      ],
+      "lemma_family": "Finset.subtype_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [
+        {
+          "theorem": "Finset.card_subtype",
+          "lemma": "Finset.subtype",
+          "tactic": "simp [Finset.subtype]"
+        },
+        {
+          "theorem": "Finset.card_subtype",
+          "lemma": "Finset.subtype",
+          "tactic": "simp [Finset.subtype] <;> aesop"
+        }
+      ],
+      "partial_progress_cases": [],
+      "false_positive_cases": [],
+      "num_rescues": 2,
+      "num_partials": 0,
+      "num_false_positives": 0,
+      "false_positive_rate": 0.0,
+      "risk": "low",
+      "promotion_status": "candidate"
+    },
+    {
+      "rule_id": "LIST_BIDIRECTIONALREC_BRIDGE",
+      "pattern": null,
+      "namespace": "List",
+      "trigger_conditions": [
+        "theorem/residual in List",
+        "retrieved lemma in family List.bidirectionalrec_*"
+      ],
+      "lemma_family": "List.bidirectionalrec_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [
+        {
+          "theorem": "List.bidirectionalRec_singleton",
+          "lemma": "List.bidirectionalRec",
+          "tactic": "simp [List.bidirectionalRec]"
+        },
+        {
+          "theorem": "List.bidirectionalRec_singleton",
+          "lemma": "List.bidirectionalRec",
+          "tactic": "simp [List.bidirectionalRec] <;> aesop"
+        }
+      ],
+      "partial_progress_cases": [],
+      "false_positive_cases": [
+        "simp [List.bidirectionalRec_cons_append]",
+        "simp [List.bidirectionalRec_nil]",
+        "simp [List.bidirectionalRec_cons_append] <;> aesop",
+        "simp [List.bidirectionalRec_nil] <;> aesop",
+        "constructor <;> intro h <;> simp [List.bidirectionalRec] at *",
+        "constructor <;> intro h <;> simp [List.bidirectionalRec_cons_append] at *"
+      ],
+      "num_rescues": 2,
+      "num_partials": 0,
+      "num_false_positives": 6,
+      "false_positive_rate": 0.75,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "FINSET_CARD_BRIDGE",
+      "pattern": null,
+      "namespace": "Finset",
+      "trigger_conditions": [
+        "theorem/residual in Finset",
+        "retrieved lemma in family Finset.card_*"
+      ],
+      "lemma_family": "Finset.card_*",
+      "recommended_actions": [
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [
+        {
+          "theorem": "Finset.card_le_one_iff",
+          "lemma": "Finset.card_le_one",
+          "tactic": "simp [Finset.card_le_one] <;> aesop"
+        }
+      ],
+      "partial_progress_cases": [
+        {
+          "theorem": "Finset.card_le_one_iff",
+          "lemma": "Finset.card_le_one"
+        },
+        {
+          "theorem": "Finset.card_le_one_iff",
+          "lemma": "Finset.card_le_one"
+        },
+        {
+          "theorem": "Finset.card_le_one_iff_subsingleton_coe",
+          "lemma": "Finset.card_le_one"
+        },
+        {
+          "theorem": "Finset.card_le_one_of_subsingleton",
+          "lemma": "Finset.card_le_one_iff_subsingleton_coe"
+        },
+        {
+          "theorem": "Finset.card_le_one_of_subsingleton",
+          "lemma": "Finset.card_le_one"
+        },
+        {
+          "theorem": "Finset.map_val_val_powersetCard",
+          "lemma": "Finset.powersetCard"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Finset.card_le_one_iff]",
+        "simp [Finset.card_le_one_iff]",
+        "simp [Finset.one_lt_card]",
+        "simp [Finset.card_le_one_iff] <;> aesop",
+        "simp [Finset.card_le_one_iff] <;> aesop",
+        "simp [Finset.one_lt_card] <;> aesop",
+        "simp [Finset.card_le_one_iff_subsingleton_coe]",
+        "simp [Finset.card_le_one] <;> aesop"
+      ],
+      "num_rescues": 1,
+      "num_partials": 6,
+      "num_false_positives": 145,
+      "false_positive_rate": 0.993,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "FINSET_MEM_BRIDGE",
+      "pattern": null,
+      "namespace": "Finset",
+      "trigger_conditions": [
+        "theorem/residual in Finset",
+        "retrieved lemma in family Finset.mem_*"
+      ],
+      "lemma_family": "Finset.mem_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Finset.max_mem_insert_bot_image_coe",
+          "lemma": "Finset.max_mem_image_coe"
+        },
+        {
+          "theorem": "Finset.mem_image_const_self",
+          "lemma": "Finset.mem_image_const"
+        },
+        {
+          "theorem": "Finset.mem_image_const_self",
+          "lemma": "Finset.mem_image_const"
+        },
+        {
+          "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq",
+          "lemma": "Finset.mem_range"
+        },
+        {
+          "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq",
+          "lemma": "Finset.mem_range_iff_mem_finset_range_of_mod_eq'"
+        },
+        {
+          "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq",
+          "lemma": "Finset.mem_range_succ_iff"
+        },
+        {
+          "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq",
+          "lemma": "Finset.mem_range"
+        },
+        {
+          "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq",
+          "lemma": "Finset.mem_range_iff_mem_finset_range_of_mod_eq'"
+        },
+        {
+          "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq",
+          "lemma": "Finset.mem_range_succ_iff"
+        },
+        {
+          "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq'",
+          "lemma": "Finset.mem_range"
+        },
+        {
+          "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq'",
+          "lemma": "Finset.mem_range_succ_iff"
+        },
+        {
+          "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq'",
+          "lemma": "Finset.mem_range"
+        },
+        {
+          "theorem": "Finset.mem_range_iff_mem_finset_range_of_mod_eq'",
+          "lemma": "Finset.mem_range_succ_iff"
+        },
+        {
+          "theorem": "Finset.min_mem_insert_top_image_coe",
+          "lemma": "Finset.max_mem_insert_bot_image_coe"
+        },
+        {
+          "theorem": "Finset.min_mem_insert_top_image_coe",
+          "lemma": "Finset.min_mem_image_coe"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Finset.subset_biUnion_of_mem]",
+        "simp [Finset.subset_set_biUnion_of_mem]",
+        "simp [Finset.mem_filterMap]",
+        "exact Finset.mem_filterMap",
+        "simp [Finset.mem_of_mem_filter]",
+        "simp [Finset.mem_of_mem_filter] <;> aesop",
+        "simp [Finset.subset_set_biUnion_of_mem]",
+        "simp [Finset.subset_biUnion_of_mem]"
+      ],
+      "num_rescues": 0,
+      "num_partials": 15,
+      "num_false_positives": 21,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "LIST_SINGLETON_BRIDGE",
+      "pattern": null,
+      "namespace": "List",
+      "trigger_conditions": [
+        "theorem/residual in List",
+        "retrieved lemma in family List.singleton_*"
+      ],
+      "lemma_family": "List.singleton_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "List.getLast_filter",
+          "lemma": "List.getLast_singleton'"
+        },
+        {
+          "theorem": "List.getLast_filter",
+          "lemma": "List.reverse_singleton"
+        },
+        {
+          "theorem": "List.getLast_filter",
+          "lemma": "List.singleton_injective"
+        },
+        {
+          "theorem": "List.getLast_filter",
+          "lemma": "List.getLast_singleton'"
+        },
+        {
+          "theorem": "List.getLast_filter",
+          "lemma": "List.reverse_singleton"
+        },
+        {
+          "theorem": "List.getLast_filter",
+          "lemma": "List.singleton_injective"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [List.singleton_injective]",
+        "simp [List.singleton_injective] <;> aesop",
+        "simp [List.filter_singleton]",
+        "simp [List.filter_singleton] <;> aesop",
+        "simp [List.singleton_injective]",
+        "simp [List.singleton_injective] <;> aesop"
+      ],
+      "num_rescues": 0,
+      "num_partials": 6,
+      "num_false_positives": 6,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "MULTISET_MAP_BRIDGE",
+      "pattern": null,
+      "namespace": "Multiset",
+      "trigger_conditions": [
+        "theorem/residual in Multiset",
+        "retrieved lemma in family Multiset.map_*"
+      ],
+      "lemma_family": "Multiset.map_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Multiset.filterMap_some",
+          "lemma": "Multiset.filterMap"
+        },
+        {
+          "theorem": "Multiset.map_filterMap_of_inv",
+          "lemma": "Multiset.filterMap"
+        },
+        {
+          "theorem": "Multiset.map_filterMap_of_inv",
+          "lemma": "Multiset.map_filterMap"
+        },
+        {
+          "theorem": "Multiset.map_filterMap_of_inv",
+          "lemma": "Multiset.filterMap"
+        },
+        {
+          "theorem": "Multiset.map_filterMap_of_inv",
+          "lemma": "Multiset.map_filterMap"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Multiset.filterMap]",
+        "simp [Multiset.filterMap_cons_some]",
+        "simp [Multiset.filterMap_cons_some]",
+        "simp [Multiset.filterMap] <;> aesop",
+        "simp [Multiset.filterMap_cons_some] <;> aesop",
+        "simp [Multiset.filterMap_cons_some] <;> aesop",
+        "constructor <;> intro h <;> simp [Multiset.filterMap] at *",
+        "constructor <;> intro h <;> simp [Multiset.filterMap_cons_some] at *"
+      ],
+      "num_rescues": 0,
+      "num_partials": 5,
+      "num_false_positives": 85,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "SET_IMAGE_BRIDGE",
+      "pattern": null,
+      "namespace": "Set",
+      "trigger_conditions": [
+        "theorem/residual in Set",
+        "retrieved lemma in family Set.image_*"
+      ],
+      "lemma_family": "Set.image_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Set.LeftInvOn.image_inter",
+          "lemma": "Set.image_inter"
+        },
+        {
+          "theorem": "Set.kernImage_preimage_union",
+          "lemma": "Set.kernImage"
+        },
+        {
+          "theorem": "Set.kernImage_preimage_union",
+          "lemma": "Set.kernImage"
+        },
+        {
+          "theorem": "Set.kernImage_union_preimage",
+          "lemma": "Set.kernImage"
+        },
+        {
+          "theorem": "Set.kernImage_union_preimage",
+          "lemma": "Set.kernImage"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Set.EqOn.image_eq]",
+        "simp [Set.EqOn.image_eq] <;> aesop",
+        "simp [Set.BijOn.image_eq]",
+        "simp [Set.BijOn.image_eq] <;> aesop",
+        "simp [Set.EqOn.image_eq]",
+        "simp [Set.EqOn.image_eq] <;> aesop",
+        "simp [Set.exists_image_eq_and_injOn]",
+        "simp [Set.injOn_preimage]"
+      ],
+      "num_rescues": 0,
+      "num_partials": 5,
+      "num_false_positives": 43,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "SET_SUBSET_BRIDGE",
+      "pattern": null,
+      "namespace": "Set",
+      "trigger_conditions": [
+        "theorem/residual in Set",
+        "retrieved lemma in family Set.subset_*"
+      ],
+      "lemma_family": "Set.subset_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Set.biUnion_diff_biUnion_subset",
+          "lemma": "Set.diff_subset_iff"
+        },
+        {
+          "theorem": "Set.biUnion_diff_biUnion_subset",
+          "lemma": "Set.diff_union_of_subset"
+        },
+        {
+          "theorem": "Set.biUnion_diff_biUnion_subset",
+          "lemma": "Set.subset_diff_union"
+        },
+        {
+          "theorem": "Set.iUnion_subset_iUnion_const",
+          "lemma": "Set.iUnion_subset"
+        },
+        {
+          "theorem": "Set.iUnion_subset_iUnion_const",
+          "lemma": "Set.subset_iUnion"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Set.exists_subset_bijOn]",
+        "simp [Set.surjOn_iff_exists_bijOn_subset]",
+        "exact Set.exists_subset_bijOn",
+        "exact Set.exists_subset_bijOn h",
+        "exact Set.surjOn_iff_exists_bijOn_subset",
+        "simp [Set.BijOn.subset_range]",
+        "simp [Set.exists_subset_bijOn]",
+        "exact Set.BijOn.subset_range"
+      ],
+      "num_rescues": 0,
+      "num_partials": 5,
+      "num_false_positives": 52,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "MULTISET_MEM_BRIDGE",
+      "pattern": null,
+      "namespace": "Multiset",
+      "trigger_conditions": [
+        "theorem/residual in Multiset",
+        "retrieved lemma in family Multiset.mem_*"
+      ],
+      "lemma_family": "Multiset.mem_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Multiset.pmap_cons",
+          "lemma": "Multiset.mem_cons_of_mem"
+        },
+        {
+          "theorem": "Multiset.pmap_cons",
+          "lemma": "Multiset.mem_cons_self"
+        },
+        {
+          "theorem": "Multiset.pmap_cons",
+          "lemma": "Multiset.mem_cons_of_mem"
+        },
+        {
+          "theorem": "Multiset.pmap_cons",
+          "lemma": "Multiset.mem_cons_self"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Multiset.mem_map]",
+        "simp [Multiset.mem_map] <;> aesop",
+        "simp [Multiset.forall_mem_cons]",
+        "simp [Multiset.forall_mem_cons]",
+        "simp [Multiset.forall_mem_cons] <;> aesop",
+        "simp [Multiset.forall_mem_cons] <;> aesop",
+        "constructor <;> intro h <;> simp [Multiset.forall_mem_cons] at *",
+        "simp [Multiset.coe_mem]"
+      ],
+      "num_rescues": 0,
+      "num_partials": 4,
+      "num_false_positives": 13,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "FINSET_INSERT_BRIDGE",
+      "pattern": null,
+      "namespace": "Finset",
+      "trigger_conditions": [
+        "theorem/residual in Finset",
+        "retrieved lemma in family Finset.insert_*"
+      ],
+      "lemma_family": "Finset.insert_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Finset.max_mem_insert_bot_image_coe",
+          "lemma": "Finset.max_insert"
+        },
+        {
+          "theorem": "Finset.min_mem_insert_top_image_coe",
+          "lemma": "Finset.min_insert"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Finset.exists_eq_insert_iff]",
+        "simp [Finset.exists_eq_insert_iff] <;> aesop",
+        "simp [Finset.max_insert] <;> aesop",
+        "simp [Finset.min_insert] <;> aesop"
+      ],
+      "num_rescues": 0,
+      "num_partials": 2,
+      "num_false_positives": 4,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "MULTISET_BIND_BRIDGE",
+      "pattern": null,
+      "namespace": "Multiset",
+      "trigger_conditions": [
+        "theorem/residual in Multiset",
+        "retrieved lemma in family Multiset.bind_*"
+      ],
+      "lemma_family": "Multiset.bind_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Multiset.bind_add",
+          "lemma": "Multiset.bind"
+        },
+        {
+          "theorem": "Multiset.bind_cons",
+          "lemma": "Multiset.bind"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Multiset.add_bind]",
+        "simp [Multiset.bind_bind]",
+        "simp [Multiset.add_bind] <;> aesop",
+        "simp [Multiset.bind] <;> aesop",
+        "simp [Multiset.bind_bind] <;> aesop",
+        "simp [Multiset.cons_bind]",
+        "simp [Multiset.bind] <;> aesop",
+        "simp [Multiset.cons_bind] <;> aesop"
+      ],
+      "num_rescues": 0,
+      "num_partials": 2,
+      "num_false_positives": 8,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "MULTISET_FILTER_BRIDGE",
+      "pattern": null,
+      "namespace": "Multiset",
+      "trigger_conditions": [
+        "theorem/residual in Multiset",
+        "retrieved lemma in family Multiset.filter_*"
+      ],
+      "lemma_family": "Multiset.filter_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Multiset.countP_eq_countP_filter_add",
+          "lemma": "Multiset.countP_filter"
+        },
+        {
+          "theorem": "Multiset.filter_add_not",
+          "lemma": "Multiset.filter_add_filter"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Multiset.countP_filter] <;> aesop",
+        "simp [Multiset.countP_eq_countP_filter_add]",
+        "simp [Multiset.countP_filter]",
+        "simp [Multiset.countP_eq_countP_filter_add] <;> aesop",
+        "simp [Multiset.countP_filter] <;> aesop",
+        "simp [Multiset.filter]",
+        "simp [Multiset.filter_add_filter]",
+        "simp [Multiset.filter_add_not]"
+      ],
+      "num_rescues": 0,
+      "num_partials": 2,
+      "num_false_positives": 49,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "FINSET_BIUNION_BRIDGE",
+      "pattern": null,
+      "namespace": "Finset",
+      "trigger_conditions": [
+        "theorem/residual in Finset",
+        "retrieved lemma in family Finset.biunion_*"
+      ],
+      "lemma_family": "Finset.biunion_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Finset.powerset_card_biUnion",
+          "lemma": "Finset.biUnion"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Finset.biUnion_mono]",
+        "exact Finset.biUnion_mono",
+        "exact Finset.biUnion_mono h",
+        "simp [Finset.biUnion]",
+        "exact Finset.biUnion",
+        "exact Finset.biUnion h",
+        "simp [Finset.Nonempty.biUnion]",
+        "simp [Finset.biUnion_empty]"
+      ],
+      "num_rescues": 0,
+      "num_partials": 1,
+      "num_false_positives": 15,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "FINSET_CLOSER_BRIDGE",
+      "pattern": null,
+      "namespace": "Finset",
+      "trigger_conditions": [
+        "theorem/residual in Finset",
+        "retrieved lemma in family closer"
+      ],
+      "lemma_family": "closer",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Finset.card_filter_le",
+          "lemma": null
+        }
+      ],
+      "false_positive_cases": [
+        "gcongr",
+        "omega",
+        "gcongr",
+        "omega",
+        "gcongr",
+        "omega",
+        "omega",
+        "omega"
+      ],
+      "num_rescues": 0,
+      "num_partials": 1,
+      "num_false_positives": 32,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "FINSET_COE_BRIDGE",
+      "pattern": null,
+      "namespace": "Finset",
+      "trigger_conditions": [
+        "theorem/residual in Finset",
+        "retrieved lemma in family Finset.coe_*"
+      ],
+      "lemma_family": "Finset.coe_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Finset.max_mem_image_coe",
+          "lemma": "Finset.coe_max'"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Finset.coe_max'] <;> aesop"
+      ],
+      "num_rescues": 0,
+      "num_partials": 1,
+      "num_false_positives": 1,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "FINSET_SUBSET_BRIDGE",
+      "pattern": null,
+      "namespace": "Finset",
+      "trigger_conditions": [
+        "theorem/residual in Finset",
+        "retrieved lemma in family Finset.subset_*"
+      ],
+      "lemma_family": "Finset.subset_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Finset.mem_ssubsets",
+          "lemma": "Finset.ssubsets"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Finset.erase_subset]",
+        "simp [Finset.erase_subset_erase]",
+        "simp [Finset.image_inter_subset]",
+        "exact Finset.erase_subset",
+        "exact Finset.erase_subset h",
+        "exact Finset.erase_subset_erase",
+        "exact Finset.erase_subset_erase h",
+        "exact Finset.image_inter_subset"
+      ],
+      "num_rescues": 0,
+      "num_partials": 1,
+      "num_false_positives": 41,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "LIST_SUBSET_BRIDGE",
+      "pattern": null,
+      "namespace": "List",
+      "trigger_conditions": [
+        "theorem/residual in List",
+        "retrieved lemma in family List.subset_*"
+      ],
+      "lemma_family": "List.subset_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "List.filter_comm",
+          "lemma": "List.filter_subset"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [List.filter_subset] <;> aesop",
+        "simp [List.filter_subset]",
+        "simp [List.filter_subset] <;> aesop"
+      ],
+      "num_rescues": 0,
+      "num_partials": 1,
+      "num_false_positives": 3,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "MULTISET_ATTACH_BRIDGE",
+      "pattern": null,
+      "namespace": "Multiset",
+      "trigger_conditions": [
+        "theorem/residual in Multiset",
+        "retrieved lemma in family Multiset.attach_*"
+      ],
+      "lemma_family": "Multiset.attach_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Multiset.filter_attach",
+          "lemma": "Multiset.attach"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Multiset.attach] <;> aesop"
+      ],
+      "num_rescues": 0,
+      "num_partials": 1,
+      "num_false_positives": 1,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "MULTISET_CARD_BRIDGE",
+      "pattern": null,
+      "namespace": "Multiset",
+      "trigger_conditions": [
+        "theorem/residual in Multiset",
+        "retrieved lemma in family Multiset.card_*"
+      ],
+      "lemma_family": "Multiset.card_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Multiset.countP_eq_countP_filter_add",
+          "lemma": "Multiset.countP_eq_card_filter"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Multiset.countP_eq_card_filter] <;> aesop",
+        "simp [Multiset.count_eq_card_filter_eq]",
+        "simp [Multiset.count_eq_card_filter_eq] <;> aesop",
+        "simp [Multiset.count_eq_card_filter_eq]",
+        "simp [Multiset.count_eq_card_filter_eq] <;> aesop"
+      ],
+      "num_rescues": 0,
+      "num_partials": 1,
+      "num_false_positives": 5,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "MULTISET_COUNT_BRIDGE",
+      "pattern": null,
+      "namespace": "Multiset",
+      "trigger_conditions": [
+        "theorem/residual in Multiset",
+        "retrieved lemma in family Multiset.count_*"
+      ],
+      "lemma_family": "Multiset.count_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Multiset.count_map",
+          "lemma": "Multiset.count"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Multiset.count_sum]",
+        "simp [Multiset.count] <;> aesop",
+        "simp [Multiset.count_sum] <;> aesop"
+      ],
+      "num_rescues": 0,
+      "num_partials": 1,
+      "num_false_positives": 3,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "SET_IINTER_BRIDGE",
+      "pattern": null,
+      "namespace": "Set",
+      "trigger_conditions": [
+        "theorem/residual in Set",
+        "retrieved lemma in family Set.iinter_*"
+      ],
+      "lemma_family": "Set.iinter_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Set.iUnion_iInter_ge_nat_add",
+          "lemma": "Set.iInter_ge_eq_iInter_nat_add"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Set.iInter]",
+        "exact Set.iInter",
+        "exact Set.iInter h",
+        "simp [Set.iInter_ge_eq_iInter_nat_add] <;> aesop",
+        "simp [Set.iInter_union_of_antitone]",
+        "simp [Set.iInter_union_of_antitone] <;> aesop",
+        "simp [Set.iInter_union_of_monotone]",
+        "simp [Set.iInter_union_of_monotone] <;> aesop"
+      ],
+      "num_rescues": 0,
+      "num_partials": 1,
+      "num_false_positives": 8,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "SET_IUNION_BRIDGE",
+      "pattern": null,
+      "namespace": "Set",
+      "trigger_conditions": [
+        "theorem/residual in Set",
+        "retrieved lemma in family Set.iunion_*"
+      ],
+      "lemma_family": "Set.iunion_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Set.iUnion_iInter_ge_nat_add",
+          "lemma": "Set.iUnion_ge_eq_iUnion_nat_add"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Set.iUnion_ge_eq_iUnion_nat_add] <;> aesop",
+        "simp [Set.iUnion_image_right]",
+        "simp [Set.iUnion_image_sup_left]",
+        "simp [Set.image2_iUnion_left]",
+        "simp [Set.iUnion_image_right] <;> aesop",
+        "simp [Set.iUnion_image_sup_left] <;> aesop",
+        "simp [Set.image2_iUnion_left] <;> aesop",
+        "simp [Set.iUnion_iInter_of_antitone]"
+      ],
+      "num_rescues": 0,
+      "num_partials": 1,
+      "num_false_positives": 28,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    },
+    {
+      "rule_id": "SET_LEFTINVON_BRIDGE",
+      "pattern": null,
+      "namespace": "Set",
+      "trigger_conditions": [
+        "theorem/residual in Set",
+        "retrieved lemma in family Set.leftinvon_*"
+      ],
+      "lemma_family": "Set.leftinvon_*",
+      "recommended_actions": [
+        "SIMPLE_SIMP",
+        "SIMP_AESOP"
+      ],
+      "supporting_rescues": [],
+      "partial_progress_cases": [
+        {
+          "theorem": "Set.LeftInvOn.image_inter",
+          "lemma": "Set.LeftInvOn"
+        }
+      ],
+      "false_positive_cases": [
+        "simp [Set.LeftInvOn] <;> aesop"
+      ],
+      "num_rescues": 0,
+      "num_partials": 1,
+      "num_false_positives": 1,
+      "false_positive_rate": null,
+      "risk": "medium",
+      "promotion_status": "needs_more_data"
+    }
+  ],
+  "rc4bc_comparison": {
+    "fli2_true_rescues": 11,
+    "overlap_with_rc4bc_families": [],
+    "new_family_signatures": [
+      "Finset:card",
+      "Finset:filterMap",
+      "Finset:map",
+      "Finset:preimage",
+      "Finset:subtype",
+      "List:bidirectionalRec"
+    ],
+    "is_scalable_rc_candidate_generator": true
+  }
+}

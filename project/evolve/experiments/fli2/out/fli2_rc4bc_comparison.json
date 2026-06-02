@@ -1,0 +1,87 @@
+{
+  "generated_by": "scripts/fli2_compare_to_rc4bc.py",
+  "rc4b_committed_decision": "RC4B_CANDIDATE_CONFIRMED",
+  "rc4c_committed_decision": "RC4C_CONFIRMED_WITH_RC4B_OVERLAP",
+  "rc4_validation_method": "manual hand-built static wrapper + literal-RC2 validation",
+  "fli2_method": "automated failure-analysis → gated retrieved-lemma deployment → at-position rescue",
+  "fli2_true_rescues": 11,
+  "overlap_with_rc4bc_families": [],
+  "new_families_beyond_rc4bc": [
+    {
+      "theorem": "Finset.card_le_one_iff",
+      "lemma": "Finset.card_le_one",
+      "tactic": "simp [Finset.card_le_one] <;> aesop",
+      "rc4_family": null
+    },
+    {
+      "theorem": "Finset.mem_filterMap",
+      "lemma": "Finset.filterMap",
+      "tactic": "simp [Finset.filterMap]",
+      "rc4_family": null
+    },
+    {
+      "theorem": "Finset.mem_filterMap",
+      "lemma": "Finset.filterMap",
+      "tactic": "simp [Finset.filterMap] <;> aesop",
+      "rc4_family": null
+    },
+    {
+      "theorem": "Finset.card_subtype",
+      "lemma": "Finset.subtype",
+      "tactic": "simp [Finset.subtype]",
+      "rc4_family": null
+    },
+    {
+      "theorem": "Finset.card_subtype",
+      "lemma": "Finset.subtype",
+      "tactic": "simp [Finset.subtype] <;> aesop",
+      "rc4_family": null
+    },
+    {
+      "theorem": "Finset.mem_map",
+      "lemma": "Finset.map",
+      "tactic": "simp [Finset.map]",
+      "rc4_family": null
+    },
+    {
+      "theorem": "Finset.mem_map",
+      "lemma": "Finset.map",
+      "tactic": "simp [Finset.map] <;> aesop",
+      "rc4_family": null
+    },
+    {
+      "theorem": "Finset.mem_preimage",
+      "lemma": "Finset.preimage",
+      "tactic": "simp [Finset.preimage]",
+      "rc4_family": null
+    },
+    {
+      "theorem": "Finset.mem_preimage",
+      "lemma": "Finset.preimage",
+      "tactic": "simp [Finset.preimage] <;> aesop",
+      "rc4_family": null
+    },
+    {
+      "theorem": "List.bidirectionalRec_singleton",
+      "lemma": "List.bidirectionalRec",
+      "tactic": "simp [List.bidirectionalRec]",
+      "rc4_family": null
+    },
+    {
+      "theorem": "List.bidirectionalRec_singleton",
+      "lemma": "List.bidirectionalRec",
+      "tactic": "simp [List.bidirectionalRec] <;> aesop",
+      "rc4_family": null
+    }
+  ],
+  "new_family_signatures": [
+    "Finset:card",
+    "Finset:filterMap",
+    "Finset:map",
+    "Finset:preimage",
+    "Finset:subtype",
+    "List:bidirectionalRec"
+  ],
+  "is_scalable_rc_candidate_generator": true,
+  "assessment": "FLI2 discovers the same KIND of object RC4B/RC4C were hand-built for — a small gated `simp [L]`/closer action that deploys an existing lemma — but sourced automatically from failure analysis rather than manual curation. 11 at-position rescue(s) found; 0 overlap RC4-style families, 11 are new. Whether it becomes an RC-candidate generator depends on each rescue passing the full literal-RC2 additive validation (off-gate/floors/determinism) used for RC4A–RC4D; FLI2 only produces candidates, it does not validate or promote them."
+}

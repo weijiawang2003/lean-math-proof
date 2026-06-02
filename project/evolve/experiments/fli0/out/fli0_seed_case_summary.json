@@ -1,0 +1,40 @@
+{
+  "generated_by": "scripts/fli0_select_seed_cases.py",
+  "num_seeds": 40,
+  "pool_size": 217,
+  "by_pattern": {
+    "SUBSET_BRIDGE": 8,
+    "MAP_FILTER_BIND_BRIDGE": 8,
+    "MEMBERSHIP_BRIDGE": 7,
+    "INDUCTION_GENERALIZATION": 6,
+    "SINGLETON_CHARACTERIZATION": 4,
+    "IFF_SPLIT": 4,
+    "DISJOINT_BRIDGE": 2,
+    "EXTENSIONALITY_NEEDED": 1
+  },
+  "by_namespace": {
+    "Finset": 14,
+    "List": 14,
+    "Multiset": 4,
+    "Set": 4,
+    "Nat": 4
+  },
+  "by_source_stage": {
+    "RC5V3": 19,
+    "RC5V2": 21
+  },
+  "by_confidence": {
+    "high": 20,
+    "medium": 20
+  },
+  "by_recommended_action": {
+    "generate_subset_bridge": 8,
+    "generate_map_filter_bind_membership": 8,
+    "generate_membership_bridge": 7,
+    "generate_induction_helper": 6,
+    "generate_singleton_iff": 4,
+    "generate_iff_split_helper": 4,
+    "generate_disjoint_membership_bridge": 2,
+    "generate_ext_membership_bridge": 1
+  }
+}

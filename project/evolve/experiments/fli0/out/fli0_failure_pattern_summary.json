@@ -1,0 +1,68 @@
+{
+  "generated_by": "scripts/fli0_classify_failure_patterns.py",
+  "num_cases": 455,
+  "num_clean": 327,
+  "primary_pattern_histogram": {
+    "MAP_FILTER_BIND_BRIDGE": 146,
+    "ORDER_STRUCTURE_GAP": 56,
+    "SUBSET_BRIDGE": 44,
+    "NEEDS_REVIEW": 44,
+    "IFF_SPLIT": 44,
+    "MEMBERSHIP_BRIDGE": 31,
+    "NAT_ARITH_GAP": 29,
+    "LOW_SIGNAL": 25,
+    "INDUCTION_GENERALIZATION": 23,
+    "SINGLETON_CHARACTERIZATION": 8,
+    "DISJOINT_BRIDGE": 3,
+    "UNKNOWN_NAME_OR_IMPORT": 1,
+    "EXTENSIONALITY_NEEDED": 1
+  },
+  "primary_pattern_histogram_clean": {
+    "MAP_FILTER_BIND_BRIDGE": 101,
+    "ORDER_STRUCTURE_GAP": 42,
+    "SUBSET_BRIDGE": 39,
+    "IFF_SPLIT": 36,
+    "LOW_SIGNAL": 24,
+    "NEEDS_REVIEW": 23,
+    "NAT_ARITH_GAP": 21,
+    "MEMBERSHIP_BRIDGE": 20,
+    "INDUCTION_GENERALIZATION": 11,
+    "SINGLETON_CHARACTERIZATION": 6,
+    "DISJOINT_BRIDGE": 3,
+    "EXTENSIONALITY_NEEDED": 1
+  },
+  "label_histogram": {
+    "MAP_FILTER_BIND_BRIDGE": 188,
+    "NAT_ARITH_GAP": 157,
+    "EXTENSIONALITY_NEEDED": 139,
+    "NEEDS_REVIEW": 135,
+    "ORDER_STRUCTURE_GAP": 94,
+    "IFF_SPLIT": 80,
+    "SUBSET_BRIDGE": 45,
+    "INDUCTION_GENERALIZATION": 43,
+    "MEMBERSHIP_BRIDGE": 31,
+    "LOW_SIGNAL": 25,
+    "UNKNOWN_NAME_OR_IMPORT": 15,
+    "SINGLETON_CHARACTERIZATION": 8,
+    "DISJOINT_BRIDGE": 3,
+    "SIMP_LOOP_OR_RECURSION": 2
+  },
+  "confidence_histogram": {
+    "medium": 338,
+    "low": 70,
+    "high": 47
+  },
+  "high_signal_clean_cases": 280,
+  "high_signal_patterns": {
+    "MAP_FILTER_BIND_BRIDGE": 101,
+    "ORDER_STRUCTURE_GAP": 42,
+    "SUBSET_BRIDGE": 39,
+    "IFF_SPLIT": 36,
+    "NAT_ARITH_GAP": 21,
+    "MEMBERSHIP_BRIDGE": 20,
+    "INDUCTION_GENERALIZATION": 11,
+    "SINGLETON_CHARACTERIZATION": 6,
+    "DISJOINT_BRIDGE": 3,
+    "EXTENSIONALITY_NEEDED": 1
+  }
+}

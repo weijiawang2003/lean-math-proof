@@ -1,0 +1,64 @@
+{
+  "generated_by": "scripts/fli0_extract_failed_cases.py",
+  "total_failures": 455,
+  "clean_failures": 327,
+  "by_source_stage": {
+    "RC5V2": 141,
+    "RC5V3": 314
+  },
+  "clean_by_source_stage": {
+    "RC5V2": 133,
+    "RC5V3": 194
+  },
+  "by_namespace": {
+    "Finset": 120,
+    "Multiset": 104,
+    "Nat": 99,
+    "List": 71,
+    "Set": 61
+  },
+  "clean_by_namespace": {
+    "Finset": 107,
+    "Nat": 87,
+    "Set": 57,
+    "List": 41,
+    "Multiset": 35
+  },
+  "by_dynamic_result": {
+    "failed": 328,
+    "unknown_name": 15,
+    "infra_error": 112
+  },
+  "by_failure_reason": {
+    "all attempts unknown_name": 15,
+    "setup/network error, no live attempt": 112
+  },
+  "by_feature": {
+    "has_eq": 286,
+    "has_singleton": 188,
+    "has_map_filter": 176,
+    "has_nat_arith": 168,
+    "has_mem": 124,
+    "has_card": 100,
+    "has_order": 94,
+    "has_iff": 80,
+    "has_union_inter": 66,
+    "has_subset": 48,
+    "has_disjoint": 4
+  },
+  "clean_by_feature": {
+    "has_eq": 185,
+    "has_nat_arith": 134,
+    "has_map_filter": 125,
+    "has_singleton": 122,
+    "has_mem": 77,
+    "has_card": 76,
+    "has_order": 75,
+    "has_iff": 61,
+    "has_union_inter": 58,
+    "has_subset": 43,
+    "has_disjoint": 4
+  },
+  "rc5v2_rc5v3_overlap": 0,
+  "fresh_clean_failures": 327
+}

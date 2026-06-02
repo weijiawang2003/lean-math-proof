@@ -1,0 +1,287 @@
+{
+  "generated_by": "scripts/fli0_locate_source_artifacts.py",
+  "rc5v2": {
+    "stage": "RC5V2",
+    "root": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2",
+    "stage_status": "COMPLETE",
+    "has_final_report": true,
+    "raw_failure_data_available": true,
+    "present": [
+      "eval_batch",
+      "rc2_baseline_results",
+      "rc4_static_results",
+      "dynamic_eligible",
+      "retrieval_results",
+      "safe_dynamic_plan",
+      "dynamic_b5_results",
+      "attribution",
+      "system_comparison",
+      "safety_audit",
+      "exported_examples",
+      "final_report"
+    ],
+    "partial": [],
+    "missing": [],
+    "unreadable": [],
+    "items": {
+      "eval_batch": {
+        "logical_path": "cases/rc5v2_eval_batch.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/cases/rc5v2_eval_batch.json",
+        "kind": "summary",
+        "size_bytes": 185683,
+        "records": 240,
+        "status": "PRESENT"
+      },
+      "rc2_baseline_results": {
+        "logical_path": "out/rc5v2_rc2_baseline_results.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc5v2_rc2_baseline_results.json",
+        "kind": "results",
+        "size_bytes": 105450,
+        "records": 240,
+        "status": "PRESENT"
+      },
+      "rc4_static_results": {
+        "logical_path": "out/rc5v2_static_stage_results.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc5v2_static_stage_results.json",
+        "kind": "results",
+        "size_bytes": 91174,
+        "records": 240,
+        "status": "PRESENT"
+      },
+      "dynamic_eligible": {
+        "logical_path": "cases/rc5v2_dynamic_eligible.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/cases/rc5v2_dynamic_eligible.json",
+        "kind": "results",
+        "size_bytes": 133510,
+        "records": 149,
+        "status": "PRESENT"
+      },
+      "retrieval_results": {
+        "logical_path": "out/rc5v2_retrieval_results.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc5v2_retrieval_results.json",
+        "kind": "results",
+        "size_bytes": 1145752,
+        "records": 149,
+        "status": "PRESENT"
+      },
+      "safe_dynamic_plan": {
+        "logical_path": "out/rc5v2_safe_dynamic_plan.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc5v2_safe_dynamic_plan.json",
+        "kind": "plan",
+        "size_bytes": 521762,
+        "records": 149,
+        "status": "PRESENT"
+      },
+      "dynamic_b5_results": {
+        "logical_path": "out/rc5v2_b5_dynamic_results.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc5v2_b5_dynamic_results.json",
+        "kind": "results",
+        "size_bytes": 298620,
+        "records": 149,
+        "setup_error_records": 6,
+        "setup_error_fraction": 0.04,
+        "status": "PRESENT"
+      },
+      "attribution": {
+        "logical_path": "out/rc5v2_attribution.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc5v2_attribution.json",
+        "kind": "summary",
+        "size_bytes": 56751,
+        "status": "PRESENT"
+      },
+      "system_comparison": {
+        "logical_path": "out/rc5v2_system_comparison.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc5v2_system_comparison.json",
+        "kind": "summary",
+        "size_bytes": 587,
+        "status": "PRESENT"
+      },
+      "safety_audit": {
+        "logical_path": "out/rc5v2_safety_audit.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/out/rc5v2_safety_audit.json",
+        "kind": "summary",
+        "size_bytes": 475,
+        "status": "PRESENT"
+      },
+      "exported_examples": {
+        "logical_path": "data/rc5v2_dynamic_examples.jsonl",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v2/data/rc5v2_dynamic_examples.jsonl",
+        "kind": "jsonl",
+        "size_bytes": 293812,
+        "records": 745,
+        "status": "PRESENT"
+      },
+      "final_report": {
+        "logical_path": "../../reports/rc5/rc5v2_hardened_hybrid_fresh_benchmark_report.md",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/reports/rc5/rc5v2_hardened_hybrid_fresh_benchmark_report.md",
+        "kind": "report",
+        "size_bytes": 7286,
+        "status": "PRESENT"
+      }
+    }
+  },
+  "rc5v3": {
+    "stage": "RC5V3",
+    "root": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3",
+    "stage_status": "PARTIAL_ARTIFACTS_AVAILABLE",
+    "has_final_report": false,
+    "raw_failure_data_available": true,
+    "present": [
+      "eval_batch",
+      "rc2_baseline_results",
+      "rc4_static_results",
+      "dynamic_eligible",
+      "retrieval_results",
+      "safe_dynamic_plan"
+    ],
+    "partial": [
+      "dynamic_b1_results",
+      "dynamic_b3_results",
+      "dynamic_b5_results"
+    ],
+    "missing": [
+      "attribution",
+      "system_comparison",
+      "cost_curve",
+      "namespace_feature_yield",
+      "safety_audit",
+      "maintenance_decision",
+      "exported_examples",
+      "final_report"
+    ],
+    "unreadable": [],
+    "items": {
+      "eval_batch": {
+        "logical_path": "cases/rc5v3_eval_batch.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/cases/rc5v3_eval_batch.json",
+        "kind": "summary",
+        "size_bytes": 481183,
+        "records": 600,
+        "status": "PRESENT"
+      },
+      "rc2_baseline_results": {
+        "logical_path": "out/rc5v3_rc2_baseline_results.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/out/rc5v3_rc2_baseline_results.json",
+        "kind": "results",
+        "size_bytes": 254788,
+        "records": 600,
+        "status": "PRESENT"
+      },
+      "rc4_static_results": {
+        "logical_path": "out/rc5v3_static_stage_results.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/out/rc5v3_static_stage_results.json",
+        "kind": "results",
+        "size_bytes": 225752,
+        "records": 600,
+        "status": "PRESENT"
+      },
+      "dynamic_eligible": {
+        "logical_path": "cases/rc5v3_dynamic_eligible.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/cases/rc5v3_dynamic_eligible.json",
+        "kind": "results",
+        "size_bytes": 287064,
+        "records": 318,
+        "status": "PRESENT"
+      },
+      "retrieval_results": {
+        "logical_path": "out/rc5v3_retrieval_results.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/out/rc5v3_retrieval_results.json",
+        "kind": "results",
+        "size_bytes": 2416374,
+        "records": 318,
+        "status": "PRESENT"
+      },
+      "safe_dynamic_plan": {
+        "logical_path": "out/rc5v3_safe_dynamic_plan.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/out/rc5v3_safe_dynamic_plan.json",
+        "kind": "plan",
+        "size_bytes": 1106516,
+        "records": 318,
+        "status": "PRESENT"
+      },
+      "dynamic_b1_results": {
+        "logical_path": "out/rc5v3_b1_dynamic_results.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/out/rc5v3_b1_dynamic_results.json",
+        "kind": "results",
+        "size_bytes": 369674,
+        "records": 318,
+        "setup_error_records": 210,
+        "setup_error_fraction": 0.66,
+        "status": "PARTIAL",
+        "partial_reason": "210/318 records have setup_error (infra)"
+      },
+      "dynamic_b3_results": {
+        "logical_path": "out/rc5v3_b3_dynamic_results.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/out/rc5v3_b3_dynamic_results.json",
+        "kind": "results",
+        "size_bytes": 320996,
+        "records": 315,
+        "setup_error_records": 315,
+        "setup_error_fraction": 1.0,
+        "status": "PARTIAL",
+        "partial_reason": "315/315 records have setup_error (infra)"
+      },
+      "dynamic_b5_results": {
+        "logical_path": "out/rc5v3_b5_dynamic_results.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/out/rc5v3_b5_dynamic_results.json",
+        "kind": "results",
+        "size_bytes": 294157,
+        "records": 315,
+        "setup_error_records": 211,
+        "setup_error_fraction": 0.67,
+        "status": "PARTIAL",
+        "partial_reason": "211/315 records have setup_error (infra)"
+      },
+      "attribution": {
+        "logical_path": "out/rc5v3_attribution.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/out/rc5v3_attribution.json",
+        "kind": "summary",
+        "status": "MISSING"
+      },
+      "system_comparison": {
+        "logical_path": "out/rc5v3_system_comparison.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/out/rc5v3_system_comparison.json",
+        "kind": "summary",
+        "status": "MISSING"
+      },
+      "cost_curve": {
+        "logical_path": "out/rc5v3_cost_curve.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/out/rc5v3_cost_curve.json",
+        "kind": "summary",
+        "status": "MISSING"
+      },
+      "namespace_feature_yield": {
+        "logical_path": "out/rc5v3_namespace_feature_yield.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/out/rc5v3_namespace_feature_yield.json",
+        "kind": "summary",
+        "status": "MISSING"
+      },
+      "safety_audit": {
+        "logical_path": "out/rc5v3_safety_audit.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/out/rc5v3_safety_audit.json",
+        "kind": "summary",
+        "status": "MISSING"
+      },
+      "maintenance_decision": {
+        "logical_path": "out/rc5v3_maintenance_decision.json",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/out/rc5v3_maintenance_decision.json",
+        "kind": "summary",
+        "status": "MISSING"
+      },
+      "exported_examples": {
+        "logical_path": "data/rc5v3_dynamic_examples.jsonl",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/experiments/rc5_v3/data/rc5v3_dynamic_examples.jsonl",
+        "kind": "jsonl",
+        "status": "MISSING"
+      },
+      "final_report": {
+        "logical_path": "../../reports/rc5/rc5v3_hardened_hybrid_scaling_benchmark_report.md",
+        "abs": "/Users/weijiawang/dev/dojo_sandbox/project/evolve/reports/rc5/rc5v3_hardened_hybrid_scaling_benchmark_report.md",
+        "kind": "report",
+        "status": "MISSING"
+      }
+    }
+  },
+  "fli0_source": "BOTH",
+  "note": "RC5V3 analysis layer / final report missing is expected and non-fatal; raw per-theorem results drive failure extraction. RC5V3 = PARTIAL."
+}
