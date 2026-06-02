@@ -1,0 +1,55 @@
+{
+  "generated_by": "scripts/fli1_normalize_and_cluster_goals.py",
+  "num_captured": 40,
+  "num_clusters": 21,
+  "by_pattern": {
+    "SUBSET_BRIDGE": 7,
+    "SINGLETON_CHARACTERIZATION": 4,
+    "MAP_FILTER_BIND_BRIDGE": 3,
+    "MEMBERSHIP_BRIDGE": 3,
+    "INDUCTION_GENERALIZATION": 1,
+    "IFF_SPLIT": 1,
+    "DISJOINT_BRIDGE": 1,
+    "EXTENSIONALITY_NEEDED": 1
+  },
+  "by_namespace": {
+    "Finset": 12,
+    "List": 4,
+    "Set": 3,
+    "Multiset": 1,
+    "Nat": 1
+  },
+  "multi_member_clusters": 8,
+  "largest_clusters": [
+    [
+      "FLI1-C13",
+      "List_induction_none_eq",
+      6
+    ],
+    [
+      "FLI1-C16",
+      "List_map_map_eq",
+      5
+    ],
+    [
+      "FLI1-C17",
+      "Multiset_membership_none_mem",
+      4
+    ],
+    [
+      "FLI1-C18",
+      "Nat_iff_none_rel",
+      4
+    ],
+    [
+      "FLI1-C01",
+      "Finset_disjoint_none_eq",
+      2
+    ],
+    [
+      "FLI1-C03",
+      "Finset_membership_none_mem",
+      2
+    ]
+  ]
+}

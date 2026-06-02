@@ -1,0 +1,1076 @@
+{
+  "generated_by": "scripts/fli1_normalize_and_cluster_goals.py",
+  "num_captured": 40,
+  "num_clusters": 21,
+  "clusters": [
+    {
+      "cluster_id": "FLI1-C13",
+      "pattern": "INDUCTION_GENERALIZATION",
+      "namespace": "List",
+      "main_relation": "=",
+      "container_op": "none",
+      "size": 6,
+      "representative_goal": "(l₁ ++ l₂).dedup = l₁ ∪ l₂.dedup",
+      "common_constants": [],
+      "candidate_lemma_family": "List_induction_none_eq",
+      "seed_ids": [
+        "FLI0-S28",
+        "FLI0-S29",
+        "FLI0-S30",
+        "FLI0-S31",
+        "FLI0-S32",
+        "FLI0-S34"
+      ],
+      "theorems": [
+        "List.dedup_append",
+        "List.dedup_cons_of_mem",
+        "List.dedup_cons_of_mem'",
+        "List.dedup_cons_of_not_mem",
+        "List.dedup_cons_of_not_mem'",
+        "List.getLast_append'"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C16",
+      "pattern": "MAP_FILTER_BIND_BRIDGE",
+      "namespace": "List",
+      "main_relation": "=",
+      "container_op": "map",
+      "size": 5,
+      "representative_goal": "map (fun i => f ↑i) l.attach = map f l",
+      "common_constants": [],
+      "candidate_lemma_family": "List_map_map_eq",
+      "seed_ids": [
+        "FLI0-S21",
+        "FLI0-S22",
+        "FLI0-S25",
+        "FLI0-S26",
+        "FLI0-S27"
+      ],
+      "theorems": [
+        "List.attach_map_coe'",
+        "List.attach_map_val",
+        "List.bind_pure_eq_map",
+        "List.bind_ret_eq_map",
+        "List.count_map_of_injective"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C17",
+      "pattern": "MEMBERSHIP_BRIDGE",
+      "namespace": "Multiset",
+      "main_relation": "∈",
+      "container_op": "none",
+      "size": 4,
+      "representative_goal": "∀ x ∈ s, p (f x)",
+      "common_constants": [],
+      "candidate_lemma_family": "Multiset_membership_none_mem",
+      "seed_ids": [
+        "FLI0-S15",
+        "FLI0-S16",
+        "FLI0-S17",
+        "FLI0-S18"
+      ],
+      "theorems": [
+        "Multiset.forall_mem_map_iff",
+        "Multiset.mem_filter",
+        "Multiset.mem_filterMap",
+        "Multiset.one_le_count_iff_mem"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C18",
+      "pattern": "IFF_SPLIT",
+      "namespace": "Nat",
+      "main_relation": "?",
+      "container_op": "none",
+      "size": 4,
+      "representative_goal": "m.Coprime n",
+      "common_constants": [],
+      "candidate_lemma_family": "Nat_iff_none_rel",
+      "seed_ids": [
+        "FLI0-S37",
+        "FLI0-S38",
+        "FLI0-S39",
+        "FLI0-S40"
+      ],
+      "theorems": [
+        "Nat.coprime_add_mul_left_left",
+        "Nat.coprime_add_mul_left_right",
+        "Nat.coprime_add_mul_right_left",
+        "Nat.coprime_add_mul_right_right"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C01",
+      "pattern": "DISJOINT_BRIDGE",
+      "namespace": "Finset",
+      "main_relation": "=",
+      "container_op": "none",
+      "size": 2,
+      "representative_goal": "∀ ⦃a_1 : ℕ⦄, a_1 < a → ∀ x < b, ¬a + x = a_1",
+      "common_constants": [],
+      "candidate_lemma_family": "Finset_disjoint_none_eq",
+      "seed_ids": [
+        "FLI0-S08",
+        "FLI0-S09"
+      ],
+      "theorems": [
+        "Finset.disjoint_range_addLeftEmbedding",
+        "Finset.disjoint_range_addRightEmbedding"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C03",
+      "pattern": "MEMBERSHIP_BRIDGE",
+      "namespace": "Finset",
+      "main_relation": "∈",
+      "container_op": "none",
+      "size": 2,
+      "representative_goal": "∀ a ∈ s, ∀ b ∈ s, a = b",
+      "common_constants": [],
+      "candidate_lemma_family": "Finset_membership_none_mem",
+      "seed_ids": [
+        "FLI0-S03",
+        "FLI0-S04"
+      ],
+      "theorems": [
+        "Finset.card_le_one",
+        "Finset.card_le_one_iff"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C14",
+      "pattern": "MAP_FILTER_BIND_BRIDGE",
+      "namespace": "List",
+      "main_relation": "=",
+      "container_op": "bind",
+      "size": 2,
+      "representative_goal": "l.bind f = l.bind g",
+      "common_constants": [],
+      "candidate_lemma_family": "List_map_bind_eq",
+      "seed_ids": [
+        "FLI0-S23",
+        "FLI0-S24"
+      ],
+      "theorems": [
+        "List.bind_congr",
+        "List.bind_eq_bind"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C21",
+      "pattern": "SUBSET_BRIDGE",
+      "namespace": "Set",
+      "main_relation": "=",
+      "container_op": "none",
+      "size": 2,
+      "representative_goal": "f '' (s \\ t) = f '' s \\ f '' t",
+      "common_constants": [],
+      "candidate_lemma_family": "Set_subset_none_eq",
+      "seed_ids": [
+        "FLI0-S19",
+        "FLI0-S20"
+      ],
+      "theorems": [
+        "Set.InjOn.image_diff_subset",
+        "Set.InjOn.image_inter"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C02",
+      "pattern": "MEMBERSHIP_BRIDGE",
+      "namespace": "Finset",
+      "main_relation": "∈",
+      "container_op": "Nonempty",
+      "size": 1,
+      "representative_goal": "∃ x ∈ s, (t x).Nonempty",
+      "common_constants": [],
+      "candidate_lemma_family": "Finset_membership_Nonempty_mem",
+      "seed_ids": [
+        "FLI0-S01"
+      ],
+      "theorems": [
+        "Finset.biUnion_nonempty"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C04",
+      "pattern": "SINGLETON_CHARACTERIZATION",
+      "namespace": "Finset",
+      "main_relation": "?",
+      "container_op": "card",
+      "size": 1,
+      "representative_goal": "({a} ∩ s).card.le 0",
+      "common_constants": [],
+      "candidate_lemma_family": "Finset_singleton_card_rel",
+      "seed_ids": [
+        "FLI0-S07"
+      ],
+      "theorems": [
+        "Finset.card_singleton_inter"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C05",
+      "pattern": "SINGLETON_CHARACTERIZATION",
+      "namespace": "Finset",
+      "main_relation": "∈",
+      "container_op": "Subsingleton",
+      "size": 1,
+      "representative_goal": "Subsingleton { x // x ∈ s }",
+      "common_constants": [],
+      "candidate_lemma_family": "Finset_singleton_Subsingleton_mem",
+      "seed_ids": [
+        "FLI0-S05"
+      ],
+      "theorems": [
+        "Finset.card_le_one_iff_subsingleton_coe"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C06",
+      "pattern": "SINGLETON_CHARACTERIZATION",
+      "namespace": "Finset",
+      "main_relation": "∈",
+      "container_op": "none",
+      "size": 1,
+      "representative_goal": "∀ {a b : α}, a ∈ s → b ∈ s → a = b",
+      "common_constants": [],
+      "candidate_lemma_family": "Finset_singleton_none_mem",
+      "seed_ids": [
+        "FLI0-S06"
+      ],
+      "theorems": [
+        "Finset.card_le_one_of_subsingleton"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C07",
+      "pattern": "SUBSET_BRIDGE",
+      "namespace": "Finset",
+      "main_relation": "=",
+      "container_op": "image",
+      "size": 1,
+      "representative_goal": "∃ i, 1 < (image (fun x => x i) s).card ∧ ∀ (ai : α i), filter (fun x => x i = ai) s ⊂ s",
+      "common_constants": [],
+      "candidate_lemma_family": "Finset_subset_image_eq",
+      "seed_ids": [
+        "FLI0-S11"
+      ],
+      "theorems": [
+        "Finset.exists_of_one_lt_card_pi"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C08",
+      "pattern": "SUBSET_BRIDGE",
+      "namespace": "Finset",
+      "main_relation": "=",
+      "container_op": "map",
+      "size": 1,
+      "representative_goal": "map f s = s",
+      "common_constants": [],
+      "candidate_lemma_family": "Finset_subset_map_eq",
+      "seed_ids": [
+        "FLI0-S14"
+      ],
+      "theorems": [
+        "Finset.map_eq_of_subset"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C09",
+      "pattern": "SUBSET_BRIDGE",
+      "namespace": "Finset",
+      "main_relation": "=",
+      "container_op": "none",
+      "size": 1,
+      "representative_goal": "s = t",
+      "common_constants": [],
+      "candidate_lemma_family": "Finset_subset_none_eq",
+      "seed_ids": [
+        "FLI0-S10"
+      ],
+      "theorems": [
+        "Finset.eq_of_subset_of_card_le"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C10",
+      "pattern": "SUBSET_BRIDGE",
+      "namespace": "Finset",
+      "main_relation": "∈",
+      "container_op": "map",
+      "size": 1,
+      "representative_goal": "filter p s.attach = map { toFun := Subtype.map id ⋯, inj' := ⋯ } (filter (fun x => ∃ (h : x ∈ s), p ⟨x, h⟩) s).attach",
+      "common_constants": [],
+      "candidate_lemma_family": "Finset_subset_map_mem",
+      "seed_ids": [
+        "FLI0-S13"
+      ],
+      "theorems": [
+        "Finset.filter_attach'"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C11",
+      "pattern": "SUBSET_BRIDGE",
+      "namespace": "Finset",
+      "main_relation": "≤",
+      "container_op": "card",
+      "size": 1,
+      "representative_goal": "s.card ≤ t.card",
+      "common_constants": [],
+      "candidate_lemma_family": "Finset_subset_card_rel",
+      "seed_ids": [
+        "FLI0-S02"
+      ],
+      "theorems": [
+        "Finset.card_le_card"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C12",
+      "pattern": "SUBSET_BRIDGE",
+      "namespace": "Finset",
+      "main_relation": "⊆",
+      "container_op": "card",
+      "size": 1,
+      "representative_goal": "∃ t ⊆ s, t.card = n",
+      "common_constants": [],
+      "candidate_lemma_family": "Finset_subset_card_subset",
+      "seed_ids": [
+        "FLI0-S12"
+      ],
+      "theorems": [
+        "Finset.exists_subset_card_eq"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C15",
+      "pattern": "MAP_FILTER_BIND_BRIDGE",
+      "namespace": "List",
+      "main_relation": "=",
+      "container_op": "filterMap",
+      "size": 1,
+      "representative_goal": "filterMap f l = filterMap g l",
+      "common_constants": [],
+      "candidate_lemma_family": "List_map_filterMap_eq",
+      "seed_ids": [
+        "FLI0-S33"
+      ],
+      "theorems": [
+        "List.filterMap_congr"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C19",
+      "pattern": "EXTENSIONALITY_NEEDED",
+      "namespace": "Set",
+      "main_relation": "∈",
+      "container_op": "none",
+      "size": 1,
+      "representative_goal": "x ∈ s → x ∉ t",
+      "common_constants": [],
+      "candidate_lemma_family": "Set_extensionality_none_mem",
+      "seed_ids": [
+        "FLI0-S35"
+      ],
+      "theorems": [
+        "Set.inter_empty_of_inter_sUnion_empty"
+      ]
+    },
+    {
+      "cluster_id": "FLI1-C20",
+      "pattern": "SINGLETON_CHARACTERIZATION",
+      "namespace": "Set",
+      "main_relation": "=",
+      "container_op": "none",
+      "size": 1,
+      "representative_goal": "⋂₀ (s \\ {univ}) = ⋂₀ s",
+      "common_constants": [],
+      "candidate_lemma_family": "Set_singleton_none_eq",
+      "seed_ids": [
+        "FLI0-S36"
+      ],
+      "theorems": [
+        "Set.sInter_diff_singleton_univ"
+      ]
+    }
+  ],
+  "normalized_goals": [
+    {
+      "seed_id": "FLI0-S01",
+      "theorem": "Finset.biUnion_nonempty",
+      "namespace": "Finset",
+      "pattern": "MEMBERSHIP_BRIDGE",
+      "normalized_goal": "∃ x ∈ s, (t x).Nonempty",
+      "main_relation": "∈",
+      "relations": [
+        "∈",
+        "∃"
+      ],
+      "container_ops": [
+        "Nonempty"
+      ],
+      "constants": [],
+      "prefix": [
+        "constructor",
+        "intro h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S02",
+      "theorem": "Finset.card_le_card",
+      "namespace": "Finset",
+      "pattern": "SUBSET_BRIDGE",
+      "normalized_goal": "s.card ≤ t.card",
+      "main_relation": "≤",
+      "relations": [
+        "≤"
+      ],
+      "container_ops": [
+        "card"
+      ],
+      "constants": [],
+      "prefix": [
+        "intro h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S03",
+      "theorem": "Finset.card_le_one",
+      "namespace": "Finset",
+      "pattern": "MEMBERSHIP_BRIDGE",
+      "normalized_goal": "∀ a ∈ s, ∀ b ∈ s, a = b",
+      "main_relation": "∈",
+      "relations": [
+        "∈",
+        "=",
+        "∀"
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "constructor",
+        "intro h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S04",
+      "theorem": "Finset.card_le_one_iff",
+      "namespace": "Finset",
+      "pattern": "MEMBERSHIP_BRIDGE",
+      "normalized_goal": "∀ {a b : α}, a ∈ s → b ∈ s → a = b",
+      "main_relation": "∈",
+      "relations": [
+        "∈",
+        "=",
+        "→",
+        "∀"
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "constructor",
+        "intro h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S08",
+      "theorem": "Finset.disjoint_range_addLeftEmbedding",
+      "namespace": "Finset",
+      "pattern": "DISJOINT_BRIDGE",
+      "normalized_goal": "∀ ⦃a_1 : ℕ⦄, a_1 < a → ∀ x < b, ¬a + x = a_1",
+      "main_relation": "=",
+      "relations": [
+        "=",
+        "<",
+        "→",
+        "∀"
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "simp [Finset.disjoint_left]"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S09",
+      "theorem": "Finset.disjoint_range_addRightEmbedding",
+      "namespace": "Finset",
+      "pattern": "DISJOINT_BRIDGE",
+      "normalized_goal": "∀ ⦃a_1 : ℕ⦄, a_1 < a → ∀ x < b, ¬x + a = a_1",
+      "main_relation": "=",
+      "relations": [
+        "=",
+        "<",
+        "→",
+        "∀"
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "simp [Finset.disjoint_left]"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S10",
+      "theorem": "Finset.eq_of_subset_of_card_le",
+      "namespace": "Finset",
+      "pattern": "SUBSET_BRIDGE",
+      "normalized_goal": "s = t",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S11",
+      "theorem": "Finset.exists_of_one_lt_card_pi",
+      "namespace": "Finset",
+      "pattern": "SUBSET_BRIDGE",
+      "normalized_goal": "∃ i, 1 < (image (fun x => x i) s).card ∧ ∀ (ai : α i), filter (fun x => x i = ai) s ⊂ s",
+      "main_relation": "=",
+      "relations": [
+        "⊂",
+        "=",
+        "<",
+        "∃",
+        "∀"
+      ],
+      "container_ops": [
+        "image",
+        "filter",
+        "card"
+      ],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S12",
+      "theorem": "Finset.exists_subset_card_eq",
+      "namespace": "Finset",
+      "pattern": "SUBSET_BRIDGE",
+      "normalized_goal": "∃ t ⊆ s, t.card = n",
+      "main_relation": "⊆",
+      "relations": [
+        "⊆",
+        "=",
+        "∃"
+      ],
+      "container_ops": [
+        "card"
+      ],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S13",
+      "theorem": "Finset.filter_attach'",
+      "namespace": "Finset",
+      "pattern": "SUBSET_BRIDGE",
+      "normalized_goal": "filter p s.attach = map { toFun := Subtype.map id ⋯, inj' := ⋯ } (filter (fun x => ∃ (h : x ∈ s), p ⟨x, h⟩) s).attach",
+      "main_relation": "∈",
+      "relations": [
+        "∈",
+        "=",
+        "∃"
+      ],
+      "container_ops": [
+        "map",
+        "filter"
+      ],
+      "constants": [
+        "Subtype.map"
+      ],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S14",
+      "theorem": "Finset.map_eq_of_subset",
+      "namespace": "Finset",
+      "pattern": "SUBSET_BRIDGE",
+      "normalized_goal": "map f s = s",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [
+        "map"
+      ],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S21",
+      "theorem": "List.attach_map_coe'",
+      "namespace": "List",
+      "pattern": "MAP_FILTER_BIND_BRIDGE",
+      "normalized_goal": "map (fun i => f ↑i) l.attach = map f l",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [
+        "map"
+      ],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S22",
+      "theorem": "List.attach_map_val",
+      "namespace": "List",
+      "pattern": "MAP_FILTER_BIND_BRIDGE",
+      "normalized_goal": "map Subtype.val l.attach = l",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [
+        "map"
+      ],
+      "constants": [
+        "Subtype.val"
+      ],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S23",
+      "theorem": "List.bind_congr",
+      "namespace": "List",
+      "pattern": "MAP_FILTER_BIND_BRIDGE",
+      "normalized_goal": "l.bind f = l.bind g",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [
+        "bind"
+      ],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S24",
+      "theorem": "List.bind_eq_bind",
+      "namespace": "List",
+      "pattern": "MAP_FILTER_BIND_BRIDGE",
+      "normalized_goal": "l >>= f = l.bind f",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [
+        "bind"
+      ],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S25",
+      "theorem": "List.bind_pure_eq_map",
+      "namespace": "List",
+      "pattern": "MAP_FILTER_BIND_BRIDGE",
+      "normalized_goal": "l.bind (pure ∘ f) = map f l",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [
+        "map",
+        "bind"
+      ],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S26",
+      "theorem": "List.bind_ret_eq_map",
+      "namespace": "List",
+      "pattern": "MAP_FILTER_BIND_BRIDGE",
+      "normalized_goal": "l.bind (List.ret ∘ f) = map f l",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [
+        "map",
+        "bind"
+      ],
+      "constants": [
+        "List.ret"
+      ],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S27",
+      "theorem": "List.count_map_of_injective",
+      "namespace": "List",
+      "pattern": "MAP_FILTER_BIND_BRIDGE",
+      "normalized_goal": "count (f x) (map f l) = count x l",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [
+        "map"
+      ],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S33",
+      "theorem": "List.filterMap_congr",
+      "namespace": "List",
+      "pattern": "MAP_FILTER_BIND_BRIDGE",
+      "normalized_goal": "filterMap f l = filterMap g l",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [
+        "filterMap"
+      ],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S15",
+      "theorem": "Multiset.forall_mem_map_iff",
+      "namespace": "Multiset",
+      "pattern": "MEMBERSHIP_BRIDGE",
+      "normalized_goal": "∀ x ∈ s, p (f x)",
+      "main_relation": "∈",
+      "relations": [
+        "∈",
+        "∀"
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "constructor",
+        "intro h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S16",
+      "theorem": "Multiset.mem_filter",
+      "namespace": "Multiset",
+      "pattern": "MEMBERSHIP_BRIDGE",
+      "normalized_goal": "a ∈ s ∧ p a",
+      "main_relation": "∈",
+      "relations": [
+        "∈"
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "constructor",
+        "intro h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S17",
+      "theorem": "Multiset.mem_filterMap",
+      "namespace": "Multiset",
+      "pattern": "MEMBERSHIP_BRIDGE",
+      "normalized_goal": "∃ a ∈ s, f a = some b",
+      "main_relation": "∈",
+      "relations": [
+        "∈",
+        "=",
+        "∃"
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "constructor",
+        "intro h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S18",
+      "theorem": "Multiset.one_le_count_iff_mem",
+      "namespace": "Multiset",
+      "pattern": "MEMBERSHIP_BRIDGE",
+      "normalized_goal": "a ∈ s",
+      "main_relation": "∈",
+      "relations": [
+        "∈"
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "constructor",
+        "intro h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S37",
+      "theorem": "Nat.coprime_add_mul_left_left",
+      "namespace": "Nat",
+      "pattern": "IFF_SPLIT",
+      "normalized_goal": "m.Coprime n",
+      "main_relation": "?",
+      "relations": [],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "constructor",
+        "intro h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S38",
+      "theorem": "Nat.coprime_add_mul_left_right",
+      "namespace": "Nat",
+      "pattern": "IFF_SPLIT",
+      "normalized_goal": "m.Coprime n",
+      "main_relation": "?",
+      "relations": [],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "constructor",
+        "intro h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S39",
+      "theorem": "Nat.coprime_add_mul_right_left",
+      "namespace": "Nat",
+      "pattern": "IFF_SPLIT",
+      "normalized_goal": "m.Coprime n",
+      "main_relation": "?",
+      "relations": [],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "constructor",
+        "intro h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S40",
+      "theorem": "Nat.coprime_add_mul_right_right",
+      "namespace": "Nat",
+      "pattern": "IFF_SPLIT",
+      "normalized_goal": "m.Coprime n",
+      "main_relation": "?",
+      "relations": [],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "constructor",
+        "intro h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S19",
+      "theorem": "Set.InjOn.image_diff_subset",
+      "namespace": "Set",
+      "pattern": "SUBSET_BRIDGE",
+      "normalized_goal": "f '' (s \\ t) = f '' s \\ f '' t",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S20",
+      "theorem": "Set.InjOn.image_inter",
+      "namespace": "Set",
+      "pattern": "SUBSET_BRIDGE",
+      "normalized_goal": "f '' (s ∩ t) = f '' s ∩ f '' t",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S05",
+      "theorem": "Finset.card_le_one_iff_subsingleton_coe",
+      "namespace": "Finset",
+      "pattern": "SINGLETON_CHARACTERIZATION",
+      "normalized_goal": "Subsingleton { x // x ∈ s }",
+      "main_relation": "∈",
+      "relations": [
+        "∈"
+      ],
+      "container_ops": [
+        "Subsingleton"
+      ],
+      "constants": [],
+      "prefix": [
+        "constructor",
+        "intro h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S06",
+      "theorem": "Finset.card_le_one_of_subsingleton",
+      "namespace": "Finset",
+      "pattern": "SINGLETON_CHARACTERIZATION",
+      "normalized_goal": "∀ {a b : α}, a ∈ s → b ∈ s → a = b",
+      "main_relation": "∈",
+      "relations": [
+        "∈",
+        "=",
+        "→",
+        "∀"
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "simp [Finset.card_le_one_iff]"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S07",
+      "theorem": "Finset.card_singleton_inter",
+      "namespace": "Finset",
+      "pattern": "SINGLETON_CHARACTERIZATION",
+      "normalized_goal": "({a} ∩ s).card.le 0",
+      "main_relation": "?",
+      "relations": [],
+      "container_ops": [
+        "card"
+      ],
+      "constants": [],
+      "prefix": [
+        "constructor"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S35",
+      "theorem": "Set.inter_empty_of_inter_sUnion_empty",
+      "namespace": "Set",
+      "pattern": "EXTENSIONALITY_NEEDED",
+      "normalized_goal": "x ∈ s → x ∉ t",
+      "main_relation": "∈",
+      "relations": [
+        "∈",
+        "∉",
+        "→"
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "ext x",
+        "simp"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S36",
+      "theorem": "Set.sInter_diff_singleton_univ",
+      "namespace": "Set",
+      "pattern": "SINGLETON_CHARACTERIZATION",
+      "normalized_goal": "⋂₀ (s \\ {univ}) = ⋂₀ s",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S28",
+      "theorem": "List.dedup_append",
+      "namespace": "List",
+      "pattern": "INDUCTION_GENERALIZATION",
+      "normalized_goal": "(l₁ ++ l₂).dedup = l₁ ∪ l₂.dedup",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S29",
+      "theorem": "List.dedup_cons_of_mem",
+      "namespace": "List",
+      "pattern": "INDUCTION_GENERALIZATION",
+      "normalized_goal": "(a :: a :: as).dedup = (a :: as).dedup",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": [
+        "induction h"
+      ]
+    },
+    {
+      "seed_id": "FLI0-S30",
+      "theorem": "List.dedup_cons_of_mem'",
+      "namespace": "List",
+      "pattern": "INDUCTION_GENERALIZATION",
+      "normalized_goal": "(a :: l).dedup = l.dedup",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S31",
+      "theorem": "List.dedup_cons_of_not_mem",
+      "namespace": "List",
+      "pattern": "INDUCTION_GENERALIZATION",
+      "normalized_goal": "(a :: l).dedup = a :: l.dedup",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S32",
+      "theorem": "List.dedup_cons_of_not_mem'",
+      "namespace": "List",
+      "pattern": "INDUCTION_GENERALIZATION",
+      "normalized_goal": "(a :: l).dedup = a :: l.dedup",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": []
+    },
+    {
+      "seed_id": "FLI0-S34",
+      "theorem": "List.getLast_append'",
+      "namespace": "List",
+      "pattern": "INDUCTION_GENERALIZATION",
+      "normalized_goal": "(l₁ ++ l₂).getLast ⋯ = l₂.getLast h",
+      "main_relation": "=",
+      "relations": [
+        "="
+      ],
+      "container_ops": [],
+      "constants": [],
+      "prefix": []
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "generated_by": "scripts/fli1_write_lemma_invention_atlas.py",
+  "residual_capture": {
+    "captured": 40,
+    "high_quality": 19
+  },
+  "clusters": 21,
+  "candidates": 40,
+  "existing": {
+    "PROBABLY_NEW": 21,
+    "EXISTS_CLOSE": 15,
+    "TOO_VAGUE_TO_CHECK": 4
+  },
+  "retrieval_gaps": 15,
+  "typecheck": {
+    "TYPECHECKS": 22,
+    "TYPE_ERROR": 8,
+    "UNIVERSE_OR_TYPECLASS_ERROR": 10
+  },
+  "proved": 1,
+  "rescue": {
+    "NO_RESCUE": 38,
+    "DOWNSTREAM_RESCUE": 1,
+    "DIRECT_SOLVE_DUPLICATE": 1
+  },
+  "downstream_rescues": 1,
+  "best_examples": [
+    {
+      "candidate_id": "FLI1-L04",
+      "theorem": "Finset.card_le_one_iff",
+      "namespace": "Finset",
+      "residual_goal": "case mp\nα : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf : α → β\nn : ℕ\nh : s.card ≤ 1\n⊢ ∀ {a b : α}, a ∈ s → b ∈ s → a = b\n\ncase mpr\nα : Type u_1\nβ : Type u_2\nR : Type u_3\ns t u : Finset α\nf : α → β\nn : ℕ\n⊢ (∀ {a b : α}, a ∈ s → b ∈ s → a = b) → s.card ≤ 1",
+      "candidate_lemma_lean": "lemma fli1_finset_fli0_s04_aux {α : Type*} {β : Type*} {R : Type*} (s t u : Finset α) (f : α → β) (n : ℕ) (h : s.card ≤ 1) : ∀ {a b : α}, a ∈ s → b ∈ s → a = b := by sorry",
+      "existing_check": "EXISTS_CLOSE",
+      "closest_existing_lemma": "Finset.card_le_one",
+      "typecheck": "TYPECHECKS",
+      "proved": "FAILED",
+      "proof_tactic": null,
+      "rescue_class": "DOWNSTREAM_RESCUE",
+      "rescue_tactic": "simp [Finset.card_le_one] <;> aesop",
+      "robust": true,
+      "explanation": "At `Finset.card_le_one_iff`'s position the restricted search failed; existing lemma `Finset.card_le_one` closes the goal via `simp [Finset.card_le_one] <;> aesop`."
+    },
+    {
+      "candidate_id": "FLI1-L02",
+      "theorem": "Finset.card_le_card",
+      "namespace": "Finset",
+      "residual_goal": "α : Type u_1\nβ : Type u_2\nR : Type u_3\ns t : Finset α\na b : α\nh : s ⊆ t\n⊢ s.card ≤ t.card",
+      "candidate_lemma_lean": "lemma fli1_finset_fli0_s02_aux {α : Type*} {β : Type*} {R : Type*} (s t : Finset α) (a b : α) (h : s ⊆ t) : s.card ≤ t.card := by sorry",
+      "existing_check": "PROBABLY_NEW",
+      "closest_existing_lemma": "Finset.eq_of_subset_of_card_le",
+      "typecheck": "TYPECHECKS",
+      "proved": "PROVED",
+      "proof_tactic": "gcongr",
+      "rescue_class": "NO_RESCUE",
+      "rescue_tactic": null,
+      "robust": null,
+      "explanation": "At `Finset.card_le_card`'s position the restricted search failed; the synthesized intermediate lemma simplifies the goal via `None`."
+    }
+  ]
+}

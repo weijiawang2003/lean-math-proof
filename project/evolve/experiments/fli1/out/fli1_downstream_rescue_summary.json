@@ -1,0 +1,21 @@
+{
+  "generated_by": "scripts/fli1_test_downstream_rescue.py",
+  "num_tested": 40,
+  "classification_histogram": {
+    "NO_RESCUE": 38,
+    "DOWNSTREAM_RESCUE": 1,
+    "DIRECT_SOLVE_DUPLICATE": 1
+  },
+  "downstream_rescues": 1,
+  "robust_rescues": 1,
+  "partial_progress": 0,
+  "direct_solve_duplicates": 1,
+  "rescue_targets": [
+    {
+      "theorem": "Finset.card_le_one_iff",
+      "lemma": "Finset.card_le_one",
+      "tactic": "simp [Finset.card_le_one] <;> aesop",
+      "robust": true
+    }
+  ]
+}
